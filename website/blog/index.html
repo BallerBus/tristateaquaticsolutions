@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Blog | Expert Guides & Tips | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Expert pool guides, cost information, and tips for Pennsylvania and Delaware homeowners. Learn about pool types, installation, maintenance, and local regulations.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Blog | Expert Guides & Tips | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Expert pool guides, cost information, and tips for Pennsylvania and Delaware homeowners.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquaticsolutions.com/blog/">
+    <meta property="og:image" content="https://tristateaquaticsolutions.com/images/blog-og.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/blog/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+        }
+
+        a {
+            color: var(--aqua);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--aqua-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--aqua);
+            transition: width 0.3s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 0.85rem 1.75rem !important;
+            border-radius: 100px;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 100px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar:focus-within {
+            border-color: var(--aqua);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background: var(--aqua);
+        }
+
+        .search-bar button svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.25rem;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--aqua);
+            border-color: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Main Content */
+        .blog-main {
+            padding: 4rem 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 4rem;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px -10px rgba(14, 31, 52, 0.1);
+            margin-bottom: 3rem;
+            transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+        }
+
+        .featured-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px -15px rgba(14, 31, 52, 0.15);
+        }
+
+        .featured-post a {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .featured-image {
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .featured-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .post-category {
+            background: var(--aqua-glow);
+            color: var(--aqua);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-weight: 500;
+        }
+
+        .post-date {
+            color: var(--gray-text);
+        }
+
+        .featured-content h2 {
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .featured-post:hover h2 {
+            color: var(--aqua);
+        }
+
+        .featured-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--aqua);
+            font-weight: 500;
+        }
+
+        .read-more svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-post:hover .read-more svg {
+            transform: translateX(5px);
+        }
+
+        /* Post Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px -10px rgba(14, 31, 52, 0.1);
+            border-color: transparent;
+        }
+
+        .post-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .post-image {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.8rem;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-content .post-meta {
+            margin-bottom: 0.75rem;
+        }
+
+        .post-content h3 {
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .post-card:hover h3 {
+            color: var(--aqua);
+        }
+
+        .post-content p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .reading-time {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .reading-time svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            background: var(--gray-light);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .recent-posts-list {
+            list-style: none;
+        }
+
+        .recent-posts-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .recent-posts-list li:last-child {
+            border-bottom: none;
+        }
+
+        .recent-posts-list a {
+            font-size: 0.95rem;
+            color: var(--navy);
+            text-decoration: none;
+            display: block;
+        }
+
+        .recent-posts-list a:hover {
+            color: var(--aqua);
+        }
+
+        .recent-posts-list span {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        /* CTA Box */
+        .sidebar-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .sidebar-cta h3 {
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-cta .btn {
+            display: inline-block;
+            background: var(--aqua);
+            color: var(--white);
+            padding: 0.85rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-cta .btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* Topics List */
+        .topics-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .topics-list li a {
+            display: block;
+            padding: 0.4rem 0.85rem;
+            background: var(--white);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--navy);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .topics-list li a:hover {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .featured-post a {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../#services">Services</a></li>
+                <li><a href="../pools/">Pool Types</a></li>
+                <li><a href="../locations/">Areas</a></li>
+                <li><a href="./" style="color: var(--aqua);">Blog</a></li>
+                <li><a href="../contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Pool Insights & Expert Guides</h1>
+            <p>Everything you need to know about pool ownership in Pennsylvania and Delaware. Cost guides, comparisons, maintenance tips, and local expertise.</p>
+
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search articles..." id="blogSearch">
+                    <button type="button" aria-label="Search">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="pool-types">Pool Types</button>
+                <button class="category-btn" data-category="cost-planning">Cost & Planning</button>
+                <button class="category-btn" data-category="maintenance">Maintenance</button>
+                <button class="category-btn" data-category="local-guides">Local Guides</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="blog-main">
+        <div class="container">
+            <div class="blog-grid">
+                <div class="blog-content">
+                    <!-- Featured Post -->
+                    <article class="featured-post" data-category="cost-planning">
+                        <a href="how-much-does-pool-cost-pennsylvania.html">
+                            <div class="featured-image">
+                                [Pool Installation Photo]
+                            </div>
+                            <div class="featured-content">
+                                <div class="post-meta">
+                                    <span class="post-category">Cost & Planning</span>
+                                    <span class="post-date">January 2026</span>
+                                </div>
+                                <h2>How Much Does an Inground Pool Cost in Pennsylvania? (2026 Guide)</h2>
+                                <p>Complete breakdown of pool costs in the Main Line area. From $65K fiberglass to $130K+ custom concrete, understand exactly what drives pricing and how to maximize your investment.</p>
+                                <span class="read-more">
+                                    Read Full Guide
+                                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Posts Grid -->
+                    <div class="posts-grid">
+                        <article class="post-card" data-category="pool-types">
+                            <a href="fiberglass-vs-concrete-pools.html">
+                                <div class="post-image">[Fiberglass Pool Photo]</div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span class="post-category">Pool Types</span>
+                                    </div>
+                                    <h3>Fiberglass vs Concrete Pools: The Complete Comparison</h3>
+                                    <p>Honest analysis of both pool types for Pennsylvania's climate. Cost, maintenance, durability, and which is right for your home.</p>
+                                    <span class="reading-time">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        12 min read
+                                    </span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="post-card" data-category="cost-planning">
+                            <a href="best-time-to-install-pool.html">
+                                <div class="post-image">[Seasonal Pool Photo]</div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span class="post-category">Cost & Planning</span>
+                                    </div>
+                                    <h3>Best Time to Install a Pool in Pennsylvania</h3>
+                                    <p>Seasonal analysis, lead times, and strategic planning to ensure you're swimming by summer. Why spring bookings matter.</p>
+                                    <span class="reading-time">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        8 min read
+                                    </span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="post-card" data-category="cost-planning">
+                            <a href="pool-installation-process-what-to-expect.html">
+                                <div class="post-image">[Installation Process Photo]</div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span class="post-category">Cost & Planning</span>
+                                    </div>
+                                    <h3>Pool Installation Process: What to Expect Step by Step</h3>
+                                    <p>From first consultation to first swim, understand every phase of pool installation. Timeline, your responsibilities, and what happens when.</p>
+                                    <span class="reading-time">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        10 min read
+                                    </span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="post-card" data-category="local-guides">
+                            <a href="pool-builders-main-line-pa-guide.html">
+                                <div class="post-image">[Main Line Estate Photo]</div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span class="post-category">Local Guides</span>
+                                    </div>
+                                    <h3>Pool Builders in Main Line PA: Your Complete Guide</h3>
+                                    <p>What to look for (and what to avoid) when choosing a pool builder. Local expertise, red flags, and questions every homeowner should ask.</p>
+                                    <span class="reading-time">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        9 min read
+                                    </span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="post-card" data-category="pool-types">
+                            <a href="plunge-pools-small-backyard-solution.html">
+                                <div class="post-image">[Plunge Pool Photo]</div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span class="post-category">Pool Types</span>
+                                    </div>
+                                    <h3>Plunge Pools: The Perfect Small Backyard Solution</h3>
+                                    <p>The trending pool style for smaller lots. Benefits, costs, installation, and why plunge pools are ideal for many Main Line properties.</p>
+                                    <span class="reading-time">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        8 min read
+                                    </span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="post-card" data-category="maintenance">
+                            <a href="pool-maintenance-cost-guide.html">
+                                <div class="post-image">[Pool Maintenance Photo]</div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span class="post-category">Maintenance</span>
+                                    </div>
+                                    <h3>Pool Maintenance Cost Guide: What Owners Actually Pay</h3>
+                                    <p>Annual costs breakdown for Pennsylvania pool owners. DIY vs professional service, seasonal expenses, and how to budget for ownership.</p>
+                                    <span class="reading-time">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        10 min read
+                                    </span>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-cta">
+                        <h3>Ready to Start Planning?</h3>
+                        <p>Get a free estimate tailored to your property and vision.</p>
+                        <a href="../tools/pool-cost-calculator.html" class="btn">Try Our Cost Calculator</a>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Recent Articles</h3>
+                        <ul class="recent-posts-list">
+                            <li>
+                                <a href="how-much-does-pool-cost-pennsylvania.html">How Much Does a Pool Cost in PA?</a>
+                                <span>January 2026</span>
+                            </li>
+                            <li>
+                                <a href="fiberglass-vs-concrete-pools.html">Fiberglass vs Concrete Pools</a>
+                                <span>January 2026</span>
+                            </li>
+                            <li>
+                                <a href="best-time-to-install-pool.html">Best Time to Install a Pool</a>
+                                <span>January 2026</span>
+                            </li>
+                            <li>
+                                <a href="plunge-pools-small-backyard-solution.html">Plunge Pools for Small Yards</a>
+                                <span>January 2026</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Popular Topics</h3>
+                        <ul class="topics-list">
+                            <li><a href="#" data-category="cost-planning">Pool Costs</a></li>
+                            <li><a href="#" data-category="pool-types">Fiberglass</a></li>
+                            <li><a href="#" data-category="pool-types">Concrete</a></li>
+                            <li><a href="#" data-category="maintenance">Maintenance</a></li>
+                            <li><a href="#" data-category="local-guides">Main Line</a></li>
+                            <li><a href="#" data-category="cost-planning">Financing</a></li>
+                            <li><a href="#" data-category="pool-types">Plunge Pools</a></li>
+                            <li><a href="#" data-category="cost-planning">Permits</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium pool installation for Main Line Philadelphia and Northern Delaware. Expert guides and transparent information to help you make informed decisions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Pool Types</h4>
+                    <ul>
+                        <li><a href="../pools/fiberglass-pools.html">Fiberglass Pools</a></li>
+                        <li><a href="../pools/concrete-pools.html">Concrete Pools</a></li>
+                        <li><a href="../pools/plunge-pools.html">Plunge Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="./">Blog</a></li>
+                        <li><a href="../tools/pool-cost-calculator.html">Cost Calculator</a></li>
+                        <li><a href="../faq/">FAQ</a></li>
+                        <li><a href="../financing/">Financing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+13025551234">(302) 555-1234</a></li>
+                        <li><a href="mailto:info@tristateaquatic.com">info@tristateaquatic.com</a></li>
+                        <li><a href="../contact/">Get a Quote</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved.</p>
+                <p>Serving Main Line PA & Northern Delaware</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const posts = document.querySelectorAll('.post-card, .featured-post');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                posts.forEach(post => {
+                    if (category === 'all' || post.dataset.category === category) {
+                        post.style.display = '';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('blogSearch');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+
+            posts.forEach(post => {
+                const title = post.querySelector('h2, h3').textContent.toLowerCase();
+                const excerpt = post.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(query) || excerpt.includes(query)) {
+                    post.style.display = '';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

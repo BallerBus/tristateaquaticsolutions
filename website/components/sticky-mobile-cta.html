@@ -1,0 +1,412 @@
+<!--
+Sticky Mobile CTA Component
+Fixed bottom bar on mobile with call and quote buttons
+
+USAGE:
+Include this file before </body>:
+<script src="/components/sticky-mobile-cta.js"></script>
+
+Or copy the entire contents.
+-->
+
+<style>
+/* Sticky Mobile CTA */
+.sticky-mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E8ECF1;
+    padding: 0.75rem 1rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    z-index: 9980;
+    box-shadow: 0 -4px 20px rgba(14, 31, 52, 0.1);
+}
+
+@media (max-width: 768px) {
+    .sticky-mobile-cta {
+        display: block;
+    }
+
+    /* Add padding to body so content isn't hidden */
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+.sticky-mobile-cta.hidden {
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.sticky-mobile-cta.visible {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.sticky-cta-container {
+    display: flex;
+    gap: 0.75rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.sticky-cta-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    cursor: pointer;
+}
+
+.sticky-cta-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Primary CTA - Get Quote */
+.sticky-cta-primary {
+    background: #00A6B2;
+    color: #FFFFFF;
+}
+
+.sticky-cta-primary:hover,
+.sticky-cta-primary:active {
+    background: #008a94;
+}
+
+.sticky-cta-primary svg {
+    stroke: #FFFFFF;
+}
+
+/* Secondary CTA - Call */
+.sticky-cta-secondary {
+    background: #F5F7FA;
+    color: #0E1F34;
+}
+
+.sticky-cta-secondary:hover,
+.sticky-cta-secondary:active {
+    background: #E8ECF1;
+}
+
+.sticky-cta-secondary svg {
+    stroke: #00A6B2;
+}
+
+/* Pulse animation for primary CTA */
+.sticky-cta-primary {
+    position: relative;
+}
+
+.sticky-cta-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: #00A6B2;
+    animation: pulse-ring 2s ease-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1.15);
+        opacity: 0;
+    }
+}
+
+/* Hide when scrolling down, show when scrolling up */
+.sticky-mobile-cta.scroll-hidden {
+    transform: translateY(100%);
+}
+
+/* Expanded state with form */
+.sticky-cta-expanded {
+    display: none;
+    padding: 1.25rem 1rem;
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom));
+}
+
+.sticky-mobile-cta.expanded .sticky-cta-container {
+    display: none;
+}
+
+.sticky-mobile-cta.expanded .sticky-cta-expanded {
+    display: block;
+}
+
+.sticky-cta-expanded-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sticky-cta-expanded-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #0E1F34;
+}
+
+.sticky-cta-close {
+    background: #F5F7FA;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sticky-cta-close svg {
+    width: 16px;
+    height: 16px;
+    stroke: #6B7280;
+    stroke-width: 2;
+}
+
+.sticky-cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sticky-cta-form input {
+    padding: 0.85rem 1rem;
+    border: 1.5px solid #E8ECF1;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+}
+
+.sticky-cta-form input:focus {
+    outline: none;
+    border-color: #00A6B2;
+}
+
+.sticky-cta-form-submit {
+    background: #0E1F34;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sticky-cta-form-submit:active {
+    background: #00A6B2;
+}
+
+/* Success State */
+.sticky-cta-success {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.sticky-cta-success.show {
+    display: block;
+}
+
+.sticky-cta-success svg {
+    width: 40px;
+    height: 40px;
+    stroke: #00A6B2;
+    stroke-width: 2;
+    fill: none;
+    margin-bottom: 0.5rem;
+}
+
+.sticky-cta-success p {
+    font-size: 0.95rem;
+    color: #0E1F34;
+    font-weight: 500;
+}
+</style>
+
+<!-- Sticky Mobile CTA HTML -->
+<div class="sticky-mobile-cta" id="stickyMobileCta">
+    <!-- Default State: Two Buttons -->
+    <div class="sticky-cta-container">
+        <a href="tel:+13025551234" class="sticky-cta-btn sticky-cta-secondary">
+            <svg viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Call Now
+        </a>
+        <button class="sticky-cta-btn sticky-cta-primary" id="stickyCtaQuoteBtn">
+            <svg viewBox="0 0 24 24">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Get Free Quote
+        </button>
+    </div>
+
+    <!-- Expanded State: Quick Form -->
+    <div class="sticky-cta-expanded" id="stickyCtaExpanded">
+        <div class="sticky-cta-expanded-header">
+            <h4 class="sticky-cta-expanded-title">Quick Quote Request</h4>
+            <button class="sticky-cta-close" id="stickyCtaClose">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+
+        <form class="sticky-cta-form" id="stickyCtaForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <button type="submit" class="sticky-cta-form-submit">Request Callback</button>
+        </form>
+
+        <div class="sticky-cta-success" id="stickyCtaSuccess">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="9 12 12 15 16 10"/>
+            </svg>
+            <p>We'll call you within 24 hours!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    const cta = document.getElementById('stickyMobileCta');
+    const quoteBtn = document.getElementById('stickyCtaQuoteBtn');
+    const closeBtn = document.getElementById('stickyCtaClose');
+    const form = document.getElementById('stickyCtaForm');
+    const successEl = document.getElementById('stickyCtaSuccess');
+
+    // Only show on mobile
+    if (window.innerWidth > 768) return;
+
+    // Show/hide on scroll
+    let lastScrollTop = 0;
+    let ticking = false;
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Don't hide if form is expanded
+                if (!cta.classList.contains('expanded')) {
+                    if (scrollTop > lastScrollTop && scrollTop > 200) {
+                        // Scrolling down
+                        cta.classList.add('scroll-hidden');
+                    } else {
+                        // Scrolling up
+                        cta.classList.remove('scroll-hidden');
+                    }
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Expand to show form
+    quoteBtn.addEventListener('click', function() {
+        cta.classList.add('expanded');
+        cta.classList.remove('scroll-hidden');
+        // Focus first input
+        setTimeout(() => {
+            form.querySelector('input').focus();
+        }, 100);
+    });
+
+    // Collapse form
+    closeBtn.addEventListener('click', function() {
+        cta.classList.remove('expanded');
+    });
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = {
+            name: this.querySelector('[name="name"]').value,
+            phone: this.querySelector('[name="phone"]').value,
+            source: 'sticky-mobile-cta',
+            timestamp: new Date().toISOString()
+        };
+
+        // Store lead
+        const leads = JSON.parse(localStorage.getItem('tsas_leads') || '[]');
+        leads.push(formData);
+        localStorage.setItem('tsas_leads', JSON.stringify(leads));
+
+        // Track
+        localStorage.setItem('tsas_user_name', formData.name);
+        localStorage.setItem('tsas_user_phone', formData.phone);
+
+        // Show success
+        form.style.display = 'none';
+        successEl.classList.add('show');
+
+        // Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'lead_capture', {
+                'event_category': 'Sticky CTA',
+                'event_label': 'Callback Request',
+                'value': 1
+            });
+        }
+
+        // Collapse after delay
+        setTimeout(function() {
+            cta.classList.remove('expanded');
+            // Reset form after animation
+            setTimeout(function() {
+                form.style.display = '';
+                successEl.classList.remove('show');
+                form.reset();
+            }, 300);
+        }, 2500);
+    });
+
+    // Track phone calls
+    const phoneLink = cta.querySelector('a[href^="tel:"]');
+    if (phoneLink) {
+        phoneLink.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'phone_call', {
+                    'event_category': 'Sticky CTA',
+                    'event_label': 'Mobile Call',
+                    'value': 1
+                });
+            }
+        });
+    }
+})();
+</script>

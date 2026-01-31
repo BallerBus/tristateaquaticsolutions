@@ -1,0 +1,39 @@
+# Tri-State Aquatic Solutions - Gallery Project Images
+# Generated: 2026-01-31
+# Note: These are temporary presigned URLs that expire in 1 hour. Download images promptly.
+
+## 1. Gladwyne Modern Fiberglass
+Description: 16x36 fiberglass pool with tanning ledge in upscale Philadelphia Main Line estate, modern landscaping, evening lighting
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/9ee3a61a2f69c52a739720f21cc84850?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141603Z&X-Amz-Expires=3600&X-Amz-Signature=d529046bdd54a3633f1ef0ba87097362ba270734724ca89e7c96bde1d276b6c3&X-Amz-SignedHeaders=host
+
+## 2. Villanova Estate Fiberglass
+Description: 18x40 fiberglass with water features and LED lighting, luxury estate setting
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/b1810c40ab2058b28a228c9157116632?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141602Z&X-Amz-Expires=3600&X-Amz-Signature=4a3336a26f31a4a166c4c3a353fe6d4d66998c035e5005c3824959959ff2b764&X-Amz-SignedHeaders=host
+
+## 3. Hockessin Family Fiberglass
+Description: 14x32 freeform fiberglass with beach entry, family-friendly suburban Delaware setting
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/0196344d2eddd5cb7fb70cc17a8a7b6e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141602Z&X-Amz-Expires=3600&X-Amz-Signature=e96c93589402dfa0dd31339a8ddfb8b8636a7f956d2f67b5070283e1562ff427&X-Amz-SignedHeaders=host
+
+## 4. Gladwyne Luxury Concrete
+Description: 20x45 custom concrete with infinity edge and spa, overlooking valley
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/28b354487115e26b2c3d96350c46c28c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141702Z&X-Amz-Expires=3600&X-Amz-Signature=5d207d1ad4e9304381e160a959e22bfe0c990448f7d012581341f4226636a780&X-Amz-SignedHeaders=host
+
+## 5. West Chester Contemporary
+Description: 16x38 rectangular fiberglass with automatic cover, modern patio
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/70e7de2b73a4d9973d7d72f0b9472efd?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141711Z&X-Amz-Expires=3600&X-Amz-Signature=8a8a21ccc9981cdf31d15058d6132fb0d6f3bae609387c31332cc65444f27afb&X-Amz-SignedHeaders=host
+
+## 6. Greenville Resort-Style
+Description: 22x48 concrete with waterfall, outdoor kitchen visible, resort aesthetic
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/7410f3b2c4188c49a6edfb5d53adfdb3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141705Z&X-Amz-Expires=3600&X-Amz-Signature=d98e15cfee97a56a7dd4775cd35e60a39558a606fc240efeea09daf82fa8e269&X-Amz-SignedHeaders=host
+
+## 7. Bryn Mawr Plunge
+Description: 10x16 heated plunge pool with spa jets, intimate backyard
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/5145223bd5f493e86fe459b808dfc319?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141806Z&X-Amz-Expires=3600&X-Amz-Signature=cf23b8836d38d88332d3293bb3f0ed37ea2efd73e256f993a1d8fa95b5ee56d9&X-Amz-SignedHeaders=host
+
+## 8. Haverford Classic Concrete
+Description: 18x36 rectangular with natural stone coping, traditional Main Line home
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/6e5057b86462e7bd1b25aec4a92906e4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141806Z&X-Amz-Expires=3600&X-Amz-Signature=dc61f1ee120c960a34ce590406bf0f6e0f85f0e6c36eb29adbbbf3ca16a36c4b&X-Amz-SignedHeaders=host
+
+## 9. Wilmington Urban Plunge
+Description: 8x14 modern cold plunge, minimalist urban backyard
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/e89784c09b40b788f49829393a4c548d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141804Z&X-Amz-Expires=3600&X-Amz-Signature=a27a9286d646deb480fcf6e1d6e0175cef70c01eeb0c4e2be00aefc92515c095&X-Amz-SignedHeaders=host

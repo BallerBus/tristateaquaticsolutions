@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Pool Maintenance Service | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Professional weekly pool maintenance in Main Line PA and Delaware. Regular cleaning, chemical balancing, and equipment checks keep your pool pristine all season.">
+
+    <meta property="og:title" content="Weekly Pool Maintenance | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="More swimming, less work. Professional weekly pool service keeps your water crystal clear and your equipment running smoothly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquatic.com/services/weekly-maintenance/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Weekly Pool Maintenance",
+        "name": "Weekly Pool Cleaning and Maintenance",
+        "description": "Professional weekly pool maintenance including cleaning, chemical testing, equipment inspection, and water balancing.",
+        "provider": {"@type": "LocalBusiness", "name": "Tri-State Aquatic Solutions", "telephone": "+1-302-555-1234"},
+        "areaServed": ["Pennsylvania", "Delaware"],
+        "offers": {"@type": "Offer", "priceRange": "$150-$400/month"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How often should I have my pool professionally maintained?", "acceptedAnswer": {"@type": "Answer", "text": "For optimal water quality and equipment health, weekly professional maintenance is recommended during swimming season. This ensures consistent chemical balance and catches potential issues early."}},
+            {"@type": "Question", "name": "What does weekly maintenance include?", "acceptedAnswer": {"@type": "Answer", "text": "Our weekly service includes skimming, vacuuming, brushing walls, testing and balancing chemicals, emptying baskets, inspecting equipment, and providing a detailed service report."}}
+        ]
+    }
+    </script>
+
+    <style>
+        :root { --navy: #0E1F34; --navy-light: #1a2d45; --aqua: #00A6B2; --aqua-dark: #008a94; --aqua-glow: rgba(0, 166, 178, 0.15); --gold: #C9A962; --white: #FFFFFF; --gray-light: #F5F7FA; --gray: #E8ECF1; --gray-text: #6B7280; --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'Outfit', -apple-system, sans-serif; --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; position: relative; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; border: 2px solid var(--aqua); border-radius: 50%; top: 20%; left: 20%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; top: 35%; left: 35%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; position: relative; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        .breadcrumb { padding: 1rem 0; margin-top: 80px; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; gap: 0.5rem; list-style: none; font-size: 0.9rem; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--aqua); text-decoration: none; }
+        .breadcrumb-list span { color: var(--gray-text); }
+
+        .page-hero { padding: 4rem 0; background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%); }
+        .page-hero h1 { margin-bottom: 1rem; }
+        .page-hero h1 em { font-style: italic; color: var(--aqua); }
+        .page-hero-subtitle { font-size: 1.2rem; max-width: 700px; margin-bottom: 2rem; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        section { padding: clamp(4rem, 8vw, 6rem) 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+        .section-tag::before, .section-tag::after { content: ''; width: 30px; height: 1px; background: var(--aqua); }
+
+        .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.4s; border: none; cursor: pointer; }
+        .btn-primary { background: var(--navy); color: var(--white); }
+        .btn-primary:hover { background: var(--aqua); transform: translateY(-3px); }
+        .btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+        .btn-secondary:hover { background: var(--navy); color: var(--white); }
+        .btn svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        .benefits-section { background: var(--white); }
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .benefit-card { background: var(--gray-light); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.4s; }
+        .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(14, 31, 52, 0.15); }
+        .benefit-icon { width: 70px; height: 70px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
+        .benefit-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .benefit-card h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+
+        .included-section { background: var(--gray-light); }
+        .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .included-list { list-style: none; }
+        .included-list li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+        .included-list li svg { width: 24px; height: 24px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; margin-top: 2px; }
+        .included-list li strong { display: block; color: var(--navy); margin-bottom: 0.25rem; }
+        .included-list li span { font-size: 0.95rem; }
+        .included-visual { border-radius: 24px; overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; color: var(--white); flex-direction: column; }
+        .included-visual svg { width: 60px; height: 60px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1rem; }
+
+        .tiers-section { background: var(--white); }
+        .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .tier-card { background: var(--gray-light); border-radius: 24px; padding: 2.5rem; text-align: center; transition: all 0.4s; }
+        .tier-card.featured { background: var(--navy); color: var(--white); }
+        .tier-card.featured p { color: rgba(255,255,255,0.7); }
+        .tier-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(14, 31, 52, 0.15); }
+        .tier-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .tier-card.featured h3 { color: var(--white); }
+        .tier-price { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--aqua); margin-bottom: 0.5rem; }
+        .tier-card.featured .tier-price { color: var(--gold); }
+        .tier-price span { font-size: 1rem; color: var(--gray-text); font-weight: 400; }
+        .tier-card.featured .tier-price span { color: rgba(255,255,255,0.6); }
+        .tier-desc { font-size: 0.95rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); }
+        .tier-card.featured .tier-desc { border-color: rgba(255,255,255,0.2); }
+        .tier-features { list-style: none; text-align: left; margin-bottom: 2rem; }
+        .tier-features li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--navy); }
+        .tier-card.featured .tier-features li { color: rgba(255,255,255,0.9); }
+        .tier-features li svg { width: 18px; height: 18px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+        .tier-card.featured .tier-features li svg { stroke: var(--gold); }
+        .tier-btn { display: block; width: 100%; padding: 1rem; border-radius: 100px; text-align: center; text-decoration: none; font-weight: 500; transition: all 0.3s; }
+        .tier-btn-primary { background: var(--navy); color: var(--white); }
+        .tier-btn-primary:hover { background: var(--aqua); }
+        .tier-btn-secondary { background: var(--white); color: var(--navy); }
+        .tier-btn-secondary:hover { background: var(--navy); color: var(--white); }
+        .tier-btn-gold { background: var(--gold); color: var(--navy); }
+        .tier-btn-gold:hover { background: var(--white); }
+
+        .faq-section { background: var(--gray-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--gray); padding: 1.5rem 0; }
+        .faq-item:first-child { border-top: 1px solid var(--gray); }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 1rem; }
+        .faq-question h3 { font-size: 1.1rem; font-family: var(--font-body); font-weight: 600; }
+        .faq-icon { width: 36px; height: 36px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .faq-icon svg { width: 18px; height: 18px; stroke: var(--aqua); stroke-width: 2; fill: none; transition: transform 0.3s; }
+        .faq-item.open .faq-icon { background: var(--aqua); }
+        .faq-item.open .faq-icon svg { stroke: var(--white); transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s; }
+        .faq-item.open .faq-answer { max-height: 500px; }
+        .faq-answer p { padding-top: 1rem; font-size: 1rem; line-height: 1.7; }
+
+        .cta-section { background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%); text-align: center; color: var(--white); }
+        .cta-section h2 { color: var(--white); margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn-white { background: var(--white); color: var(--navy); }
+        .btn-white:hover { background: var(--navy); color: var(--white); }
+        .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+        .btn-outline-white:hover { background: var(--white); color: var(--aqua); }
+
+        footer { background: var(--navy); color: var(--white); padding: 5rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        .footer-brand p { color: rgba(255,255,255,0.6); margin-top: 1.5rem; font-size: 0.95rem; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1.5rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-contact li { display: flex; align-items: center; gap: 0.75rem; }
+        .footer-contact svg { width: 18px; height: 18px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .footer-social a:hover { background: var(--aqua); }
+        .footer-social svg { width: 18px; height: 18px; fill: var(--white); }
+
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .benefits-grid, .tiers-grid { grid-template-columns: 1fr; }
+            .included-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .included-visual { order: -1; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .cta-buttons, .hero-ctas { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo"><div class="logo-mark"></div><div class="logo-text">Tri-State Aquatic<span>Solutions</span></div></a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="/">Home</a></li><li><span>/</span></li>
+                <li><a href="/services/">Services</a></li><li><span>/</span></li>
+                <li><a href="/pool-maintenance/">Maintenance</a></li><li><span>/</span></li>
+                <li><span>Weekly Maintenance</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Professional <em>Weekly</em> Pool Service</h1>
+            <p class="page-hero-subtitle">More swimming, less work. Our professional weekly maintenance keeps your pool crystal clear, chemically balanced, and equipment running smoothly all season long.</p>
+            <div class="hero-ctas">
+                <a href="/contact/" class="btn btn-primary">Start Weekly Service<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="tel:+13025551234" class="btn btn-secondary">Call (302) 555-1234</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Why Weekly Service</div>
+                <h2>Benefits of Professional Maintenance</h2>
+                <p>Consistent professional care makes all the difference in water quality, equipment life, and your enjoyment.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <h3>Save Your Weekends</h3>
+                    <p>Spend your time swimming, not cleaning. We handle the maintenance so you can enjoy your pool.</p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+                    <h3>Perfect Water Quality</h3>
+                    <p>Consistent chemical balance prevents algae, cloudy water, and skin irritation.</p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Longer Equipment Life</h3>
+                    <p>Regular inspection catches small issues before they become expensive repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="included-section">
+        <div class="container">
+            <div class="included-grid">
+                <div class="reveal">
+                    <div class="section-tag">Every Visit</div>
+                    <h2>What's Included</h2>
+                    <p style="margin-bottom: 2rem;">Each weekly visit follows our comprehensive checklist to ensure nothing is missed.</p>
+                    <ul class="included-list">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><strong>Surface Skimming</strong><span>Remove leaves, bugs, and floating debris from the water surface.</span></div></li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><strong>Vacuuming</strong><span>Clean pool floor and remove settled debris and sediment.</span></div></li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><strong>Brush Walls & Tiles</strong><span>Prevent algae buildup on walls, steps, and waterline tile.</span></div></li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><strong>Chemical Testing</strong><span>Test pH, chlorine, alkalinity, and other key levels.</span></div></li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><strong>Chemical Balancing</strong><span>Add necessary chemicals to maintain perfect water quality.</span></div></li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><strong>Equipment Check</strong><span>Inspect pump, filter, and other equipment for proper operation.</span></div></li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div><strong>Service Report</strong><span>Receive an email report with all readings and work performed.</span></div></li>
+                    </ul>
+                </div>
+                <div class="included-visual reveal">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>Weekly Service Photo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tiers-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Service Plans</div>
+                <h2>Choose Your Level of Care</h2>
+                <p>From basic chemical service to comprehensive white-glove care, we have a plan for every pool owner.</p>
+            </div>
+            <div class="tiers-grid">
+                <div class="tier-card reveal">
+                    <h3>Essential</h3>
+                    <div class="tier-price">$150<span>/month</span></div>
+                    <p class="tier-desc">Basic chemical maintenance for hands-on pool owners.</p>
+                    <ul class="tier-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Weekly water testing</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Chemical balancing</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Filter pressure check</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Email service report</li>
+                    </ul>
+                    <a href="/contact/" class="tier-btn tier-btn-primary">Get Started</a>
+                </div>
+                <div class="tier-card featured reveal">
+                    <h3>Complete</h3>
+                    <div class="tier-price">$275<span>/month</span></div>
+                    <p class="tier-desc">Full-service care for pool owners who want to swim, not work.</p>
+                    <ul class="tier-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Everything in Essential</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Skimming and vacuuming</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Brushing walls and tiles</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Basket emptying</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Equipment inspection</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Priority scheduling</li>
+                    </ul>
+                    <a href="/contact/" class="tier-btn tier-btn-gold">Get Started</a>
+                </div>
+                <div class="tier-card reveal">
+                    <h3>Premium</h3>
+                    <div class="tier-price">$400<span>/month</span></div>
+                    <p class="tier-desc">White-glove service for ultimate convenience.</p>
+                    <ul class="tier-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Everything in Complete</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Twice-weekly visits</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Opening and closing included</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Minor repairs included</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>24/7 emergency line</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Dedicated technician</li>
+                    </ul>
+                    <a href="/contact/" class="tier-btn tier-btn-secondary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">FAQ</div>
+                <h2>Common Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question"><h3>How often should my pool be professionally maintained?</h3><div class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+                    <div class="faq-answer"><p>For optimal water quality and equipment health, weekly professional maintenance is recommended during swimming season (typically May through September in the PA/DE region). This ensures consistent chemical balance and catches potential issues early.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question"><h3>What day of the week will you service my pool?</h3><div class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+                    <div class="faq-answer"><p>We assign a regular service day based on your location and our routing. We try to accommodate preferences but maintain consistent routes for efficiency. You will always receive service on the same day each week.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question"><h3>Do I need to be home during service?</h3><div class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+                    <div class="faq-answer"><p>No, you do not need to be home. As long as we have gate access to the pool area, we can complete service while you are away. You will receive a detailed service report via email after each visit.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="reveal">
+                <h2>Start Your Weekly Service</h2>
+                <p>Contact us for a free consultation. We will assess your pool and recommend the right service plan for your needs.</p>
+                <div class="cta-buttons">
+                    <a href="/contact/" class="btn btn-white">Get Started<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="tel:+13025551234" class="btn btn-outline-white"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (302) 555-1234</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="/" class="logo"><div class="logo-mark"></div><div class="logo-text">Tri-State Aquatic<span>Solutions</span></div></a><p>Premium pool installation and maintenance for Main Line Philadelphia and Northern Delaware.</p></div>
+                <div class="footer-column"><h4>Installation</h4><ul><li><a href="/pools/fiberglass/">Fiberglass Pools</a></li><li><a href="/pools/concrete/">Concrete Pools</a></li><li><a href="/pools/plunge/">Plunge Pools</a></li></ul></div>
+                <div class="footer-column"><h4>Maintenance</h4><ul><li><a href="/pool-maintenance/">All Services</a></li><li><a href="/services/pool-opening/">Pool Opening</a></li><li><a href="/services/pool-closing/">Pool Closing</a></li></ul></div>
+                <div class="footer-column"><h4>Contact</h4><ul class="footer-contact"><li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="/contact/">Hockessin, Delaware</a></li><li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13025551234">(302) 555-1234</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved.</p><div class="footer-social"><a href="#"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></a></div></div>
+        </div>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => { revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible'); }); };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        document.querySelector('.mobile-toggle').addEventListener('click', () => { const nav = document.querySelector('.nav-links'); nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex'; });
+        document.querySelectorAll('.faq-question').forEach(q => { q.addEventListener('click', () => { const item = q.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }); });
+    </script>
+</body>
+</html>

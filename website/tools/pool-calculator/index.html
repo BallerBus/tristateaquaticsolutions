@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Cost Calculator | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Estimate your dream pool cost in minutes. Interactive calculator for concrete, fiberglass, and liner pools. Get an instant estimate for your Main Line PA or Delaware backyard transformation.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pool Cost Calculator",
+        "description": "Interactive pool cost estimation tool for homeowners in Main Line PA and Delaware",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Tri-State Aquatic Solutions",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Hockessin",
+                "addressRegion": "DE"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--gray-text);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+            margin-top: 2px;
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover {
+            color: var(--aqua);
+        }
+
+        .nav-back svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/200px repeat;
+        }
+
+        .page-header .container {
+            position: relative;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Calculator Container */
+        .calculator-wrapper {
+            padding: 3rem 0 4rem;
+        }
+
+        .calculator {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+            overflow: hidden;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            display: flex;
+            background: var(--gray-light);
+            padding: 0;
+        }
+
+        .progress-step {
+            flex: 1;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active::after,
+        .progress-step.completed::after {
+            background: var(--aqua);
+        }
+
+        .progress-step.completed {
+            background: rgba(0, 166, 178, 0.05);
+        }
+
+        .progress-step.active {
+            background: rgba(0, 166, 178, 0.1);
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: var(--gray);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-text);
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .step-number,
+        .progress-step.completed .step-number {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--navy);
+        }
+
+        /* Calculator Steps */
+        .calculator-content {
+            padding: 2.5rem;
+        }
+
+        .calc-step {
+            display: none;
+            animation: fadeIn 0.5s var(--ease-out-expo);
+        }
+
+        .calc-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .step-header h2 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-header p {
+            font-size: 1rem;
+        }
+
+        /* Pool Type Cards */
+        .pool-type-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .pool-type-card {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pool-type-card:hover {
+            border-color: var(--aqua);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px -15px rgba(0, 166, 178, 0.25);
+        }
+
+        .pool-type-card.selected {
+            border-color: var(--aqua);
+            background: rgba(0, 166, 178, 0.05);
+        }
+
+        .pool-type-card.selected::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--aqua);
+        }
+
+        .pool-type-card.premium {
+            border-color: var(--gold);
+        }
+
+        .pool-type-card.premium:hover,
+        .pool-type-card.premium.selected {
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px -15px rgba(201, 169, 98, 0.35);
+        }
+
+        .pool-type-card.premium.selected {
+            background: rgba(201, 169, 98, 0.08);
+        }
+
+        .pool-type-card.premium.selected::before {
+            background: var(--gold);
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .tier-badge.premium {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .tier-badge.standard {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .tier-badge.value {
+            background: var(--gray-text);
+            color: var(--white);
+        }
+
+        .pool-type-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .pool-type-card .price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--aqua);
+            margin-bottom: 0.75rem;
+        }
+
+        .pool-type-card.premium .price {
+            color: var(--gold);
+        }
+
+        .pool-type-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .pool-type-image {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pool-type-image svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        /* Size Options */
+        .size-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .size-card {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .size-card:hover {
+            border-color: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .size-card.selected {
+            border-color: var(--aqua);
+            background: rgba(0, 166, 178, 0.08);
+        }
+
+        .size-card h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .size-card .dimensions {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .size-card .modifier {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--aqua);
+        }
+
+        /* Feature Checkboxes */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: var(--aqua);
+        }
+
+        .feature-item.selected {
+            border-color: var(--aqua);
+            background: rgba(0, 166, 178, 0.05);
+        }
+
+        .feature-item.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .feature-item.disabled:hover {
+            border-color: var(--gray);
+        }
+
+        .feature-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gray);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item.selected .feature-checkbox {
+            background: var(--aqua);
+            border-color: var(--aqua);
+        }
+
+        .feature-checkbox svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--white);
+            stroke-width: 3;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .feature-item.selected .feature-checkbox svg {
+            opacity: 1;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-content h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.15rem;
+        }
+
+        .feature-content .feature-price {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--aqua);
+        }
+
+        .feature-content .feature-note {
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            font-style: italic;
+        }
+
+        /* Hardscape Options */
+        .hardscape-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .hardscape-card {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .hardscape-card:hover {
+            border-color: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .hardscape-card.selected {
+            border-color: var(--aqua);
+            background: rgba(0, 166, 178, 0.05);
+        }
+
+        .hardscape-card h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .hardscape-card .price {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--aqua);
+            margin-bottom: 0.5rem;
+        }
+
+        .hardscape-card p {
+            font-size: 0.85rem;
+        }
+
+        /* Results Section */
+        .results-container {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 2rem;
+        }
+
+        .results-main {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-main::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .results-main h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .results-total {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .results-monthly {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .results-monthly h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.25rem;
+        }
+
+        .results-monthly .amount {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .results-monthly .terms {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.25rem;
+        }
+
+        .results-breakdown {
+            position: relative;
+        }
+
+        .results-breakdown h4 {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .breakdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .breakdown-item .label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .breakdown-item .value {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .results-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .results-includes {
+            background: var(--gray-light);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .results-includes h4 {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .includes-list {
+            list-style: none;
+        }
+
+        .includes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .includes-list li svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--aqua);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .results-excludes {
+            background: rgba(201, 169, 98, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(201, 169, 98, 0.2);
+        }
+
+        .results-excludes h4 {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .excludes-list {
+            list-style: none;
+        }
+
+        .excludes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .excludes-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+
+        /* CTA Buttons */
+        .results-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--aqua-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 166, 178, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(201, 169, 98, 0.5);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Navigation Buttons */
+        .calc-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.5rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .nav-btn.prev {
+            background: var(--gray-light);
+            color: var(--navy);
+        }
+
+        .nav-btn.prev:hover {
+            background: var(--gray);
+        }
+
+        .nav-btn.next {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .nav-btn.next:hover {
+            background: var(--aqua);
+            transform: translateX(4px);
+        }
+
+        .nav-btn.next:disabled {
+            background: var(--gray);
+            color: var(--gray-text);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .nav-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Live Price Display */
+        .live-price {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px -10px rgba(14, 31, 52, 0.4);
+            z-index: 50;
+            display: none;
+            animation: slideUp 0.4s var(--ease-out-expo);
+        }
+
+        .live-price.visible {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .live-price-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            margin-bottom: 0.25rem;
+        }
+
+        .live-price-amount {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            nav, .progress-bar, .calc-navigation, .live-price, .results-ctas {
+                display: none !important;
+            }
+
+            .calculator {
+                box-shadow: none;
+            }
+
+            .results-main {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pool-type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .size-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .results-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .progress-bar {
+                flex-wrap: wrap;
+            }
+
+            .progress-step {
+                flex: 1 1 50%;
+            }
+
+            .calculator-content {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hardscape-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .live-price {
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+            }
+
+            .step-label {
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .size-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-step {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="../../index.html" class="nav-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Pool Cost Calculator</h1>
+            <p>Get an instant estimate for your dream pool. Customize your selections and see real-time pricing.</p>
+        </div>
+    </header>
+
+    <!-- Calculator -->
+    <section class="calculator-wrapper">
+        <div class="container">
+            <div class="calculator">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Pool Type</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Size</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Features</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Hardscape</div>
+                    </div>
+                    <div class="progress-step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-label">Results</div>
+                    </div>
+                </div>
+
+                <div class="calculator-content">
+                    <!-- Step 1: Pool Type -->
+                    <div class="calc-step active" data-step="1">
+                        <div class="step-header">
+                            <h2>Select Your Pool Type</h2>
+                            <p>Choose the construction type that best fits your vision and budget.</p>
+                        </div>
+
+                        <div class="pool-type-grid">
+                            <div class="pool-type-card premium" data-type="concrete" data-base="80000">
+                                <div class="pool-type-image">
+                                    <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h12M6 14h12"/></svg>
+                                </div>
+                                <span class="tier-badge premium">Premium</span>
+                                <h3>Concrete Pool</h3>
+                                <div class="price">Starting at $80,000</div>
+                                <p>The pinnacle of pool ownership. Fully customizable shapes, sizes, and finishes with lifetime durability.</p>
+                            </div>
+
+                            <div class="pool-type-card" data-type="fiberglass" data-base="60000">
+                                <div class="pool-type-image">
+                                    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6"/><path d="M2 12c0 3 4.5 6 10 6s10-3 10-6"/></svg>
+                                </div>
+                                <span class="tier-badge standard">Standard</span>
+                                <h3>Fiberglass Pool</h3>
+                                <div class="price">Starting at $60,000</div>
+                                <p>Factory-finished for faster installation and virtually no maintenance. The sweet spot for most families.</p>
+                            </div>
+
+                            <div class="pool-type-card" data-type="liner" data-base="50000">
+                                <div class="pool-type-image">
+                                    <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>
+                                </div>
+                                <span class="tier-badge value">Value</span>
+                                <h3>In-Ground Liner Pool</h3>
+                                <div class="price">Starting at $50,000</div>
+                                <p>Quality in-ground pool ownership at an accessible price. Premium vinyl liner with full installation.</p>
+                            </div>
+                        </div>
+
+                        <div class="calc-navigation">
+                            <div></div>
+                            <button class="nav-btn next" disabled>
+                                Continue to Size
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Pool Size -->
+                    <div class="calc-step" data-step="2">
+                        <div class="step-header">
+                            <h2>Choose Your Pool Size</h2>
+                            <p>Select the size that fits your space and lifestyle.</p>
+                        </div>
+
+                        <div class="size-grid">
+                            <div class="size-card" data-size="compact" data-modifier="0.8">
+                                <h4>Compact</h4>
+                                <div class="dimensions">10-12 ft wide</div>
+                                <div class="modifier">0.8x base price</div>
+                            </div>
+
+                            <div class="size-card" data-size="classic" data-modifier="1.0">
+                                <h4>Classic</h4>
+                                <div class="dimensions">14-16 ft wide</div>
+                                <div class="modifier">Standard pricing</div>
+                            </div>
+
+                            <div class="size-card" data-size="family" data-modifier="1.2">
+                                <h4>Family</h4>
+                                <div class="dimensions">18-20 ft wide</div>
+                                <div class="modifier">1.2x base price</div>
+                            </div>
+
+                            <div class="size-card" data-size="estate" data-modifier="1.5">
+                                <h4>Estate</h4>
+                                <div class="dimensions">22+ ft wide</div>
+                                <div class="modifier">1.5x base price</div>
+                            </div>
+                        </div>
+
+                        <div class="calc-navigation">
+                            <button class="nav-btn prev">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                </svg>
+                                Back
+                            </button>
+                            <button class="nav-btn next" disabled>
+                                Continue to Features
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Features -->
+                    <div class="calc-step" data-step="3">
+                        <div class="step-header">
+                            <h2>Add Premium Features</h2>
+                            <p>Customize your pool with these popular upgrades.</p>
+                        </div>
+
+                        <div class="features-grid">
+                            <div class="feature-item" data-feature="tanning-ledge" data-price="3500">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Tanning Ledge</h4>
+                                    <div class="feature-price">+$3,500</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-item" data-feature="led-lighting" data-price="2500">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>LED Lighting Package</h4>
+                                    <div class="feature-price">+$2,500</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-item" data-feature="heating" data-price="8000">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Heating System</h4>
+                                    <div class="feature-price">+$8,000</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-item" data-feature="auto-cover" data-price="15000">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Automatic Cover</h4>
+                                    <div class="feature-price">+$15,000</div>
+                                    <div class="feature-note concrete-note" style="display: none;">Included with Concrete pools</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-item" data-feature="saltwater" data-price="3000">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Salt Water System</h4>
+                                    <div class="feature-price">+$3,000</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-item" data-feature="smart-controls" data-price="4500">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Smart Pool Controls</h4>
+                                    <div class="feature-price">+$4,500</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-item" data-feature="water-feature" data-price="5000">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Water Feature/Fountain</h4>
+                                    <div class="feature-price">+$5,000</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-item" data-feature="spa" data-price="25000">
+                                <div class="feature-checkbox">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Integrated Spa</h4>
+                                    <div class="feature-price">+$25,000</div>
+                                    <div class="feature-note spa-note" style="display: none;">Concrete pools only</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc-navigation">
+                            <button class="nav-btn prev">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                </svg>
+                                Back
+                            </button>
+                            <button class="nav-btn next">
+                                Continue to Hardscape
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Hardscape -->
+                    <div class="calc-step" data-step="4">
+                        <div class="step-header">
+                            <h2>Select Hardscape Package</h2>
+                            <p>Complete your outdoor oasis with the perfect deck and surround.</p>
+                        </div>
+
+                        <div class="hardscape-grid">
+                            <div class="hardscape-card" data-hardscape="basic" data-price="8000">
+                                <h4>Basic Concrete Deck</h4>
+                                <div class="price">+$8,000</div>
+                                <p>Clean, durable brushed concrete surround. Practical and timeless.</p>
+                            </div>
+
+                            <div class="hardscape-card" data-hardscape="stamped" data-price="15000">
+                                <h4>Stamped Concrete</h4>
+                                <div class="price">+$15,000</div>
+                                <p>Decorative patterns that mimic natural stone at a fraction of the cost.</p>
+                            </div>
+
+                            <div class="hardscape-card" data-hardscape="stone" data-price="25000">
+                                <h4>Natural Stone/Bluestone</h4>
+                                <div class="price">+$25,000</div>
+                                <p>Premium natural materials for an elegant, sophisticated finish.</p>
+                            </div>
+
+                            <div class="hardscape-card" data-hardscape="full" data-price="45000">
+                                <h4>Full Outdoor Living Package</h4>
+                                <div class="price">+$45,000</div>
+                                <p>Complete outdoor kitchen, fire pit, and premium stone throughout.</p>
+                            </div>
+                        </div>
+
+                        <div class="calc-navigation">
+                            <button class="nav-btn prev">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                </svg>
+                                Back
+                            </button>
+                            <button class="nav-btn next" disabled>
+                                View Your Estimate
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Results -->
+                    <div class="calc-step" data-step="5">
+                        <div class="step-header">
+                            <h2>Your Pool Estimate</h2>
+                            <p>Based on your selections, here's your personalized estimate.</p>
+                        </div>
+
+                        <div class="results-container">
+                            <div class="results-main">
+                                <h3>Estimated Total Range</h3>
+                                <div class="results-total" id="totalRange">$78,000 - $92,000</div>
+
+                                <div class="results-monthly">
+                                    <h4>Estimated Monthly Payment</h4>
+                                    <div class="amount" id="monthlyPayment">$927/mo</div>
+                                    <div class="terms">Based on 10-year loan at 7.5% APR</div>
+                                </div>
+
+                                <div class="results-breakdown">
+                                    <h4>Cost Breakdown</h4>
+                                    <div id="breakdownList">
+                                        <!-- Filled by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="results-sidebar">
+                                <div class="results-includes">
+                                    <h4>This Estimate Includes:</h4>
+                                    <ul class="includes-list" id="includesList">
+                                        <!-- Filled by JavaScript -->
+                                    </ul>
+                                </div>
+
+                                <div class="results-excludes">
+                                    <h4>Not Included in Estimate:</h4>
+                                    <ul class="excludes-list">
+                                        <li>Permit fees (varies by municipality)</li>
+                                        <li>Electrical work to pool area</li>
+                                        <li>Landscaping beyond deck area</li>
+                                        <li>Fencing (if required by code)</li>
+                                        <li>Pool furniture and accessories</li>
+                                    </ul>
+                                </div>
+
+                                <div class="results-ctas">
+                                    <a href="../../index.html#contact" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                        </svg>
+                                        Get Your Personalized Quote
+                                    </a>
+                                    <button class="btn btn-secondary" onclick="window.print()">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                                            <rect x="6" y="14" width="12" height="8"/>
+                                        </svg>
+                                        Download Your Estimate
+                                    </button>
+                                    <a href="../../index.html#contact" class="btn btn-gold">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                            <line x1="3" y1="10" x2="21" y2="10"/>
+                                        </svg>
+                                        Schedule Free Consultation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc-navigation">
+                            <button class="nav-btn prev">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                </svg>
+                                Modify Selections
+                            </button>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Price Display -->
+    <div class="live-price" id="livePrice">
+        <div class="live-price-label">Current Estimate</div>
+        <div class="live-price-amount" id="livePriceAmount">$80,000</div>
+    </div>
+
+    <script>
+        // Calculator State
+        const state = {
+            currentStep: 1,
+            poolType: null,
+            basePrice: 0,
+            size: null,
+            sizeModifier: 1,
+            features: [],
+            featuresTotal: 0,
+            hardscape: null,
+            hardscapePrice: 0
+        };
+
+        // DOM Elements
+        const progressSteps = document.querySelectorAll('.progress-step');
+        const calcSteps = document.querySelectorAll('.calc-step');
+        const poolTypeCards = document.querySelectorAll('.pool-type-card');
+        const sizeCards = document.querySelectorAll('.size-card');
+        const featureItems = document.querySelectorAll('.feature-item');
+        const hardscapeCards = document.querySelectorAll('.hardscape-card');
+        const livePrice = document.getElementById('livePrice');
+        const livePriceAmount = document.getElementById('livePriceAmount');
+
+        // Load saved state from localStorage
+        function loadState() {
+            const saved = localStorage.getItem('poolCalculatorState');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    Object.assign(state, parsed);
+                    restoreSelections();
+                } catch (e) {
+                    console.log('Could not load saved state');
+                }
+            }
+        }
+
+        // Save state to localStorage
+        function saveState() {
+            localStorage.setItem('poolCalculatorState', JSON.stringify(state));
+        }
+
+        // Restore UI selections from state
+        function restoreSelections() {
+            // Restore pool type
+            if (state.poolType) {
+                poolTypeCards.forEach(card => {
+                    if (card.dataset.type === state.poolType) {
+                        card.classList.add('selected');
+                    }
+                });
+            }
+
+            // Restore size
+            if (state.size) {
+                sizeCards.forEach(card => {
+                    if (card.dataset.size === state.size) {
+                        card.classList.add('selected');
+                    }
+                });
+            }
+
+            // Restore features
+            if (state.features.length > 0) {
+                featureItems.forEach(item => {
+                    if (state.features.includes(item.dataset.feature)) {
+                        item.classList.add('selected');
+                    }
+                });
+            }
+
+            // Restore hardscape
+            if (state.hardscape) {
+                hardscapeCards.forEach(card => {
+                    if (card.dataset.hardscape === state.hardscape) {
+                        card.classList.add('selected');
+                    }
+                });
+            }
+
+            updateFeatureAvailability();
+            updateNavigationButtons();
+            updateLivePrice();
+        }
+
+        // Navigate to step
+        function goToStep(stepNum) {
+            if (stepNum < 1 || stepNum > 5) return;
+
+            // Validate step transitions
+            if (stepNum > state.currentStep) {
+                if (stepNum === 2 && !state.poolType) return;
+                if (stepNum === 3 && !state.size) return;
+                if (stepNum === 5 && !state.hardscape) return;
+            }
+
+            state.currentStep = stepNum;
+
+            // Update progress bar
+            progressSteps.forEach((step, index) => {
+                const num = index + 1;
+                step.classList.remove('active', 'completed');
+                if (num < stepNum) {
+                    step.classList.add('completed');
+                } else if (num === stepNum) {
+                    step.classList.add('active');
+                }
+            });
+
+            // Show current step
+            calcSteps.forEach(step => {
+                step.classList.remove('active');
+                if (parseInt(step.dataset.step) === stepNum) {
+                    step.classList.add('active');
+                }
+            });
+
+            // Show/hide live price
+            if (stepNum > 1 && stepNum < 5) {
+                livePrice.classList.add('visible');
+            } else {
+                livePrice.classList.remove('visible');
+            }
+
+            // Update results if on step 5
+            if (stepNum === 5) {
+                updateResults();
+            }
+
+            saveState();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Pool Type Selection
+        poolTypeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                poolTypeCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+
+                state.poolType = card.dataset.type;
+                state.basePrice = parseInt(card.dataset.base);
+
+                updateFeatureAvailability();
+                updateNavigationButtons();
+                updateLivePrice();
+                saveState();
+            });
+        });
+
+        // Size Selection
+        sizeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                sizeCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+
+                state.size = card.dataset.size;
+                state.sizeModifier = parseFloat(card.dataset.modifier);
+
+                updateNavigationButtons();
+                updateLivePrice();
+                saveState();
+            });
+        });
+
+        // Feature Selection
+        featureItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('disabled')) return;
+
+                item.classList.toggle('selected');
+
+                const feature = item.dataset.feature;
+                const price = parseInt(item.dataset.price);
+
+                if (item.classList.contains('selected')) {
+                    if (!state.features.includes(feature)) {
+                        state.features.push(feature);
+                        state.featuresTotal += price;
+                    }
+                } else {
+                    const index = state.features.indexOf(feature);
+                    if (index > -1) {
+                        state.features.splice(index, 1);
+                        state.featuresTotal -= price;
+                    }
+                }
+
+                updateLivePrice();
+                saveState();
+            });
+        });
+
+        // Hardscape Selection
+        hardscapeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                hardscapeCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+
+                state.hardscape = card.dataset.hardscape;
+                state.hardscapePrice = parseInt(card.dataset.price);
+
+                updateNavigationButtons();
+                updateLivePrice();
+                saveState();
+            });
+        });
+
+        // Update feature availability based on pool type
+        function updateFeatureAvailability() {
+            const autoCoverItem = document.querySelector('[data-feature="auto-cover"]');
+            const spaItem = document.querySelector('[data-feature="spa"]');
+            const concreteNote = document.querySelector('.concrete-note');
+            const spaNote = document.querySelector('.spa-note');
+
+            if (state.poolType === 'concrete') {
+                // Auto cover is included with concrete
+                autoCoverItem.classList.add('disabled');
+                autoCoverItem.classList.remove('selected');
+                concreteNote.style.display = 'block';
+
+                // Remove from features if selected
+                const coverIndex = state.features.indexOf('auto-cover');
+                if (coverIndex > -1) {
+                    state.features.splice(coverIndex, 1);
+                    state.featuresTotal -= 15000;
+                }
+
+                // Spa is available for concrete
+                spaItem.classList.remove('disabled');
+                spaNote.style.display = 'none';
+            } else {
+                // Auto cover is available for non-concrete
+                autoCoverItem.classList.remove('disabled');
+                concreteNote.style.display = 'none';
+
+                // Spa is only for concrete
+                spaItem.classList.add('disabled');
+                spaItem.classList.remove('selected');
+                spaNote.style.display = 'block';
+
+                // Remove spa from features if selected
+                const spaIndex = state.features.indexOf('spa');
+                if (spaIndex > -1) {
+                    state.features.splice(spaIndex, 1);
+                    state.featuresTotal -= 25000;
+                }
+            }
+        }
+
+        // Update navigation buttons
+        function updateNavigationButtons() {
+            const step1Next = document.querySelector('[data-step="1"] .nav-btn.next');
+            const step2Next = document.querySelector('[data-step="2"] .nav-btn.next');
+            const step4Next = document.querySelector('[data-step="4"] .nav-btn.next');
+
+            if (step1Next) step1Next.disabled = !state.poolType;
+            if (step2Next) step2Next.disabled = !state.size;
+            if (step4Next) step4Next.disabled = !state.hardscape;
+        }
+
+        // Calculate total
+        function calculateTotal() {
+            let baseWithSize = state.basePrice * state.sizeModifier;
+            let total = baseWithSize + state.featuresTotal + state.hardscapePrice;
+
+            // Add included auto cover for concrete
+            if (state.poolType === 'concrete') {
+                // Auto cover already included in base price for concrete
+            }
+
+            return Math.round(total);
+        }
+
+        // Update live price display
+        function updateLivePrice() {
+            const total = calculateTotal();
+            livePriceAmount.textContent = formatCurrency(total);
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        // Calculate monthly payment
+        function calculateMonthlyPayment(principal, annualRate, years) {
+            const monthlyRate = annualRate / 12;
+            const numPayments = years * 12;
+            const payment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+            return Math.round(payment);
+        }
+
+        // Update results page
+        function updateResults() {
+            const total = calculateTotal();
+            const lowRange = Math.round(total * 0.9);
+            const highRange = Math.round(total * 1.1);
+            const monthly = calculateMonthlyPayment(total, 0.075, 10);
+
+            // Update total range
+            document.getElementById('totalRange').textContent =
+                `${formatCurrency(lowRange)} - ${formatCurrency(highRange)}`;
+
+            // Update monthly payment
+            document.getElementById('monthlyPayment').textContent =
+                `${formatCurrency(monthly)}/mo`;
+
+            // Build breakdown
+            const breakdownList = document.getElementById('breakdownList');
+            breakdownList.innerHTML = '';
+
+            // Pool base
+            const poolTypeNames = {
+                'concrete': 'Concrete Pool',
+                'fiberglass': 'Fiberglass Pool',
+                'liner': 'In-Ground Liner Pool'
+            };
+            const sizeNames = {
+                'compact': 'Compact',
+                'classic': 'Classic',
+                'family': 'Family',
+                'estate': 'Estate'
+            };
+
+            const baseWithSize = Math.round(state.basePrice * state.sizeModifier);
+            addBreakdownItem(breakdownList, `${poolTypeNames[state.poolType]} (${sizeNames[state.size]})`, baseWithSize);
+
+            // Features
+            if (state.features.length > 0) {
+                state.features.forEach(feature => {
+                    const item = document.querySelector(`[data-feature="${feature}"]`);
+                    const name = item.querySelector('h4').textContent;
+                    const price = parseInt(item.dataset.price);
+                    addBreakdownItem(breakdownList, name, price);
+                });
+            }
+
+            // Included auto cover for concrete
+            if (state.poolType === 'concrete') {
+                addBreakdownItem(breakdownList, 'Automatic Safety Cover (Included)', 0);
+            }
+
+            // Hardscape
+            const hardscapeNames = {
+                'basic': 'Basic Concrete Deck',
+                'stamped': 'Stamped Concrete',
+                'stone': 'Natural Stone/Bluestone',
+                'full': 'Full Outdoor Living Package'
+            };
+            addBreakdownItem(breakdownList, hardscapeNames[state.hardscape], state.hardscapePrice);
+
+            // Build includes list
+            const includesList = document.getElementById('includesList');
+            includesList.innerHTML = '';
+
+            const baseIncludes = [
+                'Professional installation',
+                'All necessary equipment',
+                '1-2 years pool maintenance',
+                'Permit coordination',
+                'Hardscape design consultation',
+                'Equipment training'
+            ];
+
+            baseIncludes.forEach(item => {
+                addIncludesItem(includesList, item);
+            });
+
+            // Add selected features
+            state.features.forEach(feature => {
+                const item = document.querySelector(`[data-feature="${feature}"]`);
+                const name = item.querySelector('h4').textContent;
+                addIncludesItem(includesList, name);
+            });
+
+            // Add concrete-specific includes
+            if (state.poolType === 'concrete') {
+                addIncludesItem(includesList, 'Automatic Safety Cover');
+                addIncludesItem(includesList, 'Automated ORP/pH Treatment');
+            }
+        }
+
+        function addBreakdownItem(container, label, value) {
+            const item = document.createElement('div');
+            item.className = 'breakdown-item';
+            item.innerHTML = `
+                <span class="label">${label}</span>
+                <span class="value">${value === 0 ? 'Included' : formatCurrency(value)}</span>
+            `;
+            container.appendChild(item);
+        }
+
+        function addIncludesItem(container, text) {
+            const item = document.createElement('li');
+            item.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                ${text}
+            `;
+            container.appendChild(item);
+        }
+
+        // Navigation button handlers
+        document.querySelectorAll('.nav-btn.next').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.disabled) {
+                    goToStep(state.currentStep + 1);
+                }
+            });
+        });
+
+        document.querySelectorAll('.nav-btn.prev').forEach(btn => {
+            btn.addEventListener('click', () => {
+                goToStep(state.currentStep - 1);
+            });
+        });
+
+        // Progress step click handlers
+        progressSteps.forEach(step => {
+            step.addEventListener('click', () => {
+                const targetStep = parseInt(step.dataset.step);
+                if (targetStep <= state.currentStep || step.classList.contains('completed')) {
+                    goToStep(targetStep);
+                }
+            });
+        });
+
+        // Initialize
+        loadState();
+        updateNavigationButtons();
+
+        // If there's saved state, go to the appropriate step
+        if (state.currentStep > 1) {
+            goToStep(state.currentStep);
+        }
+    </script>
+</body>
+</html>

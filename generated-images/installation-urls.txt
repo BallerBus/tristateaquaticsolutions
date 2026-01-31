@@ -1,0 +1,39 @@
+Tri-State Aquatic Solutions - Generated Images
+Generated: 2026-01-31
+Model: gemini-3-pro-image-preview
+
+=== INSTALLATION PROCESS IMAGES (16:9) ===
+
+1. Fiberglass Installation - Crane lowering fiberglass pool shell
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/e90e774c52efb7582f94f1e80ef5988c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141551Z&X-Amz-Expires=3600&X-Amz-Signature=5887c8d400582b33331a96b1be0f9538b32f37f48ec42c8a9af58c744c745bc1&X-Amz-SignedHeaders=host
+
+2. Concrete Construction - Gunite being sprayed onto rebar pool shell
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/39f28c50cc61e2ff74b0a9cb98dbae8e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141551Z&X-Amz-Expires=3600&X-Amz-Signature=ef1df2d1c149101f56896c2741e06c30e076ac18a16b6ac4d77e13198d0c8a58&X-Amz-SignedHeaders=host
+
+3. Plunge Pool Installation - Compact excavation for plunge pool
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/4b880a8a32c9a76661d4d1d3af2a9d00?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141553Z&X-Amz-Expires=3600&X-Amz-Signature=4ad9f3f75fa36682d83c05b655c8290ee3b68f64a8e74a3fbe2d93ee42342592&X-Amz-SignedHeaders=host
+
+
+=== FIBERGLASS GALLERY IMAGES (3:2) ===
+
+4. Fiberglass Gallery 1 - Large fiberglass pool with tanning ledge, Villanova PA estate, evening twilight
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/1496033f092aff5de2fc35b8beba8b72?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141624Z&X-Amz-Expires=3600&X-Amz-Signature=62a6839234dacefccc19d99068fe8949dea5b88ae4d782e6228718d0b73621f3&X-Amz-SignedHeaders=host
+
+5. Fiberglass Gallery 2 - Fiberglass pool with integrated spillover spa, Hockessin DE, daytime
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/940a91da40571960a6cbd4ed8988c8b0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141624Z&X-Amz-Expires=3600&X-Amz-Signature=96b9219cf879d3b0460d2c1f90143fe70bb0c02bf02a7de25e1a6e77ee8b0821&X-Amz-SignedHeaders=host
+
+6. Fiberglass Gallery 3 - Evening lit fiberglass pool with LED color changing lights, Haverford PA
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/0dd87bbf6377dbed18f4fec4db4253ec?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141626Z&X-Amz-Expires=3600&X-Amz-Signature=1dd901fdf204f791c618fb5cd33bd824e7b6ff454d9b4a08feb39161bbac15e5&X-Amz-SignedHeaders=host
+
+7. Fiberglass Gallery 4 - Family fiberglass pool with extensive deck, West Chester PA, afternoon
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/fb67a6a753e1dfb3f241174ed2f86bb1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141657Z&X-Amz-Expires=3600&X-Amz-Signature=56440b81a5bbefdbb93a785494d3f08088e6ee4aa699a51968837266501cc950&X-Amz-SignedHeaders=host
+
+8. Fiberglass Gallery 5 - Clean modern fiberglass installation, Greenville DE, fresh completion
+   URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/69802fb7521055cfbf184ff79787e522?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141654Z&X-Amz-Expires=3600&X-Amz-Signature=b36d380a0dde64dfab78b8f126995b60ea8f3d28ed0c583ac3c841e710c3a117&X-Amz-SignedHeaders=host
+
+
+=== NOTES ===
+- All URLs are presigned and expire after 1 hour (3600 seconds)
+- Download images promptly if long-term storage is needed
+- Installation images use 16:9 aspect ratio (widescreen)
+- Gallery images use 3:2 aspect ratio (standard photography)

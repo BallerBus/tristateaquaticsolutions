@@ -1,0 +1,440 @@
+<!--
+Calculator Results Email Capture Component
+Captures lead after pool cost calculator results
+
+USAGE:
+After calculator shows results, call:
+showCalculatorEmailCapture(estimateData);
+
+Where estimateData contains:
+- lowEstimate: number
+- highEstimate: number
+- poolType: string
+- poolSize: string
+- features: array
+-->
+
+<style>
+/* Calculator Email Capture Overlay */
+.calc-email-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(14, 31, 52, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.calc-email-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.calc-email-modal {
+    background: #FFFFFF;
+    border-radius: 24px;
+    max-width: 480px;
+    width: 100%;
+    transform: scale(0.95);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+}
+
+.calc-email-overlay.active .calc-email-modal {
+    transform: scale(1);
+}
+
+.calc-email-header {
+    background: linear-gradient(135deg, #00A6B2 0%, #008a94 100%);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.calc-email-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 50% 50% 0 0;
+}
+
+.calc-email-estimate {
+    position: relative;
+    z-index: 1;
+}
+
+.calc-email-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.calc-email-amount {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.calc-email-amount-range {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 0.5rem;
+}
+
+.calc-email-body {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.calc-email-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0E1F34;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.calc-email-subtitle {
+    font-size: 0.95rem;
+    color: #6B7280;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.calc-email-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.calc-email-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #0E1F34;
+}
+
+.calc-email-benefit svg {
+    width: 20px;
+    height: 20px;
+    stroke: #00A6B2;
+    stroke-width: 2;
+    fill: none;
+    flex-shrink: 0;
+}
+
+.calc-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.calc-email-form input {
+    padding: 0.9rem 1rem;
+    border: 1.5px solid #E8ECF1;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calc-email-form input:focus {
+    outline: none;
+    border-color: #00A6B2;
+    box-shadow: 0 0 0 3px rgba(0, 166, 178, 0.15);
+}
+
+.calc-email-submit {
+    background: #0E1F34;
+    color: #FFFFFF;
+    border: none;
+    padding: 1rem;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.calc-email-submit:hover {
+    background: #00A6B2;
+    transform: translateY(-2px);
+}
+
+.calc-email-submit svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
+.calc-email-skip {
+    background: none;
+    border: none;
+    color: #6B7280;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    transition: color 0.3s ease;
+}
+
+.calc-email-skip:hover {
+    color: #0E1F34;
+}
+
+.calc-email-disclaimer {
+    font-size: 0.7rem;
+    color: #6B7280;
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+/* Success State */
+.calc-email-success {
+    display: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+.calc-email-success.show {
+    display: block;
+}
+
+.calc-email-success-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #00A6B2 0%, #008a94 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.calc-email-success-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #FFFFFF;
+    stroke-width: 2.5;
+    fill: none;
+}
+
+.calc-email-success h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    color: #0E1F34;
+    margin: 0 0 0.5rem;
+}
+
+.calc-email-success p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .calc-email-modal {
+        border-radius: 20px;
+    }
+
+    .calc-email-header {
+        padding: 1.5rem;
+    }
+
+    .calc-email-amount {
+        font-size: 2rem;
+    }
+
+    .calc-email-body {
+        padding: 1rem 1.5rem 1.5rem;
+    }
+}
+</style>
+
+<!-- Calculator Email Capture Modal -->
+<div class="calc-email-overlay" id="calcEmailOverlay">
+    <div class="calc-email-modal" role="dialog" aria-modal="true" aria-labelledby="calcEmailTitle">
+        <div class="calc-email-header">
+            <div class="calc-email-estimate">
+                <p class="calc-email-label">Your Estimated Investment</p>
+                <div class="calc-email-amount" id="calcEmailAmount">$75,000 - $95,000</div>
+                <p class="calc-email-amount-range" id="calcEmailDetails">Fiberglass Pool | 16x32</p>
+            </div>
+        </div>
+
+        <div class="calc-email-body">
+            <div id="calcEmailFormContainer">
+                <h3 class="calc-email-title" id="calcEmailTitle">Email Yourself This Estimate</h3>
+                <p class="calc-email-subtitle">Get a detailed breakdown plus tips to maximize your budget</p>
+
+                <div class="calc-email-benefits">
+                    <div class="calc-email-benefit">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Complete cost breakdown by category
+                    </div>
+                    <div class="calc-email-benefit">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Hidden costs most buyers miss
+                    </div>
+                    <div class="calc-email-benefit">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Save money tips from local experts
+                    </div>
+                </div>
+
+                <form class="calc-email-form" id="calcEmailForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+
+                    <button type="submit" class="calc-email-submit">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Send My Estimate
+                    </button>
+                </form>
+
+                <button class="calc-email-skip" id="calcEmailSkip">No thanks, I'll note it down</button>
+
+                <p class="calc-email-disclaimer">
+                    We respect your privacy. Unsubscribe anytime.
+                </p>
+            </div>
+
+            <div class="calc-email-success" id="calcEmailSuccess">
+                <div class="calc-email-success-icon">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h3>Estimate Sent!</h3>
+                <p>Check your inbox for your detailed cost breakdown.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    const overlay = document.getElementById('calcEmailOverlay');
+    const form = document.getElementById('calcEmailForm');
+    const formContainer = document.getElementById('calcEmailFormContainer');
+    const successEl = document.getElementById('calcEmailSuccess');
+    const skipBtn = document.getElementById('calcEmailSkip');
+    const amountEl = document.getElementById('calcEmailAmount');
+    const detailsEl = document.getElementById('calcEmailDetails');
+
+    let estimateData = null;
+
+    // Format currency
+    function formatCurrency(num) {
+        return '$' + num.toLocaleString();
+    }
+
+    // Show the modal
+    window.showCalculatorEmailCapture = function(data) {
+        estimateData = data;
+
+        // Update display
+        amountEl.textContent = `${formatCurrency(data.lowEstimate)} - ${formatCurrency(data.highEstimate)}`;
+        detailsEl.textContent = `${data.poolType} Pool | ${data.poolSize}`;
+
+        // Show modal
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    // Hide the modal
+    function hideModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = {
+            name: this.querySelector('[name="name"]').value,
+            email: this.querySelector('[name="email"]').value,
+            source: 'calculator-email-capture',
+            estimate: estimateData,
+            timestamp: new Date().toISOString()
+        };
+
+        // Store lead
+        const leads = JSON.parse(localStorage.getItem('tsas_leads') || '[]');
+        leads.push(formData);
+        localStorage.setItem('tsas_leads', JSON.stringify(leads));
+
+        // Track user info
+        localStorage.setItem('tsas_user_email', formData.email);
+        localStorage.setItem('tsas_user_name', formData.name);
+        localStorage.setItem('tsas_calculator_estimate', JSON.stringify(estimateData));
+
+        // Show success
+        formContainer.style.display = 'none';
+        successEl.classList.add('show');
+
+        // Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'lead_capture', {
+                'event_category': 'Calculator',
+                'event_label': 'Email Estimate',
+                'value': Math.round((estimateData.lowEstimate + estimateData.highEstimate) / 2)
+            });
+        }
+
+        // Close after delay
+        setTimeout(hideModal, 2500);
+    });
+
+    // Skip button
+    skipBtn.addEventListener('click', hideModal);
+
+    // Click outside to close
+    overlay.addEventListener('click', function(e) {
+        if (e.target === this) {
+            hideModal();
+        }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            hideModal();
+        }
+    });
+})();
+</script>

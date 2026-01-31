@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Components Guide | Tri-State Aquatic Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --aqua: #00A6B2;
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--aqua);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--aqua);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-text);
+        }
+
+        .intro {
+            margin-bottom: 2rem;
+        }
+
+        .component-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08);
+        }
+
+        .component-card h3 {
+            margin-top: 0;
+            color: var(--navy);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .badge-lead { background: rgba(0, 166, 178, 0.15); color: var(--aqua); }
+        .badge-urgency { background: rgba(201, 169, 98, 0.15); color: var(--gold); }
+        .badge-social { background: rgba(14, 31, 52, 0.1); color: var(--navy); }
+
+        code {
+            background: var(--gray-light);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: 'SF Mono', 'Consolas', monospace;
+        }
+
+        pre {
+            background: var(--navy);
+            color: #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .file-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .file-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-list li:last-child { border-bottom: none; }
+
+        .file-path {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: var(--aqua);
+        }
+
+        .file-desc {
+            color: var(--gray-text);
+            font-size: 0.85rem;
+        }
+
+        .note {
+            background: rgba(201, 169, 98, 0.1);
+            border-left: 4px solid var(--gold);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+
+        .note p { margin: 0; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversion Components Guide</h1>
+        <p class="intro">Reusable lead capture and conversion optimization components for the Tri-State Aquatic Solutions website. Each component is self-contained with HTML, CSS, and JavaScript.</p>
+
+        <h2>Component Overview</h2>
+
+        <div class="component-card">
+            <span class="badge badge-lead">Lead Capture</span>
+            <h3>Exit Intent Popup</h3>
+            <p>Triggers when user moves their mouse to leave the page. Offers a free cost estimate in exchange for contact info.</p>
+            <p><strong>File:</strong> <code>/components/exit-intent-popup.html</code></p>
+            <p><strong>Behavior:</strong></p>
+            <ul>
+                <li>Detects mouse leaving viewport (desktop) or rapid scroll-up (mobile)</li>
+                <li>Shows once per 7 days (localStorage tracking)</li>
+                <li>Smooth fade/scale animation</li>
+                <li>Accessible with keyboard support</li>
+            </ul>
+        </div>
+
+        <div class="component-card">
+            <span class="badge badge-urgency">Urgency</span>
+            <h3>Seasonal Banner</h3>
+            <p>Top-of-page banner with countdown timer. Creates urgency around seasonal installation deadlines.</p>
+            <p><strong>File:</strong> <code>/components/seasonal-banner.html</code></p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Countdown to target date (March 15, 2026 for Memorial Day swim)</li>
+                <li>Dismissible (respects for 3 days)</li>
+                <li>Responsive design</li>
+                <li>Gold accent highlighting</li>
+            </ul>
+        </div>
+
+        <div class="component-card">
+            <span class="badge badge-social">Social Proof</span>
+            <h3>Social Proof Popup</h3>
+            <p>Subtle notifications showing recent activity from other visitors.</p>
+            <p><strong>File:</strong> <code>/components/social-proof-popup.html</code></p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Rotates through sample activities (quotes, downloads)</li>
+                <li>Non-intrusive positioning (bottom-left)</li>
+                <li>Auto-dismisses after 6 seconds</li>
+                <li>Progress bar indicator</li>
+                <li>Can be permanently disabled by user</li>
+            </ul>
+        </div>
+
+        <div class="component-card">
+            <span class="badge badge-lead">Lead Capture</span>
+            <h3>Calculator Email Capture</h3>
+            <p>Appears after pool cost calculator shows results. Offers to email the detailed breakdown.</p>
+            <p><strong>File:</strong> <code>/components/calculator-email-capture.html</code></p>
+            <p><strong>Usage:</strong></p>
+            <pre><code>showCalculatorEmailCapture({
+    lowEstimate: 75000,
+    highEstimate: 95000,
+    poolType: 'Fiberglass',
+    poolSize: '16x32',
+    features: ['heating', 'lighting']
+});</code></pre>
+        </div>
+
+        <div class="component-card">
+            <span class="badge badge-lead">Lead Capture</span>
+            <h3>Quiz Lead Capture</h3>
+            <p>Gate for pool quiz results. Shows a preview of the recommendation and requires email for full results.</p>
+            <p><strong>File:</strong> <code>/components/quiz-lead-capture.html</code></p>
+            <p><strong>Usage:</strong></p>
+            <pre><code>showQuizLeadCapture({
+    recommendedPool: 'Fiberglass Pool',
+    matchScore: 95,
+    budgetRange: '$60,000 - $100,000',
+    priorityFeatures: ['Low Maintenance', 'Quick Install']
+}, function(data) {
+    // Callback to show full results
+    showFullQuizResults(data);
+});</code></pre>
+        </div>
+
+        <div class="component-card">
+            <span class="badge badge-lead">Lead Capture</span>
+            <h3>Sticky Mobile CTA</h3>
+            <p>Fixed bottom bar on mobile devices with call and quote buttons.</p>
+            <p><strong>File:</strong> <code>/components/sticky-mobile-cta.html</code></p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Only shows on screens 768px or smaller</li>
+                <li>Hides on scroll-down, shows on scroll-up</li>
+                <li>Expandable form for quick quote requests</li>
+                <li>Tracks phone call clicks</li>
+                <li>Respects safe-area-inset for notched devices</li>
+            </ul>
+        </div>
+
+        <h2>Integration Guide</h2>
+
+        <h3>Basic Integration</h3>
+        <p>To add components to a page, include them before the closing <code>&lt;/body&gt;</code> tag:</p>
+
+        <pre><code>&lt;!-- Before &lt;/body&gt; --&gt;
+
+&lt;!-- Seasonal Banner (top of page - move after &lt;nav&gt;) --&gt;
+&lt;!-- Copy content from seasonal-banner.html --&gt;
+
+&lt;!-- Exit Intent Popup --&gt;
+&lt;!-- Copy content from exit-intent-popup.html --&gt;
+
+&lt;!-- Social Proof Popup --&gt;
+&lt;!-- Copy content from social-proof-popup.html --&gt;
+
+&lt;!-- Sticky Mobile CTA --&gt;
+&lt;!-- Copy content from sticky-mobile-cta.html --&gt;
+
+&lt;/body&gt;</code></pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> Each component is self-contained. The CSS and JavaScript are included inline to avoid additional HTTP requests. For production, you may want to extract and bundle them.</p>
+        </div>
+
+        <h3>Lead Data Storage</h3>
+        <p>All components store captured leads in localStorage under the key <code>tsas_leads</code>. Each lead includes:</p>
+        <ul>
+            <li><code>source</code> - Which component captured the lead</li>
+            <li><code>timestamp</code> - ISO date string</li>
+            <li>Form field data (name, email, phone, etc.)</li>
+            <li>Context data (quiz results, calculator estimates, etc.)</li>
+        </ul>
+
+        <h3>Analytics Events</h3>
+        <p>Components fire Google Analytics events when configured. Make sure <code>gtag</code> is available:</p>
+        <pre><code>// Event fired on lead capture
+gtag('event', 'lead_capture', {
+    'event_category': 'Exit Intent',
+    'event_label': 'Free Estimate',
+    'value': 1
+});</code></pre>
+
+        <h2>Files Reference</h2>
+        <ul class="file-list">
+            <li>
+                <span class="file-path">/components/exit-intent-popup.html</span>
+                <span class="file-desc">Exit intent overlay</span>
+            </li>
+            <li>
+                <span class="file-path">/components/seasonal-banner.html</span>
+                <span class="file-desc">Urgency countdown banner</span>
+            </li>
+            <li>
+                <span class="file-path">/components/social-proof-popup.html</span>
+                <span class="file-desc">Activity notifications</span>
+            </li>
+            <li>
+                <span class="file-path">/components/calculator-email-capture.html</span>
+                <span class="file-desc">Post-calculator lead form</span>
+            </li>
+            <li>
+                <span class="file-path">/components/quiz-lead-capture.html</span>
+                <span class="file-desc">Quiz results gate</span>
+            </li>
+            <li>
+                <span class="file-path">/components/sticky-mobile-cta.html</span>
+                <span class="file-desc">Mobile fixed CTA bar</span>
+            </li>
+            <li>
+                <span class="file-path">/resources/pool-planning-checklist/index.html</span>
+                <span class="file-desc">Checklist landing page</span>
+            </li>
+            <li>
+                <span class="file-path">/resources/pool-planning-checklist/checklist.html</span>
+                <span class="file-desc">Printable checklist</span>
+            </li>
+            <li>
+                <span class="file-path">/resources/pool-buyers-guide/index.html</span>
+                <span class="file-desc">Buyer's guide landing page</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

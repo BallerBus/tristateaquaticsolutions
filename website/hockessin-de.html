@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Builder Hockessin DE | Your Local Pool Installation Experts | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Hockessin's hometown pool builder. Tri-State Aquatic Solutions is based right here in Hockessin, Delaware. Premium concrete, fiberglass, and in-ground liner pools. Your neighbors building your dream backyard.">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquatic.com/hockessin-de">
+    <meta property="og:title" content="Pool Builder Hockessin DE | Your Hometown Pool Installation Experts">
+    <meta property="og:description" content="Tri-State Aquatic Solutions is proudly based in Hockessin, Delaware. We're not just your pool builders - we're your neighbors. Premium pool installation for the community we call home.">
+    <meta property="og:image" content="https://tristateaquatic.com/images/hockessin-pool-hero.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pool Builder Hockessin DE | Your Hometown Pool Installation Experts">
+    <meta name="twitter:description" content="Tri-State Aquatic Solutions is proudly based in Hockessin, Delaware. Premium pool installation from your neighbors.">
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="US-DE">
+    <meta name="geo.placename" content="Hockessin">
+    <meta name="geo.position" content="39.7876;-75.6966">
+    <meta name="ICBM" content="39.7876, -75.6966">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquatic.com/hockessin-de">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            display: none;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .cursor {
+                display: block;
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                border: 1.5px solid var(--aqua);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.15s var(--ease-out-expo),
+                            opacity 0.15s ease,
+                            background 0.15s ease;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: difference;
+            }
+
+            .cursor.hovering {
+                transform: translate(-50%, -50%) scale(2);
+                background: var(--aqua);
+                border-color: var(--aqua);
+            }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        nav.scrolled .logo {
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        nav.scrolled .logo-text span {
+            color: var(--gray-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav.scrolled .nav-links a {
+            color: var(--navy);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--aqua);
+            transition: width 0.3s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--aqua);
+            color: var(--white) !important;
+            padding: 0.85rem 1.75rem !important;
+            border-radius: 100px;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--navy) !important;
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled .mobile-toggle span {
+            background: var(--navy);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(14,31,52,0.85) 0%, rgba(14,31,52,0.6) 100%),
+                        linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            right: -50%;
+            background: radial-gradient(ellipse at center, var(--aqua-glow) 0%, transparent 60%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-5%, 3%) rotate(2deg); }
+            66% { transform: translate(3%, -2%) rotate(-1deg); }
+        }
+
+        .hero-waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath fill='%2300A6B2' fill-opacity='0.08' d='M0,60 C300,120 600,0 900,60 C1200,120 1200,120 1200,120 L0,120 Z'/%3E%3C/svg%3E") repeat-x;
+            background-size: 50% 100%;
+            animation: wave 25s linear infinite;
+        }
+
+        .wave:nth-child(2) {
+            bottom: 10px;
+            opacity: 0.5;
+            animation-duration: 20s;
+            animation-direction: reverse;
+        }
+
+        .wave:nth-child(3) {
+            bottom: 20px;
+            opacity: 0.3;
+            animation-duration: 30s;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 8rem 0 6rem;
+            color: var(--white);
+        }
+
+        .hero-location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.25rem 0.6rem 0.6rem;
+            border-radius: 100px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--white);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.2s both;
+        }
+
+        .hero-location-badge .badge-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-location-badge .badge-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--navy);
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.3s both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--aqua);
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.15rem, 2vw, 1.35rem);
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.4s both;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(201, 169, 98, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Hometown Section */
+        .hometown {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .hometown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hometown-content {
+            position: relative;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--aqua);
+        }
+
+        .hometown-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hometown-content > p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .hometown-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hometown-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .hometown-item-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hometown-item-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .hometown-item-content h4 {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--navy);
+        }
+
+        .hometown-item-content p {
+            font-size: 0.95rem;
+        }
+
+        .hometown-visual {
+            position: relative;
+        }
+
+        .hometown-image-container {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+        }
+
+        .hometown-image-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hometown-image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--aqua);
+            stroke-width: 1;
+            fill: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .hometown-image-placeholder span {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        .hometown-badge {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            width: 150px;
+            height: 150px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            text-align: center;
+            box-shadow: 0 20px 50px -15px rgba(201, 169, 98, 0.5);
+        }
+
+        .hometown-badge-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hometown-badge-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--navy);
+        }
+
+        .hometown-badge-text {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        /* Trust Signals */
+        .trust-bar {
+            background: var(--navy);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--aqua), transparent);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .trust-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trust-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .trust-item h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-item p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Pool Tiers Section */
+        .pool-tiers {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            background: var(--gray-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tier-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: visible;
+            transition: all 0.5s var(--ease-out-expo);
+            border: 2px solid transparent;
+        }
+
+        .tier-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--aqua), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s var(--ease-out-expo);
+        }
+
+        .tier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .tier-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tier-card.tier-premium {
+            border-color: var(--gold);
+        }
+
+        .tier-card.tier-standard {
+            border-color: var(--aqua);
+        }
+
+        .tier-card.tier-value {
+            border-color: #6B7280;
+        }
+
+        .tier-label {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .tier-premium .tier-label {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .tier-standard .tier-label {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .tier-value .tier-label {
+            background: #6B7280;
+            color: var(--white);
+        }
+
+        .tier-card h3 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .tier-price {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tier-premium .tier-price {
+            color: var(--gold);
+        }
+
+        .tier-standard .tier-price {
+            color: var(--aqua);
+        }
+
+        .tier-value .tier-price {
+            color: #6B7280;
+        }
+
+        .tier-card p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tier-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .tier-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .tier-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .tier-premium .tier-features li::before {
+            background: var(--gold);
+        }
+
+        .tier-standard .tier-features li::before {
+            background: var(--aqua);
+        }
+
+        .tier-value .tier-features li::before {
+            background: #6B7280;
+        }
+
+        /* Included badge for feature lists */
+        .included-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 100px;
+            margin-left: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        /* Local Area Section */
+        .local-area {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            background: var(--white);
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .local-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .local-content > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .local-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .local-highlight {
+            padding: 1.5rem;
+            background: var(--gray-light);
+            border-radius: 16px;
+        }
+
+        .local-highlight h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .local-highlight p {
+            font-size: 0.9rem;
+        }
+
+        .local-map {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: var(--gray-light);
+        }
+
+        .local-map-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .local-map-placeholder svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .local-map-placeholder h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .local-map-placeholder p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .service-radius {
+            margin-top: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: rgba(0, 166, 178, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-radius svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        .service-radius span {
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--navy);
+            color: var(--white);
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+        }
+
+        .process .section-header {
+            color: var(--white);
+        }
+
+        .process .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--aqua), var(--gold));
+            opacity: 0.3;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--aqua);
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .process-step:hover .step-number {
+            background: var(--aqua);
+            color: var(--navy);
+            transform: scale(1.1);
+        }
+
+        .process-step h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            background: var(--gray-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .testimonial-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: var(--aqua);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .testimonial-card.featured .testimonial-quote {
+            position: relative;
+            top: auto;
+            right: auto;
+            font-size: 8rem;
+            opacity: 0.2;
+            margin-bottom: -3rem;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-rating svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gold);
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--navy);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-card.featured .testimonial-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .testimonial-info h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .testimonial-card.featured .testimonial-info h4 {
+            color: var(--white);
+        }
+
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .testimonial-card.featured .testimonial-info span {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .testimonial-location {
+            color: var(--aqua);
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/300px repeat;
+            animation: float 30s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            text-align: center;
+            color: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        .btn-cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+        .cta-trust {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .cta-trust-item svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-contact svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hometown-grid,
+            .local-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hometown-visual,
+            .local-map {
+                order: -1;
+            }
+
+            .hometown-badge {
+                bottom: -20px;
+                left: 20px;
+                width: 120px;
+                height: 120px;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card.featured {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial-card.featured .testimonial-quote {
+                font-size: 5rem;
+                margin-bottom: -1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .local-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-trust {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animations on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+    </style>
+
+    <!-- Schema.org Local Business Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tri-State Aquatic Solutions",
+        "image": "https://tristateaquatic.com/images/logo.png",
+        "description": "Premium pool installation services in Hockessin, Delaware. Specializing in concrete, fiberglass, and in-ground liner pools for Northern Delaware and the Tri-State area.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hockessin",
+            "addressLocality": "Hockessin",
+            "addressRegion": "DE",
+            "postalCode": "19707",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.7876,
+            "longitude": -75.6966
+        },
+        "url": "https://tristateaquatic.com/hockessin-de",
+        "telephone": "+1-302-555-1234",
+        "email": "info@tristateaquatic.com",
+        "priceRange": "$50,000 - $130,000",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "14:00"
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Hockessin",
+                "containedIn": "Delaware"
+            },
+            {
+                "@type": "City",
+                "name": "Wilmington",
+                "containedIn": "Delaware"
+            },
+            {
+                "@type": "City",
+                "name": "Greenville",
+                "containedIn": "Delaware"
+            },
+            {
+                "@type": "City",
+                "name": "Newark",
+                "containedIn": "Delaware"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/tristateaquatic",
+            "https://www.instagram.com/tristateaquatic"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#pools">Our Pools</a></li>
+                <li><a href="#why-local">Why Local</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-waves">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-location-badge">
+                <div class="badge-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                Proudly Based in Hockessin, Delaware
+            </div>
+            <h1>Your <em>Neighbors</em> Building Your <span class="gold">Dream Pool</span></h1>
+            <p class="hero-subtitle">Tri-State Aquatic Solutions is headquartered right here in Hockessin. We're not a national chain sending contractors from out of state. We live here, work here, and build pools for the community we call home.</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary">
+                    Schedule Free Consultation
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#pools" class="btn btn-secondary">
+                    View Pool Options
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item reveal">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h4>Hockessin-Based</h4>
+                    <p>We live and work in your community</p>
+                </div>
+                <div class="trust-item reveal reveal-delay-1">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Owner-Operated</h4>
+                    <p>Work directly with the principals</p>
+                </div>
+                <div class="trust-item reveal reveal-delay-2">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h4>BBB Accredited</h4>
+                    <p>Committed to trust and integrity</p>
+                </div>
+                <div class="trust-item reveal reveal-delay-3">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h4>2-4 Week Install</h4>
+                    <p>Your pool, faster than you'd expect</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hometown Section -->
+    <section class="hometown" id="why-local">
+        <div class="container">
+            <div class="hometown-grid">
+                <div class="hometown-content reveal">
+                    <div class="section-tag">Your Hockessin Pool Builder</div>
+                    <h2>We're Not Just in Delaware. We <em>Are</em> Delaware.</h2>
+                    <p>When you work with Tri-State Aquatic Solutions, you're working with your neighbors. Our office is here in Hockessin. Our team members live in neighborhoods just like yours. We shop at the same stores, attend the same community events, and care about this area because it's our home too.</p>
+
+                    <div class="hometown-list">
+                        <div class="hometown-item">
+                            <div class="hometown-item-icon">
+                                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <div class="hometown-item-content">
+                                <h4>We Know Hockessin Properties</h4>
+                                <p>From the rolling hills to the clay soil conditions, we understand the unique challenges and opportunities of building pools in our area.</p>
+                            </div>
+                        </div>
+                        <div class="hometown-item">
+                            <div class="hometown-item-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div class="hometown-item-content">
+                                <h4>Our Reputation is Our Livelihood</h4>
+                                <p>In a tight-knit community like Hockessin, word travels fast. We stake our reputation on every single project because our neighbors are our clients.</p>
+                            </div>
+                        </div>
+                        <div class="hometown-item">
+                            <div class="hometown-item-icon">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            </div>
+                            <div class="hometown-item-content">
+                                <h4>Always Available, Always Responsive</h4>
+                                <p>No call centers, no runaround. When you call us, you reach people who know your project and care about getting it right.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">
+                        Meet Your Local Team
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="hometown-visual reveal reveal-delay-1">
+                    <div class="hometown-image-container">
+                        <div class="hometown-image-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Local Hockessin Pool Project</span>
+                        </div>
+                    </div>
+                    <div class="hometown-badge">
+                        <div class="hometown-badge-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        </div>
+                        <div class="hometown-badge-text">Hockessin<br>Headquartered</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pool Tiers Section -->
+    <section class="pool-tiers" id="pools">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Pool Installation Hockessin Delaware</div>
+                <h2>Three Tiers, One Standard of Excellence</h2>
+                <p>Every pool we install in Hockessin and Northern Delaware is built to the same exacting standards. Choose the tier that fits your vision and budget.</p>
+            </div>
+            <div class="tiers-grid">
+                <div class="tier-card tier-premium reveal">
+                    <div class="tier-label">Premium</div>
+                    <h3>Concrete Pool</h3>
+                    <div class="tier-price">$80,000 - $130,000</div>
+                    <p>The pinnacle of pool ownership. Custom concrete construction with every luxury feature included as standard.</p>
+                    <ul class="tier-features">
+                        <li>Integrated spa option available</li>
+                        <li>Automatic safety cover <span class="included-badge">Included</span></li>
+                        <li>Automated ORP/pH water treatment <span class="included-badge">Included</span></li>
+                        <li>Lifetime durability, longest warranty</li>
+                        <li>Completely custom shape and size</li>
+                        <li>Tanning ledge available as upgrade</li>
+                    </ul>
+                </div>
+                <div class="tier-card tier-standard reveal reveal-delay-1">
+                    <div class="tier-label">Standard</div>
+                    <h3>Fiberglass Pool</h3>
+                    <div class="tier-price">$60,000 - $100,000</div>
+                    <p>The sweet spot for most Hockessin families. Factory-finished fiberglass means faster installation and virtually no maintenance.</p>
+                    <ul class="tier-features">
+                        <li>Installed in 2-4 weeks</li>
+                        <li>Smooth, algae-resistant surface</li>
+                        <li>50+ colors and finishes</li>
+                        <li>Excellent warranty coverage</li>
+                        <li>50% lower lifetime maintenance</li>
+                        <li>Tanning ledge available as upgrade</li>
+                    </ul>
+                </div>
+                <div class="tier-card tier-value reveal reveal-delay-2">
+                    <div class="tier-label">Value</div>
+                    <h3>In-Ground Liner Pool</h3>
+                    <div class="tier-price">$50,000 - $80,000</div>
+                    <p>Quality in-ground pool ownership at an accessible price point. Full in-ground installation with premium vinyl liner.</p>
+                    <ul class="tier-features">
+                        <li>True in-ground installation</li>
+                        <li>Premium vinyl liner finish</li>
+                        <li>Most accessible price point</li>
+                        <li>Hardscape integration available</li>
+                        <li>Flexible design options</li>
+                        <li>Tanning ledge available as upgrade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Area Section -->
+    <section class="local-area">
+        <div class="container">
+            <div class="local-grid">
+                <div class="local-content reveal">
+                    <div class="section-tag">Serving Northern Delaware</div>
+                    <h2>Deep Roots in Delaware</h2>
+                    <p>From historic Hockessin to the rolling estates of Greenville, from Wilmington's Brandywine neighborhoods to the family communities of Newark, we've been building pools for Delaware families for years.</p>
+                    <p>Our knowledge of local soil conditions, township regulations, and neighborhood architectural standards means your project moves smoothly from permit to completion.</p>
+
+                    <div class="local-highlights">
+                        <div class="local-highlight">
+                            <h4>New Castle County Permits</h4>
+                            <p>We handle all permitting and inspections with the county offices we know well.</p>
+                        </div>
+                        <div class="local-highlight">
+                            <h4>Local Soil Expertise</h4>
+                            <p>Delaware's clay-heavy soil requires specific techniques we've mastered.</p>
+                        </div>
+                        <div class="local-highlight">
+                            <h4>HOA Coordination</h4>
+                            <p>Experience with community associations throughout the region.</p>
+                        </div>
+                        <div class="local-highlight">
+                            <h4>Delaware Advantage</h4>
+                            <p>No sales tax on materials means better value for your investment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="local-map reveal reveal-delay-1">
+                    <div class="local-map-placeholder">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <h4>Hockessin, Delaware</h4>
+                        <p>Our Home Base</p>
+                        <div class="service-radius">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                            <span>Serving Hockessin, Wilmington, Greenville, Newark, Pike Creek, and all of Northern Delaware</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Process</div>
+                <h2>From Dream to Dive</h2>
+                <p>A seamless journey from your first call to your first splash, guided by your Hockessin neighbors every step of the way.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We visit your Hockessin home, discuss your vision, assess your space, and explore possibilities together.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Receive a detailed proposal with pool options, features, and transparent pricing tailored to your goals.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="step-number">3</div>
+                    <h3>Installation</h3>
+                    <p>Our local team handles permits, excavation, and installation with minimal disruption to your life.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-3">
+                    <div class="step-number">4</div>
+                    <h3>Enjoy</h3>
+                    <p>Dive into your new oasis with full training, warranty protection, and our ongoing local support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">What Hockessin Says</div>
+                <h2>Our Neighbors Speak</h2>
+                <p>Don't just take our word for it. Hear from Hockessin families who transformed their backyards with us.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card featured reveal">
+                    <div>
+                        <div class="testimonial-quote">"</div>
+                    </div>
+                    <div>
+                        <div class="testimonial-rating">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        </div>
+                        <p class="testimonial-text">"We considered several builders but chose Tri-State because they're local. The team knew exactly how to handle the permitting process with New Castle County, and they were at our house within hours whenever we had questions. The pool was installed in just three weeks!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RT</div>
+                            <div class="testimonial-info">
+                                <h4>Robert T.</h4>
+                                <span class="testimonial-location">Hockessin, DE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Living in Greenville, we wanted a builder who understood the character of our neighborhood. Tri-State delivered a beautiful concrete pool that complements our historic property perfectly."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MD</div>
+                        <div class="testimonial-info">
+                            <h4>Margaret D.</h4>
+                            <span>Greenville, DE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The fiberglass pool has been incredibly low maintenance, exactly as they promised. We've recommended them to three other families in Pike Creek already."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JK</div>
+                        <div class="testimonial-info">
+                            <h4>James K.</h4>
+                            <span>Pike Creek, DE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content reveal">
+                <div class="section-tag">Get Started</div>
+                <h2>Ready to Transform Your Hockessin Backyard?</h2>
+                <p>Schedule your free design consultation with your local pool experts. We'll visit your home, discuss your vision, and show you what's possible.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+13025551234" class="btn btn-cta-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call (302) 555-1234
+                    </a>
+                    <a href="mailto:info@tristateaquatic.com" class="btn btn-cta-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email Us
+                    </a>
+                </div>
+                <div class="cta-trust">
+                    <div class="cta-trust-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Based in Hockessin, DE</span>
+                    </div>
+                    <div class="cta-trust-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Owner-Operated</span>
+                    </div>
+                    <div class="cta-trust-item">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>BBB Accredited</span>
+                    </div>
+                    <div class="cta-trust-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>Free Consultation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: var(--white);">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium pool installation for Hockessin, Delaware and Northern Delaware. Proudly headquartered in Hockessin, building pools for the community we call home.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#pools">Concrete Pools</a></li>
+                        <li><a href="#pools">Fiberglass Pools</a></li>
+                        <li><a href="#pools">In-Ground Liner Pools</a></li>
+                        <li><a href="index.html">Pool Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Areas Served</h4>
+                    <ul>
+                        <li><a href="#">Hockessin, DE</a></li>
+                        <li><a href="#">Wilmington, DE</a></li>
+                        <li><a href="#">Greenville, DE</a></li>
+                        <li><a href="#">Newark, DE</a></li>
+                        <li><a href="#">Pike Creek, DE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <a href="#">Hockessin, Delaware</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+13025551234">(302) 555-1234</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@tristateaquatic.com">info@tristateaquatic.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved. DE Contractor License #DE123456</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+        }
+
+        // Navigation scroll effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

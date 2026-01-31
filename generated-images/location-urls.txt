@@ -1,0 +1,97 @@
+# Tri-State Aquatic Solutions - Location Hero Images
+# Generated: 2026-01-31
+# Format: 16:9, 2K resolution
+# Model: gemini-3-pro-image-preview
+# Note: These URLs are temporary (1 hour expiry). Download and re-upload to permanent storage.
+
+================================================================================
+1. MAIN LINE ESTATE POOL
+--------------------------------------------------------------------------------
+Description: Quintessential Philadelphia Main Line luxury home with pool, stone exterior, mature landscaping
+Use for: Ardmore, Bryn Mawr, Haverford, Gladwyne, Villanova, Wayne, Radnor areas
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/5c27655546687ace472eb4ac78f0e85c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141609Z&X-Amz-Expires=3600&X-Amz-Signature=40e65bf2e410a11c91f4c4f2760b985b1267a33af8d133ea26125e5bf1a1633d&X-Amz-SignedHeaders=host
+
+================================================================================
+2. DELAWARE MODERN POOL
+--------------------------------------------------------------------------------
+Description: Contemporary Delaware home with sleek modern pool design, clean lines
+Use for: Wilmington, Newark, Greenville, Hockessin, Delaware Beach areas
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/f2061e6050b5f711d1f716f2329d9d04?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141611Z&X-Amz-Expires=3600&X-Amz-Signature=404bcea2954ebc9a0c27b9092bc88f558c5e65a09aa5c7eb309ee3453b6e7a8f&X-Amz-SignedHeaders=host
+
+================================================================================
+3. SUBURBAN FAMILY POOL
+--------------------------------------------------------------------------------
+Description: Classic suburban backyard pool, family-oriented, patio furniture, green lawn
+Use for: General suburban areas, King of Prussia, Exton, West Chester, Media, Springfield
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/49cf20eb96cfb6022eef94af8e85519f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141608Z&X-Amz-Expires=3600&X-Amz-Signature=b67324a66e60c40e1709b1958a0c7da1a52eb3988620319bc662dc11c36af0e3&X-Amz-SignedHeaders=host
+
+================================================================================
+4. SMALL LOT PLUNGE POOL
+--------------------------------------------------------------------------------
+Description: Efficient plunge pool in compact backyard, urban/townhouse setting
+Use for: Philadelphia city, Center City, Fishtown, Manayunk, urban NJ/DE areas
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/854d0d236d1e8530ee1aacb8d274af49?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141609Z&X-Amz-Expires=3600&X-Amz-Signature=ca9cf07ca2ae719362703dc5a87487238efc6d21faae2975f7ee65c7d249f00d&X-Amz-SignedHeaders=host
+
+================================================================================
+5. HISTORIC PROPERTY POOL
+--------------------------------------------------------------------------------
+Description: Pool complementing historic Pennsylvania architecture, period-appropriate landscaping
+Use for: Doylestown, New Hope, Newtown, Chadds Ford, historic Chester County areas
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/bf12894b1376a29c5bbee9295c265edd?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141637Z&X-Amz-Expires=3600&X-Amz-Signature=1853efd55b5ff318c731f7b09c46a9507a7c5d60a9e7288cff42238f13371fba&X-Amz-SignedHeaders=host
+
+================================================================================
+6. CONTEMPORARY DESIGN POOL
+--------------------------------------------------------------------------------
+Description: Ultra-modern pool with geometric design, minimalist landscaping
+Use for: Modern/luxury developments, Cherry Hill, Moorestown, upscale new construction areas
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/086c01bc71a281e04f4d69fe5dabac77?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141631Z&X-Amz-Expires=3600&X-Amz-Signature=44f7b61e3a5428c0b203150e3bbfa7a7a7b9d5a5b76ecc8ec7b1b28c208bc3cc&X-Amz-SignedHeaders=host
+
+================================================================================
+7. RESORT BACKYARD POOL
+--------------------------------------------------------------------------------
+Description: Backyard transformed into resort-style retreat, multiple features, outdoor living
+Use for: Premium service pages, luxury markets, Malvern, Devon, Collegeville
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/4c23b3b6258c555c0c025ced02886a4a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141632Z&X-Amz-Expires=3600&X-Amz-Signature=8f4f10834b83a4e7bb31e7508ca1565e321f3c424f4f9085761e92663e50b68b&X-Amz-SignedHeaders=host
+
+================================================================================
+8. EVENING ENTERTAINING POOL
+--------------------------------------------------------------------------------
+Description: Pool lit at twilight with guests enjoying outdoor space, lifestyle shot
+Use for: Entertainment/lifestyle focused pages, upscale neighborhoods, social areas
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/e4eb7ce5e4e3082efc71a46045649f05?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141633Z&X-Amz-Expires=3600&X-Amz-Signature=fc6331b6aee8ea5d4c82c4a03040aa74aca08b6212e28110663ee1672c9df691&X-Amz-SignedHeaders=host
+
+================================================================================
+# USAGE RECOMMENDATIONS FOR LOCATION PAGES
+================================================================================
+
+Pennsylvania Main Line Areas:
+- Ardmore, Bryn Mawr, Gladwyne, Haverford, Villanova, Wayne, Radnor
+- Use: Main Line Estate Pool (1)
+
+Delaware Locations:
+- Wilmington, Newark, Greenville, Hockessin
+- Use: Delaware Modern Pool (2)
+
+General Suburban PA/NJ:
+- King of Prussia, Exton, West Chester, Media, Springfield, Lansdale
+- Use: Suburban Family Pool (3)
+
+Urban/City Locations:
+- Philadelphia, Center City, Fishtown, Manayunk
+- Use: Small Lot Plunge Pool (4)
+
+Historic Towns:
+- Doylestown, New Hope, Newtown, Chadds Ford, Kennett Square
+- Use: Historic Property Pool (5)
+
+Modern Developments:
+- Cherry Hill, Moorestown, Princeton area, new construction communities
+- Use: Contemporary Design Pool (6)
+
+Luxury Markets:
+- Devon, Malvern, Collegeville, Gwynedd Valley
+- Use: Resort Backyard Pool (7)
+
+Lifestyle/Entertainment Focus:
+- Any upscale area emphasizing outdoor entertaining
+- Use: Evening Entertaining Pool (8)

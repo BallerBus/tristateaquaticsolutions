@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Financing Calculator | Tri-State Aquatic Solutions | Main Line PA & Delaware</title>
+    <meta name="description" content="Calculate your monthly pool payments with our interactive financing calculator. See affordable payment options for your dream pool in Main Line PA and Delaware.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Financing Calculator | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Calculate your monthly pool payments. See how affordable your dream pool can be with flexible financing options.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquatic.com/tools/financing-calculator/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pool Financing Calculator",
+        "description": "Interactive calculator to estimate monthly payments for pool financing",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Tri-State Aquatic Solutions",
+            "telephone": "+1-302-555-1234",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Hockessin",
+                "addressRegion": "DE"
+            }
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tristateaquatic.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financing",
+                "item": "https://tristateaquatic.com/financing/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Financing Calculator",
+                "item": "https://tristateaquatic.com/tools/financing-calculator/"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --green: #10B981;
+            --green-light: rgba(16, 185, 129, 0.1);
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+        }
+
+        a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--aqua);
+            transition: width 0.3s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 0.85rem 1.75rem !important;
+            border-radius: 100px;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            margin-top: 80px;
+            background: var(--gray-light);
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-list a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        .breadcrumb-list span {
+            color: var(--gray-text);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .page-hero h1 { margin-bottom: 0.75rem; }
+
+        .page-hero-subtitle {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--gray-text);
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            padding: clamp(3rem, 6vw, 5rem) 0;
+            background: var(--white);
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Input Panel */
+        .calculator-inputs {
+            background: var(--gray-light);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .input-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .input-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+        }
+
+        .input-label label {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1rem;
+        }
+
+        .input-label .value {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--aqua);
+        }
+
+        .input-label .value.small {
+            font-size: 1.25rem;
+        }
+
+        /* Custom Slider */
+        .slider-container {
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--gray);
+            outline: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--navy);
+            cursor: pointer;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 12px rgba(14, 31, 52, 0.3);
+            transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(14, 31, 52, 0.4);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--navy);
+            cursor: pointer;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 12px rgba(14, 31, 52, 0.3);
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        /* Preset Buttons */
+        .preset-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .preset-btn {
+            padding: 0.6rem 1.25rem;
+            border: 2px solid var(--gray);
+            background: var(--white);
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--navy);
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .preset-btn:hover {
+            border-color: var(--aqua);
+            color: var(--aqua);
+        }
+
+        .preset-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* Term Buttons */
+        .term-buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+        }
+
+        .term-btn {
+            padding: 0.75rem 0.5rem;
+            border: 2px solid var(--gray);
+            background: var(--white);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--navy);
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            text-align: center;
+        }
+
+        .term-btn span {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--gray-text);
+            margin-top: 2px;
+        }
+
+        .term-btn:hover {
+            border-color: var(--aqua);
+        }
+
+        .term-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        .term-btn.active span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Rate Note */
+        .rate-note {
+            background: var(--aqua-glow);
+            border: 1px solid rgba(0, 166, 178, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .rate-note strong {
+            color: var(--aqua);
+        }
+
+        /* Results Panel */
+        .calculator-results {
+            position: sticky;
+            top: 100px;
+        }
+
+        .results-card {
+            background: var(--navy);
+            border-radius: 24px;
+            padding: 2.5rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-card::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .results-primary {
+            position: relative;
+            text-align: center;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .results-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .monthly-payment {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--aqua);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .daily-amount {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .daily-amount strong {
+            color: var(--gold);
+        }
+
+        /* Breakdown */
+        .results-breakdown {
+            position: relative;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .breakdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .breakdown-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        .breakdown-value {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .breakdown-item.total .breakdown-label,
+        .breakdown-item.total .breakdown-value {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .comparison-title {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+
+        .comparison-item .name {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .comparison-item .amount {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .comparison-item.pool-payment {
+            background: var(--aqua-glow);
+            margin: 0 -0.75rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        .comparison-item.pool-payment .name {
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        .comparison-item.pool-payment .amount {
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        /* Affordability Check */
+        .affordability-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .affordability-title {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .income-input-wrapper {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .income-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .income-input:focus {
+            border-color: var(--aqua);
+        }
+
+        .income-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .affordability-result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .affordability-result.good {
+            background: var(--green-light);
+        }
+
+        .affordability-result.warning {
+            background: rgba(251, 191, 36, 0.1);
+        }
+
+        .affordability-result .icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .affordability-result.good .icon {
+            color: var(--green);
+        }
+
+        .affordability-result.warning .icon {
+            color: #F59E0B;
+        }
+
+        .affordability-result .text {
+            font-size: 0.9rem;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background: var(--gray-light);
+            padding: clamp(3rem, 6vw, 5rem) 0;
+        }
+
+        .partners-section .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 0.75rem;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .partner-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--gray);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(14, 31, 52, 0.15);
+            border-color: var(--aqua);
+        }
+
+        .partner-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .partner-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.75rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .pre-approval-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        .pre-approval-note strong {
+            color: var(--aqua);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            padding: clamp(3rem, 6vw, 5rem) 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .btn-white:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-outline-white:hover {
+            background: var(--white);
+            color: var(--aqua);
+            border-color: var(--white);
+            text-decoration: none;
+        }
+
+        .cta-contact {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-contact a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Print Styles */
+        .print-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+        }
+
+        .print-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover { color: var(--white); }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-contact svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-results {
+                position: static;
+            }
+
+            .term-buttons {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .term-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .preset-buttons {
+                justify-content: center;
+            }
+
+            .monthly-payment {
+                font-size: 3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, .breadcrumb, .partners-section, .cta-section, footer, .print-btn, .affordability-section {
+                display: none !important;
+            }
+
+            .page-hero {
+                margin-top: 0;
+                padding: 1rem 0;
+            }
+
+            .calculator-section {
+                padding: 1rem 0;
+            }
+
+            .calculator-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .calculator-inputs, .results-card {
+                border: 1px solid #ccc;
+                box-shadow: none;
+            }
+
+            .results-card {
+                background: #f5f5f5 !important;
+                color: #000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .results-card * {
+                color: #000 !important;
+            }
+
+            .monthly-payment {
+                color: #00A6B2 !important;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/financing/">Financing</a></li>
+                <li><a href="/faq/">FAQ</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="/financing/">Financing</a></li>
+                <li><span>/</span></li>
+                <li><span>Payment Calculator</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Pool Financing Calculator</h1>
+            <p class="page-hero-subtitle">See exactly what your dream pool will cost per month. Adjust the sliders and watch your payment update in real-time.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <!-- Input Panel -->
+                <div class="calculator-inputs reveal">
+                    <!-- Pool Investment Amount -->
+                    <div class="input-group">
+                        <div class="input-label">
+                            <label for="pool-amount">Pool Investment Amount</label>
+                            <span class="value" id="amount-display">$85,000</span>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="pool-amount" min="45000" max="200000" value="85000" step="1000">
+                        </div>
+                        <div class="slider-labels">
+                            <span>$45,000</span>
+                            <span>$200,000</span>
+                        </div>
+                        <div class="preset-buttons">
+                            <button class="preset-btn" data-amount="65000">$65K</button>
+                            <button class="preset-btn active" data-amount="85000">$85K</button>
+                            <button class="preset-btn" data-amount="100000">$100K</button>
+                            <button class="preset-btn" data-amount="130000">$130K</button>
+                        </div>
+                    </div>
+
+                    <!-- Loan Term -->
+                    <div class="input-group">
+                        <div class="input-label">
+                            <label>Loan Term</label>
+                            <span class="value small" id="term-display">12 years</span>
+                        </div>
+                        <div class="term-buttons">
+                            <button class="term-btn" data-term="60">5 yr<span>60 mo</span></button>
+                            <button class="term-btn" data-term="84">7 yr<span>84 mo</span></button>
+                            <button class="term-btn" data-term="120">10 yr<span>120 mo</span></button>
+                            <button class="term-btn active" data-term="144">12 yr<span>144 mo</span></button>
+                            <button class="term-btn" data-term="180">15 yr<span>180 mo</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Interest Rate -->
+                    <div class="input-group">
+                        <div class="input-label">
+                            <label for="interest-rate">Interest Rate (APR)</label>
+                            <span class="value small" id="rate-display">7.99%</span>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="interest-rate" min="5.9" max="12.9" value="7.99" step="0.1">
+                        </div>
+                        <div class="slider-labels">
+                            <span>5.9%</span>
+                            <span>12.9%</span>
+                        </div>
+                        <div class="rate-note">
+                            <strong>Rates as low as 5.9%</strong> with excellent credit. Your rate depends on credit score, loan amount, and term length.
+                        </div>
+                    </div>
+
+                    <!-- Down Payment -->
+                    <div class="input-group">
+                        <div class="input-label">
+                            <label for="down-payment">Down Payment (Optional)</label>
+                            <span class="value small" id="down-display">$0 (0%)</span>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="down-payment" min="0" max="30" value="0" step="1">
+                        </div>
+                        <div class="slider-labels">
+                            <span>0%</span>
+                            <span>30%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="calculator-results reveal">
+                    <div class="results-card">
+                        <div class="results-primary">
+                            <div class="results-label">Estimated Monthly Payment</div>
+                            <div class="monthly-payment" id="monthly-payment">$785</div>
+                            <div class="daily-amount">Less than <strong id="daily-amount">$26</strong> per day</div>
+                        </div>
+
+                        <div class="results-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Loan Amount</span>
+                                <span class="breakdown-value" id="loan-amount">$85,000</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Down Payment</span>
+                                <span class="breakdown-value" id="down-amount">$0</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Total Interest</span>
+                                <span class="breakdown-value" id="total-interest">$28,040</span>
+                            </div>
+                            <div class="breakdown-item total">
+                                <span class="breakdown-label">Total Cost</span>
+                                <span class="breakdown-value" id="total-cost">$113,040</span>
+                            </div>
+                        </div>
+
+                        <!-- Comparison Section -->
+                        <div class="comparison-section">
+                            <div class="comparison-title">Your Pool Payment Compared To</div>
+                            <div class="comparison-item pool-payment">
+                                <span class="name">Your Pool</span>
+                                <span class="amount" id="compare-pool">$785/mo</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="name">Average Car Payment</span>
+                                <span class="amount">$700/mo</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="name">Family Gym Membership</span>
+                                <span class="amount">$150/mo</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="name">Vacation Budget</span>
+                                <span class="amount">$400/mo</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="name">Family Dining Out</span>
+                                <span class="amount">$500/mo</span>
+                            </div>
+                        </div>
+
+                        <!-- Affordability Check -->
+                        <div class="affordability-section">
+                            <div class="affordability-title">Affordability Check</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 1rem;">Most lenders recommend your pool payment be less than 10% of monthly income.</p>
+                            <div class="income-input-wrapper">
+                                <input type="text" class="income-input" id="monthly-income" placeholder="Enter monthly income">
+                            </div>
+                            <div class="affordability-result" id="affordability-result" style="display: none;">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span class="text" id="affordability-text"></span>
+                            </div>
+                        </div>
+
+                        <button class="print-btn" onclick="window.print()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                            Print Summary
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Apply Now</div>
+                <h2>Our Financing Partners</h2>
+                <p style="color: var(--gray-text);">Get pre-approved in minutes with our trusted lending partners.</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card reveal">
+                    <div class="partner-logo">Lyon Financial</div>
+                    <p>Pool financing specialists with 40+ years experience. Rates from 6.99% APR.</p>
+                    <a href="https://www.lyonfinancial.net/" target="_blank" rel="noopener" class="btn btn-primary">
+                        Apply Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+                <div class="partner-card reveal">
+                    <div class="partner-logo">HFS Financial</div>
+                    <p>Multiple lender network for competitive rates. Rates from 5.99% APR.</p>
+                    <a href="https://www.hfsfinancial.net/" target="_blank" rel="noopener" class="btn btn-primary">
+                        Apply Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+            </div>
+            <p class="pre-approval-note"><strong>Get pre-approved in minutes</strong> - most decisions within 24-48 hours</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Make It Real?</h2>
+            <p>Schedule your free design consultation and let us show you what is possible for your backyard.</p>
+            <div class="cta-buttons">
+                <a href="/contact/" class="btn btn-white">
+                    Schedule Consultation
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="tel:+13025551234" class="btn btn-outline-white">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call (302) 555-1234
+                </a>
+            </div>
+            <p class="cta-contact">Questions about financing? <a href="mailto:info@tristateaquatic.com">Email us</a> or call anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium fiberglass, concrete, and vinyl liner pool installation for Main Line Philadelphia and Northern Delaware. Crafted for the life you love.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/#services">Fiberglass Pools</a></li>
+                        <li><a href="/#services">Concrete Pools</a></li>
+                        <li><a href="/#services">Vinyl Liner Pools</a></li>
+                        <li><a href="/#services">Pool Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/#process">Our Process</a></li>
+                        <li><a href="/faq/">FAQ</a></li>
+                        <li><a href="/financing/">Financing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <a href="/contact/">Hockessin, Delaware</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+13025551234">(302) 555-1234</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@tristateaquatic.com">info@tristateaquatic.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved. PA HIC #PA123456 | DE License #DE789012</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Calculator State
+        const state = {
+            poolAmount: 85000,
+            loanTerm: 144,
+            interestRate: 7.99,
+            downPaymentPercent: 0
+        };
+
+        // DOM Elements
+        const poolAmountSlider = document.getElementById('pool-amount');
+        const interestRateSlider = document.getElementById('interest-rate');
+        const downPaymentSlider = document.getElementById('down-payment');
+        const amountDisplay = document.getElementById('amount-display');
+        const termDisplay = document.getElementById('term-display');
+        const rateDisplay = document.getElementById('rate-display');
+        const downDisplay = document.getElementById('down-display');
+        const monthlyPaymentEl = document.getElementById('monthly-payment');
+        const dailyAmountEl = document.getElementById('daily-amount');
+        const loanAmountEl = document.getElementById('loan-amount');
+        const downAmountEl = document.getElementById('down-amount');
+        const totalInterestEl = document.getElementById('total-interest');
+        const totalCostEl = document.getElementById('total-cost');
+        const comparePoolEl = document.getElementById('compare-pool');
+        const monthlyIncomeInput = document.getElementById('monthly-income');
+        const affordabilityResult = document.getElementById('affordability-result');
+        const affordabilityText = document.getElementById('affordability-text');
+
+        // Format currency
+        function formatCurrency(value, showCents = false) {
+            if (showCents) {
+                return '$' + value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            }
+            return '$' + Math.round(value).toLocaleString('en-US');
+        }
+
+        // Calculate monthly payment using amortization formula
+        function calculateMonthlyPayment(principal, annualRate, months) {
+            if (annualRate === 0) return principal / months;
+            const monthlyRate = annualRate / 100 / 12;
+            const payment = principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+            return payment;
+        }
+
+        // Animate number change
+        function animateValue(element, start, end, duration = 300) {
+            const startTime = performance.now();
+            const isUp = end > start;
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = start + (end - start) * easeOut;
+                element.textContent = formatCurrency(Math.round(current));
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        // Update all calculations
+        function updateCalculations() {
+            const downPaymentAmount = state.poolAmount * (state.downPaymentPercent / 100);
+            const loanAmount = state.poolAmount - downPaymentAmount;
+            const monthlyPayment = calculateMonthlyPayment(loanAmount, state.interestRate, state.loanTerm);
+            const totalPayments = monthlyPayment * state.loanTerm;
+            const totalInterest = totalPayments - loanAmount;
+            const totalCost = state.poolAmount + totalInterest;
+            const dailyAmount = monthlyPayment / 30;
+
+            // Update displays with animation
+            const currentPayment = parseInt(monthlyPaymentEl.textContent.replace(/[$,]/g, '')) || 0;
+            animateValue(monthlyPaymentEl, currentPayment, monthlyPayment);
+
+            dailyAmountEl.textContent = formatCurrency(dailyAmount);
+            loanAmountEl.textContent = formatCurrency(loanAmount);
+            downAmountEl.textContent = formatCurrency(downPaymentAmount);
+            totalInterestEl.textContent = formatCurrency(totalInterest);
+            totalCostEl.textContent = formatCurrency(totalCost);
+            comparePoolEl.textContent = formatCurrency(monthlyPayment) + '/mo';
+
+            // Update affordability check if income is entered
+            checkAffordability();
+        }
+
+        // Check affordability
+        function checkAffordability() {
+            const incomeStr = monthlyIncomeInput.value.replace(/[$,]/g, '');
+            const income = parseFloat(incomeStr);
+
+            if (!income || isNaN(income)) {
+                affordabilityResult.style.display = 'none';
+                return;
+            }
+
+            const downPaymentAmount = state.poolAmount * (state.downPaymentPercent / 100);
+            const loanAmount = state.poolAmount - downPaymentAmount;
+            const monthlyPayment = calculateMonthlyPayment(loanAmount, state.interestRate, state.loanTerm);
+            const paymentPercent = (monthlyPayment / income) * 100;
+
+            affordabilityResult.style.display = 'flex';
+
+            if (paymentPercent <= 10) {
+                affordabilityResult.className = 'affordability-result good';
+                affordabilityResult.querySelector('.icon').innerHTML = '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>';
+                affordabilityText.textContent = `Great! Your pool payment would be ${paymentPercent.toFixed(1)}% of your monthly income, which is within the recommended 10% guideline.`;
+            } else {
+                affordabilityResult.className = 'affordability-result warning';
+                affordabilityResult.querySelector('.icon').innerHTML = '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>';
+                affordabilityText.textContent = `Your pool payment would be ${paymentPercent.toFixed(1)}% of your monthly income. Consider a longer term or larger down payment to reduce your monthly payment.`;
+            }
+        }
+
+        // Update slider background gradient
+        function updateSliderBackground(slider) {
+            const min = parseFloat(slider.min);
+            const max = parseFloat(slider.max);
+            const val = parseFloat(slider.value);
+            const percentage = ((val - min) / (max - min)) * 100;
+            slider.style.background = `linear-gradient(to right, #00A6B2 0%, #00A6B2 ${percentage}%, #E8ECF1 ${percentage}%, #E8ECF1 100%)`;
+        }
+
+        // Event Listeners
+        poolAmountSlider.addEventListener('input', (e) => {
+            state.poolAmount = parseInt(e.target.value);
+            amountDisplay.textContent = formatCurrency(state.poolAmount);
+            updateSliderBackground(e.target);
+            updateCalculations();
+
+            // Update preset buttons
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.classList.toggle('active', parseInt(btn.dataset.amount) === state.poolAmount);
+            });
+        });
+
+        interestRateSlider.addEventListener('input', (e) => {
+            state.interestRate = parseFloat(e.target.value);
+            rateDisplay.textContent = state.interestRate.toFixed(2) + '%';
+            updateSliderBackground(e.target);
+            updateCalculations();
+        });
+
+        downPaymentSlider.addEventListener('input', (e) => {
+            state.downPaymentPercent = parseInt(e.target.value);
+            const downAmount = state.poolAmount * (state.downPaymentPercent / 100);
+            downDisplay.textContent = formatCurrency(downAmount) + ` (${state.downPaymentPercent}%)`;
+            updateSliderBackground(e.target);
+            updateCalculations();
+        });
+
+        // Preset buttons
+        document.querySelectorAll('.preset-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const amount = parseInt(btn.dataset.amount);
+                state.poolAmount = amount;
+                poolAmountSlider.value = amount;
+                amountDisplay.textContent = formatCurrency(amount);
+                updateSliderBackground(poolAmountSlider);
+                updateCalculations();
+
+                document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Term buttons
+        document.querySelectorAll('.term-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const term = parseInt(btn.dataset.term);
+                state.loanTerm = term;
+                const years = term / 12;
+                termDisplay.textContent = years + ' years';
+                updateCalculations();
+
+                document.querySelectorAll('.term-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Income input for affordability check
+        monthlyIncomeInput.addEventListener('input', (e) => {
+            // Format as currency
+            let value = e.target.value.replace(/[^0-9.]/g, '');
+            if (value) {
+                const num = parseFloat(value);
+                if (!isNaN(num)) {
+                    e.target.value = '$' + num.toLocaleString('en-US');
+                }
+            }
+            checkAffordability();
+        });
+
+        // Initialize sliders and calculations
+        updateSliderBackground(poolAmountSlider);
+        updateSliderBackground(interestRateSlider);
+        updateSliderBackground(downPaymentSlider);
+        updateCalculations();
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

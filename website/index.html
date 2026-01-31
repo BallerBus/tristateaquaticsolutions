@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri-State Aquatic Solutions | Premium Pool Installation | Main Line PA & Delaware</title>
+    <meta name="description" content="Transform your backyard in weeks, not months. Premium concrete Plunge Pools, fiberglass, and metal pool installation for Main Line Philadelphia and Northern Delaware. Crafted for the life you love.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            display: none;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .cursor {
+                display: block;
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                border: 1.5px solid var(--aqua);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.15s var(--ease-out-expo),
+                            opacity 0.15s ease,
+                            background 0.15s ease;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: difference;
+            }
+
+            .cursor.hovering {
+                transform: translate(-50%, -50%) scale(2);
+                background: var(--aqua);
+                border-color: var(--aqua);
+            }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* ==================== MEGA MENU NAVIGATION ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            padding: 0.75rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+            margin-top: 2px;
+        }
+
+        /* Main Nav Links with Mega Menu */
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links > li {
+            position: relative;
+        }
+
+        .nav-links > li > a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links > li > a:hover {
+            color: var(--aqua);
+        }
+
+        .nav-links > li > a .nav-arrow {
+            width: 12px;
+            height: 12px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .nav-links > li:hover > a .nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Mega Menu Dropdown */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(14, 31, 52, 0.25);
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s var(--ease-out-expo);
+            min-width: 280px;
+            border: 1px solid var(--gray);
+        }
+
+        .mega-menu.wide {
+            min-width: 500px;
+        }
+
+        .mega-menu.extra-wide {
+            min-width: 650px;
+        }
+
+        .nav-links > li:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .mega-menu-column h4 {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .mega-menu-column ul {
+            list-style: none;
+        }
+
+        .mega-menu-column li {
+            margin-bottom: 0.25rem;
+        }
+
+        .mega-menu-column a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .mega-menu-column a:hover {
+            background: var(--gray-light);
+            color: var(--aqua);
+        }
+
+        .mega-menu-column a .menu-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--aqua-glow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .mega-menu-column a .menu-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .mega-menu-column a .menu-text {
+            flex: 1;
+        }
+
+        .mega-menu-column a .menu-text span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            margin-top: 1px;
+        }
+
+        .mega-menu-column a.featured {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            margin-top: 0.5rem;
+        }
+
+        .mega-menu-column a.featured:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(14, 31, 52, 0.3);
+        }
+
+        .mega-menu-column a.featured .menu-icon {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mega-menu-column a.featured .menu-icon svg {
+            stroke: var(--aqua);
+        }
+
+        .mega-menu-column a.featured .menu-text span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Tier badges in mega menu */
+        .tier-badge {
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-radius: 100px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-left: auto;
+        }
+
+        .tier-badge.premium {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .tier-badge.standard {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .tier-badge.value {
+            background: var(--gray);
+            color: var(--navy);
+        }
+
+        /* Nav CTA Button */
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 0.85rem 1.75rem !important;
+            border-radius: 100px;
+            transition: all 0.3s var(--ease-out-expo);
+            margin-left: 0.5rem;
+        }
+
+        .nav-cta:hover {
+            background: var(--aqua) !important;
+            transform: translateY(-2px);
+            color: var(--white) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 999;
+            padding: 6rem 1.5rem 2rem;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-section h4 {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .mobile-menu-section ul {
+            list-style: none;
+        }
+
+        .mobile-menu-section a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .mobile-menu-section a:hover {
+            color: var(--aqua);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            right: -50%;
+            background: radial-gradient(ellipse at center, var(--aqua-glow) 0%, transparent 60%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-5%, 3%) rotate(2deg); }
+            66% { transform: translate(3%, -2%) rotate(-1deg); }
+        }
+
+        .hero-waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath fill='%2300A6B2' fill-opacity='0.08' d='M0,60 C300,120 600,0 900,60 C1200,120 1200,120 1200,120 L0,120 Z'/%3E%3C/svg%3E") repeat-x;
+            background-size: 50% 100%;
+            animation: wave 25s linear infinite;
+        }
+
+        .wave:nth-child(2) {
+            bottom: 10px;
+            opacity: 0.5;
+            animation-duration: 20s;
+            animation-direction: reverse;
+        }
+
+        .wave:nth-child(3) {
+            bottom: 20px;
+            opacity: 0.3;
+            animation-duration: 30s;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 8rem 0 6rem;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            padding: 0.5rem 1rem 0.5rem 0.5rem;
+            border-radius: 100px;
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.2s both;
+        }
+
+        .hero-tag-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-tag-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--white);
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.3s both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--aqua);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.15rem, 2vw, 1.35rem);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.4s both;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(0, 166, 178, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--navy);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--aqua), transparent);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number span {
+            color: var(--aqua);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Styles */
+        section {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--aqua);
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--gray-light);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: visible;
+            transition: all 0.5s var(--ease-out-expo);
+            border: 1px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--aqua), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s var(--ease-out-expo);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gray);
+            box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--aqua-glow) 0%, transparent 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .service-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Tier-specific bullet colors */
+        .tier-premium .service-features li::before {
+            background: var(--gold);
+        }
+
+        .tier-standard .service-features li::before {
+            background: var(--aqua);
+        }
+
+        .tier-value .service-features li::before {
+            background: #6B7280;
+        }
+
+        /* Included badge for feature lists */
+        .included-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 100px;
+            margin-left: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .why-visual {
+            position: relative;
+        }
+
+        .why-image-container {
+            position: relative;
+            border-radius: 32px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+        }
+
+        .why-image-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .why-image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--aqua);
+            stroke-width: 1;
+            fill: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-image-placeholder span {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        .why-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 160px;
+            height: 160px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            text-align: center;
+            box-shadow: 0 20px 50px -15px rgba(201, 169, 98, 0.5);
+        }
+
+        .why-badge-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .why-badge-text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .why-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .why-content > p {
+            margin-bottom: 2.5rem;
+            font-size: 1.15rem;
+        }
+
+        .why-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .why-item-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .why-item-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .why-item-content h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .why-item-content p {
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--navy);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+        }
+
+        .process .section-header {
+            color: var(--white);
+        }
+
+        .process .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--aqua), var(--gold));
+            opacity: 0.3;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--aqua);
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .process-step:hover .step-number {
+            background: var(--aqua);
+            color: var(--navy);
+            transform: scale(1.1);
+        }
+
+        .process-step h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--gray-light);
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: var(--aqua);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-rating svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gold);
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--navy);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .testimonial-info h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/300px repeat;
+            animation: float 30s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            text-align: center;
+            color: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        .btn-cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+        /* ==================== ENHANCED FOOTER ==================== */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Trust badges */
+        .footer-trust-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .trust-badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-contact svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Newsletter signup */
+        .footer-newsletter {
+            margin-top: 1rem;
+        }
+
+        .footer-newsletter p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.75rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .newsletter-form button {
+            padding: 0.75rem 1rem;
+            background: var(--aqua);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        /* ==================== STICKY CTA BAR ==================== */
+        .sticky-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy);
+            padding: 0.75rem 1rem;
+            z-index: 900;
+            transform: translateY(100%);
+            transition: transform 0.4s var(--ease-out-expo);
+            display: none;
+        }
+
+        .sticky-cta-bar.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .sticky-cta-bar a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta-bar .cta-phone {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .sticky-cta-bar .cta-phone:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .sticky-cta-bar .cta-quote {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .sticky-cta-bar .cta-quote:hover {
+            background: var(--gold);
+        }
+
+        .sticky-cta-bar .cta-chat {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+
+        .sticky-cta-bar .cta-chat:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .sticky-cta-bar svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Desktop sticky - side bar */
+        @media (min-width: 1025px) {
+            .sticky-cta-bar {
+                display: none !important;
+            }
+
+            .sticky-side-cta {
+                position: fixed;
+                right: 1.5rem;
+                top: 50%;
+                transform: translateY(-50%) translateX(100%);
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                z-index: 900;
+                transition: transform 0.4s var(--ease-out-expo);
+            }
+
+            .sticky-side-cta.visible {
+                transform: translateY(-50%) translateX(0);
+            }
+
+            .sticky-side-cta a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: var(--navy);
+                color: var(--white);
+                text-decoration: none;
+                box-shadow: 0 4px 15px rgba(14, 31, 52, 0.3);
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            .sticky-side-cta a:hover {
+                background: var(--aqua);
+                transform: scale(1.1);
+            }
+
+            .sticky-side-cta a svg {
+                width: 22px;
+                height: 22px;
+                stroke: currentColor;
+                stroke-width: 2;
+                fill: none;
+            }
+
+            .sticky-side-cta a .tooltip {
+                position: absolute;
+                right: 60px;
+                background: var(--navy);
+                color: var(--white);
+                padding: 0.5rem 0.75rem;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .sticky-side-cta a:hover .tooltip {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        /* Mobile sticky bar */
+        @media (max-width: 1024px) {
+            .sticky-cta-bar {
+                display: block;
+            }
+
+            .sticky-side-cta {
+                display: none !important;
+            }
+        }
+
+        /* ==================== FLOATING HELP BUTTON ==================== */
+        .floating-help {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 950;
+        }
+
+        @media (max-width: 1024px) {
+            .floating-help {
+                bottom: 5rem;
+            }
+        }
+
+        .floating-help-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 25px rgba(0, 166, 178, 0.4);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .floating-help-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0, 166, 178, 0.5);
+        }
+
+        .floating-help-button svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--white);
+            stroke-width: 2;
+            fill: none;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-help.open .floating-help-button svg {
+            transform: rotate(45deg);
+        }
+
+        .floating-help-menu {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(14, 31, 52, 0.2);
+            padding: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .floating-help.open .floating-help-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .floating-help-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .floating-help-menu a:hover {
+            background: var(--gray-light);
+        }
+
+        .floating-help-menu a svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .floating-help-menu a span {
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            display: block;
+            font-weight: 400;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .why-visual {
+                order: -1;
+            }
+
+            .why-badge {
+                bottom: -20px;
+                right: 20px;
+                width: 120px;
+                height: 120px;
+            }
+
+            .why-badge-number {
+                font-size: 2.25rem;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .sticky-cta-content {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .sticky-cta-bar a {
+                flex: 1;
+                justify-content: center;
+                padding: 0.6rem 0.75rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animations on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Navigation with Mega Menu -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <!-- Pools Dropdown -->
+                <li>
+                    <a href="/pools/">
+                        Pools
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="mega-menu wide">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-column">
+                                <h4>Pool Types</h4>
+                                <ul>
+                                    <li>
+                                        <a href="/pools/concrete/">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg></div>
+                                            <div class="menu-text">Concrete Pools</div>
+                                            <span class="tier-badge premium">Premium</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pools/fiberglass/">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+                                            <div class="menu-text">Fiberglass Pools</div>
+                                            <span class="tier-badge standard">Standard</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pools/">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/></svg></div>
+                                            <div class="menu-text">In-Ground Liner</div>
+                                            <span class="tier-badge value">Value</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pools/plunge/">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></div>
+                                            <div class="menu-text">Plunge & Cocktail Pools</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Features</h4>
+                                <ul>
+                                    <li>
+                                        <a href="/pools/#features">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/></svg></div>
+                                            <div class="menu-text">Tanning Ledges</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pools/#features">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+                                            <div class="menu-text">Integrated Spas</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pools/#features">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></div>
+                                            <div class="menu-text">Smart Technology</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pools/#features">
+                                            <div class="menu-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                                            <div class="menu-text">Automatic Covers</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Services Dropdown -->
+                <li>
+                    <a href="/services/">
+                        Services
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="mega-menu wide">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-column">
+                                <h4>Installation</h4>
+                                <ul>
+                                    <li><a href="/services/"><div class="menu-text">Pool Installation</div></a></li>
+                                    <li><a href="/pool-maintenance/"><div class="menu-text">Pool Maintenance</div></a></li>
+                                </ul>
+                                <h4 style="margin-top: 1rem;">Seasonal Services</h4>
+                                <ul>
+                                    <li><a href="/services/pool-opening/"><div class="menu-text">Pool Opening</div></a></li>
+                                    <li><a href="/services/pool-closing/"><div class="menu-text">Pool Closing</div></a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Repair & Testing</h4>
+                                <ul>
+                                    <li><a href="/services/equipment-repair/"><div class="menu-text">Equipment Repair</div></a></li>
+                                    <li><a href="/services/water-testing/"><div class="menu-text">Water Testing</div></a></li>
+                                    <li><a href="/services/weekly-maintenance/"><div class="menu-text">Weekly Maintenance</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Tools Dropdown -->
+                <li>
+                    <a href="/tools/">
+                        Tools
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-column">
+                            <h4>Interactive Tools</h4>
+                            <ul>
+                                <li>
+                                    <a href="/tools/pool-calculator/">
+                                        <div class="menu-icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/></svg></div>
+                                        <div class="menu-text">Pool Cost Calculator<span>Estimate your investment</span></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/tools/pool-quiz/">
+                                        <div class="menu-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                                        <div class="menu-text">Which Pool Quiz<span>Find your perfect match</span></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/tools/financing-calculator/">
+                                        <div class="menu-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                                        <div class="menu-text">Financing Calculator<span>Plan your monthly payments</span></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/tools/compare-pools/">
+                                        <div class="menu-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                                        <div class="menu-text">Compare Pool Types<span>Side-by-side comparison</span></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/tools/timeline/">
+                                        <div class="menu-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                                        <div class="menu-text">Project Timeline<span>See your installation schedule</span></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Locations Dropdown -->
+                <li>
+                    <a href="/locations/pennsylvania/">
+                        Locations
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="mega-menu wide">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-column">
+                                <h4>Pennsylvania</h4>
+                                <ul>
+                                    <li><a href="/locations/pennsylvania/"><div class="menu-text">Main Line PA</div></a></li>
+                                    <li><a href="/locations/chester-county-pa/"><div class="menu-text">Chester County</div></a></li>
+                                    <li><a href="/locations/montgomery-county-pa/"><div class="menu-text">Montgomery County</div></a></li>
+                                    <li><a href="/locations/delaware-county-pa/"><div class="menu-text">Delaware County</div></a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Delaware</h4>
+                                <ul>
+                                    <li><a href="/locations/new-castle-county-de/"><div class="menu-text">New Castle County</div></a></li>
+                                    <li><a href="/locations/hockessin-de/"><div class="menu-text">Hockessin (HQ)</div></a></li>
+                                    <li><a href="/locations/greenville-de/"><div class="menu-text">Greenville</div></a></li>
+                                    <li><a href="/locations/wilmington-de/"><div class="menu-text">Wilmington</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Resources Dropdown -->
+                <li>
+                    <a href="/about/">
+                        Resources
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-column">
+                            <h4>Learn More</h4>
+                            <ul>
+                                <li><a href="/about/"><div class="menu-text">About Us</div></a></li>
+                                <li><a href="/blog/"><div class="menu-text">Blog</div></a></li>
+                                <li><a href="/faq/"><div class="menu-text">FAQ</div></a></li>
+                                <li><a href="/financing/"><div class="menu-text">Financing</div></a></li>
+                                <li><a href="/gallery/"><div class="menu-text">Gallery</div></a></li>
+                                <li><a href="/testimonials/"><div class="menu-text">Testimonials</div></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-section">
+            <h4>Pool Types</h4>
+            <ul>
+                <li><a href="/pools/concrete/">Concrete Pools (Premium)</a></li>
+                <li><a href="/pools/fiberglass/">Fiberglass Pools (Standard)</a></li>
+                <li><a href="/pools/">In-Ground Liner (Value)</a></li>
+                <li><a href="/pools/plunge/">Plunge & Cocktail Pools</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="/services/">All Services</a></li>
+                <li><a href="/pool-maintenance/">Pool Maintenance</a></li>
+                <li><a href="/services/pool-opening/">Pool Opening</a></li>
+                <li><a href="/services/pool-closing/">Pool Closing</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Tools</h4>
+            <ul>
+                <li><a href="/tools/">All Tools</a></li>
+                <li><a href="/tools/pool-calculator/">Pool Cost Calculator</a></li>
+                <li><a href="/tools/pool-quiz/">Which Pool Quiz</a></li>
+                <li><a href="/tools/financing-calculator/">Financing Calculator</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Locations</h4>
+            <ul>
+                <li><a href="/locations/pennsylvania/">Pennsylvania</a></li>
+                <li><a href="/locations/delaware/">Delaware</a></li>
+                <li><a href="/locations/hockessin-de/">Hockessin (HQ)</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="/about/">About Us</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/faq/">FAQ</a></li>
+                <li><a href="/financing/">Financing</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(135deg, rgba(14,31,52,0.7) 0%, rgba(14,31,52,0.4) 100%), url('images/wellness-plunge.jpg') center/cover no-repeat;">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-waves">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-tag" style="background: rgba(255,255,255,0.95);">
+                <div class="hero-tag-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                </div>
+                Main Line PA & Delaware's Premium Pool Builder
+            </div>
+            <h1 style="color: #fff;">Crafted for the <em>Life</em> You Love</h1>
+            <p class="hero-subtitle" style="color: rgba(255,255,255,0.9);">Transform your backyard into a year-round retreat. Premium concrete Plunge Pools, fiberglass, and metal pools - installed in weeks with craftsmanship you'll enjoy for generations.</p>
+            <div class="hero-ctas">
+                <a href="/contact/" class="btn btn-primary">
+                    Schedule Consultation
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/tools/pool-quiz/" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.5); color: #fff;">
+                    Take the Pool Quiz
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number">2-4<span>wks</span></div>
+                    <div class="stat-label">Average Installation Time</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-number">50<span>%</span></div>
+                    <div class="stat-label">Lower Lifetime Maintenance</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-number">30<span>+</span></div>
+                    <div class="stat-label">Years Combined Experience</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-3">
+                    <div class="stat-number">100<span>%</span></div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Pool Collections</div>
+                <h2>Three Tiers, One Standard of Excellence</h2>
+                <p>Every pool we install goes in-ground. Every project includes our white-glove service. Choose the tier that fits your vision and budget.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card tier-premium reveal" style="border: 2px solid var(--gold); position: relative;">
+                    <div style="position: absolute; top: -12px; left: 24px; background: var(--gold); color: var(--navy); padding: 4px 12px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">Premium</div>
+                    <img src="images/wellness-plunge.jpg" alt="Premium Concrete Pool with Integrated Spa" style="width: 100%; height: 180px; object-fit: cover; border-radius: 16px; margin-bottom: 1.5rem;">
+                    <h3>Concrete Pool</h3>
+                    <div class="price-tag" style="color: var(--gold); font-weight: 600; margin-bottom: 0.75rem;">$80,000 - $130,000</div>
+                    <p>The pinnacle of pool ownership. Custom concrete construction with every luxury feature included as standard.</p>
+                    <ul class="service-features">
+                        <li>Integrated spa option available</li>
+                        <li>Automatic safety cover <span class="included-badge">Included</span></li>
+                        <li>Automated ORP/pH water treatment <span class="included-badge">Included</span></li>
+                        <li>Lifetime durability, longest warranty</li>
+                        <li>Tanning ledge available as upgrade</li>
+                    </ul>
+                </div>
+                <div class="service-card tier-standard reveal reveal-delay-1" style="border: 2px solid var(--aqua); position: relative;">
+                    <div style="position: absolute; top: -12px; left: 24px; background: var(--aqua); color: white; padding: 4px 12px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">Standard</div>
+                    <img src="images/family-fiberglass.jpg" alt="Standard Fiberglass Pool" style="width: 100%; height: 180px; object-fit: cover; border-radius: 16px; margin-bottom: 1.5rem;">
+                    <h3>Fiberglass Pool</h3>
+                    <div class="price-tag" style="color: var(--aqua); font-weight: 600; margin-bottom: 0.75rem;">$60,000 - $100,000</div>
+                    <p>The sweet spot for most families. Factory-finished fiberglass means faster installation and virtually no maintenance.</p>
+                    <ul class="service-features">
+                        <li>Installed in 2-4 weeks</li>
+                        <li>Smooth, algae-resistant surface</li>
+                        <li>50+ colors & finishes</li>
+                        <li>Excellent warranty coverage</li>
+                        <li>Tanning ledge available as upgrade</li>
+                    </ul>
+                </div>
+                <div class="service-card tier-value reveal reveal-delay-2" style="border: 2px solid #6B7280; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 24px; background: #6B7280; color: white; padding: 4px 12px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">Value</div>
+                    <img src="images/backyard-starter.jpg" alt="Value In-Ground Liner Pool" style="width: 100%; height: 180px; object-fit: cover; border-radius: 16px; margin-bottom: 1.5rem;">
+                    <h3>In-Ground Liner Pool</h3>
+                    <div class="price-tag" style="color: #6B7280; font-weight: 600; margin-bottom: 0.75rem;">$50,000 - $80,000</div>
+                    <p>Quality in-ground pool ownership at an accessible price point. Full in-ground installation with premium vinyl liner.</p>
+                    <ul class="service-features">
+                        <li>True in-ground installation</li>
+                        <li>Premium vinyl liner finish</li>
+                        <li>Most accessible price point</li>
+                        <li>Hardscape integration available</li>
+                        <li>Tanning ledge available as upgrade</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="services-bonus reveal" style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--white); border-radius: 16px; border: 1px solid var(--gray);">
+                <h4 style="color: var(--aqua); margin-bottom: 0.5rem;">Included With Every Installation</h4>
+                <p style="color: var(--gray-text); margin: 0;">1-2 years of complimentary pool maintenance service - Hardscape design consultation - Full permit coordination</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why-us">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-visual reveal">
+                    <div class="why-image-container" style="background: url('images/family-fiberglass.jpg') center/cover no-repeat;">
+                    </div>
+                    <div class="why-badge">
+                        <div class="why-badge-number">15</div>
+                        <div class="why-badge-text">Years Local<br>Expertise</div>
+                    </div>
+                </div>
+                <div class="why-content reveal reveal-delay-1">
+                    <div class="section-tag">Why Tri-State</div>
+                    <h2>Where Expert Craftsmanship Meets Modern Innovation</h2>
+                    <p>We're not just pool builders - we're your neighbors, committed to creating spaces where your family makes memories for generations.</p>
+                    <div class="why-list">
+                        <div class="why-item">
+                            <div class="why-item-icon">
+                                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="why-item-content">
+                                <h4>Deep Local Knowledge</h4>
+                                <p>From Hockessin to Haverford, we know your neighborhood's codes, soil, and architectural character.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-item-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="why-item-content">
+                                <h4>Owner-Involved Service</h4>
+                                <p>You'll work directly with our principals from first consultation to final walkthrough.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-item-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div class="why-item-content">
+                                <h4>Faster Installation</h4>
+                                <p>Our fiberglass and pre-manufactured pools are installed in weeks, not months of construction.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-item-icon">
+                                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div class="why-item-content">
+                                <h4>Lifetime Partnership</h4>
+                                <p>Our relationship doesn't end at installation. We're here for maintenance, upgrades, and support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Process</div>
+                <h2>From Dream to Dive</h2>
+                <p>A seamless journey from your first call to your first splash.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We visit your home, discuss your vision, assess your space, and explore possibilities together.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Receive a detailed proposal with pool options, features, and transparent pricing tailored to your goals.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="step-number">3</div>
+                    <h3>Installation</h3>
+                    <p>Our expert team handles permits, excavation, and installation with minimal disruption to your life.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-3">
+                    <div class="step-number">4</div>
+                    <h3>Enjoy</h3>
+                    <p>Dive into your new oasis with full training, warranty protection, and our ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Testimonials</div>
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it - hear from homeowners who transformed their backyards with us.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"From our first meeting to the final walkthrough, the team was professional, communicative, and genuinely invested in making our backyard dreams come true. The pool was installed in just three weeks!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JM</div>
+                        <div class="testimonial-info">
+                            <h4>Jennifer M.</h4>
+                            <span>Villanova, PA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"We considered several builders but chose Tri-State for their expertise in fiberglass pools. The low maintenance has been exactly as promised - we spend our weekends swimming, not cleaning."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RT</div>
+                        <div class="testimonial-info">
+                            <h4>Robert T.</h4>
+                            <span>Hockessin, DE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Our plunge pool has become the centerpiece of our entertaining. The heated feature means we use it year-round. Guests always ask who built it - happy to recommend Tri-State every time."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah K.</h4>
+                            <span>Bryn Mawr, PA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content reveal">
+                <div class="section-tag">Get Started</div>
+                <h2>Ready to Transform Your Backyard?</h2>
+                <p>Schedule your free design consultation today. We'll visit your home, discuss your vision, and show you what's possible.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+13025551234" class="btn btn-cta-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call (302) 555-1234
+                    </a>
+                    <a href="mailto:info@tristateaquatic.com" class="btn btn-cta-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium fiberglass and Plunge Pool installation for Main Line Philadelphia and Northern Delaware. Crafted for the life you love.</p>
+                    <div class="footer-trust-badges">
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Licensed
+                        </div>
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Insured
+                        </div>
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                            BBB A+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Pool Types</h4>
+                    <ul>
+                        <li><a href="/pools/concrete/">Concrete Pools</a></li>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/pools/">Liner Pools</a></li>
+                        <li><a href="/pools/plunge/">Plunge Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/">Installation</a></li>
+                        <li><a href="/pool-maintenance/">Maintenance</a></li>
+                        <li><a href="/services/pool-opening/">Pool Opening</a></li>
+                        <li><a href="/services/pool-closing/">Pool Closing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="/tools/pool-calculator/">Cost Calculator</a></li>
+                        <li><a href="/tools/pool-quiz/">Pool Quiz</a></li>
+                        <li><a href="/tools/financing-calculator/">Financing Calculator</a></li>
+                        <li><a href="/tools/compare-pools/">Compare Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <a href="/contact/">Hockessin, Delaware</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+13025551234">(302) 555-1234</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@tristateaquatic.com">info@tristateaquatic.com</a>
+                        </li>
+                    </ul>
+                    <div class="footer-newsletter">
+                        <p>Get pool tips & updates</p>
+                        <form class="newsletter-form" onsubmit="return false;">
+                            <input type="email" placeholder="Email address" aria-label="Email address">
+                            <button type="submit">Go</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved. PA HIC #PA123456 | DE License #DE789012</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA Bar (Mobile) -->
+    <div class="sticky-cta-bar" id="stickyCta">
+        <div class="sticky-cta-content">
+            <a href="tel:+13025551234" class="cta-phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call
+            </a>
+            <a href="/contact/" class="cta-quote">Get Quote</a>
+            <a href="#" class="cta-chat" id="chatBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Chat
+            </a>
+        </div>
+    </div>
+
+    <!-- Sticky Side CTA (Desktop) -->
+    <div class="sticky-side-cta" id="stickySideCta">
+        <a href="tel:+13025551234" aria-label="Call us">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="tooltip">Call (302) 555-1234</span>
+        </a>
+        <a href="/contact/" aria-label="Get a quote">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span class="tooltip">Get a Quote</span>
+        </a>
+    </div>
+
+    <!-- Floating Help Button -->
+    <div class="floating-help" id="floatingHelp">
+        <div class="floating-help-menu">
+            <a href="tel:+13025551234">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div>Call Us<span>(302) 555-1234</span></div>
+            </a>
+            <a href="mailto:info@tristateaquatic.com">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <div>Email Us<span>info@tristateaquatic.com</span></div>
+            </a>
+            <a href="/tools/pool-quiz/">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div>Take the Quiz<span>Find your perfect pool</span></div>
+            </a>
+            <a href="/contact/">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <div>Get Instant Quote<span>Free estimate in 24 hours</span></div>
+            </a>
+        </div>
+        <button class="floating-help-button" aria-label="Help options">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+    </div>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+        }
+
+        // Navigation scroll effect
+        const nav = document.querySelector('nav');
+        const stickyCta = document.getElementById('stickyCta');
+        const stickySideCta = document.getElementById('stickySideCta');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Show sticky CTAs after scrolling past hero
+            if (window.scrollY > window.innerHeight * 0.5) {
+                if (stickyCta) stickyCta.classList.add('visible');
+                if (stickySideCta) stickySideCta.classList.add('visible');
+            } else {
+                if (stickyCta) stickyCta.classList.remove('visible');
+                if (stickySideCta) stickySideCta.classList.remove('visible');
+            }
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        // Floating help button
+        const floatingHelp = document.getElementById('floatingHelp');
+        const helpButton = floatingHelp.querySelector('.floating-help-button');
+
+        helpButton.addEventListener('click', () => {
+            floatingHelp.classList.toggle('open');
+        });
+
+        // Close floating help when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!floatingHelp.contains(e.target)) {
+                floatingHelp.classList.remove('open');
+            }
+        });
+
+        // Keyboard accessibility for mega menu
+        document.querySelectorAll('.nav-links > li').forEach(item => {
+            const link = item.querySelector('a');
+            const menu = item.querySelector('.mega-menu');
+
+            if (menu) {
+                link.addEventListener('focus', () => {
+                    item.classList.add('focused');
+                });
+
+                item.addEventListener('focusout', (e) => {
+                    if (!item.contains(e.relatedTarget)) {
+                        item.classList.remove('focused');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Project Timeline Estimator | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Plan your pool installation timeline. Find out when to start your project to swim by your target date. Interactive Gantt-style timeline for concrete, fiberglass, and liner pools.">
+
+    <!-- Schema.org markup for tool -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pool Project Timeline Estimator",
+        "description": "Plan your pool installation timeline from signing to swimming. Calculate when to start your project based on pool type, location, and target swim date.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Tri-State Aquatic Solutions",
+            "areaServed": ["Pennsylvania", "Delaware"]
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--gray-text);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+            margin-top: 2px;
+        }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.85rem 1.75rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .nav-cta:hover {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            right: -50%;
+            background: radial-gradient(ellipse at center, var(--aqua-glow) 0%, transparent 60%);
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-5%, 3%) rotate(2deg); }
+            66% { transform: translate(3%, -2%) rotate(-1deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .hero-tag::before,
+        .hero-tag::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--aqua);
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--aqua);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            color: var(--gray-text);
+        }
+
+        /* Tool Container */
+        .tool-section {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .tool-container {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+            border: 1px solid var(--gray);
+            overflow: hidden;
+        }
+
+        /* Progress Steps */
+        .progress-bar {
+            display: flex;
+            background: var(--gray-light);
+            padding: 1.5rem 2rem;
+            gap: 1rem;
+        }
+
+        .progress-step {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            opacity: 0.4;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active {
+            opacity: 1;
+        }
+
+        .progress-step.completed {
+            opacity: 0.7;
+        }
+
+        .progress-step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .progress-step.active .progress-step-number {
+            background: var(--aqua);
+        }
+
+        .progress-step.completed .progress-step-number {
+            background: var(--gold);
+        }
+
+        .progress-step-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        /* Step Content */
+        .step-content {
+            padding: 3rem;
+            min-height: 400px;
+        }
+
+        .step-panel {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .step-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .step-title h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pool Type Selection */
+        .pool-type-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .pool-type-card {
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            text-align: center;
+            position: relative;
+        }
+
+        .pool-type-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--aqua);
+            box-shadow: 0 15px 40px -15px rgba(0, 166, 178, 0.3);
+        }
+
+        .pool-type-card.selected {
+            border-color: var(--aqua);
+            background: var(--white);
+            box-shadow: 0 15px 40px -15px rgba(0, 166, 178, 0.3);
+        }
+
+        .pool-type-card.selected::after {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 24px;
+            height: 24px;
+            background: var(--aqua);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .pool-type-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--aqua-glow) 0%, transparent 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .pool-type-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .pool-type-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .pool-type-timeline {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .pool-type-card p {
+            font-size: 0.9rem;
+        }
+
+        /* Date Selection */
+        .date-options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .date-option {
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .date-option:hover {
+            border-color: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .date-option.selected {
+            border-color: var(--aqua);
+            background: var(--white);
+            box-shadow: 0 10px 30px -10px rgba(0, 166, 178, 0.3);
+        }
+
+        .date-option-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .date-option-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .date-option-content h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .date-option-content p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .custom-date-wrapper {
+            grid-column: 1 / -1;
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .custom-date-wrapper.active {
+            border-color: var(--aqua);
+            background: var(--white);
+        }
+
+        .custom-date-wrapper label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .custom-date-wrapper input[type="date"] {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--navy);
+            background: var(--white);
+            cursor: pointer;
+        }
+
+        .custom-date-wrapper input[type="date"]:focus {
+            outline: none;
+            border-color: var(--aqua);
+        }
+
+        /* Location Selection */
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .location-card {
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            text-align: center;
+        }
+
+        .location-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--aqua);
+        }
+
+        .location-card.selected {
+            border-color: var(--aqua);
+            background: var(--white);
+            box-shadow: 0 15px 40px -15px rgba(0, 166, 178, 0.3);
+        }
+
+        .location-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .location-permit-time {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-permit-time.fast {
+            background: var(--aqua);
+        }
+
+        /* Navigation Buttons */
+        .step-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--gray);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--navy);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .btn:hover:not(:disabled) svg {
+            transform: translateX(4px);
+        }
+
+        .btn-secondary:hover svg {
+            transform: translateX(-4px);
+        }
+
+        /* Results Panel */
+        .results-container {
+            display: none;
+        }
+
+        .results-container.active {
+            display: block;
+        }
+
+        .results-header {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+        }
+
+        .results-header .start-date-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.75rem 2rem;
+            border-radius: 100px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .results-header h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .results-header h2 em {
+            color: var(--aqua);
+            font-style: italic;
+        }
+
+        .results-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+
+        /* Timeline Visual */
+        .timeline-container {
+            padding: 3rem;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-header h3 {
+            color: var(--navy);
+        }
+
+        .timeline-legend {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* Gantt Timeline */
+        .gantt-timeline {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .gantt-phase {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .gantt-phase.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .gantt-phase-label {
+            width: 200px;
+            flex-shrink: 0;
+            padding-right: 1rem;
+        }
+
+        .gantt-phase-label h4 {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .gantt-phase-label span {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        .gantt-bar-container {
+            flex: 1;
+            height: 40px;
+            background: var(--gray-light);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gantt-bar {
+            position: absolute;
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 60px;
+        }
+
+        .gantt-bar:hover {
+            filter: brightness(1.1);
+            transform: scaleY(1.1);
+        }
+
+        .gantt-bar.phase-design { background: #6366F1; }
+        .gantt-bar.phase-permits { background: #F59E0B; }
+        .gantt-bar.phase-site { background: #10B981; }
+        .gantt-bar.phase-excavation { background: #8B5CF6; }
+        .gantt-bar.phase-installation { background: var(--aqua); }
+        .gantt-bar.phase-decking { background: #EC4899; }
+        .gantt-bar.phase-startup { background: var(--gold); }
+
+        .gantt-dates {
+            display: flex;
+            margin-top: 1rem;
+            padding-left: 200px;
+        }
+
+        .gantt-date-marker {
+            flex: 1;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            position: relative;
+        }
+
+        .gantt-date-marker::before {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            width: 1px;
+            height: 8px;
+            background: var(--gray);
+        }
+
+        /* Phase Details Modal */
+        .phase-details {
+            display: none;
+            background: var(--gray-light);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .phase-details.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .phase-details h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .phase-details h4 .phase-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .phase-details ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .phase-details li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .phase-details li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--aqua);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Milestones List */
+        .milestones-section {
+            background: var(--gray-light);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .milestones-section h3 {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .milestones-section h3 svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .milestone-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .milestone-item:hover {
+            transform: translateX(8px);
+        }
+
+        .milestone-date {
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .milestone-item.highlight .milestone-date {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .milestone-text {
+            font-size: 0.95rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        /* Urgency Messages */
+        .urgency-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.1) 0%, rgba(0, 166, 178, 0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(201, 169, 98, 0.3);
+        }
+
+        .urgency-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .urgency-header svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .urgency-header h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .urgency-messages {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .urgency-message {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        .urgency-message::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        .availability-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Weather Note */
+        .weather-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--gray-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .weather-note svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gray-text);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        .weather-note p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .results-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 2rem 3rem 3rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .btn-cta-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--navy);
+            color: var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Print Styles */
+        .print-btn {
+            background: var(--gray-light);
+            color: var(--navy);
+            border: none;
+        }
+
+        .print-btn:hover {
+            background: var(--gray);
+        }
+
+        @media print {
+            nav, .step-navigation, .results-cta, .print-btn {
+                display: none !important;
+            }
+
+            .tool-container {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            .results-container {
+                display: block !important;
+            }
+
+            .gantt-phase {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+        /* Mobile Timeline (Vertical) */
+        @media (max-width: 900px) {
+            .progress-bar {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .pool-type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .date-options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gantt-phase {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gantt-phase-label {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .gantt-bar-container {
+                width: 100%;
+            }
+
+            .gantt-dates {
+                padding-left: 0;
+            }
+
+            .phase-details ul {
+                grid-template-columns: 1fr;
+            }
+
+            .milestone-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .step-navigation .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .results-cta {
+                flex-direction: column;
+            }
+
+            .results-cta .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="../../index.html#contact" class="nav-cta">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-tag">Planning Tool</div>
+            <h1>Pool Project <em>Timeline</em> Estimator</h1>
+            <p class="hero-subtitle">From signing to swimming: know exactly when to start your project to be ready for your target date. Plan ahead for the best contractor scheduling.</p>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-container">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="progress-step-number">1</div>
+                        <div class="progress-step-label">Pool Type</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="progress-step-number">2</div>
+                        <div class="progress-step-label">Target Date</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="progress-step-number">3</div>
+                        <div class="progress-step-label">Location</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="progress-step-number">4</div>
+                        <div class="progress-step-label">Your Timeline</div>
+                    </div>
+                </div>
+
+                <!-- Step Content -->
+                <div class="step-content">
+                    <!-- Step 1: Pool Type -->
+                    <div class="step-panel active" data-panel="1">
+                        <div class="step-title">
+                            <h2>Select Your Pool Type</h2>
+                            <p>Each pool type has different installation timelines and construction phases.</p>
+                        </div>
+
+                        <div class="pool-type-grid">
+                            <div class="pool-type-card" data-pool-type="concrete" data-weeks-min="10" data-weeks-max="14">
+                                <div class="pool-type-icon">
+                                    <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 6v4"/><path d="M17 6v4"/></svg>
+                                </div>
+                                <h3>Concrete Pool</h3>
+                                <div class="pool-type-timeline">10-14 weeks</div>
+                                <p>Fully custom shapes, integrated spa option, lifetime durability</p>
+                            </div>
+
+                            <div class="pool-type-card" data-pool-type="fiberglass" data-weeks-min="4" data-weeks-max="6">
+                                <div class="pool-type-icon">
+                                    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="6"/><path d="M3 12c0 3.31 4.03 6 9 6s9-2.69 9-6"/></svg>
+                                </div>
+                                <h3>Fiberglass Pool</h3>
+                                <div class="pool-type-timeline">4-6 weeks</div>
+                                <p>Factory-finished, fastest installation, lowest maintenance</p>
+                            </div>
+
+                            <div class="pool-type-card" data-pool-type="liner" data-weeks-min="5" data-weeks-max="7">
+                                <div class="pool-type-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M4 8h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><path d="M2 12h20"/></svg>
+                                </div>
+                                <h3>Liner Pool</h3>
+                                <div class="pool-type-timeline">5-7 weeks</div>
+                                <p>Most accessible price, premium vinyl finish, versatile shapes</p>
+                            </div>
+                        </div>
+
+                        <div class="step-navigation">
+                            <div></div>
+                            <button class="btn btn-primary" id="step1Next" disabled>
+                                Continue
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Target Date -->
+                    <div class="step-panel" data-panel="2">
+                        <div class="step-title">
+                            <h2>When Do You Want to Swim?</h2>
+                            <p>Select your target swim date and we'll calculate when you need to start.</p>
+                        </div>
+
+                        <div class="date-options-grid">
+                            <div class="date-option" data-date="2026-05-25">
+                                <div class="date-option-icon">
+                                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                </div>
+                                <div class="date-option-content">
+                                    <h4>Memorial Day 2026</h4>
+                                    <p>May 25, 2026 - Kick off summer</p>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2026-07-04">
+                                <div class="date-option-icon">
+                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </div>
+                                <div class="date-option-content">
+                                    <h4>July 4th 2026</h4>
+                                    <p>Independence Day celebration</p>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2026-09-07">
+                                <div class="date-option-icon">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                                </div>
+                                <div class="date-option-content">
+                                    <h4>Labor Day 2026</h4>
+                                    <p>September 7, 2026 - End of summer bash</p>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2027-06-01">
+                                <div class="date-option-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+                                </div>
+                                <div class="date-option-content">
+                                    <h4>Summer 2027</h4>
+                                    <p>Planning ahead for next year</p>
+                                </div>
+                            </div>
+
+                            <div class="custom-date-wrapper">
+                                <label for="customDate">Or choose your own target date:</label>
+                                <input type="date" id="customDate" min="2026-03-01">
+                            </div>
+                        </div>
+
+                        <div class="step-navigation">
+                            <button class="btn btn-secondary" id="step2Back">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                Back
+                            </button>
+                            <button class="btn btn-primary" id="step2Next" disabled>
+                                Continue
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Location -->
+                    <div class="step-panel" data-panel="3">
+                        <div class="step-title">
+                            <h2>Where Are You Located?</h2>
+                            <p>Permit timelines vary by state. This helps us give you accurate estimates.</p>
+                        </div>
+
+                        <div class="location-grid">
+                            <div class="location-card" data-location="PA" data-permit-min="2" data-permit-max="4">
+                                <h3>Pennsylvania</h3>
+                                <div class="location-permit-time">2-4 weeks for permits</div>
+                                <p>Main Line, Chester County, Delaware County</p>
+                            </div>
+
+                            <div class="location-card" data-location="DE" data-permit-min="1" data-permit-max="2">
+                                <h3>Delaware</h3>
+                                <div class="location-permit-time fast">1-2 weeks for permits</div>
+                                <p>Northern Delaware, Hockessin, Wilmington area</p>
+                            </div>
+                        </div>
+
+                        <div class="step-navigation">
+                            <button class="btn btn-secondary" id="step3Back">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                Back
+                            </button>
+                            <button class="btn btn-primary" id="step3Next" disabled>
+                                Calculate Timeline
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Container -->
+                <div class="results-container" id="resultsContainer">
+                    <div class="results-header">
+                        <div class="start-date-badge" id="startDateBadge">Start by January 15, 2026</div>
+                        <h2>Swim by <em id="targetDateDisplay">Memorial Day 2026</em></h2>
+                        <p>Your personalized <span id="poolTypeDisplay">Fiberglass</span> pool installation timeline</p>
+                    </div>
+
+                    <div class="timeline-container">
+                        <div class="timeline-header">
+                            <h3>Your Project Timeline</h3>
+                            <div class="timeline-legend">
+                                <div class="legend-item">
+                                    <div class="legend-dot" style="background: #6366F1;"></div>
+                                    Planning
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-dot" style="background: var(--aqua);"></div>
+                                    Construction
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-dot" style="background: var(--gold);"></div>
+                                    Finishing
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gantt Chart -->
+                        <div class="gantt-timeline" id="ganttTimeline">
+                            <!-- Phases will be dynamically inserted -->
+                        </div>
+
+                        <!-- Phase Details -->
+                        <div class="phase-details" id="phaseDetails">
+                            <h4><span class="phase-dot"></span><span class="phase-name"></span></h4>
+                            <ul class="phase-tasks"></ul>
+                        </div>
+
+                        <!-- Milestones -->
+                        <div class="milestones-section">
+                            <h3>
+                                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                Key Milestones
+                            </h3>
+                            <div class="milestone-list" id="milestoneList">
+                                <!-- Milestones will be dynamically inserted -->
+                            </div>
+                        </div>
+
+                        <!-- Urgency Section -->
+                        <div class="urgency-section">
+                            <div class="urgency-header">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                <h4>Planning Ahead Matters</h4>
+                            </div>
+                            <div class="urgency-messages" id="urgencyMessages">
+                                <!-- Messages will be dynamically inserted -->
+                            </div>
+                            <div class="availability-badge">
+                                <span class="dot"></span>
+                                <span id="availabilityText">8 spring installation slots remaining</span>
+                            </div>
+                        </div>
+
+                        <!-- Weather Note -->
+                        <div class="weather-note">
+                            <svg viewBox="0 0 24 24"><path d="M8 19H5a3 3 0 0 1 0-6 4.5 4.5 0 0 1 .5-8.5A7.5 7.5 0 0 1 20 10a4 4 0 0 1 0 8h-1"/><polyline points="12 13 12 21"/><polyline points="8 17 12 21 16 17"/></svg>
+                            <p><strong>Weather contingency:</strong> Timeline estimates assume normal weather conditions. Extended rain, freezing temperatures, or other weather events may add 1-2 weeks to the schedule. We'll keep you informed throughout the process.</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="results-cta">
+                        <a href="../../index.html#contact" class="btn btn-cta-primary">
+                            Reserve Your Installation Slot
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="../../index.html#contact" class="btn btn-outline">
+                            Schedule Design Consultation
+                        </a>
+                        <button class="btn print-btn" onclick="window.print()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                            Print Timeline
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved. | <a href="../../index.html">Return to Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Timeline Estimator Application
+        const TimelineEstimator = {
+            // State
+            state: {
+                currentStep: 1,
+                poolType: null,
+                poolWeeksMin: 0,
+                poolWeeksMax: 0,
+                targetDate: null,
+                targetDateLabel: '',
+                location: null,
+                permitWeeksMin: 0,
+                permitWeeksMax: 0
+            },
+
+            // Phase data for each pool type
+            phases: {
+                concrete: [
+                    { name: 'Design & Contract', duration: [1, 2], color: '#6366F1', tasks: ['Initial consultation', 'Site evaluation', 'Design finalization', 'Contract signing', 'Deposit payment'] },
+                    { name: 'Permits', duration: [2, 4], color: '#F59E0B', tasks: ['Application submission', 'Township review', 'Approval received'], permitBased: true },
+                    { name: 'Site Preparation', duration: [1, 2], color: '#10B981', tasks: ['Utility marking', 'Access preparation', 'Material delivery', 'Equipment staging'] },
+                    { name: 'Excavation & Base', duration: [1, 2], color: '#8B5CF6', tasks: ['Excavation', 'Grading', 'Base preparation', 'Plumbing rough-in'] },
+                    { name: 'Pool Construction', duration: [4, 6], color: '#00A6B2', tasks: ['Steel framework', 'Gunite/shotcrete shell', 'Plumbing completion', 'Tile and coping', 'Interior finish'] },
+                    { name: 'Decking & Hardscape', duration: [1, 3], color: '#EC4899', tasks: ['Patio installation', 'Coping', 'Drainage', 'Landscaping restoration'] },
+                    { name: 'Equipment & Startup', duration: [0.5, 1], color: '#C9A962', tasks: ['Equipment installation', 'Pool filling', 'Chemistry balancing', 'Owner training'] }
+                ],
+                fiberglass: [
+                    { name: 'Design & Contract', duration: [1, 2], color: '#6366F1', tasks: ['Initial consultation', 'Site evaluation', 'Shell selection', 'Contract signing', 'Deposit payment'] },
+                    { name: 'Permits', duration: [1, 2], color: '#F59E0B', tasks: ['Application submission', 'Township review', 'Approval received'], permitBased: true },
+                    { name: 'Site Preparation', duration: [0.5, 1], color: '#10B981', tasks: ['Utility marking', 'Access preparation', 'Shell delivery coordination'] },
+                    { name: 'Excavation & Base', duration: [0.5, 1], color: '#8B5CF6', tasks: ['Excavation', 'Gravel base', 'Leveling'] },
+                    { name: 'Pool Installation', duration: [0.25, 0.5], color: '#00A6B2', tasks: ['Shell placement', 'Leveling', 'Backfill', 'Plumbing connection'] },
+                    { name: 'Decking & Hardscape', duration: [1, 2], color: '#EC4899', tasks: ['Patio installation', 'Coping', 'Landscaping restoration'] },
+                    { name: 'Equipment & Startup', duration: [0.5, 0.75], color: '#C9A962', tasks: ['Equipment installation', 'Pool filling', 'Chemistry balancing', 'Owner training'] }
+                ],
+                liner: [
+                    { name: 'Design & Contract', duration: [1, 2], color: '#6366F1', tasks: ['Initial consultation', 'Site evaluation', 'Liner selection', 'Contract signing', 'Deposit payment'] },
+                    { name: 'Permits', duration: [1, 2], color: '#F59E0B', tasks: ['Application submission', 'Township review', 'Approval received'], permitBased: true },
+                    { name: 'Site Preparation', duration: [0.5, 1], color: '#10B981', tasks: ['Utility marking', 'Access preparation', 'Material delivery'] },
+                    { name: 'Excavation & Base', duration: [1, 1.5], color: '#8B5CF6', tasks: ['Excavation', 'Grading', 'Base preparation'] },
+                    { name: 'Pool Installation', duration: [1, 2], color: '#00A6B2', tasks: ['Wall panel installation', 'Liner installation', 'Plumbing', 'Equipment pad'] },
+                    { name: 'Decking & Hardscape', duration: [1, 2], color: '#EC4899', tasks: ['Patio installation', 'Coping', 'Landscaping restoration'] },
+                    { name: 'Equipment & Startup', duration: [0.5, 0.75], color: '#C9A962', tasks: ['Equipment installation', 'Pool filling', 'Chemistry balancing', 'Owner training'] }
+                ]
+            },
+
+            // Initialize
+            init() {
+                this.bindEvents();
+                this.setMinDate();
+            },
+
+            // Set minimum date for custom date picker
+            setMinDate() {
+                const today = new Date();
+                today.setMonth(today.getMonth() + 2); // At least 2 months out
+                const minDate = today.toISOString().split('T')[0];
+                document.getElementById('customDate').setAttribute('min', minDate);
+            },
+
+            // Bind all events
+            bindEvents() {
+                // Pool type selection
+                document.querySelectorAll('.pool-type-card').forEach(card => {
+                    card.addEventListener('click', () => this.selectPoolType(card));
+                });
+
+                // Date selection
+                document.querySelectorAll('.date-option').forEach(option => {
+                    option.addEventListener('click', () => this.selectDate(option));
+                });
+
+                // Custom date
+                document.getElementById('customDate').addEventListener('change', (e) => this.selectCustomDate(e));
+
+                // Location selection
+                document.querySelectorAll('.location-card').forEach(card => {
+                    card.addEventListener('click', () => this.selectLocation(card));
+                });
+
+                // Navigation buttons
+                document.getElementById('step1Next').addEventListener('click', () => this.goToStep(2));
+                document.getElementById('step2Back').addEventListener('click', () => this.goToStep(1));
+                document.getElementById('step2Next').addEventListener('click', () => this.goToStep(3));
+                document.getElementById('step3Back').addEventListener('click', () => this.goToStep(2));
+                document.getElementById('step3Next').addEventListener('click', () => this.calculateTimeline());
+            },
+
+            // Select pool type
+            selectPoolType(card) {
+                document.querySelectorAll('.pool-type-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+
+                this.state.poolType = card.dataset.poolType;
+                this.state.poolWeeksMin = parseInt(card.dataset.weeksMin);
+                this.state.poolWeeksMax = parseInt(card.dataset.weeksMax);
+
+                document.getElementById('step1Next').disabled = false;
+            },
+
+            // Select preset date
+            selectDate(option) {
+                document.querySelectorAll('.date-option').forEach(o => o.classList.remove('selected'));
+                document.querySelector('.custom-date-wrapper').classList.remove('active');
+                document.getElementById('customDate').value = '';
+
+                option.classList.add('selected');
+
+                this.state.targetDate = new Date(option.dataset.date);
+                this.state.targetDateLabel = option.querySelector('h4').textContent;
+
+                document.getElementById('step2Next').disabled = false;
+            },
+
+            // Select custom date
+            selectCustomDate(e) {
+                if (e.target.value) {
+                    document.querySelectorAll('.date-option').forEach(o => o.classList.remove('selected'));
+                    document.querySelector('.custom-date-wrapper').classList.add('active');
+
+                    this.state.targetDate = new Date(e.target.value);
+                    this.state.targetDateLabel = this.formatDate(this.state.targetDate);
+
+                    document.getElementById('step2Next').disabled = false;
+                }
+            },
+
+            // Select location
+            selectLocation(card) {
+                document.querySelectorAll('.location-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+
+                this.state.location = card.dataset.location;
+                this.state.permitWeeksMin = parseInt(card.dataset.permitMin);
+                this.state.permitWeeksMax = parseInt(card.dataset.permitMax);
+
+                document.getElementById('step3Next').disabled = false;
+            },
+
+            // Navigate to step
+            goToStep(step) {
+                this.state.currentStep = step;
+
+                // Update progress bar
+                document.querySelectorAll('.progress-step').forEach(s => {
+                    const stepNum = parseInt(s.dataset.step);
+                    s.classList.remove('active', 'completed');
+                    if (stepNum === step) {
+                        s.classList.add('active');
+                    } else if (stepNum < step) {
+                        s.classList.add('completed');
+                    }
+                });
+
+                // Show correct panel
+                document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+                document.querySelector(`[data-panel="${step}"]`).classList.add('active');
+            },
+
+            // Calculate and display timeline
+            calculateTimeline() {
+                // Hide step content, show results
+                document.querySelector('.step-content').style.display = 'none';
+                document.getElementById('resultsContainer').classList.add('active');
+
+                // Update progress bar to final step
+                document.querySelectorAll('.progress-step').forEach(s => {
+                    const stepNum = parseInt(s.dataset.step);
+                    s.classList.remove('active');
+                    s.classList.add('completed');
+                });
+
+                // Calculate start date (work backwards from target)
+                const totalWeeksMin = this.state.poolWeeksMin;
+                const totalWeeksMax = this.state.poolWeeksMax;
+                const avgWeeks = Math.ceil((totalWeeksMin + totalWeeksMax) / 2);
+
+                const startDate = new Date(this.state.targetDate);
+                startDate.setDate(startDate.getDate() - (avgWeeks * 7) - 14); // Add 2 week buffer
+
+                // Update header
+                document.getElementById('startDateBadge').textContent = `Start by ${this.formatDate(startDate)}`;
+                document.getElementById('targetDateDisplay').textContent = this.state.targetDateLabel;
+                document.getElementById('poolTypeDisplay').textContent = this.capitalizeFirst(this.state.poolType);
+
+                // Generate timeline
+                this.generateGanttChart(startDate);
+                this.generateMilestones(startDate);
+                this.generateUrgencyMessages();
+
+                // Animate phases
+                setTimeout(() => {
+                    document.querySelectorAll('.gantt-phase').forEach((phase, index) => {
+                        setTimeout(() => {
+                            phase.classList.add('visible');
+                        }, index * 150);
+                    });
+                }, 300);
+            },
+
+            // Generate Gantt chart
+            generateGanttChart(startDate) {
+                const ganttContainer = document.getElementById('ganttTimeline');
+                const phases = this.phases[this.state.poolType];
+
+                // Adjust permit phase based on location
+                const adjustedPhases = phases.map(phase => {
+                    if (phase.permitBased) {
+                        return {
+                            ...phase,
+                            duration: [this.state.permitWeeksMin, this.state.permitWeeksMax]
+                        };
+                    }
+                    return phase;
+                });
+
+                // Calculate total weeks
+                let totalWeeks = 0;
+                adjustedPhases.forEach(phase => {
+                    totalWeeks += (phase.duration[0] + phase.duration[1]) / 2;
+                });
+
+                // Generate HTML
+                let currentWeek = 0;
+                let html = '';
+
+                adjustedPhases.forEach((phase, index) => {
+                    const avgDuration = (phase.duration[0] + phase.duration[1]) / 2;
+                    const startPercent = (currentWeek / totalWeeks) * 100;
+                    const widthPercent = (avgDuration / totalWeeks) * 100;
+
+                    const phaseStart = new Date(startDate);
+                    phaseStart.setDate(phaseStart.getDate() + (currentWeek * 7));
+
+                    const phaseEnd = new Date(phaseStart);
+                    phaseEnd.setDate(phaseEnd.getDate() + (avgDuration * 7));
+
+                    const durationText = phase.duration[0] === phase.duration[1]
+                        ? `${phase.duration[0]} wk${phase.duration[0] !== 1 ? 's' : ''}`
+                        : `${phase.duration[0]}-${phase.duration[1]} wks`;
+
+                    html += `
+                        <div class="gantt-phase" data-phase="${index}">
+                            <div class="gantt-phase-label">
+                                <h4>${phase.name}</h4>
+                                <span>${this.formatDateShort(phaseStart)} - ${this.formatDateShort(phaseEnd)}</span>
+                            </div>
+                            <div class="gantt-bar-container">
+                                <div class="gantt-bar phase-${this.getPhaseClass(phase.name)}"
+                                     style="left: ${startPercent}%; width: ${widthPercent}%; background: ${phase.color};"
+                                     data-phase="${index}"
+                                     title="${phase.name}: ${durationText}">
+                                    ${durationText}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    currentWeek += avgDuration;
+                });
+
+                ganttContainer.innerHTML = html;
+
+                // Add click handlers for phase details
+                document.querySelectorAll('.gantt-bar').forEach(bar => {
+                    bar.addEventListener('click', () => this.showPhaseDetails(parseInt(bar.dataset.phase)));
+                });
+            },
+
+            // Show phase details
+            showPhaseDetails(phaseIndex) {
+                const phases = this.phases[this.state.poolType];
+                const phase = phases[phaseIndex];
+
+                const detailsContainer = document.getElementById('phaseDetails');
+                const dot = detailsContainer.querySelector('.phase-dot');
+                const name = detailsContainer.querySelector('.phase-name');
+                const tasksList = detailsContainer.querySelector('.phase-tasks');
+
+                dot.style.background = phase.color;
+                name.textContent = phase.name;
+                tasksList.innerHTML = phase.tasks.map(task => `<li>${task}</li>`).join('');
+
+                detailsContainer.classList.add('active');
+            },
+
+            // Generate milestones
+            generateMilestones(startDate) {
+                const milestoneList = document.getElementById('milestoneList');
+                const phases = this.phases[this.state.poolType];
+
+                // Adjust for location
+                const adjustedPhases = phases.map(phase => {
+                    if (phase.permitBased) {
+                        return { ...phase, duration: [this.state.permitWeeksMin, this.state.permitWeeksMax] };
+                    }
+                    return phase;
+                });
+
+                const milestones = [
+                    { label: 'Contract Signing', weekOffset: 0 },
+                    { label: 'Permits Approved', weekOffset: this.calculateWeekOffset(adjustedPhases, 1) },
+                    { label: 'Excavation Begins', weekOffset: this.calculateWeekOffset(adjustedPhases, 3) },
+                    { label: 'Pool Installation Complete', weekOffset: this.calculateWeekOffset(adjustedPhases, 4) },
+                    { label: 'Ready to Swim!', weekOffset: this.calculateWeekOffset(adjustedPhases, 6), highlight: true }
+                ];
+
+                let html = '';
+                milestones.forEach(milestone => {
+                    const date = new Date(startDate);
+                    date.setDate(date.getDate() + (milestone.weekOffset * 7));
+
+                    html += `
+                        <div class="milestone-item ${milestone.highlight ? 'highlight' : ''}">
+                            <div class="milestone-date">${this.formatDateShort(date)}</div>
+                            <div class="milestone-text">${milestone.label}</div>
+                        </div>
+                    `;
+                });
+
+                milestoneList.innerHTML = html;
+            },
+
+            // Calculate week offset for milestone
+            calculateWeekOffset(phases, endPhaseIndex) {
+                let weeks = 0;
+                for (let i = 0; i <= endPhaseIndex && i < phases.length; i++) {
+                    weeks += (phases[i].duration[0] + phases[i].duration[1]) / 2;
+                }
+                return weeks;
+            },
+
+            // Generate urgency messages
+            generateUrgencyMessages() {
+                const container = document.getElementById('urgencyMessages');
+                const targetMonth = this.state.targetDate.getMonth();
+
+                const messages = [];
+
+                // Season-based messages
+                if (targetMonth >= 4 && targetMonth <= 7) { // May-August
+                    messages.push('Spring and summer installations book 3-4 months in advance');
+                    messages.push('Popular fiberglass shell colors sell out quickly');
+                }
+
+                if (targetMonth >= 2 && targetMonth <= 4) { // March-May
+                    messages.push('Spring is our busiest season - book early for best scheduling');
+                }
+
+                // Pool type specific
+                if (this.state.poolType === 'concrete') {
+                    messages.push('Concrete pools require consistent weather - plan around frost dates');
+                    messages.push('Custom design consultations take 1-2 weeks - start early');
+                } else if (this.state.poolType === 'fiberglass') {
+                    messages.push('Shell manufacturers have 4-6 week lead times');
+                    messages.push('Fiberglass is ideal for quick installations');
+                }
+
+                // Location specific
+                if (this.state.location === 'PA') {
+                    messages.push('PA townships typically take 2-4 weeks for permit approval');
+                } else {
+                    messages.push('Delaware permits process faster - great for tight timelines');
+                }
+
+                container.innerHTML = messages.slice(0, 4).map(msg =>
+                    `<div class="urgency-message">${msg}</div>`
+                ).join('');
+
+                // Update availability badge
+                const slotsRemaining = Math.floor(Math.random() * 5) + 4; // 4-8 slots
+                const season = targetMonth >= 2 && targetMonth <= 7 ? 'spring/summer' : 'fall';
+                document.getElementById('availabilityText').textContent =
+                    `${slotsRemaining} ${season} installation slots remaining`;
+            },
+
+            // Helper: Get phase class name
+            getPhaseClass(phaseName) {
+                const classMap = {
+                    'Design & Contract': 'design',
+                    'Permits': 'permits',
+                    'Site Preparation': 'site',
+                    'Excavation & Base': 'excavation',
+                    'Pool Construction': 'installation',
+                    'Pool Installation': 'installation',
+                    'Decking & Hardscape': 'decking',
+                    'Equipment & Startup': 'startup'
+                };
+                return classMap[phaseName] || 'design';
+            },
+
+            // Helper: Format date
+            formatDate(date) {
+                const options = { month: 'long', day: 'numeric', year: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            },
+
+            // Helper: Format short date
+            formatDateShort(date) {
+                const options = { month: 'short', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            },
+
+            // Helper: Capitalize first letter
+            capitalizeFirst(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
+        };
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            TimelineEstimator.init();
+        });
+    </script>
+</body>
+</html>

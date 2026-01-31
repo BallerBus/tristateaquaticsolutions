@@ -1,0 +1,479 @@
+<!--
+Exit Intent Popup Component for Tri-State Aquatic Solutions
+Triggers when user moves to leave the page
+
+USAGE:
+Include this file before </body> on any page:
+<script src="/components/exit-intent-popup.js"></script>
+
+Or copy the entire contents into your page.
+-->
+
+<style>
+/* Exit Intent Popup Styles */
+.exit-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(14, 31, 52, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exit-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.exit-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #FFFFFF;
+    border-radius: 24px;
+    max-width: 520px;
+    width: 90%;
+    z-index: 10001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+}
+
+.exit-popup-overlay.active .exit-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.exit-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    background: #F5F7FA;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.exit-popup-close:hover {
+    background: #0E1F34;
+}
+
+.exit-popup-close svg {
+    width: 18px;
+    height: 18px;
+    stroke: #6B7280;
+    stroke-width: 2;
+    transition: stroke 0.3s ease;
+}
+
+.exit-popup-close:hover svg {
+    stroke: #FFFFFF;
+}
+
+.exit-popup-header {
+    background: linear-gradient(135deg, #0E1F34 0%, #1a2d45 100%);
+    padding: 2rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.exit-popup-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 50% 50% 0 0;
+}
+
+.exit-popup-icon {
+    width: 64px;
+    height: 64px;
+    background: #00A6B2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.exit-popup-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    fill: none;
+}
+
+.exit-popup-header h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.exit-popup-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin: 0.5rem 0 0;
+    position: relative;
+    z-index: 1;
+}
+
+.exit-popup-body {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.exit-popup-offer {
+    background: #F5F7FA;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.exit-popup-offer-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0E1F34;
+    margin-bottom: 0.5rem;
+}
+
+.exit-popup-offer-subtitle {
+    font-size: 0.9rem;
+    color: #6B7280;
+}
+
+.exit-popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.exit-popup-form input {
+    padding: 0.9rem 1rem;
+    border: 1.5px solid #E8ECF1;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exit-popup-form input:focus {
+    outline: none;
+    border-color: #00A6B2;
+    box-shadow: 0 0 0 3px rgba(0, 166, 178, 0.15);
+}
+
+.exit-popup-submit {
+    background: #00A6B2;
+    color: #FFFFFF;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 0.5rem;
+}
+
+.exit-popup-submit:hover {
+    background: #008a94;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 166, 178, 0.5);
+}
+
+.exit-popup-no-thanks {
+    display: block;
+    text-align: center;
+    color: #6B7280;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    width: 100%;
+}
+
+.exit-popup-no-thanks:hover {
+    color: #0E1F34;
+}
+
+.exit-popup-disclaimer {
+    font-size: 0.7rem;
+    color: #6B7280;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Success State */
+.exit-popup-success {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.exit-popup-success.show {
+    display: block;
+}
+
+.exit-popup-success-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00A6B2 0%, #008a94 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.exit-popup-success-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: #FFFFFF;
+    stroke-width: 2.5;
+    fill: none;
+}
+
+.exit-popup-success h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    color: #0E1F34;
+    margin: 0 0 0.5rem;
+}
+
+.exit-popup-success p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 640px) {
+    .exit-popup {
+        width: 95%;
+        max-width: none;
+        border-radius: 20px;
+    }
+
+    .exit-popup-header {
+        padding: 1.5rem 1.5rem 2.5rem;
+    }
+
+    .exit-popup-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .exit-popup-body {
+        padding: 1rem 1.5rem 1.5rem;
+    }
+}
+</style>
+
+<!-- Exit Intent Popup HTML -->
+<div class="exit-popup-overlay" id="exitPopupOverlay">
+    <div class="exit-popup" role="dialog" aria-modal="true" aria-labelledby="exitPopupTitle">
+        <button class="exit-popup-close" id="exitPopupClose" aria-label="Close popup">
+            <svg viewBox="0 0 24 24" fill="none">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+
+        <div class="exit-popup-header">
+            <div class="exit-popup-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+            </div>
+            <h2 id="exitPopupTitle">Wait! Before You Go...</h2>
+            <p>Don't leave without getting expert advice</p>
+        </div>
+
+        <div class="exit-popup-body">
+            <div class="exit-popup-offer">
+                <div class="exit-popup-offer-title">Get a Free Cost Estimate</div>
+                <div class="exit-popup-offer-subtitle">No commitment, no pressure - just honest numbers</div>
+            </div>
+
+            <form class="exit-popup-form" id="exitPopupForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone (optional)">
+                <button type="submit" class="exit-popup-submit">Get My Free Estimate</button>
+            </form>
+
+            <button class="exit-popup-no-thanks" id="exitPopupNoThanks">No thanks, I'm not interested</button>
+
+            <p class="exit-popup-disclaimer">
+                We respect your privacy. Your information is never shared or sold.
+            </p>
+
+            <div class="exit-popup-success" id="exitPopupSuccess">
+                <div class="exit-popup-success-icon">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h3>Thank You!</h3>
+                <p>We'll send your personalized estimate within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    const POPUP_KEY = 'tsas_exit_popup_shown';
+    const POPUP_EXPIRY_DAYS = 7;
+
+    // Check if popup was already shown recently
+    function wasPopupShown() {
+        const shownTimestamp = localStorage.getItem(POPUP_KEY);
+        if (!shownTimestamp) return false;
+
+        const daysSinceShown = (Date.now() - parseInt(shownTimestamp)) / (1000 * 60 * 60 * 24);
+        return daysSinceShown < POPUP_EXPIRY_DAYS;
+    }
+
+    // Mark popup as shown
+    function markPopupShown() {
+        localStorage.setItem(POPUP_KEY, Date.now().toString());
+    }
+
+    // Show popup
+    function showPopup() {
+        if (wasPopupShown()) return;
+
+        document.getElementById('exitPopupOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        markPopupShown();
+    }
+
+    // Hide popup
+    function hidePopup() {
+        document.getElementById('exitPopupOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Exit intent detection
+    let exitIntentTriggered = false;
+
+    document.addEventListener('mouseout', function(e) {
+        if (exitIntentTriggered) return;
+
+        // If mouse leaves from top of viewport
+        if (e.clientY <= 0 && e.relatedTarget === null) {
+            exitIntentTriggered = true;
+            setTimeout(showPopup, 100);
+        }
+    });
+
+    // Mobile: Detect rapid scroll up (possible back navigation)
+    let lastScrollTop = 0;
+    let rapidScrollCount = 0;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop < lastScrollTop && lastScrollTop - scrollTop > 50) {
+            rapidScrollCount++;
+            if (rapidScrollCount >= 3 && !exitIntentTriggered) {
+                exitIntentTriggered = true;
+                showPopup();
+            }
+        } else {
+            rapidScrollCount = 0;
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
+
+    // Close handlers
+    document.getElementById('exitPopupClose').addEventListener('click', hidePopup);
+    document.getElementById('exitPopupNoThanks').addEventListener('click', hidePopup);
+
+    document.getElementById('exitPopupOverlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            hidePopup();
+        }
+    });
+
+    // Escape key closes popup
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            hidePopup();
+        }
+    });
+
+    // Form submission
+    document.getElementById('exitPopupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = {
+            name: this.querySelector('[name="name"]').value,
+            email: this.querySelector('[name="email"]').value,
+            phone: this.querySelector('[name="phone"]').value,
+            source: 'exit-intent-popup',
+            timestamp: new Date().toISOString()
+        };
+
+        // Store lead
+        const leads = JSON.parse(localStorage.getItem('tsas_leads') || '[]');
+        leads.push(formData);
+        localStorage.setItem('tsas_leads', JSON.stringify(leads));
+
+        // Track conversion
+        localStorage.setItem('tsas_user_email', formData.email);
+        localStorage.setItem('tsas_user_name', formData.name);
+
+        // Show success
+        this.style.display = 'none';
+        document.querySelector('.exit-popup-offer').style.display = 'none';
+        document.getElementById('exitPopupNoThanks').style.display = 'none';
+        document.querySelector('.exit-popup-disclaimer').style.display = 'none';
+        document.getElementById('exitPopupSuccess').classList.add('show');
+
+        // Fire analytics event
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'lead_capture', {
+                'event_category': 'Exit Intent',
+                'event_label': 'Free Estimate',
+                'value': 1
+            });
+        }
+
+        // Auto close after delay
+        setTimeout(hidePopup, 3000);
+    });
+})();
+</script>

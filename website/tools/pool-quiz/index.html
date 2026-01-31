@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Pool Is Right For You? | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Take our interactive quiz to discover which pool type matches your lifestyle, backyard, and budget. Get personalized recommendations in under 2 minutes.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Which Pool Is Right For You? | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Take our interactive quiz to discover which pool type matches your lifestyle, backyard, and budget.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquaticsolutions.com/tools/pool-quiz/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Which Pool Is Right For You?",
+        "description": "An interactive quiz to help homeowners discover which pool type matches their lifestyle, backyard space, and budget.",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Tri-State Aquatic Solutions",
+            "areaServed": ["Main Line Philadelphia", "Northern Delaware"]
+        },
+        "about": {
+            "@type": "Product",
+            "name": "Swimming Pool Installation"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        }
+
+        /* Navigation */
+        .quiz-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .exit-btn {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .exit-btn:hover {
+            color: var(--navy);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(14, 31, 52, 0.05);
+        }
+
+        .progress-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+
+        .progress-step {
+            font-size: 0.8rem;
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--gray);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--aqua), var(--gold));
+            border-radius: 100px;
+            transition: width 0.5s var(--ease-out-expo);
+        }
+
+        /* Quiz Container */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 160px clamp(1.5rem, 5vw, 4rem) 4rem;
+            min-height: 100vh;
+        }
+
+        /* Question Slides */
+        .question-slide {
+            display: none;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .question-slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .question-slide.exiting {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .question-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .question-number::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--aqua);
+        }
+
+        .question-title {
+            margin-bottom: 2.5rem;
+            color: var(--navy);
+        }
+
+        .question-subtitle {
+            font-size: 1rem;
+            color: var(--gray-text);
+            margin-top: 0.75rem;
+            font-weight: 400;
+        }
+
+        /* Answer Options */
+        .options-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .options-grid.two-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 640px) {
+            .options-grid.two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .option-btn {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--aqua);
+            transform: scaleY(0);
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .option-btn:hover {
+            border-color: var(--aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 166, 178, 0.2);
+        }
+
+        .option-btn:hover::before {
+            transform: scaleY(1);
+        }
+
+        .option-btn.selected {
+            border-color: var(--aqua);
+            background: linear-gradient(135deg, rgba(0, 166, 178, 0.08) 0%, rgba(0, 166, 178, 0.02) 100%);
+        }
+
+        .option-btn.selected::before {
+            transform: scaleY(1);
+        }
+
+        .option-btn.selected::after {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 24px;
+            height: 24px;
+            background: var(--aqua);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-size: 14px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .option-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover .option-icon,
+        .option-btn.selected .option-icon {
+            background: var(--aqua-glow);
+        }
+
+        .option-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .option-title {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .option-desc {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        /* Multi-select options */
+        .multi-select .option-btn.selected::after {
+            display: block;
+        }
+
+        .multi-select-hint {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Navigation Buttons */
+        .quiz-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.75rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-back {
+            background: transparent;
+            color: var(--gray-text);
+            padding-left: 0;
+        }
+
+        .btn-back:hover {
+            color: var(--navy);
+        }
+
+        .btn-back svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-back:hover svg {
+            transform: translateX(-4px);
+        }
+
+        .btn-next {
+            background: var(--navy);
+            color: var(--white);
+            margin-left: auto;
+        }
+
+        .btn-next:hover:not(:disabled) {
+            background: var(--aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 166, 178, 0.4);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-next svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-next:hover:not(:disabled) svg {
+            transform: translateX(4px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .start-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 50px -15px rgba(0, 166, 178, 0.4);
+        }
+
+        .start-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--white);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .start-screen h1 {
+            margin-bottom: 1rem;
+        }
+
+        .start-screen h1 em {
+            font-style: italic;
+            color: var(--aqua);
+        }
+
+        .start-desc {
+            font-size: 1.15rem;
+            color: var(--gray-text);
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .start-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .start-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .start-feature svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .btn-start {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-start:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(0, 166, 178, 0.4);
+        }
+
+        /* Results Screen */
+        .results-screen {
+            display: none;
+        }
+
+        .results-screen.active {
+            display: block;
+            animation: fadeInUp 0.6s var(--ease-out-expo);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .results-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .results-tag svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--gold);
+        }
+
+        .results-header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .results-header h1 .pool-type {
+            color: var(--aqua);
+        }
+
+        .results-confidence {
+            font-size: 1rem;
+            color: var(--gray-text);
+        }
+
+        /* Result Card */
+        .result-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+            margin-bottom: 2rem;
+        }
+
+        .result-hero {
+            height: 250px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result-hero.concrete-bg {
+            background: linear-gradient(135deg, rgba(14,31,52,0.7) 0%, rgba(14,31,52,0.4) 100%), url('../../images/wellness-plunge.jpg') center/cover;
+        }
+
+        .result-hero.fiberglass-bg {
+            background: linear-gradient(135deg, rgba(14,31,52,0.7) 0%, rgba(14,31,52,0.4) 100%), url('../../images/family-fiberglass.jpg') center/cover;
+        }
+
+        .result-hero.plunge-bg {
+            background: linear-gradient(135deg, rgba(14,31,52,0.7) 0%, rgba(14,31,52,0.4) 100%), url('../../images/wellness-plunge.jpg') center/cover;
+        }
+
+        .result-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .result-content {
+            padding: 2.5rem;
+        }
+
+        .result-section {
+            margin-bottom: 2rem;
+        }
+
+        .result-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-section-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .result-reasons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .result-reason {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: var(--navy);
+        }
+
+        .result-reason svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .result-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .result-specs {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .result-spec {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gray-light);
+            border-radius: 16px;
+        }
+
+        .result-spec-value {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .result-spec-label {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* Runners Up */
+        .runners-up {
+            margin-top: 3rem;
+        }
+
+        .runners-up-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .runner-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .runner-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .runner-card {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .runner-card:hover {
+            border-color: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .runner-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .runner-reason {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        /* CTA Section */
+        .results-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-cta::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .results-cta h3 {
+            color: var(--white);
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .results-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .btn-cta-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        .btn-cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+        /* Share & Retake */
+        .results-actions {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .action-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .action-link:hover {
+            color: var(--aqua);
+        }
+
+        .action-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Loading State */
+        .loading-screen {
+            display: none;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .loading-screen.active {
+            display: block;
+        }
+
+        .loading-animation {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .loading-animation::before,
+        .loading-animation::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid transparent;
+            border-top-color: var(--aqua);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-animation::after {
+            inset: 10px;
+            border-top-color: var(--gold);
+            animation-duration: 1.5s;
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.1rem;
+            color: var(--navy);
+        }
+
+        .loading-subtext {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-top: 0.5rem;
+        }
+
+        /* Copied Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: all 0.3s var(--ease-out-expo);
+            z-index: 9999;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .quiz-container {
+                padding-top: 140px;
+            }
+
+            .start-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .results-cta {
+                padding: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="quiz-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="../../index.html" class="exit-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                Exit Quiz
+            </a>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container" id="progressContainer" style="display: none;">
+        <div class="progress-inner">
+            <div class="progress-info">
+                <span class="progress-label">Your Perfect Pool</span>
+                <span class="progress-step" id="progressStep">Question 1 of 8</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 12.5%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div class="start-screen" id="startScreen">
+            <div class="start-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+            </div>
+            <h1>Which Pool Is <em>Right</em> For You?</h1>
+            <p class="start-desc">Answer 8 quick questions and we'll recommend the perfect pool for your lifestyle, backyard, and budget.</p>
+            <div class="start-features">
+                <div class="start-feature">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Under 2 minutes
+                </div>
+                <div class="start-feature">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Personalized results
+                </div>
+                <div class="start-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    No pressure
+                </div>
+            </div>
+            <button class="btn btn-start" onclick="startQuiz()">
+                Let's Find Your Pool
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Question 1: Primary Goal -->
+        <div class="question-slide" id="q1">
+            <div class="question-number">Question 1</div>
+            <h2 class="question-title">What's your primary goal for your new pool?</h2>
+            <div class="options-grid">
+                <div class="option-btn" data-value="family" onclick="selectOption(this, 1)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="option-title">Family Fun & Entertainment</div>
+                    <div class="option-desc">A gathering place for kids, friends, and memories</div>
+                </div>
+                <div class="option-btn" data-value="fitness" onclick="selectOption(this, 1)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
+                    <div class="option-title">Fitness & Exercise</div>
+                    <div class="option-desc">Daily laps and staying active at home</div>
+                </div>
+                <div class="option-btn" data-value="relaxation" onclick="selectOption(this, 1)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                    </div>
+                    <div class="option-title">Relaxation & Wellness</div>
+                    <div class="option-desc">A peaceful retreat for stress relief</div>
+                </div>
+                <div class="option-btn" data-value="entertaining" onclick="selectOption(this, 1)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="option-title">Entertaining Guests</div>
+                    <div class="option-desc">The centerpiece for parties and social gatherings</div>
+                </div>
+                <div class="option-btn" data-value="value" onclick="selectOption(this, 1)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="option-title">Increasing Home Value</div>
+                    <div class="option-desc">A smart investment in my property</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()" style="visibility: hidden;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="nextQuestion(1)" id="nextBtn1" disabled>
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question 2: Backyard Size -->
+        <div class="question-slide" id="q2">
+            <div class="question-number">Question 2</div>
+            <h2 class="question-title">How would you describe your backyard?</h2>
+            <div class="options-grid">
+                <div class="option-btn" data-value="compact" onclick="selectOption(this, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <div class="option-title">Compact / Urban</div>
+                    <div class="option-desc">Under 1,000 sq ft available</div>
+                </div>
+                <div class="option-btn" data-value="medium" onclick="selectOption(this, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    </div>
+                    <div class="option-title">Medium Suburban</div>
+                    <div class="option-desc">1,000 - 3,000 sq ft available</div>
+                </div>
+                <div class="option-btn" data-value="large" onclick="selectOption(this, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <div class="option-title">Large Suburban</div>
+                    <div class="option-desc">3,000 - 5,000 sq ft available</div>
+                </div>
+                <div class="option-btn" data-value="estate" onclick="selectOption(this, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <div class="option-title">Estate Property</div>
+                    <div class="option-desc">5,000+ sq ft available</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="nextQuestion(2)" id="nextBtn2" disabled>
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question 3: Maintenance -->
+        <div class="question-slide" id="q3">
+            <div class="question-number">Question 3</div>
+            <h2 class="question-title">How important is low maintenance to you?</h2>
+            <div class="options-grid">
+                <div class="option-btn" data-value="critical" onclick="selectOption(this, 3)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="option-title">Critical</div>
+                    <div class="option-desc">I want minimal work - set it and forget it</div>
+                </div>
+                <div class="option-btn" data-value="important" onclick="selectOption(this, 3)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="option-title">Important</div>
+                    <div class="option-desc">I'll do some upkeep, but keep it reasonable</div>
+                </div>
+                <div class="option-btn" data-value="moderate" onclick="selectOption(this, 3)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="option-title">Moderate</div>
+                    <div class="option-desc">I don't mind regular maintenance</div>
+                </div>
+                <div class="option-btn" data-value="notconcern" onclick="selectOption(this, 3)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <div class="option-title">Not a Concern</div>
+                    <div class="option-desc">I'll hire someone to handle it all</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="nextQuestion(3)" id="nextBtn3" disabled>
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question 4: Timeline -->
+        <div class="question-slide" id="q4">
+            <div class="question-number">Question 4</div>
+            <h2 class="question-title">What's your timeline?</h2>
+            <div class="options-grid">
+                <div class="option-btn" data-value="asap" onclick="selectOption(this, 4)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="option-title">ASAP</div>
+                    <div class="option-desc">I want to swim this summer</div>
+                </div>
+                <div class="option-btn" data-value="thisyear" onclick="selectOption(this, 4)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <div class="option-title">This Year</div>
+                    <div class="option-desc">No rush, but I'd like it done soon</div>
+                </div>
+                <div class="option-btn" data-value="nextyear" onclick="selectOption(this, 4)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="option-title">Planning for Next Year</div>
+                    <div class="option-desc">I'm thinking ahead</div>
+                </div>
+                <div class="option-btn" data-value="researching" onclick="selectOption(this, 4)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <div class="option-title">Just Researching</div>
+                    <div class="option-desc">No specific timeline yet</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="nextQuestion(4)" id="nextBtn4" disabled>
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question 5: Design Preference -->
+        <div class="question-slide" id="q5">
+            <div class="question-number">Question 5</div>
+            <h2 class="question-title">What's your design preference?</h2>
+            <div class="options-grid two-col">
+                <div class="option-btn" data-value="modern" onclick="selectOption(this, 5)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                    <div class="option-title">Modern & Sleek</div>
+                    <div class="option-desc">Clean lines, geometric shapes, contemporary feel</div>
+                </div>
+                <div class="option-btn" data-value="classic" onclick="selectOption(this, 5)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z"/><path d="M12 12L20 7.5"/><path d="M12 12V21"/><path d="M12 12L4 7.5"/></svg>
+                    </div>
+                    <div class="option-title">Classic & Timeless</div>
+                    <div class="option-desc">Traditional shapes that never go out of style</div>
+                </div>
+                <div class="option-btn" data-value="natural" onclick="selectOption(this, 5)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22c4-4 8-7.582 8-12a8 8 0 1 0-16 0c0 4.418 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="option-title">Natural & Organic</div>
+                    <div class="option-desc">Freeform shapes that blend with landscape</div>
+                </div>
+                <div class="option-btn" data-value="custom" onclick="selectOption(this, 5)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="14.5 2 17.88 7.25 23.8 8.5 19.6 12.75 20.5 18.5 14.5 15.75 8.5 18.5 9.4 12.75 5.2 8.5 11.12 7.25 14.5 2"/></svg>
+                    </div>
+                    <div class="option-title">Custom & Unique</div>
+                    <div class="option-desc">A one-of-a-kind design just for me</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="nextQuestion(5)" id="nextBtn5" disabled>
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question 6: Features (Multi-select) -->
+        <div class="question-slide" id="q6">
+            <div class="question-number">Question 6</div>
+            <h2 class="question-title">Which features matter most to you?
+                <span class="question-subtitle">Select up to 2 options</span>
+            </h2>
+            <div class="options-grid two-col multi-select">
+                <div class="option-btn" data-value="tanningledge" onclick="selectMultiple(this, 6, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </div>
+                    <div class="option-title">Tanning Ledge / Sun Shelf</div>
+                    <div class="option-desc">Shallow lounging area for relaxation</div>
+                </div>
+                <div class="option-btn" data-value="spa" onclick="selectMultiple(this, 6, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2z"/></svg>
+                    </div>
+                    <div class="option-title">Integrated Spa / Hot Tub</div>
+                    <div class="option-desc">Year-round hydrotherapy experience</div>
+                </div>
+                <div class="option-btn" data-value="waterfeatures" onclick="selectMultiple(this, 6, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <div class="option-title">Water Features</div>
+                    <div class="option-desc">Fountains, waterfalls, or bubblers</div>
+                </div>
+                <div class="option-btn" data-value="smart" onclick="selectMultiple(this, 6, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
+                    <div class="option-title">Smart Controls</div>
+                    <div class="option-desc">App-controlled automation & monitoring</div>
+                </div>
+                <div class="option-btn" data-value="heating" onclick="selectMultiple(this, 6, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                    </div>
+                    <div class="option-title">Heating for Year-Round Use</div>
+                    <div class="option-desc">Extend your swim season</div>
+                </div>
+                <div class="option-btn" data-value="safetycover" onclick="selectMultiple(this, 6, 2)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="option-title">Automatic Safety Cover</div>
+                    <div class="option-desc">One-touch protection & heat retention</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="nextQuestion(6)" id="nextBtn6" disabled>
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question 7: Budget -->
+        <div class="question-slide" id="q7">
+            <div class="question-number">Question 7</div>
+            <h2 class="question-title">What's your investment comfort level?</h2>
+            <div class="options-grid">
+                <div class="option-btn" data-value="50-70" onclick="selectOption(this, 7)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="option-title">$50,000 - $70,000</div>
+                    <div class="option-desc">Quality pool at an accessible price</div>
+                </div>
+                <div class="option-btn" data-value="70-100" onclick="selectOption(this, 7)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="option-title">$70,000 - $100,000</div>
+                    <div class="option-desc">Enhanced features and finishes</div>
+                </div>
+                <div class="option-btn" data-value="100-130" onclick="selectOption(this, 7)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="option-title">$100,000 - $130,000</div>
+                    <div class="option-desc">Premium features and craftsmanship</div>
+                </div>
+                <div class="option-btn" data-value="130+" onclick="selectOption(this, 7)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="option-title">$130,000+</div>
+                    <div class="option-desc">The perfect pool, no compromises</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="nextQuestion(7)" id="nextBtn7" disabled>
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question 8: Concerns -->
+        <div class="question-slide" id="q8">
+            <div class="question-number">Question 8</div>
+            <h2 class="question-title">What concerns you most about getting a pool?</h2>
+            <div class="options-grid">
+                <div class="option-btn" data-value="cost" onclick="selectOption(this, 8)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="option-title">Total Cost</div>
+                    <div class="option-desc">Upfront investment and hidden fees</div>
+                </div>
+                <div class="option-btn" data-value="time" onclick="selectOption(this, 8)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="option-title">Installation Time</div>
+                    <div class="option-desc">How long my yard will be a construction zone</div>
+                </div>
+                <div class="option-btn" data-value="maintenance" onclick="selectOption(this, 8)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <div class="option-title">Long-Term Maintenance</div>
+                    <div class="option-desc">Ongoing effort and annual costs</div>
+                </div>
+                <div class="option-btn" data-value="choice" onclick="selectOption(this, 8)">
+                    <div class="option-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="option-title">Making the Right Choice</div>
+                    <div class="option-desc">Choosing the best pool for my needs</div>
+                </div>
+            </div>
+            <div class="quiz-nav-buttons">
+                <button class="btn btn-back" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <button class="btn btn-next" onclick="showResults()" id="nextBtn8" disabled>
+                    See My Results
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-animation"></div>
+            <div class="loading-text">Analyzing your preferences...</div>
+            <div class="loading-subtext">Finding the perfect pool for you</div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results-screen" id="resultsScreen">
+            <div class="results-header">
+                <div class="results-tag">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Your Perfect Match
+                </div>
+                <h1>Your Perfect Pool: <span class="pool-type" id="resultPoolType">Fiberglass Pool</span></h1>
+                <p class="results-confidence" id="resultConfidence">95% match based on your answers</p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-hero" id="resultHero">
+                    <div class="result-badge" id="resultBadge">Recommended</div>
+                </div>
+                <div class="result-content">
+                    <div class="result-section">
+                        <div class="result-section-title">Why This Pool Fits You</div>
+                        <div class="result-reasons" id="resultReasons">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="result-section-title">Key Specifications</div>
+                        <div class="result-specs" id="resultSpecs">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="runners-up" id="runnersUp">
+                <h3 class="runners-up-title">Also Consider</h3>
+                <div class="runner-cards" id="runnerCards">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <div class="results-cta">
+                <h3>Ready to Make It Happen?</h3>
+                <p>Get a free consultation and personalized quote based on your quiz results.</p>
+                <div class="cta-buttons">
+                    <a href="../../index.html#contact" class="btn btn-cta-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Get Free Consultation
+                    </a>
+                    <a href="../../index.html#services" class="btn btn-cta-secondary">
+                        Explore All Pools
+                    </a>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <a class="action-link" onclick="shareResults()">
+                    <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    Share Results
+                </a>
+                <a class="action-link" onclick="retakeQuiz()">
+                    <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                    Retake Quiz
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span id="toastMessage">Link copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Quiz State
+        let currentQuestion = 0;
+        const totalQuestions = 8;
+        const answers = {};
+        const multiSelectAnswers = {};
+
+        // Pool Data
+        const poolData = {
+            concrete: {
+                name: 'Concrete Pool',
+                badge: 'Premium',
+                heroClass: 'concrete-bg',
+                investment: '$80,000 - $130,000',
+                timeline: '8-12 weeks',
+                maintenance: 'Moderate'
+            },
+            fiberglass: {
+                name: 'Fiberglass Pool',
+                badge: 'Most Popular',
+                heroClass: 'fiberglass-bg',
+                investment: '$60,000 - $100,000',
+                timeline: '2-4 weeks',
+                maintenance: 'Low'
+            },
+            plunge: {
+                name: 'Plunge Pool',
+                badge: 'Perfect Fit',
+                heroClass: 'plunge-bg',
+                investment: '$50,000 - $80,000',
+                timeline: '2-3 weeks',
+                maintenance: 'Very Low'
+            }
+        };
+
+        // Start Quiz
+        function startQuiz() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('progressContainer').style.display = 'block';
+            currentQuestion = 1;
+            showQuestion(1);
+            updateProgress();
+
+            // Save to localStorage that quiz started
+            localStorage.setItem('quizStarted', 'true');
+        }
+
+        // Show Question
+        function showQuestion(num) {
+            // Hide all questions
+            document.querySelectorAll('.question-slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Show target question with animation
+            setTimeout(() => {
+                const target = document.getElementById('q' + num);
+                if (target) {
+                    target.classList.add('active');
+                }
+            }, 50);
+        }
+
+        // Select Single Option
+        function selectOption(element, questionNum) {
+            const parent = element.parentElement;
+            parent.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            answers[questionNum] = element.dataset.value;
+
+            // Enable next button
+            document.getElementById('nextBtn' + questionNum).disabled = false;
+
+            // Save to localStorage
+            saveProgress();
+        }
+
+        // Select Multiple Options
+        function selectMultiple(element, questionNum, maxSelections) {
+            if (!multiSelectAnswers[questionNum]) {
+                multiSelectAnswers[questionNum] = [];
+            }
+
+            const value = element.dataset.value;
+            const index = multiSelectAnswers[questionNum].indexOf(value);
+
+            if (index > -1) {
+                // Deselect
+                multiSelectAnswers[questionNum].splice(index, 1);
+                element.classList.remove('selected');
+            } else {
+                // Check if max reached
+                if (multiSelectAnswers[questionNum].length >= maxSelections) {
+                    return;
+                }
+                // Select
+                multiSelectAnswers[questionNum].push(value);
+                element.classList.add('selected');
+            }
+
+            // Enable next button if at least 1 selected
+            document.getElementById('nextBtn' + questionNum).disabled =
+                multiSelectAnswers[questionNum].length === 0;
+
+            // Save answers
+            answers[questionNum] = multiSelectAnswers[questionNum];
+            saveProgress();
+        }
+
+        // Next Question
+        function nextQuestion(currentNum) {
+            const currentSlide = document.getElementById('q' + currentNum);
+            currentSlide.classList.add('exiting');
+
+            setTimeout(() => {
+                currentSlide.classList.remove('active', 'exiting');
+                currentQuestion = currentNum + 1;
+                showQuestion(currentQuestion);
+                updateProgress();
+            }, 300);
+        }
+
+        // Go Back
+        function goBack() {
+            if (currentQuestion > 1) {
+                const currentSlide = document.getElementById('q' + currentQuestion);
+                currentSlide.classList.remove('active');
+
+                currentQuestion--;
+                showQuestion(currentQuestion);
+                updateProgress();
+            }
+        }
+
+        // Update Progress Bar
+        function updateProgress() {
+            const percentage = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressStep').textContent =
+                'Question ' + currentQuestion + ' of ' + totalQuestions;
+        }
+
+        // Save Progress to localStorage
+        function saveProgress() {
+            localStorage.setItem('poolQuizAnswers', JSON.stringify(answers));
+            localStorage.setItem('poolQuizQuestion', currentQuestion);
+        }
+
+        // Load Progress from localStorage
+        function loadProgress() {
+            const savedAnswers = localStorage.getItem('poolQuizAnswers');
+            const savedQuestion = localStorage.getItem('poolQuizQuestion');
+
+            if (savedAnswers && savedQuestion) {
+                Object.assign(answers, JSON.parse(savedAnswers));
+                // Could restore position, but for simplicity just note we have data
+            }
+        }
+
+        // Calculate Results
+        function calculateResults() {
+            let scores = {
+                concrete: 0,
+                fiberglass: 0,
+                plunge: 0
+            };
+
+            // Q1: Primary Goal
+            const goal = answers[1];
+            if (goal === 'family' || goal === 'entertaining') {
+                scores.concrete += 2;
+                scores.fiberglass += 3;
+            }
+            if (goal === 'fitness') {
+                scores.plunge += 3;
+                scores.fiberglass += 2;
+            }
+            if (goal === 'relaxation') {
+                scores.plunge += 3;
+                scores.concrete += 2;
+            }
+            if (goal === 'value') {
+                scores.fiberglass += 3;
+                scores.concrete += 2;
+            }
+
+            // Q2: Backyard Size
+            const size = answers[2];
+            if (size === 'compact') {
+                scores.plunge += 5;
+            }
+            if (size === 'medium') {
+                scores.fiberglass += 4;
+                scores.plunge += 2;
+            }
+            if (size === 'large') {
+                scores.fiberglass += 3;
+                scores.concrete += 3;
+            }
+            if (size === 'estate') {
+                scores.concrete += 5;
+                scores.fiberglass += 2;
+            }
+
+            // Q3: Maintenance
+            const maintenance = answers[3];
+            if (maintenance === 'critical') {
+                scores.fiberglass += 4;
+                scores.plunge += 3;
+            }
+            if (maintenance === 'important') {
+                scores.fiberglass += 3;
+                scores.plunge += 2;
+            }
+            if (maintenance === 'moderate' || maintenance === 'notconcern') {
+                scores.concrete += 3;
+            }
+
+            // Q4: Timeline
+            const timeline = answers[4];
+            if (timeline === 'asap') {
+                scores.fiberglass += 4;
+                scores.plunge += 3;
+            }
+            if (timeline === 'thisyear') {
+                scores.fiberglass += 2;
+                scores.concrete += 2;
+            }
+            if (timeline === 'nextyear' || timeline === 'researching') {
+                scores.concrete += 2;
+            }
+
+            // Q5: Design
+            const design = answers[5];
+            if (design === 'modern') {
+                scores.fiberglass += 3;
+                scores.plunge += 2;
+            }
+            if (design === 'classic') {
+                scores.fiberglass += 3;
+                scores.concrete += 2;
+            }
+            if (design === 'natural') {
+                scores.concrete += 3;
+            }
+            if (design === 'custom') {
+                scores.concrete += 5;
+            }
+
+            // Q6: Features (multi-select)
+            const features = answers[6] || [];
+            if (features.includes('spa')) {
+                scores.concrete += 4;
+            }
+            if (features.includes('safetycover')) {
+                scores.concrete += 2;
+            }
+            if (features.includes('tanningledge')) {
+                scores.fiberglass += 2;
+                scores.concrete += 2;
+            }
+            if (features.includes('heating')) {
+                scores.plunge += 2;
+            }
+            if (features.includes('smart')) {
+                scores.fiberglass += 1;
+                scores.concrete += 1;
+            }
+
+            // Q7: Budget
+            const budget = answers[7];
+            if (budget === '50-70') {
+                scores.plunge += 4;
+            }
+            if (budget === '70-100') {
+                scores.fiberglass += 4;
+                scores.plunge += 2;
+            }
+            if (budget === '100-130') {
+                scores.fiberglass += 2;
+                scores.concrete += 3;
+            }
+            if (budget === '130+') {
+                scores.concrete += 5;
+            }
+
+            // Q8: Concerns (for personalization, doesn't affect scoring much)
+
+            // Determine winner
+            const sortedPools = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            const winner = sortedPools[0][0];
+            const runnerUp1 = sortedPools[1][0];
+            const runnerUp2 = sortedPools[2][0];
+
+            // Calculate confidence
+            const totalScore = scores.concrete + scores.fiberglass + scores.plunge;
+            const confidence = Math.round((sortedPools[0][1] / totalScore) * 100);
+
+            return {
+                winner,
+                runnerUp1,
+                runnerUp2,
+                confidence,
+                scores
+            };
+        }
+
+        // Generate Personalized Reasons
+        function generateReasons(winner) {
+            const reasons = [];
+
+            // Based on answers, generate personalized reasons
+            const goal = answers[1];
+            const size = answers[2];
+            const maintenance = answers[3];
+            const timeline = answers[4];
+            const design = answers[5];
+            const features = answers[6] || [];
+            const budget = answers[7];
+
+            if (winner === 'fiberglass') {
+                if (maintenance === 'critical' || maintenance === 'important') {
+                    reasons.push('The smooth, non-porous surface resists algae growth, giving you the low-maintenance experience you want');
+                }
+                if (timeline === 'asap' || timeline === 'thisyear') {
+                    reasons.push('Factory-built shells install in just 2-4 weeks, perfect for your timeline');
+                }
+                if (size === 'medium' || size === 'large') {
+                    reasons.push('Ideal sizing options for your suburban backyard space');
+                }
+                if (budget === '70-100') {
+                    reasons.push('The best value for premium features in your investment range');
+                }
+                if (goal === 'family') {
+                    reasons.push('Built-in benches and tanning ledges make it perfect for family fun');
+                }
+            }
+
+            if (winner === 'concrete') {
+                if (design === 'custom' || design === 'natural') {
+                    reasons.push('Unlimited custom shapes and designs to match your unique vision');
+                }
+                if (features.includes('spa')) {
+                    reasons.push('Seamlessly integrates a custom spa for year-round hydrotherapy');
+                }
+                if (size === 'estate') {
+                    reasons.push('The only option that can truly maximize your estate-sized property');
+                }
+                if (budget === '130+' || budget === '100-130') {
+                    reasons.push('Premium materials and craftsmanship that last generations');
+                }
+                if (goal === 'entertaining') {
+                    reasons.push('Perfect for creating a show-stopping entertainment destination');
+                }
+            }
+
+            if (winner === 'plunge') {
+                if (size === 'compact') {
+                    reasons.push('Perfectly designed for compact urban spaces like yours');
+                }
+                if (goal === 'relaxation' || goal === 'fitness') {
+                    reasons.push('Ideal for focused wellness experiences - relaxation or fitness');
+                }
+                if (budget === '50-70') {
+                    reasons.push('Maximum pool experience at your preferred investment level');
+                }
+                if (features.includes('heating')) {
+                    reasons.push('Efficient heating makes year-round use affordable');
+                }
+                if (timeline === 'asap') {
+                    reasons.push('Quick installation means you\'ll be swimming sooner');
+                }
+            }
+
+            // Ensure we have at least 3 reasons
+            while (reasons.length < 3) {
+                if (winner === 'fiberglass') {
+                    reasons.push('50+ colors and finishes to match your home\'s aesthetic');
+                } else if (winner === 'concrete') {
+                    reasons.push('Built to your exact specifications with premium finishes');
+                } else {
+                    reasons.push('Intimate, focused design maximizes your backyard\'s potential');
+                }
+            }
+
+            return reasons.slice(0, 4);
+        }
+
+        // Generate Runner-Up Reasons
+        function getRunnerUpReason(poolType, winner) {
+            const reasons = {
+                fiberglass: 'A great middle-ground if you want faster installation with excellent durability',
+                concrete: 'Consider if you want maximum customization and don\'t mind a longer build time',
+                plunge: 'Perfect if you later decide you want a more compact, wellness-focused option'
+            };
+            return reasons[poolType];
+        }
+
+        // Show Results
+        function showResults() {
+            // Hide current question
+            document.getElementById('q8').classList.remove('active');
+            document.getElementById('progressContainer').style.display = 'none';
+
+            // Show loading
+            document.getElementById('loadingScreen').classList.add('active');
+
+            // Calculate and display results after delay
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.remove('active');
+
+                const results = calculateResults();
+                const pool = poolData[results.winner];
+                const reasons = generateReasons(results.winner);
+
+                // Update result display
+                document.getElementById('resultPoolType').textContent = pool.name;
+                document.getElementById('resultConfidence').textContent =
+                    results.confidence + '% match based on your answers';
+                document.getElementById('resultBadge').textContent = pool.badge;
+                document.getElementById('resultHero').className = 'result-hero ' + pool.heroClass;
+
+                // Populate reasons
+                const reasonsContainer = document.getElementById('resultReasons');
+                reasonsContainer.innerHTML = reasons.map(reason => `
+                    <div class="result-reason">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>${reason}</span>
+                    </div>
+                `).join('');
+
+                // Populate specs
+                document.getElementById('resultSpecs').innerHTML = `
+                    <div class="result-spec">
+                        <div class="result-spec-value">${pool.investment}</div>
+                        <div class="result-spec-label">Investment Range</div>
+                    </div>
+                    <div class="result-spec">
+                        <div class="result-spec-value">${pool.timeline}</div>
+                        <div class="result-spec-label">Installation Time</div>
+                    </div>
+                    <div class="result-spec">
+                        <div class="result-spec-value">${pool.maintenance}</div>
+                        <div class="result-spec-label">Maintenance Level</div>
+                    </div>
+                `;
+
+                // Populate runners up
+                const runnerCards = document.getElementById('runnerCards');
+                runnerCards.innerHTML = `
+                    <div class="runner-card">
+                        <div class="runner-name">${poolData[results.runnerUp1].name}</div>
+                        <div class="runner-reason">${getRunnerUpReason(results.runnerUp1, results.winner)}</div>
+                    </div>
+                    <div class="runner-card">
+                        <div class="runner-name">${poolData[results.runnerUp2].name}</div>
+                        <div class="runner-reason">${getRunnerUpReason(results.runnerUp2, results.winner)}</div>
+                    </div>
+                `;
+
+                // Show results
+                document.getElementById('resultsScreen').classList.add('active');
+
+                // Update URL for sharing
+                updateShareableURL(results.winner);
+
+            }, 2000);
+        }
+
+        // Update URL with results for sharing
+        function updateShareableURL(winner) {
+            const encoded = btoa(JSON.stringify({ w: winner, a: answers }));
+            const url = new URL(window.location.href);
+            url.searchParams.set('r', encoded);
+            window.history.replaceState({}, '', url);
+        }
+
+        // Share Results
+        function shareResults() {
+            const url = window.location.href;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Perfect Pool Match',
+                    text: 'I just found out which pool is right for me! Take the quiz to find yours.',
+                    url: url
+                });
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    showToast('Link copied to clipboard!');
+                });
+            }
+        }
+
+        // Retake Quiz
+        function retakeQuiz() {
+            // Clear state
+            Object.keys(answers).forEach(key => delete answers[key]);
+            Object.keys(multiSelectAnswers).forEach(key => delete multiSelectAnswers[key]);
+            currentQuestion = 0;
+
+            // Clear localStorage
+            localStorage.removeItem('poolQuizAnswers');
+            localStorage.removeItem('poolQuizQuestion');
+
+            // Reset URL
+            const url = new URL(window.location.href);
+            url.searchParams.delete('r');
+            window.history.replaceState({}, '', url);
+
+            // Reset UI
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            document.querySelectorAll('[id^="nextBtn"]').forEach(btn => {
+                btn.disabled = true;
+            });
+
+            // Show start screen
+            document.getElementById('resultsScreen').classList.remove('active');
+            document.getElementById('progressContainer').style.display = 'none';
+            document.getElementById('startScreen').style.display = 'block';
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Show Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Check for shared results on page load
+        function checkSharedResults() {
+            const url = new URL(window.location.href);
+            const encoded = url.searchParams.get('r');
+
+            if (encoded) {
+                try {
+                    const data = JSON.parse(atob(encoded));
+                    if (data.w && poolData[data.w]) {
+                        Object.assign(answers, data.a);
+                        document.getElementById('startScreen').style.display = 'none';
+
+                        // Show results directly
+                        const pool = poolData[data.w];
+                        const reasons = generateReasons(data.w);
+
+                        document.getElementById('resultPoolType').textContent = pool.name;
+                        document.getElementById('resultConfidence').textContent = 'Shared result';
+                        document.getElementById('resultBadge').textContent = pool.badge;
+                        document.getElementById('resultHero').className = 'result-hero ' + pool.heroClass;
+
+                        const reasonsContainer = document.getElementById('resultReasons');
+                        reasonsContainer.innerHTML = reasons.map(reason => `
+                            <div class="result-reason">
+                                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>${reason}</span>
+                            </div>
+                        `).join('');
+
+                        document.getElementById('resultSpecs').innerHTML = `
+                            <div class="result-spec">
+                                <div class="result-spec-value">${pool.investment}</div>
+                                <div class="result-spec-label">Investment Range</div>
+                            </div>
+                            <div class="result-spec">
+                                <div class="result-spec-value">${pool.timeline}</div>
+                                <div class="result-spec-label">Installation Time</div>
+                            </div>
+                            <div class="result-spec">
+                                <div class="result-spec-value">${pool.maintenance}</div>
+                                <div class="result-spec-label">Maintenance Level</div>
+                            </div>
+                        `;
+
+                        // Get other pools for runners up
+                        const otherPools = Object.keys(poolData).filter(p => p !== data.w);
+                        document.getElementById('runnerCards').innerHTML = otherPools.map(p => `
+                            <div class="runner-card">
+                                <div class="runner-name">${poolData[p].name}</div>
+                                <div class="runner-reason">${getRunnerUpReason(p, data.w)}</div>
+                            </div>
+                        `).join('');
+
+                        document.getElementById('resultsScreen').classList.add('active');
+                    }
+                } catch (e) {
+                    // Invalid encoded data, show normal start
+                }
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            checkSharedResults();
+        });
+    </script>
+</body>
+</html>

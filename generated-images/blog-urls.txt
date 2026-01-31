@@ -1,0 +1,52 @@
+Tri-State Aquatic Solutions - Blog Featured Images
+Generated: 2026-01-31
+Model: gemini-3-pro-image-preview
+Aspect Ratio: 16:9
+Resolution: 2K
+
+================================================================================
+
+1. POOL COST ARTICLE
+Description: Aerial view of inground pool installation in progress in suburban Pennsylvania backyard
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/295b23562bc60dbe35125817ee052216?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141609Z&X-Amz-Expires=3600&X-Amz-Signature=3cf44bae65f61f22291fe4859d58b0866ab51dec0315085a151dc61fb7d5b93f&X-Amz-SignedHeaders=host
+
+--------------------------------------------------------------------------------
+
+2. FIBERGLASS VS CONCRETE
+Description: Split composition showing fiberglass pool on one side, concrete pool construction on other
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/849d4fdb74f24dee2a5ac27304d41ad0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141600Z&X-Amz-Expires=3600&X-Amz-Signature=c99bc3337dc3d69e3a92b91b8dbfb569c72ee6fdedae5425ec7cba8b23de0d41&X-Amz-SignedHeaders=host
+
+--------------------------------------------------------------------------------
+
+3. BEST TIME TO INSTALL
+Description: Spring pool construction scene, Pennsylvania landscape with blooming trees
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/6c87ffe995cb1afbff1df57057aa9fe9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141608Z&X-Amz-Expires=3600&X-Amz-Signature=2f544e6c7d55f068f077f550a66533e0370456ef8f2ffa9dd1a5b39b6102da69&X-Amz-SignedHeaders=host
+
+--------------------------------------------------------------------------------
+
+4. INSTALLATION PROCESS
+Description: Time-lapse style showing pool installation stages, excavation to completion concept
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/7790cc4b51ad7b7a63e4b0afa2313812?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141642Z&X-Amz-Expires=3600&X-Amz-Signature=d8da5991ca4fe3e27a5cb22424c02d28ca3d8dfe15000adcfdec2c47ed612206&X-Amz-SignedHeaders=host
+
+--------------------------------------------------------------------------------
+
+5. MAIN LINE GUIDE
+Description: Luxury Main Line Philadelphia estate with beautiful pool, stone mansion in background
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/f12d9ff1a172d6dffdca2dd24088efda?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141646Z&X-Amz-Expires=3600&X-Amz-Signature=53b0368f7a372f060cb2dac8420112be12130dc15c0eb568e74ad9163d8b1f3f&X-Amz-SignedHeaders=host
+
+--------------------------------------------------------------------------------
+
+6. PLUNGE POOL ARTICLE
+Description: Compact plunge pool in small urban backyard, demonstrating space efficiency
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/0f7887fade12d5677770ab50fd65369c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141639Z&X-Amz-Expires=3600&X-Amz-Signature=89a1d2edff728162175fccdd726a4b991ac756fc0c868a88cf621fdef952f303&X-Amz-SignedHeaders=host
+
+--------------------------------------------------------------------------------
+
+7. MAINTENANCE COST GUIDE
+Description: Pool service technician testing water chemistry, professional maintenance scene
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/6c1faea6789f094dc21ed4d5d2d141e0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141712Z&X-Amz-Expires=3600&X-Amz-Signature=b537f85685d00bf49e9bbb894ee25f2212876997a353e2a826f961014828356a&X-Amz-SignedHeaders=host
+
+================================================================================
+
+NOTE: These URLs are presigned and will expire in approximately 1 hour (3600 seconds).
+Download the images promptly if you need to retain them permanently.

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Planning Checklist | Tri-State Aquatic Solutions</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --aqua: #00A6B2;
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .checklist-section {
+                page-break-inside: avoid;
+            }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Print Controls */
+        .print-controls {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .print-controls a {
+            color: var(--aqua);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .print-btn {
+            background: var(--aqua);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .print-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Header */
+        .checklist-header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            border-bottom: 3px solid var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .logo-print {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-mark-print {
+            width: 50px;
+            height: 50px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .logo-mark-print::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        .logo-text-print {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .logo-text-print span {
+            display: block;
+            font-size: 0.7rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .checklist-header p {
+            color: var(--gray-text);
+            font-size: 1rem;
+        }
+
+        /* Checklist Sections */
+        .checklist-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .checklist-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-number {
+            width: 40px;
+            height: 40px;
+            background: var(--aqua);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--navy);
+        }
+
+        .section-intro {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Checklist Items */
+        .checklist-items {
+            list-style: none;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed var(--gray);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--navy);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .item-content h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .item-content p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* Notes Area */
+        .notes-area {
+            background: var(--gray-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .notes-area h4 {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .notes-lines {
+            border-bottom: 1px solid var(--gray);
+            height: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Budget Table */
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .budget-table th {
+            background: var(--gray-light);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .budget-table td:last-child {
+            text-align: right;
+            width: 150px;
+        }
+
+        .budget-table .total-row {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .budget-table .total-row td {
+            font-weight: 600;
+            border-bottom: none;
+        }
+
+        /* Questions List */
+        .questions-list {
+            list-style: none;
+            counter-reset: question;
+        }
+
+        .questions-list li {
+            counter-increment: question;
+            padding: 0.75rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            border-bottom: 1px dashed var(--gray);
+        }
+
+        .questions-list li::before {
+            content: counter(question) ".";
+            position: absolute;
+            left: 0;
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        .questions-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-top: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px dashed var(--gray);
+        }
+
+        .timeline-week {
+            min-width: 80px;
+            font-weight: 600;
+            color: var(--aqua);
+        }
+
+        .timeline-content h4 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* Permit Info */
+        .permit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .permit-card {
+            background: var(--gray-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .permit-card h4 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .permit-card h4 svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .permit-card ul {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            padding-left: 1.25rem;
+        }
+
+        .permit-card li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Footer */
+        .checklist-footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 3px solid var(--navy);
+            margin-top: 2rem;
+        }
+
+        .checklist-footer p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .checklist-footer .cta {
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .permit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Print Controls -->
+    <div class="print-controls no-print">
+        <a href="index.html">Back to Download Page</a>
+        <button class="print-btn" onclick="window.print()">
+            <svg viewBox="0 0 24 24">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+            </svg>
+            Print Checklist
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="checklist-header">
+            <div class="logo-print">
+                <div class="logo-mark-print"></div>
+                <div class="logo-text-print">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </div>
+            <h1>Pool Planning Checklist</h1>
+            <p>Your comprehensive guide to planning your perfect backyard pool</p>
+        </header>
+
+        <!-- Section 1: Budget Planning -->
+        <section class="checklist-section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>Budget Planning Worksheet</h2>
+            </div>
+            <p class="section-intro">Understanding the true cost of pool ownership. Use this worksheet to track all expenses.</p>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Expense Category</th>
+                        <th>Your Budget</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pool Shell/Installation</strong><br><small>Fiberglass: $60-100K | Concrete: $80-130K | Liner: $50-80K</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Excavation & Site Prep</strong><br><small>Usually included, but verify. Extra for rock/difficult access.</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decking & Hardscape</strong><br><small>Concrete, pavers, or natural stone around pool.</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fencing & Safety</strong><br><small>Required by code. Budget $3,000-10,000+</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Landscaping</strong><br><small>Plants, grading, drainage, outdoor lighting.</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pool Equipment Upgrades</strong><br><small>Heater, automation, saltwater system, lighting.</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Permits & Inspections</strong><br><small>Varies by township. Budget $500-2,500.</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Furniture & Accessories</strong><br><small>Loungers, umbrellas, storage, cleaning equipment.</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contingency (10-15%)</strong><br><small>For unexpected costs during installation.</small></td>
+                        <td>$___________</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>TOTAL PROJECT BUDGET</td>
+                        <td>$___________</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="notes-area">
+                <h4>Annual Operating Costs to Consider:</h4>
+                <ul class="checklist-items" style="margin-top: 0.5rem;">
+                    <li class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div class="item-content">
+                            <h4>Electricity ($50-150/month during season)</h4>
+                        </div>
+                    </li>
+                    <li class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div class="item-content">
+                            <h4>Chemicals ($50-100/month)</h4>
+                        </div>
+                    </li>
+                    <li class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div class="item-content">
+                            <h4>Professional maintenance ($150-300/month or DIY)</h4>
+                        </div>
+                    </li>
+                    <li class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div class="item-content">
+                            <h4>Opening/Closing service ($300-600/year)</h4>
+                        </div>
+                    </li>
+                    <li class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div class="item-content">
+                            <h4>Increased homeowner's insurance</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Backyard Evaluation -->
+        <section class="checklist-section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>Backyard Evaluation Guide</h2>
+            </div>
+            <p class="section-intro">Assess your property to determine the best pool location and identify potential challenges.</p>
+
+            <ul class="checklist-items">
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Available Space Measured</h4>
+                        <p>Minimum recommended: 15' x 30' for pool plus deck. Measure your usable area. ______ ft x ______ ft</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Setback Requirements Verified</h4>
+                        <p>Check local codes for required distance from property lines, house, and septic (if applicable).</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Underground Utilities Marked</h4>
+                        <p>Call 811 to have gas, electric, water, and sewer lines marked before any excavation.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Equipment Access Route</h4>
+                        <p>Excavator needs 8-10' wide access. Check for gates, fences, or slopes that may block entry.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Sun Exposure Analyzed</h4>
+                        <p>Ideal: 6+ hours of direct sunlight. Note: Trees to south/west provide afternoon shade.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Drainage Assessment</h4>
+                        <p>Water should drain AWAY from pool. Identify low spots and existing drainage patterns.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Soil Conditions Considered</h4>
+                        <p>Rocky soil, high water table, or clay can increase costs. Ask neighbors about their experiences.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>View & Privacy Evaluated</h4>
+                        <p>Consider sightlines from house and neighbors. Plan for screening if needed.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Electrical Panel Capacity</h4>
+                        <p>Pool equipment typically requires 50-60 amp service. Verify your panel has capacity.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Water Source Confirmed</h4>
+                        <p>Hose bib nearby? Well water may need treatment. Initial fill: 15,000-25,000 gallons.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="notes-area">
+                <h4>Site Notes:</h4>
+                <div class="notes-lines"></div>
+                <div class="notes-lines"></div>
+                <div class="notes-lines"></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Questions for Builders -->
+        <section class="checklist-section page-break">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>Questions to Ask Pool Builders</h2>
+            </div>
+            <p class="section-intro">Essential questions to help you choose the right contractor. Don't sign until you have answers to all of these.</p>
+
+            <ol class="questions-list">
+                <li><strong>How long have you been in business?</strong> Look for 10+ years of experience.</li>
+                <li><strong>Are you licensed and insured?</strong> Verify PA HIC license and liability coverage ($1M+).</li>
+                <li><strong>Can I see your portfolio?</strong> Ask for photos of pools similar to what you want.</li>
+                <li><strong>Can I speak with recent customers?</strong> Get 3-5 references from the past 2 years.</li>
+                <li><strong>Who will manage my project day-to-day?</strong> Get a name and direct contact info.</li>
+                <li><strong>What's included in your quote?</strong> Get itemized list; beware vague "pool packages."</li>
+                <li><strong>What's NOT included?</strong> Electrical, permits, landscaping, fencing?</li>
+                <li><strong>What warranties do you offer?</strong> Shell, equipment, workmanship - get it in writing.</li>
+                <li><strong>What happens if you find rock during excavation?</strong> Get a per-yard or flat-rate quote.</li>
+                <li><strong>What's your payment schedule?</strong> Never pay more than 10% upfront.</li>
+                <li><strong>Will you handle permits?</strong> Most reputable builders do this for you.</li>
+                <li><strong>What's your realistic timeline?</strong> Get start date and completion date in contract.</li>
+                <li><strong>Do you use subcontractors?</strong> If so, are they also licensed and insured?</li>
+                <li><strong>What pool brands do you install?</strong> Research the manufacturers they use.</li>
+                <li><strong>How do you handle change orders?</strong> Get process in writing before signing.</li>
+                <li><strong>What equipment brands do you recommend?</strong> Pentair, Hayward, and Jandy are top tier.</li>
+                <li><strong>Will you provide pool school?</strong> Training on maintenance and equipment operation.</li>
+                <li><strong>What's your callback policy?</strong> How do you handle issues after project completion?</li>
+                <li><strong>Do you offer maintenance services?</strong> Many builders offer ongoing care packages.</li>
+                <li><strong>What sets you apart from competitors?</strong> Listen for specifics, not marketing speak.</li>
+            </ol>
+
+            <div class="notes-area">
+                <h4>Builder Comparison Notes:</h4>
+                <div class="notes-lines"></div>
+                <div class="notes-lines"></div>
+                <div class="notes-lines"></div>
+            </div>
+        </section>
+
+        <!-- Section 4: Timeline Template -->
+        <section class="checklist-section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>Timeline Planning Template</h2>
+            </div>
+            <p class="section-intro">A typical pool installation timeline. Adjust based on your project's complexity and weather conditions.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 1-2</div>
+                    <div class="timeline-content">
+                        <h4>Initial Consultation & Design</h4>
+                        <p>Site visit, discuss options, receive preliminary design and quote.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 3-4</div>
+                    <div class="timeline-content">
+                        <h4>Contract & Permits</h4>
+                        <p>Sign contract, submit permit applications, order pool/materials.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 5-6</div>
+                    <div class="timeline-content">
+                        <h4>Permit Approval & Scheduling</h4>
+                        <p>Permits approved (2-6 weeks depending on township). Construction scheduled.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 7</div>
+                    <div class="timeline-content">
+                        <h4>Excavation</h4>
+                        <p>Dig pool hole, haul away soil. Usually 1-2 days for fiberglass.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 8</div>
+                    <div class="timeline-content">
+                        <h4>Pool Installation</h4>
+                        <p>Set pool shell, level, backfill. Fiberglass: 1-2 days. Concrete: 4-8 weeks.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 9</div>
+                    <div class="timeline-content">
+                        <h4>Plumbing & Electrical</h4>
+                        <p>Install equipment pad, run plumbing, electrical hookup.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 10</div>
+                    <div class="timeline-content">
+                        <h4>Decking & Hardscape</h4>
+                        <p>Pour concrete or install pavers around pool.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 11</div>
+                    <div class="timeline-content">
+                        <h4>Final Inspection & Fill</h4>
+                        <p>Township inspection, fill pool, balance water chemistry.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 12</div>
+                    <div class="timeline-content">
+                        <h4>Pool School & Swim!</h4>
+                        <p>Equipment training, maintenance overview, final walkthrough. ENJOY!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notes-area">
+                <h4>Your Target Dates:</h4>
+                <p style="font-size: 0.85rem; color: var(--gray-text); margin-bottom: 0.5rem;">Contract Sign Date: _____________ | Construction Start: _____________ | Target Swim Date: _____________</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Permit Requirements -->
+        <section class="checklist-section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>Permit Requirements by Area</h2>
+            </div>
+            <p class="section-intro">Local permit requirements vary. This is general guidance - always verify with your specific township.</p>
+
+            <div class="permit-grid">
+                <div class="permit-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Chester County, PA
+                    </h4>
+                    <ul>
+                        <li>Building permit required</li>
+                        <li>Zoning approval needed</li>
+                        <li>Fence: 4' min, self-closing gate</li>
+                        <li>Setback: Usually 10' from property line</li>
+                        <li>Electrical permit separate</li>
+                    </ul>
+                </div>
+                <div class="permit-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Delaware County, PA
+                    </h4>
+                    <ul>
+                        <li>Building permit required</li>
+                        <li>Plot plan submission</li>
+                        <li>Fence: 4' min with locking gate</li>
+                        <li>Setback: Varies by township</li>
+                        <li>UCC compliance inspection</li>
+                    </ul>
+                </div>
+                <div class="permit-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Montgomery County, PA
+                    </h4>
+                    <ul>
+                        <li>Building permit required</li>
+                        <li>Stormwater management may apply</li>
+                        <li>Fence: 4' min, per township code</li>
+                        <li>Survey may be required</li>
+                        <li>Final inspection mandatory</li>
+                    </ul>
+                </div>
+                <div class="permit-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        New Castle County, DE
+                    </h4>
+                    <ul>
+                        <li>Building permit required</li>
+                        <li>Site plan with pool location</li>
+                        <li>Barrier: 48" min height</li>
+                        <li>Setback: 6' from property line</li>
+                        <li>Electrical inspection required</li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="checklist-items" style="margin-top: 1.5rem;">
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Verify current requirements with your township</h4>
+                        <p>Codes change. Call your local building department before finalizing plans.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Check HOA restrictions (if applicable)</h4>
+                        <p>Some HOAs have additional requirements or approvals needed.</p>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h4>Confirm builder will handle permit process</h4>
+                        <p>Most reputable builders manage permits as part of their service.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="checklist-footer">
+            <p>Questions about your pool project? We're here to help.</p>
+            <p class="cta">Call (302) 555-1234 or visit tristateaquatic.com</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">&copy; 2026 Tri-State Aquatic Solutions | Main Line PA & Northern Delaware</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Tri-State Aquatic Solutions - Branding Images
+# Generated: 2026-01-31
+
+## Company Logo (1:1 aspect ratio)
+Professional pool company logo featuring "Tri-State Aquatic Solutions" with navy blue, aqua, and gold accents.
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/7bed43ee9538642e6e195a971af257f2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141608Z&X-Amz-Expires=3600&X-Amz-Signature=d441df25fb3df381f7d7f1d54756c26a42faf5f6177e1ae26ea817ba8789e451&X-Amz-SignedHeaders=host
+
+## Team Photo (16:9 aspect ratio)
+Professional team of 4-5 pool construction/service professionals in front of luxury pool at Main Line Philadelphia estate.
+URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/239277/dynamic-module-load/GENERATE_IMAGE/response/711dd11b0d42d5b4daa6ef389efcc6ea?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e22d99e14b94fe5f16acc83614a762b5%2F20260131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260131T141633Z&X-Amz-Expires=3600&X-Amz-Signature=a75958542119303393cd12368ea3e18092b32db50102a29cc7a701b436d7ba7d&X-Amz-SignedHeaders=host
+
+---
+NOTE: These URLs are presigned and expire after approximately 1 hour.
+Download the images promptly if you need permanent copies.

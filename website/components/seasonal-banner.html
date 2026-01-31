@@ -1,0 +1,366 @@
+<!--
+Seasonal Urgency Banner Component for Tri-State Aquatic Solutions
+Shows seasonal messaging with countdown timer
+
+USAGE:
+Include this at the top of <body> or after <nav>:
+<div id="seasonal-banner-container"></div>
+<script src="/components/seasonal-banner.js"></script>
+
+Or copy the entire contents.
+-->
+
+<style>
+/* Seasonal Urgency Banner Styles */
+.seasonal-banner {
+    background: linear-gradient(135deg, #0E1F34 0%, #1a2d45 100%);
+    color: #FFFFFF;
+    padding: 0.75rem 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.seasonal-banner.dismissed {
+    display: none;
+}
+
+.seasonal-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00A6B2, #C9A962, #00A6B2);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.seasonal-banner-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.seasonal-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.seasonal-banner-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.seasonal-banner-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #C9A962;
+}
+
+.seasonal-banner-text {
+    text-align: center;
+}
+
+.seasonal-banner-headline {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.seasonal-banner-headline span {
+    color: #C9A962;
+}
+
+.seasonal-banner-subtext {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0.25rem 0 0;
+}
+
+/* Countdown Timer */
+.seasonal-countdown {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    min-width: 50px;
+}
+
+.countdown-number {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #00A6B2;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.25rem;
+}
+
+/* CTA Button */
+.seasonal-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #00A6B2;
+    color: #FFFFFF;
+    padding: 0.6rem 1.25rem;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.seasonal-banner-cta:hover {
+    background: #C9A962;
+    color: #0E1F34;
+    transform: translateY(-2px);
+}
+
+.seasonal-banner-cta svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    transition: transform 0.3s ease;
+}
+
+.seasonal-banner-cta:hover svg {
+    transform: translateX(3px);
+}
+
+/* Close Button */
+.seasonal-banner-close {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.seasonal-banner-close:hover {
+    opacity: 1;
+}
+
+.seasonal-banner-close svg {
+    width: 16px;
+    height: 16px;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .seasonal-banner-container {
+        gap: 1rem;
+    }
+
+    .seasonal-countdown {
+        gap: 0.5rem;
+    }
+
+    .countdown-item {
+        padding: 0.4rem 0.5rem;
+        min-width: 40px;
+    }
+
+    .countdown-number {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .seasonal-banner {
+        padding: 0.5rem 0;
+    }
+
+    .seasonal-banner-container {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding-right: 2.5rem;
+    }
+
+    .seasonal-banner-icon {
+        display: none;
+    }
+
+    .seasonal-banner-headline {
+        font-size: 0.85rem;
+    }
+
+    .seasonal-countdown {
+        gap: 0.35rem;
+    }
+
+    .countdown-item {
+        min-width: 35px;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .countdown-number {
+        font-size: 0.9rem;
+    }
+
+    .countdown-label {
+        font-size: 0.5rem;
+    }
+}
+</style>
+
+<!-- Seasonal Banner HTML -->
+<div class="seasonal-banner" id="seasonalBanner">
+    <div class="seasonal-banner-container">
+        <div class="seasonal-banner-content">
+            <div class="seasonal-banner-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+            </div>
+            <div class="seasonal-banner-text">
+                <p class="seasonal-banner-headline">
+                    <span>Spring 2026</span> Installation Slots Are Filling Up
+                </p>
+                <p class="seasonal-banner-subtext">
+                    Book by March 15 to swim by Memorial Day
+                </p>
+            </div>
+        </div>
+
+        <div class="seasonal-countdown" id="seasonalCountdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdownDays">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdownHours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdownMins">00</div>
+                <div class="countdown-label">Mins</div>
+            </div>
+        </div>
+
+        <a href="/contact/" class="seasonal-banner-cta">
+            Schedule Consultation
+            <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <button class="seasonal-banner-close" id="seasonalBannerClose" aria-label="Close banner">
+        <svg viewBox="0 0 24 24" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+    </button>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    const BANNER_KEY = 'tsas_seasonal_banner_dismissed';
+    const BANNER_EXPIRY_DAYS = 3;
+
+    // Target date: March 15, 2026
+    const targetDate = new Date('2026-03-15T23:59:59');
+
+    // Check if banner was dismissed
+    function wasBannerDismissed() {
+        const dismissedTimestamp = localStorage.getItem(BANNER_KEY);
+        if (!dismissedTimestamp) return false;
+
+        const daysSinceDismissed = (Date.now() - parseInt(dismissedTimestamp)) / (1000 * 60 * 60 * 24);
+        return daysSinceDismissed < BANNER_EXPIRY_DAYS;
+    }
+
+    // Initialize banner
+    function initBanner() {
+        const banner = document.getElementById('seasonalBanner');
+
+        if (wasBannerDismissed()) {
+            banner.classList.add('dismissed');
+            return;
+        }
+
+        // Update countdown
+        updateCountdown();
+        setInterval(updateCountdown, 60000); // Update every minute
+    }
+
+    // Update countdown timer
+    function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            // Deadline passed - show different message or hide
+            document.getElementById('seasonalCountdown').innerHTML = '<span style="color: #C9A962; font-weight: 600;">Final Days!</span>';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById('countdownDays').textContent = String(days).padStart(2, '0');
+        document.getElementById('countdownHours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('countdownMins').textContent = String(mins).padStart(2, '0');
+    }
+
+    // Dismiss handler
+    document.getElementById('seasonalBannerClose').addEventListener('click', function() {
+        const banner = document.getElementById('seasonalBanner');
+        banner.classList.add('dismissed');
+        localStorage.setItem(BANNER_KEY, Date.now().toString());
+    });
+
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBanner);
+    } else {
+        initBanner();
+    }
+})();
+</script>

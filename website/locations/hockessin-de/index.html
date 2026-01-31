@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Builder Hockessin DE | Your Hometown Pool Experts | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Hockessin's hometown pool builder. We live here, work here, build pools here. Tri-State Aquatic Solutions is proudly headquartered in Hockessin. Premium concrete, fiberglass, and liner pools. Fastest response times - we're your neighbors.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquatic.com/locations/hockessin-de/">
+    <meta property:title" content="Pool Builder Hockessin DE | Your Hometown Pool Experts">
+    <meta property="og:description" content="We live here, work here, build pools here. Tri-State Aquatic Solutions is headquartered in Hockessin, Delaware.">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="US-DE">
+    <meta name="geo.placename" content="Hockessin">
+    <meta name="geo.position" content="39.7876;-75.6966">
+    <meta name="ICBM" content="39.7876, -75.6966">
+
+    <link rel="canonical" href="https://tristateaquatic.com/locations/hockessin-de/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; transition: all 0.4s var(--ease-out-expo); }
+        nav.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14,31,52,0.05); padding: 1rem 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--white); }
+        nav.scrolled .logo { color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; }
+        nav.scrolled .logo-text span { color: var(--gray-text); }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0; position: relative; }
+        nav.scrolled .nav-links a { color: var(--navy); }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--aqua); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--gold); color: var(--navy) !important; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--white); }
+        nav.scrolled .mobile-toggle span { background: var(--navy); }
+
+        /* Breadcrumbs */
+        .breadcrumbs { padding: 1rem 0; background: var(--gray-light); }
+        .breadcrumbs ol { display: flex; gap: 0.5rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumbs a { color: var(--aqua); text-decoration: none; }
+        .breadcrumbs a:hover { text-decoration: underline; }
+        .breadcrumbs span { color: var(--gray-text); }
+
+        /* Hero */
+        .hero {
+            min-height: 80vh; display: flex; align-items: center; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, rgba(14,31,52,0.85) 0%, rgba(14,31,52,0.6) 100%),
+                        linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding-top: 80px;
+        }
+        .hero-content { position: relative; z-index: 1; padding: 4rem 0; color: var(--white); }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            background: var(--gold); color: var(--navy);
+            padding: 0.6rem 1.25rem 0.6rem 0.6rem; border-radius: 100px; margin-bottom: 1.5rem; font-size: 0.9rem; font-weight: 600;
+        }
+        .hero-badge-icon { width: 32px; height: 32px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .hero-badge-icon svg { width: 16px; height: 16px; fill: var(--gold); }
+        .hero h1 em { font-style: italic; color: var(--aqua); }
+        .hero h1 .gold { color: var(--gold); }
+        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.35rem); max-width: 700px; margin: 1.5rem 0 2rem; color: rgba(255,255,255,0.9); line-height: 1.8; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.4s var(--ease-out-expo); cursor: pointer; border: none; }
+        .btn-primary { background: var(--aqua); color: var(--white); }
+        .btn-primary:hover { background: var(--gold); color: var(--navy); transform: translateY(-3px); }
+        .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+        .btn-secondary:hover { background: var(--white); color: var(--navy); }
+        .btn svg { width: 18px; height: 18px; }
+
+        /* Sections */
+        section { padding: clamp(4rem, 8vw, 6rem) 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+        .section-tag::before, .section-tag::after { content: ''; width: 30px; height: 1px; background: var(--aqua); }
+
+        /* Hometown Hero Section */
+        .hometown { background: var(--white); }
+        .hometown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hometown-content h2 { margin-bottom: 1.5rem; }
+        .hometown-content p { margin-bottom: 1.5rem; line-height: 1.8; }
+
+        .hometown-points { display: flex; flex-direction: column; gap: 1.25rem; margin: 2rem 0; }
+        .hometown-point { display: flex; gap: 1rem; align-items: flex-start; }
+        .hometown-point-icon { width: 48px; height: 48px; background: var(--gold); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .hometown-point-icon svg { width: 24px; height: 24px; stroke: var(--navy); stroke-width: 2; fill: none; }
+        .hometown-point-content h4 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+        .hometown-point-content p { font-size: 0.95rem; margin: 0; }
+
+        .hometown-visual { position: relative; }
+        .hometown-image { border-radius: 24px; overflow: hidden; aspect-ratio: 4/5; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; }
+        .hometown-image svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; }
+        .hometown-badge { position: absolute; bottom: -20px; left: -20px; width: 140px; height: 140px; background: var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--navy); text-align: center; box-shadow: 0 20px 50px -15px rgba(201,169,98,0.5); }
+        .hometown-badge svg { width: 36px; height: 36px; fill: var(--navy); margin-bottom: 0.5rem; }
+        .hometown-badge-text { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; }
+
+        /* Response Time */
+        .response { background: var(--navy); color: var(--white); }
+        .response .section-header p { color: rgba(255,255,255,0.7); }
+        .response-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .response-item { text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 20px; }
+        .response-number { font-family: var(--font-display); font-size: 3rem; font-weight: 600; color: var(--aqua); line-height: 1; margin-bottom: 0.5rem; }
+        .response-number span { color: var(--gold); font-size: 1.5rem; }
+        .response-item h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .response-item p { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+
+        /* Services */
+        .services { background: var(--gray-light); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .service-card { background: var(--white); border-radius: 24px; padding: 2.5rem; transition: all 0.4s var(--ease-out-expo); border: 2px solid transparent; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(14,31,52,0.15); }
+        .service-card.tier-premium { border-color: var(--gold); }
+        .service-card.tier-standard { border-color: var(--aqua); }
+        .service-card.tier-value { border-color: #6B7280; }
+        .tier-label { display: inline-block; padding: 4px 12px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+        .tier-premium .tier-label { background: var(--gold); color: var(--navy); }
+        .tier-standard .tier-label { background: var(--aqua); color: var(--white); }
+        .tier-value .tier-label { background: #6B7280; color: var(--white); }
+        .service-card h3 { margin-bottom: 0.5rem; color: var(--navy); }
+        .service-card .price { font-weight: 600; margin-bottom: 1rem; }
+        .tier-premium .price { color: var(--gold); }
+        .tier-standard .price { color: var(--aqua); }
+        .tier-value .price { color: #6B7280; }
+        .service-card p { font-size: 1rem; margin-bottom: 1.5rem; }
+        .service-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .service-features li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--navy); }
+        .service-features li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+        .tier-premium .service-features li::before { background: var(--gold); }
+        .tier-standard .service-features li::before { background: var(--aqua); }
+        .tier-value .service-features li::before { background: #6B7280; }
+
+        /* Included badge for feature lists */
+        .included-badge { display: inline-block; background: var(--gold); color: var(--navy); font-size: 0.65rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; margin-left: 6px; text-transform: uppercase; letter-spacing: 0.05em; vertical-align: middle; white-space: nowrap; }
+
+        /* Projects */
+        .projects { background: var(--white); }
+        .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .project-card { background: var(--gray-light); border-radius: 24px; overflow: hidden; transition: all 0.4s var(--ease-out-expo); }
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(14,31,52,0.15); }
+        .project-image { height: 250px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; }
+        .project-image svg { width: 60px; height: 60px; stroke: var(--aqua); stroke-width: 1; fill: none; }
+        .project-content { padding: 2rem; }
+        .project-content h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+        .project-content p { font-size: 0.95rem; }
+        .project-meta { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+        .project-meta span { font-size: 0.8rem; padding: 0.25rem 0.75rem; background: var(--white); border-radius: 100px; color: var(--navy); }
+
+        /* Testimonial */
+        .testimonial-section { background: var(--gray-light); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--navy); border-radius: 24px; padding: 3rem; color: var(--white); }
+        .testimonial-quote { font-family: var(--font-display); font-size: 6rem; color: var(--gold); opacity: 0.3; line-height: 1; margin-bottom: -2rem; }
+        .testimonial-text { font-size: 1.25rem; color: rgba(255,255,255,0.9); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; }
+        .testimonial-rating { display: flex; gap: 0.25rem; margin-bottom: 1rem; }
+        .testimonial-rating svg { width: 20px; height: 20px; fill: var(--gold); }
+        .testimonial-author h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; }
+        .testimonial-author span { font-size: 0.9rem; color: var(--aqua); }
+
+        /* Community */
+        .community { background: var(--white); }
+        .community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .community-content h2 { margin-bottom: 1.5rem; }
+        .community-content p { margin-bottom: 1.5rem; line-height: 1.8; }
+        .community-list { list-style: none; margin: 2rem 0; }
+        .community-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--gray); font-size: 1rem; color: var(--navy); }
+        .community-list li:last-child { border-bottom: none; }
+        .community-list svg { width: 20px; height: 20px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+        .community-map { border-radius: 24px; overflow: hidden; aspect-ratio: 1; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); text-align: center; padding: 2rem; }
+        .community-map svg { width: 60px; height: 60px; stroke: var(--aqua); stroke-width: 1.5; fill: none; margin-bottom: 1.5rem; }
+        .community-map h4 { font-family: var(--font-body); font-weight: 600; margin-bottom: 0.5rem; }
+        .community-map p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0; }
+
+        /* FAQ */
+        .faq { background: var(--gray-light); }
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--gray); padding: 1.5rem 0; background: var(--white); margin-bottom: 1rem; border-radius: 12px; padding: 1.5rem; border: none; }
+        .faq-question { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question svg { width: 24px; height: 24px; stroke: var(--aqua); stroke-width: 2; fill: none; transition: transform 0.3s ease; }
+        .faq-item.open .faq-question svg { transform: rotate(180deg); }
+        .faq-answer { padding-top: 1rem; display: none; }
+        .faq-item.open .faq-answer { display: block; }
+        .faq-answer p { font-size: 1rem; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--navy); }
+        .cta-content { text-align: center; max-width: 700px; margin: 0 auto; }
+        .cta-content h2 { margin-bottom: 1rem; }
+        .cta-content p { color: var(--navy); opacity: 0.8; font-size: 1.2rem; margin-bottom: 2rem; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn-cta-primary { background: var(--navy); color: var(--white); }
+        .btn-cta-primary:hover { background: var(--aqua); }
+        .btn-cta-secondary { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); }
+        .btn-cta-secondary:hover { background: var(--navy); color: var(--white); }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+        .footer-brand p { color: rgba(255,255,255,0.6); margin-top: 1.5rem; font-size: 0.95rem; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1.5rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-contact li { display: flex; align-items: center; gap: 0.75rem; }
+        .footer-contact svg { width: 18px; height: 18px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .hometown-grid, .community-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .response-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hometown-visual, .community-map { order: -1; }
+        }
+        @media (max-width: 640px) {
+            .response-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .hero-ctas, .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tri-State Aquatic Solutions",
+        "description": "Hockessin's hometown pool builder. Premium pool installation headquartered in Hockessin, Delaware. Specializing in concrete, fiberglass, and in-ground liner pools.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hockessin",
+            "addressRegion": "DE",
+            "postalCode": "19707",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.7876,
+            "longitude": -75.6966
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Hockessin",
+            "containedIn": "Delaware"
+        },
+        "url": "https://tristateaquatic.com/locations/hockessin-de/",
+        "telephone": "+1-302-555-1234",
+        "priceRange": "$50,000 - $130,000"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tristateaquatic.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://tristateaquatic.com/locations/" },
+            { "@type": "ListItem", "position": 3, "name": "Delaware", "item": "https://tristateaquatic.com/locations/delaware/" },
+            { "@type": "ListItem", "position": 4, "name": "Hockessin", "item": "https://tristateaquatic.com/locations/hockessin-de/" }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#services">Services</a></li>
+                <li><a href="../../index.html#why-us">Why Us</a></li>
+                <li><a href="../../index.html#process">Process</a></li>
+                <li><a href="../../index.html#testimonials">Reviews</a></li>
+                <li><a href="../../index.html#contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                OUR HEADQUARTERS - YOUR HOMETOWN
+            </div>
+            <h1>Pool Builder <em>Hockessin</em> DE</h1>
+            <p class="hero-subtitle">We live here. We work here. We build pools here. Tri-State Aquatic Solutions is not just based in Hockessin - this is our home. When you hire us, you are hiring your neighbors. That means the fastest response times, the deepest local knowledge, and a reputation we put on the line every single day.</p>
+            <div class="hero-ctas">
+                <a href="../../index.html#contact" class="btn btn-primary">
+                    Schedule Free Consultation
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#services" class="btn btn-secondary">View Pool Options</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="../../index.html">Home</a> /</li>
+                <li><a href="../">Locations</a> /</li>
+                <li><a href="../delaware/">Delaware</a> /</li>
+                <li><span>Hockessin</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Hometown Section -->
+    <section class="hometown">
+        <div class="container">
+            <div class="hometown-grid">
+                <div class="hometown-content">
+                    <div class="section-tag">Your Hockessin Neighbors</div>
+                    <h2>We Live Here, Work Here, Build Pools Here</h2>
+                    <p>Hockessin is not just where we do business - it is where we raise our families, shop at the farmers market, and cheer at community events. Our roots in this community run deep, and that shapes everything we do.</p>
+                    <p>When a Hockessin homeowner calls us, they are calling neighbors who understand the character of this community. We know the rolling terrain, the soil conditions, the way properties are laid out from Old Lancaster Pike to Valley Road. We know which neighborhoods have HOAs and what their requirements are. We know the local inspectors and the permit process.</p>
+
+                    <div class="hometown-points">
+                        <div class="hometown-point">
+                            <div class="hometown-point-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div class="hometown-point-content">
+                                <h4>Same-Day Site Visits</h4>
+                                <p>Our office is minutes away. When you call with a question, we can be at your property the same day.</p>
+                            </div>
+                        </div>
+                        <div class="hometown-point">
+                            <div class="hometown-point-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div class="hometown-point-content">
+                                <h4>Reputation on the Line</h4>
+                                <p>In Hockessin, everyone knows everyone. We cannot afford anything less than excellence.</p>
+                            </div>
+                        </div>
+                        <div class="hometown-point">
+                            <div class="hometown-point-icon">
+                                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="hometown-point-content">
+                                <h4>Deep Local Knowledge</h4>
+                                <p>From soil conditions to permit requirements, we know Hockessin inside and out.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hometown-visual">
+                    <div class="hometown-image">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="hometown-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <div class="hometown-badge-text">Hockessin<br>Headquarters</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Response Time -->
+    <section class="response">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Fastest Response in Delaware</div>
+                <h2>The Advantage of Being Local</h2>
+                <p>Because we are based right here in Hockessin, we can respond faster than any competitor.</p>
+            </div>
+            <div class="response-grid">
+                <div class="response-item">
+                    <div class="response-number">Same<span>Day</span></div>
+                    <h4>Site Visits</h4>
+                    <p>Questions? We can be at your property within hours</p>
+                </div>
+                <div class="response-item">
+                    <div class="response-number">2-4<span>wks</span></div>
+                    <h4>Installation</h4>
+                    <p>Fiberglass pools installed faster than anywhere else</p>
+                </div>
+                <div class="response-item">
+                    <div class="response-number">24<span>hr</span></div>
+                    <h4>Support Response</h4>
+                    <p>Questions answered within one business day</p>
+                </div>
+                <div class="response-item">
+                    <div class="response-number">0<span>%</span></div>
+                    <h4>Sales Tax</h4>
+                    <p>Delaware advantage saves thousands on materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Pool Installation Hockessin</div>
+                <h2>Premium Pools for Hockessin Homes</h2>
+                <p>Every pool we install for our Hockessin neighbors meets our exacting standards.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card tier-premium">
+                    <div class="tier-label">Premium</div>
+                    <h3>Concrete Pool</h3>
+                    <div class="price">$80,000 - $130,000</div>
+                    <p>The pinnacle of pool ownership. Custom concrete construction with every luxury feature as standard.</p>
+                    <ul class="service-features">
+                        <li>Integrated spa option available</li>
+                        <li>Automatic safety cover <span class="included-badge">Included</span></li>
+                        <li>Automated water treatment <span class="included-badge">Included</span></li>
+                        <li>Completely custom shape and size</li>
+                        <li>Lifetime durability</li>
+                    </ul>
+                </div>
+                <div class="service-card tier-standard">
+                    <div class="tier-label">Standard</div>
+                    <h3>Fiberglass Pool</h3>
+                    <div class="price">$60,000 - $100,000</div>
+                    <p>The sweet spot for most Hockessin families. Fast installation and virtually no maintenance.</p>
+                    <ul class="service-features">
+                        <li>Installed in 2-4 weeks</li>
+                        <li>Smooth, algae-resistant surface</li>
+                        <li>50+ colors and finishes</li>
+                        <li>50% lower lifetime maintenance</li>
+                        <li>Excellent warranty coverage</li>
+                    </ul>
+                </div>
+                <div class="service-card tier-value">
+                    <div class="tier-label">Value</div>
+                    <h3>In-Ground Liner Pool</h3>
+                    <div class="price">$50,000 - $80,000</div>
+                    <p>Quality in-ground pool ownership at an accessible price point with premium vinyl liner.</p>
+                    <ul class="service-features">
+                        <li>True in-ground installation</li>
+                        <li>Premium vinyl liner finish</li>
+                        <li>Most accessible price point</li>
+                        <li>Hardscape integration available</li>
+                        <li>Flexible design options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Hockessin Projects</div>
+                <h2>Pools Built for Our Neighbors</h2>
+                <p>A selection of pools we have built right here in Hockessin.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Valley Road Estate</h3>
+                        <p>Custom concrete pool with infinity edge overlooking the rolling Hockessin countryside. Integrated spa and outdoor kitchen coordination.</p>
+                        <div class="project-meta">
+                            <span>Concrete</span>
+                            <span>Infinity Edge</span>
+                            <span>Hockessin</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Old Lancaster Family Pool</h3>
+                        <p>Fiberglass pool with tanning ledge and automatic cover. Completed in just 18 days for this growing Hockessin family.</p>
+                        <div class="project-meta">
+                            <span>Fiberglass</span>
+                            <span>Tanning Ledge</span>
+                            <span>Hockessin</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Brackenville Retreat</h3>
+                        <p>Elegant fiberglass pool with custom LED lighting package and stone deck surround for evening entertaining.</p>
+                        <div class="project-meta">
+                            <span>Fiberglass</span>
+                            <span>LED Lighting</span>
+                            <span>Hockessin</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Yorklyn Area Pool</h3>
+                        <p>In-ground liner pool maximizing a compact lot. Smart design solutions for challenging terrain.</p>
+                        <div class="project-meta">
+                            <span>Vinyl Liner</span>
+                            <span>Space-Efficient</span>
+                            <span>Hockessin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <div class="testimonial-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                </div>
+                <p class="testimonial-text">"We looked at several pool companies, but the fact that Tri-State is actually based here in Hockessin made all the difference. When we had questions during the project, someone was at our house within the hour. They knew exactly how to handle the permitting with New Castle County, and they understood our HOA requirements. The pool was installed in just three weeks, and it has become our family's favorite place to be. We see them around town all the time - that is the kind of company we wanted to work with."</p>
+                <div class="testimonial-author">
+                    <h4>Robert & Lisa T.</h4>
+                    <span>Hockessin, Delaware</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <div class="container">
+            <div class="community-grid">
+                <div class="community-map">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <h4>Hockessin, Delaware</h4>
+                    <p>Our Headquarters</p>
+                </div>
+                <div class="community-content">
+                    <div class="section-tag">Hockessin Community</div>
+                    <h2>Part of the Community We Serve</h2>
+                    <p>Being headquartered in Hockessin means we are invested in this community. We support local schools, participate in community events, and take pride in making Hockessin backyards more enjoyable.</p>
+                    <p>When you see our trucks on Old Lancaster Pike or Lancaster Pike, you are seeing your neighbors heading to work. When you recommend us to friends at the Hockessin Athletic Club or after church on Sunday, you are recommending people who will see those same friends around town.</p>
+
+                    <ul class="community-list">
+                        <li>
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Hockessin-based office and team
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Active community members and supporters
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Deep knowledge of local HOA requirements
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Established relationships with county officials
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Reputation built on neighbor referrals
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Common Questions</div>
+                <h2>Hockessin Pool FAQ</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How fast can you respond to a service call in Hockessin?
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>As a Hockessin-based company, we can typically respond to urgent issues the same day. Our office is just minutes from most Hockessin neighborhoods. For routine questions, we respond within 24 business hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you have experience with Hockessin HOAs?
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we have worked with many of the HOAs in Hockessin and surrounding areas. We can provide the architectural drawings, material samples, and documentation your HOA requires for approval.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What permits are required for a pool in Hockessin?
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hockessin is part of New Castle County, so you will need a building permit from the county. Delaware also requires a barrier (fence) around the pool. We handle all permitting and inspections for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does Hockessin's terrain affect pool installation?
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hockessin's rolling terrain and clay-heavy soil can present challenges, but we have been building pools here for years. We know exactly how to handle grading, drainage, and soil stabilization for local conditions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the typical timeline for a Hockessin pool project?
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Fiberglass pools are typically installed in 2-4 weeks from permit approval. Concrete pools take 8-12 weeks. Being local means we can often start sooner and complete faster than competitors coming from out of the area.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Hockessin Pool?</h2>
+                <p>Schedule your free consultation with your hometown pool experts. We can be at your property as soon as today.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+13025551234" class="btn btn-cta-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call (302) 555-1234
+                    </a>
+                    <a href="mailto:info@tristateaquatic.com" class="btn btn-cta-secondary">Email Your Neighbors</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../../index.html" class="logo" style="color: var(--white);">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+                    </a>
+                    <p>Premium pool installation proudly headquartered in Hockessin, Delaware. Your neighbors building your dream pool.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Delaware Areas</h4>
+                    <ul>
+                        <li><a href="../delaware/">Delaware Overview</a></li>
+                        <li><a href="../new-castle-county-de/">New Castle County</a></li>
+                        <li><a href="../greenville-de/">Greenville</a></li>
+                        <li><a href="../wilmington-de/">Wilmington</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../../index.html#services">Concrete Pools</a></li>
+                        <li><a href="../../index.html#services">Fiberglass Pools</a></li>
+                        <li><a href="../../index.html#services">Liner Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <a href="#">Hockessin, Delaware</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+13025551234">(302) 555-1234</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+
+        // Mobile menu
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

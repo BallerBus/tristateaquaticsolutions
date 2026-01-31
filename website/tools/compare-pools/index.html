@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Comparison Tool | Concrete vs Fiberglass vs Liner | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Compare pool types side-by-side: Concrete, Fiberglass, and Vinyl Liner pools. See prices, installation times, maintenance costs, and 20-year total cost of ownership.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pool Comparison Tool",
+        "description": "Interactive tool to compare concrete, fiberglass, and vinyl liner pools side-by-side",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Tri-State Aquatic Solutions",
+            "areaServed": ["Main Line Philadelphia", "Northern Delaware"]
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --success: #10B981;
+            --warning: #F59E0B;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--gray-text);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+            margin-top: 2px;
+        }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.85rem 1.75rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .nav-cta:hover {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .hero-tag svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--aqua);
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--aqua);
+        }
+
+        .hero > .container > p {
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            font-size: 1.15rem;
+        }
+
+        /* Pool Selection */
+        .pool-selector {
+            background: var(--white);
+            padding: 2rem 0;
+            position: sticky;
+            top: 76px;
+            z-index: 100;
+            border-bottom: 1px solid var(--gray);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .pool-selector.shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .selector-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pool-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--gray);
+            border-radius: 16px;
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            min-width: 180px;
+        }
+
+        .pool-toggle:hover {
+            border-color: var(--aqua);
+        }
+
+        .pool-toggle.active {
+            border-color: var(--aqua);
+            background: var(--aqua-glow);
+        }
+
+        .pool-toggle.active.concrete {
+            border-color: var(--gold);
+            background: rgba(201, 169, 98, 0.1);
+        }
+
+        .pool-toggle.active.liner {
+            border-color: var(--gray-text);
+            background: rgba(107, 114, 128, 0.1);
+        }
+
+        .toggle-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gray);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .pool-toggle.active .toggle-checkbox {
+            background: var(--aqua);
+            border-color: var(--aqua);
+        }
+
+        .pool-toggle.active.concrete .toggle-checkbox {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .pool-toggle.active.liner .toggle-checkbox {
+            background: var(--gray-text);
+            border-color: var(--gray-text);
+        }
+
+        .toggle-checkbox svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--white);
+            stroke-width: 3;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s ease;
+        }
+
+        .pool-toggle.active .toggle-checkbox svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .toggle-info {
+            text-align: left;
+        }
+
+        .toggle-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--navy);
+        }
+
+        .toggle-price {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        .selector-hint {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* Section Styles */
+        section {
+            padding: clamp(4rem, 8vw, 6rem) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--aqua);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--gray-light);
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 24px;
+            background: var(--white);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .comparison-table thead th {
+            background: var(--navy);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .comparison-table thead th:first-child {
+            border-radius: 24px 0 0 0;
+        }
+
+        .comparison-table thead th:last-child {
+            border-radius: 0 24px 0 0;
+        }
+
+        .comparison-table thead th.concrete-header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy);
+        }
+
+        .comparison-table thead th.fiberglass-header {
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+        }
+
+        .comparison-table thead th.liner-header {
+            background: var(--gray-text);
+        }
+
+        .comparison-table tbody tr:hover {
+            background: var(--gray-light);
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr:last-child td:first-child {
+            border-radius: 0 0 0 24px;
+        }
+
+        .comparison-table tbody tr:last-child td:last-child {
+            border-radius: 0 0 24px 0;
+        }
+
+        .category-cell {
+            font-weight: 600;
+            color: var(--navy);
+            background: var(--gray-light);
+        }
+
+        .winner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: var(--success);
+            color: var(--white);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 100px;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .winner-badge svg {
+            width: 10px;
+            height: 10px;
+            fill: currentColor;
+        }
+
+        /* Feature Matrix */
+        .feature-matrix {
+            background: var(--white);
+        }
+
+        .matrix-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .matrix-row {
+            display: grid;
+            grid-template-columns: 1fr repeat(3, 120px);
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gray-light);
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .matrix-row:hover {
+            transform: translateX(4px);
+        }
+
+        .matrix-row.hidden {
+            display: none;
+        }
+
+        .matrix-feature {
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .matrix-value {
+            text-align: center;
+        }
+
+        .check-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--success);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--white);
+            stroke-width: 3;
+        }
+
+        .x-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--gray);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .x-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: var(--gray-text);
+            stroke-width: 3;
+        }
+
+        .matrix-header {
+            display: grid;
+            grid-template-columns: 1fr repeat(3, 120px);
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .matrix-header span {
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--navy);
+        }
+
+        .matrix-header span.hidden {
+            display: none;
+        }
+
+        /* 20-Year Cost Chart */
+        .cost-chart-section {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .cost-chart-section .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin-top: 1rem;
+        }
+
+        .chart-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .legend-item.hidden {
+            display: none;
+        }
+
+        .legend-color {
+            width: 24px;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        .legend-color.concrete { background: var(--gold); }
+        .legend-color.fiberglass { background: var(--aqua); }
+        .legend-color.liner { background: var(--gray-text); }
+
+        .cost-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .cost-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cost-card.hidden {
+            display: none;
+        }
+
+        .cost-card.concrete { border-color: var(--gold); }
+        .cost-card.fiberglass { border-color: var(--aqua); }
+
+        .cost-card h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .cost-card .amount {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .cost-card.concrete .amount { color: var(--gold); }
+        .cost-card.fiberglass .amount { color: var(--aqua); }
+
+        .cost-card .breakdown {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.5rem;
+        }
+
+        /* Pros & Cons */
+        .pros-cons-section {
+            background: var(--gray-light);
+        }
+
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .pool-pros-cons {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .pool-pros-cons.hidden {
+            display: none;
+        }
+
+        .pool-pros-cons-header {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .pool-pros-cons.concrete .pool-pros-cons-header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy);
+        }
+
+        .pool-pros-cons.fiberglass .pool-pros-cons-header {
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            color: var(--white);
+        }
+
+        .pool-pros-cons.liner .pool-pros-cons-header {
+            background: var(--gray-text);
+            color: var(--white);
+        }
+
+        .pool-pros-cons-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .pros-cons-content {
+            padding: 1.5rem;
+        }
+
+        .pros-section, .cons-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .pros-section:last-child, .cons-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .pros-section h4, .cons-section h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pros-section h4 {
+            color: var(--success);
+        }
+
+        .cons-section h4 {
+            color: var(--warning);
+        }
+
+        .pros-section ul, .cons-section ul {
+            list-style: none;
+        }
+
+        .pros-section li, .cons-section li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--navy);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .pros-section li:last-child, .cons-section li:last-child {
+            border-bottom: none;
+        }
+
+        .pros-section li::before {
+            content: '+';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .cons-section li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: var(--warning);
+            font-weight: 700;
+        }
+
+        /* Recommendation Section */
+        .recommendation-section {
+            background: var(--white);
+        }
+
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .recommendation-card {
+            background: var(--gray-light);
+            border-radius: 24px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .recommendation-card.highlight {
+            background: linear-gradient(135deg, var(--aqua-glow) 0%, var(--white) 100%);
+            border: 2px solid var(--aqua);
+        }
+
+        .recommendation-card.highlight::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: var(--aqua);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 100px;
+            letter-spacing: 0.1em;
+        }
+
+        .recommendation-card h3 {
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .recommendation-card h3 strong {
+            color: var(--aqua);
+        }
+
+        .recommendation-card.concrete h3 strong {
+            color: var(--gold);
+        }
+
+        .recommendation-card.liner h3 strong {
+            color: var(--gray-text);
+        }
+
+        .recommendation-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .recommendation-card ul {
+            margin-top: 1rem;
+            list-style: none;
+        }
+
+        .recommendation-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .recommendation-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--aqua);
+        }
+
+        .recommendation-card.concrete li::before {
+            background: var(--gold);
+        }
+
+        .recommendation-card.liner li::before {
+            background: var(--gray-text);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .secondary-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .secondary-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .secondary-links a:hover {
+            color: var(--aqua);
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            background: var(--navy);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s var(--ease-out-expo);
+            z-index: 50;
+        }
+
+        .print-btn:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+        }
+
+        .print-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pros-cons-grid,
+            .recommendation-cards,
+            .cost-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .matrix-row {
+                grid-template-columns: 1fr repeat(3, 80px);
+            }
+
+            .matrix-header {
+                grid-template-columns: 1fr repeat(3, 80px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pool-selector {
+                top: 66px;
+            }
+
+            .selector-wrapper {
+                flex-direction: column;
+            }
+
+            .pool-toggle {
+                min-width: 100%;
+            }
+
+            .matrix-row,
+            .matrix-header {
+                grid-template-columns: 1fr repeat(2, 80px);
+            }
+
+            .matrix-row > .matrix-value:nth-child(4),
+            .matrix-header > span:nth-child(4) {
+                display: none;
+            }
+
+            .chart-wrapper {
+                height: 300px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .matrix-row,
+            .matrix-header {
+                grid-template-columns: 1fr 80px;
+            }
+
+            .matrix-row > .matrix-value:nth-child(3),
+            .matrix-header > span:nth-child(3) {
+                display: none;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, .pool-selector, .print-btn, .cta-section, footer {
+                display: none !important;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            section {
+                padding: 2rem 0;
+                break-inside: avoid;
+            }
+
+            .comparison-table-wrapper {
+                box-shadow: none;
+                border: 1px solid var(--gray);
+            }
+
+            .cost-chart-section {
+                background: var(--white);
+                color: var(--navy);
+            }
+
+            .cost-chart-section .section-header p {
+                color: var(--gray-text);
+            }
+
+            .chart-container {
+                background: var(--gray-light);
+            }
+
+            .cost-card {
+                background: var(--gray-light);
+            }
+
+            .cost-card h4, .cost-card .breakdown {
+                color: var(--gray-text);
+            }
+
+            .cost-card .amount {
+                color: var(--navy);
+            }
+
+            .legend-item {
+                color: var(--navy);
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.6s var(--ease-out-expo) forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="../../index.html#contact" class="nav-cta">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                Interactive Comparison Tool
+            </div>
+            <h1>Compare Pool Types <em>Side-by-Side</em></h1>
+            <p>Make an informed decision with our comprehensive pool comparison. See exactly how Concrete, Fiberglass, and Liner pools stack up on price, maintenance, longevity, and total cost of ownership.</p>
+        </div>
+    </section>
+
+    <!-- Pool Selection (Sticky) -->
+    <div class="pool-selector" id="poolSelector">
+        <div class="container">
+            <div class="selector-wrapper">
+                <div class="pool-toggle concrete active" data-pool="concrete" onclick="togglePool('concrete')">
+                    <div class="toggle-checkbox">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="toggle-info">
+                        <div class="toggle-name">Concrete</div>
+                        <div class="toggle-price">$80K - $130K</div>
+                    </div>
+                </div>
+                <div class="pool-toggle fiberglass active" data-pool="fiberglass" onclick="togglePool('fiberglass')">
+                    <div class="toggle-checkbox">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="toggle-info">
+                        <div class="toggle-name">Fiberglass</div>
+                        <div class="toggle-price">$60K - $100K</div>
+                    </div>
+                </div>
+                <div class="pool-toggle liner active" data-pool="liner" onclick="togglePool('liner')">
+                    <div class="toggle-checkbox">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="toggle-info">
+                        <div class="toggle-name">Vinyl Liner</div>
+                        <div class="toggle-price">$50K - $80K</div>
+                    </div>
+                </div>
+            </div>
+            <p class="selector-hint">Select 2 or more pool types to compare</p>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Detailed Comparison</div>
+                <h2>How They Stack Up</h2>
+                <p>Every detail matters when choosing your pool. Here's how each type compares across key factors.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table" id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th class="concrete-header pool-col" data-pool="concrete">Concrete</th>
+                            <th class="fiberglass-header pool-col" data-pool="fiberglass">Fiberglass</th>
+                            <th class="liner-header pool-col" data-pool="liner">Vinyl Liner</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonBody">
+                        <!-- Rows generated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Matrix -->
+    <section class="feature-matrix">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Feature Checklist</div>
+                <h2>What's Included?</h2>
+                <p>See which features come standard or are available with each pool type.</p>
+            </div>
+            <div class="matrix-header" id="matrixHeader">
+                <span></span>
+                <span data-pool="concrete">Concrete</span>
+                <span data-pool="fiberglass">Fiberglass</span>
+                <span data-pool="liner">Liner</span>
+            </div>
+            <div class="matrix-grid" id="featureMatrix">
+                <!-- Rows generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 20-Year Cost Chart -->
+    <section class="cost-chart-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Long-Term Value</div>
+                <h2>20-Year Cost of Ownership</h2>
+                <p>Initial price is just the beginning. See the true cost over two decades including maintenance and replacements.</p>
+            </div>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <svg class="chart-svg" id="costChart" viewBox="0 0 800 350" preserveAspectRatio="xMidYMid meet">
+                        <!-- Chart generated by JavaScript -->
+                    </svg>
+                </div>
+                <div class="chart-legend" id="chartLegend">
+                    <div class="legend-item" data-pool="concrete">
+                        <span class="legend-color concrete"></span>
+                        Concrete Pool
+                    </div>
+                    <div class="legend-item" data-pool="fiberglass">
+                        <span class="legend-color fiberglass"></span>
+                        Fiberglass Pool
+                    </div>
+                    <div class="legend-item" data-pool="liner">
+                        <span class="legend-color liner"></span>
+                        Vinyl Liner Pool
+                    </div>
+                </div>
+            </div>
+            <div class="cost-summary" id="costSummary">
+                <div class="cost-card concrete" data-pool="concrete">
+                    <h4>Concrete Total</h4>
+                    <div class="amount">$145K</div>
+                    <div class="breakdown">$105K initial + $40K maintenance</div>
+                </div>
+                <div class="cost-card fiberglass" data-pool="fiberglass">
+                    <h4>Fiberglass Total</h4>
+                    <div class="amount">$100K</div>
+                    <div class="breakdown">$80K initial + $20K maintenance</div>
+                </div>
+                <div class="cost-card" data-pool="liner">
+                    <h4>Vinyl Liner Total</h4>
+                    <div class="amount">$105K</div>
+                    <div class="breakdown">$65K initial + $30K maint + $10K liner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pros & Cons -->
+    <section class="pros-cons-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Honest Assessment</div>
+                <h2>Pros and Cons</h2>
+                <p>We believe in transparency. Here's the good and the not-so-good for each pool type.</p>
+            </div>
+            <div class="pros-cons-grid" id="prosConsGrid">
+                <!-- Concrete -->
+                <div class="pool-pros-cons concrete" data-pool="concrete">
+                    <div class="pool-pros-cons-header">
+                        <h3>Concrete Pool</h3>
+                    </div>
+                    <div class="pros-cons-content">
+                        <div class="pros-section">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Pros
+                            </h4>
+                            <ul>
+                                <li>Unlimited customization - any shape, size, or depth</li>
+                                <li>Longest lifespan (50+ years with proper care)</li>
+                                <li>Highest resale value impact</li>
+                                <li>Integrated spa options available</li>
+                                <li>Premium aesthetic with custom finishes</li>
+                                <li>Can be renovated/resurfaced over time</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Cons
+                            </h4>
+                            <ul>
+                                <li>Highest upfront cost</li>
+                                <li>Longest installation time (8-12 weeks)</li>
+                                <li>Rougher surface texture</li>
+                                <li>Most prone to algae growth</li>
+                                <li>Higher annual maintenance costs</li>
+                                <li>Requires acid washing every 3-5 years</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fiberglass -->
+                <div class="pool-pros-cons fiberglass" data-pool="fiberglass">
+                    <div class="pool-pros-cons-header">
+                        <h3>Fiberglass Pool</h3>
+                    </div>
+                    <div class="pros-cons-content">
+                        <div class="pros-section">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Pros
+                            </h4>
+                            <ul>
+                                <li>Fastest installation (2-4 weeks)</li>
+                                <li>Lowest maintenance of all types</li>
+                                <li>Smooth, non-porous surface</li>
+                                <li>Best algae resistance</li>
+                                <li>Lower lifetime cost</li>
+                                <li>Excellent warranty coverage (15-25 years)</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Cons
+                            </h4>
+                            <ul>
+                                <li>Limited to pre-made shapes and sizes</li>
+                                <li>Cannot add integrated spa after install</li>
+                                <li>Width limited by transportation</li>
+                                <li>Surface can fade over decades</li>
+                                <li>Repairs more complex if shell cracks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vinyl Liner -->
+                <div class="pool-pros-cons liner" data-pool="liner">
+                    <div class="pool-pros-cons-header">
+                        <h3>Vinyl Liner Pool</h3>
+                    </div>
+                    <div class="pros-cons-content">
+                        <div class="pros-section">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Pros
+                            </h4>
+                            <ul>
+                                <li>Lowest initial investment</li>
+                                <li>Smooth, comfortable surface</li>
+                                <li>Many pattern and color options</li>
+                                <li>Non-abrasive on skin and swimwear</li>
+                                <li>Quick installation (3-5 weeks)</li>
+                                <li>Flexible sizing options</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Cons
+                            </h4>
+                            <ul>
+                                <li>Liner replacement every 7-10 years ($4-6K)</li>
+                                <li>Vulnerable to punctures and tears</li>
+                                <li>Shorter overall lifespan (15-20 years)</li>
+                                <li>Lower resale value impact</li>
+                                <li>Seams can separate over time</li>
+                                <li>Fading from sun and chemicals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommendation-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Our Guidance</div>
+                <h2>Which Pool Is Right for You?</h2>
+                <p>Based on your priorities, here's our honest recommendation.</p>
+            </div>
+            <div class="recommendation-cards">
+                <div class="recommendation-card highlight">
+                    <h3>For Most Main Line Families: <strong>Fiberglass</strong></h3>
+                    <p>We recommend fiberglass pools because they offer the best balance of quality, value, and convenience. You'll spend your weekends enjoying your pool, not maintaining it.</p>
+                    <ul>
+                        <li>Fastest installation - swimming in weeks</li>
+                        <li>Lowest total cost of ownership</li>
+                        <li>Virtually maintenance-free surface</li>
+                        <li>Excellent 15-25 year warranties</li>
+                    </ul>
+                </div>
+                <div class="recommendation-card concrete">
+                    <h3>Choose <strong>Concrete</strong> If...</h3>
+                    <p>You want a truly custom pool experience and are willing to invest in the premium option for maximum flexibility and longevity.</p>
+                    <ul>
+                        <li>Custom shape is essential to your design</li>
+                        <li>You want an integrated spa</li>
+                        <li>Building a luxury estate feature</li>
+                        <li>50+ year lifespan matters to you</li>
+                        <li>You have flexibility on timeline</li>
+                    </ul>
+                </div>
+                <div class="recommendation-card liner">
+                    <h3>Consider <strong>Vinyl Liner</strong> If...</h3>
+                    <p>You're working with a tighter budget but still want a quality in-ground pool experience for your family.</p>
+                    <ul>
+                        <li>Budget is your primary concern</li>
+                        <li>You're comfortable with liner replacement</li>
+                        <li>Planning to move in 10-15 years</li>
+                        <li>Want the most pool for the money now</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Still Deciding?</h2>
+            <p>We're here to help you make the right choice for your family and property.</p>
+            <div class="cta-buttons">
+                <a href="../../index.html#contact" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Schedule Free Consultation
+                </a>
+                <a href="../pool-quiz/index.html" class="btn btn-secondary">
+                    Take Our Pool Quiz
+                </a>
+            </div>
+            <div class="secondary-links">
+                <a href="../pool-calculator/index.html">Calculate Your Cost</a>
+                <a href="../../index.html">Return to Homepage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Print Button -->
+    <button class="print-btn" onclick="window.print()" aria-label="Print comparison">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved. | <a href="../../index.html">Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Pool data
+        const poolData = {
+            comparison: [
+                {
+                    category: 'Price Range',
+                    concrete: '$80K - $130K',
+                    fiberglass: '$60K - $100K',
+                    liner: '$50K - $80K',
+                    winner: 'liner'
+                },
+                {
+                    category: 'Installation Time',
+                    concrete: '8-12 weeks',
+                    fiberglass: '2-4 weeks',
+                    liner: '3-5 weeks',
+                    winner: 'fiberglass'
+                },
+                {
+                    category: 'Lifespan',
+                    concrete: '50+ years',
+                    fiberglass: '25-30 years',
+                    liner: '15-20 years (liner every 7-10)',
+                    winner: 'concrete'
+                },
+                {
+                    category: 'Maintenance Level',
+                    concrete: 'Medium-High',
+                    fiberglass: 'Low',
+                    liner: 'Medium',
+                    winner: 'fiberglass'
+                },
+                {
+                    category: 'Annual Maintenance Cost',
+                    concrete: '$1,500 - $2,500',
+                    fiberglass: '$800 - $1,200',
+                    liner: '$1,200 - $1,800',
+                    winner: 'fiberglass'
+                },
+                {
+                    category: 'Customization',
+                    concrete: 'Unlimited',
+                    fiberglass: 'Limited shapes',
+                    liner: 'Limited shapes',
+                    winner: 'concrete'
+                },
+                {
+                    category: 'Surface Feel',
+                    concrete: 'Textured',
+                    fiberglass: 'Smooth',
+                    liner: 'Smooth',
+                    winner: null
+                },
+                {
+                    category: 'Algae Resistance',
+                    concrete: 'Low',
+                    fiberglass: 'High',
+                    liner: 'Medium',
+                    winner: 'fiberglass'
+                },
+                {
+                    category: 'Warranty',
+                    concrete: '10-15 years',
+                    fiberglass: '15-25 years',
+                    liner: '5-10 years',
+                    winner: 'fiberglass'
+                },
+                {
+                    category: 'Resale Value Impact',
+                    concrete: 'Highest',
+                    fiberglass: 'High',
+                    liner: 'Moderate',
+                    winner: 'concrete'
+                },
+                {
+                    category: 'Best For',
+                    concrete: 'Custom estates, integrated spas',
+                    fiberglass: 'Families, low maintenance',
+                    liner: 'Budget-conscious buyers',
+                    winner: null
+                }
+            ],
+            features: [
+                { feature: 'Integrated Spa Option', concrete: true, fiberglass: false, liner: false },
+                { feature: 'Automatic Cover Included', concrete: true, fiberglass: false, liner: false },
+                { feature: 'ORP/pH Automation Included', concrete: true, fiberglass: false, liner: false },
+                { feature: 'Tanning Ledge Available', concrete: true, fiberglass: true, liner: true },
+                { feature: 'Custom Shapes', concrete: true, fiberglass: false, liner: false },
+                { feature: 'Fast Installation (<4 weeks)', concrete: false, fiberglass: true, liner: false },
+                { feature: 'Lowest Maintenance', concrete: false, fiberglass: true, liner: false },
+                { feature: 'Longest Warranty (15+ years)', concrete: false, fiberglass: true, liner: false }
+            ],
+            costs: {
+                concrete: {
+                    initial: 105000,
+                    annualMaintenance: 2000,
+                    replacements: []
+                },
+                fiberglass: {
+                    initial: 80000,
+                    annualMaintenance: 1000,
+                    replacements: []
+                },
+                liner: {
+                    initial: 65000,
+                    annualMaintenance: 1500,
+                    replacements: [
+                        { year: 8, cost: 5000 },
+                        { year: 16, cost: 5000 }
+                    ]
+                }
+            }
+        };
+
+        // State
+        let selectedPools = ['concrete', 'fiberglass', 'liner'];
+
+        // Toggle pool selection
+        function togglePool(poolType) {
+            const index = selectedPools.indexOf(poolType);
+            if (index > -1) {
+                if (selectedPools.length > 2) {
+                    selectedPools.splice(index, 1);
+                }
+            } else {
+                selectedPools.push(poolType);
+            }
+            updateUI();
+        }
+
+        // Update all UI elements
+        function updateUI() {
+            updateToggles();
+            updateComparisonTable();
+            updateFeatureMatrix();
+            updateCostChart();
+            updateProsCons();
+            updateCostSummary();
+            updateLegend();
+        }
+
+        // Update toggle buttons
+        function updateToggles() {
+            document.querySelectorAll('.pool-toggle').forEach(toggle => {
+                const pool = toggle.dataset.pool;
+                if (selectedPools.includes(pool)) {
+                    toggle.classList.add('active');
+                } else {
+                    toggle.classList.remove('active');
+                }
+            });
+        }
+
+        // Update comparison table
+        function updateComparisonTable() {
+            const tbody = document.getElementById('comparisonBody');
+            const headers = document.querySelectorAll('.comparison-table thead th.pool-col');
+
+            // Update header visibility
+            headers.forEach(th => {
+                const pool = th.dataset.pool;
+                th.style.display = selectedPools.includes(pool) ? '' : 'none';
+            });
+
+            // Generate table rows
+            tbody.innerHTML = poolData.comparison.map(row => {
+                let html = `<tr><td class="category-cell">${row.category}</td>`;
+
+                ['concrete', 'fiberglass', 'liner'].forEach(pool => {
+                    const isWinner = row.winner === pool && selectedPools.length > 1;
+                    const winnerBadge = isWinner ? '<span class="winner-badge"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>Best</span>' : '';
+                    const display = selectedPools.includes(pool) ? '' : 'display: none;';
+                    html += `<td style="${display}">${row[pool]}${winnerBadge}</td>`;
+                });
+
+                html += '</tr>';
+                return html;
+            }).join('');
+        }
+
+        // Update feature matrix
+        function updateFeatureMatrix() {
+            const matrix = document.getElementById('featureMatrix');
+            const header = document.getElementById('matrixHeader');
+
+            // Update header visibility
+            header.querySelectorAll('span[data-pool]').forEach(span => {
+                const pool = span.dataset.pool;
+                span.classList.toggle('hidden', !selectedPools.includes(pool));
+            });
+
+            // Generate feature rows
+            matrix.innerHTML = poolData.features.map(row => {
+                let html = `<div class="matrix-row"><div class="matrix-feature">${row.feature}</div>`;
+
+                ['concrete', 'fiberglass', 'liner'].forEach(pool => {
+                    const hidden = selectedPools.includes(pool) ? '' : ' hidden';
+                    const icon = row[pool]
+                        ? '<span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>'
+                        : '<span class="x-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>';
+                    html += `<div class="matrix-value${hidden}" data-pool="${pool}">${icon}</div>`;
+                });
+
+                html += '</div>';
+                return html;
+            }).join('');
+        }
+
+        // Update cost chart
+        function updateCostChart() {
+            const svg = document.getElementById('costChart');
+            const years = 20;
+            const padding = { top: 30, right: 30, bottom: 50, left: 80 };
+            const width = 800 - padding.left - padding.right;
+            const height = 350 - padding.top - padding.bottom;
+
+            // Calculate costs over time
+            const calculateCosts = (poolType) => {
+                const data = poolData.costs[poolType];
+                const costs = [];
+                let total = data.initial;
+                costs.push({ year: 0, cost: total });
+
+                for (let year = 1; year <= years; year++) {
+                    total += data.annualMaintenance;
+                    const replacement = data.replacements.find(r => r.year === year);
+                    if (replacement) {
+                        total += replacement.cost;
+                    }
+                    costs.push({ year, cost: total });
+                }
+                return costs;
+            };
+
+            // Get max value for scale
+            let maxCost = 0;
+            selectedPools.forEach(pool => {
+                const costs = calculateCosts(pool);
+                maxCost = Math.max(maxCost, costs[costs.length - 1].cost);
+            });
+            maxCost = Math.ceil(maxCost / 10000) * 10000;
+
+            // Create scales
+            const xScale = (year) => padding.left + (year / years) * width;
+            const yScale = (cost) => padding.top + height - (cost / maxCost) * height;
+
+            // Create path for each pool type
+            const createPath = (costs) => {
+                return costs.map((point, i) => {
+                    const x = xScale(point.year);
+                    const y = yScale(point.cost);
+                    return i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`;
+                }).join(' ');
+            };
+
+            // Colors
+            const colors = {
+                concrete: '#C9A962',
+                fiberglass: '#00A6B2',
+                liner: '#6B7280'
+            };
+
+            // Generate SVG content
+            let svgContent = '';
+
+            // Grid lines
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (i / 5) * height;
+                const value = maxCost - (i / 5) * maxCost;
+                svgContent += `<line x1="${padding.left}" y1="${y}" x2="${padding.left + width}" y2="${y}" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>`;
+                svgContent += `<text x="${padding.left - 10}" y="${y + 4}" fill="rgba(255,255,255,0.6)" font-size="12" text-anchor="end">$${(value / 1000).toFixed(0)}K</text>`;
+            }
+
+            // X-axis labels
+            for (let year = 0; year <= years; year += 5) {
+                const x = xScale(year);
+                svgContent += `<text x="${x}" y="${padding.top + height + 25}" fill="rgba(255,255,255,0.6)" font-size="12" text-anchor="middle">Year ${year}</text>`;
+            }
+
+            // Draw paths for selected pools
+            selectedPools.forEach(pool => {
+                const costs = calculateCosts(pool);
+                const path = createPath(costs);
+                svgContent += `<path d="${path}" fill="none" stroke="${colors[pool]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+
+                // Add end point circle and label
+                const lastPoint = costs[costs.length - 1];
+                const x = xScale(lastPoint.year);
+                const y = yScale(lastPoint.cost);
+                svgContent += `<circle cx="${x}" cy="${y}" r="6" fill="${colors[pool]}"/>`;
+                svgContent += `<text x="${x - 10}" y="${y - 15}" fill="${colors[pool]}" font-size="14" font-weight="600" text-anchor="end">$${(lastPoint.cost / 1000).toFixed(0)}K</text>`;
+            });
+
+            // Axis lines
+            svgContent += `<line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${padding.top + height}" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>`;
+            svgContent += `<line x1="${padding.left}" y1="${padding.top + height}" x2="${padding.left + width}" y2="${padding.top + height}" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>`;
+
+            svg.innerHTML = svgContent;
+        }
+
+        // Update pros/cons visibility
+        function updateProsCons() {
+            document.querySelectorAll('.pool-pros-cons').forEach(card => {
+                const pool = card.dataset.pool;
+                card.classList.toggle('hidden', !selectedPools.includes(pool));
+            });
+        }
+
+        // Update cost summary cards
+        function updateCostSummary() {
+            document.querySelectorAll('.cost-card').forEach(card => {
+                const pool = card.dataset.pool;
+                card.classList.toggle('hidden', !selectedPools.includes(pool));
+            });
+        }
+
+        // Update legend
+        function updateLegend() {
+            document.querySelectorAll('.legend-item').forEach(item => {
+                const pool = item.dataset.pool;
+                item.classList.toggle('hidden', !selectedPools.includes(pool));
+            });
+        }
+
+        // Sticky header shadow
+        const selector = document.getElementById('poolSelector');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                selector.classList.add('shadow');
+            } else {
+                selector.classList.remove('shadow');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateUI();
+        });
+    </script>
+</body>
+</html>

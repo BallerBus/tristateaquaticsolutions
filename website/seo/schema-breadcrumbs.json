@@ -1,0 +1,498 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Breadcrumb Schemas for Tri-State Aquatic Solutions",
+  "description": "Collection of BreadcrumbList schemas for all page types. Copy the appropriate schema to each page's JSON-LD block.",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "name": "Homepage Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "About Page Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us",
+            "item": "https://tristateaquaticsolutions.com/about/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Services Page Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://tristateaquaticsolutions.com/services/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Pool Types Overview Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pool Types",
+            "item": "https://tristateaquaticsolutions.com/pools/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Fiberglass Pools Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pool Types",
+            "item": "https://tristateaquaticsolutions.com/pools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Fiberglass Pools",
+            "item": "https://tristateaquaticsolutions.com/pools/fiberglass/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Concrete Pools Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pool Types",
+            "item": "https://tristateaquaticsolutions.com/pools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Concrete Pools",
+            "item": "https://tristateaquaticsolutions.com/pools/concrete/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Plunge Pools Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pool Types",
+            "item": "https://tristateaquaticsolutions.com/pools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Plunge Pools",
+            "item": "https://tristateaquaticsolutions.com/pools/plunge/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Fiberglass Location Page Breadcrumb (Example: Gladwyne)",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pool Types",
+            "item": "https://tristateaquaticsolutions.com/pools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Fiberglass Pools",
+            "item": "https://tristateaquaticsolutions.com/pools/fiberglass/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Gladwyne, PA",
+            "item": "https://tristateaquaticsolutions.com/pools/fiberglass/gladwyne-pa/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Location State Page Breadcrumb (Pennsylvania)",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://tristateaquaticsolutions.com/locations/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pennsylvania",
+            "item": "https://tristateaquaticsolutions.com/locations/pennsylvania/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Location County Page Breadcrumb (Chester County)",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://tristateaquaticsolutions.com/locations/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pennsylvania",
+            "item": "https://tristateaquaticsolutions.com/locations/pennsylvania/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Chester County",
+            "item": "https://tristateaquaticsolutions.com/locations/chester-county-pa/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Location City Page Breadcrumb (Gladwyne, PA)",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://tristateaquaticsolutions.com/locations/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pennsylvania",
+            "item": "https://tristateaquaticsolutions.com/locations/pennsylvania/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Gladwyne",
+            "item": "https://tristateaquaticsolutions.com/locations/gladwyne-pa/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Blog Index Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://tristateaquaticsolutions.com/blog/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Blog Article Breadcrumb (Example: Pool Cost)",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://tristateaquaticsolutions.com/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How Much Does a Pool Cost in Pennsylvania?",
+            "item": "https://tristateaquaticsolutions.com/blog/how-much-does-pool-cost-pennsylvania.html"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Gallery Page Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Gallery",
+            "item": "https://tristateaquaticsolutions.com/gallery/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Contact Page Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://tristateaquaticsolutions.com/contact/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "FAQ Page Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://tristateaquaticsolutions.com/faq/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Tools Page Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://tristateaquaticsolutions.com/tools/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Pool Calculator Tool Breadcrumb",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://tristateaquaticsolutions.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pool Cost Calculator",
+            "item": "https://tristateaquaticsolutions.com/tools/pool-calculator/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "name": "Service Sub-Page Breadcrumb (Weekly Maintenance)",
+      "item": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://tristateaquaticsolutions.com/services/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Weekly Maintenance",
+            "item": "https://tristateaquaticsolutions.com/services/weekly-maintenance/"
+          }
+        ]
+      }
+    }
+  ]
+}

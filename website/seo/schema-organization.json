@@ -1,0 +1,166 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://tristateaquaticsolutions.com/#organization",
+  "name": "Tri-State Aquatic Solutions",
+  "alternateName": [
+    "TSAS",
+    "Tri State Aquatic Solutions",
+    "Tri-State Aquatic"
+  ],
+  "legalName": "Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions",
+  "description": "Premium pool installation company serving Main Line Philadelphia and Northern Delaware. Specializing in fiberglass pools, custom concrete pools, and plunge pools with industry-leading warranties and owner-involved service.",
+  "url": "https://tristateaquaticsolutions.com",
+  "logo": {
+    "@type": "ImageObject",
+    "@id": "https://tristateaquaticsolutions.com/#logo",
+    "url": "https://tristateaquaticsolutions.com/images/logo.png",
+    "contentUrl": "https://tristateaquaticsolutions.com/images/logo.png",
+    "width": 400,
+    "height": 400,
+    "caption": "Tri-State Aquatic Solutions Logo"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://tristateaquaticsolutions.com/images/hero-pool.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  "telephone": "+1-302-555-1234",
+  "email": "info@tristateaquaticsolutions.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main Street",
+    "addressLocality": "Hockessin",
+    "addressRegion": "DE",
+    "postalCode": "19707",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.9526",
+        "longitude": "-75.1652"
+      },
+      "geoRadius": "50"
+    }
+  ],
+  "foundingDate": "2024",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Hockessin, Delaware"
+  },
+  "slogan": "Transform your backyard in weeks, not months.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Tri-State Aquatic Solutions",
+    "logo": "https://tristateaquaticsolutions.com/images/logo.png"
+  },
+  "knowsAbout": [
+    "Pool Installation",
+    "Fiberglass Pools",
+    "Concrete Pools",
+    "Gunite Pools",
+    "Plunge Pools",
+    "Cocktail Pools",
+    "Cold Plunge Pools",
+    "Pool Maintenance",
+    "Pool Opening",
+    "Pool Closing",
+    "Water Chemistry",
+    "Pool Equipment",
+    "Pool Automation",
+    "Landscape Design",
+    "Hardscaping"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "@id": "https://tristateaquaticsolutions.com/pools/fiberglass/#service",
+        "name": "Fiberglass Pool Installation",
+        "serviceType": "Pool Installation"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "@id": "https://tristateaquaticsolutions.com/pools/concrete/#service",
+        "name": "Concrete Pool Installation",
+        "serviceType": "Pool Installation"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "@id": "https://tristateaquaticsolutions.com/pools/plunge/#service",
+        "name": "Plunge Pool Installation",
+        "serviceType": "Pool Installation"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "@id": "https://tristateaquaticsolutions.com/pool-maintenance/#service",
+        "name": "Pool Maintenance Services",
+        "serviceType": "Pool Maintenance"
+      }
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+1-302-555-1234",
+      "email": "info@tristateaquaticsolutions.com",
+      "availableLanguage": "English",
+      "areaServed": ["US-PA", "US-DE"]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+1-302-555-1234",
+      "email": "quotes@tristateaquaticsolutions.com",
+      "availableLanguage": "English"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/tristateaquaticsolutions",
+    "https://www.instagram.com/tristateaquaticsolutions",
+    "https://www.linkedin.com/company/tri-state-aquatic-solutions",
+    "https://www.yelp.com/biz/tri-state-aquatic-solutions",
+    "https://www.bbb.org/us/de/hockessin/profile/swimming-pool-contractors/tri-state-aquatic-solutions"
+  ],
+  "potentialAction": [
+    {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tristateaquaticsolutions.com/contact/",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Free Pool Consultation"
+      }
+    },
+    {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tristateaquaticsolutions.com/blog/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  ]
+}

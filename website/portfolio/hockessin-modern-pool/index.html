@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimalist Pool | Hockessin DE Case Study | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Case study of a contemporary concrete pool installation in Hockessin, Delaware. Clean lines, negative edge design, and seamless architectural integration.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/portfolio/hockessin-modern-pool/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        .container-narrow { max-width: 900px; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; transition: all 0.3s var(--ease-out-expo); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 8rem 0 2rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.75rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: var(--gray-text); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list span { color: var(--gray-text); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        /* Hero Section */
+        .case-study-hero { background: var(--gray-light); padding: 0 0 4rem; }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .hero-text h1 { margin-bottom: 1.5rem; }
+        .hero-text .lead { font-size: 1.25rem; color: var(--gray-text); margin-bottom: 2rem; }
+        .project-badges { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .badge { padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-concrete { background: var(--gold); color: var(--navy); }
+        .badge-location { background: var(--navy); color: var(--white); }
+        .badge-modern { background: var(--navy-light); color: var(--white); }
+
+        .project-quick-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem; background: var(--white); border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .stat-item { text-align: center; padding: 1rem; }
+        .stat-item .value { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--navy); display: block; }
+        .stat-item .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); }
+
+        .hero-image { position: relative; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 20px; overflow: hidden; }
+        .hero-image .placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); opacity: 0.6; }
+        .hero-image .placeholder svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1rem; }
+
+        /* Content Sections */
+        .content-section { padding: 5rem 0; }
+        .content-section:nth-child(even) { background: var(--gray-light); }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { margin-bottom: 1rem; }
+        .section-header p { max-width: 600px; margin: 0 auto; }
+
+        /* Client Profile */
+        .client-profile { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .profile-card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .profile-card h3 { margin-bottom: 1.5rem; color: var(--navy); }
+        .profile-list { list-style: none; }
+        .profile-list li { padding: 1rem 0; border-bottom: 1px solid var(--gray); display: flex; justify-content: space-between; align-items: center; }
+        .profile-list li:last-child { border-bottom: none; }
+        .profile-list .label { font-size: 0.9rem; color: var(--gray-text); }
+        .profile-list .value { font-weight: 500; color: var(--navy); }
+
+        /* Challenge & Solution */
+        .challenge-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .cs-card { padding: 2.5rem; border-radius: 20px; }
+        .cs-card.challenge { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); }
+        .cs-card.challenge h3 { color: var(--white); }
+        .cs-card.challenge p { color: rgba(255, 255, 255, 0.8); }
+        .cs-card.solution { background: var(--white); box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .cs-card h3 { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .cs-card h3 svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .cs-card ul { list-style: none; margin-top: 1.5rem; }
+        .cs-card ul li { padding: 0.75rem 0; padding-left: 1.5rem; position: relative; color: var(--gray-text); }
+        .cs-card.challenge ul li { color: rgba(255, 255, 255, 0.8); }
+        .cs-card ul li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 8px; height: 8px; background: var(--aqua); border-radius: 50%; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); text-align: center; transition: transform 0.3s var(--ease-out-expo); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .feature-icon { width: 64px; height: 64px; background: var(--aqua-glow); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .feature-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .feature-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .feature-card p { font-size: 0.95rem; }
+
+        /* Design Philosophy Section */
+        .design-section { background: var(--navy); padding: 5rem 0; }
+        .design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .design-content { color: var(--white); }
+        .design-content h2 { color: var(--white); margin-bottom: 1.5rem; }
+        .design-content p { color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; }
+        .design-content ul { list-style: none; }
+        .design-content ul li { padding: 0.75rem 0; padding-left: 2rem; position: relative; color: rgba(255, 255, 255, 0.8); }
+        .design-content ul li::before { content: ''; position: absolute; left: 0; top: 1rem; width: 12px; height: 2px; background: var(--aqua); }
+        .design-image { aspect-ratio: 4/3; background: var(--navy-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.3); }
+        .design-image svg { width: 60px; height: 60px; stroke: var(--aqua); stroke-width: 1; fill: none; }
+
+        /* Timeline */
+        .timeline { max-width: 800px; margin: 0 auto; }
+        .timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--gray); }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-week { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--aqua); }
+        .timeline-content h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--navy); }
+
+        /* Testimonial */
+        .testimonial-section { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); padding: 5rem 0; }
+        .testimonial-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--navy); }
+        .testimonial-placeholder { background: rgba(255, 255, 255, 0.5); border: 2px dashed rgba(14, 31, 52, 0.3); border-radius: 16px; padding: 3rem; text-align: center; }
+        .testimonial-placeholder p { color: var(--navy); font-size: 0.95rem; }
+
+        /* Photo Gallery */
+        .photo-section { background: var(--gray-light); }
+        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .photo-placeholder { aspect-ratio: 4/3; background: var(--white); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed var(--gray); color: var(--gray-text); text-align: center; padding: 1.5rem; }
+        .photo-placeholder svg { width: 40px; height: 40px; stroke: var(--gray); stroke-width: 1; fill: none; margin-bottom: 0.75rem; }
+        .photo-placeholder span { font-size: 0.85rem; }
+        .photos-needed { margin-top: 3rem; padding: 2rem; background: var(--white); border-radius: 16px; }
+        .photos-needed h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--navy); }
+        .photos-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; list-style: none; }
+        .photos-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; font-size: 0.95rem; color: var(--gray-text); }
+        .photos-list li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; border: 2px solid var(--aqua); border-radius: 50%; }
+
+        /* Key Takeaways */
+        .takeaways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .takeaway-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); border-left: 4px solid var(--gold); }
+        .takeaway-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--navy); }
+        .takeaway-card p { font-size: 0.95rem; }
+
+        /* CTA Section */
+        .cta-section { padding: 6rem 0; background: var(--white); text-align: center; }
+        .cta-section h2 { margin-bottom: 1rem; }
+        .cta-section > .container > p { max-width: 600px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--navy); color: var(--white); padding: 1.1rem 2.5rem; border-radius: 100px; text-decoration: none; font-weight: 500; transition: all 0.3s var(--ease-out-expo); }
+        .btn-primary:hover { background: var(--aqua); transform: translateY(-2px); }
+        .btn-primary svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--aqua); text-decoration: none; font-weight: 500; margin-top: 1.5rem; }
+        .btn-secondary svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-top: 1rem; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; color: var(--aqua); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+        .footer-bottom a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content, .client-profile, .challenge-solution, .design-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .features-grid, .takeaways-grid, .photo-grid, .photos-list { grid-template-columns: 1fr; }
+            .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Pool Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><span>/</span></li>
+                <li class="current">Hockessin Modern Pool</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="project-badges">
+                        <span class="badge badge-concrete">Concrete</span>
+                        <span class="badge badge-location">Hockessin, DE</span>
+                        <span class="badge badge-modern">Contemporary</span>
+                    </div>
+                    <h1>Modern Minimalist Pool</h1>
+                    <p class="lead">Clean lines and contemporary design complement this architectural home in Hockessin. A geometric concrete pool with negative edge, custom grey plaster finish, and seamless integration with the landscape architecture.</p>
+
+                    <div class="project-quick-stats">
+                        <div class="stat-item">
+                            <span class="value">10</span>
+                            <span class="label">Week Timeline</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">$140K</span>
+                            <span class="label">Investment</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">18x40</span>
+                            <span class="label">Pool Size (ft)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">720</span>
+                            <span class="label">Sq Ft Surface</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <span>Hero Photo: Modern Pool & Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Profile Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="client-profile">
+                <div class="profile-card">
+                    <h3>Client Profile</h3>
+                    <ul class="profile-list">
+                        <li>
+                            <span class="label">Client Type</span>
+                            <span class="value">Design-Focused Professionals</span>
+                        </li>
+                        <li>
+                            <span class="label">Property Type</span>
+                            <span class="value">Modern Architectural Home</span>
+                        </li>
+                        <li>
+                            <span class="label">Home Style</span>
+                            <span class="value">Contemporary with flat roof lines</span>
+                        </li>
+                        <li>
+                            <span class="label">Lot Size</span>
+                            <span class="value">1.2 Acres wooded lot</span>
+                        </li>
+                        <li>
+                            <span class="label">Primary Use</span>
+                            <span class="value">Lap swimming & aesthetic</span>
+                        </li>
+                        <li>
+                            <span class="label">Design Influence</span>
+                            <span class="value">Working with architect</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Project Background</h3>
+                    <p style="margin-bottom: 1.5rem;">These Hockessin homeowners built a striking contemporary home with their architect and were now ready to complete their vision with an equally modern pool that would serve as an architectural element, not just a place to swim.</p>
+                    <p style="margin-bottom: 1.5rem;">They had specific requirements: a geometric shape with precise 90-degree corners, a negative edge facing the wooded view, and a grey plaster finish that would complement the home's concrete and steel aesthetic.</p>
+                    <p>After interviewing several builders, they chose us because of our concrete expertise and willingness to work closely with their architect to achieve the exact design specifications they envisioned.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge & Solution -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Challenge & Our Solution</h2>
+                <p>Where architecture meets aquatics</p>
+            </div>
+            <div class="challenge-solution">
+                <div class="cs-card challenge">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        The Challenge
+                    </h3>
+                    <p>Creating a pool that functions as architectural sculpture while maintaining practical swimming functionality - and coordinating with an architect who had exacting standards.</p>
+                    <ul>
+                        <li>Architect required precise geometric tolerances (corners within 1/8")</li>
+                        <li>Grey plaster finish needed to match specific color specification</li>
+                        <li>Negative edge on wooded side with complex catch basin engineering</li>
+                        <li>All equipment to be hidden from view (no visible boxes or pipes)</li>
+                        <li>Coordinate with landscape architect for seamless hardscape integration</li>
+                        <li>Longer timeline acceptable but quality non-negotiable</li>
+                    </ul>
+                </div>
+                <div class="cs-card solution">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Our Solution
+                    </h3>
+                    <p>A custom concrete pool built to architectural specifications with meticulous attention to detail at every phase.</p>
+                    <ul>
+                        <li>Custom steel framework for precise 90-degree corners</li>
+                        <li>Multiple plaster samples to achieve exact grey tone</li>
+                        <li>Engineered negative edge with concealed catch basin</li>
+                        <li>Underground equipment vault designed into landscape</li>
+                        <li>Weekly coordination meetings with architect throughout build</li>
+                        <li>Third-party quality inspections at each phase</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Philosophy Section -->
+    <section class="design-section">
+        <div class="container">
+            <div class="design-grid">
+                <div class="design-content">
+                    <h2>Design Philosophy</h2>
+                    <p>This pool was designed as an extension of the home's architecture - a reflecting pool that becomes a work of art when not in use, and a functional swimming space when needed.</p>
+                    <ul>
+                        <li>Rectangular geometry mirrors home's clean lines</li>
+                        <li>Grey plaster creates dark, reflective water surface</li>
+                        <li>Negative edge frames the wooded view like a picture</li>
+                        <li>Flush deck-level coping eliminates visual barriers</li>
+                        <li>No visible equipment maintains sculptural aesthetic</li>
+                        <li>Strategic uplighting transforms pool at night</li>
+                    </ul>
+                </div>
+                <div class="design-image">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Premium Features</h2>
+                <p>Every element selected for design impact and functionality</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                    </div>
+                    <h4>Negative Edge</h4>
+                    <p>Vanishing edge facing wooded view creates infinite horizon effect</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                    </div>
+                    <h4>Custom Grey Plaster</h4>
+                    <p>Pebble Tec French Grey finish creates sophisticated dark water</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z"/><path d="M4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"/></svg>
+                    </div>
+                    <h4>Hidden Equipment</h4>
+                    <p>Underground vault conceals all mechanical systems from view</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h4>LED Perimeter</h4>
+                    <p>Recessed lighting creates floating effect at night</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h4>Flush Coping</h4>
+                    <p>Deck-level finish creates seamless transition to hardscape</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                    </div>
+                    <h4>Automation System</h4>
+                    <p>Full smart home integration for lights, heat, and cleaning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="content-section">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <h2>Project Timeline</h2>
+                <p>10 weeks of precision craftsmanship</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 1-2</div>
+                    <div class="timeline-content">
+                        <h4>Excavation & Steel</h4>
+                        <p>Precision excavation, soil engineering, and custom steel framework installation for exact geometric dimensions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 3-4</div>
+                    <div class="timeline-content">
+                        <h4>Gunite & Structure</h4>
+                        <p>Gunite application with multiple inspections, catch basin construction for negative edge, equipment vault installation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 5-6</div>
+                    <div class="timeline-content">
+                        <h4>Plumbing & Electrical</h4>
+                        <p>Comprehensive plumbing system, LED lighting installation, automation wiring, and equipment rough-in.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 7-8</div>
+                    <div class="timeline-content">
+                        <h4>Tile & Coping</h4>
+                        <p>Waterline tile installation, flush coping system, and coordination with landscape contractor for deck integration.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 9-10</div>
+                    <div class="timeline-content">
+                        <h4>Plaster & Startup</h4>
+                        <p>Custom grey plaster application (Pebble Tec French Grey), fill, chemistry balance, automation programming, and final walkthrough with architect.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="testimonial-placeholder">
+                    <p><strong>Client Testimonial Placeholder</strong></p>
+                    <p style="margin-top: 1rem;">"[Insert client testimonial here. Focus on the collaborative process with the architect, the precision of the build quality, and how the pool has become the centerpiece of their contemporary home.]"</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem;">- [Client Name], Hockessin, DE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="content-section photo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Gallery</h2>
+                <p>Architecture in motion</p>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Pool & Home Architecture View</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Negative Edge Detail</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Grey Plaster Water Surface</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Steel Framework Precision</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Hidden Equipment Vault</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Evening LED Lighting</span>
+                </div>
+            </div>
+
+            <div class="photos-needed">
+                <h4>Photos Needed for This Case Study:</h4>
+                <ul class="photos-list">
+                    <li>Wide shot showing pool and modern home together</li>
+                    <li>Negative edge with wooded view behind</li>
+                    <li>Close-up of grey plaster water surface/reflection</li>
+                    <li>90-degree corner detail showing precision</li>
+                    <li>Flush coping transition to deck</li>
+                    <li>Hidden equipment vault (before concealment)</li>
+                    <li>Steel framework during construction</li>
+                    <li>Gunite application process</li>
+                    <li>Evening/night shot with LED lighting</li>
+                    <li>Pool as reflective surface (mirror effect)</li>
+                    <li>Architect walkthrough/sign-off photo</li>
+                    <li>Drone shot showing geometric form</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Takeaways</h2>
+                <p>Lessons from architectural pool design</p>
+            </div>
+            <div class="takeaways-grid">
+                <div class="takeaway-card">
+                    <h4>Concrete Enables Custom Design</h4>
+                    <p>When architectural precision matters, concrete is the only choice. Fiberglass shells cannot achieve custom shapes, exact dimensions, or specialty finishes like grey plaster.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Collaboration Elevates Results</h4>
+                    <p>Working alongside the client's architect from the start ensured the pool became an integral part of the home's design language, not an afterthought.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Timeline Follows Quality</h4>
+                    <p>These clients chose a 10-week concrete build over a 4-week fiberglass install because quality and design mattered more than speed. Good things take time.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Details Make the Difference</h4>
+                    <p>Hidden equipment, flush coping, and precise corners might add cost and complexity, but they're what transform a pool from functional to exceptional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have an Architectural Vision?</h2>
+            <p>We collaborate with architects and design professionals to create pools that are true extensions of your home's aesthetic.</p>
+            <a href="/contact/" class="btn-primary">
+                Discuss Your Design
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <br>
+            <a href="/portfolio/" class="btn-secondary">
+                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                View More Case Studies
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Pool Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium pool installation for Main Line Philadelphia and Northern Delaware.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/pools/concrete/">Concrete Pools</a></li>
+                        <li><a href="/pools/plunge/">Plunge Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/testimonials/">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="/contact/">Get a Quote</a></li>
+                        <li><a href="tel:+13025551234">(302) 555-1234</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tri-State Aquatic Solutions. All rights reserved.</p>
+                <p><a href="/privacy-policy/">Privacy</a> | <a href="/terms-of-service/">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

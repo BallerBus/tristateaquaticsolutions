@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://tristateaquaticsolutions.com/#website",
+  "name": "Tri-State Aquatic Solutions",
+  "alternateName": "TSAS",
+  "description": "Premium pool installation company serving Main Line Philadelphia and Northern Delaware. Fiberglass, concrete, and plunge pool specialists.",
+  "url": "https://tristateaquaticsolutions.com",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://tristateaquaticsolutions.com/#organization"
+  },
+  "inLanguage": "en-US",
+  "copyrightYear": "2024",
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions"
+  },
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tristateaquaticsolutions.com/blog/?search={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    {
+      "@type": "ReadAction",
+      "target": [
+        "https://tristateaquaticsolutions.com/",
+        "https://tristateaquaticsolutions.com/pools/",
+        "https://tristateaquaticsolutions.com/services/",
+        "https://tristateaquaticsolutions.com/blog/"
+      ]
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "@id": "https://tristateaquaticsolutions.com/pools/",
+      "name": "Pool Types",
+      "description": "Browse our pool installation options: fiberglass, concrete, and plunge pools"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tristateaquaticsolutions.com/services/",
+      "name": "Services",
+      "description": "Pool installation and maintenance services"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tristateaquaticsolutions.com/blog/",
+      "name": "Blog",
+      "description": "Pool guides, tips, and expert advice"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tristateaquaticsolutions.com/gallery/",
+      "name": "Gallery",
+      "description": "View our completed pool installation projects"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tristateaquaticsolutions.com/contact/",
+      "name": "Contact",
+      "description": "Get a free pool consultation"
+    }
+  ],
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "@id": "https://tristateaquaticsolutions.com/#business"
+  }
+}

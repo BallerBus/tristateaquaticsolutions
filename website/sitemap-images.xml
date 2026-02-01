@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ==================== HOMEPAGE IMAGES ==================== -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/hero-pool.jpg</image:loc>
+      <image:title>Premium Pool Installation Main Line Philadelphia</image:title>
+      <image:caption>Tri-State Aquatic Solutions - Transform your backyard with premium pool installation in Main Line PA and Northern Delaware</image:caption>
+      <image:geo_location>Main Line, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/logo.png</image:loc>
+      <image:title>Tri-State Aquatic Solutions Logo</image:title>
+      <image:caption>Tri-State Aquatic Solutions - Premium Pool Installation Company</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/backyard-pool.jpg</image:loc>
+      <image:title>Backyard Pool Installation Pennsylvania</image:title>
+      <image:caption>Beautiful backyard pool installation by Tri-State Aquatic Solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/plunge-pool.jpg</image:loc>
+      <image:title>Plunge Pool Design Main Line</image:title>
+      <image:caption>Compact luxury plunge pool perfect for small backyards</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ==================== POOL TYPE IMAGES ==================== -->
+
+  <!-- Fiberglass Pools -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/fiberglass-hero.jpg</image:loc>
+      <image:title>Fiberglass Pool Installation Pennsylvania Delaware</image:title>
+      <image:caption>Expert fiberglass pool installation - Installed in 2-4 weeks with 50% lower lifetime maintenance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-installation.jpg</image:loc>
+      <image:title>Fiberglass Pool Installation Process</image:title>
+      <image:caption>Professional fiberglass pool installation by Tri-State Aquatic Solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-gallery-1.jpg</image:loc>
+      <image:title>Fiberglass Pool Gallery Image 1</image:title>
+      <image:caption>Completed fiberglass pool project in Main Line Philadelphia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-gallery-2.jpg</image:loc>
+      <image:title>Fiberglass Pool Gallery Image 2</image:title>
+      <image:caption>Premium fiberglass pool installation with custom landscaping</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-gallery-3.jpg</image:loc>
+      <image:title>Fiberglass Pool Gallery Image 3</image:title>
+      <image:caption>Family fiberglass pool with tanning ledge feature</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-gallery-4.jpg</image:loc>
+      <image:title>Fiberglass Pool Gallery Image 4</image:title>
+      <image:caption>Modern fiberglass pool design in Delaware County</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-gallery-5.jpg</image:loc>
+      <image:title>Fiberglass Pool Gallery Image 5</image:title>
+      <image:caption>Evening view of illuminated fiberglass pool</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/family-fiberglass.jpg</image:loc>
+      <image:title>Family Fiberglass Pool Pennsylvania</image:title>
+      <image:caption>Family-friendly fiberglass pool with safety features</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Concrete Pools -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/concrete/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/concrete-hero.jpg</image:loc>
+      <image:title>Custom Concrete Pool Installation Pennsylvania Delaware</image:title>
+      <image:caption>Premium custom concrete pool with integrated spa and automatic cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/concrete-construction.jpg</image:loc>
+      <image:title>Concrete Pool Construction Process</image:title>
+      <image:caption>Professional gunite concrete pool construction in Main Line PA</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/pool-spa-combo.jpg</image:loc>
+      <image:title>Concrete Pool with Integrated Spa</image:title>
+      <image:caption>Luxury concrete pool featuring integrated spillover spa</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Plunge Pools -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/plunge/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/plunge-hero.jpg</image:loc>
+      <image:title>Plunge Pool Installation Main Line PA Delaware</image:title>
+      <image:caption>Compact luxury plunge pools perfect for small backyards and wellness routines</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/plunge-pool.jpg</image:loc>
+      <image:title>Plunge Pool Design</image:title>
+      <image:caption>Elegant plunge pool design for modern backyards</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/plunge-install.jpg</image:loc>
+      <image:title>Plunge Pool Installation</image:title>
+      <image:caption>Quick plunge pool installation - completed in 1-2 weeks</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/wellness-plunge.jpg</image:loc>
+      <image:title>Wellness Plunge Pool</image:title>
+      <image:caption>Cold plunge pool for wellness and recovery</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/cold-plunge-wellness.jpg</image:loc>
+      <image:title>Cold Plunge Pool Wellness</image:title>
+      <image:caption>Cold water therapy plunge pool for health benefits</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/backyard-starter.jpg</image:loc>
+      <image:title>Backyard Starter Pool</image:title>
+      <image:caption>Affordable plunge pool option for smaller budgets</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ==================== GALLERY IMAGES ==================== -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/gallery/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/gladwyne-modern-fiberglass.jpg</image:loc>
+      <image:title>Gladwyne Modern Fiberglass Pool</image:title>
+      <image:caption>Modern fiberglass pool installation in Gladwyne, PA</image:caption>
+      <image:geo_location>Gladwyne, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/villanova-estate-fiberglass.jpg</image:loc>
+      <image:title>Villanova Estate Fiberglass Pool</image:title>
+      <image:caption>Estate fiberglass pool installation in Villanova, PA</image:caption>
+      <image:geo_location>Villanova, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/hockessin-family-fiberglass.jpg</image:loc>
+      <image:title>Hockessin Family Fiberglass Pool</image:title>
+      <image:caption>Family-friendly fiberglass pool in Hockessin, DE</image:caption>
+      <image:geo_location>Hockessin, Delaware, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/gladwyne-luxury-concrete.jpg</image:loc>
+      <image:title>Gladwyne Luxury Concrete Pool</image:title>
+      <image:caption>Custom luxury concrete pool in Gladwyne, PA</image:caption>
+      <image:geo_location>Gladwyne, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/west-chester-contemporary.jpg</image:loc>
+      <image:title>West Chester Contemporary Pool</image:title>
+      <image:caption>Contemporary pool design in West Chester, PA</image:caption>
+      <image:geo_location>West Chester, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/greenville-resort-style.jpg</image:loc>
+      <image:title>Greenville Resort Style Pool</image:title>
+      <image:caption>Resort-style pool installation in Greenville, DE</image:caption>
+      <image:geo_location>Greenville, Delaware, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/bryn-mawr-plunge.jpg</image:loc>
+      <image:title>Bryn Mawr Plunge Pool</image:title>
+      <image:caption>Elegant plunge pool installation in Bryn Mawr, PA</image:caption>
+      <image:geo_location>Bryn Mawr, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/haverford-classic-concrete.jpg</image:loc>
+      <image:title>Haverford Classic Concrete Pool</image:title>
+      <image:caption>Classic concrete pool design in Haverford, PA</image:caption>
+      <image:geo_location>Haverford, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/wilmington-urban-plunge.jpg</image:loc>
+      <image:title>Wilmington Urban Plunge Pool</image:title>
+      <image:caption>Urban plunge pool for small backyard in Wilmington, DE</image:caption>
+      <image:geo_location>Wilmington, Delaware, United States</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- ==================== LOCATION IMAGES ==================== -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/pennsylvania/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/main-line-estate.jpg</image:loc>
+      <image:title>Main Line Pennsylvania Estate Pool</image:title>
+      <image:caption>Premium pool installation for Main Line PA estates</image:caption>
+      <image:geo_location>Main Line, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/suburban-family.jpg</image:loc>
+      <image:title>Suburban Family Pool Pennsylvania</image:title>
+      <image:caption>Family pool installation for suburban Pennsylvania homes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/historic-property.jpg</image:loc>
+      <image:title>Historic Property Pool Installation</image:title>
+      <image:caption>Pool installation for historic Main Line properties</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/delaware/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/delaware-modern.jpg</image:loc>
+      <image:title>Northern Delaware Modern Pool</image:title>
+      <image:caption>Modern pool installation in Northern Delaware</image:caption>
+      <image:geo_location>Delaware, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/small-lot-plunge.jpg</image:loc>
+      <image:title>Small Lot Plunge Pool Delaware</image:title>
+      <image:caption>Plunge pool solution for small Delaware properties</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/contemporary-design.jpg</image:loc>
+      <image:title>Contemporary Pool Design Delaware</image:title>
+      <image:caption>Contemporary pool designs for Delaware homes</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ==================== ADDITIONAL POOL FEATURE IMAGES ==================== -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/fiberglass-hero.jpg</image:loc>
+      <image:title>Fiberglass Pool Installation</image:title>
+      <image:caption>Expert fiberglass pool installation services</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/concrete-hero.jpg</image:loc>
+      <image:title>Concrete Pool Installation</image:title>
+      <image:caption>Custom concrete pool installation services</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/plunge-hero.jpg</image:loc>
+      <image:title>Plunge Pool Installation</image:title>
+      <image:caption>Compact plunge pool installation services</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/family-lifestyle.jpg</image:loc>
+      <image:title>Family Lifestyle Pool</image:title>
+      <image:caption>Pool designed for family enjoyment and entertaining</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/evening-entertaining.jpg</image:loc>
+      <image:title>Evening Pool Entertainment</image:title>
+      <image:caption>Pool with lighting perfect for evening entertainment</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/tanning-ledge.jpg</image:loc>
+      <image:title>Pool Tanning Ledge Feature</image:title>
+      <image:caption>Popular tanning ledge feature for relaxation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/installation-process.jpg</image:loc>
+      <image:title>Pool Installation Process</image:title>
+      <image:caption>Professional pool installation process documentation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/gladwyne-estate.jpg</image:loc>
+      <image:title>Gladwyne Estate Pool</image:title>
+      <image:caption>Luxury estate pool in Gladwyne, PA</image:caption>
+      <image:geo_location>Gladwyne, Pennsylvania, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/delaware-modern.jpg</image:loc>
+      <image:title>Delaware Modern Pool</image:title>
+      <image:caption>Modern pool design in Delaware</image:caption>
+      <image:geo_location>Delaware, United States</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/before-after.jpg</image:loc>
+      <image:title>Pool Before and After</image:title>
+      <image:caption>Pool installation before and after transformation</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ==================== ABOUT PAGE IMAGES ==================== -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/about/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/team-photo.jpg</image:loc>
+      <image:title>Tri-State Aquatic Solutions Team</image:title>
+      <image:caption>Meet the professional team behind Tri-State Aquatic Solutions</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ==================== BLOG POST IMAGES ==================== -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/how-much-does-pool-cost-pennsylvania.html</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/blog/pool-cost.jpg</image:loc>
+      <image:title>Pool Cost Guide Pennsylvania 2026</image:title>
+      <image:caption>Complete guide to pool installation costs in Pennsylvania - Updated for 2026</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/fiberglass-vs-concrete-pools.html</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/blog/fiberglass-vs-concrete.jpg</image:loc>
+      <image:title>Fiberglass vs Concrete Pools Comparison</image:title>
+      <image:caption>Detailed comparison of fiberglass and concrete pool options</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/best-time-to-install-pool.html</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/blog/best-time-install.jpg</image:loc>
+      <image:title>Best Time to Install a Pool</image:title>
+      <image:caption>Guide to optimal pool installation timing in Pennsylvania and Delaware</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-installation-process-what-to-expect.html</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/blog/installation-process.jpg</image:loc>
+      <image:title>Pool Installation Process Guide</image:title>
+      <image:caption>Step-by-step guide to the pool installation process</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/plunge-pools-small-backyard-solution.html</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/blog/plunge-pool-article.jpg</image:loc>
+      <image:title>Plunge Pools for Small Backyards</image:title>
+      <image:caption>How plunge pools provide the perfect solution for small backyards</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-maintenance-cost-guide.html</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/blog/maintenance-guide.jpg</image:loc>
+      <image:title>Pool Maintenance Cost Guide</image:title>
+      <image:caption>Understanding pool maintenance costs for Pennsylvania homeowners</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-builders-main-line-pa-guide.html</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/blog/main-line-guide.jpg</image:loc>
+      <image:title>Main Line PA Pool Builders Guide</image:title>
+      <image:caption>Complete guide to choosing a pool builder in Main Line PA</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ==================== LOCATION SPECIFIC IMAGES ==================== -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/gladwyne-pa/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/pools/gladwyne-estate.jpg</image:loc>
+      <image:title>Gladwyne PA Pool Installation</image:title>
+      <image:caption>Premium pool installation services in Gladwyne, Pennsylvania</image:caption>
+      <image:geo_location>Gladwyne, Pennsylvania, United States</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/hockessin-de/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/gallery/hockessin-family-fiberglass.jpg</image:loc>
+      <image:title>Hockessin DE Pool Installation</image:title>
+      <image:caption>Professional pool installation in Hockessin, Delaware</image:caption>
+      <image:geo_location>Hockessin, Delaware, United States</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/resort-backyard/</loc>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/resort-backyard.jpg</image:loc>
+      <image:title>Resort Style Backyard Pool</image:title>
+      <image:caption>Transform your backyard into a resort-style retreat</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tristateaquaticsolutions.com/images/locations/evening-entertaining.jpg</image:loc>
+      <image:title>Evening Pool Entertainment</image:title>
+      <image:caption>Pool designed for elegant evening entertaining</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenging Terrain Installation | Villanova PA Case Study | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Case study of a pool installation on steep, sloped terrain in Villanova, PA. Custom engineering, retaining walls, and multi-level deck design.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/portfolio/villanova-challenging-terrain/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        .container-narrow { max-width: 900px; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; transition: all 0.3s var(--ease-out-expo); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 8rem 0 2rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.75rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: var(--gray-text); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list span { color: var(--gray-text); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        /* Hero Section */
+        .case-study-hero { background: var(--gray-light); padding: 0 0 4rem; }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .hero-text h1 { margin-bottom: 1.5rem; }
+        .hero-text .lead { font-size: 1.25rem; color: var(--gray-text); margin-bottom: 2rem; }
+        .project-badges { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .badge { padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-fiberglass { background: var(--aqua); color: var(--white); }
+        .badge-location { background: var(--navy); color: var(--white); }
+        .badge-engineering { background: var(--gold); color: var(--navy); }
+
+        .project-quick-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem; background: var(--white); border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .stat-item { text-align: center; padding: 1rem; }
+        .stat-item .value { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--navy); display: block; }
+        .stat-item .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); }
+
+        .hero-image { position: relative; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 20px; overflow: hidden; }
+        .hero-image .placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); opacity: 0.6; }
+        .hero-image .placeholder svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1rem; }
+
+        /* Content Sections */
+        .content-section { padding: 5rem 0; }
+        .content-section:nth-child(even) { background: var(--gray-light); }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { margin-bottom: 1rem; }
+        .section-header p { max-width: 600px; margin: 0 auto; }
+
+        /* Client Profile */
+        .client-profile { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .profile-card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .profile-card h3 { margin-bottom: 1.5rem; color: var(--navy); }
+        .profile-list { list-style: none; }
+        .profile-list li { padding: 1rem 0; border-bottom: 1px solid var(--gray); display: flex; justify-content: space-between; align-items: center; }
+        .profile-list li:last-child { border-bottom: none; }
+        .profile-list .label { font-size: 0.9rem; color: var(--gray-text); }
+        .profile-list .value { font-weight: 500; color: var(--navy); }
+
+        /* Challenge & Solution */
+        .challenge-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .cs-card { padding: 2.5rem; border-radius: 20px; }
+        .cs-card.challenge { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); }
+        .cs-card.challenge h3 { color: var(--white); }
+        .cs-card.challenge p { color: rgba(255, 255, 255, 0.8); }
+        .cs-card.solution { background: var(--white); box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .cs-card h3 { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .cs-card h3 svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .cs-card ul { list-style: none; margin-top: 1.5rem; }
+        .cs-card ul li { padding: 0.75rem 0; padding-left: 1.5rem; position: relative; color: var(--gray-text); }
+        .cs-card.challenge ul li { color: rgba(255, 255, 255, 0.8); }
+        .cs-card ul li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 8px; height: 8px; background: var(--aqua); border-radius: 50%; }
+
+        /* Engineering Section */
+        .engineering-section { background: var(--navy); padding: 5rem 0; }
+        .engineering-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .engineering-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; text-align: center; }
+        .engineering-card svg { width: 48px; height: 48px; stroke: var(--aqua); stroke-width: 1.5; fill: none; margin-bottom: 1rem; }
+        .engineering-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+        .engineering-card p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
+        .engineering-stat { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--aqua); display: block; margin-bottom: 0.5rem; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); text-align: center; transition: transform 0.3s var(--ease-out-expo); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .feature-icon { width: 64px; height: 64px; background: var(--aqua-glow); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .feature-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .feature-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .feature-card p { font-size: 0.95rem; }
+
+        /* Timeline */
+        .timeline { max-width: 800px; margin: 0 auto; }
+        .timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--gray); }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-week { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--aqua); }
+        .timeline-content h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--navy); }
+
+        /* Testimonial */
+        .testimonial-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 5rem 0; }
+        .testimonial-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--white); }
+        .testimonial-placeholder { background: rgba(255, 255, 255, 0.1); border: 2px dashed rgba(255, 255, 255, 0.3); border-radius: 16px; padding: 3rem; text-align: center; }
+        .testimonial-placeholder p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+
+        /* Photo Gallery */
+        .photo-section { background: var(--gray-light); }
+        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .photo-placeholder { aspect-ratio: 4/3; background: var(--white); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed var(--gray); color: var(--gray-text); text-align: center; padding: 1.5rem; }
+        .photo-placeholder svg { width: 40px; height: 40px; stroke: var(--gray); stroke-width: 1; fill: none; margin-bottom: 0.75rem; }
+        .photo-placeholder span { font-size: 0.85rem; }
+        .photos-needed { margin-top: 3rem; padding: 2rem; background: var(--white); border-radius: 16px; }
+        .photos-needed h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--navy); }
+        .photos-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; list-style: none; }
+        .photos-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; font-size: 0.95rem; color: var(--gray-text); }
+        .photos-list li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; border: 2px solid var(--aqua); border-radius: 50%; }
+
+        /* Key Takeaways */
+        .takeaways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .takeaway-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); border-left: 4px solid var(--aqua); }
+        .takeaway-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--navy); }
+        .takeaway-card p { font-size: 0.95rem; }
+
+        /* CTA Section */
+        .cta-section { padding: 6rem 0; background: var(--white); text-align: center; }
+        .cta-section h2 { margin-bottom: 1rem; }
+        .cta-section > .container > p { max-width: 600px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--navy); color: var(--white); padding: 1.1rem 2.5rem; border-radius: 100px; text-decoration: none; font-weight: 500; transition: all 0.3s var(--ease-out-expo); }
+        .btn-primary:hover { background: var(--aqua); transform: translateY(-2px); }
+        .btn-primary svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--aqua); text-decoration: none; font-weight: 500; margin-top: 1.5rem; }
+        .btn-secondary svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-top: 1rem; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; color: var(--aqua); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+        .footer-bottom a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content, .client-profile, .challenge-solution { grid-template-columns: 1fr; }
+            .features-grid, .engineering-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .features-grid, .takeaways-grid, .photo-grid, .photos-list, .engineering-grid { grid-template-columns: 1fr; }
+            .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Pool Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><span>/</span></li>
+                <li class="current">Villanova Challenging Terrain</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="project-badges">
+                        <span class="badge badge-fiberglass">Fiberglass</span>
+                        <span class="badge badge-location">Villanova, PA</span>
+                        <span class="badge badge-engineering">Complex Engineering</span>
+                    </div>
+                    <h1>Challenging Terrain Installation</h1>
+                    <p class="lead">When other builders said "impossible," we saw an opportunity. This steep Villanova hillside became home to a stunning pool with custom retaining walls, engineered drainage, and a multi-level deck that turns the slope into an advantage.</p>
+
+                    <div class="project-quick-stats">
+                        <div class="stat-item">
+                            <span class="value">7</span>
+                            <span class="label">Week Timeline</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">$125K</span>
+                            <span class="label">Investment</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">18</span>
+                            <span class="label">Ft Grade Change</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">16x36</span>
+                            <span class="label">Pool Size (ft)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <span>Hero Photo: Pool on Hillside</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Profile Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="client-profile">
+                <div class="profile-card">
+                    <h3>Client Profile</h3>
+                    <ul class="profile-list">
+                        <li>
+                            <span class="label">Client Type</span>
+                            <span class="value">Executive Family</span>
+                        </li>
+                        <li>
+                            <span class="label">Property Type</span>
+                            <span class="value">Hillside Estate (2+ acres)</span>
+                        </li>
+                        <li>
+                            <span class="label">Home Style</span>
+                            <span class="value">Contemporary with views</span>
+                        </li>
+                        <li>
+                            <span class="label">Terrain Challenge</span>
+                            <span class="value">18 ft grade change in pool area</span>
+                        </li>
+                        <li>
+                            <span class="label">Previous Quotes</span>
+                            <span class="value">3 builders declined the project</span>
+                        </li>
+                        <li>
+                            <span class="label">Design Goal</span>
+                            <span class="value">Use slope to create drama</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Project Background</h3>
+                    <p style="margin-bottom: 1.5rem;">This Villanova family purchased their hillside property specifically for the stunning views. But when they started planning their pool, three different builders told them the slope was simply too severe - they'd need to look elsewhere or settle for a much smaller pool in a different location.</p>
+                    <p style="margin-bottom: 1.5rem;">We saw something different. The slope wasn't a problem to overcome - it was an opportunity to create something extraordinary. With proper engineering and creative design, the terrain could become the pool's greatest feature.</p>
+                    <p>After presenting our vision - a multi-level pool terrace with retaining walls that frame the view rather than fight the slope - they were ready to proceed with the "impossible" project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge & Solution -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Challenge & Our Solution</h2>
+                <p>Turning topography into opportunity</p>
+            </div>
+            <div class="challenge-solution">
+                <div class="cs-card challenge">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        The Challenge
+                    </h3>
+                    <p>An 18-foot grade change across the proposed pool location, with soil stability concerns and complex drainage requirements.</p>
+                    <ul>
+                        <li>18 ft elevation change from house to property edge</li>
+                        <li>Rocky soil requiring extensive excavation</li>
+                        <li>Existing drainage patterns flowing toward house</li>
+                        <li>Limited equipment access on steep terrain</li>
+                        <li>Township required engineered plans for retaining walls</li>
+                        <li>Neighboring property concerns about runoff</li>
+                    </ul>
+                </div>
+                <div class="cs-card solution">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Our Solution
+                    </h3>
+                    <p>A comprehensive engineering approach that works with the terrain, not against it.</p>
+                    <ul>
+                        <li>PE-stamped retaining wall design (engineer on team)</li>
+                        <li>Terraced approach with 3 distinct levels</li>
+                        <li>French drain system redirecting all water</li>
+                        <li>Specialized compact excavation equipment</li>
+                        <li>Segmental retaining walls with integrated planters</li>
+                        <li>Multi-level composite deck connecting spaces</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Section -->
+    <section class="engineering-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h2 style="color: var(--white);">Engineering Highlights</h2>
+                <p style="color: rgba(255, 255, 255, 0.6);">The numbers behind the "impossible" installation</p>
+            </div>
+            <div class="engineering-grid">
+                <div class="engineering-card">
+                    <span class="engineering-stat">18 ft</span>
+                    <h4>Grade Change Managed</h4>
+                    <p>From house level to pool edge, expertly terraced into three usable levels</p>
+                </div>
+                <div class="engineering-card">
+                    <span class="engineering-stat">420 ft</span>
+                    <h4>Linear Retaining Wall</h4>
+                    <p>Total retaining wall length, including curved sections and planter integration</p>
+                </div>
+                <div class="engineering-card">
+                    <span class="engineering-stat">350 cu yd</span>
+                    <h4>Material Moved</h4>
+                    <p>Rock and soil excavated and either reused on-site or properly disposed</p>
+                </div>
+                <div class="engineering-card">
+                    <span class="engineering-stat">180 ft</span>
+                    <h4>French Drain System</h4>
+                    <p>Comprehensive drainage redirecting water away from pool and home</p>
+                </div>
+                <div class="engineering-card">
+                    <span class="engineering-stat">3</span>
+                    <h4>Deck Levels</h4>
+                    <p>Terraced outdoor living spaces connected by integrated steps</p>
+                </div>
+                <div class="engineering-card">
+                    <span class="engineering-stat">PE</span>
+                    <h4>Engineer Stamped</h4>
+                    <p>Full structural engineering plans approved by township</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Features Included</h2>
+                <p>Maximizing the dramatic setting</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z"/><path d="M4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"/></svg>
+                    </div>
+                    <h4>Segmental Retaining Walls</h4>
+                    <p>Engineered block walls with natural stone veneer blend with landscape</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h4>Multi-Level Deck</h4>
+                    <p>Three terraced levels with seating, dining, and pool deck areas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                    </div>
+                    <h4>Integrated Drainage</h4>
+                    <p>Hidden French drain system keeps all water flowing away from structures</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h4>LED Landscape Lighting</h4>
+                    <p>Wall-integrated lighting showcases the terracing at night</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <h4>Saltwater System</h4>
+                    <p>Low-maintenance chlorine generation with soft-feel water</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    </div>
+                    <h4>View Preservation</h4>
+                    <p>Pool positioned to maximize views from both house and pool deck</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="content-section">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <h2>Project Timeline</h2>
+                <p>7 weeks of precision work on challenging terrain</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 1</div>
+                    <div class="timeline-content">
+                        <h4>Site Preparation & Excavation Start</h4>
+                        <p>Access road construction, erosion control installation, initial excavation of upper terrace area with compact equipment.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 2</div>
+                    <div class="timeline-content">
+                        <h4>Excavation & Drainage</h4>
+                        <p>Pool excavation completion, French drain installation, foundation preparation for retaining walls.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 3</div>
+                    <div class="timeline-content">
+                        <h4>Retaining Walls Begin</h4>
+                        <p>Lower retaining wall construction, pool shell delivery via specialized transport, crane placement on engineered pad.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 4</div>
+                    <div class="timeline-content">
+                        <h4>Pool Installation & Upper Walls</h4>
+                        <p>Plumbing and electrical, upper retaining wall construction, backfill with engineered fill material.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 5-6</div>
+                    <div class="timeline-content">
+                        <h4>Decking & Hardscape</h4>
+                        <p>Multi-level deck framing and installation, stair construction, stone veneer application to walls.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 7</div>
+                    <div class="timeline-content">
+                        <h4>Final Details & Startup</h4>
+                        <p>Landscape lighting, planter installation, pool fill, chemistry balance, and comprehensive client orientation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="testimonial-placeholder">
+                    <p><strong>Client Testimonial Placeholder</strong></p>
+                    <p style="margin-top: 1rem;">"[Insert client testimonial here. Focus on how other builders said it couldn't be done, how the terraced design actually enhanced their property, and the quality of the engineering and construction work.]"</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem;">- [Client Name], Villanova, PA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="content-section photo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Gallery</h2>
+                <p>Documenting the transformation of challenging terrain</p>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Before: Steep Hillside</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Excavation on Slope</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Retaining Wall Construction</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Crane Placement of Shell</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Multi-Level Deck Progress</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>After: Completed Terraced Pool</span>
+                </div>
+            </div>
+
+            <div class="photos-needed">
+                <h4>Photos Needed for This Case Study:</h4>
+                <ul class="photos-list">
+                    <li>Before: Steep hillside showing grade change</li>
+                    <li>Survey/engineering stakes showing levels</li>
+                    <li>Compact excavation equipment on slope</li>
+                    <li>Retaining wall foundation and drainage</li>
+                    <li>Block wall construction in progress</li>
+                    <li>Crane on engineered pad placing shell</li>
+                    <li>French drain installation detail</li>
+                    <li>Multi-level deck framing</li>
+                    <li>Stone veneer application</li>
+                    <li>Landscape lighting at night</li>
+                    <li>Wide shot showing all three levels</li>
+                    <li>View from pool looking out</li>
+                    <li>Aerial/drone shot showing terrain integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Takeaways</h2>
+                <p>Lessons from challenging terrain installation</p>
+            </div>
+            <div class="takeaways-grid">
+                <div class="takeaway-card">
+                    <h4>"Impossible" Often Isn't</h4>
+                    <p>When multiple builders decline a project, it often just means they lack the expertise or willingness to solve complex problems. The right team with engineering capability can make challenging sites work beautifully.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Slope Can Be an Asset</h4>
+                    <p>Rather than fighting the terrain, we embraced it. The terraced design creates distinct outdoor living zones and dramatic visual interest that a flat lot simply cannot achieve.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Engineering Prevents Problems</h4>
+                    <p>Upfront investment in proper engineering - PE-stamped plans, soil analysis, drainage design - prevents expensive problems later. Retaining wall failures are costly; doing it right the first time isn't.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Specialized Equipment Matters</h4>
+                    <p>Projects like this require compact excavators, specialized transport, and crane placement. Having relationships with specialized equipment providers makes difficult access possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have a Challenging Site?</h2>
+            <p>Don't let slopes, access issues, or other site challenges stop you. We specialize in engineering solutions for properties that other builders won't touch.</p>
+            <a href="/contact/" class="btn-primary">
+                Schedule Site Evaluation
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <br>
+            <a href="/portfolio/" class="btn-secondary">
+                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                View More Case Studies
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Pool Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium pool installation for Main Line Philadelphia and Northern Delaware.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/pools/concrete/">Concrete Pools</a></li>
+                        <li><a href="/pools/plunge/">Plunge Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/testimonials/">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="/contact/">Get a Quote</a></li>
+                        <li><a href="tel:+13025551234">(302) 555-1234</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tri-State Aquatic Solutions. All rights reserved.</p>
+                <p><a href="/privacy-policy/">Privacy</a> | <a href="/terms-of-service/">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

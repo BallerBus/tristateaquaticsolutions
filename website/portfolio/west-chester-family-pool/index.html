@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Pool with Kids' Features | West Chester Case Study | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Case study of a family-focused pool installation in West Chester, PA. Features tanning ledge, beach entry, shallow play area, and integrated safety features.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/portfolio/west-chester-family-pool/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        .container-narrow { max-width: 900px; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; transition: all 0.3s var(--ease-out-expo); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 8rem 0 2rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.75rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: var(--gray-text); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list span { color: var(--gray-text); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        /* Hero Section */
+        .case-study-hero { background: var(--gray-light); padding: 0 0 4rem; }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .hero-text h1 { margin-bottom: 1.5rem; }
+        .hero-text .lead { font-size: 1.25rem; color: var(--gray-text); margin-bottom: 2rem; }
+        .project-badges { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .badge { padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-fiberglass { background: var(--aqua); color: var(--white); }
+        .badge-location { background: var(--navy); color: var(--white); }
+        .badge-family { background: var(--gold); color: var(--navy); }
+
+        .project-quick-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem; background: var(--white); border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .stat-item { text-align: center; padding: 1rem; }
+        .stat-item .value { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--navy); display: block; }
+        .stat-item .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); }
+
+        .hero-image { position: relative; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 20px; overflow: hidden; }
+        .hero-image .placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); opacity: 0.6; }
+        .hero-image .placeholder svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1rem; }
+
+        /* Content Sections */
+        .content-section { padding: 5rem 0; }
+        .content-section:nth-child(even) { background: var(--gray-light); }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { margin-bottom: 1rem; }
+        .section-header p { max-width: 600px; margin: 0 auto; }
+
+        /* Client Profile */
+        .client-profile { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .profile-card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .profile-card h3 { margin-bottom: 1.5rem; color: var(--navy); }
+        .profile-list { list-style: none; }
+        .profile-list li { padding: 1rem 0; border-bottom: 1px solid var(--gray); display: flex; justify-content: space-between; align-items: center; }
+        .profile-list li:last-child { border-bottom: none; }
+        .profile-list .label { font-size: 0.9rem; color: var(--gray-text); }
+        .profile-list .value { font-weight: 500; color: var(--navy); }
+
+        /* Challenge & Solution */
+        .challenge-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .cs-card { padding: 2.5rem; border-radius: 20px; }
+        .cs-card.challenge { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); }
+        .cs-card.challenge h3 { color: var(--white); }
+        .cs-card.challenge p { color: rgba(255, 255, 255, 0.8); }
+        .cs-card.solution { background: var(--white); box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .cs-card h3 { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .cs-card h3 svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .cs-card ul { list-style: none; margin-top: 1.5rem; }
+        .cs-card ul li { padding: 0.75rem 0; padding-left: 1.5rem; position: relative; color: var(--gray-text); }
+        .cs-card.challenge ul li { color: rgba(255, 255, 255, 0.8); }
+        .cs-card ul li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 8px; height: 8px; background: var(--aqua); border-radius: 50%; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); text-align: center; transition: transform 0.3s var(--ease-out-expo); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .feature-icon { width: 64px; height: 64px; background: var(--aqua-glow); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .feature-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .feature-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .feature-card p { font-size: 0.95rem; }
+
+        /* Safety Features */
+        .safety-section { background: var(--gold); padding: 4rem 0; }
+        .safety-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .safety-item { text-align: center; color: var(--navy); }
+        .safety-item svg { width: 48px; height: 48px; stroke: var(--navy); stroke-width: 1.5; fill: none; margin-bottom: 1rem; }
+        .safety-item h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .safety-item p { font-size: 0.9rem; color: var(--navy-light); }
+
+        /* Timeline */
+        .timeline { max-width: 800px; margin: 0 auto; }
+        .timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--gray); }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-week { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--aqua); }
+        .timeline-content h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--navy); }
+
+        /* Testimonial */
+        .testimonial-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 5rem 0; }
+        .testimonial-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--white); }
+        .testimonial-placeholder { background: rgba(255, 255, 255, 0.1); border: 2px dashed rgba(255, 255, 255, 0.3); border-radius: 16px; padding: 3rem; text-align: center; }
+        .testimonial-placeholder p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+
+        /* Photo Gallery */
+        .photo-section { background: var(--gray-light); }
+        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .photo-placeholder { aspect-ratio: 4/3; background: var(--white); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed var(--gray); color: var(--gray-text); text-align: center; padding: 1.5rem; }
+        .photo-placeholder svg { width: 40px; height: 40px; stroke: var(--gray); stroke-width: 1; fill: none; margin-bottom: 0.75rem; }
+        .photo-placeholder span { font-size: 0.85rem; }
+        .photos-needed { margin-top: 3rem; padding: 2rem; background: var(--white); border-radius: 16px; }
+        .photos-needed h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--navy); }
+        .photos-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; list-style: none; }
+        .photos-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; font-size: 0.95rem; color: var(--gray-text); }
+        .photos-list li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; border: 2px solid var(--aqua); border-radius: 50%; }
+
+        /* Key Takeaways */
+        .takeaways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .takeaway-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); border-left: 4px solid var(--aqua); }
+        .takeaway-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--navy); }
+        .takeaway-card p { font-size: 0.95rem; }
+
+        /* CTA Section */
+        .cta-section { padding: 6rem 0; background: var(--white); text-align: center; }
+        .cta-section h2 { margin-bottom: 1rem; }
+        .cta-section > .container > p { max-width: 600px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--navy); color: var(--white); padding: 1.1rem 2.5rem; border-radius: 100px; text-decoration: none; font-weight: 500; transition: all 0.3s var(--ease-out-expo); }
+        .btn-primary:hover { background: var(--aqua); transform: translateY(-2px); }
+        .btn-primary svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--aqua); text-decoration: none; font-weight: 500; margin-top: 1.5rem; }
+        .btn-secondary svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-top: 1rem; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; color: var(--aqua); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+        .footer-bottom a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content, .client-profile, .challenge-solution { grid-template-columns: 1fr; }
+            .features-grid, .safety-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .features-grid, .takeaways-grid, .photo-grid, .photos-list, .safety-grid { grid-template-columns: 1fr; }
+            .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Pool Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><span>/</span></li>
+                <li class="current">West Chester Family Pool</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="project-badges">
+                        <span class="badge badge-fiberglass">Fiberglass</span>
+                        <span class="badge badge-location">West Chester, PA</span>
+                        <span class="badge badge-family">Family-Focused</span>
+                    </div>
+                    <h1>Family Pool with Kids' Features</h1>
+                    <p class="lead">Designed with young families in mind, this 16x36 ft fiberglass pool features a tanning ledge, beach entry, shallow play area, and integrated safety features that give parents peace of mind.</p>
+
+                    <div class="project-quick-stats">
+                        <div class="stat-item">
+                            <span class="value">4</span>
+                            <span class="label">Week Timeline</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">$95K</span>
+                            <span class="label">Investment</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">16x36</span>
+                            <span class="label">Pool Size (ft)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">576</span>
+                            <span class="label">Sq Ft Surface</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <span>Hero Photo: Family Enjoying Pool</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Profile Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="client-profile">
+                <div class="profile-card">
+                    <h3>Client Profile</h3>
+                    <ul class="profile-list">
+                        <li>
+                            <span class="label">Client Type</span>
+                            <span class="value">Growing Family</span>
+                        </li>
+                        <li>
+                            <span class="label">Property Type</span>
+                            <span class="value">Suburban Colonial (0.5 acres)</span>
+                        </li>
+                        <li>
+                            <span class="label">Family</span>
+                            <span class="value">Parents + 3 kids (ages 4, 7, 10)</span>
+                        </li>
+                        <li>
+                            <span class="label">Home Built</span>
+                            <span class="value">2018 New Construction</span>
+                        </li>
+                        <li>
+                            <span class="label">Primary Use</span>
+                            <span class="value">Family recreation & entertaining</span>
+                        </li>
+                        <li>
+                            <span class="label">Top Priority</span>
+                            <span class="value">Child safety & supervision</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Project Background</h3>
+                    <p style="margin-bottom: 1.5rem;">With three young children and a love of outdoor activities, this West Chester family knew a pool would be in their future when they built their home. They planned ahead by pre-running electrical and gas lines to the future pool location.</p>
+                    <p style="margin-bottom: 1.5rem;">Their primary concern was safety. With a 4-year-old who loved water, they needed a pool design that would allow constant visibility and multiple safety layers. They also wanted features that would grow with their kids.</p>
+                    <p>After researching extensively, they chose fiberglass for its smooth, non-abrasive surface (no scraped knees!) and selected us based on our family-focused design philosophy and safety expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge & Solution -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Challenge & Our Solution</h2>
+                <p>Creating a pool that works for every age</p>
+            </div>
+            <div class="challenge-solution">
+                <div class="cs-card challenge">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        The Challenge
+                    </h3>
+                    <p>Designing a pool that accommodates children ages 4-10, anticipates future teenage use, and provides multiple layers of safety for parental peace of mind.</p>
+                    <ul>
+                        <li>4-year-old just learning to swim - needs very shallow area</li>
+                        <li>10-year-old wants to dive and swim laps</li>
+                        <li>Parents want to relax while maintaining full visibility</li>
+                        <li>Need pool fence that doesn't look institutional</li>
+                        <li>Budget-conscious but won't compromise on safety</li>
+                        <li>Want features that will be enjoyed for years</li>
+                    </ul>
+                </div>
+                <div class="cs-card solution">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Our Solution
+                    </h3>
+                    <p>A multi-zone pool design with progressive depth, multiple safety systems, and features that adapt to children at every stage.</p>
+                    <ul>
+                        <li>Beach entry (0-12") for safe toddler water play</li>
+                        <li>Tanning ledge with bubblers for adult relaxation with clear sightlines</li>
+                        <li>Gradual depth progression to 6 ft deep end</li>
+                        <li>Removable basketball hoop for growing kids</li>
+                        <li>Pool fence with self-closing, self-latching gate</li>
+                        <li>Smart pool alarm system with app notifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features Section -->
+    <section class="safety-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h2 style="color: var(--navy);">Integrated Safety Features</h2>
+                <p style="color: var(--navy-light);">Multiple layers of protection for complete peace of mind</p>
+            </div>
+            <div class="safety-grid">
+                <div class="safety-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <h4>Self-Latching Gate</h4>
+                    <p>Pool fence with automatic closing mechanism</p>
+                </div>
+                <div class="safety-item">
+                    <svg viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    <h4>Smart Pool Alarm</h4>
+                    <p>App notifications if surface is disturbed</p>
+                </div>
+                <div class="safety-item">
+                    <svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    <h4>Clear Sightlines</h4>
+                    <p>Tanning ledge positioned for full pool visibility</p>
+                </div>
+                <div class="safety-item">
+                    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <h4>Smooth Surface</h4>
+                    <p>Fiberglass prevents scrapes and injuries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Family-Focused Features</h2>
+                <p>Every element designed with families in mind</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                    </div>
+                    <h4>Beach Entry</h4>
+                    <p>Zero-depth entry for safe toddler play and easy access for all ages</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg>
+                    </div>
+                    <h4>Tanning Ledge</h4>
+                    <p>8-inch deep ledge with bubblers for adult relaxation with child supervision</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                    </div>
+                    <h4>Basketball Hoop</h4>
+                    <p>Removable hoop grows with kids for years of active play</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>
+                    </div>
+                    <h4>Pool Heater</h4>
+                    <p>Extend swim season from April through October for maximum family use</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h4>LED Lighting</h4>
+                    <p>Color-changing lights for safe evening swimming and fun light shows</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <h4>Saltwater System</h4>
+                    <p>Gentle on eyes and skin - no more red eyes after swimming</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="content-section">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <h2>Project Timeline</h2>
+                <p>Ready for summer fun in just 4 weeks</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 1</div>
+                    <div class="timeline-content">
+                        <h4>Excavation & Shell Placement</h4>
+                        <p>Dig day excitement for the kids! Excavation completed in one day, shell delivered and set the following day using pre-existing utility connections.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 2</div>
+                    <div class="timeline-content">
+                        <h4>Plumbing, Electrical & Equipment</h4>
+                        <p>All mechanical systems installed including pump, filter, heater, salt system, and smart pool monitoring. Pool fence posts set.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 3</div>
+                    <div class="timeline-content">
+                        <h4>Backfill & Decking</h4>
+                        <p>Controlled backfill, concrete decking poured with slip-resistant finish, fence panels installed with self-closing gate.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 4</div>
+                    <div class="timeline-content">
+                        <h4>Finish Work & Family Orientation</h4>
+                        <p>Coping completion, pool fill, water chemistry, equipment commissioning, and comprehensive family safety and maintenance orientation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="testimonial-placeholder">
+                    <p><strong>Client Testimonial Placeholder</strong></p>
+                    <p style="margin-top: 1rem;">"[Insert client testimonial here. Focus on how the pool has brought the family together, the safety features that give them peace of mind, and how it has become the center of their summer activities.]"</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem;">- [Client Name], West Chester, PA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="content-section photo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Gallery</h2>
+                <p>A pool designed for family memories</p>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Before: Backyard with Pre-run Utilities</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Beach Entry Detail</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Tanning Ledge with Bubblers</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Safety Fence Installation</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Kids Playing Basketball</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Family Enjoying Completed Pool</span>
+                </div>
+            </div>
+
+            <div class="photos-needed">
+                <h4>Photos Needed for This Case Study:</h4>
+                <ul class="photos-list">
+                    <li>Before photo of backyard (showing pre-run utilities if possible)</li>
+                    <li>Beach entry area with child playing safely</li>
+                    <li>Tanning ledge with parent supervising kids</li>
+                    <li>Bubbler feature in action</li>
+                    <li>Pool fence and self-closing gate detail</li>
+                    <li>Children playing basketball in pool</li>
+                    <li>Progressive depth transition</li>
+                    <li>LED lighting at evening (color changing)</li>
+                    <li>Equipment pad (neat and organized)</li>
+                    <li>Wide shot of completed pool and deck</li>
+                    <li>Family photo by pool (with permission)</li>
+                    <li>Kids swimming in different zones</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Takeaways</h2>
+                <p>Lessons for family-focused pool design</p>
+            </div>
+            <div class="takeaways-grid">
+                <div class="takeaway-card">
+                    <h4>Plan Ahead for Pool Infrastructure</h4>
+                    <p>By pre-running electrical and gas lines during home construction, these clients saved thousands and simplified the installation process. If you're building a new home, plan for your future pool now.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Safety is an Investment, Not an Expense</h4>
+                    <p>Pool fence, smart alarms, and proper design aren't optional extras - they're essential investments that provide priceless peace of mind. Never compromise on safety features.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Design for Multiple Ages</h4>
+                    <p>A beach entry works for toddlers today and becomes a comfortable spot for elderly grandparents tomorrow. Multi-zone designs provide decades of enjoyment across all life stages.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Fiberglass Excels for Families</h4>
+                    <p>The smooth, non-abrasive surface of fiberglass means no scraped knees or feet. Combined with faster installation and lower maintenance, it's ideal for busy families who want to swim, not scrub.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Create Your Family Oasis?</h2>
+            <p>Whether you have toddlers or teenagers, we'll design a pool that grows with your family while keeping safety at the forefront.</p>
+            <a href="/contact/" class="btn-primary">
+                Schedule Your Consultation
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <br>
+            <a href="/portfolio/" class="btn-secondary">
+                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                View More Case Studies
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Pool Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium pool installation for Main Line Philadelphia and Northern Delaware.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/pools/concrete/">Concrete Pools</a></li>
+                        <li><a href="/pools/plunge/">Plunge Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/testimonials/">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="/contact/">Get a Quote</a></li>
+                        <li><a href="tel:+13025551234">(302) 555-1234</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tri-State Aquatic Solutions. All rights reserved.</p>
+                <p><a href="/privacy-policy/">Privacy</a> | <a href="/terms-of-service/">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

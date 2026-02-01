@@ -1,0 +1,374 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/pools/fiberglass/#service",
+      "name": "Fiberglass Pool Installation",
+      "alternateName": "Fiberglass Pool Installer",
+      "description": "Expert fiberglass pool installation services for residential properties in Pennsylvania and Delaware. Factory-finished pools installed in 2-4 weeks with industry-leading warranty coverage. 50% lower lifetime maintenance compared to concrete.",
+      "serviceType": "Pool Installation",
+      "category": "Home Improvement",
+      "url": "https://tristateaquaticsolutions.com/pools/fiberglass/",
+      "image": "https://tristateaquaticsolutions.com/images/pools/fiberglass-hero.jpg",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Pennsylvania"
+        },
+        {
+          "@type": "State",
+          "name": "Delaware"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Fiberglass Pool Options",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Standard Fiberglass Pool"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "60000",
+              "priceCurrency": "USD",
+              "minPrice": "60000",
+              "maxPrice": "80000"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Premium Fiberglass Pool with Features"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "80000",
+              "priceCurrency": "USD",
+              "minPrice": "80000",
+              "maxPrice": "100000"
+            }
+          }
+        ]
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "$60,000 - $100,000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01"
+      },
+      "serviceOutput": {
+        "@type": "Product",
+        "name": "Installed Fiberglass Pool"
+      },
+      "termsOfService": "https://tristateaquaticsolutions.com/terms-of-service/",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Installation Time",
+          "value": "2-4 weeks"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Warranty",
+          "value": "Lifetime structural warranty"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Maintenance Savings",
+          "value": "50% lower than concrete"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/pools/concrete/#service",
+      "name": "Concrete Pool Installation",
+      "alternateName": ["Gunite Pool Installation", "Custom Concrete Pool Builder"],
+      "description": "Premium custom concrete (gunite) pool installation with unlimited design flexibility. Includes integrated spa option, automatic safety cover, and ORP/pH water treatment as standard. Built to last generations.",
+      "serviceType": "Pool Installation",
+      "category": "Home Improvement",
+      "url": "https://tristateaquaticsolutions.com/pools/concrete/",
+      "image": "https://tristateaquaticsolutions.com/images/pools/concrete-hero.jpg",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Pennsylvania"
+        },
+        {
+          "@type": "State",
+          "name": "Delaware"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "$80,000 - $130,000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01"
+      },
+      "includesObject": [
+        {
+          "@type": "TypeAndQuantityNode",
+          "typeOfGood": {
+            "@type": "Product",
+            "name": "Automatic Safety Cover"
+          },
+          "amountOfThisGood": 1
+        },
+        {
+          "@type": "TypeAndQuantityNode",
+          "typeOfGood": {
+            "@type": "Product",
+            "name": "ORP/pH Water Treatment System"
+          },
+          "amountOfThisGood": 1
+        },
+        {
+          "@type": "TypeAndQuantityNode",
+          "typeOfGood": {
+            "@type": "Product",
+            "name": "Variable Speed Pump"
+          },
+          "amountOfThisGood": 1
+        },
+        {
+          "@type": "TypeAndQuantityNode",
+          "typeOfGood": {
+            "@type": "Product",
+            "name": "LED Lighting Package"
+          },
+          "amountOfThisGood": 1
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Installation Time",
+          "value": "8-12 weeks"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Design Flexibility",
+          "value": "Unlimited - any shape, size, or depth"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Structural Warranty",
+          "value": "Lifetime"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Plaster Warranty",
+          "value": "10 years"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/pools/plunge/#service",
+      "name": "Plunge Pool Installation",
+      "alternateName": ["Cocktail Pool Installation", "Cold Plunge Pool", "Small Pool Installation"],
+      "description": "Compact luxury plunge pool and cocktail pool installation for residential properties. Perfect for small backyards, wellness routines, cold plunge therapy, and sophisticated entertaining. Fastest installation of any pool type.",
+      "serviceType": "Pool Installation",
+      "category": "Home Improvement",
+      "url": "https://tristateaquaticsolutions.com/pools/plunge/",
+      "image": "https://tristateaquaticsolutions.com/images/pools/plunge-hero.jpg",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Pennsylvania"
+        },
+        {
+          "@type": "State",
+          "name": "Delaware"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "$45,000 - $75,000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Installation Time",
+          "value": "1-2 weeks"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Footprint",
+          "value": "Starting at 10x12 feet"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Cold Plunge Option",
+          "value": "Available with chiller system (38-60F)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Best For",
+          "value": "Small backyards, wellness, entertaining"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/pool-maintenance/#service",
+      "name": "Pool Maintenance Services",
+      "description": "Professional pool maintenance services including weekly service, seasonal opening and closing, equipment repair, and water testing. Keep your pool pristine all season long.",
+      "serviceType": "Pool Maintenance",
+      "category": "Home Services",
+      "url": "https://tristateaquaticsolutions.com/pool-maintenance/",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Pennsylvania"
+        },
+        {
+          "@type": "State",
+          "name": "Delaware"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Maintenance Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Weekly Pool Maintenance",
+              "url": "https://tristateaquaticsolutions.com/services/weekly-maintenance/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pool Opening Service",
+              "url": "https://tristateaquaticsolutions.com/services/pool-opening/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pool Closing Service",
+              "url": "https://tristateaquaticsolutions.com/services/pool-closing/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Equipment Repair",
+              "url": "https://tristateaquaticsolutions.com/services/equipment-repair/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Water Testing",
+              "url": "https://tristateaquaticsolutions.com/services/water-testing/"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/services/weekly-maintenance/#service",
+      "name": "Weekly Pool Maintenance",
+      "description": "Comprehensive weekly pool maintenance service including skimming, vacuuming, filter cleaning, chemical balancing, and equipment checks. Keep your pool swim-ready all season.",
+      "serviceType": "Pool Maintenance",
+      "url": "https://tristateaquaticsolutions.com/services/weekly-maintenance/",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Pennsylvania"
+        },
+        {
+          "@type": "State",
+          "name": "Delaware"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/services/pool-opening/#service",
+      "name": "Pool Opening Service",
+      "description": "Professional pool opening service to prepare your pool for the swimming season. Includes cover removal, equipment startup, water balancing, and system inspection.",
+      "serviceType": "Pool Maintenance",
+      "url": "https://tristateaquaticsolutions.com/services/pool-opening/",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/services/pool-closing/#service",
+      "name": "Pool Closing Service",
+      "description": "Professional pool winterization service to protect your investment during the off-season. Includes water treatment, line blowing, equipment protection, and cover installation.",
+      "serviceType": "Pool Maintenance",
+      "url": "https://tristateaquaticsolutions.com/services/pool-closing/",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/services/equipment-repair/#service",
+      "name": "Pool Equipment Repair",
+      "description": "Expert repair services for pool pumps, filters, heaters, chlorinators, and automation systems. Fast response times and quality parts.",
+      "serviceType": "Pool Repair",
+      "url": "https://tristateaquaticsolutions.com/services/equipment-repair/",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tristateaquaticsolutions.com/services/water-testing/#service",
+      "name": "Pool Water Testing",
+      "description": "Professional pool water testing and analysis. Comprehensive testing for pH, chlorine, alkalinity, calcium hardness, and cyanuric acid with expert recommendations.",
+      "serviceType": "Pool Maintenance",
+      "url": "https://tristateaquaticsolutions.com/services/water-testing/",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      }
+    }
+  ]
+}

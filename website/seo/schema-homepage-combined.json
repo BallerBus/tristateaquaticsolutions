@@ -1,0 +1,187 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://tristateaquaticsolutions.com/#website",
+      "name": "Tri-State Aquatic Solutions",
+      "alternateName": "TSAS",
+      "url": "https://tristateaquaticsolutions.com",
+      "description": "Premium pool installation for Main Line Philadelphia and Northern Delaware",
+      "publisher": {
+        "@id": "https://tristateaquaticsolutions.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://tristateaquaticsolutions.com/blog/?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://tristateaquaticsolutions.com/#organization",
+      "name": "Tri-State Aquatic Solutions",
+      "legalName": "Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions",
+      "url": "https://tristateaquaticsolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://tristateaquaticsolutions.com/#logo",
+        "url": "https://tristateaquaticsolutions.com/images/logo.png",
+        "width": 400,
+        "height": 400,
+        "caption": "Tri-State Aquatic Solutions Logo"
+      },
+      "image": "https://tristateaquaticsolutions.com/images/hero-pool.jpg",
+      "sameAs": [
+        "https://www.facebook.com/tristateaquaticsolutions",
+        "https://www.instagram.com/tristateaquaticsolutions",
+        "https://www.linkedin.com/company/tri-state-aquatic-solutions"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-302-555-1234",
+        "contactType": "customer service",
+        "email": "info@tristateaquaticsolutions.com",
+        "areaServed": ["US-PA", "US-DE"],
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://tristateaquaticsolutions.com/#business",
+      "name": "Tri-State Aquatic Solutions",
+      "description": "Premium pool installation company serving Main Line Philadelphia and Northern Delaware. Specializing in fiberglass pools, custom concrete pools, and plunge pools.",
+      "url": "https://tristateaquaticsolutions.com",
+      "telephone": "+1-302-555-1234",
+      "email": "info@tristateaquaticsolutions.com",
+      "priceRange": "$$$",
+      "image": [
+        "https://tristateaquaticsolutions.com/images/hero-pool.jpg",
+        "https://tristateaquaticsolutions.com/images/gallery/gladwyne-modern-fiberglass.jpg"
+      ],
+      "logo": {
+        "@id": "https://tristateaquaticsolutions.com/#logo"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main Street",
+        "addressLocality": "Hockessin",
+        "addressRegion": "DE",
+        "postalCode": "19707",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.7876",
+        "longitude": "-75.6874"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Pennsylvania"
+        },
+        {
+          "@type": "State",
+          "name": "Delaware"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47",
+        "bestRating": "5"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pool Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fiberglass Pool Installation",
+              "url": "https://tristateaquaticsolutions.com/pools/fiberglass/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Concrete Pool Installation",
+              "url": "https://tristateaquaticsolutions.com/pools/concrete/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plunge Pool Installation",
+              "url": "https://tristateaquaticsolutions.com/pools/plunge/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pool Maintenance",
+              "url": "https://tristateaquaticsolutions.com/pool-maintenance/"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tristateaquaticsolutions.com/#webpage",
+      "url": "https://tristateaquaticsolutions.com/",
+      "name": "Tri-State Aquatic Solutions | Premium Pool Installation | Main Line PA & Delaware",
+      "description": "Transform your backyard in weeks, not months. Premium fiberglass, concrete & plunge pool installation for Main Line Philadelphia and Northern Delaware.",
+      "isPartOf": {
+        "@id": "https://tristateaquaticsolutions.com/#website"
+      },
+      "about": {
+        "@id": "https://tristateaquaticsolutions.com/#business"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-01",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tristateaquaticsolutions.com/"
+          }
+        ]
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://tristateaquaticsolutions.com/images/hero-pool.jpg"
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://tristateaquaticsolutions.com/"
+      }
+    }
+  ]
+}

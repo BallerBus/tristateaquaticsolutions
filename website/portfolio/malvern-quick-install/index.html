@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Timeline Success | Malvern PA Case Study | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Case study of a fast 3-week pool installation in Malvern, PA. How we delivered a complete fiberglass pool on an accelerated timeline through process efficiency.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/portfolio/malvern-quick-install/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --green: #10b981;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        .container-narrow { max-width: 900px; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; transition: all 0.3s var(--ease-out-expo); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 8rem 0 2rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.75rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: var(--gray-text); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list span { color: var(--gray-text); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        /* Hero Section */
+        .case-study-hero { background: var(--gray-light); padding: 0 0 4rem; }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .hero-text h1 { margin-bottom: 1.5rem; }
+        .hero-text .lead { font-size: 1.25rem; color: var(--gray-text); margin-bottom: 2rem; }
+        .project-badges { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .badge { padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-fiberglass { background: var(--aqua); color: var(--white); }
+        .badge-location { background: var(--navy); color: var(--white); }
+        .badge-fast { background: var(--green); color: var(--white); }
+
+        .project-quick-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem; background: var(--white); border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .stat-item { text-align: center; padding: 1rem; }
+        .stat-item .value { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--navy); display: block; }
+        .stat-item .value.highlight { color: var(--green); }
+        .stat-item .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); }
+
+        .hero-image { position: relative; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 20px; overflow: hidden; }
+        .hero-image .placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); opacity: 0.6; }
+        .hero-image .placeholder svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1rem; }
+
+        /* Content Sections */
+        .content-section { padding: 5rem 0; }
+        .content-section:nth-child(even) { background: var(--gray-light); }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { margin-bottom: 1rem; }
+        .section-header p { max-width: 600px; margin: 0 auto; }
+
+        /* Timeline Visual */
+        .timeline-visual { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem; }
+        .week-card { background: var(--white); border-radius: 20px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); position: relative; overflow: hidden; }
+        .week-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--aqua); }
+        .week-card.complete::before { background: var(--green); }
+        .week-number { font-family: var(--font-display); font-size: 3rem; font-weight: 600; color: var(--aqua); line-height: 1; margin-bottom: 1rem; }
+        .week-card.complete .week-number { color: var(--green); }
+        .week-card h3 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
+        .week-tasks { list-style: none; text-align: left; }
+        .week-tasks li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; color: var(--gray-text); }
+        .week-tasks li::before { content: ''; position: absolute; left: 0; top: 0.8rem; width: 8px; height: 8px; background: var(--green); border-radius: 50%; }
+
+        /* Client Profile */
+        .client-profile { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .profile-card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .profile-card h3 { margin-bottom: 1.5rem; color: var(--navy); }
+        .profile-list { list-style: none; }
+        .profile-list li { padding: 1rem 0; border-bottom: 1px solid var(--gray); display: flex; justify-content: space-between; align-items: center; }
+        .profile-list li:last-child { border-bottom: none; }
+        .profile-list .label { font-size: 0.9rem; color: var(--gray-text); }
+        .profile-list .value { font-weight: 500; color: var(--navy); }
+
+        /* Process Efficiency Section */
+        .efficiency-section { background: var(--green); padding: 5rem 0; }
+        .efficiency-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .efficiency-item { text-align: center; color: var(--white); }
+        .efficiency-item svg { width: 48px; height: 48px; stroke: var(--white); stroke-width: 1.5; fill: none; margin-bottom: 1rem; }
+        .efficiency-item h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .efficiency-item p { font-size: 0.9rem; opacity: 0.9; }
+
+        /* Challenge & Solution */
+        .challenge-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .cs-card { padding: 2.5rem; border-radius: 20px; }
+        .cs-card.challenge { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); }
+        .cs-card.challenge h3 { color: var(--white); }
+        .cs-card.challenge p { color: rgba(255, 255, 255, 0.8); }
+        .cs-card.solution { background: var(--white); box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); }
+        .cs-card h3 { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .cs-card h3 svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .cs-card ul { list-style: none; margin-top: 1.5rem; }
+        .cs-card ul li { padding: 0.75rem 0; padding-left: 1.5rem; position: relative; color: var(--gray-text); }
+        .cs-card.challenge ul li { color: rgba(255, 255, 255, 0.8); }
+        .cs-card ul li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 8px; height: 8px; background: var(--aqua); border-radius: 50%; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); text-align: center; transition: transform 0.3s var(--ease-out-expo); }
+        .feature-card:hover { transform: translateY(-4px); }
+        .feature-icon { width: 64px; height: 64px; background: var(--aqua-glow); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .feature-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .feature-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .feature-card p { font-size: 0.95rem; }
+
+        /* Testimonial */
+        .testimonial-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 5rem 0; }
+        .testimonial-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--white); }
+        .testimonial-placeholder { background: rgba(255, 255, 255, 0.1); border: 2px dashed rgba(255, 255, 255, 0.3); border-radius: 16px; padding: 3rem; text-align: center; }
+        .testimonial-placeholder p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+
+        /* Photo Gallery */
+        .photo-section { background: var(--gray-light); }
+        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .photo-placeholder { aspect-ratio: 4/3; background: var(--white); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed var(--gray); color: var(--gray-text); text-align: center; padding: 1.5rem; }
+        .photo-placeholder svg { width: 40px; height: 40px; stroke: var(--gray); stroke-width: 1; fill: none; margin-bottom: 0.75rem; }
+        .photo-placeholder span { font-size: 0.85rem; }
+        .photos-needed { margin-top: 3rem; padding: 2rem; background: var(--white); border-radius: 16px; }
+        .photos-needed h4 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--navy); }
+        .photos-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; list-style: none; }
+        .photos-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; font-size: 0.95rem; color: var(--gray-text); }
+        .photos-list li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; border: 2px solid var(--aqua); border-radius: 50%; }
+
+        /* Key Takeaways */
+        .takeaways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .takeaway-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); border-left: 4px solid var(--green); }
+        .takeaway-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--navy); }
+        .takeaway-card p { font-size: 0.95rem; }
+
+        /* CTA Section */
+        .cta-section { padding: 6rem 0; background: var(--white); text-align: center; }
+        .cta-section h2 { margin-bottom: 1rem; }
+        .cta-section > .container > p { max-width: 600px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--navy); color: var(--white); padding: 1.1rem 2.5rem; border-radius: 100px; text-decoration: none; font-weight: 500; transition: all 0.3s var(--ease-out-expo); }
+        .btn-primary:hover { background: var(--aqua); transform: translateY(-2px); }
+        .btn-primary svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--aqua); text-decoration: none; font-weight: 500; margin-top: 1.5rem; }
+        .btn-secondary svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-top: 1rem; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; color: var(--aqua); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+        .footer-bottom a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content, .client-profile, .challenge-solution { grid-template-columns: 1fr; }
+            .features-grid, .efficiency-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline-visual { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .features-grid, .takeaways-grid, .photo-grid, .photos-list, .efficiency-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Pool Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><span>/</span></li>
+                <li class="current">Malvern Quick Install</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="project-badges">
+                        <span class="badge badge-fiberglass">Fiberglass</span>
+                        <span class="badge badge-location">Malvern, PA</span>
+                        <span class="badge badge-fast">3 Weeks</span>
+                    </div>
+                    <h1>Quick Timeline Success</h1>
+                    <p class="lead">When these Malvern homeowners signed their contract in late May, they had one request: swimming by Father's Day. Our streamlined process and efficient scheduling delivered a complete 16x36 ft fiberglass pool installation in just 3 weeks.</p>
+
+                    <div class="project-quick-stats">
+                        <div class="stat-item">
+                            <span class="value highlight">3</span>
+                            <span class="label">Week Timeline</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">$85K</span>
+                            <span class="label">Investment</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">16x36</span>
+                            <span class="label">Pool Size (ft)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">21</span>
+                            <span class="label">Days Start to Swim</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <span>Hero Photo: Family First Swim</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Visual Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>3 Weeks, Day by Day</h2>
+                <p>How we delivered without cutting corners</p>
+            </div>
+            <div class="timeline-visual">
+                <div class="week-card complete">
+                    <div class="week-number">1</div>
+                    <h3>Excavation & Shell</h3>
+                    <ul class="week-tasks">
+                        <li>Day 1-2: Permit finalization, utility marking</li>
+                        <li>Day 3: Excavation complete (one day!)</li>
+                        <li>Day 4: Fiberglass shell delivered & set</li>
+                        <li>Day 5: Initial leveling and positioning</li>
+                    </ul>
+                </div>
+                <div class="week-card complete">
+                    <div class="week-number">2</div>
+                    <h3>Mechanical & Backfill</h3>
+                    <ul class="week-tasks">
+                        <li>Day 6-7: Plumbing installation</li>
+                        <li>Day 8-9: Electrical & equipment</li>
+                        <li>Day 10: Controlled backfill</li>
+                        <li>Day 11: Equipment commissioning</li>
+                    </ul>
+                </div>
+                <div class="week-card complete">
+                    <div class="week-number">3</div>
+                    <h3>Deck & Startup</h3>
+                    <ul class="week-tasks">
+                        <li>Day 12-14: Paver deck installation</li>
+                        <li>Day 15-16: Coping & finish work</li>
+                        <li>Day 17-18: Fill & chemistry balance</li>
+                        <li>Day 21: Final inspection & first swim!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Profile Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="client-profile">
+                <div class="profile-card">
+                    <h3>Client Profile</h3>
+                    <ul class="profile-list">
+                        <li>
+                            <span class="label">Client Type</span>
+                            <span class="value">Young Family</span>
+                        </li>
+                        <li>
+                            <span class="label">Property Type</span>
+                            <span class="value">Suburban Home (0.4 acres)</span>
+                        </li>
+                        <li>
+                            <span class="label">Family</span>
+                            <span class="value">Parents + 2 kids (ages 8 & 11)</span>
+                        </li>
+                        <li>
+                            <span class="label">Timeline Driver</span>
+                            <span class="value">Family reunion Father's Day</span>
+                        </li>
+                        <li>
+                            <span class="label">Decision Timeline</span>
+                            <span class="value">Signed contract May 24th</span>
+                        </li>
+                        <li>
+                            <span class="label">First Swim</span>
+                            <span class="value">June 14th (21 days later)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Project Background</h3>
+                    <p style="margin-bottom: 1.5rem;">This Malvern family had been planning a pool for years but kept putting it off. When they learned their extended family was coming for Father's Day weekend - giving them just 3 weeks - they almost gave up on the idea.</p>
+                    <p style="margin-bottom: 1.5rem;">When they called us, they expected to hear "impossible." Instead, we reviewed their straightforward lot, confirmed shell availability, and said "let's make it happen."</p>
+                    <p>The key was their site: good access, flat terrain, no special permitting requirements. Combined with our streamlined process and ready inventory, a 3-week installation was achievable without compromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Efficiency Section -->
+    <section class="efficiency-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h2 style="color: var(--white);">How We Made It Happen</h2>
+                <p style="color: rgba(255, 255, 255, 0.8);">Process efficiency, not shortcuts</p>
+            </div>
+            <div class="efficiency-grid">
+                <div class="efficiency-item">
+                    <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    <h4>Pre-Approved Permits</h4>
+                    <p>Strong township relationships meant permits processed in 48 hours, not weeks</p>
+                </div>
+                <div class="efficiency-item">
+                    <svg viewBox="0 0 24 24"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    <h4>Shell in Stock</h4>
+                    <p>Popular model already at our facility - no 4-6 week manufacturer wait</p>
+                </div>
+                <div class="efficiency-item">
+                    <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <h4>Dedicated Crew</h4>
+                    <p>Same experienced team from start to finish - no crew shuffling</p>
+                </div>
+                <div class="efficiency-item">
+                    <svg viewBox="0 0 24 24"><path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
+                    <h4>Parallel Work</h4>
+                    <p>Electrical rough-in while plumbing continues - no wasted days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge & Solution -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Making Speed Work</h2>
+                <p>Efficiency requires preparation, not rushing</p>
+            </div>
+            <div class="challenge-solution">
+                <div class="cs-card challenge">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Why Quick Installs Usually Fail
+                    </h3>
+                    <p>Many builders attempt fast timelines and fail. Here's what typically goes wrong:</p>
+                    <ul>
+                        <li>Waiting weeks for custom shell orders</li>
+                        <li>Permit delays due to incomplete applications</li>
+                        <li>Crews pulled to other projects mid-install</li>
+                        <li>Equipment not ordered until shell arrives</li>
+                        <li>Weather delays without backup plans</li>
+                        <li>Inspections scheduled wrong, causing idle days</li>
+                    </ul>
+                </div>
+                <div class="cs-card solution">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Our Process Advantages
+                    </h3>
+                    <p>Fast timelines are the result of systems, not luck or shortcuts:</p>
+                    <ul>
+                        <li>Popular shells kept in local inventory</li>
+                        <li>Pre-established relationships with permit offices</li>
+                        <li>Project-dedicated crews, not job-hoppers</li>
+                        <li>Equipment pre-staged before dig day</li>
+                        <li>Morning start times to work around weather</li>
+                        <li>Inspections scheduled days in advance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nothing Left Out</h2>
+                <p>Fast doesn't mean basic - full feature package included</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg>
+                    </div>
+                    <h4>Tanning Ledge</h4>
+                    <p>Built-in 8" deep ledge with umbrella sleeve</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h4>LED Lighting</h4>
+                    <p>Color-changing underwater lights with remote</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <h4>Saltwater System</h4>
+                    <p>Chlorine generator for easy maintenance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <h4>Variable Speed Pump</h4>
+                    <p>Energy-efficient pump with smart controls</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z"/><path d="M4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"/></svg>
+                    </div>
+                    <h4>Paver Deck</h4>
+                    <p>2,000 sq ft of Belgard Cambridge pavers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h4>Full Warranty</h4>
+                    <p>Lifetime structural warranty, not reduced for speed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="testimonial-placeholder">
+                    <p><strong>Client Testimonial Placeholder</strong></p>
+                    <p style="margin-top: 1rem;">"[Insert client testimonial here. Focus on the disbelief that it actually happened, the quality of work despite the speed, and the reaction of family at the Father's Day celebration.]"</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem;">- [Client Name], Malvern, PA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="content-section photo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Gallery</h2>
+                <p>21 days captured in photos</p>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Day 1: Contract Signing</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Day 3: Excavation Complete</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Day 4: Shell Delivery & Set</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Week 2: Equipment Install</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Week 3: Paver Installation</span>
+                </div>
+                <div class="photo-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Day 21: Father's Day First Swim!</span>
+                </div>
+            </div>
+
+            <div class="photos-needed">
+                <h4>Photos Needed for This Case Study:</h4>
+                <ul class="photos-list">
+                    <li>Before: Empty backyard</li>
+                    <li>Contract signing moment</li>
+                    <li>Excavation day (single day dig!)</li>
+                    <li>Shell on delivery truck</li>
+                    <li>Crane setting shell</li>
+                    <li>Parallel crew work (plumbing + electrical)</li>
+                    <li>Equipment pad completion</li>
+                    <li>Paver installation progress</li>
+                    <li>Pool fill in progress</li>
+                    <li>Final inspection pass</li>
+                    <li>Father's Day celebration with family</li>
+                    <li>Kids' first jump into pool</li>
+                    <li>Time-lapse compilation (if available)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Takeaways</h2>
+                <p>When fast timelines are possible</p>
+            </div>
+            <div class="takeaways-grid">
+                <div class="takeaway-card">
+                    <h4>Speed Requires Good Conditions</h4>
+                    <p>This timeline was possible because of favorable conditions: flat lot, good access, standard permits, and shell in stock. Not every project can be this fast, but when conditions align, we deliver.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Process Beats Pressure</h4>
+                    <p>We didn't cut corners or pressure crews to rush. Speed came from efficient scheduling, parallel work streams, and eliminating common delays through preparation.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Inventory is Everything</h4>
+                    <p>Most delays come from waiting on shells. By stocking popular models locally, we eliminate 4-6 weeks from most timelines immediately. Ask about in-stock shells when planning.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h4>Communicate Your Deadline</h4>
+                    <p>These clients told us upfront about Father's Day. Clear communication about deadlines lets us assess feasibility and prioritize accordingly. Don't assume fast is impossible - ask.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Your Pool Fast?</h2>
+            <p>Have a deadline you're trying to meet? Tell us about it. While not every project can happen in 3 weeks, many can be faster than you think with the right conditions and planning.</p>
+            <a href="/contact/" class="btn-primary">
+                Discuss Your Timeline
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <br>
+            <a href="/portfolio/" class="btn-secondary">
+                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                View More Case Studies
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Pool Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium pool installation for Main Line Philadelphia and Northern Delaware.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/pools/concrete/">Concrete Pools</a></li>
+                        <li><a href="/pools/plunge/">Plunge Pools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/testimonials/">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="/contact/">Get a Quote</a></li>
+                        <li><a href="tel:+13025551234">(302) 555-1234</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tri-State Aquatic Solutions. All rights reserved.</p>
+                <p><a href="/privacy-policy/">Privacy</a> | <a href="/terms-of-service/">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -176,7 +176,7 @@ For Vercel deployment, add `vercel-api.js` to `/api/ghl/contacts.js`
 
 Set environment variables in Vercel:
 ```
-GHL_API_KEY=pit-ddec3b6f-9555-40c6-a120-ace99ecd96ee
+GHL_API_KEY=YOUR_GHL_API_KEY
 GHL_LOCATION_ID=A0e67CElQk4EoVK0XY2K
 ```
 
@@ -259,7 +259,7 @@ The integration automatically calculates lead scores (0-100):
 ### Create Contact
 ```bash
 curl -X POST "https://services.leadconnectorhq.com/contacts/" \
-  -H "Authorization: Bearer pit-ddec3b6f-9555-40c6-a120-ace99ecd96ee" \
+  -H "Authorization: Bearer YOUR_GHL_API_KEY" \
   -H "Version: 2021-07-28" \
   -H "Content-Type: application/json" \
   -d '{
@@ -278,7 +278,7 @@ curl -X POST "https://services.leadconnectorhq.com/contacts/" \
 ### Create Opportunity
 ```bash
 curl -X POST "https://services.leadconnectorhq.com/opportunities/" \
-  -H "Authorization: Bearer pit-ddec3b6f-9555-40c6-a120-ace99ecd96ee" \
+  -H "Authorization: Bearer YOUR_GHL_API_KEY" \
   -H "Version: 2021-07-28" \
   -H "Content-Type: application/json" \
   -d '{

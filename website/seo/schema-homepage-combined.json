@@ -43,7 +43,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-302-555-1234",
+        "telephone": "+1-610-870-3113",
         "contactType": "customer service",
         "email": "info@tristateaquaticsolutions.com",
         "areaServed": ["US-PA", "US-DE"],
@@ -56,7 +56,7 @@
       "name": "Tri-State Aquatic Solutions",
       "description": "Premium pool installation company serving Main Line Philadelphia and Northern Delaware. Specializing in fiberglass pools, custom concrete pools, and plunge pools.",
       "url": "https://tristateaquaticsolutions.com",
-      "telephone": "+1-302-555-1234",
+      "telephone": "+1-610-870-3113",
       "email": "info@tristateaquaticsolutions.com",
       "priceRange": "$$$",
       "image": [

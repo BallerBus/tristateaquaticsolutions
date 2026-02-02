@@ -26,7 +26,7 @@
     "width": 1920,
     "height": 1080
   },
-  "telephone": "+1-302-555-1234",
+  "telephone": "+1-610-870-3113",
   "email": "info@tristateaquaticsolutions.com",
   "address": {
     "@type": "PostalAddress",
@@ -117,7 +117,7 @@
     {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "telephone": "+1-302-555-1234",
+      "telephone": "+1-610-870-3113",
       "email": "info@tristateaquaticsolutions.com",
       "availableLanguage": "English",
       "areaServed": ["US-PA", "US-DE"]
@@ -125,7 +125,7 @@
     {
       "@type": "ContactPoint",
       "contactType": "sales",
-      "telephone": "+1-302-555-1234",
+      "telephone": "+1-610-870-3113",
       "email": "quotes@tristateaquaticsolutions.com",
       "availableLanguage": "English"
     }

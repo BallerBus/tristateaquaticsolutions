@@ -114,7 +114,7 @@ UPDATE FREQUENCY:
 
 IMPORTANT REMINDERS:
 - All URLs should use https://tristateaquaticsolutions.com (not .net or other)
-- Phone number placeholder: +1-302-555-1234 (update with real number)
+- Phone number placeholder: +16108703113 (update with real number)
 - Address placeholder: 123 Main Street (update with real address)
 - Social media URLs are placeholders (update with real profiles)
 - Google Business Profile CID needs to be added

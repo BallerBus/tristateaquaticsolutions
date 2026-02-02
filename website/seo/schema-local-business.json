@@ -18,7 +18,7 @@
     "https://tristateaquaticsolutions.com/images/gallery/gladwyne-modern-fiberglass.jpg",
     "https://tristateaquaticsolutions.com/images/pools/fiberglass-hero.jpg"
   ],
-  "telephone": "+1-302-555-1234",
+  "telephone": "+1-610-870-3113",
   "email": "info@tristateaquaticsolutions.com",
   "address": {
     "@type": "PostalAddress",
@@ -93,7 +93,7 @@
   "contactPoint": [
     {
       "@type": "ContactPoint",
-      "telephone": "+1-302-555-1234",
+      "telephone": "+1-610-870-3113",
       "contactType": "customer service",
       "email": "info@tristateaquaticsolutions.com",
       "availableLanguage": ["English"],
@@ -107,7 +107,7 @@
     },
     {
       "@type": "ContactPoint",
-      "telephone": "+1-302-555-1234",
+      "telephone": "+1-610-870-3113",
       "contactType": "sales",
       "email": "quotes@tristateaquaticsolutions.com",
       "availableLanguage": ["English"]

@@ -3,12 +3,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ==================== MAIN PAGES ==================== -->
+  <!-- ==================== CORE PAGES ==================== -->
 
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://tristateaquaticsolutions.com/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -22,10 +22,10 @@
     </image:image>
   </url>
 
-  <!-- About Us -->
+  <!-- About Section -->
   <url>
     <loc>https://tristateaquaticsolutions.com/about/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -34,547 +34,1279 @@
       <image:caption>Meet the team behind Main Line PA premier pool installation company</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/about/team/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/about/process/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/about/certifications/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/about/careers/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/about/community/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
 
   <!-- Contact -->
   <url>
     <loc>https://tristateaquaticsolutions.com/contact/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Gallery -->
+  <!-- Gallery Section -->
   <url>
     <loc>https://tristateaquaticsolutions.com/gallery/</loc>
-    <lastmod>2026-01-28</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/gallery/gladwyne-modern-fiberglass.jpg</image:loc>
-      <image:title>Gladwyne Modern Fiberglass Pool</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/gallery/villanova-estate-fiberglass.jpg</image:loc>
-      <image:title>Villanova Estate Fiberglass Pool</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/gallery/gladwyne-luxury-concrete.jpg</image:loc>
-      <image:title>Gladwyne Luxury Concrete Pool</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/gallery/west-chester-contemporary.jpg</image:loc>
-      <image:title>West Chester Contemporary Pool</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/gallery/bryn-mawr-plunge.jpg</image:loc>
-      <image:title>Bryn Mawr Plunge Pool</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/gallery/before-after.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/gallery/design-inspiration.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/gallery/drone-views.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/gallery/night-gallery.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/gallery/outdoor-living.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
-  <!-- Testimonials -->
+  <!-- Testimonials & Reviews -->
   <url>
     <loc>https://tristateaquaticsolutions.com/testimonials/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/reviews/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/reviews/google-reviews.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/reviews/video-testimonials.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/reviews/success-stories.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/reviews/awards-recognition.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <!-- FAQ -->
   <url>
     <loc>https://tristateaquaticsolutions.com/faq/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Financing -->
   <url>
-    <loc>https://tristateaquaticsolutions.com/financing/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <loc>https://tristateaquaticsolutions.com/faq-comprehensive.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ==================== POOL TYPES (High Priority) ==================== -->
+  <!-- ==================== POOL TYPES ==================== -->
 
-  <!-- Pools Overview -->
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/pools/fiberglass-hero.jpg</image:loc>
-      <image:title>Fiberglass Pool Installation</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/pools/concrete-hero.jpg</image:loc>
-      <image:title>Concrete Pool Installation</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/pools/plunge-hero.jpg</image:loc>
-      <image:title>Plunge Pool Installation</image:title>
-    </image:image>
   </url>
-
-  <!-- Fiberglass Pools -->
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/fiberglass/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/pools/fiberglass-hero.jpg</image:loc>
-      <image:title>Fiberglass Pool Installation Pennsylvania Delaware</image:title>
-      <image:caption>Expert fiberglass pool installation in Main Line PA - Installed in 2-4 weeks</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-installation.jpg</image:loc>
-      <image:title>Fiberglass Pool Installation Process</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/fiberglass-gallery-1.jpg</image:loc>
-      <image:title>Fiberglass Pool Gallery</image:title>
-    </image:image>
   </url>
-
-  <!-- Concrete Pools -->
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/concrete/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/pools/concrete-hero.jpg</image:loc>
-      <image:title>Custom Concrete Pool Installation Pennsylvania Delaware</image:title>
-      <image:caption>Premium custom concrete pool installation with integrated spa and automatic cover</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/concrete-construction.jpg</image:loc>
-      <image:title>Concrete Pool Construction</image:title>
-    </image:image>
   </url>
-
-  <!-- Plunge Pools -->
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/plunge/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/pools/plunge-hero.jpg</image:loc>
-      <image:title>Plunge Pool Installation Main Line PA Delaware</image:title>
-      <image:caption>Compact luxury plunge pools perfect for small backyards and wellness</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/plunge-pool.jpg</image:loc>
-      <image:title>Plunge Pool Design</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/plunge-install.jpg</image:loc>
-      <image:title>Plunge Pool Installation</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/catalog/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Pool Brands -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/latham/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/latham/models.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/latham/colors.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/latham/warranty.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/thursday/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/thursday/models.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/thursday/colors.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/brands/thursday/warranty.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Pool Shapes -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/shapes/rectangular.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/shapes/kidney.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/shapes/freeform.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/shapes/roman-grecian.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/shapes/plunge-pools.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Pool Sizes -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/sizes/small.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/sizes/medium.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/sizes/large.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Pool Built-in Features -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/features/tanning-ledge.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/features/beach-entry.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/features/built-in-spa.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- ==================== SERVICES ==================== -->
 
-  <!-- Services Overview -->
   <url>
     <loc>https://tristateaquaticsolutions.com/services/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Pool Maintenance -->
   <url>
-    <loc>https://tristateaquaticsolutions.com/pool-maintenance/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://tristateaquaticsolutions.com/services/fiberglass-pool-installation.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Pool Opening -->
+  <url>
+    <loc>https://tristateaquaticsolutions.com/services/pool-features.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/services/outdoor-living.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/services/pool-renovation.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/services/maintenance-plans.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/services/pool-opening/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Pool Closing -->
   <url>
     <loc>https://tristateaquaticsolutions.com/services/pool-closing/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Weekly Maintenance -->
   <url>
     <loc>https://tristateaquaticsolutions.com/services/weekly-maintenance/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Equipment Repair -->
   <url>
     <loc>https://tristateaquaticsolutions.com/services/equipment-repair/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- Water Testing -->
   <url>
     <loc>https://tristateaquaticsolutions.com/services/water-testing/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pool-maintenance/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== FEATURES & ADD-ONS ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/automation.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/cleaning-systems.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/covers.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/decking.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/fountains.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/handrails.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/heating.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/led-lighting.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/salt-systems.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/slides.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/features/waterfalls.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- ==================== LOCATION PAGES - PENNSYLVANIA ==================== -->
+  <!-- ==================== FINANCING ==================== -->
 
-  <!-- Pennsylvania State Page -->
   <url>
-    <loc>https://tristateaquaticsolutions.com/locations/pennsylvania/</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://tristateaquaticsolutions.com/financing/</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/locations/main-line-estate.jpg</image:loc>
-      <image:title>Main Line Pennsylvania Pool Installation</image:title>
-    </image:image>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/financing/payment-calculator.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/financing/roi-investment.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/financing/home-equity.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/financing/0-percent-financing.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/financing/pool-loans.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/financing/budget-planning.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
-  <!-- Pennsylvania Counties -->
+  <!-- ==================== LOCATION PAGES - STATES ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/pennsylvania/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/delaware/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== LOCATION PAGES - COUNTIES ==================== -->
+
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/chester-county-pa/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/delaware-county-pa/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/montgomery-county-pa/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/locations/new-castle-county-de/</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Pennsylvania Towns - Main Line -->
+  <!-- ==================== LOCATION PAGES - PENNSYLVANIA TOWNS ==================== -->
+
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/gladwyne-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/pools/gladwyne-estate.jpg</image:loc>
-      <image:title>Gladwyne PA Pool Installation</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/villanova-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/bryn-mawr-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/haverford-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/radnor-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/wayne-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/malvern-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/west-chester-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/newtown-square-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/media-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/ardmore-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/berwyn-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- ==================== LOCATION PAGES - DELAWARE ==================== -->
+  <!-- ==================== LOCATION PAGES - DELAWARE TOWNS ==================== -->
 
-  <!-- Delaware State Page -->
-  <url>
-    <loc>https://tristateaquaticsolutions.com/locations/delaware/</loc>
-    <lastmod>2026-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/locations/delaware-modern.jpg</image:loc>
-      <image:title>Northern Delaware Pool Installation</image:title>
-    </image:image>
-  </url>
-
-  <!-- Delaware County -->
-  <url>
-    <loc>https://tristateaquaticsolutions.com/locations/new-castle-county-de/</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Delaware Towns -->
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/hockessin-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/greenville-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/wilmington-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/centreville-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/pike-creek-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/newark-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/yorklyn-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/locations/montchanin-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- ==================== FIBERGLASS POOL LOCATION PAGES ==================== -->
+  <!-- ==================== NEIGHBORHOODS ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/alapocas.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/berwyn.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/chateau-country.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/daylesford.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/fairfax.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/ithan.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/merion-station.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/rockland.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/rosemont.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/strafford.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/neighborhoods/wynnewood.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ==================== FIBERGLASS POOLS BY LOCATION - PENNSYLVANIA ==================== -->
 
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/fiberglass/gladwyne-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/fiberglass/villanova-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/fiberglass/west-chester-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/hockessin-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/bryn-mawr-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/greenville-de/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/wayne-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/haverford-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/radnor-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/malvern-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/media-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/ardmore-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/newtown-square-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/pools/fiberglass/chester-county-pa/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/lower-merion-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/easttown-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/tredyffrin-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/chadds-ford-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/swarthmore-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/narberth-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/devon-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/paoli-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/willistown-pa/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ==================== FIBERGLASS POOLS BY LOCATION - DELAWARE ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/hockessin-de/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/greenville-de/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/wilmington-de/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/pike-creek-de/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/newark-de/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/north-wilmington-de/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/pools/fiberglass/middletown-de/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <!-- ==================== BLOG POSTS ==================== -->
 
-  <!-- Blog Index -->
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Blog Articles -->
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/how-much-does-pool-cost-pennsylvania.html</loc>
-    <lastmod>2026-01-28</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/blog/pool-cost.jpg</image:loc>
-      <image:title>Pool Cost Guide Pennsylvania 2026</image:title>
-      <image:caption>Complete guide to pool installation costs in Pennsylvania</image:caption>
-    </image:image>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/fiberglass-vs-concrete-pools.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/blog/fiberglass-vs-concrete.jpg</image:loc>
-      <image:title>Fiberglass vs Concrete Pools Comparison</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/best-time-to-install-pool.html</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/blog/best-time-install.jpg</image:loc>
-      <image:title>Best Time to Install a Pool</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/best-time-install-pool-pennsylvania.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/pool-installation-process-what-to-expect.html</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/blog/installation-process.jpg</image:loc>
-      <image:title>Pool Installation Process Guide</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/plunge-pools-small-backyard-solution.html</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/blog/plunge-pool-article.jpg</image:loc>
-      <image:title>Plunge Pools for Small Backyards</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/pool-maintenance-cost-guide.html</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/blog/maintenance-guide.jpg</image:loc>
-      <image:title>Pool Maintenance Cost Guide</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/blog/pool-builders-main-line-pa-guide.html</loc>
-    <lastmod>2026-01-10</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://tristateaquaticsolutions.com/images/blog/main-line-guide.jpg</image:loc>
-      <image:title>Main Line PA Pool Builders Guide</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/fiberglass-pool-maintenance-complete-guide.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/how-long-does-fiberglass-pool-installation-take.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/gunite-pool-problems-switching-fiberglass.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/saltwater-vs-chlorine-pools.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-increase-home-value-pa.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-financing-options-main-line-pa.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-permits-delaware-county-pa.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-fencing-requirements-pa-de.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-safety-features-every-parent-should-know.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-automation-smart-technology.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-heating-options-gas-heat-pump-solar.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-lighting-ideas-delaware.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-water-features-waterfalls-fountains.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-deck-materials-comparison.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-landscaping-ideas-pennsylvania.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/energy-efficient-pool-equipment.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/winter-pool-covers-types-costs-benefits.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/how-to-prepare-yard-for-pool-installation.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/how-to-choose-pool-size-family.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/best-fiberglass-pool-shapes-main-line-pa.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/inground-pool-ideas-sloped-backyards.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/small-backyard-pool-ideas-wayne-bryn-mawr.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/adding-spa-hot-tub-fiberglass-pool.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-party-ideas-entertaining.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/2026-pool-design-trends-main-line-pa.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/chester-county-pool-installation.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/choosing-pool-installer-delaware.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/plunge-pools-vs-traditional-pools-delaware.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/local-vs-national-pool-installers.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/fiberglass-specialists-vs-general-contractors.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/tri-state-vs-anthony-sylvan-comparison.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ==================== COMPARE PAGES ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/fiberglass-vs-gunite.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/fiberglass-vs-vinyl.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/above-ground-vs-inground.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/saltwater-vs-chlorine.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/diy-vs-professional.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/local-vs-national-detailed.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/new-pool-vs-renovation.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/pool-vs-hot-tub.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/investment-comparison.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/compare/latham-vs-thursday-pools.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- ==================== TOOLS ==================== -->
 
   <url>
     <loc>https://tristateaquaticsolutions.com/tools/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/tools/pool-calculator/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/tools/pool-cost-calculator.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/tools/financing-calculator/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/tools/compare-pools/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/tools/timeline/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/tools/pool-quiz/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/tools/pool-size-guide.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/tools/maintenance-cost-calculator.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/tools/roi-calculator.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -583,19 +1315,163 @@
 
   <url>
     <loc>https://tristateaquaticsolutions.com/resources/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/resources/pool-buyers-guide/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/pool-buying-guide.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/resources/pool-planning-checklist/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/pool-planning-checklist/checklist.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/checklist-downloads.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/glossary.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/local-regulations.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/maintenance-tips.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/seasonal-care.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/troubleshooting.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/video-library.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/resources/water-chemistry.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ==================== PORTFOLIO / CASE STUDIES ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/gladwyne-luxury-estate/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/villanova-challenging-terrain/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/west-chester-family-pool/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/bryn-mawr-plunge-pool/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/hockessin-modern-pool/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/wilmington-backyard-transformation/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/wayne-pool-replacement/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/portfolio/malvern-quick-install/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ==================== LANDING PAGES ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/fiberglass-vs-concrete.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/pool-cost-guide.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/spring-special.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/free-consultation.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

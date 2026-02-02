@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Installation by Neighborhood | Main Line PA & Delaware | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Find premium pool installation services in your neighborhood. Serving Main Line PA communities including Merion Station, Wynnewood, Rosemont, Berwyn, and Delaware's Chateau Country.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquaticsolutions.com/neighborhoods/">
+    <meta property="og:title" content="Pool Installation by Neighborhood | Main Line PA & Delaware">
+    <meta property="og:description" content="Premium pool installation in your neighborhood. Expert service for Main Line PA and Delaware's finest communities.">
+    <meta property="og:image" content="https://tristateaquaticsolutions.com/images/wellness-plunge.jpg">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/neighborhoods/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tri-State Aquatic Solutions",
+        "description": "Premium pool installation serving Main Line Philadelphia and Northern Delaware neighborhoods.",
+        "url": "https://tristateaquaticsolutions.com/neighborhoods/",
+        "telephone": "+1-302-555-1234",
+        "email": "info@tristateaquatic.com",
+        "areaServed": [
+            {"@type": "Place", "name": "Main Line Philadelphia, PA"},
+            {"@type": "Place", "name": "Chateau Country, DE"},
+            {"@type": "Place", "name": "Northern Delaware"}
+        ],
+        "priceRange": "$50,000 - $150,000+"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tristateaquaticsolutions.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Neighborhoods", "item": "https://tristateaquaticsolutions.com/neighborhoods/"}
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.4rem, 3vw, 1.85rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; transition: all 0.4s var(--ease-out-expo); }
+        nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); padding: 1rem 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); margin-top: 2px; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; position: relative; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; transition: all 0.3s var(--ease-out-expo); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 8rem 0 1rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; gap: 0.5rem; list-style: none; font-size: 0.9rem; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--aqua); text-decoration: none; }
+        .breadcrumb-list a:hover { text-decoration: underline; }
+        .breadcrumb-list span { color: var(--gray-text); }
+
+        /* Hero */
+        .hero { padding: 2rem 0 5rem; background: var(--gray-light); }
+        .hero-content { max-width: 900px; }
+        .hero h1 { margin-bottom: 1.5rem; }
+        .hero h1 em { font-style: italic; color: var(--aqua); }
+        .hero-subtitle { font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.8; }
+
+        /* Sections */
+        section { padding: clamp(4rem, 8vw, 6rem) 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+        .section-tag::before, .section-tag::after { content: ''; width: 30px; height: 1px; background: var(--aqua); }
+
+        /* Region Sections */
+        .region-section { background: var(--white); }
+        .region-section:nth-child(even) { background: var(--gray-light); }
+        .region-header { margin-bottom: 2.5rem; }
+        .region-header h2 { margin-bottom: 0.5rem; }
+        .region-header p { max-width: 600px; }
+
+        /* Neighborhood Grid */
+        .neighborhood-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .neighborhood-card { background: var(--white); border-radius: 20px; padding: 2rem; transition: all 0.4s var(--ease-out-expo); border: 2px solid transparent; text-decoration: none; color: var(--navy); display: block; }
+        .region-section:nth-child(even) .neighborhood-card { background: var(--white); }
+        .neighborhood-card:hover { transform: translateY(-8px); border-color: var(--aqua); box-shadow: 0 25px 50px -15px rgba(14, 31, 52, 0.15); }
+        .neighborhood-icon { width: 50px; height: 50px; background: var(--aqua-glow); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+        .neighborhood-icon svg { width: 24px; height: 24px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+        .neighborhood-card h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .neighborhood-card .township { font-size: 0.85rem; color: var(--aqua); margin-bottom: 0.75rem; font-weight: 500; }
+        .neighborhood-card p { font-size: 0.95rem; margin-bottom: 1rem; }
+        .neighborhood-card .cta { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 500; color: var(--aqua); }
+        .neighborhood-card .cta svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; transition: transform 0.3s var(--ease-out-expo); }
+        .neighborhood-card:hover .cta svg { transform: translateX(4px); }
+
+        /* Featured Badge */
+        .neighborhood-card.featured { position: relative; border-color: var(--gold); }
+        .featured-badge { position: absolute; top: -10px; right: 20px; background: var(--gold); color: var(--navy); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; }
+
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); position: relative; overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/300px repeat; }
+        .cta-content { position: relative; text-align: center; color: var(--white); max-width: 700px; margin: 0 auto; }
+        .cta-content h2 { margin-bottom: 1rem; }
+        .cta-content > p { color: rgba(255, 255, 255, 0.75); font-size: 1.15rem; margin-bottom: 2rem; }
+        .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.4s var(--ease-out-expo); cursor: pointer; border: none; }
+        .btn-cta-primary { background: var(--gold); color: var(--navy); }
+        .btn-cta-primary:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 20px 40px -10px rgba(201, 169, 98, 0.4); }
+        .btn svg { width: 18px; height: 18px; transition: transform 0.3s var(--ease-out-expo); }
+        .btn:hover svg { transform: translateX(4px); }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); margin-top: 1.25rem; font-size: 0.95rem; line-height: 1.7; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1.25rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.6rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-contact li { display: flex; align-items: center; gap: 0.75rem; }
+        .footer-contact svg { width: 18px; height: 18px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .footer-social a:hover { background: var(--aqua); transform: translateY(-3px); }
+        .footer-social svg { width: 18px; height: 18px; fill: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .neighborhood-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .neighborhood-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../pools/">Pools</a></li>
+                <li><a href="../locations/">Locations</a></li>
+                <li><a href="../portfolio/">Portfolio</a></li>
+                <li><a href="../contact/" class="nav-cta">Free Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><span>/</span></li>
+                <li><span>Neighborhoods</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1>Pool Installation <em>By Neighborhood</em></h1>
+                <p class="hero-subtitle">Every neighborhood has its own character, regulations, and architectural traditions. We understand the nuances of each community we serve, from Lower Merion's historic Main Line estates to Delaware's prestigious Chateau Country. Find your neighborhood below to learn how we tailor our approach to your specific area.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Line PA Section -->
+    <section class="region-section">
+        <div class="container">
+            <div class="region-header reveal">
+                <div class="section-tag">Main Line Philadelphia</div>
+                <h2>Pennsylvania Neighborhoods</h2>
+                <p>The Main Line represents Philadelphia's most distinguished residential communities. Each neighborhood along the historic rail line has its own character and pool installation considerations.</p>
+            </div>
+            <div class="neighborhood-grid">
+                <a href="merion-station.html" class="neighborhood-card featured reveal">
+                    <span class="featured-badge">Popular</span>
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Merion Station</h3>
+                    <div class="township">Lower Merion Township</div>
+                    <p>Historic estates and classic architecture define this prestigious neighborhood.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="wynnewood.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Wynnewood</h3>
+                    <div class="township">Lower Merion Township</div>
+                    <p>Tree-lined streets and established gardens in this family-friendly enclave.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="rosemont.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Rosemont</h3>
+                    <div class="township">Lower Merion Township</div>
+                    <p>Elegant residences near prestigious schools and country clubs.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="strafford.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Strafford</h3>
+                    <div class="township">Tredyffrin Township</div>
+                    <p>Charming village atmosphere with spacious properties and mature landscapes.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="berwyn.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Berwyn</h3>
+                    <div class="township">Easttown Township</div>
+                    <p>Chester County charm with excellent schools and community spirit.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="daylesford.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Daylesford</h3>
+                    <div class="township">Tredyffrin Township</div>
+                    <p>Quiet, prestigious enclave with generous lot sizes and privacy.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="ithan.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Ithan</h3>
+                    <div class="township">Radnor Township</div>
+                    <p>Exclusive enclave known for estate-scale properties and country club living.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delaware Section -->
+    <section class="region-section">
+        <div class="container">
+            <div class="region-header reveal">
+                <div class="section-tag">Northern Delaware</div>
+                <h2>Delaware Neighborhoods</h2>
+                <p>Delaware's Chateau Country and surrounding prestigious communities feature some of the Mid-Atlantic's most impressive estates. Our Hockessin base gives us intimate knowledge of these exceptional areas.</p>
+            </div>
+            <div class="neighborhood-grid">
+                <a href="chateau-country.html" class="neighborhood-card featured reveal">
+                    <span class="featured-badge">Luxury</span>
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <h3>Chateau Country</h3>
+                    <div class="township">Greenville / Centreville</div>
+                    <p>Delaware's most prestigious address. Historic du Pont estates and grand manor homes.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="fairfax.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Fairfax</h3>
+                    <div class="township">Brandywine Hundred</div>
+                    <p>Established neighborhood with mature trees and generous setbacks.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="alapocas.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Alapocas</h3>
+                    <div class="township">Wilmington Area</div>
+                    <p>Scenic properties near Alapocas Run State Park with wooded charm.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="rockland.html" class="neighborhood-card reveal">
+                    <div class="neighborhood-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Rockland</h3>
+                    <div class="township">Brandywine Hundred</div>
+                    <p>Historic mill area transformed into upscale residential community.</p>
+                    <span class="cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Don't See Your Neighborhood?</h2>
+                <p>We serve communities throughout the Main Line, Chester County, Delaware County, Montgomery County, and all of New Castle County, Delaware. Contact us to discuss your specific location.</p>
+                <a href="../contact/" class="btn btn-cta-primary">
+                    Schedule Your Consultation
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+                    </a>
+                    <p>Premium pool installation for Main Line Philadelphia and Northern Delaware. Transforming backyards into private retreats since 2020.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../pools/concrete/">Concrete Pools</a></li>
+                        <li><a href="../pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="../pools/plunge/">Plunge Pools</a></li>
+                        <li><a href="../pool-maintenance/">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li><a href="../locations/pennsylvania/">Pennsylvania</a></li>
+                        <li><a href="../locations/delaware/">Delaware</a></li>
+                        <li><a href="./">Neighborhoods</a></li>
+                        <li><a href="../locations/">All Locations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            <a href="tel:+13025551234">(302) 555-1234</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@tristateaquatic.com">info@tristateaquatic.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tri-State Aquatic Solutions. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

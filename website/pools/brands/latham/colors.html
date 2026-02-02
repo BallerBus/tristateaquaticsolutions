@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latham Pool Colors | Crystite & Gelcoat Finishes | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Explore Latham fiberglass pool colors. Crystite Crystal and Classic collections - Sapphire Blue, Ocean Blue, Shale Gray, Night Sky. UV and fade-resistant finishes.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Latham Pool Color Options",
+        "description": "Premium Crystite and gelcoat color finishes for Latham fiberglass pools",
+        "numberOfItems": 12,
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "Sapphire Blue", "description": "Deep, rich blue creating classic pool water appearance"}},
+            {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "Ocean Blue", "description": "Medium blue with tropical undertones"}},
+            {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "Shale Gray", "description": "Contemporary gray finish for modern aesthetics"}}
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --latham-blue: #003366;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; position: relative; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; top: 20%; left: 20%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; top: 35%; left: 35%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb & Hero */
+        .breadcrumb { padding: 8rem 0 1rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.5rem; list-style: none; font-size: 0.9rem; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--gray-text); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        .page-hero { padding: 3rem 0 4rem; background: var(--gray-light); }
+        .page-hero h1 { margin-bottom: 1rem; }
+        .page-hero h1 em { font-style: italic; color: var(--aqua); }
+        .hero-intro { font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem; }
+
+        /* Sections */
+        section { padding: clamp(4rem, 8vw, 6rem) 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-tag {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem;
+        }
+        .section-tag::before, .section-tag::after { content: ''; width: 30px; height: 1px; background: var(--aqua); }
+
+        /* Color Cards */
+        .colors-section { background: var(--white); }
+
+        .collection-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray);
+        }
+
+        .colors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem; }
+
+        .color-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        .color-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(14, 31, 52, 0.12); }
+
+        .color-swatch {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .color-swatch-label {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(255,255,255,0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        /* Color swatches */
+        .color-sapphire-blue { background: linear-gradient(135deg, #1e5799 0%, #0e3d6e 100%); }
+        .color-ocean-blue { background: linear-gradient(135deg, #3a8fbc 0%, #2a6f9c 100%); }
+        .color-shale-gray { background: linear-gradient(135deg, #6b7c8a 0%, #4a5a68 100%); }
+        .color-coastal-bronze { background: linear-gradient(135deg, #8b7355 0%, #6b5545 100%); }
+        .color-night-sky { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); }
+        .color-pearl-white { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid var(--gray); }
+        .color-whisper-white { background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%); border: 1px solid var(--gray); }
+
+        .color-content { padding: 1.5rem; }
+        .color-content h4 { margin-bottom: 0.5rem; color: var(--navy); font-size: 1.35rem; }
+
+        .color-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+        .color-tag {
+            background: var(--gray-light);
+            padding: 0.35rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+        }
+
+        /* Features Section */
+        .features-section { background: var(--gray-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 70px; height: 70px;
+            background: var(--gray-light);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .feature-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .feature-card h4 { margin-bottom: 0.75rem; color: var(--navy); }
+
+        /* Water Color Preview */
+        .preview-section { background: var(--white); }
+        .preview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; align-items: center; }
+
+        .preview-content h3 { margin-bottom: 1rem; }
+        .preview-content p { margin-bottom: 1.5rem; }
+
+        .preview-list { list-style: none; }
+        .preview-list li {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray);
+            font-size: 1rem;
+            color: var(--navy);
+        }
+        .preview-list li:last-child { border-bottom: none; }
+        .preview-list li svg { width: 20px; height: 20px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+
+        .preview-image {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--latham-blue) 0%, var(--navy) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preview-image-text {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--white);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: clamp(4rem, 8vw, 6rem) 0;
+        }
+        .cta-content { text-align: center; color: var(--white); max-width: 800px; margin: 0 auto; }
+        .cta-content h2 { margin-bottom: 1rem; }
+        .cta-content p { color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; margin-bottom: 2rem; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            padding: 1.1rem 2rem; border-radius: 100px; font-size: 0.95rem; font-weight: 500;
+            text-decoration: none; transition: all 0.4s var(--ease-out-expo); border: none;
+        }
+        .btn-cta-primary { background: var(--aqua); color: var(--white); }
+        .btn-cta-primary:hover { background: var(--gold); color: var(--navy); }
+        .btn-cta-secondary { background: transparent; border: 1.5px solid rgba(255, 255, 255, 0.3); color: var(--white); }
+        .btn-cta-secondary:hover { background: var(--white); color: var(--navy); }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .colors-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .preview-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .colors-grid, .features-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/pools/brands/latham/">Latham</a></li>
+                <li><a href="/pools/brands/latham/models.html">Models</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li class="separator">/</li>
+                <li><a href="/pools/brands/">Brands</a></li>
+                <li class="separator">/</li>
+                <li><a href="/pools/brands/latham/">Latham</a></li>
+                <li class="separator">/</li>
+                <li class="current">Colors</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Latham Pool <em>Colors</em></h1>
+            <p class="hero-intro">Choose from Latham's stunning palette of Crystite and gelcoat finishes. Each color is engineered for UV resistance, fade protection, and lasting beauty that transforms your water into a work of art.</p>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section class="colors-section">
+        <div class="container">
+
+            <!-- Crystite Crystal Collection -->
+            <h3 class="collection-title reveal">Crystite Crystal Collection</h3>
+            <p style="margin-bottom: 2rem; color: var(--gray-text);" class="reveal">Premium finishes with granite-like appearance and enhanced durability. Features visible crystalline particles for added depth and shimmer.</p>
+
+            <div class="colors-grid">
+                <div class="color-card reveal">
+                    <div class="color-swatch color-sapphire-blue">
+                        <span class="color-swatch-label">Crystal Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Sapphire Blue</h4>
+                        <p>Deep, rich blue that creates the classic pool water appearance. Stunning in full sun with crystalline shimmer.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Most Popular</span>
+                            <span class="color-tag">Deep Blue Water</span>
+                            <span class="color-tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-ocean-blue">
+                        <span class="color-swatch-label">Crystal Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Ocean Blue</h4>
+                        <p>Medium blue with tropical undertones. Creates a Caribbean-inspired water color that is bright and inviting.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Tropical Feel</span>
+                            <span class="color-tag">Bright Water</span>
+                            <span class="color-tag">Family Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-shale-gray">
+                        <span class="color-swatch-label">Crystal Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Shale Gray</h4>
+                        <p>Contemporary gray finish for modern aesthetics. Creates a sophisticated, spa-like water appearance.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Modern</span>
+                            <span class="color-tag">Spa-Like</span>
+                            <span class="color-tag">Architectural</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-coastal-bronze">
+                        <span class="color-swatch-label">Crystal Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Coastal Bronze</h4>
+                        <p>Warm bronze tones that create a natural lagoon appearance. Perfect for tropical and Mediterranean landscapes.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Warm Tones</span>
+                            <span class="color-tag">Natural Look</span>
+                            <span class="color-tag">Lagoon Style</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-night-sky">
+                        <span class="color-swatch-label">Crystal Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Night Sky</h4>
+                        <p>Dramatic dark finish that creates depth and mystery. Stunning with underwater LED lighting at night.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Dramatic</span>
+                            <span class="color-tag">LED Ready</span>
+                            <span class="color-tag">Luxury</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-pearl-white">
+                        <span class="color-swatch-label">Crystal Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Pearl White</h4>
+                        <p>Bright white finish that creates crystal-clear water appearance. Maximum light reflection for a dazzling effect.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Bright</span>
+                            <span class="color-tag">Crystal Clear</span>
+                            <span class="color-tag">Classic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crystite Classic Collection -->
+            <h3 class="collection-title reveal">Crystite Classic Collection</h3>
+            <p style="margin-bottom: 2rem; color: var(--gray-text);" class="reveal">Time-tested finishes with smooth, consistent appearance. Excellent UV and chemical resistance for lasting beauty.</p>
+
+            <div class="colors-grid">
+                <div class="color-card reveal">
+                    <div class="color-swatch color-sapphire-blue">
+                        <span class="color-swatch-label">Classic Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Sapphire Blue Classic</h4>
+                        <p>The original deep blue finish. Smooth appearance without visible particles for a clean, consistent look.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Smooth Finish</span>
+                            <span class="color-tag">Classic Look</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-ocean-blue">
+                        <span class="color-swatch-label">Classic Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Ocean Blue Classic</h4>
+                        <p>Tropical blue in a smooth finish. Bright, inviting water color without crystalline particles.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Smooth Finish</span>
+                            <span class="color-tag">Tropical</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-shale-gray">
+                        <span class="color-swatch-label">Classic Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Shale Gray Classic</h4>
+                        <p>Contemporary gray in smooth finish. Modern look with consistent tone throughout.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Smooth Finish</span>
+                            <span class="color-tag">Modern</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gelcoat Collection -->
+            <h3 class="collection-title reveal">Gelcoat Finish</h3>
+
+            <div class="colors-grid">
+                <div class="color-card reveal">
+                    <div class="color-swatch color-whisper-white">
+                        <span class="color-swatch-label">Gelcoat Finish</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Whisper White</h4>
+                        <p>A serene and timeless choice. Pure white gelcoat finish creates the brightest, most reflective pool surface.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Timeless</span>
+                            <span class="color-tag">Brightest Finish</span>
+                            <span class="color-tag">Classic White</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Color Technology</div>
+                <h2>Why Latham Colors Last</h2>
+                <p>Every Latham color is engineered with advanced technology for decades of vibrant beauty.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+                    </div>
+                    <h4>UV Resistant</h4>
+                    <p>Advanced UV stabilizers prevent color fading from intense sunlight exposure, keeping your pool vibrant year after year.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h4>Chemical Resistant</h4>
+                    <p>Engineered to withstand pool chemicals without discoloration, staining, or surface degradation over time.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Blister Resistant</h4>
+                    <p>Crystite technology prevents osmotic blistering that can affect lesser gelcoat finishes, ensuring a smooth surface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section class="preview-section">
+        <div class="container">
+            <div class="preview-grid">
+                <div class="preview-content reveal">
+                    <h3>See Your Color in Person</h3>
+                    <p>Photos cannot fully capture how your pool color will look in your specific backyard environment. Factors like sunlight, surrounding landscape, and pool depth all affect the final appearance.</p>
+                    <ul class="preview-list">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> View full-size color samples at our showroom</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Compare Crystal vs Classic finishes side-by-side</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Get expert color recommendations for your landscape</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> See how colors look with different deck materials</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Take samples home for outdoor comparison</li>
+                    </ul>
+                </div>
+                <div class="preview-image reveal">
+                    <div class="preview-image-text">Visit Our<br>Showroom</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Choose Your Perfect Color</h2>
+                <p>Schedule a consultation to see Latham color samples in person and get expert recommendations for your backyard.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+13025551234" class="btn btn-cta-primary">Call (302) 555-1234</a>
+                    <a href="/contact/" class="btn btn-cta-secondary">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. Authorized Latham Pools Dealer.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

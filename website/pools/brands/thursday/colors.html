@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thursday Pools Colors | Diamond Gelcoat Finishes | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Explore Thursday Pools color options. Diamond gelcoat finishes with shimmer effect. Caribbean-inspired blues, modern grays, natural tones. UV and fade-resistant.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --thursday-teal: #008080;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; position: relative; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; top: 20%; left: 20%; border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; top: 35%; left: 35%; background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb & Hero */
+        .breadcrumb { padding: 8rem 0 1rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.5rem; list-style: none; font-size: 0.9rem; flex-wrap: wrap; }
+        .breadcrumb-list a { color: var(--gray-text); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        .page-hero { padding: 3rem 0 4rem; background: var(--gray-light); }
+        .page-hero h1 { margin-bottom: 1rem; }
+        .page-hero h1 em { font-style: italic; color: var(--aqua); }
+        .hero-intro { font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem; }
+
+        /* Sections */
+        section { padding: clamp(4rem, 8vw, 6rem) 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+        .section-tag::before, .section-tag::after { content: ''; width: 30px; height: 1px; background: var(--aqua); }
+
+        /* Color Cards */
+        .colors-section { background: var(--white); }
+        .collection-title { font-family: var(--font-display); font-size: 1.75rem; color: var(--navy); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid var(--gray); }
+        .colors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem; }
+
+        .color-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08); transition: all 0.4s var(--ease-out-expo); }
+        .color-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(14, 31, 52, 0.12); }
+
+        .color-swatch { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
+        .color-swatch-label { position: absolute; bottom: 1rem; left: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 500; color: var(--navy); }
+
+        /* Color swatches */
+        .color-diamond { background: linear-gradient(135deg, #4a9e9e 0%, #2a7e7e 100%); }
+        .color-diamond::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='1' cy='1' r='0.5' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E"); opacity: 0.5; }
+        .color-caribbean-blue { background: linear-gradient(135deg, #0099cc 0%, #006699 100%); }
+        .color-gray-diamond { background: linear-gradient(135deg, #6b7c8a 0%, #4a5a68 100%); }
+        .color-gray-diamond::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='1' cy='1' r='0.5' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E"); opacity: 0.5; }
+        .color-aquamarine { background: linear-gradient(135deg, #40e0d0 0%, #20b2aa 100%); }
+        .color-diamond-sand { background: linear-gradient(135deg, #d4c4a8 0%, #b4a488 100%); }
+        .color-diamond-sand::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='1' cy='1' r='0.5' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E"); opacity: 0.5; }
+        .color-midnight { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); }
+        .color-ocean-mist { background: linear-gradient(135deg, #87ceeb 0%, #5fb3d4 100%); }
+        .color-white-sand { background: linear-gradient(135deg, #f5f5dc 0%, #e5e5cc 100%); border: 1px solid var(--gray); }
+
+        .color-content { padding: 1.5rem; }
+        .color-content h4 { margin-bottom: 0.5rem; color: var(--navy); font-size: 1.35rem; }
+        .color-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+        .color-tag { background: var(--gray-light); padding: 0.35rem 0.75rem; border-radius: 100px; font-size: 0.75rem; color: var(--gray-text); }
+
+        /* Features Section */
+        .features-section { background: var(--gray-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--white); padding: 2.5rem; border-radius: 20px; text-align: center; }
+        .feature-icon { width: 70px; height: 70px; background: var(--gray-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .feature-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .feature-card h4 { margin-bottom: 0.75rem; color: var(--navy); }
+
+        /* Preview Section */
+        .preview-section { background: var(--white); }
+        .preview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; align-items: center; }
+        .preview-content h3 { margin-bottom: 1rem; }
+        .preview-content p { margin-bottom: 1.5rem; }
+        .preview-list { list-style: none; }
+        .preview-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--gray); font-size: 1rem; color: var(--navy); }
+        .preview-list li:last-child { border-bottom: none; }
+        .preview-list li svg { width: 20px; height: 20px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+        .preview-image { border-radius: 24px; overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--thursday-teal) 0%, var(--navy) 100%); display: flex; align-items: center; justify-content: center; }
+        .preview-image-text { font-family: var(--font-display); font-size: 2rem; color: var(--white); text-align: center; opacity: 0.8; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: clamp(4rem, 8vw, 6rem) 0; }
+        .cta-content { text-align: center; color: var(--white); max-width: 800px; margin: 0 auto; }
+        .cta-content h2 { margin-bottom: 1rem; }
+        .cta-content p { color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; margin-bottom: 2rem; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2rem; border-radius: 100px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.4s var(--ease-out-expo); border: none; }
+        .btn-cta-primary { background: var(--aqua); color: var(--white); }
+        .btn-cta-primary:hover { background: var(--gold); color: var(--navy); }
+        .btn-cta-secondary { background: transparent; border: 1.5px solid rgba(255, 255, 255, 0.3); color: var(--white); }
+        .btn-cta-secondary:hover { background: var(--white); color: var(--navy); }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .colors-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .preview-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .colors-grid, .features-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/pools/brands/thursday/">Thursday</a></li>
+                <li><a href="/pools/brands/thursday/models.html">Models</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li class="separator">/</li>
+                <li><a href="/pools/brands/">Brands</a></li>
+                <li class="separator">/</li>
+                <li><a href="/pools/brands/thursday/">Thursday</a></li>
+                <li class="separator">/</li>
+                <li class="current">Colors</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Thursday Pool <em>Colors</em></h1>
+            <p class="hero-intro">Choose from Thursday Pools' stunning palette of Diamond gelcoat finishes. Each color features light silver flake that shimmers beautifully in sunlight, creating depth and visual interest in your pool.</p>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section class="colors-section">
+        <div class="container">
+
+            <!-- Diamond Collection -->
+            <h3 class="collection-title reveal">Diamond Gelcoat Collection</h3>
+            <p style="margin-bottom: 2rem; color: var(--gray-text);" class="reveal">Premium finishes featuring light silver flake with speckled blues, grays, white, and black for a shimmering, luxurious appearance.</p>
+
+            <div class="colors-grid">
+                <div class="color-card reveal">
+                    <div class="color-swatch color-diamond">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Diamond</h4>
+                        <p>Light green-blue water color that projects a calm and peaceful mood. Medium gray base with silver flake shimmer.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Most Popular</span>
+                            <span class="color-tag">Calming</span>
+                            <span class="color-tag">Shimmer Effect</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-caribbean-blue">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Caribbean Blue</h4>
+                        <p>Vibrant island-inspired blue that glistens under the sun. Creates the feeling of a tropical getaway in your backyard.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Tropical</span>
+                            <span class="color-tag">Vibrant</span>
+                            <span class="color-tag">Resort Style</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-gray-diamond">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Gray Diamond</h4>
+                        <p>Subtle sophistication with sparkling modern edge. Sleek gray tones shimmer in sunlight, producing a soft blue reflection.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Modern</span>
+                            <span class="color-tag">Sophisticated</span>
+                            <span class="color-tag">Upscale</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-aquamarine">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Aquamarine</h4>
+                        <p>Turquoise color with white shimmer and tiny black specks. Creates a clear, Caribbean look with visual depth and interest.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Turquoise</span>
+                            <span class="color-tag">Clear Water</span>
+                            <span class="color-tag">Visual Depth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-diamond-sand">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Diamond Sand</h4>
+                        <p>Light tan with diamond-like shimmer, reminiscent of sun-lit beaches. Perfect for tropical and natural aesthetics.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Beach Look</span>
+                            <span class="color-tag">Natural</span>
+                            <span class="color-tag">Warm Tones</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-midnight">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Midnight</h4>
+                        <p>Dramatic dark finish creating depth and mystery. Stunning with underwater LED lighting for nighttime swimming.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Dramatic</span>
+                            <span class="color-tag">LED Ready</span>
+                            <span class="color-tag">Luxury</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-ocean-mist">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>Ocean Mist</h4>
+                        <p>Light, airy blue that creates crystal-clear water appearance. Bright and refreshing for a classic pool look.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Light Blue</span>
+                            <span class="color-tag">Refreshing</span>
+                            <span class="color-tag">Classic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card reveal">
+                    <div class="color-swatch color-white-sand">
+                        <span class="color-swatch-label">Diamond Collection</span>
+                    </div>
+                    <div class="color-content">
+                        <h4>White Sand</h4>
+                        <p>Creamy white finish creating the brightest, most reflective pool surface. Maximizes light for a dazzling effect.</p>
+                        <div class="color-tags">
+                            <span class="color-tag">Brightest</span>
+                            <span class="color-tag">Reflective</span>
+                            <span class="color-tag">Clean Look</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Color Technology</div>
+                <h2>Why Thursday Colors Last</h2>
+                <p>Every Thursday color is engineered with premium gelcoat technology for decades of beauty.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+                    </div>
+                    <h4>UV Resistant</h4>
+                    <p>Premium gelcoat engineered to resist fading from intense sunlight, keeping colors vibrant through countless sunny days.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h4>Algae Resistant</h4>
+                    <p>Smooth, non-porous surface naturally resists algae growth, reducing maintenance and keeping your pool looking pristine.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>15-Year Warranty</h4>
+                    <p>Surface finish warranted against osmotic blistering for 15 years, giving you confidence in your color choice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section class="preview-section">
+        <div class="container">
+            <div class="preview-grid">
+                <div class="preview-content reveal">
+                    <h3>See Colors in Person</h3>
+                    <p>Photos cannot capture how pool colors interact with your specific backyard environment. Sunlight, surrounding landscape, and pool depth all affect final appearance.</p>
+                    <ul class="preview-list">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> View actual gelcoat samples at our showroom</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Compare Diamond shimmer colors side-by-side</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Get color recommendations for your landscape</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> See how colors pair with deck materials</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Take samples home for outdoor viewing</li>
+                    </ul>
+                </div>
+                <div class="preview-image reveal">
+                    <div class="preview-image-text">Visit Our<br>Showroom</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Choose Your Perfect Color</h2>
+                <p>Schedule a consultation to see Thursday Pools color samples and get expert recommendations for your backyard.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+13025551234" class="btn btn-cta-primary">Call (302) 555-1234</a>
+                    <a href="/contact/" class="btn btn-cta-secondary">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. Authorized Thursday Pools Dealer.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

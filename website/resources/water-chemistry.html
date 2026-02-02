@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Water Chemistry Guide | pH, Chlorine & Balance | Tri-State Aquatic</title>
+    <meta name="description" content="Master pool water chemistry with our comprehensive guide. Learn about pH, chlorine, alkalinity, calcium hardness, and how to maintain perfectly balanced pool water.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Water Chemistry Guide | Master Your Pool Balance">
+    <meta property="og:description" content="Complete guide to understanding and maintaining pool water chemistry for safe, comfortable swimming.">
+    <meta property="og:type" content="article">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/resources/water-chemistry.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Pool Water Chemistry Guide: Understanding pH, Chlorine, and Balance",
+        "description": "Comprehensive guide to pool water chemistry including pH, chlorine, alkalinity, calcium hardness, and cyanuric acid management.",
+        "author": {
+            "@type": "Organization",
+            "name": "Tri-State Aquatic Solutions"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tri-State Aquatic Solutions"
+        },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-01-30"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the ideal pH level for a swimming pool?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ideal pH range for a swimming pool is 7.2 to 7.6. This range is comfortable for swimmers' eyes and skin, allows chlorine to work effectively, and prevents equipment corrosion and scaling."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I test my pool water?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Test pH and chlorine levels 2-3 times per week during swim season. Test alkalinity, calcium hardness, and cyanuric acid weekly or bi-weekly. Get a professional water analysis 2-3 times per season for comprehensive testing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What causes cloudy pool water?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cloudy pool water is typically caused by improper water balance (high pH or alkalinity), inadequate filtration, low chlorine levels, or high levels of dissolved solids. Testing and adjusting chemistry, running the filter longer, and shock treatment usually resolve the issue."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.3; }
+        h1 { font-size: clamp(2.25rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin: 3rem 0 1.25rem; }
+        h3 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); margin: 2rem 0 1rem; }
+        h4 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; font-family: var(--font-body); font-weight: 600; }
+        p { font-size: 1.05rem; color: #4a5568; margin-bottom: 1.25rem; }
+        a { color: var(--aqua); text-decoration: none; }
+        strong { color: var(--navy); }
+
+        .container { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        .container-wide { max-width: 1200px; }
+
+        /* Navigation */
+        nav { background: var(--white); padding: 1rem 0; border-bottom: 1px solid var(--gray); position: sticky; top: 0; z-index: 100; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 40px; height: 40px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+        .logo-mark::after { content: ''; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        .logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.6rem; font-family: var(--font-body); letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .back-link { color: var(--aqua); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* Header */
+        .article-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 4rem 0; position: relative; overflow: hidden; }
+        .article-header::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 60%); top: -300px; right: -200px; }
+        .header-content { position: relative; }
+        .breadcrumb { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .breadcrumb a, .breadcrumb span { color: rgba(255,255,255,0.7); }
+        .article-meta { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1rem; }
+        .category-tag { background: var(--aqua); color: var(--white); padding: 0.35rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 500; }
+        .article-header h1 { color: var(--white); margin-bottom: 1rem; }
+        .article-excerpt { font-size: 1.2rem; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 700px; }
+
+        /* Content */
+        .article-content { padding: 3rem 0; }
+        .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #4a5568; }
+        .article-content li { margin-bottom: 0.5rem; font-size: 1.05rem; }
+
+        /* Chemistry Cards */
+        .chemistry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .chemistry-card { background: var(--white); border: 1px solid var(--gray); border-radius: 16px; overflow: hidden; }
+        .chemistry-header { background: var(--navy); color: var(--white); padding: 1.25rem 1.5rem; }
+        .chemistry-header h4 { color: var(--white); margin: 0; font-family: var(--font-display); font-size: 1.25rem; }
+        .chemistry-header .range { color: var(--aqua); font-size: 1.5rem; font-weight: 600; margin-top: 0.25rem; }
+        .chemistry-body { padding: 1.5rem; }
+        .chemistry-body p { margin-bottom: 0; font-size: 0.95rem; }
+
+        /* Range Visual */
+        .range-visual { margin: 2rem 0; padding: 2rem; background: var(--gray-light); border-radius: 16px; }
+        .range-visual h4 { margin-top: 0; text-align: center; margin-bottom: 1.5rem; }
+        .range-bar { height: 30px; background: linear-gradient(90deg, #EF4444 0%, #F59E0B 25%, #10B981 40%, #10B981 60%, #F59E0B 75%, #EF4444 100%); border-radius: 8px; position: relative; margin-bottom: 0.5rem; }
+        .range-labels { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--gray-text); }
+        .range-ideal { position: absolute; top: -8px; left: 40%; width: 20%; height: calc(100% + 16px); border: 3px solid var(--navy); border-radius: 8px; }
+        .range-ideal::after { content: 'Ideal'; position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 600; color: var(--navy); }
+
+        /* Table */
+        .table-wrapper { overflow-x: auto; margin: 2rem 0; border-radius: 12px; border: 1px solid var(--gray); }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        th, td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--gray); }
+        th { background: var(--navy); color: var(--white); font-weight: 500; }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) td { background: var(--gray-light); }
+
+        /* Callout */
+        .callout { background: var(--gray-light); border-left: 4px solid var(--aqua); padding: 1.5rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .callout.warning { border-left-color: #F59E0B; background: rgba(245, 158, 11, 0.1); }
+        .callout.tip { border-left-color: #10B981; background: rgba(16, 185, 129, 0.1); }
+        .callout.important { border-left-color: #EF4444; background: rgba(239, 68, 68, 0.1); }
+        .callout h4 { margin-top: 0; }
+        .callout p:last-child { margin-bottom: 0; }
+
+        /* Testing Section */
+        .testing-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .testing-card { background: var(--gray-light); border-radius: 12px; padding: 1.5rem; }
+        .testing-card h4 { margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+        .testing-card svg { width: 24px; height: 24px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+        .testing-card .pros { color: #10B981; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .testing-card .cons { color: #EF4444; font-size: 0.9rem; }
+
+        /* Download/Email */
+        .download-cta { background: var(--aqua-glow); border: 2px solid var(--aqua); border-radius: 16px; padding: 2rem; margin: 2rem 0; text-align: center; }
+        .download-cta h4 { margin-top: 0; }
+        .download-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--aqua); color: var(--white); padding: 1rem 2rem; border-radius: 100px; font-weight: 500; }
+        .download-btn:hover { background: var(--navy); color: var(--white); }
+        .download-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        .email-capture { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 16px; padding: 3rem; margin: 3rem 0; text-align: center; }
+        .email-capture h3 { color: var(--white); margin-top: 0; }
+        .email-capture p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+        .email-form { display: flex; gap: 1rem; max-width: 450px; margin: 0 auto; }
+        .email-form input { flex: 1; padding: 1rem 1.5rem; border: 2px solid rgba(255,255,255,0.2); border-radius: 100px; background: rgba(255,255,255,0.1); color: var(--white); font-size: 1rem; }
+        .email-form input::placeholder { color: rgba(255,255,255,0.5); }
+        .email-form button { padding: 1rem 2rem; background: var(--aqua); color: var(--white); border: none; border-radius: 100px; font-weight: 600; cursor: pointer; }
+
+        /* Related */
+        .related-articles { padding: 3rem 0; background: var(--gray-light); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: var(--white); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--gray); }
+        .related-card h4 { margin-top: 0; margin-bottom: 0.5rem; }
+        .related-card p { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 3rem 0; text-align: center; }
+        footer p { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+        footer a { color: var(--aqua); }
+
+        @media (max-width: 640px) {
+            .email-form { flex-direction: column; }
+            .chemistry-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container container-wide">
+            <a href="../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <a href="index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Resources
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="article-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a><span>/</span>
+                    <a href="index.html">Resources</a><span>/</span>
+                    <span>Water Chemistry</span>
+                </div>
+                <div class="article-meta">
+                    <span class="category-tag">Water Chemistry</span>
+                    <span style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">40 min read</span>
+                </div>
+                <h1>Pool Water Chemistry Guide</h1>
+                <p class="article-excerpt">Understanding water chemistry is the key to a safe, comfortable, and crystal-clear pool. Learn about pH, chlorine, alkalinity, and how these factors work together to keep your water perfect.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <article class="article-content">
+        <div class="container">
+            <p>Pool water chemistry might seem complicated, but it follows logical principles. Master these fundamentals, and you will spend less time fighting problems and more time enjoying your pool. This guide explains each chemical factor, how they interact, and how to maintain optimal balance.</p>
+
+            <h2>The Key Chemical Parameters</h2>
+            <p>Five main factors determine your water quality. Understanding each one is essential for proper pool care.</p>
+
+            <div class="chemistry-grid">
+                <div class="chemistry-card">
+                    <div class="chemistry-header">
+                        <h4>pH Level</h4>
+                        <div class="range">7.2 - 7.6</div>
+                    </div>
+                    <div class="chemistry-body">
+                        <p>Measures acidity/alkalinity on a scale of 0-14. Low pH (acidic) corrodes equipment and irritates skin. High pH reduces chlorine effectiveness and causes cloudy water.</p>
+                    </div>
+                </div>
+                <div class="chemistry-card">
+                    <div class="chemistry-header">
+                        <h4>Free Chlorine</h4>
+                        <div class="range">1 - 3 ppm</div>
+                    </div>
+                    <div class="chemistry-body">
+                        <p>Your primary sanitizer that kills bacteria and algae. "Free" chlorine is the active, working chlorine available to sanitize. Combined chlorine has already reacted and needs to be eliminated.</p>
+                    </div>
+                </div>
+                <div class="chemistry-card">
+                    <div class="chemistry-header">
+                        <h4>Total Alkalinity</h4>
+                        <div class="range">80 - 120 ppm</div>
+                    </div>
+                    <div class="chemistry-body">
+                        <p>Acts as a buffer for pH, preventing rapid pH swings. Think of it as pH's "shock absorber." Always balance alkalinity before adjusting pH.</p>
+                    </div>
+                </div>
+                <div class="chemistry-card">
+                    <div class="chemistry-header">
+                        <h4>Calcium Hardness</h4>
+                        <div class="range">200 - 400 ppm</div>
+                    </div>
+                    <div class="chemistry-body">
+                        <p>Measures dissolved calcium in water. Too low and water becomes corrosive, damaging surfaces and equipment. Too high causes scaling and cloudy water.</p>
+                    </div>
+                </div>
+                <div class="chemistry-card">
+                    <div class="chemistry-header">
+                        <h4>Cyanuric Acid (CYA)</h4>
+                        <div class="range">30 - 50 ppm</div>
+                    </div>
+                    <div class="chemistry-body">
+                        <p>Stabilizer that protects chlorine from UV degradation. Without it, sunlight destroys chlorine rapidly. Too much reduces chlorine's effectiveness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="ph">Understanding pH</h2>
+            <p>pH is the most frequently tested and adjusted chemical factor. It measures how acidic or basic your water is on a scale of 0 (very acidic) to 14 (very basic), with 7 being neutral.</p>
+
+            <div class="range-visual">
+                <h4>pH Scale for Pools</h4>
+                <div class="range-bar">
+                    <div class="range-ideal"></div>
+                </div>
+                <div class="range-labels">
+                    <span>6.8 Acidic</span>
+                    <span>7.2</span>
+                    <span>7.4 Ideal</span>
+                    <span>7.6</span>
+                    <span>8.0 Basic</span>
+                </div>
+            </div>
+
+            <h3>Why pH Range Matters</h3>
+            <ul>
+                <li><strong>Below 7.2:</strong> Water becomes corrosive, damaging metal equipment, heaters, and surfaces. Can cause eye and skin irritation.</li>
+                <li><strong>7.2 - 7.6:</strong> Optimal range. Chlorine works effectively, water is comfortable, equipment is protected.</li>
+                <li><strong>Above 7.6:</strong> Chlorine becomes less effective (at 8.0, only 20% of chlorine is active). Causes cloudy water, scaling, and skin irritation.</li>
+            </ul>
+
+            <h3>Adjusting pH</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Problem</th>
+                            <th>Solution</th>
+                            <th>Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>pH too high</td>
+                            <td>Add acid to lower pH</td>
+                            <td>Muriatic acid or sodium bisulfate (pH Down)</td>
+                        </tr>
+                        <tr>
+                            <td>pH too low</td>
+                            <td>Add base to raise pH</td>
+                            <td>Sodium carbonate (soda ash/pH Up)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout tip">
+                <h4>pH Adjustment Rule</h4>
+                <p>Always adjust in small increments. Add chemicals, run pump for 4-6 hours, then retest. It is easier to add more than to correct an overshoot.</p>
+            </div>
+
+            <h2>Chlorine: Your Primary Sanitizer</h2>
+            <p>Chlorine kills bacteria, viruses, and algae to keep your pool safe. Understanding the different forms of chlorine helps you choose the right products.</p>
+
+            <h3>Types of Chlorine</h3>
+            <ul>
+                <li><strong>Free Chlorine:</strong> Active chlorine available to sanitize. This is what you measure and maintain at 1-3 ppm.</li>
+                <li><strong>Combined Chlorine:</strong> Chlorine that has reacted with contaminants (chloramines). Causes "chlorine smell" and eye irritation. Should be below 0.5 ppm.</li>
+                <li><strong>Total Chlorine:</strong> Free + Combined. If total is significantly higher than free, you have a chloramine problem.</li>
+            </ul>
+
+            <h3>Chlorine Products</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Form</th>
+                            <th>Best Use</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trichlor Tablets</td>
+                            <td>Slow-dissolving tabs</td>
+                            <td>Daily chlorination</td>
+                            <td>Contains stabilizer; adds CYA over time</td>
+                        </tr>
+                        <tr>
+                            <td>Dichlor Granules</td>
+                            <td>Fast-dissolving granules</td>
+                            <td>Quick boost, spas</td>
+                            <td>Contains stabilizer; pH neutral</td>
+                        </tr>
+                        <tr>
+                            <td>Cal-Hypo</td>
+                            <td>Granules or tablets</td>
+                            <td>Shocking</td>
+                            <td>No stabilizer; adds calcium; raises pH</td>
+                        </tr>
+                        <tr>
+                            <td>Liquid Chlorine</td>
+                            <td>Liquid (sodium hypochlorite)</td>
+                            <td>Daily/shocking</td>
+                            <td>No stabilizer; raises pH; short shelf life</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Shocking Your Pool</h3>
+            <p>Shocking means adding a large dose of chlorine to:</p>
+            <ul>
+                <li>Destroy chloramines (combined chlorine)</li>
+                <li>Kill algae and bacteria that regular chlorine cannot handle</li>
+                <li>Restore water clarity after heavy use or contamination</li>
+            </ul>
+
+            <div class="callout warning">
+                <h4>Shock at Night</h4>
+                <p>Always shock your pool in the evening. UV light rapidly degrades chlorine, so daytime shocking wastes most of the product. Evening application allows chlorine to work through the night.</p>
+            </div>
+
+            <h2>Total Alkalinity: The pH Buffer</h2>
+            <p>Total alkalinity (TA) measures the water's ability to resist pH changes. Think of it as a shock absorber for pH - proper alkalinity keeps pH stable.</p>
+
+            <h3>How Alkalinity Works</h3>
+            <ul>
+                <li><strong>Too Low (under 80 ppm):</strong> pH bounces around, difficult to control. Water can become corrosive.</li>
+                <li><strong>Proper Range (80-120 ppm):</strong> pH remains stable. Chemical additions have predictable effects.</li>
+                <li><strong>Too High (over 120 ppm):</strong> pH tends to drift high. Can cause cloudy water and scaling.</li>
+            </ul>
+
+            <div class="callout important">
+                <h4>Balance Order Matters</h4>
+                <p>Always balance Total Alkalinity BEFORE adjusting pH. Changes to alkalinity affect pH, but changes to pH have minimal effect on alkalinity. Adjust alkalinity first, wait, then fine-tune pH.</p>
+            </div>
+
+            <h2>Calcium Hardness</h2>
+            <p>Calcium hardness measures dissolved calcium in your water. All water needs some calcium - too little or too much causes problems.</p>
+
+            <h3>Effects of Improper Calcium</h3>
+            <ul>
+                <li><strong>Too Low:</strong> Water becomes "aggressive" and will dissolve calcium from plaster surfaces and concrete, causing etching and damage.</li>
+                <li><strong>Too High:</strong> Calcium precipitates out, causing scaling on surfaces, equipment, and waterline.</li>
+            </ul>
+
+            <p><strong>For fiberglass pools:</strong> Target the lower end of the range (200-250 ppm) since there is no plaster to protect.</p>
+            <p><strong>For concrete/plaster pools:</strong> Target mid-range (250-350 ppm) to protect the surface.</p>
+
+            <h2 id="testing">Water Testing Methods</h2>
+
+            <div class="testing-methods">
+                <div class="testing-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        Test Strips
+                    </h4>
+                    <p class="pros">Quick, easy, no measuring, good for frequent testing</p>
+                    <p class="cons">Less precise, can be affected by old strips, higher cost per test</p>
+                </div>
+                <div class="testing-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><path d="M10 2v7.31M14 9.3V2M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0M5.52 16h12.96"/></svg>
+                        Liquid Test Kits
+                    </h4>
+                    <p class="pros">More accurate, lower cost per test, tests more parameters</p>
+                    <p class="cons">Takes more time, requires careful measurement, reagents expire</p>
+                </div>
+                <div class="testing-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                        Digital Testers
+                    </h4>
+                    <p class="pros">Very accurate, instant readings, great for pH/TDS</p>
+                    <p class="cons">Higher initial cost, requires calibration, limited parameters</p>
+                </div>
+                <div class="testing-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                        Professional Analysis
+                    </h4>
+                    <p class="pros">Most comprehensive, tests everything, includes recommendations</p>
+                    <p class="cons">Takes time to get results, requires bringing sample to store</p>
+                </div>
+            </div>
+
+            <h3>Testing Schedule</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Testing Frequency</th>
+                            <th>Ideal Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>pH</td>
+                            <td>2-3 times per week</td>
+                            <td>7.2 - 7.6</td>
+                        </tr>
+                        <tr>
+                            <td>Free Chlorine</td>
+                            <td>2-3 times per week</td>
+                            <td>1 - 3 ppm</td>
+                        </tr>
+                        <tr>
+                            <td>Total Alkalinity</td>
+                            <td>Weekly</td>
+                            <td>80 - 120 ppm</td>
+                        </tr>
+                        <tr>
+                            <td>Calcium Hardness</td>
+                            <td>Monthly</td>
+                            <td>200 - 400 ppm</td>
+                        </tr>
+                        <tr>
+                            <td>Cyanuric Acid</td>
+                            <td>Monthly</td>
+                            <td>30 - 50 ppm</td>
+                        </tr>
+                        <tr>
+                            <td>Professional Analysis</td>
+                            <td>2-3 times per season</td>
+                            <td>Comprehensive</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Chemical Addition Safety</h2>
+            <ul>
+                <li><strong>Never mix chemicals</strong> - especially chlorine and acid. This creates toxic gas.</li>
+                <li><strong>Add chemicals to water</strong> - never add water to chemicals.</li>
+                <li><strong>Store chemicals separately</strong> - in cool, dry, well-ventilated area.</li>
+                <li><strong>Pre-dissolve granular chemicals</strong> - in a bucket of pool water before adding to pool.</li>
+                <li><strong>Add chemicals with pump running</strong> - for proper distribution.</li>
+                <li><strong>Wait between additions</strong> - at least 4-6 hours between different chemical types.</li>
+            </ul>
+
+            <div class="download-cta">
+                <h4>Download Water Chemistry Cheat Sheet</h4>
+                <p>Get our quick-reference card with ideal ranges and adjustment guidelines.</p>
+                <a href="checklist-downloads.html" class="download-btn">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download Cheat Sheet
+                </a>
+            </div>
+
+            <div class="email-capture">
+                <h3>Get Water Chemistry Tips</h3>
+                <p>Subscribe for seasonal chemistry advice and troubleshooting tips.</p>
+                <form class="email-form" action="https://formspree.io/f/your-form-id" method="POST">
+                    <input type="hidden" name="source" value="water-chemistry">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related -->
+    <section class="related-articles">
+        <div class="container container-wide">
+            <h2>Related Resources</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h4>Troubleshooting Guide</h4>
+                    <p>When chemistry goes wrong - green water, cloudy water, and other problems.</p>
+                    <a href="troubleshooting.html">Get Solutions</a>
+                </div>
+                <div class="related-card">
+                    <h4>Maintenance Tips</h4>
+                    <p>Complete maintenance schedules including testing routines.</p>
+                    <a href="maintenance-tips.html">Read Guide</a>
+                </div>
+                <div class="related-card">
+                    <h4>Pool Glossary</h4>
+                    <p>Definitions of all chemistry terms and pool terminology.</p>
+                    <a href="glossary.html">Browse Terms</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

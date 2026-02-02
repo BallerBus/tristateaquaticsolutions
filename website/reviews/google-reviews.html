@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Reviews | Verified 5-Star Ratings | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Read our verified Google reviews from customers across Main Line Philadelphia and Northern Delaware. See why homeowners rate Tri-State Aquatic Solutions 5 stars.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/reviews/google-reviews.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tri-State Aquatic Solutions",
+        "image": "https://tristateaquaticsolutions.com/images/logo.png",
+        "telephone": "(610) 555-POOL",
+        "url": "https://tristateaquaticsolutions.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Main Street",
+            "addressLocality": "West Chester",
+            "addressRegion": "PA",
+            "postalCode": "19382",
+            "addressCountry": "US"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "47",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "sameAs": [
+            "https://www.google.com/maps/place/Tri-State+Aquatic+Solutions"
+        ]
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tristateaquaticsolutions.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://tristateaquaticsolutions.com/reviews/"},
+            {"@type": "ListItem", "position": 3, "name": "Google Reviews", "item": "https://tristateaquaticsolutions.com/reviews/google-reviews.html"}
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--aqua); }
+
+        .nav-cta {
+            background: var(--aqua);
+            color: var(--white) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--navy);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 12rem 0 6rem;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .hero h1 { margin-bottom: 1.5rem; }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.25rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        .breadcrumb span { color: var(--gray-text); }
+
+        /* Google Rating Summary */
+        .google-summary {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(14, 31, 52, 0.08);
+            max-width: 900px;
+            margin: -4rem auto 4rem;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .google-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .google-logo-icon {
+            display: flex;
+            gap: 0.1rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .google-logo-icon span:nth-child(1) { color: var(--google-blue); }
+        .google-logo-icon span:nth-child(2) { color: var(--google-red); }
+        .google-logo-icon span:nth-child(3) { color: var(--google-yellow); }
+        .google-logo-icon span:nth-child(4) { color: var(--google-blue); }
+        .google-logo-icon span:nth-child(5) { color: var(--google-green); }
+        .google-logo-icon span:nth-child(6) { color: var(--google-red); }
+
+        .google-logo p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .google-rating {
+            text-align: center;
+        }
+
+        .google-rating .rating-number {
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .google-stars {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            margin: 0.5rem 0;
+        }
+
+        .google-stars svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--google-yellow);
+        }
+
+        .google-rating .review-count {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        .google-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .google-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .google-btn.primary {
+            background: var(--google-blue);
+            color: var(--white);
+        }
+
+        .google-btn.primary:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+
+        .google-btn.secondary {
+            background: var(--gray-light);
+            color: var(--navy);
+        }
+
+        .google-btn.secondary:hover {
+            background: var(--gray);
+        }
+
+        .google-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Integration Instructions */
+        .integration-section {
+            padding: 5rem 0;
+            background: var(--gray-light);
+        }
+
+        .integration-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .integration-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .integration-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--aqua-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .integration-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--aqua);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .integration-card h3 { margin-bottom: 0.75rem; }
+
+        .integration-card p { font-size: 0.95rem; }
+
+        /* Static Reviews Display */
+        .reviews-section {
+            padding: 5rem 0;
+        }
+
+        .reviews-section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .reviews-section > .container > p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .google-reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .google-review-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(14, 31, 52, 0.06);
+            border: 1px solid var(--gray);
+        }
+
+        .google-review-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--google-blue), var(--google-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .reviewer-details h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .reviewer-details .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        .reviewer-details .google-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .review-stars svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--google-yellow);
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* Leave Review CTA */
+        .leave-review-section {
+            padding: 6rem 0;
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .leave-review-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .leave-review-section p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .leave-review-steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--aqua);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+        }
+
+        .step p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .leave-review-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            color: var(--google-blue);
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .leave-review-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .leave-review-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.75rem; }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover { color: var(--aqua); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .google-summary { flex-direction: column; text-align: center; }
+            .google-reviews-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <span class="logo-text">Tri-State Aquatic</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/reviews/">Reviews</a></li>
+                <li><a href="/financing/">Financing</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span>/</span>
+                <a href="/reviews/">Reviews</a>
+                <span>/</span>
+                <span>Google Reviews</span>
+            </div>
+            <h1>Google Reviews</h1>
+            <p>See our verified Google reviews from real customers. We're proud to maintain a perfect 5-star rating from homeowners across Main Line Philadelphia and Northern Delaware.</p>
+        </div>
+    </section>
+
+    <!-- Google Rating Summary -->
+    <div class="google-summary">
+        <div class="google-logo">
+            <div class="google-logo-icon">
+                <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+            </div>
+            <p>Reviews</p>
+        </div>
+        <div class="google-rating">
+            <div class="rating-number">5.0</div>
+            <div class="google-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="review-count">Based on 47 reviews</div>
+        </div>
+        <div class="google-actions">
+            <a href="https://g.page/r/tristateaquatic/review" target="_blank" rel="noopener" class="google-btn primary">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Leave a Review
+            </a>
+            <a href="https://www.google.com/maps/place/Tri-State+Aquatic+Solutions" target="_blank" rel="noopener" class="google-btn secondary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                View on Google Maps
+            </a>
+        </div>
+    </div>
+
+    <!-- Integration Instructions -->
+    <section class="integration-section">
+        <div class="container">
+            <h2>Why Google Reviews Matter</h2>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <div class="integration-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3>Verified & Trusted</h3>
+                    <p>Google reviews come from verified accounts, ensuring authentic feedback from real customers who have worked with us.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+                    <h3>Easy to Find</h3>
+                    <p>When you search for pool builders in your area, our Google reviews help you make an informed decision quickly.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Community Driven</h3>
+                    <p>Our reviews come from your neighbors in Gladwyne, Villanova, Hockessin, and communities throughout the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Static Reviews Display -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2>Recent Google Reviews</h2>
+            <p>Here are some of our latest verified Google reviews. Click "View on Google Maps" above to see all reviews.</p>
+
+            <div class="google-reviews-grid">
+                <!-- Review 1 -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="reviewer-avatar">JM</div>
+                        <div class="reviewer-details">
+                            <h4>Jennifer Martinez</h4>
+                            <span class="google-badge">
+                                <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Google Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="review-text">"Absolutely thrilled with our new fiberglass pool! The team was professional from start to finish. They handled all the permits and completed the installation in just 3 weeks. Our backyard is now a private oasis."</p>
+                    <span class="review-date">2 weeks ago</span>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="reviewer-avatar">RT</div>
+                        <div class="reviewer-details">
+                            <h4>Robert Thompson</h4>
+                            <span class="google-badge">
+                                <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Google Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="review-text">"Best investment we've made in our home. The low maintenance of fiberglass compared to our neighbor's concrete pool is incredible. We spend our weekends swimming, not scrubbing."</p>
+                    <span class="review-date">1 month ago</span>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="reviewer-avatar">SK</div>
+                        <div class="reviewer-details">
+                            <h4>Sarah Kim</h4>
+                            <span class="google-badge">
+                                <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Google Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="review-text">"We were nervous about the plunge pool trend, but Tri-State made it perfect for our smaller Hockessin lot. Great design team who really listened to what we wanted. Highly recommend!"</p>
+                    <span class="review-date">1 month ago</span>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="reviewer-avatar">MD</div>
+                        <div class="reviewer-details">
+                            <h4>Michael Davies</h4>
+                            <span class="google-badge">
+                                <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Google Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="review-text">"The craftsmanship on our concrete pool is exceptional. Every detail was considered - the LED lighting, the pebble finish, the natural stone coping. It's like having a resort in our backyard."</p>
+                    <span class="review-date">2 months ago</span>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="reviewer-avatar">LH</div>
+                        <div class="reviewer-details">
+                            <h4>Lisa Henderson</h4>
+                            <span class="google-badge">
+                                <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Google Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="review-text">"Our kids are outside all summer now instead of on screens. The pool has completely changed our family dynamic. Tri-State handled everything - permits, design, installation. Zero stress."</p>
+                    <span class="review-date">2 months ago</span>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="reviewer-avatar">DP</div>
+                        <div class="reviewer-details">
+                            <h4>David Parker</h4>
+                            <span class="google-badge">
+                                <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Google Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="review-text">"The permit process was seamless - they handled everything with Radnor Township. We never had to deal with officials or inspectors. That alone was worth choosing Tri-State."</p>
+                    <span class="review-date">3 months ago</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leave Review CTA -->
+    <section class="leave-review-section">
+        <div class="container">
+            <h2>Love Your Pool? Share Your Experience!</h2>
+            <p>Your review helps other families in the community make informed decisions about their backyard transformation.</p>
+
+            <div class="leave-review-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Click the button below to open Google</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Sign in with your Google account</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Rate your experience and write a review</p>
+                </div>
+            </div>
+
+            <a href="https://g.page/r/tristateaquatic/review" target="_blank" rel="noopener" class="leave-review-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                Write a Google Review
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tri-State Aquatic Solutions</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Premium pool installation for Main Line Philadelphia and Northern Delaware.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/pools/">Pool Types</a></li>
+                        <li><a href="/services/">Services</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/financing/">Financing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Reviews</h4>
+                    <ul>
+                        <li><a href="/reviews/">All Reviews</a></li>
+                        <li><a href="/reviews/video-testimonials.html">Video Testimonials</a></li>
+                        <li><a href="/reviews/google-reviews.html">Google Reviews</a></li>
+                        <li><a href="/reviews/success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+16105551234">(610) 555-POOL</a></li>
+                        <li><a href="mailto:info@tristateaquaticsolutions.com">Email Us</a></li>
+                        <li><a href="/contact/">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

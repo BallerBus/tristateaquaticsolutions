@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Pool Checklists | Downloadable PDFs | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Download free pool maintenance checklists, buying guides, opening and closing checklists. Printable PDFs to keep your pool care organized.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Pool Checklists | Downloadable PDFs">
+    <meta property="og:description" content="Download free printable pool checklists for maintenance, buying, opening, closing, and more.">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/resources/checklist-downloads.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.3; }
+        h1 { font-size: clamp(2.25rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin: 2rem 0 1.25rem; }
+        p { font-size: 1.05rem; color: #4a5568; margin-bottom: 1.25rem; }
+        a { color: var(--aqua); text-decoration: none; }
+
+        .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        .container-wide { max-width: 1200px; }
+
+        /* Navigation */
+        nav { background: var(--white); padding: 1rem 0; border-bottom: 1px solid var(--gray); position: sticky; top: 0; z-index: 100; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 40px; height: 40px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+        .logo-mark::after { content: ''; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        .logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.6rem; font-family: var(--font-body); letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .back-link { color: var(--aqua); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* Header */
+        .page-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 4rem 0; position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 60%); top: -300px; right: -200px; }
+        .header-content { position: relative; }
+        .breadcrumb { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .breadcrumb a, .breadcrumb span { color: rgba(255,255,255,0.7); }
+        .page-header h1 { color: var(--white); margin-bottom: 1rem; }
+        .header-excerpt { font-size: 1.2rem; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 700px; }
+
+        /* Content */
+        .page-content { padding: 3rem 0; }
+
+        /* Checklist Cards */
+        .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+
+        .checklist-card { background: var(--white); border: 1px solid var(--gray); border-radius: 16px; overflow: hidden; transition: all 0.3s ease; }
+        .checklist-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(14,31,52,0.15); border-color: var(--aqua); }
+
+        .checklist-preview { background: var(--gray-light); padding: 2rem; display: flex; align-items: center; justify-content: center; position: relative; }
+        .checklist-preview::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); opacity: 0.05; }
+        .preview-icon { width: 80px; height: 100px; background: var(--white); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; display: flex; align-items: center; justify-content: center; }
+        .preview-icon svg { width: 40px; height: 40px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .preview-icon::after { content: 'PDF'; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); background: var(--aqua); color: var(--white); padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+
+        .checklist-content { padding: 1.5rem; }
+        .checklist-content h3 { font-size: 1.35rem; margin-bottom: 0.5rem; font-family: var(--font-display); }
+        .checklist-content p { font-size: 0.95rem; color: var(--gray-text); margin-bottom: 1rem; }
+        .checklist-meta { display: flex; gap: 1rem; font-size: 0.85rem; color: var(--gray-text); margin-bottom: 1.25rem; }
+        .checklist-meta span { display: flex; align-items: center; gap: 0.35rem; }
+        .checklist-meta svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        .download-form { display: flex; flex-direction: column; gap: 0.75rem; }
+        .download-form input { padding: 0.85rem 1rem; border: 1px solid var(--gray); border-radius: 8px; font-size: 0.95rem; font-family: var(--font-body); }
+        .download-form input:focus { outline: none; border-color: var(--aqua); }
+        .download-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--aqua); color: var(--white); padding: 0.85rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; }
+        .download-btn:hover { background: var(--navy); }
+        .download-btn svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Bundle Section */
+        .bundle-section { background: var(--gray-light); border-radius: 20px; padding: 3rem; margin: 3rem 0; }
+        .bundle-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .bundle-text h2 { margin-top: 0; }
+        .bundle-list { list-style: none; margin: 1.5rem 0; }
+        .bundle-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.95rem; }
+        .bundle-list svg { width: 20px; height: 20px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+
+        .bundle-form { background: var(--white); border-radius: 16px; padding: 2rem; }
+        .bundle-form h3 { margin-top: 0; margin-bottom: 1rem; }
+        .bundle-form .download-form { gap: 1rem; }
+        .bundle-form input { padding: 1rem 1.25rem; }
+        .bundle-form .download-btn { padding: 1rem 2rem; font-size: 1rem; }
+
+        /* Privacy Note */
+        .privacy-note { display: flex; align-items: flex-start; gap: 0.75rem; background: var(--aqua-glow); border-radius: 12px; padding: 1.25rem; margin-top: 2rem; }
+        .privacy-note svg { width: 24px; height: 24px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+        .privacy-note p { margin: 0; font-size: 0.9rem; color: var(--navy); }
+
+        /* Related */
+        .related-articles { padding: 3rem 0; background: var(--gray-light); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: var(--white); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--gray); }
+        .related-card h4 { margin-top: 0; margin-bottom: 0.5rem; font-family: var(--font-display); font-size: 1.25rem; }
+        .related-card p { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 3rem 0; text-align: center; }
+        footer p { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+        footer a { color: var(--aqua); }
+
+        @media (max-width: 768px) {
+            .bundle-content { grid-template-columns: 1fr; }
+            .checklist-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container container-wide">
+            <a href="../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <a href="index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Resources
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a><span>/</span>
+                    <a href="index.html">Resources</a><span>/</span>
+                    <span>Checklists</span>
+                </div>
+                <h1>Free Downloadable Checklists</h1>
+                <p class="header-excerpt">Printable PDF checklists to keep your pool care organized. From weekly maintenance to seasonal opening and closing, stay on track all year.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="page-content">
+        <div class="container">
+            <h2>Individual Checklists</h2>
+            <p>Enter your email to receive instant access to any checklist. We will also send you seasonal reminders and tips.</p>
+
+            <div class="checklist-grid">
+                <!-- Weekly Maintenance -->
+                <div class="checklist-card">
+                    <div class="checklist-preview">
+                        <div class="preview-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="checklist-content">
+                        <h3>Weekly Maintenance Checklist</h3>
+                        <p>Daily, twice-weekly, and weekly tasks organized for easy tracking. Never miss a maintenance step.</p>
+                        <div class="checklist-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 2 pages</span>
+                            <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1 min read</span>
+                        </div>
+                        <form class="download-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="hidden" name="checklist" value="weekly-maintenance">
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="download-btn">
+                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download PDF
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Pool Opening -->
+                <div class="checklist-card">
+                    <div class="checklist-preview">
+                        <div class="preview-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="5"/>
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="checklist-content">
+                        <h3>Spring Opening Checklist</h3>
+                        <p>Step-by-step guide to opening your pool for the season. Ensure nothing is missed for a smooth startup.</p>
+                        <div class="checklist-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 3 pages</span>
+                            <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 min read</span>
+                        </div>
+                        <form class="download-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="hidden" name="checklist" value="spring-opening">
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="download-btn">
+                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download PDF
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Pool Closing -->
+                <div class="checklist-card">
+                    <div class="checklist-preview">
+                        <div class="preview-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                <line x1="1" y1="1" x2="23" y2="23"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="checklist-content">
+                        <h3>Fall Closing Checklist</h3>
+                        <p>Complete winterization guide specific to PA/DE climate. Protect your pool from freeze damage.</p>
+                        <div class="checklist-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 3 pages</span>
+                            <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 min read</span>
+                        </div>
+                        <form class="download-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="hidden" name="checklist" value="fall-closing">
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="download-btn">
+                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download PDF
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Pool Buyer's Checklist -->
+                <div class="checklist-card">
+                    <div class="checklist-preview">
+                        <div class="preview-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="checklist-content">
+                        <h3>Pool Buyer's Checklist</h3>
+                        <p>Everything to consider before buying a pool. Budget worksheet, questions to ask builders, and decision guide.</p>
+                        <div class="checklist-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 5 pages</span>
+                            <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min read</span>
+                        </div>
+                        <form class="download-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="hidden" name="checklist" value="pool-buyers">
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="download-btn">
+                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download PDF
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Water Chemistry -->
+                <div class="checklist-card">
+                    <div class="checklist-preview">
+                        <div class="preview-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10 2v7.31M14 9.3V2M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0M5.52 16h12.96"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="checklist-content">
+                        <h3>Water Chemistry Cheat Sheet</h3>
+                        <p>Quick reference card with ideal chemical ranges, adjustment guidelines, and testing schedules.</p>
+                        <div class="checklist-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 1 page</span>
+                            <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Quick ref</span>
+                        </div>
+                        <form class="download-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="hidden" name="checklist" value="water-chemistry">
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="download-btn">
+                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download PDF
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Equipment Maintenance -->
+                <div class="checklist-card">
+                    <div class="checklist-preview">
+                        <div class="preview-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="checklist-content">
+                        <h3>Equipment Maintenance Log</h3>
+                        <p>Track equipment service dates, filter cleanings, and component replacements. Know when things need attention.</p>
+                        <div class="checklist-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 2 pages</span>
+                            <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Ongoing log</span>
+                        </div>
+                        <form class="download-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="hidden" name="checklist" value="equipment-log">
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="download-btn">
+                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download PDF
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bundle Section -->
+            <div class="bundle-section">
+                <div class="bundle-content">
+                    <div class="bundle-text">
+                        <h2>Get the Complete Bundle</h2>
+                        <p>Download all checklists in one convenient package. Everything you need for year-round pool care.</p>
+                        <ul class="bundle-list">
+                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Weekly Maintenance Checklist</li>
+                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Spring Opening Guide</li>
+                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Fall Closing Guide</li>
+                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pool Buyer's Checklist</li>
+                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Water Chemistry Cheat Sheet</li>
+                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Equipment Maintenance Log</li>
+                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Troubleshooting Quick Reference</li>
+                        </ul>
+                    </div>
+                    <div class="bundle-form">
+                        <h3>Download Complete Bundle</h3>
+                        <form class="download-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="hidden" name="checklist" value="complete-bundle">
+                            <input type="text" name="name" placeholder="Your name" required>
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="download-btn">
+                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download All Checklists
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Note -->
+            <div class="privacy-note">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <p><strong>Your privacy matters.</strong> We only use your email to send the requested checklist and occasional pool care tips (no more than 2x/month). You can unsubscribe anytime. We never share your information with third parties.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-articles">
+        <div class="container container-wide">
+            <h2>Related Resources</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h4>Maintenance Tips Guide</h4>
+                    <p>Learn the reasoning behind each checklist item.</p>
+                    <a href="maintenance-tips.html">Read Guide</a>
+                </div>
+                <div class="related-card">
+                    <h4>Seasonal Care Guide</h4>
+                    <p>Detailed opening and closing procedures.</p>
+                    <a href="seasonal-care.html">View Guide</a>
+                </div>
+                <div class="related-card">
+                    <h4>Water Chemistry Guide</h4>
+                    <p>Understand the chemistry behind the numbers.</p>
+                    <a href="water-chemistry.html">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

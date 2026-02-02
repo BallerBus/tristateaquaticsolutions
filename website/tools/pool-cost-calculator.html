@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Cost Calculator | Get Instant Estimates | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Calculate your dream pool cost in minutes. Interactive calculator with pool size, shape, features, and location options. Get instant price ranges and monthly financing estimates for Main Line PA and Delaware.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Cost Calculator | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Get an instant estimate for your dream pool. Customize size, shape, features, and see real-time pricing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquatic.com/tools/pool-cost-calculator.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pool Cost Calculator",
+        "description": "Interactive pool cost estimation tool with size, shape, features, and location inputs",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Tri-State Aquatic Solutions",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Hockessin",
+                "addressRegion": "DE"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --success: #10B981;
+            --warning: #F59E0B;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover { color: var(--aqua); }
+        .nav-back svg { width: 18px; height: 18px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/200px repeat;
+        }
+
+        .page-header .container {
+            position: relative;
+            text-align: center;
+        }
+
+        .page-header h1 { color: var(--white); margin-bottom: 0.5rem; }
+        .page-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Calculator Layout */
+        .calculator-section {
+            padding: 3rem 0 4rem;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calculator-main {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+            padding: 2.5rem;
+        }
+
+        .calc-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .calc-section:last-child { margin-bottom: 0; }
+
+        .calc-section-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .calc-section-title::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--aqua);
+        }
+
+        /* Pool Type Selection */
+        .pool-types {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .pool-types { grid-template-columns: 1fr; }
+        }
+
+        .pool-type-btn {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .pool-type-btn:hover {
+            border-color: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .pool-type-btn.active {
+            border-color: var(--aqua);
+            background: var(--aqua-glow);
+        }
+
+        .pool-type-btn.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--aqua);
+        }
+
+        .pool-type-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .pool-type-btn.active .pool-type-icon {
+            background: var(--aqua);
+        }
+
+        .pool-type-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .pool-type-btn.active .pool-type-icon svg {
+            stroke: var(--white);
+        }
+
+        .pool-type-name {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .pool-type-price {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* Shape Selection */
+        .shape-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .shape-options { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .shape-btn {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .shape-btn:hover { border-color: var(--aqua); }
+        .shape-btn.active {
+            border-color: var(--aqua);
+            background: var(--aqua-glow);
+        }
+
+        .shape-preview {
+            width: 60px;
+            height: 40px;
+            margin: 0 auto 0.5rem;
+            background: var(--navy);
+            opacity: 0.2;
+            transition: all 0.3s ease;
+        }
+
+        .shape-btn.active .shape-preview,
+        .shape-btn:hover .shape-preview {
+            background: var(--aqua);
+            opacity: 1;
+        }
+
+        .shape-preview.rectangle { border-radius: 4px; }
+        .shape-preview.oval { border-radius: 50%; }
+        .shape-preview.kidney { border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; transform: rotate(-20deg); }
+        .shape-preview.freeform { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+
+        .shape-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        /* Sliders */
+        .slider-group {
+            margin-bottom: 2rem;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .slider-label {
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .slider-value {
+            font-weight: 600;
+            color: var(--aqua);
+            font-size: 1.1rem;
+        }
+
+        .slider-container {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 100px;
+            background: var(--gray);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--aqua);
+            cursor: pointer;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 166, 178, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 166, 178, 0.4);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--aqua);
+            cursor: pointer;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 166, 178, 0.3);
+        }
+
+        .slider-marks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 640px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        .feature-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .feature-checkbox:hover { border-color: var(--aqua); }
+        .feature-checkbox.active {
+            border-color: var(--aqua);
+            background: var(--aqua-glow);
+        }
+
+        .feature-check {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--gray);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .feature-checkbox.active .feature-check {
+            background: var(--aqua);
+            border-color: var(--aqua);
+        }
+
+        .feature-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--white);
+            stroke-width: 3;
+            opacity: 0;
+        }
+
+        .feature-checkbox.active .feature-check svg { opacity: 1; }
+
+        .feature-info { flex: 1; }
+        .feature-name {
+            font-weight: 500;
+            color: var(--navy);
+            font-size: 0.95rem;
+        }
+
+        .feature-price {
+            font-size: 0.85rem;
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        /* Location Select */
+        .location-select {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--navy);
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 18px;
+        }
+
+        .location-select:focus {
+            outline: none;
+            border-color: var(--aqua);
+        }
+
+        /* Sidebar - Live Estimate */
+        .estimate-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .estimate-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .estimate-card::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -80px;
+            right: -80px;
+        }
+
+        .estimate-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 0.5rem;
+        }
+
+        .estimate-range {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .estimate-monthly {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .monthly-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.25rem;
+        }
+
+        .monthly-amount {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .monthly-terms {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.25rem;
+        }
+
+        .estimate-breakdown {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breakdown-row .label { color: rgba(255, 255, 255, 0.7); }
+        .breakdown-row .value { font-weight: 500; }
+
+        .estimate-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Lead Capture Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(14, 31, 52, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 100%;
+            transform: translateY(20px);
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--gray-text);
+        }
+
+        .modal-close:hover { color: var(--navy); }
+
+        .modal h3 {
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .modal p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--navy);
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--aqua);
+            background: var(--white);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        .form-submit {
+            margin-top: 1.5rem;
+        }
+
+        .form-submit .btn {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .form-submit .btn:hover {
+            background: var(--aqua);
+        }
+
+        .form-privacy {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .form-privacy a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .success-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--white);
+            stroke-width: 3;
+        }
+
+        .success-message h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--gray-text);
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .disclaimer-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .disclaimer-title svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--warning);
+            stroke-width: 2;
+        }
+
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* Mobile Estimate Bar */
+        .mobile-estimate {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy);
+            padding: 1rem;
+            z-index: 50;
+            box-shadow: 0 -4px 20px rgba(14, 31, 52, 0.2);
+        }
+
+        .mobile-estimate-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .mobile-estimate-info {
+            color: var(--white);
+        }
+
+        .mobile-estimate-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+        }
+
+        .mobile-estimate-value {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .mobile-estimate .btn {
+            width: auto;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .estimate-sidebar { display: none; }
+            .mobile-estimate { display: block; }
+            .calculator-section { padding-bottom: 100px; }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s var(--ease-out-expo);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="/tools/" class="nav-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Tools
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Pool Cost Calculator</h1>
+            <p>Get an instant estimate by customizing your dream pool below. Adjust size, shape, and features to see real-time pricing.</p>
+        </div>
+    </header>
+
+    <!-- Calculator -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-grid">
+                <!-- Main Calculator -->
+                <div class="calculator-main">
+                    <!-- Pool Type -->
+                    <div class="calc-section">
+                        <div class="calc-section-title">Pool Type</div>
+                        <div class="pool-types">
+                            <div class="pool-type-btn active" data-type="fiberglass" data-base="65000">
+                                <div class="pool-type-icon">
+                                    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6"/><path d="M2 12c0 3 4.5 6 10 6s10-3 10-6"/></svg>
+                                </div>
+                                <div class="pool-type-name">Fiberglass</div>
+                                <div class="pool-type-price">From $60K</div>
+                            </div>
+                            <div class="pool-type-btn" data-type="concrete" data-base="85000">
+                                <div class="pool-type-icon">
+                                    <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h12M6 14h12"/></svg>
+                                </div>
+                                <div class="pool-type-name">Concrete</div>
+                                <div class="pool-type-price">From $80K</div>
+                            </div>
+                            <div class="pool-type-btn" data-type="plunge" data-base="50000">
+                                <div class="pool-type-icon">
+                                    <svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M8 8V6a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                                </div>
+                                <div class="pool-type-name">Plunge</div>
+                                <div class="pool-type-price">From $45K</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pool Shape -->
+                    <div class="calc-section">
+                        <div class="calc-section-title">Pool Shape</div>
+                        <div class="shape-options">
+                            <div class="shape-btn active" data-shape="rectangle" data-modifier="1">
+                                <div class="shape-preview rectangle"></div>
+                                <div class="shape-name">Rectangle</div>
+                            </div>
+                            <div class="shape-btn" data-shape="oval" data-modifier="1.05">
+                                <div class="shape-preview oval"></div>
+                                <div class="shape-name">Oval</div>
+                            </div>
+                            <div class="shape-btn" data-shape="kidney" data-modifier="1.1">
+                                <div class="shape-preview kidney"></div>
+                                <div class="shape-name">Kidney</div>
+                            </div>
+                            <div class="shape-btn" data-shape="freeform" data-modifier="1.2">
+                                <div class="shape-preview freeform"></div>
+                                <div class="shape-name">Freeform</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pool Size -->
+                    <div class="calc-section">
+                        <div class="calc-section-title">Pool Size</div>
+
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span class="slider-label">Length</span>
+                                <span class="slider-value" id="lengthValue">32 ft</span>
+                            </div>
+                            <div class="slider-container">
+                                <input type="range" class="slider" id="lengthSlider" min="20" max="50" value="32" step="2">
+                                <div class="slider-marks">
+                                    <span>20 ft</span>
+                                    <span>35 ft</span>
+                                    <span>50 ft</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span class="slider-label">Width</span>
+                                <span class="slider-value" id="widthValue">16 ft</span>
+                            </div>
+                            <div class="slider-container">
+                                <input type="range" class="slider" id="widthSlider" min="10" max="25" value="16" step="1">
+                                <div class="slider-marks">
+                                    <span>10 ft</span>
+                                    <span>17 ft</span>
+                                    <span>25 ft</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span class="slider-label">Depth (Deep End)</span>
+                                <span class="slider-value" id="depthValue">6 ft</span>
+                            </div>
+                            <div class="slider-container">
+                                <input type="range" class="slider" id="depthSlider" min="4" max="10" value="6" step="0.5">
+                                <div class="slider-marks">
+                                    <span>4 ft</span>
+                                    <span>7 ft</span>
+                                    <span>10 ft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="calc-section">
+                        <div class="calc-section-title">Premium Features</div>
+                        <div class="features-grid">
+                            <div class="feature-checkbox" data-feature="heating" data-price="8000">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">Pool Heating</div>
+                                    <div class="feature-price">+$8,000</div>
+                                </div>
+                            </div>
+                            <div class="feature-checkbox" data-feature="saltwater" data-price="3000">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">Salt Water System</div>
+                                    <div class="feature-price">+$3,000</div>
+                                </div>
+                            </div>
+                            <div class="feature-checkbox" data-feature="ledlights" data-price="2500">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">LED Lighting</div>
+                                    <div class="feature-price">+$2,500</div>
+                                </div>
+                            </div>
+                            <div class="feature-checkbox" data-feature="tanningledge" data-price="3500">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">Tanning Ledge</div>
+                                    <div class="feature-price">+$3,500</div>
+                                </div>
+                            </div>
+                            <div class="feature-checkbox" data-feature="autocover" data-price="15000">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">Auto Safety Cover</div>
+                                    <div class="feature-price">+$15,000</div>
+                                </div>
+                            </div>
+                            <div class="feature-checkbox" data-feature="waterfeature" data-price="5000">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">Water Feature</div>
+                                    <div class="feature-price">+$5,000</div>
+                                </div>
+                            </div>
+                            <div class="feature-checkbox" data-feature="spa" data-price="20000">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">Attached Spa</div>
+                                    <div class="feature-price">+$20,000</div>
+                                </div>
+                            </div>
+                            <div class="feature-checkbox" data-feature="automation" data-price="4500">
+                                <div class="feature-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="feature-info">
+                                    <div class="feature-name">Smart Automation</div>
+                                    <div class="feature-price">+$4,500</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="calc-section">
+                        <div class="calc-section-title">Your Location</div>
+                        <select class="location-select" id="locationSelect">
+                            <option value="1" data-modifier="1">Select your area...</option>
+                            <optgroup label="Pennsylvania">
+                                <option value="mainline" data-modifier="1.1">Main Line (Bryn Mawr, Villanova, Wayne)</option>
+                                <option value="westchester" data-modifier="1.05">West Chester Area</option>
+                                <option value="chestercounty" data-modifier="1">Chester County</option>
+                                <option value="delcounty" data-modifier="1">Delaware County</option>
+                                <option value="montco" data-modifier="1.05">Montgomery County</option>
+                            </optgroup>
+                            <optgroup label="Delaware">
+                                <option value="hockessin" data-modifier="1.05">Hockessin / Greenville</option>
+                                <option value="wilmington" data-modifier="1">Wilmington Area</option>
+                                <option value="newark" data-modifier="0.95">Newark Area</option>
+                                <option value="newcastle" data-modifier="0.95">New Castle County</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div class="disclaimer">
+                        <div class="disclaimer-title">
+                            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            Important Note
+                        </div>
+                        <p>This calculator provides rough estimates based on typical project costs in our service area. Actual pricing depends on site conditions, access, soil type, permits, and specific design requirements. Contact us for a detailed, personalized quote.</p>
+                    </div>
+                </div>
+
+                <!-- Estimate Sidebar -->
+                <div class="estimate-sidebar">
+                    <div class="estimate-card">
+                        <div class="estimate-label">Estimated Price Range</div>
+                        <div class="estimate-range" id="estimateRange">$68,000 - $82,000</div>
+
+                        <div class="estimate-monthly">
+                            <div class="monthly-label">Estimated Monthly Payment</div>
+                            <div class="monthly-amount" id="monthlyPayment">$725/mo</div>
+                            <div class="monthly-terms">10-year financing at 7.5% APR</div>
+                        </div>
+
+                        <div class="estimate-breakdown">
+                            <div class="breakdown-row">
+                                <span class="label">Base Pool</span>
+                                <span class="value" id="breakdownBase">$65,000</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span class="label">Size Adjustment</span>
+                                <span class="value" id="breakdownSize">+$0</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span class="label">Features</span>
+                                <span class="value" id="breakdownFeatures">+$0</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span class="label">Location Factor</span>
+                                <span class="value" id="breakdownLocation">1.0x</span>
+                            </div>
+                        </div>
+
+                        <div class="estimate-cta">
+                            <button class="btn btn-primary" onclick="openLeadModal()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                Get Personalized Quote
+                            </button>
+                            <button class="btn btn-secondary" onclick="window.print()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                                Save Estimate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Estimate Bar -->
+    <div class="mobile-estimate">
+        <div class="container">
+            <div class="mobile-estimate-content">
+                <div class="mobile-estimate-info">
+                    <div class="mobile-estimate-label">Estimated Cost</div>
+                    <div class="mobile-estimate-value" id="mobileEstimate">$68,000 - $82,000</div>
+                </div>
+                <button class="btn btn-primary" onclick="openLeadModal()">Get Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lead Capture Modal -->
+    <div class="modal-overlay" id="leadModal">
+        <div class="modal">
+            <div id="leadForm">
+                <h3>Get Your Personalized Quote</h3>
+                <p>We'll review your estimate and reach out within 24 hours with a detailed proposal.</p>
+
+                <form onsubmit="submitLeadForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Project Address</label>
+                        <input type="text" id="address" placeholder="Street address or city/zip">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">When are you looking to start?</label>
+                        <select id="timeline">
+                            <option value="asap">As soon as possible</option>
+                            <option value="3months">Within 3 months</option>
+                            <option value="6months">Within 6 months</option>
+                            <option value="nextyear">Planning for next year</option>
+                            <option value="researching">Just researching</option>
+                        </select>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                            Send My Quote Request
+                        </button>
+                    </div>
+                </form>
+
+                <p class="form-privacy">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a>. We'll never share your info.</p>
+            </div>
+
+            <div id="leadSuccess" class="success-message" style="display: none;">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3>Request Sent!</h3>
+                <p>Thanks for your interest! We'll review your pool configuration and contact you within 24 hours with a personalized quote.</p>
+                <button class="btn" onclick="closeLeadModal()" style="margin-top: 1.5rem; background: var(--navy); color: white;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Calculator State
+        const state = {
+            poolType: 'fiberglass',
+            basePrice: 65000,
+            shape: 'rectangle',
+            shapeModifier: 1,
+            length: 32,
+            width: 16,
+            depth: 6,
+            features: [],
+            featuresTotal: 0,
+            locationModifier: 1
+        };
+
+        // Standard pool dimensions for size comparison
+        const standardArea = 32 * 16; // 512 sq ft
+
+        // DOM Elements
+        const poolTypeBtns = document.querySelectorAll('.pool-type-btn');
+        const shapeBtns = document.querySelectorAll('.shape-btn');
+        const featureCheckboxes = document.querySelectorAll('.feature-checkbox');
+        const lengthSlider = document.getElementById('lengthSlider');
+        const widthSlider = document.getElementById('widthSlider');
+        const depthSlider = document.getElementById('depthSlider');
+        const locationSelect = document.getElementById('locationSelect');
+
+        // Initialize
+        function init() {
+            // Pool Type Selection
+            poolTypeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    poolTypeBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    state.poolType = btn.dataset.type;
+                    state.basePrice = parseInt(btn.dataset.base);
+                    updateEstimate();
+                    trackEvent('pool_type_selected', { type: state.poolType });
+                });
+            });
+
+            // Shape Selection
+            shapeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    shapeBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    state.shape = btn.dataset.shape;
+                    state.shapeModifier = parseFloat(btn.dataset.modifier);
+                    updateEstimate();
+                    trackEvent('shape_selected', { shape: state.shape });
+                });
+            });
+
+            // Sliders
+            lengthSlider.addEventListener('input', () => {
+                state.length = parseInt(lengthSlider.value);
+                document.getElementById('lengthValue').textContent = state.length + ' ft';
+                updateEstimate();
+            });
+
+            widthSlider.addEventListener('input', () => {
+                state.width = parseInt(widthSlider.value);
+                document.getElementById('widthValue').textContent = state.width + ' ft';
+                updateEstimate();
+            });
+
+            depthSlider.addEventListener('input', () => {
+                state.depth = parseFloat(depthSlider.value);
+                document.getElementById('depthValue').textContent = state.depth + ' ft';
+                updateEstimate();
+            });
+
+            // Features
+            featureCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', () => {
+                    checkbox.classList.toggle('active');
+                    const feature = checkbox.dataset.feature;
+                    const price = parseInt(checkbox.dataset.price);
+
+                    if (checkbox.classList.contains('active')) {
+                        state.features.push(feature);
+                        state.featuresTotal += price;
+                    } else {
+                        const index = state.features.indexOf(feature);
+                        if (index > -1) {
+                            state.features.splice(index, 1);
+                            state.featuresTotal -= price;
+                        }
+                    }
+                    updateEstimate();
+                    trackEvent('feature_toggled', { feature, added: checkbox.classList.contains('active') });
+                });
+            });
+
+            // Location
+            locationSelect.addEventListener('change', () => {
+                const option = locationSelect.options[locationSelect.selectedIndex];
+                state.locationModifier = parseFloat(option.dataset.modifier) || 1;
+                updateEstimate();
+                trackEvent('location_selected', { location: locationSelect.value });
+            });
+
+            // Initial calculation
+            updateEstimate();
+        }
+
+        // Calculate and update estimate
+        function updateEstimate() {
+            // Size factor based on area
+            const currentArea = state.length * state.width;
+            const sizeFactor = currentArea / standardArea;
+
+            // Depth factor
+            const depthFactor = 1 + ((state.depth - 6) * 0.05);
+
+            // Calculate base with size
+            let baseWithSize = state.basePrice * sizeFactor * depthFactor;
+
+            // Apply shape modifier
+            baseWithSize *= state.shapeModifier;
+
+            // Add features
+            const withFeatures = baseWithSize + state.featuresTotal;
+
+            // Apply location modifier
+            const total = withFeatures * state.locationModifier;
+
+            // Create range (+-10%)
+            const lowEstimate = Math.round(total * 0.9 / 1000) * 1000;
+            const highEstimate = Math.round(total * 1.1 / 1000) * 1000;
+
+            // Calculate monthly payment (10 year, 7.5% APR)
+            const midpoint = (lowEstimate + highEstimate) / 2;
+            const monthlyPayment = calculateMonthlyPayment(midpoint, 0.075, 10);
+
+            // Update UI
+            const rangeText = formatCurrency(lowEstimate) + ' - ' + formatCurrency(highEstimate);
+            document.getElementById('estimateRange').textContent = rangeText;
+            document.getElementById('mobileEstimate').textContent = rangeText;
+            document.getElementById('monthlyPayment').textContent = formatCurrency(monthlyPayment) + '/mo';
+
+            // Update breakdown
+            document.getElementById('breakdownBase').textContent = formatCurrency(Math.round(state.basePrice));
+
+            const sizeAdj = Math.round((baseWithSize / state.shapeModifier) - state.basePrice);
+            document.getElementById('breakdownSize').textContent = (sizeAdj >= 0 ? '+' : '') + formatCurrency(sizeAdj);
+
+            document.getElementById('breakdownFeatures').textContent = '+' + formatCurrency(state.featuresTotal);
+            document.getElementById('breakdownLocation').textContent = state.locationModifier + 'x';
+
+            // Save state
+            saveState();
+        }
+
+        function calculateMonthlyPayment(principal, annualRate, years) {
+            const monthlyRate = annualRate / 12;
+            const numPayments = years * 12;
+            return Math.round(principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1));
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        // State persistence
+        function saveState() {
+            localStorage.setItem('poolCostCalcState', JSON.stringify(state));
+        }
+
+        function loadState() {
+            const saved = localStorage.getItem('poolCostCalcState');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    Object.assign(state, parsed);
+                    restoreUI();
+                } catch (e) {
+                    console.log('Could not restore state');
+                }
+            }
+        }
+
+        function restoreUI() {
+            // Restore pool type
+            poolTypeBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.type === state.poolType);
+            });
+
+            // Restore shape
+            shapeBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.shape === state.shape);
+            });
+
+            // Restore sliders
+            lengthSlider.value = state.length;
+            document.getElementById('lengthValue').textContent = state.length + ' ft';
+
+            widthSlider.value = state.width;
+            document.getElementById('widthValue').textContent = state.width + ' ft';
+
+            depthSlider.value = state.depth;
+            document.getElementById('depthValue').textContent = state.depth + ' ft';
+
+            // Restore features
+            featureCheckboxes.forEach(checkbox => {
+                checkbox.classList.toggle('active', state.features.includes(checkbox.dataset.feature));
+            });
+        }
+
+        // Lead Modal
+        function openLeadModal() {
+            document.getElementById('leadModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            trackEvent('lead_modal_opened');
+        }
+
+        function closeLeadModal() {
+            document.getElementById('leadModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('leadModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('leadModal')) {
+                closeLeadModal();
+            }
+        });
+
+        // Form submission
+        function submitLeadForm(e) {
+            e.preventDefault();
+
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                timeline: document.getElementById('timeline').value,
+                estimate: document.getElementById('estimateRange').textContent,
+                poolConfig: { ...state }
+            };
+
+            // Track conversion
+            trackEvent('lead_submitted', {
+                estimate: formData.estimate,
+                poolType: state.poolType,
+                features: state.features
+            });
+
+            // Show success
+            document.getElementById('leadForm').style.display = 'none';
+            document.getElementById('leadSuccess').style.display = 'block';
+
+            // In production, send to server/CRM here
+            console.log('Lead data:', formData);
+        }
+
+        // Analytics tracking
+        function trackEvent(eventName, data = {}) {
+            // Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, data);
+            }
+
+            // Console log for debugging
+            console.log('Track:', eventName, data);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            init();
+            trackEvent('calculator_loaded');
+        });
+    </script>
+</body>
+</html>

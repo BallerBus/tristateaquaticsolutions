@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Size Guide | Find Your Perfect Pool Size | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Discover the perfect pool size for your backyard. Enter your yard dimensions, usage type, and family size to get personalized pool size recommendations with visual representations.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Size Guide | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Find the perfect pool size for your backyard with our interactive guide.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --success: #10B981;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover { color: var(--aqua); }
+        .nav-back svg { width: 18px; height: 18px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/200px repeat;
+        }
+
+        .page-header .container {
+            position: relative;
+            text-align: center;
+        }
+
+        .page-header h1 { color: var(--white); margin-bottom: 0.5rem; }
+        .page-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .guide-section {
+            padding: 3rem 0 4rem;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .guide-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Input Panel */
+        .input-panel {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .panel-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .panel-title::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--aqua);
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+        }
+
+        .input-label {
+            display: block;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .input-sublabel {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            font-weight: 400;
+        }
+
+        .dimension-inputs {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .dimension-input {
+            display: flex;
+            align-items: center;
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .dimension-input:focus-within {
+            border-color: var(--aqua);
+            background: var(--white);
+        }
+
+        .dimension-input input {
+            width: 100%;
+            padding: 1rem;
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            background: transparent;
+            border: none;
+            text-align: center;
+        }
+
+        .dimension-input input:focus { outline: none; }
+
+        .dimension-input .unit {
+            padding: 0 1rem;
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            background: var(--gray);
+        }
+
+        .dimension-x {
+            font-size: 1.5rem;
+            color: var(--gray-text);
+        }
+
+        /* Usage Type */
+        .usage-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .usage-btn {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .usage-btn:hover { border-color: var(--aqua); }
+        .usage-btn.active {
+            border-color: var(--aqua);
+            background: var(--aqua-glow);
+        }
+
+        .usage-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+        }
+
+        .usage-btn.active .usage-icon {
+            background: var(--aqua);
+        }
+
+        .usage-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .usage-btn.active .usage-icon svg {
+            stroke: var(--white);
+        }
+
+        .usage-name {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.95rem;
+        }
+
+        /* Family Size */
+        .family-slider {
+            margin-top: 0.5rem;
+        }
+
+        .slider-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .family-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--aqua);
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 100px;
+            background: var(--gray);
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--aqua);
+            cursor: pointer;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 166, 178, 0.3);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--aqua);
+            cursor: pointer;
+            border: 3px solid var(--white);
+        }
+
+        .slider-marks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+        }
+
+        /* Results Panel */
+        .results-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Visual Representation */
+        .visual-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .yard-visual {
+            position: relative;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .yard-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='1' fill='%2381c784' opacity='0.3'/%3E%3C/svg%3E") repeat;
+        }
+
+        .pool-shape {
+            position: relative;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--white);
+            transition: all 0.5s var(--ease-out-expo);
+            box-shadow: 0 10px 30px rgba(0, 166, 178, 0.3),
+                        inset 0 -5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pool-shape::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 10%;
+            bottom: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+            border-radius: 8px 8px 50% 50%;
+        }
+
+        .pool-dimensions {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .pool-area {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .yard-dimensions {
+            position: absolute;
+            font-size: 0.75rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .yard-dimensions.horizontal {
+            bottom: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .yard-dimensions.vertical {
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        /* Recommendations */
+        .recommendations-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .rec-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .rec-header h3 {
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .rec-header p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        .rec-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .rec-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--gray-light);
+            border-radius: 16px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .rec-item:hover {
+            border-color: var(--aqua);
+            background: var(--white);
+        }
+
+        .rec-item.recommended {
+            border-color: var(--gold);
+            background: rgba(201, 169, 98, 0.1);
+        }
+
+        .rec-badge {
+            position: absolute;
+            top: -8px;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .rec-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--aqua-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .rec-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .rec-info {
+            flex: 1;
+            position: relative;
+        }
+
+        .rec-name {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .rec-size {
+            font-size: 0.9rem;
+            color: var(--aqua);
+            font-weight: 500;
+        }
+
+        .rec-desc {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            margin-top: 0.25rem;
+        }
+
+        /* Shape Suggestions */
+        .shapes-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            color: var(--white);
+        }
+
+        .shapes-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.25rem;
+        }
+
+        .shape-suggestions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .shape-suggestions { grid-template-columns: 1fr; }
+        }
+
+        .shape-suggestion {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .shape-suggestion:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .shape-suggestion.best {
+            border: 2px solid var(--gold);
+            background: rgba(201, 169, 98, 0.15);
+        }
+
+        .shape-preview {
+            width: 60px;
+            height: 40px;
+            margin: 0 auto 0.75rem;
+            background: var(--aqua);
+            transition: all 0.3s ease;
+        }
+
+        .shape-preview.rectangle { border-radius: 6px; }
+        .shape-preview.oval { border-radius: 50%; }
+        .shape-preview.kidney {
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            transform: rotate(-15deg);
+        }
+
+        .shape-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .shape-reason {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* CTA */
+        .cta-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .cta-card h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-card p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Quick Tips */
+        .tips-section {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .tips-grid { grid-template-columns: 1fr; }
+        }
+
+        .tip-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .tip-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--aqua-glow);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .tip-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .tip-card h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-card p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--gray-text);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="/tools/" class="nav-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Tools
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Pool Size Guide</h1>
+            <p>Find the perfect pool size for your backyard. Enter your space details below for personalized recommendations.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="guide-section">
+        <div class="container">
+            <div class="guide-grid">
+                <!-- Input Panel -->
+                <div class="input-panel">
+                    <div class="panel-title">Your Backyard Details</div>
+
+                    <!-- Yard Dimensions -->
+                    <div class="input-group">
+                        <label class="input-label">
+                            Available Yard Space
+                            <span class="input-sublabel">(area designated for the pool)</span>
+                        </label>
+                        <div class="dimension-inputs">
+                            <div class="dimension-input">
+                                <input type="number" id="yardLength" value="60" min="20" max="200">
+                                <span class="unit">ft</span>
+                            </div>
+                            <span class="dimension-x">x</span>
+                            <div class="dimension-input">
+                                <input type="number" id="yardWidth" value="40" min="15" max="150">
+                                <span class="unit">ft</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Usage Type -->
+                    <div class="input-group">
+                        <label class="input-label">Primary Use</label>
+                        <div class="usage-options">
+                            <div class="usage-btn active" data-usage="family">
+                                <div class="usage-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <div class="usage-name">Family Fun</div>
+                            </div>
+                            <div class="usage-btn" data-usage="exercise">
+                                <div class="usage-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+                                </div>
+                                <div class="usage-name">Lap Swimming</div>
+                            </div>
+                            <div class="usage-btn" data-usage="entertaining">
+                                <div class="usage-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                </div>
+                                <div class="usage-name">Entertaining</div>
+                            </div>
+                            <div class="usage-btn" data-usage="relaxation">
+                                <div class="usage-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                                </div>
+                                <div class="usage-name">Relaxation</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Size -->
+                    <div class="input-group">
+                        <label class="input-label">Household Size</label>
+                        <div class="family-slider">
+                            <div class="slider-display">
+                                <span>Number of regular swimmers</span>
+                                <span class="family-value" id="familyValue">4</span>
+                            </div>
+                            <input type="range" class="slider" id="familySlider" min="1" max="10" value="4">
+                            <div class="slider-marks">
+                                <span>1-2</span>
+                                <span>3-4</span>
+                                <span>5-6</span>
+                                <span>7+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <!-- Visual -->
+                    <div class="visual-card">
+                        <div class="panel-title">Visual Preview</div>
+                        <div class="yard-visual" id="yardVisual">
+                            <div class="pool-shape" id="poolShape">
+                                <span class="pool-dimensions" id="poolDimensions">32' x 16'</span>
+                                <span class="pool-area" id="poolArea">512 sq ft</span>
+                            </div>
+                            <span class="yard-dimensions horizontal" id="yardLengthLabel">60 ft</span>
+                            <span class="yard-dimensions vertical" id="yardWidthLabel">40 ft</span>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="recommendations-card">
+                        <div class="rec-header">
+                            <h3>Recommended Pool Sizes</h3>
+                            <p>Based on your yard and needs</p>
+                        </div>
+                        <div class="rec-list" id="recList">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Shape Suggestions -->
+                    <div class="shapes-card">
+                        <div class="shapes-title">Suggested Pool Shapes</div>
+                        <div class="shape-suggestions" id="shapeSuggestions">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-card">
+                        <h3>Ready for a Custom Design?</h3>
+                        <p>Our team can create a 3D visualization of your pool in your actual backyard.</p>
+                        <a href="/contact/" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Schedule Free Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pool Sizing Tips</h2>
+                <p>Things to consider when choosing your pool size</p>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                    <h4>Setback Requirements</h4>
+                    <p>Most areas require 5-10 feet between the pool and property lines. Check local codes before finalizing size.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h4>Leave Room for Decking</h4>
+                    <p>Plan for at least 4-6 feet of deck space around the pool for lounging, furniture, and safe movement.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h4>Think Long-Term</h4>
+                    <p>Consider future needs - growing family, aging parents, or evolving entertainment style. Bigger is often better.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // State
+        const state = {
+            yardLength: 60,
+            yardWidth: 40,
+            usage: 'family',
+            familySize: 4
+        };
+
+        // DOM Elements
+        const yardLengthInput = document.getElementById('yardLength');
+        const yardWidthInput = document.getElementById('yardWidth');
+        const usageBtns = document.querySelectorAll('.usage-btn');
+        const familySlider = document.getElementById('familySlider');
+        const familyValue = document.getElementById('familyValue');
+
+        // Pool size recommendations based on usage
+        const poolSizes = {
+            compact: { name: 'Compact', length: 24, width: 12, desc: 'Perfect for relaxation & small gatherings' },
+            medium: { name: 'Classic', length: 32, width: 16, desc: 'Ideal balance of swimming & lounging' },
+            large: { name: 'Family', length: 40, width: 18, desc: 'Room for games, exercise & entertaining' },
+            xl: { name: 'Estate', length: 50, width: 20, desc: 'Ultimate entertainment & lap swimming' }
+        };
+
+        // Initialize
+        function init() {
+            yardLengthInput.addEventListener('input', handleYardChange);
+            yardWidthInput.addEventListener('input', handleYardChange);
+
+            usageBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    usageBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    state.usage = btn.dataset.usage;
+                    updateRecommendations();
+                });
+            });
+
+            familySlider.addEventListener('input', () => {
+                state.familySize = parseInt(familySlider.value);
+                familyValue.textContent = state.familySize;
+                updateRecommendations();
+            });
+
+            updateRecommendations();
+        }
+
+        function handleYardChange() {
+            state.yardLength = parseInt(yardLengthInput.value) || 60;
+            state.yardWidth = parseInt(yardWidthInput.value) || 40;
+            updateRecommendations();
+        }
+
+        function updateRecommendations() {
+            // Calculate max pool size (leave 10ft for decking on each side)
+            const maxPoolLength = Math.max(20, state.yardLength - 20);
+            const maxPoolWidth = Math.max(10, state.yardWidth - 15);
+
+            // Determine recommended sizes based on inputs
+            const recommendations = calculateRecommendations(maxPoolLength, maxPoolWidth);
+
+            // Update visual
+            updateVisual(recommendations[0]);
+
+            // Update recommendation list
+            updateRecList(recommendations);
+
+            // Update shape suggestions
+            updateShapeSuggestions();
+
+            // Update yard labels
+            document.getElementById('yardLengthLabel').textContent = state.yardLength + ' ft';
+            document.getElementById('yardWidthLabel').textContent = state.yardWidth + ' ft';
+        }
+
+        function calculateRecommendations(maxLength, maxWidth) {
+            const recs = [];
+            const usageModifiers = {
+                family: { length: 1, width: 1 },
+                exercise: { length: 1.25, width: 0.8 },
+                entertaining: { length: 1.1, width: 1.1 },
+                relaxation: { length: 0.8, width: 0.9 }
+            };
+
+            const mod = usageModifiers[state.usage];
+            const familyMod = 1 + (state.familySize - 4) * 0.05;
+
+            // Calculate ideal size
+            let idealLength = Math.min(maxLength, Math.round(28 * mod.length * familyMod));
+            let idealWidth = Math.min(maxWidth, Math.round(14 * mod.width * familyMod));
+
+            // Make sure dimensions are reasonable
+            idealLength = Math.max(20, Math.min(50, idealLength));
+            idealWidth = Math.max(10, Math.min(25, idealWidth));
+
+            // Generate 3 options
+            recs.push({
+                name: 'Recommended',
+                length: idealLength,
+                width: idealWidth,
+                recommended: true,
+                desc: getDescription(idealLength, idealWidth)
+            });
+
+            // Smaller option
+            const smallerLength = Math.max(20, idealLength - 8);
+            const smallerWidth = Math.max(10, idealWidth - 4);
+            recs.push({
+                name: 'Compact Option',
+                length: smallerLength,
+                width: smallerWidth,
+                recommended: false,
+                desc: 'Budget-friendly with great functionality'
+            });
+
+            // Larger option (if space permits)
+            if (idealLength + 8 <= maxLength && idealWidth + 4 <= maxWidth) {
+                recs.push({
+                    name: 'Spacious Option',
+                    length: Math.min(maxLength, idealLength + 8),
+                    width: Math.min(maxWidth, idealWidth + 4),
+                    recommended: false,
+                    desc: 'Maximum swimming & entertaining space'
+                });
+            }
+
+            return recs;
+        }
+
+        function getDescription(length, width) {
+            const area = length * width;
+            if (area < 400) return 'Perfect for relaxation and small family use';
+            if (area < 550) return 'Great balance of swimming and lounging';
+            if (area < 700) return 'Ideal for active families and casual entertaining';
+            return 'Ultimate space for exercise, games, and large gatherings';
+        }
+
+        function updateVisual(rec) {
+            const visual = document.getElementById('yardVisual');
+            const poolShape = document.getElementById('poolShape');
+
+            // Calculate scale (visual is roughly 300x200px)
+            const visualWidth = visual.offsetWidth - 40;
+            const visualHeight = 260;
+
+            const scaleX = visualWidth / state.yardLength;
+            const scaleY = visualHeight / state.yardWidth;
+            const scale = Math.min(scaleX, scaleY);
+
+            const poolWidth = rec.length * scale;
+            const poolHeight = rec.width * scale;
+
+            poolShape.style.width = poolWidth + 'px';
+            poolShape.style.height = poolHeight + 'px';
+
+            document.getElementById('poolDimensions').textContent = rec.length + "' x " + rec.width + "'";
+            document.getElementById('poolArea').textContent = (rec.length * rec.width) + ' sq ft';
+        }
+
+        function updateRecList(recommendations) {
+            const recList = document.getElementById('recList');
+            recList.innerHTML = recommendations.map(rec => `
+                <div class="rec-item ${rec.recommended ? 'recommended' : ''}" onclick="selectRec(${rec.length}, ${rec.width})">
+                    ${rec.recommended ? '<span class="rec-badge">Best Fit</span>' : ''}
+                    <div class="rec-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+                    </div>
+                    <div class="rec-info">
+                        <div class="rec-name">${rec.name}</div>
+                        <div class="rec-size">${rec.length}' x ${rec.width}' (${rec.length * rec.width} sq ft)</div>
+                        <div class="rec-desc">${rec.desc}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectRec(length, width) {
+            updateVisual({ length, width });
+        }
+
+        function updateShapeSuggestions() {
+            const shapes = [];
+
+            // Rectangle is always an option
+            shapes.push({
+                name: 'Rectangle',
+                shape: 'rectangle',
+                reason: state.usage === 'exercise' ? 'Best for lap swimming' : 'Classic & versatile',
+                best: state.usage === 'exercise'
+            });
+
+            // Oval for relaxation
+            shapes.push({
+                name: 'Oval',
+                shape: 'oval',
+                reason: 'Elegant & easy to maintain',
+                best: state.usage === 'relaxation'
+            });
+
+            // Kidney for family/entertaining
+            shapes.push({
+                name: 'Kidney',
+                shape: 'kidney',
+                reason: 'Natural flow, great for play',
+                best: state.usage === 'family' || state.usage === 'entertaining'
+            });
+
+            const shapeSuggestions = document.getElementById('shapeSuggestions');
+            shapeSuggestions.innerHTML = shapes.map(s => `
+                <div class="shape-suggestion ${s.best ? 'best' : ''}">
+                    <div class="shape-preview ${s.shape}"></div>
+                    <div class="shape-name">${s.name}</div>
+                    <div class="shape-reason">${s.reason}</div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

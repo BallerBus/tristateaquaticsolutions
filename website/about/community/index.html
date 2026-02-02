@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Involvement | Tri-State Aquatic Solutions | Local Pool Company</title>
+    <meta name="description" content="Tri-State Aquatic Solutions is proud to support local communities across Main Line PA and Northern Delaware through sponsorships, charity events, and community initiatives.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquatic.com/about/community/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Community Involvement | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Supporting local communities across Main Line PA and Northern Delaware through sponsorships and charity work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquatic.com/about/community/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://tristateaquatic.com/#organization",
+        "name": "Tri-State Aquatic Solutions",
+        "legalName": "Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions",
+        "url": "https://tristateaquatic.com",
+        "description": "Community-focused fiberglass pool installation company serving Main Line Philadelphia and Northern Delaware."
+    }
+    </script>
+
+    <!-- JSON-LD Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tristateaquatic.com/"},
+            {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://tristateaquatic.com/about/"},
+            {"@type": "ListItem", "position": 3, "name": "Community", "item": "https://tristateaquatic.com/about/community/"}
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); margin-top: 2px; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb & Hero */
+        .breadcrumb { padding: 1rem 0; margin-top: 80px; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; gap: 0.5rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: var(--aqua); text-decoration: none; }
+        .breadcrumb-list span { color: var(--gray-text); }
+        .page-hero { padding: 4rem 0 5rem; background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%); }
+        .page-hero h1 { margin-bottom: 1rem; }
+        .page-hero-subtitle { font-size: 1.25rem; max-width: 700px; color: var(--gray-text); }
+
+        /* Sub Nav */
+        .about-nav { background: var(--white); border-bottom: 1px solid var(--gray); position: sticky; top: 76px; z-index: 100; }
+        .about-nav-list { display: flex; list-style: none; overflow-x: auto; scrollbar-width: none; }
+        .about-nav-list::-webkit-scrollbar { display: none; }
+        .about-nav-list a { display: block; padding: 1rem 1.5rem; text-decoration: none; color: var(--gray-text); font-size: 0.9rem; font-weight: 500; white-space: nowrap; border-bottom: 2px solid transparent; }
+        .about-nav-list a:hover { color: var(--navy); }
+        .about-nav-list a.active { color: var(--aqua); border-bottom-color: var(--aqua); }
+
+        /* Sections */
+        section { padding: clamp(4rem, 8vw, 6rem) 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+        .section-tag::before, .section-tag::after { content: ''; width: 30px; height: 1px; background: var(--aqua); }
+
+        /* Mission Statement */
+        .mission-section { background: var(--aqua); color: var(--white); }
+        .mission-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .mission-content h2 { color: var(--white); margin-bottom: 1.5rem; }
+        .mission-content p { color: rgba(255,255,255,0.9); font-size: 1.25rem; line-height: 1.8; }
+
+        /* Sponsorships */
+        .sponsorships-section { background: var(--white); }
+        .sponsorships-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .sponsorship-card { background: var(--gray-light); border-radius: 20px; overflow: hidden; transition: all 0.4s var(--ease-out-expo); border: 2px dashed var(--gray); }
+        .sponsorship-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px -10px rgba(14, 31, 52, 0.1); }
+        .sponsorship-image { aspect-ratio: 16/9; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); text-align: center; padding: 1.5rem; }
+        .sponsorship-image svg { width: 50px; height: 50px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 0.75rem; }
+        .sponsorship-image span { font-size: 0.8rem; opacity: 0.6; }
+        .sponsorship-content { padding: 1.5rem; }
+        .sponsorship-content h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .sponsorship-content p { font-size: 0.95rem; color: var(--gray-text); font-style: italic; }
+        .sponsorship-type { display: inline-block; background: var(--aqua-glow); color: var(--aqua); padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; }
+
+        /* Charity Section */
+        .charity-section { background: var(--gray-light); }
+        .charity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; align-items: center; }
+        .charity-content h3 { margin-bottom: 1rem; }
+        .charity-content p { margin-bottom: 1.5rem; line-height: 1.8; }
+        .charity-list { list-style: none; }
+        .charity-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--gray); font-size: 1rem; color: var(--navy); }
+        .charity-list li:last-child { border-bottom: none; }
+        .charity-list svg { width: 20px; height: 20px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+        .charity-image { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); text-align: center; }
+        .charity-image svg { width: 60px; height: 60px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1rem; }
+        .charity-image span { font-size: 0.9rem; opacity: 0.6; }
+
+        /* Events Section */
+        .events-section { background: var(--navy); color: var(--white); }
+        .events-section h2 { color: var(--white); }
+        .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .event-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; text-align: center; border-style: dashed; }
+        .event-icon { width: 70px; height: 70px; background: rgba(0, 166, 178, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .event-icon svg { width: 32px; height: 32px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .event-card h3 { color: var(--white); font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .event-card .event-date { color: var(--aqua); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .event-card p { color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-style: italic; }
+
+        /* Partner With Us */
+        .partner-section { background: var(--white); }
+        .partner-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .partner-card { background: var(--gray-light); border-radius: 20px; padding: 2.5rem; }
+        .partner-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .partner-card p { margin-bottom: 1.5rem; }
+        .partner-card ul { list-style: none; }
+        .partner-card li { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; font-size: 0.95rem; color: var(--gray-text); }
+        .partner-card li svg { width: 16px; height: 16px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%); text-align: center; color: var(--white); }
+        .cta-section h2 { color: var(--white); margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.4s var(--ease-out-expo); border: none; }
+        .btn svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+        .btn-white { background: var(--white); color: var(--navy); }
+        .btn-white:hover { background: var(--navy); color: var(--white); transform: translateY(-3px); }
+        .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255, 255, 255, 0.5); }
+        .btn-outline-white:hover { background: var(--white); color: var(--aqua); }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 5rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); margin-top: 1.5rem; font-size: 0.95rem; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1.5rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .sponsorships-grid { grid-template-columns: 1fr; }
+            .charity-grid { grid-template-columns: 1fr; }
+            .events-grid { grid-template-columns: 1fr; }
+            .partner-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/fiberglass/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/about/" class="active">About</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="/about/">About</a></li>
+                <li><span>/</span></li>
+                <li><span>Community</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Community Involvement</h1>
+            <p class="page-hero-subtitle">We believe in giving back to the communities that have supported our growth. Here is how we are making a difference across Main Line PA and Northern Delaware.</p>
+        </div>
+    </section>
+
+    <!-- Sub Navigation -->
+    <div class="about-nav">
+        <div class="container">
+            <ul class="about-nav-list">
+                <li><a href="/about/">Our Story</a></li>
+                <li><a href="/about/team/">Our Team</a></li>
+                <li><a href="/about/process/">Our Process</a></li>
+                <li><a href="/about/certifications/">Certifications</a></li>
+                <li><a href="/about/community/" class="active">Community</a></li>
+                <li><a href="/about/careers/">Careers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mission Statement -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content reveal">
+                <h2>Building More Than Pools</h2>
+                <p>At Tri-State Aquatic Solutions, we are committed to strengthening the communities where we live and work. Through local sponsorships, charitable contributions, and volunteer efforts, we aim to make a positive impact that extends far beyond our backyard transformations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Sponsorships -->
+    <section class="sponsorships-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Local Sponsorships</div>
+                <h2>Supporting Local Organizations</h2>
+                <p>We proudly sponsor youth sports teams, school programs, and local events throughout the region.</p>
+            </div>
+            <div class="sponsorships-grid">
+                <div class="sponsorship-card reveal">
+                    <div class="sponsorship-image">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                        <span>Sponsorship Photo<br>800x450px</span>
+                    </div>
+                    <div class="sponsorship-content">
+                        <span class="sponsorship-type">Youth Sports</span>
+                        <h3>[Team/League Name]</h3>
+                        <p>Placeholder for youth sports team sponsorship description</p>
+                    </div>
+                </div>
+                <div class="sponsorship-card reveal">
+                    <div class="sponsorship-image">
+                        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        <span>Sponsorship Photo<br>800x450px</span>
+                    </div>
+                    <div class="sponsorship-content">
+                        <span class="sponsorship-type">Education</span>
+                        <h3>[School/Program Name]</h3>
+                        <p>Placeholder for school program sponsorship description</p>
+                    </div>
+                </div>
+                <div class="sponsorship-card reveal">
+                    <div class="sponsorship-image">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>Sponsorship Photo<br>800x450px</span>
+                    </div>
+                    <div class="sponsorship-content">
+                        <span class="sponsorship-type">Community Event</span>
+                        <h3>[Event Name]</h3>
+                        <p>Placeholder for community event sponsorship description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charity Work -->
+    <section class="charity-section">
+        <div class="container">
+            <div class="charity-grid">
+                <div class="charity-content reveal">
+                    <div class="section-tag">Charitable Giving</div>
+                    <h3>Making a Difference</h3>
+                    <p>We partner with local charitable organizations to support causes that matter to our community. From fundraising events to direct donations, we are committed to helping those in need.</p>
+                    <ul class="charity-list">
+                        <li><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> [Charity Organization Name - placeholder]</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> [Charity Organization Name - placeholder]</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> [Charity Organization Name - placeholder]</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> [Charity Organization Name - placeholder]</li>
+                    </ul>
+                </div>
+                <div class="charity-image reveal">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Charity Event Photo<br>800x600px</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Events -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag" style="color: var(--aqua);">Community Events</div>
+                <h2>Join Us at Local Events</h2>
+                <p style="color: rgba(255,255,255,0.7);">Look for us at these upcoming community events where we connect with our neighbors.</p>
+            </div>
+            <div class="events-grid reveal">
+                <div class="event-card">
+                    <div class="event-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <h3>[Event Name]</h3>
+                    <p class="event-date">[Date - placeholder]</p>
+                    <p>Placeholder for upcoming community event description</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>[Event Name]</h3>
+                    <p class="event-date">[Date - placeholder]</p>
+                    <p>Placeholder for upcoming community event description</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h3>[Event Name]</h3>
+                    <p class="event-date">[Date - placeholder]</p>
+                    <p>Placeholder for upcoming community event description</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner With Us -->
+    <section class="partner-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Get Involved</div>
+                <h2>Partner With Us</h2>
+                <p>Interested in partnering with Tri-State Aquatic Solutions for your organization or event? We would love to hear from you.</p>
+            </div>
+            <div class="partner-grid reveal">
+                <div class="partner-card">
+                    <h3>Sponsorship Opportunities</h3>
+                    <p>We consider sponsorship requests from local youth sports teams, school programs, and community organizations.</p>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Youth sports teams</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> School fundraisers</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Community events</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Non-profit organizations</li>
+                    </ul>
+                </div>
+                <div class="partner-card">
+                    <h3>How to Apply</h3>
+                    <p>Submit your sponsorship request with details about your organization and how the partnership would benefit the community.</p>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Organization background</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Event or program details</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Sponsorship level requested</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Expected community impact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Let Us Build Your Dream Pool</h2>
+            <p>Ready to transform your backyard? Connect with our community-focused team today.</p>
+            <div class="cta-buttons">
+                <a href="/contact/" class="btn btn-white">
+                    Get in Touch
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="mailto:community@tristateaquatic.com" class="btn btn-outline-white">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Sponsorship Inquiries
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo"><div class="logo-mark"></div><div class="logo-text">Tri-State Aquatic<span>Solutions</span></div></a>
+                    <p>Premium fiberglass pool installation for Main Line Philadelphia and Northern Delaware. Operated by Dude Venture Services LLC.</p>
+                </div>
+                <div class="footer-column"><h4>Services</h4><ul><li><a href="/pools/fiberglass/">Fiberglass Pools</a></li><li><a href="/services/">Pool Services</a></li><li><a href="/financing/">Financing</a></li></ul></div>
+                <div class="footer-column"><h4>Company</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/about/community/">Community</a></li><li><a href="/about/careers/">Careers</a></li></ul></div>
+                <div class="footer-column"><h4>Contact</h4><ul><li><a href="/contact/">Hockessin, DE</a></li><li><a href="tel:+13025551234">(302) 555-1234</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => { revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible'); }); };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        document.querySelector('.mobile-toggle').addEventListener('click', () => { const nav = document.querySelector('.nav-links'); nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex'; });
+    </script>
+</body>
+</html>

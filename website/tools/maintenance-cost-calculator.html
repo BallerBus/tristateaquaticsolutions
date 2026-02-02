@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Maintenance Cost Calculator | DIY vs Professional Service | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Calculate your annual pool maintenance costs. Compare DIY vs professional service costs and see a detailed breakdown of chemicals, equipment, and service expenses.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Maintenance Cost Calculator | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Find out what it really costs to maintain a pool. Compare DIY vs professional service options.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --success: #10B981;
+            --warning: #F59E0B;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover { color: var(--aqua); }
+        .nav-back svg { width: 18px; height: 18px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/200px repeat;
+        }
+
+        .page-header .container {
+            position: relative;
+            text-align: center;
+        }
+
+        .page-header h1 { color: var(--white); margin-bottom: 0.5rem; }
+        .page-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .calculator-section {
+            padding: 3rem 0 4rem;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Input Panel */
+        .input-panel {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+            height: fit-content;
+        }
+
+        .panel-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .panel-title::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--aqua);
+        }
+
+        .input-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .input-label {
+            display: block;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Pool Type Selection */
+        .type-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        .type-btn {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .type-btn:hover { border-color: var(--aqua); }
+        .type-btn.active {
+            border-color: var(--aqua);
+            background: var(--aqua-glow);
+        }
+
+        .type-btn-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* Size Selection */
+        .size-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .size-btn {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .size-btn:hover { border-color: var(--aqua); }
+        .size-btn.active {
+            border-color: var(--aqua);
+            background: var(--aqua-glow);
+        }
+
+        .size-btn-name {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .size-btn-desc {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        /* Feature Toggles */
+        .feature-toggles {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--gray-light);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .feature-toggle:hover { background: var(--gray); }
+
+        .feature-toggle-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .feature-toggle-name {
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .toggle-switch {
+            width: 48px;
+            height: 26px;
+            background: var(--gray);
+            border-radius: 100px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .feature-toggle.active .toggle-switch {
+            background: var(--aqua);
+        }
+
+        .feature-toggle.active .toggle-switch::after {
+            left: 25px;
+        }
+
+        /* Results */
+        .results-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Annual Cost Summary */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .summary-cards { grid-template-columns: 1fr; }
+        }
+
+        .summary-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: 0 10px 40px -15px rgba(14, 31, 52, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card.diy {
+            border: 2px solid var(--aqua);
+        }
+
+        .summary-card.pro {
+            border: 2px solid var(--gold);
+        }
+
+        .summary-card.savings {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .summary-card.savings { grid-column: span 1; }
+        }
+
+        .summary-card.savings::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -50px;
+            right: -50px;
+        }
+
+        .card-badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .card-badge.diy {
+            background: var(--aqua-glow);
+            color: var(--aqua);
+        }
+
+        .card-badge.pro {
+            background: rgba(201, 169, 98, 0.15);
+            color: var(--gold);
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card.savings .card-title {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .card-value {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .summary-card.diy .card-value { color: var(--aqua); }
+        .summary-card.pro .card-value { color: var(--gold); }
+        .summary-card.savings .card-value { color: var(--white); }
+
+        .card-subtext {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            margin-top: 0.5rem;
+        }
+
+        .summary-card.savings .card-subtext {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Cost Breakdown */
+        .breakdown-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .breakdown-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+        }
+
+        .breakdown-table {
+            width: 100%;
+        }
+
+        .breakdown-row {
+            display: grid;
+            grid-template-columns: 1fr 100px 100px;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            align-items: center;
+        }
+
+        .breakdown-row.header {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-text);
+            border-bottom: 2px solid var(--gray);
+        }
+
+        .breakdown-row:last-child { border-bottom: none; }
+
+        .breakdown-item {
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .breakdown-item-desc {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            margin-top: 0.25rem;
+        }
+
+        .breakdown-diy {
+            text-align: center;
+            font-weight: 600;
+            color: var(--aqua);
+        }
+
+        .breakdown-pro {
+            text-align: center;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .breakdown-row.total {
+            background: var(--gray-light);
+            margin: 0 -2rem;
+            padding: 1rem 2rem;
+            margin-top: 0.5rem;
+            border-radius: 12px;
+        }
+
+        .breakdown-row.total .breakdown-item {
+            font-weight: 700;
+        }
+
+        /* Time Comparison */
+        .time-card {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            color: var(--navy);
+        }
+
+        .time-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .time-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .time-stat {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .time-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .time-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .time-note {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        /* Service CTA */
+        .service-cta {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .service-cta h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-cta p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Tips */
+        .tips-section {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .tips-grid { grid-template-columns: 1fr; }
+        }
+
+        .tip-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .tip-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--aqua-glow);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .tip-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .tip-card h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-card p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--gray-text);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="/tools/" class="nav-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Tools
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Maintenance Cost Calculator</h1>
+            <p>See what it really costs to maintain your pool. Compare DIY vs professional service options.</p>
+        </div>
+    </header>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calc-grid">
+                <!-- Input Panel -->
+                <div class="input-panel">
+                    <div class="panel-title">Your Pool Details</div>
+
+                    <!-- Pool Type -->
+                    <div class="input-group">
+                        <label class="input-label">Pool Type</label>
+                        <div class="type-options">
+                            <div class="type-btn" data-type="fiberglass">
+                                <div class="type-btn-name">Fiberglass</div>
+                            </div>
+                            <div class="type-btn active" data-type="concrete">
+                                <div class="type-btn-name">Concrete</div>
+                            </div>
+                            <div class="type-btn" data-type="liner">
+                                <div class="type-btn-name">Vinyl Liner</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pool Size -->
+                    <div class="input-group">
+                        <label class="input-label">Pool Size</label>
+                        <div class="size-options">
+                            <div class="size-btn" data-size="small" data-sqft="400">
+                                <div class="size-btn-name">Small</div>
+                                <div class="size-btn-desc">Under 400 sq ft</div>
+                            </div>
+                            <div class="size-btn active" data-size="medium" data-sqft="550">
+                                <div class="size-btn-name">Medium</div>
+                                <div class="size-btn-desc">400-600 sq ft</div>
+                            </div>
+                            <div class="size-btn" data-size="large" data-sqft="750">
+                                <div class="size-btn-name">Large</div>
+                                <div class="size-btn-desc">600-800 sq ft</div>
+                            </div>
+                            <div class="size-btn" data-size="xlarge" data-sqft="1000">
+                                <div class="size-btn-name">Extra Large</div>
+                                <div class="size-btn-desc">800+ sq ft</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="input-group">
+                        <label class="input-label">Pool Features</label>
+                        <div class="feature-toggles">
+                            <div class="feature-toggle active" data-feature="heating">
+                                <div class="feature-toggle-info">
+                                    <span class="feature-toggle-name">Pool Heater</span>
+                                </div>
+                                <div class="toggle-switch"></div>
+                            </div>
+                            <div class="feature-toggle" data-feature="saltwater">
+                                <div class="feature-toggle-info">
+                                    <span class="feature-toggle-name">Salt Water System</span>
+                                </div>
+                                <div class="toggle-switch"></div>
+                            </div>
+                            <div class="feature-toggle active" data-feature="cover">
+                                <div class="feature-toggle-info">
+                                    <span class="feature-toggle-name">Pool Cover</span>
+                                </div>
+                                <div class="toggle-switch"></div>
+                            </div>
+                            <div class="feature-toggle" data-feature="automation">
+                                <div class="feature-toggle-info">
+                                    <span class="feature-toggle-name">Smart Automation</span>
+                                </div>
+                                <div class="toggle-switch"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <!-- Summary Cards -->
+                    <div class="summary-cards">
+                        <div class="summary-card diy">
+                            <span class="card-badge diy">DIY Maintenance</span>
+                            <div class="card-title">Annual Cost (You Do It)</div>
+                            <div class="card-value" id="diyCost">$1,850</div>
+                            <div class="card-subtext" id="diyMonthly">~$154/month average</div>
+                        </div>
+
+                        <div class="summary-card pro">
+                            <span class="card-badge pro">Professional Service</span>
+                            <div class="card-title">Annual Cost (We Handle It)</div>
+                            <div class="card-value" id="proCost">$3,600</div>
+                            <div class="card-subtext" id="proMonthly">~$300/month (seasonal)</div>
+                        </div>
+
+                        <div class="summary-card savings">
+                            <div class="card-title">Your Time Saved with Pro Service</div>
+                            <div class="card-value" id="timeSaved">156 hours/year</div>
+                            <div class="card-subtext">That's nearly 4 full work weeks!</div>
+                        </div>
+                    </div>
+
+                    <!-- Cost Breakdown -->
+                    <div class="breakdown-card">
+                        <div class="breakdown-title">Annual Cost Breakdown</div>
+                        <div class="breakdown-table">
+                            <div class="breakdown-row header">
+                                <div>Expense Category</div>
+                                <div style="text-align: center;">DIY</div>
+                                <div style="text-align: center;">Pro</div>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <div>
+                                    <div class="breakdown-item">Chemicals</div>
+                                    <div class="breakdown-item-desc">Chlorine, pH balancers, shock, algaecide</div>
+                                </div>
+                                <div class="breakdown-diy" id="chemDiy">$600</div>
+                                <div class="breakdown-pro">Included</div>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <div>
+                                    <div class="breakdown-item">Opening & Closing</div>
+                                    <div class="breakdown-item-desc">Seasonal preparation & winterization</div>
+                                </div>
+                                <div class="breakdown-diy" id="seasonDiy">$0</div>
+                                <div class="breakdown-pro" id="seasonPro">$650</div>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <div>
+                                    <div class="breakdown-item">Weekly Service</div>
+                                    <div class="breakdown-item-desc">Cleaning, testing, equipment check</div>
+                                </div>
+                                <div class="breakdown-diy">$0</div>
+                                <div class="breakdown-pro" id="weeklyPro">$2,400</div>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <div>
+                                    <div class="breakdown-item">Equipment Maintenance</div>
+                                    <div class="breakdown-item-desc">Filter cleaning, pump service, repairs</div>
+                                </div>
+                                <div class="breakdown-diy" id="equipDiy">$350</div>
+                                <div class="breakdown-pro">Included</div>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <div>
+                                    <div class="breakdown-item">Electricity</div>
+                                    <div class="breakdown-item-desc">Pump, filter, heater (if applicable)</div>
+                                </div>
+                                <div class="breakdown-diy" id="electricDiy">$900</div>
+                                <div class="breakdown-pro" id="electricPro">$550</div>
+                            </div>
+
+                            <div class="breakdown-row total">
+                                <div class="breakdown-item">Annual Total</div>
+                                <div class="breakdown-diy" id="totalDiy">$1,850</div>
+                                <div class="breakdown-pro" id="totalPro">$3,600</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Time Comparison -->
+                    <div class="time-card">
+                        <div class="time-title">Time Investment Comparison</div>
+                        <div class="time-grid">
+                            <div class="time-stat">
+                                <div class="time-value" id="diyHours">156</div>
+                                <div class="time-label">Hours/Year (DIY)</div>
+                            </div>
+                            <div class="time-stat">
+                                <div class="time-value" id="proHours">0</div>
+                                <div class="time-label">Hours/Year (Pro)</div>
+                            </div>
+                        </div>
+                        <div class="time-note">
+                            DIY maintenance requires 3-4 hours per week during swim season, plus opening/closing time.
+                        </div>
+                    </div>
+
+                    <!-- Service CTA -->
+                    <div class="service-cta">
+                        <h3>Let Us Handle Your Pool Maintenance</h3>
+                        <p>Our weekly service plans keep your pool pristine while you enjoy more time with family.</p>
+                        <a href="/services/weekly-maintenance/" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            View Maintenance Plans
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Reduce Your Maintenance Costs</h2>
+                <p>Tips to keep your pool expenses in check</p>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Use a Pool Cover</h4>
+                    <p>Covers reduce evaporation by 95% and can cut chemical use by 35-60%. They also retain heat, lowering energy costs.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </div>
+                    <h4>Run Pump Off-Peak</h4>
+                    <p>Program your pump to run during off-peak electricity hours (typically overnight) to save 20-40% on energy costs.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h4>Regular Maintenance</h4>
+                    <p>Consistent weekly care prevents expensive problems. Fixing issues early is always cheaper than emergency repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // State
+        const state = {
+            type: 'concrete',
+            size: 'medium',
+            sqft: 550,
+            features: {
+                heating: true,
+                saltwater: false,
+                cover: true,
+                automation: false
+            }
+        };
+
+        // Base costs
+        const baseCosts = {
+            chemicals: {
+                fiberglass: 400,
+                concrete: 600,
+                liner: 500
+            },
+            equipment: {
+                small: 250,
+                medium: 350,
+                large: 450,
+                xlarge: 550
+            },
+            electric: {
+                base: 600,
+                heating: 400,
+                automation: -100 // saves money
+            },
+            season: {
+                opening: 300,
+                closing: 350
+            },
+            weekly: {
+                small: 175,
+                medium: 200,
+                large: 225,
+                xlarge: 250
+            }
+        };
+
+        // Initialize
+        function init() {
+            // Pool type buttons
+            document.querySelectorAll('.type-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    state.type = btn.dataset.type;
+                    calculate();
+                });
+            });
+
+            // Size buttons
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    state.size = btn.dataset.size;
+                    state.sqft = parseInt(btn.dataset.sqft);
+                    calculate();
+                });
+            });
+
+            // Feature toggles
+            document.querySelectorAll('.feature-toggle').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    toggle.classList.toggle('active');
+                    state.features[toggle.dataset.feature] = toggle.classList.contains('active');
+                    calculate();
+                });
+            });
+
+            calculate();
+        }
+
+        function calculate() {
+            // Calculate DIY costs
+            let chemCost = baseCosts.chemicals[state.type];
+            if (state.features.saltwater) chemCost *= 0.6; // Salt water uses less chemicals
+
+            let electricCost = baseCosts.electric.base;
+            if (state.features.heating) electricCost += baseCosts.electric.heating;
+            if (state.features.automation) electricCost += baseCosts.electric.automation;
+            if (state.features.cover) electricCost *= 0.75; // Cover saves energy
+
+            // Size multiplier
+            const sizeMultiplier = state.sqft / 550;
+            chemCost = Math.round(chemCost * sizeMultiplier);
+            electricCost = Math.round(electricCost * sizeMultiplier);
+
+            let equipCost = baseCosts.equipment[state.size];
+
+            const diyTotal = chemCost + equipCost + electricCost;
+
+            // Calculate Pro costs
+            const seasonCost = baseCosts.season.opening + baseCosts.season.closing;
+            const weeklyCost = baseCosts.weekly[state.size] * 12; // 12 weeks active service
+            const proElectric = Math.round(electricCost * 0.65); // Pros optimize system
+
+            const proTotal = seasonCost + weeklyCost + proElectric;
+
+            // Time calculation
+            const diyHours = state.features.cover ? 130 : 156; // Cover saves time
+
+            // Update UI
+            document.getElementById('diyCost').textContent = formatCurrency(diyTotal);
+            document.getElementById('diyMonthly').textContent = '~' + formatCurrency(Math.round(diyTotal / 12)) + '/month average';
+
+            document.getElementById('proCost').textContent = formatCurrency(proTotal);
+            document.getElementById('proMonthly').textContent = '~' + formatCurrency(Math.round(proTotal / 6)) + '/month (seasonal)';
+
+            document.getElementById('timeSaved').textContent = diyHours + ' hours/year';
+
+            // Breakdown
+            document.getElementById('chemDiy').textContent = formatCurrency(chemCost);
+            document.getElementById('seasonPro').textContent = formatCurrency(seasonCost);
+            document.getElementById('weeklyPro').textContent = formatCurrency(weeklyCost);
+            document.getElementById('equipDiy').textContent = formatCurrency(equipCost);
+            document.getElementById('electricDiy').textContent = formatCurrency(electricCost);
+            document.getElementById('electricPro').textContent = formatCurrency(proElectric);
+
+            document.getElementById('totalDiy').textContent = formatCurrency(diyTotal);
+            document.getElementById('totalPro').textContent = formatCurrency(proTotal);
+
+            document.getElementById('diyHours').textContent = diyHours;
+        }
+
+        function formatCurrency(amount) {
+            return '$' + amount.toLocaleString();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

@@ -3,13 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Pool Resources | Tri-State Aquatic Solutions</title>
-    <meta name="description" content="Free pool planning resources from Main Line and Delaware's trusted pool experts. Download our planning checklist, buyer's guide, and more.">
+    <title>Pool Education Center | Free Resources & Guides | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Free pool education resources for Pennsylvania and Delaware homeowners. Expert guides on buying, maintenance, water chemistry, seasonal care, and troubleshooting.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Education Center | Free Resources & Guides">
+    <meta property="og:description" content="Expert pool guides, maintenance tips, and educational resources from Main Line PA's trusted pool professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquaticsolutions.com/resources/">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/resources/">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Pool Education Center",
+        "description": "Comprehensive pool education resources including buying guides, maintenance tips, water chemistry tutorials, and troubleshooting guides.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tri-State Aquatic Solutions",
+            "url": "https://tristateaquaticsolutions.com"
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Complete Pool Buying Guide",
+                    "url": "https://tristateaquaticsolutions.com/resources/pool-buying-guide.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Pool Maintenance Tips",
+                    "url": "https://tristateaquaticsolutions.com/resources/maintenance-tips.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Seasonal Pool Care Guide",
+                    "url": "https://tristateaquaticsolutions.com/resources/seasonal-care.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Water Chemistry Guide",
+                    "url": "https://tristateaquaticsolutions.com/resources/water-chemistry.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "name": "Pool Troubleshooting Guide",
+                    "url": "https://tristateaquaticsolutions.com/resources/troubleshooting.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 6,
+                    "name": "Pool Terminology Glossary",
+                    "url": "https://tristateaquaticsolutions.com/resources/glossary.html"
+                }
+            ]
+        }
+    }
+    </script>
 
     <style>
         :root {
@@ -29,16 +94,8 @@
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-body);
             background: var(--white);
@@ -46,94 +103,30 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-
-        ::selection {
-            background: var(--aqua);
-            color: var(--white);
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-display);
-            font-weight: 500;
-            line-height: 1.15;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 clamp(1.5rem, 5vw, 4rem);
-        }
+        ::selection { background: var(--aqua); color: var(--white); }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
 
         /* Navigation */
         nav {
             background: var(--white);
             padding: 1rem 0;
             border-bottom: 1px solid var(--gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--navy);
-        }
-
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
         .logo-mark {
-            width: 40px;
-            height: 40px;
-            background: var(--navy);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            width: 40px; height: 40px; background: var(--navy); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; position: relative;
         }
-
-        .logo-mark::after {
-            content: '';
-            width: 30%;
-            height: 30%;
-            background: var(--aqua);
-            border-radius: 50%;
-        }
-
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .logo-text span {
-            display: block;
-            font-size: 0.6rem;
-            font-family: var(--font-body);
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gray-text);
-        }
-
-        .back-link {
-            color: var(--aqua);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: var(--navy);
-        }
+        .logo-mark::after { content: ''; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        .logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.6rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .back-link { color: var(--aqua); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s ease; }
+        .back-link:hover { color: var(--navy); }
 
         /* Hero */
         .hero {
@@ -143,7 +136,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -153,35 +145,79 @@
             top: -400px;
             right: -200px;
         }
+        .hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--white); margin-bottom: 1rem; }
+        .hero h1 em { font-style: italic; color: var(--aqua); }
+        .hero p { font-size: 1.15rem; color: rgba(255, 255, 255, 0.8); line-height: 1.7; max-width: 600px; margin: 0 auto; }
 
-        .hero-content {
+        /* Search Box */
+        .search-box {
+            margin-top: 2rem;
             position: relative;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem 1rem 3rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            background: rgba(255,255,255,0.1);
             color: var(--white);
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+        }
+        .search-box input::placeholder { color: rgba(255,255,255,0.5); }
+        .search-box input:focus { outline: none; border-color: var(--aqua); background: rgba(255,255,255,0.15); }
+        .search-box svg {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            stroke: rgba(255,255,255,0.5);
+            stroke-width: 2;
+            fill: none;
         }
 
-        .hero h1 em {
-            font-style: italic;
+        /* Category Filters */
+        .category-filters {
+            padding: 2rem 0;
+            background: var(--gray-light);
+            border-bottom: 1px solid var(--gray);
+        }
+        .filter-list {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        .filter-btn {
+            padding: 0.6rem 1.25rem;
+            border: 1px solid var(--gray);
+            background: var(--white);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+            color: var(--gray-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--aqua);
             color: var(--aqua);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
+            background: var(--aqua-glow);
         }
 
         /* Resources Grid */
-        .resources-section {
-            padding: 5rem 0;
-            background: var(--gray-light);
-        }
+        .resources-section { padding: 4rem 0; background: var(--white); }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gray-text); font-size: 1.1rem; }
 
         .resources-grid {
             display: grid;
@@ -196,7 +232,6 @@
             transition: all 0.4s var(--ease-out-expo);
             border: 1px solid var(--gray);
         }
-
         .resource-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.2);
@@ -204,7 +239,7 @@
         }
 
         .resource-image {
-            height: 200px;
+            height: 180px;
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             display: flex;
             align-items: center;
@@ -212,7 +247,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .resource-image::before {
             content: '';
             position: absolute;
@@ -222,10 +256,14 @@
             top: -25%;
             right: -50%;
         }
+        .resource-image.maintenance { background: linear-gradient(135deg, #1a3a5c 0%, #0E1F34 100%); }
+        .resource-image.chemistry { background: linear-gradient(135deg, #0E1F34 0%, #1e4d6b 100%); }
+        .resource-image.seasonal { background: linear-gradient(135deg, #2d4a6e 0%, #0E1F34 100%); }
+        .resource-image.troubleshooting { background: linear-gradient(135deg, #3d3a5c 0%, #0E1F34 100%); }
 
         .resource-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid var(--aqua);
             border-radius: 20px;
@@ -235,14 +273,7 @@
             position: relative;
             z-index: 1;
         }
-
-        .resource-icon svg {
-            width: 40px;
-            height: 40px;
-            stroke: var(--aqua);
-            stroke-width: 1.5;
-            fill: none;
-        }
+        .resource-icon svg { width: 36px; height: 36px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
 
         .resource-badge {
             position: absolute;
@@ -258,44 +289,21 @@
             letter-spacing: 0.1em;
             z-index: 1;
         }
+        .resource-badge.new { background: var(--aqua); color: var(--white); }
+        .resource-badge.essential { background: #10B981; color: var(--white); }
 
-        .resource-content {
-            padding: 2rem;
-        }
+        .resource-content { padding: 1.75rem; }
+        .resource-content h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--navy); }
+        .resource-meta { display: flex; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--gray-text); }
+        .resource-content p { color: var(--gray-text); margin-bottom: 1.25rem; font-size: 0.95rem; line-height: 1.6; }
 
-        .resource-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--navy);
-        }
-
-        .resource-content p {
+        .resource-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+        .resource-tag {
+            padding: 0.25rem 0.75rem;
+            background: var(--gray-light);
+            border-radius: 100px;
+            font-size: 0.75rem;
             color: var(--gray-text);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .resource-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .resource-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
-            font-size: 0.9rem;
-            color: var(--navy);
-        }
-
-        .resource-features li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--aqua);
-            border-radius: 50%;
-            flex-shrink: 0;
         }
 
         .resource-cta {
@@ -304,54 +312,148 @@
             gap: 0.75rem;
             background: var(--navy);
             color: var(--white);
-            padding: 1rem 1.75rem;
+            padding: 0.9rem 1.5rem;
             border-radius: 100px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: all 0.3s var(--ease-out-expo);
         }
+        .resource-cta:hover { background: var(--aqua); transform: translateX(5px); }
+        .resource-cta svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; transition: transform 0.3s ease; }
+        .resource-cta:hover svg { transform: translateX(4px); }
 
-        .resource-cta:hover {
-            background: var(--aqua);
+        /* Featured Resources */
+        .featured-section { padding: 4rem 0; background: var(--gray-light); }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .featured-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--gray);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+        .featured-image {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        .featured-image::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 50%);
+            bottom: -50%;
+            left: -50%;
+        }
+        .featured-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--aqua);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-icon svg { width: 45px; height: 45px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+        .featured-content { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+        .featured-content h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .featured-content p { color: var(--gray-text); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+        /* Quick Links */
+        .quick-links { padding: 4rem 0; background: var(--white); }
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--gray-light);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            transition: all 0.3s ease;
+        }
+        .quick-link:hover {
+            background: var(--aqua-glow);
             transform: translateX(5px);
         }
+        .quick-link svg { width: 24px; height: 24px; stroke: var(--aqua); stroke-width: 2; fill: none; flex-shrink: 0; }
+        .quick-link span { font-weight: 500; font-size: 0.95rem; }
 
-        .resource-cta svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-            transition: transform 0.3s ease;
-        }
-
-        .resource-cta:hover svg {
-            transform: translateX(4px);
-        }
-
-        /* Trust Section */
-        .trust-section {
-            padding: 4rem 0;
-            background: var(--white);
-        }
-
-        .trust-content {
+        /* Newsletter */
+        .newsletter {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
         }
-
-        .trust-content h2 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 60%);
+            bottom: -300px;
+            left: -200px;
         }
-
-        .trust-content p {
-            color: var(--gray-text);
-            margin-bottom: 2rem;
+        .newsletter-content { position: relative; max-width: 600px; margin: 0 auto; }
+        .newsletter h2 { color: var(--white); font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+        .newsletter p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
+        .newsletter-form { display: flex; gap: 1rem; max-width: 450px; margin: 0 auto; }
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 1rem;
+            font-family: var(--font-body);
         }
+        .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
+        .newsletter-form input:focus { outline: none; border-color: var(--aqua); }
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: var(--aqua);
+            color: var(--white);
+            border: none;
+            border-radius: 100px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .newsletter-form button:hover { background: var(--gold); color: var(--navy); }
 
-        .trust-cta {
+        /* CTA Section */
+        .cta-section { padding: 4rem 0; background: var(--white); }
+        .cta-content { text-align: center; max-width: 600px; margin: 0 auto; }
+        .cta-content h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+        .cta-content p { color: var(--gray-text); margin-bottom: 2rem; }
+        .cta-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
@@ -363,20 +465,8 @@
             font-weight: 500;
             transition: all 0.3s var(--ease-out-expo);
         }
-
-        .trust-cta:hover {
-            background: var(--navy);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px -10px rgba(14, 31, 52, 0.3);
-        }
-
-        .trust-cta svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
+        .cta-btn:hover { background: var(--navy); transform: translateY(-3px); box-shadow: 0 15px 30px -10px rgba(14, 31, 52, 0.3); }
+        .cta-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
         /* Footer */
         footer {
@@ -385,26 +475,21 @@
             padding: 3rem 0;
             text-align: center;
         }
-
-        footer p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--aqua);
-            text-decoration: none;
-        }
+        footer p { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+        footer a { color: var(--aqua); text-decoration: none; }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .featured-grid { grid-template-columns: 1fr; }
+            .featured-card { grid-template-columns: 1fr; }
+            .featured-image { min-height: 200px; }
+        }
         @media (max-width: 640px) {
-            .hero {
-                padding: 3rem 0;
-            }
-
-            .resources-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero { padding: 3rem 0; }
+            .resources-grid { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
+            .filter-list { gap: 0.5rem; }
+            .filter-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -432,8 +517,73 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Free Pool <em>Planning</em> Resources</h1>
-                <p>Expert guides and tools to help you plan your perfect backyard pool. No strings attached - just valuable information from local pool professionals.</p>
+                <h1>Pool <em>Education</em> Center</h1>
+                <p>Expert guides, tips, and resources to help you make informed decisions about your pool. From buying to maintenance, we have got you covered.</p>
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    <input type="text" placeholder="Search resources..." id="resourceSearch">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="category-filters">
+        <div class="container">
+            <ul class="filter-list">
+                <li><button class="filter-btn active" data-filter="all">All Resources</button></li>
+                <li><button class="filter-btn" data-filter="buying">Buying Guide</button></li>
+                <li><button class="filter-btn" data-filter="maintenance">Maintenance</button></li>
+                <li><button class="filter-btn" data-filter="chemistry">Water Chemistry</button></li>
+                <li><button class="filter-btn" data-filter="seasonal">Seasonal Care</button></li>
+                <li><button class="filter-btn" data-filter="troubleshooting">Troubleshooting</button></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Featured Resources -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Resources</h2>
+                <p>Our most popular guides to help you get started</p>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <div class="featured-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Complete Pool Buying Guide</h3>
+                        <p>Everything you need to know before purchasing a pool. Compare types, understand costs, and avoid common mistakes.</p>
+                        <a href="pool-buying-guide.html" class="resource-cta">
+                            Read Guide
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <div class="featured-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Pool Maintenance Essentials</h3>
+                        <p>Learn the fundamentals of pool care. Weekly tasks, equipment checks, and professional tips to keep your pool pristine.</p>
+                        <a href="maintenance-tips.html" class="resource-cta">
+                            Read Guide
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -441,11 +591,194 @@
     <!-- Resources Grid -->
     <section class="resources-section">
         <div class="container">
+            <div class="section-header">
+                <h2>All Resources</h2>
+                <p>Browse our complete library of pool education materials</p>
+            </div>
             <div class="resources-grid">
-                <!-- Pool Planning Checklist -->
-                <div class="resource-card">
+                <!-- Pool Buying Guide -->
+                <div class="resource-card" data-category="buying">
                     <div class="resource-image">
-                        <span class="resource-badge">Most Popular</span>
+                        <span class="resource-badge">Essential</span>
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Complete Pool Buying Guide</h3>
+                        <div class="resource-meta">
+                            <span>45 min read</span>
+                            <span>Updated Jan 2026</span>
+                        </div>
+                        <p>Your comprehensive roadmap to purchasing a pool. From initial planning to final decisions, everything you need to know.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Fiberglass</span>
+                            <span class="resource-tag">Concrete</span>
+                            <span class="resource-tag">Costs</span>
+                        </div>
+                        <a href="pool-buying-guide.html" class="resource-cta">
+                            Read Guide
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Maintenance Tips -->
+                <div class="resource-card" data-category="maintenance">
+                    <div class="resource-image maintenance">
+                        <span class="resource-badge new">Popular</span>
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Pool Maintenance Tips</h3>
+                        <div class="resource-meta">
+                            <span>30 min read</span>
+                            <span>Updated Jan 2026</span>
+                        </div>
+                        <p>Master the art of pool maintenance with our expert tips. Keep your pool crystal clear with less effort and expense.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Cleaning</span>
+                            <span class="resource-tag">Equipment</span>
+                            <span class="resource-tag">Weekly Tasks</span>
+                        </div>
+                        <a href="maintenance-tips.html" class="resource-cta">
+                            Read Guide
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Seasonal Care -->
+                <div class="resource-card" data-category="seasonal">
+                    <div class="resource-image seasonal">
+                        <span class="resource-badge essential">Essential</span>
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="5"/>
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Seasonal Pool Care</h3>
+                        <div class="resource-meta">
+                            <span>35 min read</span>
+                            <span>Updated Jan 2026</span>
+                        </div>
+                        <p>Complete guides for opening, closing, and winterizing your pool. Protect your investment through every season.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Opening</span>
+                            <span class="resource-tag">Closing</span>
+                            <span class="resource-tag">Winterizing</span>
+                        </div>
+                        <a href="seasonal-care.html" class="resource-cta">
+                            Read Guide
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Water Chemistry -->
+                <div class="resource-card" data-category="chemistry">
+                    <div class="resource-image chemistry">
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10 2v7.31"/>
+                                <path d="M14 9.3V2"/>
+                                <path d="M8.5 2h7"/>
+                                <path d="M14 9.3a6.5 6.5 0 1 1-4 0"/>
+                                <path d="M5.52 16h12.96"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Water Chemistry Guide</h3>
+                        <div class="resource-meta">
+                            <span>40 min read</span>
+                            <span>Updated Jan 2026</span>
+                        </div>
+                        <p>Understand pH, chlorine, alkalinity, and more. Master water chemistry for a safe, comfortable swimming experience.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">pH Balance</span>
+                            <span class="resource-tag">Chlorine</span>
+                            <span class="resource-tag">Testing</span>
+                        </div>
+                        <a href="water-chemistry.html" class="resource-cta">
+                            Read Guide
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="resource-card" data-category="troubleshooting">
+                    <div class="resource-image troubleshooting">
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <path d="M12 17h.01"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Troubleshooting Guide</h3>
+                        <div class="resource-meta">
+                            <span>25 min read</span>
+                            <span>Updated Jan 2026</span>
+                        </div>
+                        <p>Solutions to common pool problems. Green water, cloudy water, equipment issues, and more - all solved.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Green Water</span>
+                            <span class="resource-tag">Cloudy Water</span>
+                            <span class="resource-tag">Equipment</span>
+                        </div>
+                        <a href="troubleshooting.html" class="resource-cta">
+                            Read Guide
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Glossary -->
+                <div class="resource-card" data-category="buying">
+                    <div class="resource-image">
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Pool Terminology Glossary</h3>
+                        <div class="resource-meta">
+                            <span>Reference</span>
+                            <span>50+ Terms</span>
+                        </div>
+                        <p>Understand pool industry terminology. From alkalinity to weir, every term explained in plain English.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Definitions</span>
+                            <span class="resource-tag">Reference</span>
+                        </div>
+                        <a href="glossary.html" class="resource-cta">
+                            Browse Glossary
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Checklists -->
+                <div class="resource-card" data-category="maintenance">
+                    <div class="resource-image maintenance">
+                        <span class="resource-badge">Free Download</span>
                         <div class="resource-icon">
                             <svg viewBox="0 0 24 24">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -455,50 +788,79 @@
                         </div>
                     </div>
                     <div class="resource-content">
-                        <h3>Pool Planning Checklist</h3>
-                        <p>Our comprehensive 25-point checklist covers everything you need to consider before installing a pool.</p>
-                        <ul class="resource-features">
-                            <li>Budget planning worksheet</li>
-                            <li>Backyard evaluation guide</li>
-                            <li>Questions to ask builders</li>
-                            <li>Timeline planning template</li>
-                            <li>Permit requirements by area</li>
-                        </ul>
-                        <a href="pool-planning-checklist/" class="resource-cta">
-                            Get Free Checklist
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
+                        <h3>Downloadable Checklists</h3>
+                        <div class="resource-meta">
+                            <span>PDF Downloads</span>
+                            <span>Print Ready</span>
+                        </div>
+                        <p>Printable checklists for maintenance, buying, opening, closing, and more. Keep your pool care organized.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Printable</span>
+                            <span class="resource-tag">Organized</span>
+                        </div>
+                        <a href="checklist-downloads.html" class="resource-cta">
+                            Get Checklists
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Pool Buyer's Guide -->
-                <div class="resource-card">
+                <!-- Video Library -->
+                <div class="resource-card" data-category="maintenance">
                     <div class="resource-image">
-                        <span class="resource-badge">2026 Edition</span>
+                        <span class="resource-badge new">New</span>
                         <div class="resource-icon">
                             <svg viewBox="0 0 24 24">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                <polygon points="5 3 19 12 5 21 5 3"/>
                             </svg>
                         </div>
                     </div>
                     <div class="resource-content">
-                        <h3>Pool Buyer's Guide</h3>
-                        <p>Insider knowledge from local experts. Everything you need to make an informed pool investment decision.</p>
-                        <ul class="resource-features">
-                            <li>Pool type comparison (pros/cons)</li>
-                            <li>True cost breakdown</li>
-                            <li>Builder vetting checklist</li>
-                            <li>15 red flags to avoid</li>
-                            <li>Financing options explained</li>
-                        </ul>
-                        <a href="pool-buyers-guide/" class="resource-cta">
-                            Download Guide
+                        <h3>Video Learning Library</h3>
+                        <div class="resource-meta">
+                            <span>Video Content</span>
+                            <span>Step-by-Step</span>
+                        </div>
+                        <p>Visual guides for pool maintenance, repairs, and care. Watch and learn at your own pace.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Tutorials</span>
+                            <span class="resource-tag">How-To</span>
+                        </div>
+                        <a href="video-library.html" class="resource-cta">
+                            Watch Videos
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Local Regulations -->
+                <div class="resource-card" data-category="buying">
+                    <div class="resource-image seasonal">
+                        <div class="resource-icon">
                             <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
                             </svg>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>PA & DE Regulations</h3>
+                        <div class="resource-meta">
+                            <span>Legal Guide</span>
+                            <span>Updated 2026</span>
+                        </div>
+                        <p>Pool regulations, permits, and requirements for Pennsylvania and Delaware. Stay compliant with local laws.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Permits</span>
+                            <span class="resource-tag">Fencing</span>
+                            <span class="resource-tag">Codes</span>
+                        </div>
+                        <a href="local-regulations.html" class="resource-cta">
+                            View Regulations
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -506,13 +868,63 @@
         </div>
     </section>
 
-    <!-- Trust Section -->
-    <section class="trust-section">
+    <!-- Quick Links -->
+    <section class="quick-links">
         <div class="container">
-            <div class="trust-content">
+            <div class="section-header">
+                <h2>Quick Access</h2>
+                <p>Jump directly to what you need</p>
+            </div>
+            <div class="quick-grid">
+                <a href="pool-buying-guide.html#costs" class="quick-link">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <span>Pool Cost Calculator</span>
+                </a>
+                <a href="maintenance-tips.html#weekly" class="quick-link">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>Weekly Maintenance Schedule</span>
+                </a>
+                <a href="water-chemistry.html#testing" class="quick-link">
+                    <svg viewBox="0 0 24 24"><path d="M10 2v7.31M14 9.3V2M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0M5.52 16h12.96"/></svg>
+                    <span>Water Testing Guide</span>
+                </a>
+                <a href="seasonal-care.html#opening" class="quick-link">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+                    <span>Spring Opening Checklist</span>
+                </a>
+                <a href="troubleshooting.html#green-water" class="quick-link">
+                    <svg viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+                    <span>Fix Green Pool Water</span>
+                </a>
+                <a href="local-regulations.html#permits" class="quick-link">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span>Permit Requirements</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get Pool Tips in Your Inbox</h2>
+                <p>Join thousands of pool owners receiving our seasonal maintenance reminders, exclusive tips, and special offers.</p>
+                <form class="newsletter-form" action="https://formspree.io/f/your-form-id" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
                 <h2>Ready to Talk to a Pool Expert?</h2>
-                <p>Our resources are helpful, but nothing beats a personalized conversation. Schedule a free consultation to discuss your specific backyard and goals.</p>
-                <a href="../contact/" class="trust-cta">
+                <p>Our resources are helpful, but nothing beats a personalized conversation. Schedule a free consultation to discuss your specific needs.</p>
+                <a href="../contact/" class="cta-btn">
                     <svg viewBox="0 0 24 24">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                         <line x1="16" y1="2" x2="16" y2="6"/>
@@ -528,8 +940,36 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved. PA HIC #PA123456 | DE License #DE789012 | <a href="/privacy-policy/" style="color: rgba(255,255,255,0.5);">Privacy Policy</a> | <a href="/terms-of-service/" style="color: rgba(255,255,255,0.5);">Terms of Service</a></p>
+            <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved. PA HIC #PA123456 | DE License #DE789012 | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-of-service/">Terms of Service</a></p>
         </div>
     </footer>
+
+    <script>
+        // Category filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.resource-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        document.getElementById('resourceSearch').addEventListener('input', (e) => {
+            const search = e.target.value.toLowerCase();
+            document.querySelectorAll('.resource-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(search) ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Pool Photography | LED Lighting Showcase | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Experience the magic of pools at night. Browse our collection of stunning nighttime pool photography featuring LED lighting, fire features, and evening ambiance.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/gallery/night-gallery.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-glow: rgba(0, 166, 178, 0.3);
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+        p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(14, 31, 52, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--white); }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy-light);
+            border: 1px solid rgba(0, 166, 178, 0.3);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 35%;
+            left: 35%;
+            background: var(--aqua);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--aqua);
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; font-weight: 500; position: relative; padding: 0.5rem 0; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--aqua); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--gold); color: var(--navy) !important; }
+
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--white); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 8rem 0 2rem; background: transparent; }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.75rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list .current { color: var(--white); font-weight: 500; }
+
+        /* Page Header */
+        .page-header { padding: 0 0 3rem; text-align: center; }
+        .page-header h1 { margin-bottom: 1rem; }
+        .page-header p { max-width: 700px; margin: 0 auto 2rem; }
+
+        /* Glow effect on header */
+        .page-header h1 { text-shadow: 0 0 60px var(--aqua-glow); }
+
+        /* Gallery Navigation */
+        .gallery-nav { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+        .gallery-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+        .gallery-nav-link:hover {
+            border-color: var(--aqua);
+            color: var(--white);
+            background: rgba(0, 166, 178, 0.1);
+        }
+        .gallery-nav-link.active {
+            background: var(--aqua);
+            border-color: var(--aqua);
+            color: var(--white);
+            box-shadow: 0 0 30px var(--aqua-glow);
+        }
+        .gallery-nav-link svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Lighting Types */
+        .lighting-types {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .lighting-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .lighting-btn:hover {
+            border-color: var(--aqua);
+            color: var(--white);
+        }
+
+        .lighting-btn.active {
+            background: var(--aqua);
+            border-color: var(--aqua);
+            color: var(--white);
+            box-shadow: 0 0 20px var(--aqua-glow);
+        }
+
+        /* Night Gallery Grid */
+        .night-gallery { padding: 2rem 0 4rem; }
+
+        .night-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .night-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .night-card.featured {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        .night-card:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .night-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a1628 0%, #162a45 50%, #0a1628 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 80%, var(--aqua-glow) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+
+        .image-placeholder svg {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 10px var(--aqua));
+        }
+
+        .image-placeholder span { position: relative; font-size: 0.8rem; opacity: 0.5; padding: 0 1rem; }
+
+        .night-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 100%, var(--aqua-glow) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .night-card:hover .night-glow { opacity: 1; }
+
+        .night-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.3) 40%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .night-card:hover .night-overlay { opacity: 1; }
+
+        .night-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .night-card:hover .night-content { transform: translateY(0); opacity: 1; }
+
+        .night-content h4 { font-size: 1.15rem; margin-bottom: 0.25rem; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+        .night-content span { font-size: 0.85rem; color: var(--aqua); }
+
+        .lighting-tag {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 166, 178, 0.2);
+            border: 1px solid var(--aqua);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--aqua);
+        }
+
+        .social-share {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .night-card:hover .social-share { opacity: 1; transform: translateY(0); }
+
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover { background: var(--aqua); border-color: var(--aqua); }
+        .share-btn svg { width: 16px; height: 16px; stroke: var(--white); stroke-width: 2; fill: none; }
+
+        /* Lighting Tips Section */
+        .lighting-tips {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tips-header { text-align: center; margin-bottom: 3rem; }
+        .tips-header h2 { margin-bottom: 1rem; }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .tip-card:hover {
+            background: rgba(0, 166, 178, 0.05);
+            border-color: rgba(0, 166, 178, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .tip-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(0, 166, 178, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .tip-icon svg { width: 28px; height: 28px; stroke: var(--aqua); stroke-width: 1.5; fill: none; }
+
+        .tip-card h4 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--white); }
+        .tip-card p { font-size: 0.95rem; }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+        }
+
+        .cta-section h2 { margin-bottom: 1rem; }
+        .cta-section p { max-width: 600px; margin: 0 auto 2rem; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--aqua);
+            color: var(--white);
+            box-shadow: 0 0 30px var(--aqua-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 0 30px rgba(201, 169, 98, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn svg { width: 18px; height: 18px; }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 40, 0.98);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+
+        .lightbox.active { display: flex; opacity: 1; }
+
+        .lightbox-content { position: relative; max-width: 1000px; width: 100%; }
+
+        .lightbox-image-container {
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a1628 0%, #162a45 100%);
+            box-shadow: 0 0 60px var(--aqua-glow);
+        }
+
+        .lightbox-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .lightbox-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 80%, var(--aqua-glow) 0%, transparent 50%);
+        }
+
+        .lightbox-placeholder svg { position: relative; width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1.5rem; opacity: 0.7; filter: drop-shadow(0 0 20px var(--aqua)); }
+
+        .lightbox-info { padding: 1.5rem 0; }
+        .lightbox-info h3 { margin-bottom: 0.5rem; }
+
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover { background: var(--aqua); border-color: var(--aqua); }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .lightbox-nav:hover { background: var(--aqua); border-color: var(--aqua); }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
+
+        /* Footer */
+        footer { background: #0a1628; color: var(--white); padding: 4rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; }
+        .footer-links a { color: rgba(255, 255, 255, 0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.3); font-size: 0.85rem; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .night-grid { grid-template-columns: repeat(2, 1fr); }
+            .night-card.featured { grid-column: span 2; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .lightbox-prev { left: 1rem; }
+            .lightbox-next { right: 1rem; }
+        }
+
+        @media (max-width: 640px) {
+            .night-grid { grid-template-columns: 1fr; }
+            .night-card.featured { grid-column: span 1; aspect-ratio: 4/3; }
+            .gallery-nav { gap: 0.5rem; }
+            .gallery-nav-link { padding: 0.6rem 1rem; font-size: 0.8rem; }
+            .lighting-types { gap: 0.5rem; }
+            .lighting-btn { padding: 0.5rem 1rem; font-size: 0.75rem; }
+        }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../services/">Services</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../portfolio/">Portfolio</a></li>
+                <li><a href="./" class="active">Gallery</a></li>
+                <li><a href="../testimonials/">Reviews</a></li>
+                <li><a href="../contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="../">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="./">Gallery</a></li>
+                <li><span>/</span></li>
+                <li class="current">Night Views</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Pools After Dark</h1>
+            <p>Experience the magic of pools illuminated at night. Our LED lighting packages transform your backyard into a stunning evening retreat with customizable colors and dramatic effects.</p>
+
+            <div class="gallery-nav">
+                <a href="./" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    All Photos
+                </a>
+                <a href="before-after.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+                    Before & After
+                </a>
+                <a href="design-inspiration.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Inspiration
+                </a>
+                <a href="outdoor-living.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Outdoor Living
+                </a>
+                <a href="night-gallery.html" class="gallery-nav-link active">
+                    <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    Night Views
+                </a>
+                <a href="drone-views.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Drone Views
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lighting Types Filter -->
+    <div class="container">
+        <div class="lighting-types">
+            <button class="lighting-btn active" data-filter="all">All Lighting</button>
+            <button class="lighting-btn" data-filter="led">LED Color</button>
+            <button class="lighting-btn" data-filter="fire">Fire Features</button>
+            <button class="lighting-btn" data-filter="landscape">Landscape</button>
+            <button class="lighting-btn" data-filter="underwater">Underwater</button>
+        </div>
+    </div>
+
+    <!-- Night Gallery -->
+    <section class="night-gallery">
+        <div class="container">
+            <div class="night-grid">
+                <!-- Featured: Blue LED Glow -->
+                <div class="night-card featured reveal" data-title="Infinity Edge LED Symphony" data-lighting="led" data-description="Color-changing LED lights create a mesmerizing display on this infinity edge pool at twilight.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Infinity edge pool with blue LED lighting at dusk</span>
+                    </div>
+                    <div class="night-glow"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Infinity Edge LED Symphony</h4>
+                        <span>Gladwyne, PA</span>
+                        <span class="lighting-tag">Color-Changing LED</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card reveal" data-title="Fire Bowl Reflections" data-lighting="fire" data-description="Fire bowls cast dancing reflections across the water surface.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Fire bowls on pool edge at night</span>
+                    </div>
+                    <div class="night-glow" style="background: radial-gradient(circle at 50% 100%, rgba(201, 169, 98, 0.3) 0%, transparent 70%);"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Fire Bowl Reflections</h4>
+                        <span>Hockessin, DE</span>
+                        <span class="lighting-tag">Fire Feature</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card reveal" data-title="Underwater Light Show" data-lighting="underwater" data-description="Multiple underwater LEDs create vibrant color gradients.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Underwater LED lights illuminating pool</span>
+                    </div>
+                    <div class="night-glow"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Underwater Light Show</h4>
+                        <span>West Chester, PA</span>
+                        <span class="lighting-tag">Underwater LED</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card reveal" data-title="Garden Path Illumination" data-lighting="landscape" data-description="Landscape lighting creates a magical path to the pool.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Landscape lighting along pool pathway</span>
+                    </div>
+                    <div class="night-glow" style="background: radial-gradient(circle at 30% 100%, rgba(255, 255, 200, 0.2) 0%, transparent 70%);"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Garden Path Illumination</h4>
+                        <span>Villanova, PA</span>
+                        <span class="lighting-tag">Landscape</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card reveal" data-title="Purple Twilight" data-lighting="led" data-description="Purple LED setting creates a serene twilight atmosphere.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Pool with purple LED lighting</span>
+                    </div>
+                    <div class="night-glow" style="background: radial-gradient(circle at 50% 100%, rgba(128, 0, 255, 0.3) 0%, transparent 70%);"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Purple Twilight</h4>
+                        <span>Bryn Mawr, PA</span>
+                        <span class="lighting-tag">LED Color</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card featured reveal" data-title="Complete Evening Ambiance" data-lighting="landscape" data-description="Full outdoor lighting design with pool, patio, and landscape illumination.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Complete backyard with integrated lighting</span>
+                    </div>
+                    <div class="night-glow"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Complete Evening Ambiance</h4>
+                        <span>Greenville, DE</span>
+                        <span class="lighting-tag">Full Integration</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card reveal" data-title="Waterfall Spotlight" data-lighting="underwater" data-description="Illuminated waterfall creates a stunning focal point.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Illuminated waterfall at night</span>
+                    </div>
+                    <div class="night-glow"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Waterfall Spotlight</h4>
+                        <span>Malvern, PA</span>
+                        <span class="lighting-tag">Water Feature</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card reveal" data-title="Fire Pit Gathering" data-lighting="fire" data-description="Fire pit creates a warm gathering spot beside the pool.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Fire pit area with pool view</span>
+                    </div>
+                    <div class="night-glow" style="background: radial-gradient(circle at 50% 100%, rgba(255, 100, 0, 0.3) 0%, transparent 70%);"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Fire Pit Gathering</h4>
+                        <span>Wayne, PA</span>
+                        <span class="lighting-tag">Fire Pit</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="night-card reveal" data-title="Teal Serenity" data-lighting="led" data-description="Calming teal LED creates a spa-like atmosphere.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Pool with teal LED lighting</span>
+                    </div>
+                    <div class="night-glow"></div>
+                    <div class="night-overlay"></div>
+                    <div class="night-content">
+                        <h4>Teal Serenity</h4>
+                        <span>Wilmington, DE</span>
+                        <span class="lighting-tag">LED Color</span>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lighting Tips -->
+    <section class="lighting-tips">
+        <div class="container">
+            <div class="tips-header reveal">
+                <h2>Pool Lighting Options</h2>
+                <p>Create the perfect evening ambiance with our professional lighting packages</p>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card reveal">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </div>
+                    <h4>Color-Changing LED</h4>
+                    <p>Choose from millions of colors and automated light shows with smart-controlled LED systems</p>
+                </div>
+                <div class="tip-card reveal">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                    </div>
+                    <h4>Fire Features</h4>
+                    <p>Fire bowls, fire pits, and fireplaces add warmth and dramatic ambiance year-round</p>
+                </div>
+                <div class="tip-card reveal">
+                    <div class="tip-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h4>Underwater Effects</h4>
+                    <p>Strategic underwater placement creates depth and enhances water movement visibility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Light Up Your Evenings</h2>
+            <p>Ask about our LED lighting packages during your consultation. Transform your pool into a nighttime masterpiece.</p>
+            <a href="../contact/" class="btn btn-primary">
+                Schedule Consultation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+            <div class="lightbox-image-container">
+                <div class="lightbox-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Night Photography</span>
+                </div>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Title</h3>
+                <p id="lightboxDesc">Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="../" class="logo">
+                    <div class="logo-mark"></div>
+                    <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+                </a>
+                <ul class="footer-links">
+                    <li><a href="../services/">Services</a></li>
+                    <li><a href="./">Gallery</a></li>
+                    <li><a href="../portfolio/">Portfolio</a></li>
+                    <li><a href="../contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lighting filter
+        const lightingBtns = document.querySelectorAll('.lighting-btn');
+        const nightCards = document.querySelectorAll('.night-card');
+
+        lightingBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                lightingBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                nightCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.lighting === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDesc = document.getElementById('lightboxDesc');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        let currentIndex = 0;
+        const visibleCards = () => Array.from(nightCards).filter(c => c.style.display !== 'none');
+
+        nightCards.forEach((card) => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.share-btn')) return;
+                const visible = visibleCards();
+                currentIndex = visible.indexOf(card);
+                openLightbox(card);
+            });
+        });
+
+        function openLightbox(card) {
+            lightboxTitle.textContent = card.dataset.title;
+            lightboxDesc.textContent = card.dataset.description;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+        lightboxPrev.addEventListener('click', () => {
+            const visible = visibleCards();
+            currentIndex = (currentIndex - 1 + visible.length) % visible.length;
+            openLightbox(visible[currentIndex]);
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            const visible = visibleCards();
+            currentIndex = (currentIndex + 1) % visible.length;
+            openLightbox(visible[currentIndex]);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxPrev.click();
+            if (e.key === 'ArrowRight') lightboxNext.click();
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

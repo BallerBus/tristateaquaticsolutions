@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Outdoor Living Spaces | Pool & Patio Gallery | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Explore complete backyard transformations featuring pools with outdoor kitchens, fire features, patios, and entertainment areas. Main Line PA and Delaware outdoor living inspiration.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/gallery/outdoor-living.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 35%;
+            left: 35%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; position: relative; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); }
+
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 8rem 0 2rem; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; align-items: center; gap: 0.75rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: var(--gray-text); text-decoration: none; }
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        /* Page Header */
+        .page-header { background: var(--gray-light); padding: 0 0 3rem; text-align: center; }
+        .page-header h1 { margin-bottom: 1rem; }
+        .page-header p { max-width: 700px; margin: 0 auto 2rem; }
+
+        /* Gallery Navigation */
+        .gallery-nav { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+        .gallery-nav-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--white); border: 1px solid var(--gray); border-radius: 100px; text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; transition: all 0.3s var(--ease-out-expo); }
+        .gallery-nav-link:hover { border-color: var(--aqua); color: var(--aqua); transform: translateY(-2px); }
+        .gallery-nav-link.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+        .gallery-nav-link svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Category Tabs */
+        .category-tabs { padding: 2rem 0; background: var(--white); border-bottom: 1px solid var(--gray); position: sticky; top: 76px; z-index: 100; }
+        .tabs-wrapper { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; }
+        .tab-btn { padding: 0.75rem 1.5rem; border: none; background: var(--gray-light); border-radius: 100px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; color: var(--navy); cursor: pointer; transition: all 0.3s var(--ease-out-expo); display: flex; align-items: center; gap: 0.5rem; }
+        .tab-btn:hover { background: var(--gray); }
+        .tab-btn.active { background: var(--navy); color: var(--white); }
+        .tab-btn svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Outdoor Living Gallery */
+        .gallery-section { padding: 4rem 0; }
+
+        .category-section { margin-bottom: 4rem; }
+        .category-section.hidden { display: none; }
+
+        .category-header { margin-bottom: 2rem; text-align: center; }
+        .category-header h2 { margin-bottom: 0.5rem; }
+
+        .masonry-grid { columns: 3; column-gap: 1.5rem; }
+
+        .outdoor-card {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--gray);
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .outdoor-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.3);
+        }
+
+        .outdoor-image {
+            width: 100%;
+            display: block;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .image-placeholder.tall { padding: 5rem 1.5rem; }
+        .image-placeholder.short { padding: 2rem 1.5rem; }
+
+        .image-placeholder svg { width: 48px; height: 48px; stroke: var(--aqua); stroke-width: 1.5; fill: none; margin-bottom: 1rem; opacity: 0.5; }
+        .image-placeholder span { font-size: 0.8rem; opacity: 0.4; }
+
+        .outdoor-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 31, 52, 0.9) 0%, rgba(14, 31, 52, 0.3) 40%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .outdoor-card:hover .outdoor-overlay { opacity: 1; }
+
+        .outdoor-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .outdoor-card:hover .outdoor-content { transform: translateY(0); opacity: 1; }
+
+        .outdoor-content h4 { font-size: 1.15rem; margin-bottom: 0.25rem; }
+        .outdoor-content span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); }
+
+        .outdoor-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .feature-tag {
+            padding: 0.25rem 0.65rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .social-share {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .outdoor-card:hover .social-share { opacity: 1; transform: translateY(0); }
+
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover { background: var(--white); transform: scale(1.1); }
+        .share-btn svg { width: 16px; height: 16px; stroke: var(--navy); stroke-width: 2; fill: none; }
+
+        /* Feature Highlights */
+        .feature-highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 4rem 0;
+            background: var(--gray-light);
+        }
+
+        .highlight-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .highlight-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 10px 30px -10px rgba(14, 31, 52, 0.15);
+        }
+
+        .highlight-icon svg { width: 28px; height: 28px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+
+        .highlight-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--navy); }
+        .highlight-card p { font-size: 0.9rem; }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 { color: var(--white); margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto 2rem; }
+
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.3s var(--ease-out-expo); cursor: pointer; border: none; }
+        .btn-primary { background: var(--aqua); color: var(--white); }
+        .btn-primary:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+        .btn svg { width: 18px; height: 18px; }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(14, 31, 52, 0.97);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+
+        .lightbox.active { display: flex; opacity: 1; }
+
+        .lightbox-content { position: relative; max-width: 1000px; width: 100%; }
+
+        .lightbox-image-container {
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--navy);
+        }
+
+        .lightbox-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+        }
+
+        .lightbox-placeholder svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1.5rem; opacity: 0.6; }
+
+        .lightbox-info { padding: 1.5rem 0; color: var(--white); }
+        .lightbox-info h3 { margin-bottom: 0.5rem; }
+        .lightbox-info p { color: rgba(255, 255, 255, 0.7); }
+
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover { background: var(--aqua); }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .lightbox-nav:hover { background: var(--aqua); }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .masonry-grid { columns: 2; }
+            .feature-highlights { grid-template-columns: repeat(2, 1fr); }
+            .lightbox-prev { left: 1rem; }
+            .lightbox-next { right: 1rem; }
+        }
+
+        @media (max-width: 640px) {
+            .masonry-grid { columns: 1; }
+            .feature-highlights { grid-template-columns: 1fr; }
+            .gallery-nav { gap: 0.5rem; }
+            .gallery-nav-link { padding: 0.6rem 1rem; font-size: 0.8rem; }
+            .tabs-wrapper { gap: 0.35rem; }
+            .tab-btn { padding: 0.6rem 1rem; font-size: 0.8rem; }
+        }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../services/">Services</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../portfolio/">Portfolio</a></li>
+                <li><a href="./" class="active">Gallery</a></li>
+                <li><a href="../testimonials/">Reviews</a></li>
+                <li><a href="../contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="../">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="./">Gallery</a></li>
+                <li><span>/</span></li>
+                <li class="current">Outdoor Living</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Complete Outdoor Living</h1>
+            <p>More than just a pool - explore complete backyard transformations featuring outdoor kitchens, fire features, patios, pergolas, and entertainment areas designed for the life you love.</p>
+
+            <div class="gallery-nav">
+                <a href="./" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    All Photos
+                </a>
+                <a href="before-after.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+                    Before & After
+                </a>
+                <a href="design-inspiration.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Inspiration
+                </a>
+                <a href="outdoor-living.html" class="gallery-nav-link active">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Outdoor Living
+                </a>
+                <a href="night-gallery.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    Night Views
+                </a>
+                <a href="drone-views.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Drone Views
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Tabs -->
+    <div class="category-tabs">
+        <div class="container">
+            <div class="tabs-wrapper">
+                <button class="tab-btn active" data-tab="all">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    All
+                </button>
+                <button class="tab-btn" data-tab="kitchens">
+                    <svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                    Outdoor Kitchens
+                </button>
+                <button class="tab-btn" data-tab="fire">
+                    <svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                    Fire Features
+                </button>
+                <button class="tab-btn" data-tab="patios">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                    Patios & Decks
+                </button>
+                <button class="tab-btn" data-tab="entertainment">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Entertainment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+
+            <!-- All / Outdoor Kitchens -->
+            <div class="category-section" data-category="all">
+                <div class="masonry-grid">
+                    <div class="outdoor-card reveal" data-title="Complete Outdoor Kitchen" data-category="kitchens" data-description="Full outdoor kitchen with grill station, refrigerator, and bar seating overlooking the pool.">
+                        <div class="image-placeholder tall">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Outdoor kitchen with built-in grill, sink, and refrigerator</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Complete Outdoor Kitchen</h4>
+                            <span>Gladwyne, PA</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Grill Station</span>
+                                <span class="feature-tag">Bar Seating</span>
+                                <span class="feature-tag">Refrigerator</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Fire Pit Lounge" data-category="fire" data-description="Circular fire pit with built-in seating and surrounding pool views.">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Fire pit with built-in seating</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Fire Pit Lounge</h4>
+                            <span>West Chester, PA</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Gas Fire Pit</span>
+                                <span class="feature-tag">Built-in Seating</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Travertine Patio" data-category="patios" data-description="Expansive travertine patio with multiple seating areas and pool access.">
+                        <div class="image-placeholder short">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Travertine patio and pool deck</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Travertine Patio</h4>
+                            <span>Villanova, PA</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Travertine</span>
+                                <span class="feature-tag">Lounge Area</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Pool House Cabana" data-category="entertainment" data-description="Full pool house with changing rooms, bathroom, and covered entertaining space.">
+                        <div class="image-placeholder tall">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool house with full amenities</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Pool House Cabana</h4>
+                            <span>Haverford, PA</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Bathroom</span>
+                                <span class="feature-tag">Changing Room</span>
+                                <span class="feature-tag">Bar</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Fire Bowl Feature" data-category="fire" data-description="Elegant fire bowls integrated into pool coping for dramatic evening ambiance.">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Fire bowls on pool edge</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Fire Bowl Feature</h4>
+                            <span>Hockessin, DE</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Fire Bowls</span>
+                                <span class="feature-tag">LED Lighting</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Pergola Dining" data-category="entertainment" data-description="Custom pergola with outdoor dining set and string lighting.">
+                        <div class="image-placeholder short">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pergola with dining area</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Pergola Dining</h4>
+                            <span>Wayne, PA</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Pergola</span>
+                                <span class="feature-tag">String Lights</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Built-in BBQ Island" data-category="kitchens" data-description="Custom BBQ island with storage, prep space, and granite countertops.">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>BBQ island with granite counters</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Built-in BBQ Island</h4>
+                            <span>Greenville, DE</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">BBQ</span>
+                                <span class="feature-tag">Granite</span>
+                                <span class="feature-tag">Storage</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Multi-Level Deck" data-category="patios" data-description="Composite decking with multiple levels connecting house to pool area.">
+                        <div class="image-placeholder tall">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Multi-level composite deck</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Multi-Level Deck</h4>
+                            <span>Malvern, PA</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Composite</span>
+                                <span class="feature-tag">Multi-Level</span>
+                                <span class="feature-tag">Railing</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="outdoor-card reveal" data-title="Sunken Fire Pit" data-category="fire" data-description="Sunken fire pit area with comfortable seating and pool views.">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Sunken fire pit lounge</span>
+                        </div>
+                        <div class="outdoor-overlay"></div>
+                        <div class="outdoor-content">
+                            <h4>Sunken Fire Pit</h4>
+                            <span>Bryn Mawr, PA</span>
+                            <div class="outdoor-features">
+                                <span class="feature-tag">Sunken Design</span>
+                                <span class="feature-tag">Cushioned Seating</span>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="feature-highlights">
+        <div class="container">
+            <div class="highlight-card reveal">
+                <div class="highlight-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                </div>
+                <h4>Outdoor Kitchens</h4>
+                <p>Full cooking stations, built-in grills, refrigeration, and bar seating</p>
+            </div>
+            <div class="highlight-card reveal">
+                <div class="highlight-icon">
+                    <svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                </div>
+                <h4>Fire Features</h4>
+                <p>Fire pits, fire bowls, fireplaces, and fire tables for year-round enjoyment</p>
+            </div>
+            <div class="highlight-card reveal">
+                <div class="highlight-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                </div>
+                <h4>Patios & Decks</h4>
+                <p>Natural stone, pavers, travertine, and composite decking solutions</p>
+            </div>
+            <div class="highlight-card reveal">
+                <div class="highlight-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h4>Entertainment</h4>
+                <p>Pool houses, cabanas, pergolas, and covered outdoor living rooms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Design Your Complete Outdoor Living Space</h2>
+            <p>Let us help you create the ultimate backyard retreat with a pool and complete outdoor living amenities.</p>
+            <a href="../contact/" class="btn btn-primary">
+                Schedule Design Consultation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+            <div class="lightbox-image-container">
+                <div class="lightbox-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Outdoor Living Photo</span>
+                </div>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Feature Title</h3>
+                <p id="lightboxDesc">Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="../" class="logo">
+                    <div class="logo-mark"></div>
+                    <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+                </a>
+                <ul class="footer-links">
+                    <li><a href="../services/">Services</a></li>
+                    <li><a href="./">Gallery</a></li>
+                    <li><a href="../portfolio/">Portfolio</a></li>
+                    <li><a href="../contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab filtering
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const cards = document.querySelectorAll('.outdoor-card');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const tab = btn.dataset.tab;
+
+                cards.forEach(card => {
+                    if (tab === 'all' || card.dataset.category === tab) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDesc = document.getElementById('lightboxDesc');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        let currentIndex = 0;
+        const visibleCards = () => Array.from(cards).filter(c => c.style.display !== 'none');
+
+        cards.forEach((card) => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.share-btn')) return;
+                const visible = visibleCards();
+                currentIndex = visible.indexOf(card);
+                openLightbox(card);
+            });
+        });
+
+        function openLightbox(card) {
+            lightboxTitle.textContent = card.dataset.title;
+            lightboxDesc.textContent = card.dataset.description;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+        lightboxPrev.addEventListener('click', () => {
+            const visible = visibleCards();
+            currentIndex = (currentIndex - 1 + visible.length) % visible.length;
+            openLightbox(visible[currentIndex]);
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            const visible = visibleCards();
+            currentIndex = (currentIndex + 1) % visible.length;
+            openLightbox(visible[currentIndex]);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxPrev.click();
+            if (e.key === 'ArrowRight') lightboxNext.click();
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerial Pool Photography | Drone Views | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="See our pool installations from above. Stunning aerial drone photography showcasing complete backyard transformations across Main Line Philadelphia and Delaware.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/gallery/drone-views.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 35%;
+            left: 35%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; position: relative; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); }
+
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.3' opacity='0.2'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%2300A6B2' stroke-width='0.3' opacity='0.2'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%2300A6B2' stroke-width='0.3' opacity='0.2'/%3E%3C/svg%3E") center/200px repeat;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--aqua-glow);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--aqua);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        .hero-content h1 { margin-bottom: 1rem; }
+        .hero-content p { max-width: 600px; margin: 0 auto 2rem; font-size: 1.15rem; }
+
+        /* Gallery Navigation */
+        .gallery-nav { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .gallery-nav-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--white); border: 1px solid var(--gray); border-radius: 100px; text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; transition: all 0.3s var(--ease-out-expo); }
+        .gallery-nav-link:hover { border-color: var(--aqua); color: var(--aqua); transform: translateY(-2px); }
+        .gallery-nav-link.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+        .gallery-nav-link svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+        /* Drone Gallery */
+        .drone-gallery { padding: 4rem 0; }
+
+        .drone-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 200px;
+            gap: 1.5rem;
+        }
+
+        .drone-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        /* Grid variations */
+        .drone-card:nth-child(1) { grid-column: span 8; grid-row: span 2; }
+        .drone-card:nth-child(2) { grid-column: span 4; grid-row: span 2; }
+        .drone-card:nth-child(3) { grid-column: span 4; grid-row: span 2; }
+        .drone-card:nth-child(4) { grid-column: span 4; grid-row: span 2; }
+        .drone-card:nth-child(5) { grid-column: span 4; grid-row: span 2; }
+        .drone-card:nth-child(6) { grid-column: span 6; grid-row: span 2; }
+        .drone-card:nth-child(7) { grid-column: span 6; grid-row: span 2; }
+        .drone-card:nth-child(8) { grid-column: span 4; grid-row: span 2; }
+        .drone-card:nth-child(9) { grid-column: span 8; grid-row: span 2; }
+
+        .drone-card:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.3);
+        }
+
+        .drone-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .drone-card:hover .drone-image { transform: scale(1.05); }
+
+        .image-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .image-placeholder svg { width: 48px; height: 48px; stroke: var(--aqua); stroke-width: 1.5; fill: none; margin-bottom: 1rem; opacity: 0.5; }
+        .image-placeholder span { font-size: 0.8rem; opacity: 0.4; padding: 0 1.5rem; }
+
+        .drone-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 31, 52, 0.9) 0%, rgba(14, 31, 52, 0.2) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .drone-card:hover .drone-overlay { opacity: 1; }
+
+        .drone-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .drone-card:hover .drone-content { transform: translateY(0); opacity: 1; }
+
+        .drone-content h4 { font-size: 1.15rem; margin-bottom: 0.25rem; }
+        .drone-content span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); }
+
+        .property-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .stat svg { width: 14px; height: 14px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+
+        .social-share {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .drone-card:hover .social-share { opacity: 1; transform: translateY(0); }
+
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover { background: var(--white); transform: scale(1.1); }
+        .share-btn svg { width: 16px; height: 16px; stroke: var(--navy); stroke-width: 2; fill: none; }
+
+        .altitude-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.35rem 0.75rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .altitude-badge svg { width: 12px; height: 12px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+
+        /* Property Info Section */
+        .property-info {
+            padding: 4rem 0;
+            background: var(--gray-light);
+        }
+
+        .info-header { text-align: center; margin-bottom: 3rem; }
+        .info-header h2 { margin-bottom: 0.75rem; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px -10px rgba(14, 31, 52, 0.1);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(14, 31, 52, 0.15); }
+
+        .info-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--aqua-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .info-icon svg { width: 24px; height: 24px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+
+        .info-card h4 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--navy); }
+        .info-card p { font-size: 0.9rem; }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 { color: var(--white); margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto 2rem; }
+
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.3s var(--ease-out-expo); cursor: pointer; border: none; }
+        .btn-primary { background: var(--aqua); color: var(--white); }
+        .btn-primary:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+        .btn svg { width: 18px; height: 18px; }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(14, 31, 52, 0.97);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+
+        .lightbox.active { display: flex; opacity: 1; }
+
+        .lightbox-content { position: relative; max-width: 1200px; width: 100%; }
+
+        .lightbox-image-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--navy);
+        }
+
+        .lightbox-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+        }
+
+        .lightbox-placeholder svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; margin-bottom: 1.5rem; opacity: 0.6; }
+
+        .lightbox-info { padding: 1.5rem 0; color: var(--white); }
+        .lightbox-info h3 { margin-bottom: 0.5rem; }
+        .lightbox-info p { color: rgba(255, 255, 255, 0.7); }
+
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover { background: var(--aqua); }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .lightbox-nav:hover { background: var(--aqua); }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 4rem 0 2rem; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .drone-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+            .drone-card:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+            .drone-card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+            .info-grid { grid-template-columns: repeat(2, 1fr); }
+            .lightbox-prev { left: 1rem; }
+            .lightbox-next { right: 1rem; }
+        }
+
+        @media (max-width: 640px) {
+            .drone-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+            .drone-card:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+            .info-grid { grid-template-columns: 1fr; }
+            .gallery-nav { gap: 0.5rem; }
+            .gallery-nav-link { padding: 0.6rem 1rem; font-size: 0.8rem; }
+        }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../services/">Services</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../portfolio/">Portfolio</a></li>
+                <li><a href="./" class="active">Gallery</a></li>
+                <li><a href="../testimonials/">Reviews</a></li>
+                <li><a href="../contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Aerial Photography
+                </div>
+                <h1>Drone Views</h1>
+                <p>See the full picture with stunning aerial photography. Our drone shots capture the complete scope of each project, showing how pools integrate seamlessly with homes and landscapes.</p>
+
+                <div class="gallery-nav">
+                    <a href="./" class="gallery-nav-link">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        All Photos
+                    </a>
+                    <a href="before-after.html" class="gallery-nav-link">
+                        <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+                        Before & After
+                    </a>
+                    <a href="design-inspiration.html" class="gallery-nav-link">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        Inspiration
+                    </a>
+                    <a href="outdoor-living.html" class="gallery-nav-link">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        Outdoor Living
+                    </a>
+                    <a href="night-gallery.html" class="gallery-nav-link">
+                        <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        Night Views
+                    </a>
+                    <a href="drone-views.html" class="gallery-nav-link active">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        Drone Views
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drone Gallery -->
+    <section class="drone-gallery">
+        <div class="container">
+            <div class="drone-grid">
+                <!-- Card 1: Featured wide shot -->
+                <div class="drone-card reveal" data-title="Gladwyne Estate Overview" data-description="Complete property view showing pool, spa, outdoor kitchen, and landscaping integration with the main residence.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial view of Gladwyne estate with infinity pool, spa, and outdoor kitchen</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        150 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Gladwyne Estate Overview</h4>
+                        <span>Gladwyne, PA</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> 18x40 Pool</span>
+                            <span class="stat"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> 2.5 Acres</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="drone-card reveal" data-title="Hockessin Pool Integration" data-description="Modern fiberglass pool perfectly positioned relative to the home and outdoor living areas.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial view of Hockessin home with modern pool</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        100 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Hockessin Pool Integration</h4>
+                        <span>Hockessin, DE</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 14x32</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="drone-card reveal" data-title="West Chester Resort Layout" data-description="Complete backyard resort showing pool, fire pit area, outdoor kitchen, and landscaping.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial of resort-style backyard in West Chester</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        120 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>West Chester Resort Layout</h4>
+                        <span>West Chester, PA</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 16x34</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="drone-card reveal" data-title="Bryn Mawr Plunge Pool" data-description="Compact plunge pool solution showcasing efficient use of smaller backyard space.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial of plunge pool in compact backyard</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        80 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Bryn Mawr Plunge Pool</h4>
+                        <span>Bryn Mawr, PA</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 10x18</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="drone-card reveal" data-title="Villanova Classic Estate" data-description="Traditional pool design with formal landscaping and pool house from above.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial of traditional Villanova estate pool</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        130 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Villanova Classic Estate</h4>
+                        <span>Villanova, PA</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 16x36</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="drone-card reveal" data-title="Greenville Waterfall Pool" data-description="Concrete pool with natural rock waterfall and grotto viewed from above.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial view of waterfall pool in Greenville</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        100 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Greenville Waterfall Pool</h4>
+                        <span>Greenville, DE</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 22x48</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="drone-card reveal" data-title="Wayne Hillside Installation" data-description="Pool installation on challenging hillside terrain with retaining walls.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial of hillside pool in Wayne</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        110 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Wayne Hillside Installation</h4>
+                        <span>Wayne, PA</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 15x35</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="drone-card reveal" data-title="Malvern Complete Backyard" data-description="Full property transformation with pool, hot tub, and multi-level deck.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial of complete backyard in Malvern</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        90 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Malvern Complete Backyard</h4>
+                        <span>Malvern, PA</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 20x42</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Card 9: Featured wide -->
+                <div class="drone-card reveal" data-title="Haverford Tudor Property" data-description="Classic pool design complementing historic Tudor architecture.">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Aerial of Tudor home with classic pool in Haverford</span>
+                    </div>
+                    <div class="altitude-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                        140 ft
+                    </div>
+                    <div class="drone-overlay"></div>
+                    <div class="drone-content">
+                        <h4>Haverford Tudor Property</h4>
+                        <span>Haverford, PA</span>
+                        <div class="property-stats">
+                            <span class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/></svg> 18x36</span>
+                            <span class="stat"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> 1.8 Acres</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" title="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Info Section -->
+    <section class="property-info">
+        <div class="container">
+            <div class="info-header reveal">
+                <h2>Why Aerial Photography Matters</h2>
+                <p>Drone photography helps you visualize how a pool will transform your entire property</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card reveal">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h4>Full Property Context</h4>
+                    <p>See how pool placement relates to your home, yard, and existing features</p>
+                </div>
+                <div class="info-card reveal">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <h4>Scale & Proportion</h4>
+                    <p>Understand true pool size relative to outdoor living spaces</p>
+                </div>
+                <div class="info-card reveal">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h4>Landscape Integration</h4>
+                    <p>View hardscape, landscaping, and pool working together</p>
+                </div>
+                <div class="info-card reveal">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Design Inspiration</h4>
+                    <p>Discover possibilities for your own backyard transformation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to See Your Property From Above?</h2>
+            <p>We offer complimentary drone photography as part of our design process, helping you envision your perfect pool.</p>
+            <a href="../contact/" class="btn btn-primary">
+                Schedule Your Consultation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+            <div class="lightbox-image-container">
+                <div class="lightbox-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Aerial Photography</span>
+                </div>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Title</h3>
+                <p id="lightboxDesc">Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="../" class="logo">
+                    <div class="logo-mark"></div>
+                    <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+                </a>
+                <ul class="footer-links">
+                    <li><a href="../services/">Services</a></li>
+                    <li><a href="./">Gallery</a></li>
+                    <li><a href="../portfolio/">Portfolio</a></li>
+                    <li><a href="../contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDesc = document.getElementById('lightboxDesc');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        const droneCards = document.querySelectorAll('.drone-card');
+        let currentIndex = 0;
+
+        droneCards.forEach((card, index) => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.share-btn')) return;
+                currentIndex = index;
+                openLightbox(card);
+            });
+        });
+
+        function openLightbox(card) {
+            lightboxTitle.textContent = card.dataset.title;
+            lightboxDesc.textContent = card.dataset.description;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + droneCards.length) % droneCards.length;
+            openLightbox(droneCards[currentIndex]);
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % droneCards.length;
+            openLightbox(droneCards[currentIndex]);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxPrev.click();
+            if (e.key === 'ArrowRight') lightboxNext.click();
+        });
+
+        // Share functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (navigator.share) {
+                    const card = btn.closest('.drone-card');
+                    navigator.share({
+                        title: card.dataset.title,
+                        text: card.dataset.description,
+                        url: window.location.href
+                    });
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

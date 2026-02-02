@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Your Perfect Pool? | Interactive Quiz | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Take our fun 2-minute quiz to discover your perfect pool type. Answer questions about your lifestyle, backyard, and preferences for personalized pool recommendations.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="What's Your Perfect Pool? Quiz | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Discover your ideal pool type in just 2 minutes with our interactive quiz.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --success: #10B981;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+        /* Navigation */
+        .quiz-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .exit-btn {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .exit-btn:hover { color: var(--navy); }
+
+        /* Progress */
+        .progress-container {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(14, 31, 52, 0.05);
+            display: none;
+        }
+
+        .progress-container.visible { display: block; }
+
+        .progress-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        .progress-step {
+            font-size: 0.8rem;
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--gray);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--aqua), var(--gold));
+            border-radius: 100px;
+            transition: width 0.5s var(--ease-out-expo);
+        }
+
+        /* Quiz Container */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px clamp(1.5rem, 5vw, 4rem) 4rem;
+            min-height: 100vh;
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .start-screen.hidden { display: none; }
+
+        .start-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 50px -15px rgba(0, 166, 178, 0.4);
+        }
+
+        .start-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--white);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .start-screen h1 {
+            margin-bottom: 1rem;
+        }
+
+        .start-screen h1 em {
+            font-style: italic;
+            color: var(--aqua);
+        }
+
+        .start-desc {
+            font-size: 1.15rem;
+            color: var(--gray-text);
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .start-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .start-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .start-feature svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-start {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-start:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(0, 166, 178, 0.4);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Question Slides */
+        .questions-container {
+            display: none;
+        }
+
+        .questions-container.visible { display: block; }
+
+        .question-slide {
+            display: none;
+            animation: fadeIn 0.5s var(--ease-out-expo);
+        }
+
+        .question-slide.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .question-number::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--aqua);
+        }
+
+        .question-title {
+            margin-bottom: 2rem;
+            color: var(--navy);
+        }
+
+        /* Options */
+        .options-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .options-grid.two-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 640px) {
+            .options-grid.two-col { grid-template-columns: 1fr; }
+        }
+
+        .option-btn {
+            background: var(--white);
+            border: 2px solid var(--gray);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            position: relative;
+        }
+
+        .option-btn:hover {
+            border-color: var(--aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 166, 178, 0.2);
+        }
+
+        .option-btn.selected {
+            border-color: var(--aqua);
+            background: linear-gradient(135deg, rgba(0, 166, 178, 0.08) 0%, rgba(0, 166, 178, 0.02) 100%);
+        }
+
+        .option-btn.selected::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--aqua);
+            border-radius: 16px 0 0 16px;
+        }
+
+        .option-btn.selected::after {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 24px;
+            height: 24px;
+            background: var(--aqua);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-size: 14px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .option-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover .option-icon,
+        .option-btn.selected .option-icon {
+            background: var(--aqua-glow);
+        }
+
+        .option-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .option-title {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .option-desc {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        /* Navigation Buttons */
+        .quiz-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .btn-back {
+            background: transparent;
+            color: var(--gray-text);
+            padding-left: 0;
+        }
+
+        .btn-back:hover { color: var(--navy); }
+
+        .btn-next {
+            background: var(--navy);
+            color: var(--white);
+            margin-left: auto;
+        }
+
+        .btn-next:hover:not(:disabled) {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Loading */
+        .loading-screen {
+            display: none;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .loading-screen.visible { display: block; }
+
+        .loading-animation {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .loading-animation::before,
+        .loading-animation::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid transparent;
+            border-top-color: var(--aqua);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-animation::after {
+            inset: 10px;
+            border-top-color: var(--gold);
+            animation-duration: 1.5s;
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.1rem;
+            color: var(--navy);
+        }
+
+        /* Results */
+        .results-screen {
+            display: none;
+        }
+
+        .results-screen.visible {
+            display: block;
+            animation: fadeIn 0.6s var(--ease-out-expo);
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .results-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .results-tag svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--gold);
+        }
+
+        .pool-type-name { color: var(--aqua); }
+
+        .results-confidence {
+            font-size: 1rem;
+            color: var(--gray-text);
+        }
+
+        /* Result Card */
+        .result-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+            margin-bottom: 2rem;
+        }
+
+        .result-hero {
+            height: 200px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .result-hero-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result-hero-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .result-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .result-content {
+            padding: 2rem;
+        }
+
+        .result-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .result-section-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .result-reasons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .result-reason {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--navy);
+        }
+
+        .result-reason svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .result-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .result-specs { grid-template-columns: 1fr; }
+        }
+
+        .result-spec {
+            text-align: center;
+            padding: 1.25rem;
+            background: var(--gray-light);
+            border-radius: 16px;
+        }
+
+        .result-spec-value {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .result-spec-label {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* CTA */
+        .results-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-cta::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -80px;
+            right: -80px;
+        }
+
+        .results-cta h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .results-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .btn-cta-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        .btn-cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* Lead Capture */
+        .lead-capture {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .lead-capture h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .lead-capture > p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--navy);
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--aqua);
+            background: var(--white);
+        }
+
+        .form-submit {
+            margin-top: 1.5rem;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            justify-content: center;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .form-submit .btn:hover {
+            background: var(--aqua);
+        }
+
+        .form-privacy {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .form-privacy a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        /* Success message */
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .success-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--white);
+            stroke-width: 3;
+        }
+
+        /* Actions */
+        .results-actions {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .action-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .action-link:hover { color: var(--aqua); }
+
+        .action-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .quiz-container { padding-top: 120px; }
+            .start-features { flex-direction: column; align-items: center; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="quiz-nav">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="/tools/" class="exit-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                Exit Quiz
+            </a>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container" id="progressContainer">
+        <div class="progress-inner">
+            <div class="progress-info">
+                <span class="progress-label">Finding Your Perfect Pool</span>
+                <span class="progress-step" id="progressStep">Question 1 of 10</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 10%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div class="start-screen" id="startScreen">
+            <div class="start-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h1>What's Your <em>Perfect</em> Pool?</h1>
+            <p class="start-desc">Answer 10 quick questions about your lifestyle, space, and preferences. We'll recommend the ideal pool type for you.</p>
+            <div class="start-features">
+                <div class="start-feature">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Under 2 minutes
+                </div>
+                <div class="start-feature">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Personalized results
+                </div>
+                <div class="start-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    No pressure
+                </div>
+            </div>
+            <button class="btn btn-start" onclick="startQuiz()">
+                Let's Find Your Pool
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+
+        <!-- Questions Container -->
+        <div class="questions-container" id="questionsContainer">
+            <!-- Questions will be generated by JavaScript -->
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-animation"></div>
+            <div class="loading-text">Analyzing your preferences...</div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results-screen" id="resultsScreen">
+            <div class="results-header">
+                <div class="results-tag">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Your Perfect Match
+                </div>
+                <h1>Your Ideal Pool: <span class="pool-type-name" id="resultPoolType">Fiberglass Pool</span></h1>
+                <p class="results-confidence" id="resultConfidence">Based on your answers</p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-hero">
+                    <div class="result-hero-icon">
+                        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6"/><path d="M2 12c0 3 4.5 6 10 6s10-3 10-6"/></svg>
+                    </div>
+                    <span class="result-badge" id="resultBadge">Recommended</span>
+                </div>
+                <div class="result-content">
+                    <div class="result-section">
+                        <div class="result-section-title">Why This Pool Is Perfect For You</div>
+                        <div class="result-reasons" id="resultReasons">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="result-section">
+                        <div class="result-section-title">Key Details</div>
+                        <div class="result-specs" id="resultSpecs">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Capture -->
+            <div class="lead-capture" id="leadCapture">
+                <h3>Get Your Personalized Pool Plan</h3>
+                <p>Enter your details and we'll send you a detailed recommendation with next steps.</p>
+                <form id="leadForm" onsubmit="submitLead(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Zip Code</label>
+                        <input type="text" id="zipCode" placeholder="For local pricing info">
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                            Send My Results
+                        </button>
+                    </div>
+                    <p class="form-privacy">We respect your privacy. <a href="/privacy-policy/">View our policy</a></p>
+                </form>
+            </div>
+
+            <div id="leadSuccess" class="lead-capture" style="display: none;">
+                <div class="success-message">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>You're All Set!</h3>
+                    <p>We'll email your personalized pool plan shortly. One of our pool specialists will reach out within 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="results-cta">
+                <h3>Ready to Take the Next Step?</h3>
+                <p>Schedule a free consultation to discuss your perfect pool.</p>
+                <div class="cta-buttons">
+                    <a href="/contact/" class="btn btn-cta-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Schedule Free Consultation
+                    </a>
+                    <a href="/tools/pool-cost-calculator.html" class="btn btn-cta-secondary">
+                        Calculate Your Cost
+                    </a>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <a class="action-link" onclick="retakeQuiz()">
+                    <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                    Retake Quiz
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Questions data
+        const questions = [
+            {
+                id: 1,
+                question: "What's your primary reason for getting a pool?",
+                options: [
+                    { value: 'family', text: 'Family Fun & Quality Time', desc: 'Create lasting memories with loved ones', icon: 'users' },
+                    { value: 'fitness', text: 'Exercise & Fitness', desc: 'Stay active with swimming & water workouts', icon: 'activity' },
+                    { value: 'entertain', text: 'Entertaining Guests', desc: 'Host amazing poolside gatherings', icon: 'message-circle' },
+                    { value: 'relax', text: 'Relaxation & Stress Relief', desc: 'A peaceful retreat in your backyard', icon: 'sun' },
+                    { value: 'value', text: 'Home Value & Investment', desc: 'Enhance your property', icon: 'home' }
+                ]
+            },
+            {
+                id: 2,
+                question: "How would you describe your available backyard space?",
+                options: [
+                    { value: 'compact', text: 'Compact', desc: 'Under 1,000 sq ft available', icon: 'square' },
+                    { value: 'medium', text: 'Medium', desc: '1,000 - 2,500 sq ft available', icon: 'square' },
+                    { value: 'large', text: 'Large', desc: '2,500 - 5,000 sq ft available', icon: 'square' },
+                    { value: 'estate', text: 'Estate Size', desc: 'Over 5,000 sq ft available', icon: 'layers' }
+                ]
+            },
+            {
+                id: 3,
+                question: "How important is low maintenance to you?",
+                options: [
+                    { value: 'critical', text: 'Very Important', desc: 'I want minimal upkeep required', icon: 'shield' },
+                    { value: 'important', text: 'Somewhat Important', desc: 'I can handle basic weekly care', icon: 'check' },
+                    { value: 'neutral', text: 'Not a Big Factor', desc: 'I\'m okay with regular maintenance', icon: 'minus' },
+                    { value: 'hire', text: 'I\'ll Hire Someone', desc: 'I plan to use a pool service', icon: 'tool' }
+                ]
+            },
+            {
+                id: 4,
+                question: "What's your ideal timeline?",
+                options: [
+                    { value: 'asap', text: 'As Soon As Possible', desc: 'I want to swim this season', icon: 'zap' },
+                    { value: 'soon', text: 'Within 6 Months', desc: 'Planning for the near future', icon: 'calendar' },
+                    { value: 'year', text: 'Within a Year', desc: 'No immediate rush', icon: 'clock' },
+                    { value: 'research', text: 'Just Researching', desc: 'Gathering information for now', icon: 'search' }
+                ]
+            },
+            {
+                id: 5,
+                question: "Which design style appeals to you most?",
+                twoCol: true,
+                options: [
+                    { value: 'modern', text: 'Modern & Sleek', desc: 'Clean lines, contemporary feel', icon: 'minimize' },
+                    { value: 'classic', text: 'Classic & Timeless', desc: 'Traditional, elegant shapes', icon: 'star' },
+                    { value: 'natural', text: 'Natural & Organic', desc: 'Freeform, blends with landscape', icon: 'leaf' },
+                    { value: 'luxury', text: 'Resort-Style Luxury', desc: 'Maximum wow factor', icon: 'award' }
+                ]
+            },
+            {
+                id: 6,
+                question: "Which features are must-haves for you?",
+                subtitle: "Select your top priority",
+                options: [
+                    { value: 'spa', text: 'Attached Spa/Hot Tub', desc: 'Year-round relaxation', icon: 'droplet' },
+                    { value: 'tanning', text: 'Tanning Ledge', desc: 'Shallow lounging area', icon: 'sun' },
+                    { value: 'heating', text: 'Pool Heating', desc: 'Extended swim season', icon: 'thermometer' },
+                    { value: 'water', text: 'Water Features', desc: 'Fountains, waterfalls', icon: 'wind' },
+                    { value: 'cover', text: 'Safety Cover', desc: 'Protection & peace of mind', icon: 'shield' }
+                ]
+            },
+            {
+                id: 7,
+                question: "How many people will typically use the pool?",
+                twoCol: true,
+                options: [
+                    { value: 'couple', text: '1-2 People', desc: 'Couple or single person', icon: 'user' },
+                    { value: 'small', text: '3-4 People', desc: 'Small family', icon: 'users' },
+                    { value: 'medium', text: '5-6 People', desc: 'Growing family', icon: 'users' },
+                    { value: 'large', text: '7+ People', desc: 'Large family or frequent guests', icon: 'users' }
+                ]
+            },
+            {
+                id: 8,
+                question: "What's your investment comfort level?",
+                options: [
+                    { value: 'budget', text: '$50,000 - $70,000', desc: 'Quality pool, smart value', icon: 'dollar-sign' },
+                    { value: 'mid', text: '$70,000 - $100,000', desc: 'Enhanced features', icon: 'dollar-sign' },
+                    { value: 'premium', text: '$100,000 - $150,000', desc: 'Premium experience', icon: 'dollar-sign' },
+                    { value: 'luxury', text: '$150,000+', desc: 'Ultimate dream pool', icon: 'star' }
+                ]
+            },
+            {
+                id: 9,
+                question: "What's your biggest concern about getting a pool?",
+                options: [
+                    { value: 'cost', text: 'Total Cost', desc: 'Upfront and ongoing expenses', icon: 'dollar-sign' },
+                    { value: 'time', text: 'Installation Time', desc: 'How long construction takes', icon: 'clock' },
+                    { value: 'maintenance', text: 'Maintenance Work', desc: 'Weekly upkeep effort', icon: 'tool' },
+                    { value: 'choice', text: 'Making the Right Choice', desc: 'Choosing the best option', icon: 'help-circle' },
+                    { value: 'none', text: 'I\'m Confident', desc: 'Ready to move forward', icon: 'check-circle' }
+                ]
+            },
+            {
+                id: 10,
+                question: "How would you describe your property?",
+                twoCol: true,
+                options: [
+                    { value: 'flat', text: 'Flat & Level', desc: 'Easy access, no slopes', icon: 'minus' },
+                    { value: 'slope', text: 'Sloped Terrain', desc: 'Some grade change', icon: 'trending-up' },
+                    { value: 'challenging', text: 'Challenging Access', desc: 'Tight or difficult to reach', icon: 'alert-triangle' },
+                    { value: 'unsure', text: 'Not Sure', desc: 'I\'d need a site visit', icon: 'help-circle' }
+                ]
+            }
+        ];
+
+        // Pool data
+        const poolTypes = {
+            fiberglass: {
+                name: 'Fiberglass Pool',
+                badge: 'Most Popular',
+                investment: '$60,000 - $100,000',
+                timeline: '2-4 weeks',
+                maintenance: 'Low'
+            },
+            concrete: {
+                name: 'Concrete Pool',
+                badge: 'Premium',
+                investment: '$80,000 - $150,000+',
+                timeline: '8-12 weeks',
+                maintenance: 'Moderate'
+            },
+            plunge: {
+                name: 'Plunge Pool',
+                badge: 'Perfect Fit',
+                investment: '$45,000 - $75,000',
+                timeline: '2-3 weeks',
+                maintenance: 'Very Low'
+            }
+        };
+
+        // State
+        let currentQuestion = 0;
+        const answers = {};
+
+        // Generate icon SVG
+        function getIcon(name) {
+            const icons = {
+                'users': '<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+                'activity': '<svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+                'message-circle': '<svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+                'sun': '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
+                'home': '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+                'square': '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>',
+                'layers': '<svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+                'shield': '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+                'check': '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>',
+                'minus': '<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>',
+                'tool': '<svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+                'zap': '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+                'calendar': '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+                'clock': '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+                'search': '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+                'minimize': '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>',
+                'star': '<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+                'leaf': '<svg viewBox="0 0 24 24"><path d="M6.5 6.5c6.5-6.5 16-4 16-4s2.5 9.5-4 16-16 4-16 4 2.5-9.5 4-16z"/><line x1="2.5" y1="21.5" x2="10" y2="14"/></svg>',
+                'award': '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>',
+                'droplet': '<svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
+                'thermometer': '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>',
+                'wind': '<svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>',
+                'user': '<svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+                'dollar-sign': '<svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+                'help-circle': '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+                'check-circle': '<svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+                'trending-up': '<svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+                'alert-triangle': '<svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
+            };
+            return icons[name] || icons['square'];
+        }
+
+        // Generate questions HTML
+        function generateQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = questions.map((q, idx) => `
+                <div class="question-slide" id="q${q.id}" data-question="${q.id}">
+                    <div class="question-number">Question ${q.id}</div>
+                    <h2 class="question-title">${q.question}</h2>
+                    <div class="options-grid ${q.twoCol ? 'two-col' : ''}">
+                        ${q.options.map(opt => `
+                            <div class="option-btn" data-value="${opt.value}" onclick="selectOption(this, ${q.id})">
+                                <div class="option-icon">${getIcon(opt.icon)}</div>
+                                <div class="option-title">${opt.text}</div>
+                                <div class="option-desc">${opt.desc}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="quiz-nav-buttons">
+                        <button class="btn btn-back" onclick="prevQuestion()" ${idx === 0 ? 'style="visibility:hidden"' : ''}>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            Back
+                        </button>
+                        <button class="btn btn-next" id="nextBtn${q.id}" onclick="nextQuestion()" disabled>
+                            ${idx === questions.length - 1 ? 'See My Results' : 'Next'}
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Start quiz
+        function startQuiz() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('questionsContainer').classList.add('visible');
+            document.getElementById('progressContainer').classList.add('visible');
+            showQuestion(0);
+        }
+
+        // Show question
+        function showQuestion(idx) {
+            currentQuestion = idx;
+            const slides = document.querySelectorAll('.question-slide');
+            slides.forEach(s => s.classList.remove('active'));
+            slides[idx].classList.add('active');
+            updateProgress();
+        }
+
+        // Select option
+        function selectOption(el, questionId) {
+            const slide = el.closest('.question-slide');
+            slide.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+            el.classList.add('selected');
+            answers[questionId] = el.dataset.value;
+            document.getElementById('nextBtn' + questionId).disabled = false;
+        }
+
+        // Next question
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                showQuestion(currentQuestion + 1);
+            } else {
+                showResults();
+            }
+        }
+
+        // Previous question
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                showQuestion(currentQuestion - 1);
+            }
+        }
+
+        // Update progress
+        function updateProgress() {
+            const percent = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressStep').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+        }
+
+        // Calculate results
+        function calculateResults() {
+            let scores = { fiberglass: 0, concrete: 0, plunge: 0 };
+
+            // Q1: Purpose
+            if (answers[1] === 'family' || answers[1] === 'entertain') { scores.fiberglass += 3; scores.concrete += 2; }
+            if (answers[1] === 'fitness') { scores.plunge += 3; scores.fiberglass += 2; }
+            if (answers[1] === 'relax') { scores.plunge += 4; }
+            if (answers[1] === 'value') { scores.fiberglass += 3; scores.concrete += 2; }
+
+            // Q2: Space
+            if (answers[2] === 'compact') { scores.plunge += 5; }
+            if (answers[2] === 'medium') { scores.fiberglass += 4; scores.plunge += 2; }
+            if (answers[2] === 'large') { scores.fiberglass += 3; scores.concrete += 3; }
+            if (answers[2] === 'estate') { scores.concrete += 5; }
+
+            // Q3: Maintenance
+            if (answers[3] === 'critical') { scores.fiberglass += 4; scores.plunge += 3; }
+            if (answers[3] === 'important') { scores.fiberglass += 3; }
+            if (answers[3] === 'neutral' || answers[3] === 'hire') { scores.concrete += 3; }
+
+            // Q4: Timeline
+            if (answers[4] === 'asap') { scores.fiberglass += 4; scores.plunge += 3; }
+            if (answers[4] === 'soon') { scores.fiberglass += 2; }
+            if (answers[4] === 'year' || answers[4] === 'research') { scores.concrete += 2; }
+
+            // Q5: Style
+            if (answers[5] === 'modern') { scores.fiberglass += 3; scores.plunge += 2; }
+            if (answers[5] === 'classic') { scores.fiberglass += 3; scores.concrete += 2; }
+            if (answers[5] === 'natural') { scores.concrete += 4; }
+            if (answers[5] === 'luxury') { scores.concrete += 5; }
+
+            // Q6: Features
+            if (answers[6] === 'spa') { scores.concrete += 4; }
+            if (answers[6] === 'tanning') { scores.fiberglass += 3; }
+            if (answers[6] === 'heating') { scores.plunge += 2; scores.fiberglass += 2; }
+            if (answers[6] === 'water') { scores.concrete += 3; }
+            if (answers[6] === 'cover') { scores.fiberglass += 2; scores.concrete += 2; }
+
+            // Q7: Users
+            if (answers[7] === 'couple') { scores.plunge += 4; }
+            if (answers[7] === 'small') { scores.fiberglass += 3; scores.plunge += 2; }
+            if (answers[7] === 'medium') { scores.fiberglass += 3; }
+            if (answers[7] === 'large') { scores.fiberglass += 2; scores.concrete += 3; }
+
+            // Q8: Budget
+            if (answers[8] === 'budget') { scores.plunge += 4; }
+            if (answers[8] === 'mid') { scores.fiberglass += 4; }
+            if (answers[8] === 'premium') { scores.fiberglass += 2; scores.concrete += 3; }
+            if (answers[8] === 'luxury') { scores.concrete += 5; }
+
+            // Q10: Property
+            if (answers[10] === 'flat') { scores.fiberglass += 2; }
+            if (answers[10] === 'slope') { scores.concrete += 2; }
+            if (answers[10] === 'challenging') { scores.plunge += 3; }
+
+            // Determine winner
+            const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            return sorted[0][0];
+        }
+
+        // Generate reasons
+        function generateReasons(poolType) {
+            const reasons = [];
+
+            if (poolType === 'fiberglass') {
+                if (answers[3] === 'critical' || answers[3] === 'important') {
+                    reasons.push('Smooth, non-porous surface minimizes algae growth and cleaning time');
+                }
+                if (answers[4] === 'asap' || answers[4] === 'soon') {
+                    reasons.push('Fast installation - typically ready in 2-4 weeks');
+                }
+                reasons.push('Factory-built quality with consistent finish');
+                reasons.push('Excellent value with 50+ design options');
+            }
+
+            if (poolType === 'concrete') {
+                if (answers[5] === 'luxury' || answers[5] === 'natural') {
+                    reasons.push('Unlimited custom shapes and designs to match your vision');
+                }
+                if (answers[6] === 'spa') {
+                    reasons.push('Seamlessly integrates attached spa and water features');
+                }
+                reasons.push('Premium materials that last generations');
+                reasons.push('Perfect for complex terrain and unique properties');
+            }
+
+            if (poolType === 'plunge') {
+                if (answers[2] === 'compact') {
+                    reasons.push('Designed specifically for smaller spaces');
+                }
+                if (answers[1] === 'relax' || answers[1] === 'fitness') {
+                    reasons.push('Perfect for focused wellness - relaxation or exercise');
+                }
+                reasons.push('Lower installation and maintenance costs');
+                reasons.push('Efficient heating for year-round enjoyment');
+            }
+
+            return reasons.slice(0, 4);
+        }
+
+        // Show results
+        function showResults() {
+            document.getElementById('questionsContainer').classList.remove('visible');
+            document.getElementById('progressContainer').classList.remove('visible');
+            document.getElementById('loadingScreen').classList.add('visible');
+
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.remove('visible');
+
+                const winner = calculateResults();
+                const pool = poolTypes[winner];
+                const reasons = generateReasons(winner);
+
+                document.getElementById('resultPoolType').textContent = pool.name;
+                document.getElementById('resultBadge').textContent = pool.badge;
+
+                document.getElementById('resultReasons').innerHTML = reasons.map(r => `
+                    <div class="result-reason">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>${r}</span>
+                    </div>
+                `).join('');
+
+                document.getElementById('resultSpecs').innerHTML = `
+                    <div class="result-spec">
+                        <div class="result-spec-value">${pool.investment}</div>
+                        <div class="result-spec-label">Investment Range</div>
+                    </div>
+                    <div class="result-spec">
+                        <div class="result-spec-value">${pool.timeline}</div>
+                        <div class="result-spec-label">Installation</div>
+                    </div>
+                    <div class="result-spec">
+                        <div class="result-spec-value">${pool.maintenance}</div>
+                        <div class="result-spec-label">Maintenance</div>
+                    </div>
+                `;
+
+                document.getElementById('resultsScreen').classList.add('visible');
+            }, 2000);
+        }
+
+        // Submit lead
+        function submitLead(e) {
+            e.preventDefault();
+
+            const data = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                zipCode: document.getElementById('zipCode').value,
+                quizAnswers: answers,
+                recommendedPool: document.getElementById('resultPoolType').textContent
+            };
+
+            console.log('Lead submitted:', data);
+
+            document.getElementById('leadCapture').style.display = 'none';
+            document.getElementById('leadSuccess').style.display = 'block';
+        }
+
+        // Retake quiz
+        function retakeQuiz() {
+            Object.keys(answers).forEach(k => delete answers[k]);
+            currentQuestion = 0;
+
+            document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+            document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
+
+            document.getElementById('resultsScreen').classList.remove('visible');
+            document.getElementById('leadCapture').style.display = 'block';
+            document.getElementById('leadSuccess').style.display = 'none';
+            document.getElementById('startScreen').classList.remove('hidden');
+
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', generateQuestions);
+    </script>
+</body>
+</html>

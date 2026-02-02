@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool ROI Calculator | Home Value & Lifestyle Benefits | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Calculate your pool's return on investment. See how a pool increases home value and compare the enjoyment ROI to other home improvements.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool ROI Calculator | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Discover the real value of owning a pool - both financial and lifestyle benefits.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --success: #10B981;
+            --rose: #EC4899;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gray-light);
+            color: var(--navy);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover { color: var(--aqua); }
+        .nav-back svg { width: 18px; height: 18px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2300A6B2' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/200px repeat;
+        }
+
+        .page-header .container {
+            position: relative;
+            text-align: center;
+        }
+
+        .page-header h1 { color: var(--white); margin-bottom: 0.5rem; }
+        .page-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .calculator-section {
+            padding: 3rem 0 4rem;
+        }
+
+        .calc-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .calc-layout { grid-template-columns: 1fr; }
+        }
+
+        /* Input Panel */
+        .input-panel {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+            height: fit-content;
+        }
+
+        .panel-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .panel-title::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--aqua);
+        }
+
+        .input-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .input-label {
+            display: block;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .input-sublabel {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            font-weight: 400;
+        }
+
+        .currency-input {
+            display: flex;
+            align-items: center;
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .currency-input:focus-within {
+            border-color: var(--aqua);
+            background: var(--white);
+        }
+
+        .currency-input .prefix {
+            padding: 0 0 0 1rem;
+            color: var(--gray-text);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .currency-input input {
+            width: 100%;
+            padding: 1rem;
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            background: transparent;
+            border: none;
+        }
+
+        .currency-input input:focus { outline: none; }
+
+        .slider-group {
+            margin-top: 0.5rem;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .slider-value {
+            font-weight: 600;
+            color: var(--aqua);
+            font-size: 1.1rem;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 100px;
+            background: var(--gray);
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--aqua);
+            cursor: pointer;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 166, 178, 0.3);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--aqua);
+            cursor: pointer;
+            border: 3px solid var(--white);
+        }
+
+        .slider-marks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+        }
+
+        /* Results Panel */
+        .results-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* ROI Cards */
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .roi-grid { grid-template-columns: 1fr; }
+        }
+
+        .roi-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: 0 10px 40px -15px rgba(14, 31, 52, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roi-card.primary {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+        }
+
+        .roi-card.primary::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -50px;
+            right: -50px;
+        }
+
+        .roi-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .roi-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--aqua-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .roi-card.primary .roi-icon {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .roi-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .roi-card-title {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-text);
+        }
+
+        .roi-card.primary .roi-card-title {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .roi-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--navy);
+            position: relative;
+        }
+
+        .roi-card.primary .roi-value {
+            color: var(--white);
+        }
+
+        .roi-value.gold { color: var(--gold); }
+        .roi-value.success { color: var(--success); }
+
+        .roi-subtext {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            margin-top: 0.5rem;
+        }
+
+        .roi-card.primary .roi-subtext {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Value Meter */
+        .value-meter {
+            margin-top: 1rem;
+        }
+
+        .meter-bar {
+            height: 8px;
+            background: var(--gray);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .roi-card.primary .meter-bar {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--aqua), var(--gold));
+            border-radius: 100px;
+            transition: width 0.8s var(--ease-out-expo);
+        }
+
+        .meter-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+        }
+
+        .roi-card.primary .meter-labels {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Comparison Section */
+        .comparison-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .comparison-title {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .comparison-label {
+            width: 160px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .comparison-bar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .comparison-bar {
+            flex: 1;
+            height: 32px;
+            background: var(--gray-light);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .comparison-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            transition: width 0.8s var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+        }
+
+        .comparison-bar-fill.pool {
+            background: linear-gradient(90deg, var(--aqua), var(--aqua-dark));
+        }
+
+        .comparison-bar-fill.kitchen {
+            background: var(--gold);
+        }
+
+        .comparison-bar-fill.bathroom {
+            background: #8B5CF6;
+        }
+
+        .comparison-bar-fill.deck {
+            background: #F59E0B;
+        }
+
+        .comparison-bar-fill.landscaping {
+            background: #10B981;
+        }
+
+        .comparison-percent {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 0.85rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .comparison-value {
+            width: 80px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.9rem;
+        }
+
+        /* Enjoyment ROI */
+        .enjoyment-card {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            color: var(--navy);
+        }
+
+        .enjoyment-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .enjoyment-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .enjoyment-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--navy);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .enjoyment-title h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .enjoyment-title p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .enjoyment-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .enjoyment-stats { grid-template-columns: 1fr; }
+        }
+
+        .enjoyment-stat {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .enjoyment-stat-value {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .enjoyment-stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* CTA Card */
+        .cta-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15);
+        }
+
+        .cta-card h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-card p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Insights */
+        .insights-section {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .insights-grid { grid-template-columns: 1fr; }
+        }
+
+        .insight-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .insight-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--aqua-glow);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .insight-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .insight-card h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-card p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--gray-text);
+        }
+
+        /* Source note */
+        .source-note {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        .source-note a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <a href="/tools/" class="nav-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Tools
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Pool ROI Calculator</h1>
+            <p>Discover the real return on your pool investment - both financial value and lifestyle benefits.</p>
+        </div>
+    </header>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calc-layout">
+                <!-- Input Panel -->
+                <div class="input-panel">
+                    <div class="panel-title">Your Investment Details</div>
+
+                    <div class="input-group">
+                        <label class="input-label">
+                            Current Home Value
+                            <span class="input-sublabel">(estimated market value)</span>
+                        </label>
+                        <div class="currency-input">
+                            <span class="prefix">$</span>
+                            <input type="text" id="homeValue" value="750,000" onkeyup="formatCurrencyInput(this); calculate();">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">
+                            Pool Investment
+                            <span class="input-sublabel">(total project cost)</span>
+                        </label>
+                        <div class="currency-input">
+                            <span class="prefix">$</span>
+                            <input type="text" id="poolInvestment" value="85,000" onkeyup="formatCurrencyInput(this); calculate();">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">Years You Plan to Stay</label>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span>Ownership period</span>
+                                <span class="slider-value" id="yearsValue">10 years</span>
+                            </div>
+                            <input type="range" class="slider" id="yearsSlider" min="3" max="30" value="10">
+                            <div class="slider-marks">
+                                <span>3</span>
+                                <span>10</span>
+                                <span>20</span>
+                                <span>30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">Pool Quality Level</label>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span>Premium features included</span>
+                                <span class="slider-value" id="qualityValue">High</span>
+                            </div>
+                            <input type="range" class="slider" id="qualitySlider" min="1" max="3" value="2">
+                            <div class="slider-marks">
+                                <span>Standard</span>
+                                <span>High</span>
+                                <span>Luxury</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <!-- ROI Summary Cards -->
+                    <div class="roi-grid">
+                        <div class="roi-card primary">
+                            <div class="roi-card-header">
+                                <div class="roi-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                </div>
+                                <div>
+                                    <div class="roi-card-title">Estimated Home Value Increase</div>
+                                </div>
+                            </div>
+                            <div class="roi-value" id="valueIncrease">+$59,500</div>
+                            <div class="roi-subtext" id="valuePercent">7.9% increase in home value</div>
+                            <div class="value-meter">
+                                <div class="meter-bar">
+                                    <div class="meter-fill" id="valueMeter" style="width: 70%;"></div>
+                                </div>
+                                <div class="meter-labels">
+                                    <span>Conservative</span>
+                                    <span>Optimistic</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="roi-card">
+                            <div class="roi-card-header">
+                                <div class="roi-icon">
+                                    <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                </div>
+                                <div>
+                                    <div class="roi-card-title">Financial ROI</div>
+                                </div>
+                            </div>
+                            <div class="roi-value success" id="financialRoi">70%</div>
+                            <div class="roi-subtext">Value recovered at resale</div>
+                        </div>
+
+                        <div class="roi-card">
+                            <div class="roi-card-header">
+                                <div class="roi-icon">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div>
+                                    <div class="roi-card-title">Cost Per Day of Use</div>
+                                </div>
+                            </div>
+                            <div class="roi-value gold" id="costPerDay">$14</div>
+                            <div class="roi-subtext" id="useNote">Based on 150 days/year usage</div>
+                        </div>
+
+                        <div class="roi-card">
+                            <div class="roi-card-header">
+                                <div class="roi-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <div class="roi-card-title">Main Line Market Premium</div>
+                                </div>
+                            </div>
+                            <div class="roi-value" id="marketPremium">+15%</div>
+                            <div class="roi-subtext">Higher ROI in premium markets</div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Chart -->
+                    <div class="comparison-card">
+                        <div class="comparison-title">How Pool ROI Compares to Other Improvements</div>
+                        <div class="comparison-list">
+                            <div class="comparison-item">
+                                <div class="comparison-label">In-Ground Pool</div>
+                                <div class="comparison-bar-container">
+                                    <div class="comparison-bar">
+                                        <div class="comparison-bar-fill pool" id="poolBar" style="width: 70%;">
+                                            <span class="comparison-percent">70%</span>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-value" id="poolReturn">$59,500</div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-label">Kitchen Remodel</div>
+                                <div class="comparison-bar-container">
+                                    <div class="comparison-bar">
+                                        <div class="comparison-bar-fill kitchen" style="width: 75%;">
+                                            <span class="comparison-percent">75%</span>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-value">$45,000</div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-label">Bathroom Addition</div>
+                                <div class="comparison-bar-container">
+                                    <div class="comparison-bar">
+                                        <div class="comparison-bar-fill bathroom" style="width: 60%;">
+                                            <span class="comparison-percent">60%</span>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-value">$30,000</div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-label">Deck Addition</div>
+                                <div class="comparison-bar-container">
+                                    <div class="comparison-bar">
+                                        <div class="comparison-bar-fill deck" style="width: 65%;">
+                                            <span class="comparison-percent">65%</span>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-value">$19,500</div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-label">Landscaping</div>
+                                <div class="comparison-bar-container">
+                                    <div class="comparison-bar">
+                                        <div class="comparison-bar-fill landscaping" style="width: 100%;">
+                                            <span class="comparison-percent">100%</span>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-value">$15,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enjoyment ROI -->
+                    <div class="enjoyment-card">
+                        <div class="enjoyment-header">
+                            <div class="enjoyment-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </div>
+                            <div class="enjoyment-title">
+                                <h3>The Enjoyment ROI</h3>
+                                <p>The value that matters most</p>
+                            </div>
+                        </div>
+                        <div class="enjoyment-stats">
+                            <div class="enjoyment-stat">
+                                <div class="enjoyment-stat-value" id="totalSwimDays">1,500</div>
+                                <div class="enjoyment-stat-label">Days of Swimming</div>
+                            </div>
+                            <div class="enjoyment-stat">
+                                <div class="enjoyment-stat-value" id="familyMemories">750+</div>
+                                <div class="enjoyment-stat-label">Summer Memories</div>
+                            </div>
+                            <div class="enjoyment-stat">
+                                <div class="enjoyment-stat-value">Priceless</div>
+                                <div class="enjoyment-stat-label">Health & Wellness</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-card">
+                        <h3>Ready to Invest in Your Lifestyle?</h3>
+                        <p>Let's discuss your pool project and create a plan that maximizes both value and enjoyment.</p>
+                        <a href="/contact/" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Schedule Free Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pool Investment Insights</h2>
+                <p>What the data tells us about pool ownership value</p>
+            </div>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h4>Location Matters</h4>
+                    <p>Pools in upscale neighborhoods like Main Line PA and Northern Delaware see higher ROI percentages due to buyer expectations.</p>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h4>Sell in Summer</h4>
+                    <p>Homes with pools listed May-August sell for 4-7% more than the same homes listed in winter months.</p>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h4>Quality Counts</h4>
+                    <p>Well-maintained pools with updated equipment and attractive landscaping recover 70-80% of their value at resale.</p>
+                </div>
+            </div>
+
+            <div class="source-note">
+                Data based on industry research from the National Association of Realtors, Zillow, and regional MLS data.
+                Actual ROI varies by market conditions, pool quality, and property characteristics.
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Parse currency string to number
+        function parseCurrency(str) {
+            return parseInt(str.replace(/[^0-9]/g, '')) || 0;
+        }
+
+        // Format number as currency
+        function formatCurrency(num) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            }).format(num);
+        }
+
+        // Format input as currency while typing
+        function formatCurrencyInput(input) {
+            const value = parseCurrency(input.value);
+            if (value > 0) {
+                input.value = value.toLocaleString();
+            }
+        }
+
+        // Quality level names
+        const qualityNames = ['Standard', 'High', 'Luxury'];
+
+        // Calculate everything
+        function calculate() {
+            const homeValue = parseCurrency(document.getElementById('homeValue').value);
+            const poolInvestment = parseCurrency(document.getElementById('poolInvestment').value);
+            const years = parseInt(document.getElementById('yearsSlider').value);
+            const quality = parseInt(document.getElementById('qualitySlider').value);
+
+            // Update display values
+            document.getElementById('yearsValue').textContent = years + ' years';
+            document.getElementById('qualityValue').textContent = qualityNames[quality - 1];
+
+            // ROI calculation based on quality and market
+            const baseRoi = 0.5 + (quality * 0.1); // 60-80% base
+            const marketBonus = homeValue > 500000 ? 0.1 : homeValue > 300000 ? 0.05 : 0;
+            const finalRoi = Math.min(0.85, baseRoi + marketBonus);
+
+            // Value increase
+            const valueIncrease = Math.round(poolInvestment * finalRoi);
+            const valuePercent = ((valueIncrease / homeValue) * 100).toFixed(1);
+
+            // Cost per day (assuming 150 days/year usage)
+            const totalUses = years * 150;
+            const netCost = poolInvestment - valueIncrease;
+            const costPerDay = Math.max(0, Math.round(netCost / totalUses));
+
+            // Update UI
+            document.getElementById('valueIncrease').textContent = '+' + formatCurrency(valueIncrease);
+            document.getElementById('valuePercent').textContent = valuePercent + '% increase in home value';
+            document.getElementById('financialRoi').textContent = Math.round(finalRoi * 100) + '%';
+            document.getElementById('costPerDay').textContent = '$' + costPerDay;
+            document.getElementById('useNote').textContent = 'Based on ' + Math.round(totalUses) + ' total uses over ' + years + ' years';
+
+            // Update meter
+            const meterWidth = Math.min(100, (finalRoi / 0.85) * 100);
+            document.getElementById('valueMeter').style.width = meterWidth + '%';
+
+            // Update comparison
+            document.getElementById('poolBar').style.width = (finalRoi * 100) + '%';
+            document.getElementById('poolBar').querySelector('.comparison-percent').textContent = Math.round(finalRoi * 100) + '%';
+            document.getElementById('poolReturn').textContent = formatCurrency(valueIncrease);
+
+            // Enjoyment stats
+            document.getElementById('totalSwimDays').textContent = totalUses.toLocaleString();
+            document.getElementById('familyMemories').textContent = Math.round(years * 75) + '+';
+        }
+
+        // Initialize sliders
+        document.getElementById('yearsSlider').addEventListener('input', calculate);
+        document.getElementById('qualitySlider').addEventListener('input', calculate);
+
+        // Initial calculation
+        document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>

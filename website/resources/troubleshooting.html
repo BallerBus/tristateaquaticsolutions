@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Troubleshooting Guide | Fix Common Problems | Tri-State Aquatic</title>
+    <meta name="description" content="Fix common pool problems quickly. Expert solutions for green water, cloudy water, algae, equipment issues, and more. Step-by-step troubleshooting guide.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Troubleshooting Guide | Fix Common Pool Problems">
+    <meta property="og:description" content="Quick solutions for green water, cloudy water, algae, and equipment issues. Expert troubleshooting guide.">
+    <meta property="og:type" content="article">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/resources/troubleshooting.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I fix green pool water?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Green pool water is caused by algae and requires a multi-step treatment: 1) Test and balance pH to 7.2, 2) Brush all surfaces thoroughly, 3) Shock with 3-4x normal chlorine dose, 4) Run filter 24/7 until clear, 5) Backwash filter frequently as it collects dead algae. Severe cases may require draining and acid washing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is my pool water cloudy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cloudy pool water typically results from: high pH or alkalinity, inadequate filtration, low chlorine levels, high calcium hardness, or high total dissolved solids. Test all chemical levels, balance pH and alkalinity first, shock the pool, run the filter longer, and use clarifier if needed."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does my pool have a strong chlorine smell?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A strong chlorine smell actually indicates too little effective chlorine, not too much. The smell comes from chloramines - combined chlorine that has reacted with contaminants. The solution is to shock the pool to break apart chloramines and restore free chlorine levels."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is my pool pump losing prime?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A pump that loses prime usually has an air leak on the suction side. Check: pump lid o-ring for cracks or debris, unions and fittings before the pump, skimmer weir and water level, and drain plugs for tightness. Air bubbles returning to the pool also indicate a suction leak."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+            --red: #EF4444;
+            --green: #10B981;
+            --yellow: #F59E0B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.3; }
+        h1 { font-size: clamp(2.25rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin: 3rem 0 1.25rem; }
+        h3 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); margin: 2rem 0 1rem; }
+        h4 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; font-family: var(--font-body); font-weight: 600; }
+        p { font-size: 1.05rem; color: #4a5568; margin-bottom: 1.25rem; }
+        a { color: var(--aqua); text-decoration: none; }
+        strong { color: var(--navy); }
+
+        .container { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        .container-wide { max-width: 1200px; }
+
+        /* Navigation */
+        nav { background: var(--white); padding: 1rem 0; border-bottom: 1px solid var(--gray); position: sticky; top: 0; z-index: 100; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 40px; height: 40px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+        .logo-mark::after { content: ''; width: 30%; height: 30%; background: var(--aqua); border-radius: 50%; }
+        .logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.6rem; font-family: var(--font-body); letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); }
+        .back-link { color: var(--aqua); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* Header */
+        .article-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 4rem 0; position: relative; overflow: hidden; }
+        .article-header::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 60%); top: -300px; right: -200px; }
+        .header-content { position: relative; }
+        .breadcrumb { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .breadcrumb a, .breadcrumb span { color: rgba(255,255,255,0.7); }
+        .article-meta { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1rem; }
+        .category-tag { background: var(--aqua); color: var(--white); padding: 0.35rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 500; }
+        .article-header h1 { color: var(--white); margin-bottom: 1rem; }
+        .article-excerpt { font-size: 1.2rem; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 700px; }
+
+        /* Quick Jump */
+        .quick-jump { background: var(--gray-light); border-radius: 16px; padding: 1.5rem 2rem; margin: 2rem 0; }
+        .quick-jump h4 { margin: 0 0 1rem 0; }
+        .quick-jump-list { display: flex; flex-wrap: wrap; gap: 0.75rem; list-style: none; }
+        .quick-jump-list a { display: inline-block; padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--gray); border-radius: 100px; font-size: 0.9rem; transition: all 0.2s ease; }
+        .quick-jump-list a:hover { border-color: var(--aqua); background: var(--aqua-glow); }
+
+        /* Content */
+        .article-content { padding: 3rem 0; }
+        .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #4a5568; }
+        .article-content li { margin-bottom: 0.5rem; font-size: 1.05rem; }
+
+        /* Problem Cards */
+        .problem-card { background: var(--white); border: 1px solid var(--gray); border-radius: 16px; margin: 2rem 0; overflow: hidden; }
+        .problem-header { background: var(--red); background: linear-gradient(135deg, var(--red) 0%, #DC2626 100%); color: var(--white); padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+        .problem-header.moderate { background: linear-gradient(135deg, var(--yellow) 0%, #D97706 100%); }
+        .problem-header svg { width: 32px; height: 32px; stroke: currentColor; stroke-width: 2; fill: none; flex-shrink: 0; }
+        .problem-header h3 { color: var(--white); margin: 0; font-size: 1.35rem; }
+        .problem-body { padding: 1.5rem; }
+        .problem-body h4 { margin-top: 0; color: var(--navy); display: flex; align-items: center; gap: 0.5rem; }
+        .problem-body h4 svg { width: 20px; height: 20px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+
+        /* Solution Steps */
+        .solution-steps { background: var(--gray-light); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
+        .solution-steps h4 { margin-top: 0; }
+        .solution-steps ol { margin: 1rem 0 0 1.25rem; }
+        .solution-steps li { margin-bottom: 0.75rem; font-size: 0.95rem; }
+
+        /* Severity Indicator */
+        .severity { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; padding: 0.25rem 0.75rem; border-radius: 100px; background: var(--gray-light); margin-bottom: 1rem; }
+        .severity.urgent { background: rgba(239, 68, 68, 0.1); color: var(--red); }
+        .severity.moderate { background: rgba(245, 158, 11, 0.1); color: var(--yellow); }
+        .severity.minor { background: rgba(16, 185, 129, 0.1); color: var(--green); }
+
+        /* Callout */
+        .callout { background: var(--gray-light); border-left: 4px solid var(--aqua); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 12px 12px 0; }
+        .callout.warning { border-left-color: var(--yellow); background: rgba(245, 158, 11, 0.1); }
+        .callout.tip { border-left-color: var(--green); background: rgba(16, 185, 129, 0.1); }
+        .callout h4 { margin-top: 0; }
+        .callout p:last-child { margin-bottom: 0; }
+
+        /* Table */
+        .table-wrapper { overflow-x: auto; margin: 2rem 0; border-radius: 12px; border: 1px solid var(--gray); }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        th, td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--gray); }
+        th { background: var(--navy); color: var(--white); font-weight: 500; }
+        tr:last-child td { border-bottom: none; }
+
+        /* CTA */
+        .help-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 16px; padding: 2.5rem; margin: 3rem 0; text-align: center; color: var(--white); }
+        .help-cta h3 { color: var(--white); margin-top: 0; }
+        .help-cta p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+        .help-cta .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--aqua); color: var(--white); padding: 1rem 2rem; border-radius: 100px; font-weight: 500; transition: all 0.3s ease; }
+        .help-cta .cta-btn:hover { background: var(--gold); color: var(--navy); }
+
+        /* Related */
+        .related-articles { padding: 3rem 0; background: var(--gray-light); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: var(--white); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--gray); }
+        .related-card h4 { margin-top: 0; margin-bottom: 0.5rem; }
+        .related-card p { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 3rem 0; text-align: center; }
+        footer p { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+        footer a { color: var(--aqua); }
+
+        @media (max-width: 640px) {
+            .quick-jump-list { gap: 0.5rem; }
+            .quick-jump-list a { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container container-wide">
+            <a href="../index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <a href="index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Resources
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="article-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a><span>/</span>
+                    <a href="index.html">Resources</a><span>/</span>
+                    <span>Troubleshooting</span>
+                </div>
+                <div class="article-meta">
+                    <span class="category-tag">Troubleshooting</span>
+                    <span style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">25 min read</span>
+                </div>
+                <h1>Pool Troubleshooting Guide</h1>
+                <p class="article-excerpt">Something wrong with your pool? Find quick solutions for the most common pool problems. From green water to equipment issues, we have you covered.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <article class="article-content">
+        <div class="container">
+            <div class="quick-jump">
+                <h4>Jump to Problem</h4>
+                <ul class="quick-jump-list">
+                    <li><a href="#green-water">Green Water</a></li>
+                    <li><a href="#cloudy-water">Cloudy Water</a></li>
+                    <li><a href="#chlorine-smell">Chlorine Smell</a></li>
+                    <li><a href="#algae">Algae Growth</a></li>
+                    <li><a href="#eye-irritation">Eye Irritation</a></li>
+                    <li><a href="#pump-issues">Pump Issues</a></li>
+                    <li><a href="#filter-problems">Filter Problems</a></li>
+                    <li><a href="#staining">Staining</a></li>
+                    <li><a href="#foam">Foam on Water</a></li>
+                </ul>
+            </div>
+
+            <h2>Water Quality Problems</h2>
+
+            <!-- Green Water -->
+            <div class="problem-card" id="green-water">
+                <div class="problem-header">
+                    <svg viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+                    <h3>Green Pool Water</h3>
+                </div>
+                <div class="problem-body">
+                    <span class="severity urgent">Urgent - Act immediately</span>
+
+                    <h4>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+                        Cause
+                    </h4>
+                    <p>Algae growth due to low chlorine levels, unbalanced pH, inadequate filtration, or warm temperatures. Green water means algae has taken hold and is actively multiplying.</p>
+
+                    <div class="solution-steps">
+                        <h4>Solution Steps</h4>
+                        <ol>
+                            <li><strong>Test and balance pH</strong> - Lower pH to 7.2 for maximum chlorine effectiveness. Alkalinity should be 80-100 ppm.</li>
+                            <li><strong>Brush all surfaces</strong> - Thoroughly brush walls, floor, steps, and corners to break up algae colonies.</li>
+                            <li><strong>Triple or quadruple shock</strong> - Add 3-4 pounds of shock per 10,000 gallons. For severe cases, even more may be needed.</li>
+                            <li><strong>Run filter 24/7</strong> - Keep pump running continuously until water clears.</li>
+                            <li><strong>Backwash frequently</strong> - Clean filter every 8-12 hours as it collects dead algae.</li>
+                            <li><strong>Brush again</strong> - Continue brushing daily until clear.</li>
+                            <li><strong>Add algaecide</strong> - Once chlorine drops below 5 ppm, add algaecide to prevent recurrence.</li>
+                        </ol>
+                    </div>
+
+                    <div class="callout warning">
+                        <h4>Timeline</h4>
+                        <p>Light green: 1-3 days to clear. Dark green: 3-5 days. Black/dark green: May require partial drain and refill, professional treatment, or acid wash.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloudy Water -->
+            <div class="problem-card" id="cloudy-water">
+                <div class="problem-header moderate">
+                    <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                    <h3>Cloudy Pool Water</h3>
+                </div>
+                <div class="problem-body">
+                    <span class="severity moderate">Moderate - Address within 1-2 days</span>
+
+                    <h4>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+                        Common Causes
+                    </h4>
+                    <ul>
+                        <li>High pH or alkalinity</li>
+                        <li>Inadequate filtration (pump not running enough)</li>
+                        <li>Low chlorine levels</li>
+                        <li>High calcium hardness</li>
+                        <li>Early stage algae (before green is visible)</li>
+                        <li>High total dissolved solids (TDS)</li>
+                        <li>Dirty or exhausted filter</li>
+                    </ul>
+
+                    <div class="solution-steps">
+                        <h4>Solution Steps</h4>
+                        <ol>
+                            <li><strong>Test all chemistry</strong> - Check pH, alkalinity, chlorine, and calcium hardness.</li>
+                            <li><strong>Balance pH and alkalinity first</strong> - Target pH 7.2-7.4, alkalinity 80-100 ppm.</li>
+                            <li><strong>Shock the pool</strong> - Even if chlorine seems okay, shocking helps oxidize contaminants.</li>
+                            <li><strong>Clean or backwash filter</strong> - A dirty filter cannot clear water.</li>
+                            <li><strong>Run filter longer</strong> - 12-24 hours daily until clear.</li>
+                            <li><strong>Add clarifier</strong> - Pool clarifier helps clump tiny particles so filter can catch them.</li>
+                        </ol>
+                    </div>
+
+                    <div class="callout tip">
+                        <h4>Still Cloudy?</h4>
+                        <p>If water remains cloudy after 48 hours with proper chemistry and filtration, consider: filter media may need replacement, high calcium causing precipitation, or very high TDS requiring partial drain and refill.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chlorine Smell -->
+            <div class="problem-card" id="chlorine-smell">
+                <div class="problem-header moderate">
+                    <svg viewBox="0 0 24 24"><path d="M10 2v7.31M14 9.3V2M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0M5.52 16h12.96"/></svg>
+                    <h3>Strong Chlorine Smell</h3>
+                </div>
+                <div class="problem-body">
+                    <span class="severity moderate">Moderate - Indicates chemical imbalance</span>
+
+                    <h4>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+                        The Truth About "Chlorine Smell"
+                    </h4>
+                    <p>Contrary to popular belief, a strong chlorine smell means you need MORE chlorine, not less. The smell comes from chloramines (combined chlorine) - chlorine that has reacted with sweat, urine, oils, and other contaminants. It is no longer sanitizing and is irritating to eyes and skin.</p>
+
+                    <div class="solution-steps">
+                        <h4>Solution</h4>
+                        <ol>
+                            <li><strong>Test combined chlorine</strong> - (Total chlorine minus free chlorine). Should be below 0.5 ppm.</li>
+                            <li><strong>Shock the pool</strong> - Breakpoint chlorination destroys chloramines. Use enough shock to reach 10x your combined chlorine reading.</li>
+                            <li><strong>Maintain proper free chlorine</strong> - Keep at 1-3 ppm consistently.</li>
+                            <li><strong>Improve circulation</strong> - Poor circulation allows chloramines to build up.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eye Irritation -->
+            <div class="problem-card" id="eye-irritation">
+                <div class="problem-header moderate">
+                    <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <h3>Eye and Skin Irritation</h3>
+                </div>
+                <div class="problem-body">
+                    <span class="severity moderate">Moderate - Indicates imbalanced water</span>
+
+                    <h4>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+                        Common Causes
+                    </h4>
+                    <ul>
+                        <li><strong>pH out of range</strong> - The #1 cause. Human eyes are pH 7.4; pool should be 7.2-7.6.</li>
+                        <li><strong>High chloramines</strong> - Combined chlorine irritates mucous membranes.</li>
+                        <li><strong>Low alkalinity</strong> - Causes pH to swing, creating irritation.</li>
+                    </ul>
+
+                    <div class="solution-steps">
+                        <h4>Solution</h4>
+                        <ol>
+                            <li><strong>Test pH first</strong> - Adjust to 7.2-7.6 range.</li>
+                            <li><strong>Check alkalinity</strong> - Should be 80-120 ppm to stabilize pH.</li>
+                            <li><strong>Test combined chlorine</strong> - Shock if above 0.5 ppm.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Equipment Problems</h2>
+
+            <!-- Pump Issues -->
+            <div class="problem-card" id="pump-issues">
+                <div class="problem-header">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <h3>Pump Problems</h3>
+                </div>
+                <div class="problem-body">
+                    <h4>Pump Not Priming / Losing Prime</h4>
+                    <p>A pump that will not prime or keeps losing prime usually has an air leak on the suction side.</p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Symptom</th>
+                                    <th>Check This</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pump basket not filling</td>
+                                    <td>Water level too low, clogged skimmer, suction leak before pump</td>
+                                </tr>
+                                <tr>
+                                    <td>Air bubbles in pump basket</td>
+                                    <td>Pump lid o-ring, fittings before pump, drain plugs</td>
+                                </tr>
+                                <tr>
+                                    <td>Air bubbles from returns</td>
+                                    <td>Suction-side air leak - check all connections before pump</td>
+                                </tr>
+                                <tr>
+                                    <td>Pump runs but no water moves</td>
+                                    <td>Clogged impeller, closed valve, very low water level</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>Pump Making Noise</h4>
+                    <ul>
+                        <li><strong>Grinding sound:</strong> Worn bearings - pump needs service/replacement</li>
+                        <li><strong>Screeching:</strong> Motor bearings failing - replace motor or pump</li>
+                        <li><strong>Gurgling:</strong> Air being pulled into system - check for leaks</li>
+                        <li><strong>Humming but not starting:</strong> Capacitor failed, motor seized, or electrical issue</li>
+                    </ul>
+
+                    <div class="callout warning">
+                        <h4>Pump Safety</h4>
+                        <p>Always turn off power at the breaker before working on pump. Never run pump dry - this destroys the seal in minutes. If pump is hot to touch, turn off and let cool before investigating.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Problems -->
+            <div class="problem-card" id="filter-problems">
+                <div class="problem-header moderate">
+                    <svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                    <h3>Filter Problems</h3>
+                </div>
+                <div class="problem-body">
+                    <h4>High Filter Pressure</h4>
+                    <p>Filter pressure rising 8-10 PSI above clean starting pressure indicates a dirty filter.</p>
+                    <ul>
+                        <li><strong>Sand filter:</strong> Backwash until sight glass runs clear</li>
+                        <li><strong>DE filter:</strong> Backwash and add fresh DE</li>
+                        <li><strong>Cartridge filter:</strong> Remove and rinse, or replace cartridges</li>
+                    </ul>
+
+                    <h4>Low Filter Pressure</h4>
+                    <ul>
+                        <li>Clogged pump basket or skimmer basket</li>
+                        <li>Clogged or closed valve before pump</li>
+                        <li>Air leak reducing pump efficiency</li>
+                        <li>Worn pump impeller</li>
+                    </ul>
+
+                    <h4>Filter Returning Debris to Pool</h4>
+                    <ul>
+                        <li><strong>Sand filter:</strong> Broken lateral, channeling in sand, or sand needs replacement</li>
+                        <li><strong>DE filter:</strong> Torn grid fabric, cracked manifold</li>
+                        <li><strong>Cartridge:</strong> Torn or worn cartridge element</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Staining -->
+            <div class="problem-card" id="staining">
+                <div class="problem-header moderate">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+                    <h3>Pool Staining</h3>
+                </div>
+                <div class="problem-body">
+                    <h4>Identifying Stain Types</h4>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Stain Color</th>
+                                    <th>Likely Cause</th>
+                                    <th>Treatment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Green/Brown</td>
+                                    <td>Organic (leaves, algae)</td>
+                                    <td>Shock treatment, brush, enzyme cleaner</td>
+                                </tr>
+                                <tr>
+                                    <td>Blue/Green/Black</td>
+                                    <td>Copper (from heater or algaecides)</td>
+                                    <td>Metal sequestrant, ascorbic acid treatment</td>
+                                </tr>
+                                <tr>
+                                    <td>Reddish-Brown</td>
+                                    <td>Iron (from well water or equipment)</td>
+                                    <td>Ascorbic acid treatment, metal sequestrant</td>
+                                </tr>
+                                <tr>
+                                    <td>Purple/Black</td>
+                                    <td>Manganese (from fill water)</td>
+                                    <td>Ascorbic acid, metal sequestrant</td>
+                                </tr>
+                                <tr>
+                                    <td>White Scale</td>
+                                    <td>Calcium buildup</td>
+                                    <td>Lower pH and alkalinity, scale remover</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="callout tip">
+                        <h4>Vitamin C Test</h4>
+                        <p>To identify metal stains: Hold a vitamin C tablet against the stain for 30 seconds. If it lightens, the stain is metal-based and will respond to ascorbic acid treatment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Foam -->
+            <div class="problem-card" id="foam">
+                <div class="problem-header moderate">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    <h3>Foam on Water Surface</h3>
+                </div>
+                <div class="problem-body">
+                    <span class="severity minor">Minor - Usually easy fix</span>
+
+                    <h4>Common Causes</h4>
+                    <ul>
+                        <li>Body oils, lotions, and cosmetics</li>
+                        <li>Laundry detergent residue on swimsuits</li>
+                        <li>Cheap or overused algaecides</li>
+                        <li>High TDS (total dissolved solids)</li>
+                        <li>Low calcium hardness making water "soft"</li>
+                    </ul>
+
+                    <div class="solution-steps">
+                        <h4>Solution</h4>
+                        <ol>
+                            <li><strong>Shower before swimming</strong> - Removes oils and lotions</li>
+                            <li><strong>Rinse swimsuits</strong> - Remove detergent residue</li>
+                            <li><strong>Add enzyme product</strong> - Breaks down organic contaminants</li>
+                            <li><strong>Use quality algaecide</strong> - Avoid cheap, foaming formulas</li>
+                            <li><strong>Partial drain/refill</strong> - If TDS is very high</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <h2>When to Call a Professional</h2>
+            <p>While many problems are DIY-solvable, some situations warrant professional help:</p>
+            <ul>
+                <li>Black algae (requires aggressive treatment, possibly acid wash)</li>
+                <li>Persistent green water that does not respond to multiple shock treatments</li>
+                <li>Equipment making unusual noises or overheating</li>
+                <li>Electrical issues (tripped breakers, shocking sensations)</li>
+                <li>Major leaks or water loss</li>
+                <li>Heater not heating or showing error codes</li>
+                <li>Recurring problems despite proper treatment</li>
+            </ul>
+
+            <div class="help-cta">
+                <h3>Need Professional Help?</h3>
+                <p>Some problems require professional diagnosis and repair. Our technicians can identify and resolve persistent issues quickly.</p>
+                <a href="../contact/" class="cta-btn">Contact Us for Service</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related -->
+    <section class="related-articles">
+        <div class="container container-wide">
+            <h2>Related Resources</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h4>Water Chemistry Guide</h4>
+                    <p>Understanding chemistry helps prevent most problems before they start.</p>
+                    <a href="water-chemistry.html">Learn More</a>
+                </div>
+                <div class="related-card">
+                    <h4>Maintenance Tips</h4>
+                    <p>Proper maintenance prevents most troubleshooting situations.</p>
+                    <a href="maintenance-tips.html">Read Guide</a>
+                </div>
+                <div class="related-card">
+                    <h4>Pool Glossary</h4>
+                    <p>Understand the terms used in troubleshooting guides.</p>
+                    <a href="glossary.html">Browse Terms</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

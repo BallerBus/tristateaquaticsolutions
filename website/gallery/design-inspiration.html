@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Design Inspiration | Style Gallery | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Get inspired by our curated collection of pool designs. Explore Modern, Traditional, Resort, and Minimalist styles for your Main Line PA or Delaware pool project.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/gallery/design-inspiration.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 35%;
+            left: 35%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--aqua);
+            transition: width 0.3s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 0.85rem 1.75rem !important;
+            border-radius: 100px;
+        }
+
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 8rem 0 2rem;
+            background: var(--gray-light);
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-list a {
+            color: var(--gray-text);
+            text-decoration: none;
+        }
+
+        .breadcrumb-list a:hover { color: var(--aqua); }
+        .breadcrumb-list .current { color: var(--navy); font-weight: 500; }
+
+        /* Page Header */
+        .page-header {
+            background: var(--gray-light);
+            padding: 0 0 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 { margin-bottom: 1rem; }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Gallery Navigation */
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .gallery-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 100px;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .gallery-nav-link:hover {
+            border-color: var(--aqua);
+            color: var(--aqua);
+            transform: translateY(-2px);
+        }
+
+        .gallery-nav-link.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        .gallery-nav-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Style Sections */
+        .style-section {
+            padding: 5rem 0;
+        }
+
+        .style-section:nth-child(even) {
+            background: var(--gray-light);
+        }
+
+        .style-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .style-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--aqua-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .style-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .style-header h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .style-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Inspiration Grid */
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .inspiration-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--gray);
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .inspiration-card:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .inspiration-card::before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+
+        .inspiration-card:nth-child(1)::before {
+            padding-top: 100%;
+        }
+
+        .inspiration-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.3);
+        }
+
+        .inspiration-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .inspiration-card:hover .inspiration-image {
+            transform: scale(1.05);
+        }
+
+        .inspiration-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 31, 52, 0.8) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .inspiration-card:hover .inspiration-overlay {
+            opacity: 1;
+        }
+
+        .inspiration-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .inspiration-card:hover .inspiration-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .inspiration-content h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .inspiration-content span {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .inspiration-actions {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .inspiration-card:hover .inspiration-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .action-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: var(--white);
+            transform: scale(1.1);
+        }
+
+        .action-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--navy);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .action-btn.saved svg {
+            fill: var(--aqua);
+            stroke: var(--aqua);
+        }
+
+        /* Image Placeholder */
+        .image-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .image-placeholder svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+            margin-bottom: 0.75rem;
+            opacity: 0.5;
+        }
+
+        .image-placeholder span {
+            font-size: 0.75rem;
+            opacity: 0.4;
+            padding: 0 1rem;
+        }
+
+        /* Key Features */
+        .style-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .feature-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: var(--navy);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-banner h3 {
+            color: var(--white);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.75rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--aqua);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(14, 31, 52, 0.97);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .lightbox-image-container {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--navy);
+        }
+
+        .lightbox-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+        }
+
+        .lightbox-placeholder svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--aqua);
+            stroke-width: 1;
+            fill: none;
+            margin-bottom: 1.5rem;
+            opacity: 0.6;
+        }
+
+        .lightbox-info {
+            padding: 1.5rem 0;
+            color: var(--white);
+        }
+
+        .lightbox-info h3 { margin-bottom: 0.5rem; }
+        .lightbox-info p { color: rgba(255, 255, 255, 0.7); }
+
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover { background: var(--aqua); }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover { background: var(--aqua); }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .inspiration-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .lightbox-prev { left: 1rem; }
+            .lightbox-next { right: 1rem; }
+        }
+
+        @media (max-width: 640px) {
+            .inspiration-grid { grid-template-columns: 1fr; }
+            .inspiration-card:nth-child(1) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-nav { gap: 0.5rem; }
+            .gallery-nav-link { padding: 0.6rem 1rem; font-size: 0.8rem; }
+            .style-features { gap: 1rem; }
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../services/">Services</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../portfolio/">Portfolio</a></li>
+                <li><a href="./" class="active">Gallery</a></li>
+                <li><a href="../testimonials/">Reviews</a></li>
+                <li><a href="../contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="../">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="./">Gallery</a></li>
+                <li><span>/</span></li>
+                <li class="current">Design Inspiration</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Design Inspiration</h1>
+            <p>Explore curated pool designs organized by style. Find the perfect aesthetic for your backyard retreat and save your favorites for your consultation.</p>
+
+            <!-- Gallery Navigation -->
+            <div class="gallery-nav">
+                <a href="./" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    All Photos
+                </a>
+                <a href="before-after.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+                    Before & After
+                </a>
+                <a href="design-inspiration.html" class="gallery-nav-link active">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Inspiration
+                </a>
+                <a href="outdoor-living.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Outdoor Living
+                </a>
+                <a href="night-gallery.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    Night Views
+                </a>
+                <a href="drone-views.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Drone Views
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Style Section -->
+    <section class="style-section" id="modern">
+        <div class="container">
+            <div class="style-header reveal">
+                <div class="style-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                </div>
+                <h2>Modern</h2>
+                <p>Clean lines, geometric shapes, and minimalist aesthetics define the modern pool style. Perfect for contemporary homes seeking a sleek, sophisticated look.</p>
+            </div>
+
+            <div class="inspiration-grid">
+                <div class="inspiration-card reveal" data-title="Geometric Infinity Edge" data-style="Modern">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Modern geometric pool with infinity edge and fire features</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Geometric Infinity Edge</h4>
+                        <span>Gladwyne, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Floating Steps Design" data-style="Modern">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with floating concrete steps</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Floating Steps Design</h4>
+                        <span>Hockessin, DE</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Glass Fence Elegance" data-style="Modern">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Frameless glass fence pool</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Glass Fence Elegance</h4>
+                        <span>Wayne, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Fire Bowl Accents" data-style="Modern">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with integrated fire bowls</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Fire Bowl Accents</h4>
+                        <span>Villanova, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Monochrome Palette" data-style="Modern">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Black and white pool design</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Monochrome Palette</h4>
+                        <span>Bryn Mawr, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="style-features reveal">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Clean geometric lines</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Neutral color palettes</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Frameless glass fencing</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>LED accent lighting</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional Style Section -->
+    <section class="style-section" id="traditional">
+        <div class="container">
+            <div class="style-header reveal">
+                <div class="style-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 21v-8h6v8"/></svg>
+                </div>
+                <h2>Traditional</h2>
+                <p>Timeless elegance with classic shapes and natural materials. Traditional pools complement historic homes and formal garden settings beautifully.</p>
+            </div>
+
+            <div class="inspiration-grid">
+                <div class="inspiration-card reveal" data-title="Roman End Classic" data-style="Traditional">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Classic Roman-end pool with stone coping</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Roman End Classic</h4>
+                        <span>Villanova, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Bluestone Elegance" data-style="Traditional">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with Pennsylvania bluestone deck</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Bluestone Elegance</h4>
+                        <span>Haverford, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Formal Garden Pool" data-style="Traditional">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool surrounded by formal gardens</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Formal Garden Pool</h4>
+                        <span>Gladwyne, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Pool House Pavilion" data-style="Traditional">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with classic pool house</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Pool House Pavilion</h4>
+                        <span>Malvern, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Diving Board Classic" data-style="Traditional">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Traditional pool with diving board</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Diving Board Classic</h4>
+                        <span>Radnor, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="style-features reveal">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Natural stone materials</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Classic pool shapes</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Formal landscaping</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Pool house structures</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resort Style Section -->
+    <section class="style-section" id="resort">
+        <div class="container">
+            <div class="style-header reveal">
+                <div class="style-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h2>Resort</h2>
+                <p>Bring the vacation home with resort-style pools featuring waterfalls, grottos, and tropical landscaping. Perfect for entertaining and family fun.</p>
+            </div>
+
+            <div class="inspiration-grid">
+                <div class="inspiration-card reveal" data-title="Waterfall Paradise" data-style="Resort">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with natural rock waterfall and grotto</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Waterfall Paradise</h4>
+                        <span>Greenville, DE</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Beach Entry Lagoon" data-style="Resort">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Lagoon pool with zero-entry beach</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Beach Entry Lagoon</h4>
+                        <span>West Chester, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Swim-Up Bar" data-style="Resort">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with swim-up bar and stools</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Swim-Up Bar</h4>
+                        <span>Newark, DE</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Slide Adventure" data-style="Resort">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with custom rock slide</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Slide Adventure</h4>
+                        <span>Malvern, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Tropical Retreat" data-style="Resort">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with tropical landscaping</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Tropical Retreat</h4>
+                        <span>Wilmington, DE</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="style-features reveal">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Water features</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Beach entries</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Natural rock work</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Tropical landscaping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimalist Style Section -->
+    <section class="style-section" id="minimalist">
+        <div class="container">
+            <div class="style-header reveal">
+                <div class="style-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                </div>
+                <h2>Minimalist</h2>
+                <p>Less is more. Minimalist pools focus on serene simplicity with uncluttered designs, zen-inspired landscapes, and thoughtful negative space.</p>
+            </div>
+
+            <div class="inspiration-grid">
+                <div class="inspiration-card reveal" data-title="Zen Reflection Pool" data-style="Minimalist">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Minimalist pool with zen garden surroundings</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Zen Reflection Pool</h4>
+                        <span>Bryn Mawr, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Simple Lap Pool" data-style="Minimalist">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Clean lap pool design</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Simple Lap Pool</h4>
+                        <span>Radnor, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Flush Deck Design" data-style="Minimalist">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Pool with flush deck edge</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Flush Deck Design</h4>
+                        <span>Hockessin, DE</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Plunge Wellness" data-style="Minimalist">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Compact plunge pool for wellness</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Plunge Wellness</h4>
+                        <span>Wilmington, DE</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="inspiration-card reveal" data-title="Courtyard Serenity" data-style="Minimalist">
+                    <div class="inspiration-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Enclosed courtyard pool</span>
+                        </div>
+                    </div>
+                    <div class="inspiration-overlay"></div>
+                    <div class="inspiration-content">
+                        <h4>Courtyard Serenity</h4>
+                        <span>Wayne, PA</span>
+                    </div>
+                    <div class="inspiration-actions">
+                        <button class="action-btn save-btn" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-btn share-btn" title="Share">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="style-features reveal">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Clean lines</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Zen landscaping</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Neutral tones</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Negative space</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h3>Found Your Style?</h3>
+            <p>Bring your favorites to your consultation and let us bring your vision to life.</p>
+            <a href="../contact/" class="btn btn-primary">
+                Schedule Free Consultation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+            <div class="lightbox-image-container">
+                <div class="lightbox-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Inspiration Photo</span>
+                </div>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Design Title</h3>
+                <p id="lightboxStyle">Style Category</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="../" class="logo">
+                    <div class="logo-mark"></div>
+                    <div class="logo-text">
+                        Tri-State Aquatic
+                        <span>Solutions</span>
+                    </div>
+                </a>
+                <ul class="footer-links">
+                    <li><a href="../services/">Services</a></li>
+                    <li><a href="./">Gallery</a></li>
+                    <li><a href="../portfolio/">Portfolio</a></li>
+                    <li><a href="../contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Save to favorites functionality
+        document.querySelectorAll('.save-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                btn.classList.toggle('saved');
+            });
+        });
+
+        // Share functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (navigator.share) {
+                    const card = btn.closest('.inspiration-card');
+                    navigator.share({
+                        title: card.dataset.title,
+                        text: `Check out this ${card.dataset.style} pool design!`,
+                        url: window.location.href
+                    });
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                }
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxStyle = document.getElementById('lightboxStyle');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        const allCards = document.querySelectorAll('.inspiration-card');
+        let currentIndex = 0;
+
+        allCards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                currentIndex = index;
+                openLightbox(card);
+            });
+        });
+
+        function openLightbox(card) {
+            lightboxTitle.textContent = card.dataset.title;
+            lightboxStyle.textContent = card.dataset.style + ' Style';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + allCards.length) % allCards.length;
+            openLightbox(allCards[currentIndex]);
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % allCards.length;
+            openLightbox(allCards[currentIndex]);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxPrev.click();
+            if (e.key === 'ArrowRight') lightboxNext.click();
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

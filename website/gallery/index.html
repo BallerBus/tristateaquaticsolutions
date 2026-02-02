@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Pool Projects | Gallery | Tri-State Aquatic Solutions</title>
-    <meta name="description" content="Explore our portfolio of premium pool installations across Main Line Philadelphia and Northern Delaware. View fiberglass, concrete, and plunge pool projects in Gladwyne, Villanova, Hockessin, and more.">
+    <title>Pool Photo Gallery | Tri-State Aquatic Solutions | Main Line PA & Delaware</title>
+    <meta name="description" content="Browse our gallery of premium pool installations across Main Line Philadelphia and Northern Delaware. Filter by style, size, feature, or location. View fiberglass, concrete, and plunge pool projects.">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tristateaquaticsolutions.com/gallery/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pool Photo Gallery | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Browse our gallery of premium pool installations across Main Line Philadelphia and Northern Delaware.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquaticsolutions.com/gallery/">
+    <meta property="og:image" content="https://tristateaquaticsolutions.com/images/gallery-og.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pool Photo Gallery | Tri-State Aquatic Solutions">
+    <meta name="twitter:description" content="Browse our gallery of premium pool installations.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -321,7 +333,7 @@
         /* Page Header */
         .page-header {
             background: var(--gray-light);
-            padding: 0 0 4rem;
+            padding: 0 0 3rem;
             text-align: center;
         }
 
@@ -330,14 +342,59 @@
         }
 
         .page-header p {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 700px;
+            margin: 0 auto 2rem;
             font-size: 1.15rem;
+        }
+
+        /* Gallery Navigation */
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .gallery-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 100px;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .gallery-nav-link:hover {
+            border-color: var(--aqua);
+            color: var(--aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(0, 166, 178, 0.3);
+        }
+
+        .gallery-nav-link.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        .gallery-nav-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
         }
 
         /* Filter Section */
         .filter-section {
-            padding: 3rem 0;
+            padding: 2rem 0;
             background: var(--white);
             border-bottom: 1px solid var(--gray);
             position: sticky;
@@ -345,20 +402,41 @@
             z-index: 100;
         }
 
+        .filter-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            min-width: 100px;
+        }
+
         .filter-buttons {
             display: flex;
-            justify-content: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--gray);
+            padding: 0.6rem 1.25rem;
+            border: 1.5px solid var(--gray);
             border-radius: 100px;
             background: var(--white);
             font-family: var(--font-body);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: var(--navy);
             cursor: pointer;
@@ -376,37 +454,46 @@
             color: var(--white);
         }
 
-        .filter-btn[data-filter="fiberglass"].active {
+        .filter-btn[data-filter="fiberglass"].active,
+        .filter-btn[data-style="modern"].active {
             background: var(--aqua);
             border-color: var(--aqua);
         }
 
-        .filter-btn[data-filter="concrete"].active {
+        .filter-btn[data-filter="concrete"].active,
+        .filter-btn[data-style="traditional"].active {
             background: var(--gold);
             border-color: var(--gold);
             color: var(--navy);
         }
 
-        .filter-btn[data-filter="plunge"].active {
+        .filter-btn[data-filter="plunge"].active,
+        .filter-btn[data-style="resort"].active {
             background: var(--navy-light);
             border-color: var(--navy-light);
         }
 
+        .filter-count {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            margin-left: auto;
+        }
+
         /* Gallery Grid */
         .gallery-section {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--white);
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .project-card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             background: var(--gray-light);
             aspect-ratio: 4/3;
@@ -414,8 +501,14 @@
             transition: all 0.5s var(--ease-out-expo);
         }
 
+        .project-card.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
         .project-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             box-shadow: 0 30px 60px -20px rgba(14, 31, 52, 0.25);
         }
 
@@ -428,23 +521,21 @@
         }
 
         .project-card:hover .project-image {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
-        .project-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(14, 31, 52, 0.9) 0%, rgba(14, 31, 52, 0.4) 50%, transparent 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: opacity 0.4s var(--ease-out-expo);
+        /* Lazy Loading */
+        .project-image[data-src] {
+            background-color: var(--gray-light);
         }
 
-        .project-card:hover .project-overlay {
-            opacity: 1;
+        .project-image.loaded {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .project-info {
@@ -452,19 +543,25 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 1.5rem;
-            background: linear-gradient(to top, rgba(14, 31, 52, 0.8) 0%, transparent 100%);
+            padding: 1.25rem;
+            background: linear-gradient(to top, rgba(14, 31, 52, 0.9) 0%, rgba(14, 31, 52, 0.5) 60%, transparent 100%);
+        }
+
+        .project-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
         }
 
         .project-badge {
             display: inline-block;
-            padding: 0.35rem 0.85rem;
+            padding: 0.25rem 0.65rem;
             border-radius: 100px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.75rem;
+            letter-spacing: 0.08em;
         }
 
         .badge-fiberglass {
@@ -482,17 +579,30 @@
             color: var(--white);
         }
 
+        .badge-feature {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
         .project-location {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .project-location svg {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             stroke: var(--aqua);
             stroke-width: 2;
             fill: none;
@@ -505,20 +615,21 @@
             transform: translate(-50%, -50%) scale(0.8);
             background: var(--white);
             color: var(--navy);
-            padding: 0.85rem 1.5rem;
+            padding: 0.75rem 1.25rem;
             border-radius: 100px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             opacity: 0;
             transition: all 0.4s var(--ease-out-expo);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            white-space: nowrap;
         }
 
         .view-project svg {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             stroke: var(--navy);
             stroke-width: 2;
             fill: none;
@@ -543,31 +654,103 @@
         }
 
         .image-placeholder svg {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             stroke: var(--aqua);
             stroke-width: 1.5;
             fill: none;
-            margin-bottom: 1rem;
-            opacity: 0.6;
+            margin-bottom: 0.75rem;
+            opacity: 0.5;
         }
 
         .image-placeholder span {
-            font-size: 0.85rem;
-            opacity: 0.5;
+            font-size: 0.75rem;
+            opacity: 0.4;
+        }
+
+        /* Social Share */
+        .social-share {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .project-card:hover .social-share {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .share-btn:hover {
+            background: var(--white);
+            transform: scale(1.1);
+        }
+
+        .share-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--navy);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            display: none;
+        }
+
+        .no-results.visible {
+            display: block;
+        }
+
+        .no-results svg {
+            width: 64px;
+            height: 64px;
+            stroke: var(--gray);
+            stroke-width: 1.5;
+            fill: none;
+            margin-bottom: 1rem;
+        }
+
+        .no-results h3 {
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .no-results p {
+            margin-bottom: 1.5rem;
         }
 
         /* Load More */
         .load-more-section {
             text-align: center;
-            padding: 3rem 0 5rem;
+            padding: 2rem 0 4rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 1.1rem 2rem;
+            padding: 1rem 2rem;
             border-radius: 100px;
             font-family: var(--font-body);
             font-size: 0.95rem;
@@ -612,7 +795,7 @@
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             position: relative;
             overflow: hidden;
-            padding: 6rem 0;
+            padding: 5rem 0;
         }
 
         .cta-section::before {
@@ -637,8 +820,8 @@
 
         .cta-content p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
         }
 
         .cta-buttons {
@@ -674,7 +857,7 @@
         .lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(14, 31, 52, 0.95);
+            background: rgba(14, 31, 52, 0.97);
             z-index: 2000;
             display: none;
             align-items: center;
@@ -696,13 +879,19 @@
             width: 100%;
         }
 
+        .lightbox-image-container {
+            width: 100%;
+            max-height: 70vh;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--navy);
+        }
+
         .lightbox-image {
             width: 100%;
             height: auto;
             max-height: 70vh;
             object-fit: contain;
-            border-radius: 16px;
-            background: var(--navy);
         }
 
         .lightbox-placeholder {
@@ -713,7 +902,6 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-            border-radius: 16px;
             color: var(--white);
         }
 
@@ -730,14 +918,49 @@
         .lightbox-info {
             padding: 1.5rem 0;
             color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
         }
 
-        .lightbox-info h3 {
+        .lightbox-details h3 {
             margin-bottom: 0.5rem;
         }
 
-        .lightbox-info p {
+        .lightbox-details p {
             color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .lightbox-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .lightbox-action-btn {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-action-btn:hover {
+            background: var(--aqua);
+        }
+
+        .lightbox-action-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--white);
+            stroke-width: 2;
+            fill: none;
         }
 
         .lightbox-close {
@@ -790,6 +1013,14 @@
 
         .lightbox-next {
             right: -4rem;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            top: -3rem;
+            left: 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
         /* Footer */
@@ -910,6 +1141,12 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .project-card.featured {
+                grid-column: span 2;
+                grid-row: span 1;
+                aspect-ratio: 16/9;
+            }
+
             .lightbox-prev {
                 left: 1rem;
             }
@@ -921,6 +1158,15 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .filter-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .filter-label {
+                min-width: auto;
+            }
         }
 
         @media (max-width: 640px) {
@@ -928,13 +1174,26 @@
                 grid-template-columns: 1fr;
             }
 
-            .filter-buttons {
+            .project-card.featured {
+                grid-column: span 1;
+            }
+
+            .gallery-nav {
                 gap: 0.5rem;
             }
 
-            .filter-btn {
-                padding: 0.6rem 1.1rem;
+            .gallery-nav-link {
+                padding: 0.6rem 1rem;
                 font-size: 0.8rem;
+            }
+
+            .filter-buttons {
+                gap: 0.35rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.75rem;
             }
 
             .footer-grid {
@@ -956,13 +1215,18 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .lightbox-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
 
         /* Animations */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s var(--ease-out-expo);
+            transform: translateY(30px);
+            transition: all 0.7s var(--ease-out-expo);
         }
 
         .reveal.visible {
@@ -973,6 +1237,8 @@
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
     </style>
 </head>
 <body>
@@ -987,12 +1253,12 @@
                 </div>
             </a>
             <ul class="nav-links">
-                <li><a href="../#services">Services</a></li>
-                <li><a href="../#why-us">Why Us</a></li>
-                <li><a href="../#process">Process</a></li>
+                <li><a href="../services/">Services</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../portfolio/">Portfolio</a></li>
                 <li><a href="./" class="active">Gallery</a></li>
                 <li><a href="../testimonials/">Reviews</a></li>
-                <li><a href="../#contact" class="nav-cta">Get Quote</a></li>
+                <li><a href="../contact/" class="nav-cta">Get Quote</a></li>
             </ul>
             <button class="mobile-toggle" aria-label="Menu">
                 <span></span>
@@ -1016,21 +1282,81 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Pool Projects</h1>
-            <p>Explore our portfolio of premium pool installations across Main Line Philadelphia and Northern Delaware. Each project reflects our commitment to craftsmanship and personalized design.</p>
+            <h1>Pool Photo Gallery</h1>
+            <p>Browse our collection of premium pool installations across Main Line Philadelphia and Northern Delaware. Each project showcases our commitment to quality craftsmanship and personalized design.</p>
+
+            <!-- Gallery Navigation -->
+            <div class="gallery-nav">
+                <a href="./" class="gallery-nav-link active">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    All Photos
+                </a>
+                <a href="before-after.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+                    Before & After
+                </a>
+                <a href="design-inspiration.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Inspiration
+                </a>
+                <a href="outdoor-living.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Outdoor Living
+                </a>
+                <a href="night-gallery.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    Night Views
+                </a>
+                <a href="drone-views.html" class="gallery-nav-link">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Drone Views
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Filter Section -->
     <div class="filter-section">
         <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="fiberglass">Fiberglass</button>
-                <button class="filter-btn" data-filter="concrete">Concrete</button>
-                <button class="filter-btn" data-filter="plunge">Plunge</button>
-                <button class="filter-btn" data-filter="main-line">Main Line PA</button>
-                <button class="filter-btn" data-filter="delaware">Delaware</button>
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <span class="filter-label">By Style:</span>
+                    <div class="filter-buttons" id="styleFilters">
+                        <button class="filter-btn active" data-style="all">All Styles</button>
+                        <button class="filter-btn" data-style="modern">Modern</button>
+                        <button class="filter-btn" data-style="traditional">Traditional</button>
+                        <button class="filter-btn" data-style="resort">Resort</button>
+                        <button class="filter-btn" data-style="minimalist">Minimalist</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">By Type:</span>
+                    <div class="filter-buttons" id="typeFilters">
+                        <button class="filter-btn active" data-filter="all">All Types</button>
+                        <button class="filter-btn" data-filter="fiberglass">Fiberglass</button>
+                        <button class="filter-btn" data-filter="concrete">Concrete</button>
+                        <button class="filter-btn" data-filter="plunge">Plunge</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">By Size:</span>
+                    <div class="filter-buttons" id="sizeFilters">
+                        <button class="filter-btn active" data-size="all">All Sizes</button>
+                        <button class="filter-btn" data-size="small">Small (Under 400 sq ft)</button>
+                        <button class="filter-btn" data-size="medium">Medium (400-600 sq ft)</button>
+                        <button class="filter-btn" data-size="large">Large (600+ sq ft)</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">By Location:</span>
+                    <div class="filter-buttons" id="locationFilters">
+                        <button class="filter-btn active" data-location="all">All Locations</button>
+                        <button class="filter-btn" data-location="main-line">Main Line PA</button>
+                        <button class="filter-btn" data-location="delaware">Delaware</button>
+                        <button class="filter-btn" data-location="chester">Chester County</button>
+                    </div>
+                </div>
+                <span class="filter-count"><span id="visibleCount">12</span> of <span id="totalCount">12</span> photos</span>
             </div>
         </div>
     </div>
@@ -1038,17 +1364,40 @@
     <!-- Gallery Grid -->
     <section class="gallery-section">
         <div class="container">
-            <div class="gallery-grid">
-                <!-- Fiberglass Pool 1 - Gladwyne -->
-                <div class="project-card reveal" data-type="fiberglass" data-location="main-line" data-title="Modern Fiberglass Pool" data-description="A stunning 16x36 fiberglass pool with integrated tanning ledge, installed in just 3 weeks for this Gladwyne family.">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Featured: Gladwyne Luxury Estate -->
+                <div class="project-card featured reveal"
+                     data-type="fiberglass"
+                     data-style="modern"
+                     data-size="large"
+                     data-location="main-line"
+                     data-title="Gladwyne Luxury Estate Pool"
+                     data-description="A stunning 18x40 modern fiberglass pool with infinity edge, integrated spa, and LED lighting package. This estate-scale installation features a sun shelf, automatic cover, and natural stone decking."
+                     data-portfolio="../portfolio/gladwyne-luxury-estate/">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
+                            <span>Featured Project Photo</span>
                         </div>
                     </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="pinterest" title="Pin to Pinterest">
+                            <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 0 0-4.373 23.178c-.1-.937-.19-2.378.04-3.403l1.658-7.026s-.424-.846-.424-2.097c0-1.964 1.138-3.43 2.556-3.43 1.205 0 1.788.905 1.788 1.99 0 1.213-.772 3.026-1.17 4.707-.333 1.406.706 2.552 2.094 2.552 2.513 0 4.445-2.65 4.445-6.474 0-3.384-2.432-5.75-5.908-5.75-4.025 0-6.388 3.02-6.388 6.14 0 1.217.47 2.52 1.055 3.23a.424.424 0 0 1 .098.407l-.394 1.6c-.062.26-.208.315-.48.19-1.792-.833-2.912-3.449-2.912-5.55 0-4.517 3.283-8.668 9.468-8.668 4.972 0 8.838 3.543 8.838 8.28 0 4.94-3.115 8.917-7.44 8.917-1.453 0-2.82-.756-3.289-1.648l-.894 3.413c-.324 1.243-1.2 2.803-1.785 3.753A12 12 0 1 0 12 0z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
                     <div class="project-info">
-                        <span class="project-badge badge-fiberglass">Fiberglass</span>
+                        <div class="project-badges">
+                            <span class="project-badge badge-fiberglass">Fiberglass</span>
+                            <span class="project-badge badge-feature">Infinity Edge</span>
+                            <span class="project-badge badge-feature">Spa</span>
+                        </div>
+                        <h3 class="project-title">Gladwyne Luxury Estate</h3>
                         <div class="project-location">
                             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             Gladwyne, PA
@@ -1056,20 +1405,39 @@
                     </div>
                     <div class="view-project">
                         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
+                        View Details
                     </div>
                 </div>
 
-                <!-- Fiberglass Pool 2 - Villanova -->
-                <div class="project-card reveal reveal-delay-1" data-type="fiberglass" data-location="main-line" data-title="Estate Fiberglass Pool" data-description="Elegant 18x40 fiberglass installation with custom water features and LED lighting package for this Villanova estate.">
+                <!-- Villanova Estate -->
+                <div class="project-card reveal reveal-delay-1"
+                     data-type="fiberglass"
+                     data-style="traditional"
+                     data-size="large"
+                     data-location="main-line"
+                     data-title="Villanova Classic Estate"
+                     data-description="An elegant 16x36 Roman-end fiberglass pool with classic stone coping and formal landscaping. Features include a tanning ledge and custom water features."
+                     data-portfolio="../portfolio/">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             <span>Project Photo</span>
                         </div>
                     </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
                     <div class="project-info">
-                        <span class="project-badge badge-fiberglass">Fiberglass</span>
+                        <div class="project-badges">
+                            <span class="project-badge badge-fiberglass">Fiberglass</span>
+                            <span class="project-badge badge-feature">Roman End</span>
+                        </div>
+                        <h3 class="project-title">Villanova Classic Estate</h3>
                         <div class="project-location">
                             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             Villanova, PA
@@ -1077,20 +1445,39 @@
                     </div>
                     <div class="view-project">
                         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
+                        View Details
                     </div>
                 </div>
 
-                <!-- Fiberglass Pool 3 - Hockessin -->
-                <div class="project-card reveal reveal-delay-2" data-type="fiberglass" data-location="delaware" data-title="Family Fiberglass Pool" data-description="A 14x32 freeform fiberglass pool with beach entry and built-in seating, perfect for this Hockessin family.">
+                <!-- Hockessin Modern -->
+                <div class="project-card reveal reveal-delay-2"
+                     data-type="fiberglass"
+                     data-style="modern"
+                     data-size="medium"
+                     data-location="delaware"
+                     data-title="Hockessin Modern Retreat"
+                     data-description="A sleek 14x32 rectangular fiberglass pool with integrated LED lighting and smart automation. Features clean lines and contemporary landscaping."
+                     data-portfolio="../portfolio/hockessin-modern-pool/">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             <span>Project Photo</span>
                         </div>
                     </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
                     <div class="project-info">
-                        <span class="project-badge badge-fiberglass">Fiberglass</span>
+                        <div class="project-badges">
+                            <span class="project-badge badge-fiberglass">Fiberglass</span>
+                            <span class="project-badge badge-feature">Smart Home</span>
+                        </div>
+                        <h3 class="project-title">Hockessin Modern Retreat</h3>
                         <div class="project-location">
                             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             Hockessin, DE
@@ -1098,83 +1485,39 @@
                     </div>
                     <div class="view-project">
                         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
+                        View Details
                     </div>
                 </div>
 
-                <!-- Concrete Pool 1 - Gladwyne -->
-                <div class="project-card reveal" data-type="concrete" data-location="main-line" data-title="Luxury Concrete Pool" data-description="A 20x45 custom concrete pool with infinity edge and integrated spa, designed to complement this Gladwyne estate.">
+                <!-- Bryn Mawr Plunge -->
+                <div class="project-card reveal reveal-delay-3"
+                     data-type="plunge"
+                     data-style="minimalist"
+                     data-size="small"
+                     data-location="main-line"
+                     data-title="Bryn Mawr Plunge Pool"
+                     data-description="A compact 10x18 heated plunge pool with integrated spa jets. Perfect for year-round relaxation in a smaller backyard space."
+                     data-portfolio="../portfolio/bryn-mawr-plunge-pool/">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             <span>Project Photo</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <span class="project-badge badge-concrete">Concrete</span>
-                        <div class="project-location">
-                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Gladwyne, PA
-                        </div>
-                    </div>
-                    <div class="view-project">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
-                    </div>
-                </div>
-
-                <!-- Fiberglass Pool 4 - West Chester -->
-                <div class="project-card reveal reveal-delay-1" data-type="fiberglass" data-location="main-line" data-title="Contemporary Fiberglass" data-description="A sleek 16x38 rectangular fiberglass pool with automatic cover and modern hardscape for this West Chester home.">
-                    <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
                     </div>
                     <div class="project-info">
-                        <span class="project-badge badge-fiberglass">Fiberglass</span>
-                        <div class="project-location">
-                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            West Chester, PA
+                        <div class="project-badges">
+                            <span class="project-badge badge-plunge">Plunge</span>
+                            <span class="project-badge badge-feature">Heated</span>
                         </div>
-                    </div>
-                    <div class="view-project">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
-                    </div>
-                </div>
-
-                <!-- Concrete Pool 2 - Greenville -->
-                <div class="project-card reveal reveal-delay-2" data-type="concrete" data-location="delaware" data-title="Resort-Style Concrete" data-description="A 22x48 resort-style concrete pool with custom tile, waterfall feature, and outdoor kitchen area in Greenville.">
-                    <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-badge badge-concrete">Concrete</span>
-                        <div class="project-location">
-                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Greenville, DE
-                        </div>
-                    </div>
-                    <div class="view-project">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
-                    </div>
-                </div>
-
-                <!-- Plunge Pool 1 - Bryn Mawr -->
-                <div class="project-card reveal" data-type="plunge" data-location="main-line" data-title="Heated Plunge Pool" data-description="A 10x16 heated plunge pool with integrated spa jets, perfect for year-round use in this Bryn Mawr backyard.">
-                    <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-badge badge-plunge">Plunge</span>
+                        <h3 class="project-title">Bryn Mawr Plunge Pool</h3>
                         <div class="project-location">
                             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             Bryn Mawr, PA
@@ -1182,20 +1525,119 @@
                     </div>
                     <div class="view-project">
                         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
+                        View Details
                     </div>
                 </div>
 
-                <!-- Concrete Pool 3 - Haverford -->
-                <div class="project-card reveal reveal-delay-1" data-type="concrete" data-location="main-line" data-title="Classic Concrete Pool" data-description="A timeless 18x36 rectangular concrete pool with natural stone coping, blending seamlessly with this Haverford Tudor.">
+                <!-- West Chester Family -->
+                <div class="project-card reveal reveal-delay-4"
+                     data-type="fiberglass"
+                     data-style="resort"
+                     data-size="medium"
+                     data-location="chester"
+                     data-title="West Chester Family Pool"
+                     data-description="A family-friendly 16x34 fiberglass pool with beach entry, tanning ledge, and volleyball net setup. Includes outdoor kitchen and fire pit area."
+                     data-portfolio="../portfolio/west-chester-family-pool/">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             <span>Project Photo</span>
                         </div>
                     </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
                     <div class="project-info">
-                        <span class="project-badge badge-concrete">Concrete</span>
+                        <div class="project-badges">
+                            <span class="project-badge badge-fiberglass">Fiberglass</span>
+                            <span class="project-badge badge-feature">Beach Entry</span>
+                        </div>
+                        <h3 class="project-title">West Chester Family Pool</h3>
+                        <div class="project-location">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            West Chester, PA
+                        </div>
+                    </div>
+                    <div class="view-project">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        View Details
+                    </div>
+                </div>
+
+                <!-- Greenville Concrete -->
+                <div class="project-card reveal reveal-delay-5"
+                     data-type="concrete"
+                     data-style="resort"
+                     data-size="large"
+                     data-location="delaware"
+                     data-title="Greenville Resort Pool"
+                     data-description="A 22x48 custom concrete pool with waterfall grotto, swim-up bar, and integrated spa. Full resort-style outdoor living with cabana and outdoor kitchen."
+                     data-portfolio="../portfolio/">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Project Photo</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badges">
+                            <span class="project-badge badge-concrete">Concrete</span>
+                            <span class="project-badge badge-feature">Grotto</span>
+                        </div>
+                        <h3 class="project-title">Greenville Resort Pool</h3>
+                        <div class="project-location">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Greenville, DE
+                        </div>
+                    </div>
+                    <div class="view-project">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        View Details
+                    </div>
+                </div>
+
+                <!-- Haverford Traditional -->
+                <div class="project-card reveal"
+                     data-type="concrete"
+                     data-style="traditional"
+                     data-size="medium"
+                     data-location="main-line"
+                     data-title="Haverford Classic Pool"
+                     data-description="A timeless 18x36 rectangular concrete pool with bluestone coping and formal gardens. Features diving board and classic pool house."
+                     data-portfolio="../portfolio/">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Project Photo</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badges">
+                            <span class="project-badge badge-concrete">Concrete</span>
+                            <span class="project-badge badge-feature">Pool House</span>
+                        </div>
+                        <h3 class="project-title">Haverford Classic Pool</h3>
                         <div class="project-location">
                             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             Haverford, PA
@@ -1203,20 +1645,39 @@
                     </div>
                     <div class="view-project">
                         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
+                        View Details
                     </div>
                 </div>
 
-                <!-- Plunge Pool 2 - Wilmington -->
-                <div class="project-card reveal reveal-delay-2" data-type="plunge" data-location="delaware" data-title="Urban Plunge Pool" data-description="A compact 8x14 cold plunge pool with sleek modern design, ideal for wellness-focused living in Wilmington.">
+                <!-- Wilmington Plunge -->
+                <div class="project-card reveal reveal-delay-1"
+                     data-type="plunge"
+                     data-style="modern"
+                     data-size="small"
+                     data-location="delaware"
+                     data-title="Wilmington Cold Plunge"
+                     data-description="A compact 8x12 cold plunge pool for wellness enthusiasts. Features precision temperature control and sleek modern design."
+                     data-portfolio="../portfolio/">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             <span>Project Photo</span>
                         </div>
                     </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
                     <div class="project-info">
-                        <span class="project-badge badge-plunge">Plunge</span>
+                        <div class="project-badges">
+                            <span class="project-badge badge-plunge">Plunge</span>
+                            <span class="project-badge badge-feature">Cold Therapy</span>
+                        </div>
+                        <h3 class="project-title">Wilmington Cold Plunge</h3>
                         <div class="project-location">
                             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             Wilmington, DE
@@ -1224,9 +1685,177 @@
                     </div>
                     <div class="view-project">
                         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                        View Project
+                        View Details
                     </div>
                 </div>
+
+                <!-- Wayne Modern -->
+                <div class="project-card reveal reveal-delay-2"
+                     data-type="fiberglass"
+                     data-style="modern"
+                     data-size="medium"
+                     data-location="main-line"
+                     data-title="Wayne Contemporary Pool"
+                     data-description="A 15x35 geometric fiberglass pool with frameless glass fencing and minimalist hardscape. Features custom LED color-changing lights."
+                     data-portfolio="../portfolio/">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Project Photo</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badges">
+                            <span class="project-badge badge-fiberglass">Fiberglass</span>
+                            <span class="project-badge badge-feature">Glass Fence</span>
+                        </div>
+                        <h3 class="project-title">Wayne Contemporary Pool</h3>
+                        <div class="project-location">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Wayne, PA
+                        </div>
+                    </div>
+                    <div class="view-project">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        View Details
+                    </div>
+                </div>
+
+                <!-- Malvern Concrete -->
+                <div class="project-card reveal reveal-delay-3"
+                     data-type="concrete"
+                     data-style="traditional"
+                     data-size="large"
+                     data-location="chester"
+                     data-title="Malvern Estate Pool"
+                     data-description="A grand 20x42 freeform concrete pool with natural rock waterfall and grotto. Includes separate hot tub and extensive outdoor living space."
+                     data-portfolio="../portfolio/">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Project Photo</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badges">
+                            <span class="project-badge badge-concrete">Concrete</span>
+                            <span class="project-badge badge-feature">Rock Waterfall</span>
+                        </div>
+                        <h3 class="project-title">Malvern Estate Pool</h3>
+                        <div class="project-location">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Malvern, PA
+                        </div>
+                    </div>
+                    <div class="view-project">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        View Details
+                    </div>
+                </div>
+
+                <!-- Radnor Minimalist -->
+                <div class="project-card reveal reveal-delay-4"
+                     data-type="fiberglass"
+                     data-style="minimalist"
+                     data-size="medium"
+                     data-location="main-line"
+                     data-title="Radnor Zen Pool"
+                     data-description="A serene 14x28 lap pool with Japanese-inspired landscaping. Features infinity edge and meditation deck."
+                     data-portfolio="../portfolio/">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Project Photo</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badges">
+                            <span class="project-badge badge-fiberglass">Fiberglass</span>
+                            <span class="project-badge badge-feature">Lap Pool</span>
+                        </div>
+                        <h3 class="project-title">Radnor Zen Pool</h3>
+                        <div class="project-location">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Radnor, PA
+                        </div>
+                    </div>
+                    <div class="view-project">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        View Details
+                    </div>
+                </div>
+
+                <!-- Newark Family -->
+                <div class="project-card reveal reveal-delay-5"
+                     data-type="fiberglass"
+                     data-style="resort"
+                     data-size="medium"
+                     data-location="delaware"
+                     data-title="Newark Family Oasis"
+                     data-description="A 16x32 freeform fiberglass pool with slide, diving rock, and beach entry. Complete with basketball hoop and rope swing."
+                     data-portfolio="../portfolio/">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <span>Project Photo</span>
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <button class="share-btn" data-share="facebook" title="Share on Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="link" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badges">
+                            <span class="project-badge badge-fiberglass">Fiberglass</span>
+                            <span class="project-badge badge-feature">Slide</span>
+                        </div>
+                        <h3 class="project-title">Newark Family Oasis</h3>
+                        <div class="project-location">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Newark, DE
+                        </div>
+                    </div>
+                    <div class="view-project">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        View Details
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <h3>No Projects Found</h3>
+                <p>Try adjusting your filters to see more projects.</p>
+                <button class="btn btn-primary" id="resetFilters">Reset All Filters</button>
             </div>
         </div>
     </section>
@@ -1243,16 +1872,16 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content reveal">
-                <h2>Ready to Start Your Project?</h2>
-                <p>Schedule your free design consultation today. We'll visit your home, discuss your vision, and show you what's possible.</p>
+                <h2>Ready to Create Your Dream Pool?</h2>
+                <p>Schedule your free design consultation today. We will visit your property, discuss your vision, and show you exactly what is possible.</p>
                 <div class="cta-buttons">
                     <a href="tel:+13025551234" class="btn btn-cta-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         Call (302) 555-1234
                     </a>
-                    <a href="../#contact" class="btn btn-cta-secondary">
+                    <a href="../contact/" class="btn btn-cta-secondary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        Request Quote
+                        Request Free Quote
                     </a>
                 </div>
             </div>
@@ -1262,16 +1891,29 @@
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
+            <span class="lightbox-counter"><span id="currentIndex">1</span> / <span id="totalImages">12</span></span>
             <button class="lightbox-close" id="lightboxClose">&times;</button>
             <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
             <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
-            <div class="lightbox-placeholder">
-                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                <span>Project Photo</span>
+            <div class="lightbox-image-container">
+                <div class="lightbox-placeholder">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Project Photo</span>
+                </div>
             </div>
             <div class="lightbox-info">
-                <h3 id="lightboxTitle">Project Title</h3>
-                <p id="lightboxDesc">Project description goes here.</p>
+                <div class="lightbox-details">
+                    <h3 id="lightboxTitle">Project Title</h3>
+                    <p id="lightboxDesc">Project description goes here.</p>
+                </div>
+                <div class="lightbox-actions">
+                    <button class="lightbox-action-btn" id="shareBtn" title="Share">
+                        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    </button>
+                    <a class="lightbox-action-btn" id="viewCaseStudy" href="#" title="View Case Study">
+                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -1293,19 +1935,21 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="../#services">Fiberglass Pools</a></li>
-                        <li><a href="../#services">Concrete Pools</a></li>
-                        <li><a href="../#services">Plunge Pools</a></li>
-                        <li><a href="#">Pool Maintenance</a></li>
+                        <li><a href="../pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="../pools/concrete/">Concrete Pools</a></li>
+                        <li><a href="../pools/plunge/">Plunge Pools</a></li>
+                        <li><a href="../pool-maintenance/">Pool Maintenance</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Company</h4>
+                    <h4>Gallery</h4>
                     <ul>
-                        <li><a href="../#why-us">About Us</a></li>
-                        <li><a href="../#process">Our Process</a></li>
-                        <li><a href="./">Gallery</a></li>
-                        <li><a href="../testimonials/">Reviews</a></li>
+                        <li><a href="./">All Photos</a></li>
+                        <li><a href="before-after.html">Before & After</a></li>
+                        <li><a href="design-inspiration.html">Design Inspiration</a></li>
+                        <li><a href="outdoor-living.html">Outdoor Living</a></li>
+                        <li><a href="night-gallery.html">Night Views</a></li>
+                        <li><a href="drone-views.html">Drone Views</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1327,7 +1971,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved. PA HIC #PA123456 | DE License #DE789012 | <a href="/privacy-policy/" style="color: rgba(255,255,255,0.5);">Privacy Policy</a> | <a href="/terms-of-service/" style="color: rgba(255,255,255,0.5);">Terms of Service</a></p>
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved. PA HIC #PA123456 | DE License #DE789012 | <a href="../privacy-policy/" style="color: rgba(255,255,255,0.5);">Privacy Policy</a> | <a href="../terms-of-service/" style="color: rgba(255,255,255,0.5);">Terms of Service</a></p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook">
                         <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1335,8 +1979,8 @@
                     <a href="#" aria-label="Instagram">
                         <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     </a>
-                    <a href="#" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <a href="#" aria-label="Pinterest">
+                        <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 0 0-4.373 23.178c-.1-.937-.19-2.378.04-3.403l1.658-7.026s-.424-.846-.424-2.097c0-1.964 1.138-3.43 2.556-3.43 1.205 0 1.788.905 1.788 1.99 0 1.213-.772 3.026-1.17 4.707-.333 1.406.706 2.552 2.094 2.552 2.513 0 4.445-2.65 4.445-6.474 0-3.384-2.432-5.75-5.908-5.75-4.025 0-6.388 3.02-6.388 6.14 0 1.217.47 2.52 1.055 3.23a.424.424 0 0 1 .098.407l-.394 1.6c-.062.26-.208.315-.48.19-1.792-.833-2.912-3.449-2.912-5.55 0-4.517 3.283-8.668 9.468-8.668 4.972 0 8.838 3.543 8.838 8.28 0 4.94-3.115 8.917-7.44 8.917-1.453 0-2.82-.756-3.289-1.648l-.894 3.413c-.324 1.243-1.2 2.803-1.785 3.753A12 12 0 1 0 12 0z"/></svg>
                     </a>
                 </div>
             </div>
@@ -1344,32 +1988,90 @@
     </footer>
 
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
+        // Filter State
+        const filterState = {
+            style: 'all',
+            type: 'all',
+            size: 'all',
+            location: 'all'
+        };
+
+        // Elements
         const projectCards = document.querySelectorAll('.project-card');
+        const visibleCount = document.getElementById('visibleCount');
+        const totalCount = document.getElementById('totalCount');
+        const noResults = document.getElementById('noResults');
+        const galleryGrid = document.getElementById('galleryGrid');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active button
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        // Initialize counts
+        totalCount.textContent = projectCards.length;
+        visibleCount.textContent = projectCards.length;
 
-                const filter = btn.dataset.filter;
+        // Filter functionality for all filter groups
+        document.querySelectorAll('.filter-buttons').forEach(group => {
+            group.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state within group
+                    group.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
 
-                // Filter projects
-                projectCards.forEach(card => {
-                    const type = card.dataset.type;
-                    const location = card.dataset.location;
+                    // Update filter state
+                    if (btn.dataset.style) filterState.style = btn.dataset.style;
+                    if (btn.dataset.filter) filterState.type = btn.dataset.filter;
+                    if (btn.dataset.size) filterState.size = btn.dataset.size;
+                    if (btn.dataset.location) filterState.location = btn.dataset.location;
 
-                    if (filter === 'all') {
-                        card.style.display = 'block';
-                    } else if (filter === 'main-line' || filter === 'delaware') {
-                        card.style.display = location === filter ? 'block' : 'none';
-                    } else {
-                        card.style.display = type === filter ? 'block' : 'none';
-                    }
+                    // Apply filters
+                    applyFilters();
                 });
             });
+        });
+
+        function applyFilters() {
+            let visibleCards = 0;
+
+            projectCards.forEach(card => {
+                const matchStyle = filterState.style === 'all' || card.dataset.style === filterState.style;
+                const matchType = filterState.type === 'all' || card.dataset.type === filterState.type;
+                const matchSize = filterState.size === 'all' || card.dataset.size === filterState.size;
+                const matchLocation = filterState.location === 'all' || card.dataset.location === filterState.location;
+
+                if (matchStyle && matchType && matchSize && matchLocation) {
+                    card.style.display = 'block';
+                    visibleCards++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            visibleCount.textContent = visibleCards;
+
+            // Show/hide no results message
+            if (visibleCards === 0) {
+                noResults.classList.add('visible');
+                galleryGrid.style.display = 'none';
+            } else {
+                noResults.classList.remove('visible');
+                galleryGrid.style.display = 'grid';
+            }
+        }
+
+        // Reset filters
+        document.getElementById('resetFilters').addEventListener('click', () => {
+            filterState.style = 'all';
+            filterState.type = 'all';
+            filterState.size = 'all';
+            filterState.location = 'all';
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.style === 'all' || btn.dataset.filter === 'all' ||
+                    btn.dataset.size === 'all' || btn.dataset.location === 'all') {
+                    btn.classList.add('active');
+                }
+            });
+
+            applyFilters();
         });
 
         // Lightbox functionality
@@ -1379,21 +2081,30 @@
         const lightboxDesc = document.getElementById('lightboxDesc');
         const lightboxPrev = document.getElementById('lightboxPrev');
         const lightboxNext = document.getElementById('lightboxNext');
+        const currentIndexEl = document.getElementById('currentIndex');
+        const totalImagesEl = document.getElementById('totalImages');
+        const viewCaseStudy = document.getElementById('viewCaseStudy');
 
         let currentIndex = 0;
         const visibleCards = () => Array.from(projectCards).filter(c => c.style.display !== 'none');
 
-        projectCards.forEach((card, index) => {
-            card.addEventListener('click', () => {
+        projectCards.forEach((card) => {
+            card.addEventListener('click', (e) => {
+                // Don't open lightbox if clicking share buttons
+                if (e.target.closest('.share-btn')) return;
+
                 const cards = visibleCards();
                 currentIndex = cards.indexOf(card);
-                openLightbox(card);
+                openLightbox(card, cards);
             });
         });
 
-        function openLightbox(card) {
+        function openLightbox(card, cards) {
             lightboxTitle.textContent = card.dataset.title;
             lightboxDesc.textContent = card.dataset.description;
+            currentIndexEl.textContent = currentIndex + 1;
+            totalImagesEl.textContent = cards.length;
+            viewCaseStudy.href = card.dataset.portfolio || '../portfolio/';
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1411,13 +2122,13 @@
         lightboxPrev.addEventListener('click', () => {
             const cards = visibleCards();
             currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-            openLightbox(cards[currentIndex]);
+            openLightbox(cards[currentIndex], cards);
         });
 
         lightboxNext.addEventListener('click', () => {
             const cards = visibleCards();
             currentIndex = (currentIndex + 1) % cards.length;
-            openLightbox(cards[currentIndex]);
+            openLightbox(cards[currentIndex], cards);
         });
 
         // Keyboard navigation
@@ -1428,6 +2139,43 @@
             if (e.key === 'ArrowRight') lightboxNext.click();
         });
 
+        // Social Share functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const card = btn.closest('.project-card');
+                const title = card.dataset.title;
+                const url = window.location.href;
+                const shareType = btn.dataset.share;
+
+                if (shareType === 'facebook') {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                } else if (shareType === 'pinterest') {
+                    window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&description=${encodeURIComponent(title)}`, '_blank');
+                } else if (shareType === 'link') {
+                    navigator.clipboard.writeText(url).then(() => {
+                        btn.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+                        setTimeout(() => {
+                            btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+                        }, 2000);
+                    });
+                }
+            });
+        });
+
+        // Share button in lightbox
+        document.getElementById('shareBtn').addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: lightboxTitle.textContent,
+                    text: lightboxDesc.textContent,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+            }
+        });
+
         // Reveal on scroll
         const revealElements = document.querySelectorAll('.reveal');
 
@@ -1436,7 +2184,7 @@
                 const elementTop = el.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
 
-                if (elementTop < windowHeight - 100) {
+                if (elementTop < windowHeight - 80) {
                     el.classList.add('visible');
                 }
             });
@@ -1444,6 +2192,23 @@
 
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
+
+        // Lazy loading simulation
+        const lazyImages = document.querySelectorAll('.project-image[data-src]');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.style.backgroundImage = `url(${img.dataset.src})`;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                }
+            });
+        }, { rootMargin: '50px' });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
 
         // Load more placeholder functionality
         document.getElementById('loadMore').addEventListener('click', function() {

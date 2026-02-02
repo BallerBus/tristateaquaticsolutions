@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Tri-State Aquatic Solutions | Expert Pool Installers</title>
+    <meta name="description" content="Meet the experienced team behind Tri-State Aquatic Solutions. Our certified fiberglass pool installers bring decades of combined experience to every project across Main Line PA and Northern Delaware.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquatic.com/about/team/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Our Team | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="Meet the experienced team behind Main Line PA's premier fiberglass pool installation company.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tristateaquatic.com/about/team/">
+    <meta property="og:image" content="https://tristateaquatic.com/images/team-og.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema: Organization with Employees -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://tristateaquatic.com/#organization",
+        "name": "Tri-State Aquatic Solutions",
+        "legalName": "Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions",
+        "url": "https://tristateaquatic.com",
+        "employee": [
+            {
+                "@type": "Person",
+                "@id": "https://tristateaquatic.com/about/team/#owner",
+                "name": "Owner Name",
+                "jobTitle": "Owner & Lead Designer",
+                "description": "Founder of Tri-State Aquatic Solutions with extensive experience in fiberglass pool installation.",
+                "worksFor": {
+                    "@id": "https://tristateaquatic.com/#organization"
+                }
+            },
+            {
+                "@type": "Person",
+                "@id": "https://tristateaquatic.com/about/team/#project-manager",
+                "name": "Project Manager Name",
+                "jobTitle": "Project Manager",
+                "description": "Oversees all pool installation projects ensuring quality and timely completion.",
+                "worksFor": {
+                    "@id": "https://tristateaquatic.com/#organization"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tristateaquatic.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://tristateaquatic.com/about/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Our Team",
+                "item": "https://tristateaquatic.com/about/team/"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.15; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); }
+        .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; position: relative; overflow: hidden; }
+        .logo-mark::before { content: ''; position: absolute; width: 60%; height: 60%; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid var(--aqua); border-radius: 50%; animation: ripple 3s ease-out infinite; }
+        .logo-mark::after { content: ''; position: absolute; width: 30%; height: 30%; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--aqua); border-radius: 50%; }
+        @keyframes ripple { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; } }
+        .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+        .logo-text span { display: block; font-size: 0.65rem; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-text); margin-top: 2px; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--aqua); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.85rem 1.75rem !important; border-radius: 100px; transition: all 0.3s var(--ease-out-expo); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--aqua); transform: translateY(-2px); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--navy); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 1rem 0; margin-top: 80px; background: var(--gray-light); }
+        .breadcrumb-list { display: flex; gap: 0.5rem; list-style: none; font-size: 0.9rem; }
+        .breadcrumb-list a { color: var(--aqua); text-decoration: none; }
+        .breadcrumb-list a:hover { text-decoration: underline; }
+        .breadcrumb-list span { color: var(--gray-text); }
+
+        /* Page Hero */
+        .page-hero { padding: 4rem 0 5rem; background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%); }
+        .page-hero h1 { margin-bottom: 1rem; }
+        .page-hero-subtitle { font-size: 1.25rem; max-width: 700px; color: var(--gray-text); }
+
+        /* Sub Navigation */
+        .about-nav { background: var(--white); border-bottom: 1px solid var(--gray); position: sticky; top: 76px; z-index: 100; }
+        .about-nav-list { display: flex; gap: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+        .about-nav-list::-webkit-scrollbar { display: none; }
+        .about-nav-list a { display: block; padding: 1rem 1.5rem; text-decoration: none; color: var(--gray-text); font-size: 0.9rem; font-weight: 500; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.3s ease; }
+        .about-nav-list a:hover { color: var(--navy); }
+        .about-nav-list a.active { color: var(--aqua); border-bottom-color: var(--aqua); }
+
+        /* Section */
+        section { padding: clamp(4rem, 8vw, 6rem) 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+        .section-tag::before, .section-tag::after { content: ''; width: 30px; height: 1px; background: var(--aqua); }
+
+        /* Leadership Section */
+        .leadership-section { background: var(--white); }
+        .leadership-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+        .leader-card { background: var(--gray-light); border-radius: 24px; overflow: hidden; transition: all 0.4s var(--ease-out-expo); }
+        .leader-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -15px rgba(14, 31, 52, 0.15); }
+        .leader-photo { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); text-align: center; position: relative; }
+        .leader-photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+        .leader-photo-placeholder svg { width: 80px; height: 80px; stroke: var(--aqua); stroke-width: 1; fill: none; }
+        .leader-photo-placeholder span { font-size: 0.85rem; opacity: 0.6; }
+        .photo-specs { position: absolute; bottom: 1rem; right: 1rem; background: rgba(0,0,0,0.5); padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.7rem; color: rgba(255,255,255,0.8); }
+        .leader-info { padding: 2rem; }
+        .leader-info h3 { margin-bottom: 0.25rem; font-size: 1.75rem; }
+        .leader-role { color: var(--aqua); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; }
+        .leader-info p { font-size: 1rem; line-height: 1.7; margin-bottom: 1rem; }
+        .leader-credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+        .credential-badge { background: var(--white); border: 1px solid var(--gray); padding: 0.35rem 0.75rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--navy); }
+
+        /* Team Section */
+        .team-section { background: var(--gray-light); }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .team-card { background: var(--white); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.4s var(--ease-out-expo); }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(14, 31, 52, 0.12); }
+        .team-photo { width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); margin: 0 auto 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); position: relative; overflow: hidden; }
+        .team-photo-initials { font-family: var(--font-display); font-size: 2.5rem; font-weight: 500; }
+        .team-photo::after { content: 'Photo'; position: absolute; bottom: 0; left: 0; right: 0; background: var(--aqua); padding: 0.25rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .team-card h3 { font-size: 1.35rem; margin-bottom: 0.25rem; }
+        .team-card .role { color: var(--aqua); font-weight: 500; font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .team-card p { font-size: 0.95rem; }
+
+        /* Photo Guidelines */
+        .photo-guidelines { background: var(--navy); color: var(--white); }
+        .guidelines-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .guideline-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; text-align: center; }
+        .guideline-card h4 { font-family: var(--font-body); color: var(--aqua); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+        .guideline-card p { color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .guideline-spec { font-size: 1.5rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%); text-align: center; color: var(--white); }
+        .cta-section h2 { color: var(--white); margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.4s var(--ease-out-expo); border: none; cursor: pointer; }
+        .btn svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+        .btn-white { background: var(--white); color: var(--navy); }
+        .btn-white:hover { background: var(--navy); color: var(--white); transform: translateY(-3px); }
+        .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255, 255, 255, 0.5); }
+        .btn-outline-white:hover { background: var(--white); color: var(--aqua); border-color: var(--white); }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 5rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.7; }
+        .footer-column h4 { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1.5rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-contact li { display: flex; align-items: center; gap: 0.75rem; }
+        .footer-contact svg { width: 18px; height: 18px; stroke: var(--aqua); stroke-width: 2; fill: none; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .footer-social a:hover { background: var(--aqua); transform: translateY(-3px); }
+        .footer-social svg { width: 18px; height: 18px; fill: var(--white); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .leadership-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .guidelines-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/fiberglass/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/about/" class="active">About</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li><a href="/about/">About</a></li>
+                <li><span>/</span></li>
+                <li><span>Our Team</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Meet Our Team</h1>
+            <p class="page-hero-subtitle">Behind every exceptional pool installation is a team of dedicated professionals. Get to know the people who will bring your backyard vision to life.</p>
+        </div>
+    </section>
+
+    <!-- About Sub Navigation -->
+    <div class="about-nav">
+        <div class="container">
+            <ul class="about-nav-list">
+                <li><a href="/about/">Our Story</a></li>
+                <li><a href="/about/team/" class="active">Our Team</a></li>
+                <li><a href="/about/process/">Our Process</a></li>
+                <li><a href="/about/certifications/">Certifications</a></li>
+                <li><a href="/about/community/">Community</a></li>
+                <li><a href="/about/careers/">Careers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Leadership</div>
+                <h2>Company Leadership</h2>
+                <p>Our leadership team brings decades of combined experience in pool installation, construction management, and customer service.</p>
+            </div>
+            <div class="leadership-grid">
+                <!-- Owner Template -->
+                <div class="leader-card reveal">
+                    <div class="leader-photo">
+                        <div class="leader-photo-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span>Owner Photo</span>
+                        </div>
+                        <div class="photo-specs">800x600px recommended</div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>[Owner Name]</h3>
+                        <p class="leader-role">Owner & Lead Designer</p>
+                        <p>[Owner bio - Describe background, experience in the pool industry, why they started the company, and their commitment to quality. Include personal details that humanize them - family, local ties, hobbies related to outdoor living.]</p>
+                        <p>[Second paragraph - Describe their hands-on approach, involvement in every project, and vision for the company's future.]</p>
+                        <div class="leader-credentials">
+                            <span class="credential-badge">PHTA Certified</span>
+                            <span class="credential-badge">15+ Years Experience</span>
+                            <span class="credential-badge">Latham Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Manager Template -->
+                <div class="leader-card reveal">
+                    <div class="leader-photo">
+                        <div class="leader-photo-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span>Project Manager Photo</span>
+                        </div>
+                        <div class="photo-specs">800x600px recommended</div>
+                    </div>
+                    <div class="leader-info">
+                        <h3>[Project Manager Name]</h3>
+                        <p class="leader-role">Operations & Project Manager</p>
+                        <p>[Project Manager bio - Describe their role in overseeing installations, coordinating crews, and ensuring projects run on schedule. Include relevant experience in construction management or pool industry.]</p>
+                        <p>[Second paragraph - Highlight their attention to detail, communication skills, and dedication to customer satisfaction.]</p>
+                        <div class="leader-credentials">
+                            <span class="credential-badge">PMP Certified</span>
+                            <span class="credential-badge">10+ Years Experience</span>
+                            <span class="credential-badge">OSHA Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Installation Crew</div>
+                <h2>Our Expert Installers</h2>
+                <p>Every member of our installation team is trained, certified, and committed to excellence.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Installer Template 1 -->
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <span class="team-photo-initials">JD</span>
+                    </div>
+                    <h3>[Installer Name]</h3>
+                    <p class="role">Lead Installer</p>
+                    <p>[Brief description - years of experience, specialty, certification status. Example: "10+ years experience with fiberglass installations. Latham Pools certified installer."]</p>
+                </div>
+
+                <!-- Installer Template 2 -->
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <span class="team-photo-initials">MR</span>
+                    </div>
+                    <h3>[Installer Name]</h3>
+                    <p class="role">Installation Specialist</p>
+                    <p>[Brief description - years of experience, specialty, certification status. Example: "Specializes in electrical and plumbing integration. 8 years pool industry experience."]</p>
+                </div>
+
+                <!-- Installer Template 3 -->
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <span class="team-photo-initials">SK</span>
+                    </div>
+                    <h3>[Installer Name]</h3>
+                    <p class="role">Equipment Technician</p>
+                    <p>[Brief description - years of experience, specialty, certification status. Example: "Expert in pool automation systems and equipment installation. Pentair certified."]</p>
+                </div>
+
+                <!-- Customer Service Template -->
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <span class="team-photo-initials">AH</span>
+                    </div>
+                    <h3>[Team Member Name]</h3>
+                    <p class="role">Customer Experience Manager</p>
+                    <p>[Brief description - role in customer communication, scheduling, and support throughout the installation process.]</p>
+                </div>
+
+                <!-- Design Consultant Template -->
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <span class="team-photo-initials">RP</span>
+                    </div>
+                    <h3>[Team Member Name]</h3>
+                    <p class="role">Design Consultant</p>
+                    <p>[Brief description - expertise in backyard design, pool selection guidance, and helping customers choose the perfect pool for their property.]</p>
+                </div>
+
+                <!-- Maintenance Specialist Template -->
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <span class="team-photo-initials">TW</span>
+                    </div>
+                    <h3>[Team Member Name]</h3>
+                    <p class="role">Service Technician</p>
+                    <p>[Brief description - role in ongoing pool maintenance, water chemistry expertise, and equipment service.]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Guidelines Section -->
+    <section class="photo-guidelines">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag" style="color: var(--aqua);">Photo Specifications</div>
+                <h2 style="color: var(--white);">Team Photo Guidelines</h2>
+                <p style="color: rgba(255,255,255,0.7);">For best results, please provide photos that meet these specifications.</p>
+            </div>
+            <div class="guidelines-grid reveal">
+                <div class="guideline-card">
+                    <h4>Leadership Photos</h4>
+                    <p class="guideline-spec">800 x 600px</p>
+                    <p>4:3 aspect ratio</p>
+                    <p>Professional headshot or at work</p>
+                    <p>High resolution (300 DPI)</p>
+                </div>
+                <div class="guideline-card">
+                    <h4>Team Photos</h4>
+                    <p class="guideline-spec">400 x 400px</p>
+                    <p>1:1 aspect ratio (square)</p>
+                    <p>Professional or casual</p>
+                    <p>Minimum 150 DPI</p>
+                </div>
+                <div class="guideline-card">
+                    <h4>File Format</h4>
+                    <p class="guideline-spec">JPG or PNG</p>
+                    <p>RGB color mode</p>
+                    <p>Maximum 5MB file size</p>
+                    <p>Good lighting, clear focus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="reveal">
+                <h2>Ready to Meet Our Team?</h2>
+                <p>Schedule a consultation and we will visit your home to discuss your pool project in person.</p>
+                <div class="cta-buttons">
+                    <a href="/contact/" class="btn btn-white">
+                        Schedule Consultation
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="tel:+13025551234" class="btn btn-outline-white">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call (302) 555-1234
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">Tri-State Aquatic<span>Solutions</span></div>
+                    </a>
+                    <p>Premium fiberglass pool installation for Main Line Philadelphia and Northern Delaware. Operated by Dude Venture Services LLC.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/services/">Pool Services</a></li>
+                        <li><a href="/pool-maintenance/">Maintenance</a></li>
+                        <li><a href="/financing/">Financing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/about/team/">Our Team</a></li>
+                        <li><a href="/about/process/">Our Process</a></li>
+                        <li><a href="/about/careers/">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <a href="/contact/">Hockessin, Delaware</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+13025551234">(302) 555-1234</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@tristateaquatic.com">info@tristateaquatic.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) el.classList.add('visible');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

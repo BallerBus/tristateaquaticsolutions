@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Testimonials | Customer Pool Stories | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Watch real homeowners share their pool installation experiences with Tri-State Aquatic Solutions. Video testimonials from Main Line Philadelphia and Northern Delaware customers.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/reviews/video-testimonials.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- VideoObject Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "VideoObject",
+                    "name": "The Martinez Family Pool Story - Gladwyne, PA",
+                    "description": "Watch how the Martinez family transformed their backyard into a private resort with a custom fiberglass pool.",
+                    "thumbnailUrl": "https://tristateaquaticsolutions.com/images/videos/martinez-thumbnail.jpg",
+                    "uploadDate": "2025-08-15",
+                    "duration": "PT4M32S"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "VideoObject",
+                    "name": "The Chen Family Journey - Hockessin, DE",
+                    "description": "See how the Chen family's plunge pool became the heart of their outdoor living space.",
+                    "thumbnailUrl": "https://tristateaquaticsolutions.com/images/videos/chen-thumbnail.jpg",
+                    "uploadDate": "2025-07-22",
+                    "duration": "PT3M45S"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tristateaquaticsolutions.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://tristateaquaticsolutions.com/reviews/"},
+            {"@type": "ListItem", "position": 3, "name": "Video Testimonials", "item": "https://tristateaquaticsolutions.com/reviews/video-testimonials.html"}
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --navy-light: #1a2d45;
+            --aqua: #00A6B2;
+            --aqua-dark: #008a94;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #d4b97a;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray: #E8ECF1;
+            --gray-text: #6B7280;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--aqua); color: var(--white); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+        p { font-size: 1.1rem; color: var(--gray-text); }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(14, 31, 52, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--aqua); }
+
+        .nav-cta {
+            background: var(--aqua);
+            color: var(--white) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--navy);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 0 6rem;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .hero h1 { margin-bottom: 1.5rem; }
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.25rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        .breadcrumb span { color: var(--gray-text); }
+
+        /* Featured Video */
+        .featured-video {
+            padding: 5rem 0;
+            background: var(--navy);
+        }
+
+        .featured-video h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .video-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-placeholder {
+            position: relative;
+            padding-bottom: 56.25%;
+            background: linear-gradient(135deg, var(--navy-light), var(--navy));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--aqua);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: var(--aqua-dark);
+        }
+
+        .play-button svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--white);
+            margin-left: 4px;
+        }
+
+        .video-placeholder-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        .featured-video-info {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            text-align: center;
+        }
+
+        .featured-video-info h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .featured-video-info p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Video Grid */
+        .video-grid-section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 { margin-bottom: 1rem; }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08);
+            border: 1px solid var(--gray);
+            transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(14, 31, 52, 0.12);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%;
+            background: linear-gradient(135deg, var(--gray-light), var(--gray));
+            overflow: hidden;
+        }
+
+        .video-thumbnail-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(14, 31, 52, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-card:hover .video-thumbnail-overlay {
+            opacity: 1;
+        }
+
+        .video-thumbnail-overlay .play-button {
+            width: 60px;
+            height: 60px;
+        }
+
+        .video-thumbnail-overlay .play-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--white);
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .video-thumbnail-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-thumbnail-placeholder svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--gray-text);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .video-card-content {
+            padding: 1.5rem;
+        }
+
+        .video-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .video-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-meta span {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .video-meta .location {
+            color: var(--aqua);
+            font-weight: 500;
+        }
+
+        .video-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--gray-text);
+        }
+
+        /* Customer Story Summaries */
+        .story-summaries {
+            padding: 5rem 0;
+            background: var(--gray-light);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .story-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(14, 31, 52, 0.06);
+        }
+
+        .story-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--aqua-glow);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--aqua);
+        }
+
+        .story-card h3 { margin-bottom: 0.5rem; }
+
+        .story-location {
+            color: var(--aqua);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-quote {
+            font-style: italic;
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .watch-story-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--aqua);
+            text-decoration: none;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .watch-story-btn:hover {
+            gap: 0.75rem;
+        }
+
+        .watch-story-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--aqua);
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--aqua-dark);
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul { list-style: none; }
+
+        .footer-section ul li { margin-bottom: 0.75rem; }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover { color: var(--aqua); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <span class="logo-text">Tri-State Aquatic</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/pools/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/reviews/">Reviews</a></li>
+                <li><a href="/financing/">Financing</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span>/</span>
+                <a href="/reviews/">Reviews</a>
+                <span>/</span>
+                <span>Video Testimonials</span>
+            </div>
+            <h1>Video Testimonials</h1>
+            <p>Hear directly from our customers as they share their pool installation experiences and how their new backyard oasis has transformed their family life.</p>
+        </div>
+    </section>
+
+    <!-- Featured Video -->
+    <section class="featured-video">
+        <div class="container">
+            <h2>Featured Story</h2>
+            <div class="video-wrapper">
+                <div class="video-placeholder">
+                    <div class="video-placeholder-content">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <p>Click to play video</p>
+                    </div>
+                    <!-- YouTube embed would go here in production -->
+                    <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+                </div>
+            </div>
+            <div class="featured-video-info">
+                <h3>The Martinez Family - Gladwyne, PA</h3>
+                <p>"From our initial consultation to the moment we took our first swim, Tri-State exceeded every expectation. Our 16x36 fiberglass pool has become the heart of our home."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Grid -->
+    <section class="video-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>More Customer Stories</h2>
+                <p>Watch how families across Main Line Philadelphia and Northern Delaware transformed their backyards.</p>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                        </div>
+                        <div class="video-thumbnail-overlay">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="video-duration">4:32</span>
+                    </div>
+                    <div class="video-card-content">
+                        <h3>The Chen Family Journey</h3>
+                        <div class="video-meta">
+                            <span class="location">Hockessin, DE</span>
+                            <span>10x20 Plunge Pool</span>
+                        </div>
+                        <p class="video-description">See how the Chen family's compact plunge pool became the perfect solution for their smaller backyard, maximizing space while creating a stunning focal point.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                        </div>
+                        <div class="video-thumbnail-overlay">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="video-duration">5:15</span>
+                    </div>
+                    <div class="video-card-content">
+                        <h3>Empty Nesters Find Joy</h3>
+                        <div class="video-meta">
+                            <span class="location">Villanova, PA</span>
+                            <span>14x32 Fiberglass + Spa</span>
+                        </div>
+                        <p class="video-description">The Johnsons share how their new pool and spa combo has become the gathering place for their adult children and grandchildren.</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                        </div>
+                        <div class="video-thumbnail-overlay">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="video-duration">3:48</span>
+                    </div>
+                    <div class="video-card-content">
+                        <h3>A Family's First Pool</h3>
+                        <div class="video-meta">
+                            <span class="location">Wayne, PA</span>
+                            <span>16x34 Fiberglass</span>
+                        </div>
+                        <p class="video-description">Watch the Henderson family's excitement as they experience their first summer with a pool and see how it's changed their children's outdoor time.</p>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                        </div>
+                        <div class="video-thumbnail-overlay">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="video-duration">6:22</span>
+                    </div>
+                    <div class="video-card-content">
+                        <h3>Luxury Estate Transformation</h3>
+                        <div class="video-meta">
+                            <span class="location">Greenville, DE</span>
+                            <span>20x42 Custom Concrete</span>
+                        </div>
+                        <p class="video-description">A behind-the-scenes look at one of our most ambitious projects - a custom concrete pool with infinity edge and integrated outdoor kitchen.</p>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                        </div>
+                        <div class="video-thumbnail-overlay">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="video-duration">4:05</span>
+                    </div>
+                    <div class="video-card-content">
+                        <h3>The Healing Power of Water</h3>
+                        <div class="video-meta">
+                            <span class="location">Bryn Mawr, PA</span>
+                            <span>12x24 Therapy Pool</span>
+                        </div>
+                        <p class="video-description">The Roberts share how their heated therapy pool has helped with recovery and become an essential part of their wellness routine.</p>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                        </div>
+                        <div class="video-thumbnail-overlay">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="video-duration">3:30</span>
+                    </div>
+                    <div class="video-card-content">
+                        <h3>From Dream to Reality</h3>
+                        <div class="video-meta">
+                            <span class="location">West Chester, PA</span>
+                            <span>14x30 Fiberglass</span>
+                        </div>
+                        <p class="video-description">Time-lapse footage of a complete installation from excavation to first swim, narrated by the homeowners who watched it unfold.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Story Summaries -->
+    <section class="story-summaries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Story Summaries</h2>
+                <p>Get a glimpse into each family's unique journey.</p>
+            </div>
+
+            <div class="story-grid">
+                <div class="story-card">
+                    <div class="story-avatar">JM</div>
+                    <h3>Jennifer & Mark</h3>
+                    <div class="story-location">Gladwyne, PA</div>
+                    <p class="story-quote">"We went from never being home on weekends to hosting pool parties every Saturday. Our kids' friends basically live here now."</p>
+                    <a href="#" class="watch-story-btn">
+                        Watch their story
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-avatar">TC</div>
+                    <h3>The Chens</h3>
+                    <div class="story-location">Hockessin, DE</div>
+                    <p class="story-quote">"We thought our backyard was too small, but the plunge pool design proved us wrong. It's our daily escape."</p>
+                    <a href="#" class="watch-story-btn">
+                        Watch their story
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-avatar">RJ</div>
+                    <h3>Robert & Julia</h3>
+                    <div class="story-location">Villanova, PA</div>
+                    <p class="story-quote">"The spa was my wife's idea. Now I'm in it every evening after work. Best investment we've made."</p>
+                    <a href="#" class="watch-story-btn">
+                        Watch their story
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-avatar">KH</div>
+                    <h3>The Hendersons</h3>
+                    <div class="story-location">Wayne, PA</div>
+                    <p class="story-quote">"Our children learned to swim in our own backyard. Watching their confidence grow has been priceless."</p>
+                    <a href="#" class="watch-story-btn">
+                        Watch their story
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-avatar">DL</div>
+                    <h3>David & Linda</h3>
+                    <div class="story-location">Greenville, DE</div>
+                    <p class="story-quote">"We wanted something truly unique. Tri-State delivered a pool that feels like a five-star resort."</p>
+                    <a href="#" class="watch-story-btn">
+                        Watch their story
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-avatar">SR</div>
+                    <h3>The Roberts</h3>
+                    <div class="story-location">Bryn Mawr, PA</div>
+                    <p class="story-quote">"After my knee surgery, the heated pool became essential. It's therapy and relaxation in one."</p>
+                    <a href="#" class="watch-story-btn">
+                        Watch their story
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to Share Your Story?</h2>
+            <p>Love your pool? We'd love to feature your family in our next video testimonial. Or start your own pool journey today.</p>
+            <div class="cta-buttons">
+                <a href="/contact/" class="cta-button">
+                    Start Your Pool Journey
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="mailto:stories@tristateaquaticsolutions.com" class="cta-button secondary">
+                    Share Your Story
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tri-State Aquatic Solutions</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Premium pool installation for Main Line Philadelphia and Northern Delaware.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/pools/">Pool Types</a></li>
+                        <li><a href="/services/">Services</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/financing/">Financing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Reviews</h4>
+                    <ul>
+                        <li><a href="/reviews/">All Reviews</a></li>
+                        <li><a href="/reviews/video-testimonials.html">Video Testimonials</a></li>
+                        <li><a href="/reviews/google-reviews.html">Google Reviews</a></li>
+                        <li><a href="/reviews/success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+16105551234">(610) 555-POOL</a></li>
+                        <li><a href="mailto:info@tristateaquaticsolutions.com">Email Us</a></li>
+                        <li><a href="/contact/">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tri-State Aquatic Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

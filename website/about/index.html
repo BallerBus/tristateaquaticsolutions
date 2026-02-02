@@ -3,29 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Tri-State Aquatic Solutions | Premium Pool Builders | Main Line PA & Delaware</title>
-    <meta name="description" content="Learn about Tri-State Aquatic Solutions, the Main Line's trusted pool installation company. Based in Hockessin, Delaware, we bring decades of experience to every project across Pennsylvania and Delaware.">
+    <title>About Tri-State Aquatic Solutions | Premium Fiberglass Pool Builders | Main Line PA & Delaware</title>
+    <meta name="description" content="Tri-State Aquatic Solutions, operated by Dude Venture Services LLC, is the Main Line's trusted fiberglass pool installer. Based in Hockessin, Delaware, we bring expert craftsmanship to every project across Pennsylvania and Delaware.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquatic.com/about/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="About Tri-State Aquatic Solutions | Premium Pool Builders">
-    <meta property="og:description" content="Meet the team behind Main Line PA and Northern Delaware's premier pool installation company. Owner-involved service, local expertise, and craftsmanship you can trust.">
+    <meta property="og:title" content="About Tri-State Aquatic Solutions | Premium Fiberglass Pool Builders">
+    <meta property="og:description" content="Meet the team behind Main Line PA and Northern Delaware's premier fiberglass pool installation company. Owner-involved service, local expertise, and craftsmanship you can trust.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tristateaquatic.com/about/">
-    <meta property="og:image" content="https://tristateaquatic.com/images/team-photo.jpg">
+    <meta property="og:image" content="https://tristateaquatic.com/images/about-og.jpg">
+    <meta property="og:site_name" content="Tri-State Aquatic Solutions">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Tri-State Aquatic Solutions | Premium Fiberglass Pool Builders">
+    <meta name="twitter:description" content="Meet the team behind Main Line PA and Northern Delaware's premier fiberglass pool installation company.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- JSON-LD Schema -->
+    <!-- JSON-LD Schema: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://tristateaquatic.com/#organization",
+        "name": "Tri-State Aquatic Solutions",
+        "legalName": "Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions",
+        "description": "Premium fiberglass pool installation company serving Main Line Philadelphia and Northern Delaware. Authorized dealer for Latham Pools and Thursday Pools.",
+        "url": "https://tristateaquatic.com",
+        "logo": "https://tristateaquatic.com/images/logo.png",
+        "image": "https://tristateaquatic.com/images/company-photo.jpg",
+        "telephone": "+1-302-555-1234",
+        "email": "info@tristateaquatic.com",
+        "foundingDate": "2020",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Main Street",
+            "addressLocality": "Hockessin",
+            "addressRegion": "DE",
+            "postalCode": "19707",
+            "addressCountry": "US"
+        },
+        "areaServed": [
+            {
+                "@type": "State",
+                "name": "Pennsylvania"
+            },
+            {
+                "@type": "State",
+                "name": "Delaware"
+            }
+        ],
+        "knowsAbout": [
+            "Fiberglass Pool Installation",
+            "Pool Construction",
+            "Pool Maintenance",
+            "Backyard Design"
+        ],
+        "sameAs": [
+            "https://facebook.com/tristateaquatic",
+            "https://instagram.com/tristateaquatic",
+            "https://linkedin.com/company/tristateaquatic"
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD Schema: LocalBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "@id": "https://tristateaquatic.com/#business",
         "name": "Tri-State Aquatic Solutions",
-        "description": "Premium pool installation company serving Main Line Philadelphia and Northern Delaware. Specializing in fiberglass, concrete, and vinyl liner pools.",
+        "description": "Premium fiberglass pool installation company serving Main Line Philadelphia and Northern Delaware. Specializing in Latham and Thursday Pools fiberglass pool installations.",
         "url": "https://tristateaquatic.com",
         "telephone": "+1-302-555-1234",
         "email": "info@tristateaquatic.com",
@@ -67,6 +123,26 @@
                 "closes": "14:00"
             }
         ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Pool Installation Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fiberglass Pool Installation"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Pool Maintenance"
+                    }
+                }
+            ]
+        },
         "sameAs": [
             "https://facebook.com/tristateaquatic",
             "https://instagram.com/tristateaquatic"
@@ -74,6 +150,7 @@
     }
     </script>
 
+    <!-- JSON-LD Schema: BreadcrumbList -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -352,18 +429,97 @@
 
         /* Page Hero */
         .page-hero {
-            padding: 4rem 0;
+            padding: 4rem 0 5rem;
             background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, var(--aqua-glow) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .page-hero h1 {
             margin-bottom: 1rem;
+            position: relative;
         }
 
         .page-hero-subtitle {
             font-size: 1.25rem;
             max-width: 700px;
             color: var(--gray-text);
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Sub Navigation */
+        .about-nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray);
+            position: sticky;
+            top: 76px;
+            z-index: 100;
+        }
+
+        .about-nav-list {
+            display: flex;
+            gap: 0;
+            list-style: none;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .about-nav-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .about-nav-list a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .about-nav-list a:hover {
+            color: var(--navy);
+        }
+
+        .about-nav-list a.active {
+            color: var(--aqua);
+            border-bottom-color: var(--aqua);
         }
 
         /* Section Styles */
@@ -418,6 +574,21 @@
             line-height: 1.8;
         }
 
+        .story-highlight {
+            background: var(--aqua-glow);
+            border-left: 4px solid var(--aqua);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+
+        .story-highlight p {
+            color: var(--navy);
+            font-weight: 500;
+            margin: 0;
+            font-style: italic;
+        }
+
         .story-image {
             position: relative;
             border-radius: 24px;
@@ -452,9 +623,60 @@
             opacity: 0.6;
         }
 
+        /* Why Fiberglass Section */
+        .fiberglass-section {
+            background: var(--gray-light);
+        }
+
+        .fiberglass-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .fiberglass-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .fiberglass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(14, 31, 52, 0.15);
+        }
+
+        .fiberglass-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--aqua-glow);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .fiberglass-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--aqua);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .fiberglass-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        .fiberglass-card p {
+            font-size: 1rem;
+        }
+
         /* Values Section */
         .values-section {
-            background: var(--gray-light);
+            background: var(--white);
         }
 
         .values-grid {
@@ -464,11 +686,29 @@
         }
 
         .value-card {
-            background: var(--white);
+            background: var(--gray-light);
             border-radius: 20px;
             padding: 2.5rem;
             text-align: center;
             transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--aqua);
+            transform: scaleX(0);
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .value-card:hover::before {
+            transform: scaleX(1);
         }
 
         .value-card:hover {
@@ -479,12 +719,13 @@
         .value-icon {
             width: 80px;
             height: 80px;
-            background: var(--aqua-glow);
+            background: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 166, 178, 0.15);
         }
 
         .value-icon svg {
@@ -504,94 +745,137 @@
             font-size: 1rem;
         }
 
-        /* Team Section */
-        .team-section {
-            background: var(--white);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .team-card {
-            text-align: center;
-        }
-
-        .team-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Service Area Section */
+        .service-area-section {
+            background: var(--navy);
             color: var(--white);
-            font-family: var(--font-display);
-            font-size: 3rem;
             position: relative;
             overflow: hidden;
         }
 
-        .team-photo::after {
-            content: 'Photo Coming Soon';
+        .service-area-section::before {
+            content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
+            top: 0;
             right: 0;
-            background: rgba(0, 166, 178, 0.9);
-            padding: 0.5rem;
-            font-size: 0.7rem;
-            font-family: var(--font-body);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            width: 50%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300A6B2' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
         }
 
-        .team-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .team-card .role {
-            color: var(--aqua);
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-        }
-
-        .team-card p {
-            font-size: 0.95rem;
-        }
-
-        /* Certifications Section */
-        .certifications-section {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        .certifications-section h2 {
+        .service-area-section h2 {
             color: var(--white);
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
 
-        .certs-grid {
+        .service-area-section .section-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .service-area-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
         }
 
-        .cert-card {
+        .service-area-map {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            aspect-ratio: 4/3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .service-area-map svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--aqua);
+            stroke-width: 1;
+            fill: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-area-map h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-area-map p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        .service-area-list h3 {
+            color: var(--aqua);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .service-area-list ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-area-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .service-area-list li svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        /* Commitments Section */
+        .commitments-section {
+            background: var(--gray-light);
+        }
+
+        .commitments-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .commitment-card {
+            background: var(--white);
             border-radius: 16px;
             padding: 2rem;
             text-align: center;
+            transition: all 0.3s ease;
         }
 
-        .cert-icon {
+        .commitment-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(14, 31, 52, 0.1);
+        }
+
+        .commitment-icon {
             width: 60px;
             height: 60px;
             background: var(--aqua);
@@ -602,25 +886,25 @@
             margin: 0 auto 1rem;
         }
 
-        .cert-icon svg {
-            width: 30px;
-            height: 30px;
+        .commitment-icon svg {
+            width: 28px;
+            height: 28px;
             stroke: var(--white);
             stroke-width: 2;
             fill: none;
         }
 
-        .cert-card h4 {
+        .commitment-card h4 {
             font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 600;
-            color: var(--white);
+            color: var(--navy);
             margin-bottom: 0.5rem;
         }
 
-        .cert-card p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
+        .commitment-card p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
         }
 
         /* CTA Section */
@@ -664,6 +948,14 @@
             transition: all 0.4s var(--ease-out-expo);
             cursor: pointer;
             border: none;
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
         }
 
         .btn-white {
@@ -812,15 +1104,20 @@
                 order: -1;
             }
 
+            .fiberglass-grid {
+                grid-template-columns: 1fr;
+            }
+
             .values-grid {
                 grid-template-columns: 1fr;
             }
 
-            .team-grid {
+            .service-area-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .certs-grid {
+            .commitments-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -830,7 +1127,11 @@
         }
 
         @media (max-width: 640px) {
-            .certs-grid {
+            .commitments-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-area-list ul {
                 grid-template-columns: 1fr;
             }
 
@@ -852,6 +1153,10 @@
             .btn {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .about-nav {
+                top: 70px;
             }
         }
 
@@ -880,10 +1185,10 @@
                 </div>
             </a>
             <ul class="nav-links">
-                <li><a href="/#services">Services</a></li>
+                <li><a href="/pools/fiberglass/">Pools</a></li>
+                <li><a href="/services/">Services</a></li>
                 <li><a href="/about/" class="active">About</a></li>
-                <li><a href="/#process">Process</a></li>
-                <li><a href="/faq/">FAQ</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
                 <li><a href="/contact/" class="nav-cta">Get Quote</a></li>
             </ul>
             <button class="mobile-toggle" aria-label="Menu">
@@ -908,10 +1213,28 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Fiberglass Pool Specialists
+            </div>
             <h1>About Tri-State Aquatic Solutions</h1>
-            <p class="page-hero-subtitle">Where expert craftsmanship meets modern innovation. We are your neighbors, committed to creating backyard retreats where families make memories for generations.</p>
+            <p class="page-hero-subtitle">Operated by Dude Venture Services LLC, we are your neighbors committed to creating premium fiberglass pools where families make memories for generations. Expert craftsmanship meets modern innovation across Main Line PA and Northern Delaware.</p>
         </div>
     </section>
+
+    <!-- About Sub Navigation -->
+    <div class="about-nav">
+        <div class="container">
+            <ul class="about-nav-list">
+                <li><a href="/about/" class="active">Our Story</a></li>
+                <li><a href="/about/team/">Our Team</a></li>
+                <li><a href="/about/process/">Our Process</a></li>
+                <li><a href="/about/certifications/">Certifications</a></li>
+                <li><a href="/about/community/">Community</a></li>
+                <li><a href="/about/careers/">Careers</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Our Story Section -->
     <section class="story-section">
@@ -919,17 +1242,61 @@
             <div class="story-grid">
                 <div class="story-content reveal">
                     <div class="section-tag">Our Story</div>
-                    <h2>From Maintenance to Masterpiece</h2>
-                    <p>Tri-State Aquatic Solutions began with a simple mission: to provide pool owners with the exceptional care their investments deserve. For years, we served families across the Main Line and Northern Delaware, maintaining and servicing their pools with the attention to detail that became our calling card.</p>
-                    <p>As we worked alongside homeowners, we listened. We heard the frustrations with pool builders who disappeared after installation. We saw the results of rushed construction and corner-cutting. And we knew we could do better.</p>
-                    <p>Today, Tri-State Aquatic Solutions has grown into a full-service pool installation company. We bring the same meticulous care that defined our maintenance services to every new pool we build. Our deep understanding of pool systems, gained through years of hands-on service work, informs every design decision we make.</p>
-                    <p>Based in Hockessin, Delaware, we serve communities throughout the Main Line Philadelphia area and Northern Delaware. We are not a national franchise. We are your neighbors, and we build pools where our own families swim.</p>
+                    <h2>From Passion to Premium Pools</h2>
+                    <p>Tri-State Aquatic Solutions began with a simple mission: to bring exceptional fiberglass pool installations to homeowners who deserve the best. Operating under Dude Venture Services LLC, we started serving families across the Main Line and Northern Delaware with a commitment to quality that sets us apart.</p>
+                    <p>As we worked alongside homeowners, we listened. We heard frustrations with pool builders who disappeared after installation. We saw the results of rushed construction and corner-cutting. We knew there was a better way.</p>
+                    <div class="story-highlight">
+                        <p>"We do not just install pools. We create backyard destinations where your family will gather for decades to come."</p>
+                    </div>
+                    <p>Today, Tri-State Aquatic Solutions is recognized as the premier fiberglass pool installer in our region. We specialize exclusively in fiberglass pools because we believe they offer the best combination of durability, beauty, and value. Our deep understanding of fiberglass technology, combined with manufacturer partnerships with Latham Pools and Thursday Pools, allows us to deliver results that exceed expectations.</p>
+                    <p>Based in Hockessin, Delaware, we serve communities throughout Chester County, Delaware County, Montgomery County, and New Castle County. We are not a national franchise. We are your neighbors, and we build pools where our own families swim.</p>
                 </div>
                 <div class="story-image reveal">
                     <div class="story-image-placeholder">
                         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Company Photo</span>
+                        <span>Company Photo<br>Recommended: 800x600px</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Fiberglass Section -->
+    <section class="fiberglass-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Specialization</div>
+                <h2>Why We Focus on Fiberglass</h2>
+                <p>After years of industry experience, we chose to specialize in fiberglass pools for compelling reasons that benefit every homeowner we serve.</p>
+            </div>
+            <div class="fiberglass-grid">
+                <div class="fiberglass-card reveal">
+                    <div class="fiberglass-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Faster Installation</h3>
+                    <p>Fiberglass pools install in 2-4 weeks, not months. Your backyard transformation happens quickly, with minimal disruption to your daily life. Factory-built shells arrive ready to install, eliminating lengthy on-site construction.</p>
+                </div>
+                <div class="fiberglass-card reveal">
+                    <div class="fiberglass-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Lifetime Durability</h3>
+                    <p>The smooth gelcoat surface resists algae, staining, and chemical damage. No liner replacements, no resurfacing for decades. Fiberglass pools come with structural warranties of 25 years or more because they are built to last.</p>
+                </div>
+                <div class="fiberglass-card reveal">
+                    <div class="fiberglass-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Lower Lifetime Cost</h3>
+                    <p>Reduced chemical usage, minimal maintenance, and no major repairs mean fiberglass pools cost significantly less to own over their lifetime. Many owners save thousands of dollars compared to concrete alternatives.</p>
+                </div>
+                <div class="fiberglass-card reveal">
+                    <div class="fiberglass-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <h3>Superior Comfort</h3>
+                    <p>The smooth, non-abrasive surface is gentle on skin and swimsuits. No rough surfaces, no scraped feet, no fading swim trunks. Your family enjoys every swim in comfort.</p>
                 </div>
             </div>
         </div>
@@ -946,10 +1313,10 @@
             <div class="values-grid">
                 <div class="value-card reveal">
                     <div class="value-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                     </div>
                     <h3>Craftsmanship First</h3>
-                    <p>We never cut corners. Every pool we install reflects our commitment to quality that lasts generations. From the foundation to the finishing touches, excellence is non-negotiable.</p>
+                    <p>We never cut corners. Every pool we install reflects our commitment to quality that lasts generations. From the excavation to the finishing touches, excellence is non-negotiable.</p>
                 </div>
                 <div class="value-card reveal">
                     <div class="value-icon">
@@ -960,7 +1327,7 @@
                 </div>
                 <div class="value-card reveal">
                     <div class="value-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     </div>
                     <h3>Lifetime Partnership</h3>
                     <p>Our relationship does not end when your pool is complete. We are here for maintenance, upgrades, and support for as long as you own your home. That is our promise.</p>
@@ -969,90 +1336,82 @@
         </div>
     </section>
 
-    <!-- Our Service Philosophy -->
-    <section class="story-section">
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-image reveal">
-                    <div class="story-image-placeholder">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Installation Photo</span>
-                    </div>
-                </div>
-                <div class="story-content reveal">
-                    <div class="section-tag">Our Approach</div>
-                    <h2>Local Expertise, Premium Results</h2>
-                    <p>From Hockessin to Haverford, from Villanova to Wilmington, we know your neighborhoods. We understand the local codes, the soil conditions, and the architectural character that makes each community unique.</p>
-                    <p>This deep local knowledge, combined with our commitment to modern pool technology, allows us to deliver results that national chains simply cannot match. We do not follow a one-size-fits-all playbook. We design each pool specifically for your property, your lifestyle, and your vision.</p>
-                    <p>Our team specializes in fiberglass, concrete, and vinyl liner pools, giving you options that suit your budget and your goals. Whether you want a quick installation fiberglass pool or a custom concrete masterpiece, we bring the same level of care and expertise to every project.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section">
+    <!-- Service Area Section -->
+    <section class="service-area-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-tag">Our Team</div>
-                <h2>Meet the People Behind Your Pool</h2>
-                <p>Our experienced team combines decades of industry expertise with a genuine passion for creating exceptional outdoor spaces.</p>
+                <div class="section-tag" style="color: var(--aqua);">Service Area</div>
+                <h2>Where We Build Dream Pools</h2>
+                <p class="section-subtitle">We proudly serve homeowners across the greater Philadelphia region and Northern Delaware, with a focus on communities that share our commitment to quality.</p>
             </div>
-            <div class="team-grid">
-                <div class="team-card reveal">
-                    <div class="team-photo">JD</div>
-                    <h3>John Davis</h3>
-                    <p class="role">Founder & Lead Designer</p>
-                    <p>With over 20 years in the pool industry, John brings deep expertise in both pool construction and maintenance to every project.</p>
+            <div class="service-area-grid reveal">
+                <div class="service-area-map">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <h3>Interactive Service Area Map</h3>
+                    <p>Map placeholder - Will display our full service coverage area including Main Line PA and Northern Delaware</p>
                 </div>
-                <div class="team-card reveal">
-                    <div class="team-photo">MR</div>
-                    <h3>Michael Roberts</h3>
-                    <p class="role">Operations Director</p>
-                    <p>Michael ensures every installation runs smoothly, coordinating crews and managing timelines to minimize disruption to your life.</p>
-                </div>
-                <div class="team-card reveal">
-                    <div class="team-photo">SK</div>
-                    <h3>Sarah Kim</h3>
-                    <p class="role">Customer Experience Manager</p>
-                    <p>Sarah is your primary point of contact throughout your project, ensuring clear communication and exceptional service at every step.</p>
+                <div class="service-area-list">
+                    <h3>Pennsylvania - Main Line</h3>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Villanova</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Bryn Mawr</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Gladwyne</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Wayne</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Malvern</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> West Chester</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Radnor</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Haverford</li>
+                    </ul>
+                    <h3>Delaware - Northern New Castle County</h3>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Hockessin</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Greenville</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Wilmington</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Centreville</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pike Creek</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Newark</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="certifications-section">
+    <!-- Commitments Section -->
+    <section class="commitments-section">
         <div class="container">
-            <h2 class="reveal">Licensed, Insured & Certified</h2>
-            <div class="certs-grid">
-                <div class="cert-card reveal">
-                    <div class="cert-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h4>Fully Licensed</h4>
-                    <p>Pennsylvania HIC License and Delaware Contractor License. We meet all state requirements.</p>
-                </div>
-                <div class="cert-card reveal">
-                    <div class="cert-icon">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Commitments</div>
+                <h2>Promises We Keep</h2>
+                <p>Every homeowner deserves confidence in their pool installer. Here is what you can count on from us.</p>
+            </div>
+            <div class="commitments-grid">
+                <div class="commitment-card reveal">
+                    <div class="commitment-icon">
                         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     </div>
-                    <h4>Fully Insured</h4>
-                    <p>Comprehensive liability and workers compensation coverage protects you and our team.</p>
+                    <h4>Transparent Pricing</h4>
+                    <p>No hidden fees. No surprise costs. Your quote is your quote.</p>
                 </div>
-                <div class="cert-card reveal">
-                    <div class="cert-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <div class="commitment-card reveal">
+                    <div class="commitment-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
-                    <h4>APSP Certified</h4>
-                    <p>Our builders are certified by the Association of Pool and Spa Professionals.</p>
+                    <h4>On-Time Delivery</h4>
+                    <p>We respect your time and stick to our committed schedules.</p>
                 </div>
-                <div class="cert-card reveal">
-                    <div class="cert-icon">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <div class="commitment-card reveal">
+                    <div class="commitment-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
-                    <h4>BBB Accredited</h4>
-                    <p>A+ rated by the Better Business Bureau with a commitment to ethical business practices.</p>
+                    <h4>Clear Communication</h4>
+                    <p>Regular updates and immediate responses to your questions.</p>
+                </div>
+                <div class="commitment-card reveal">
+                    <div class="commitment-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Full Warranty Support</h4>
+                    <p>We stand behind our work with comprehensive warranties.</p>
                 </div>
             </div>
         </div>
@@ -1067,10 +1426,10 @@
                 <div class="cta-buttons">
                     <a href="/contact/" class="btn btn-white">
                         Schedule Consultation
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                     <a href="tel:+13025551234" class="btn btn-outline-white">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         Call (302) 555-1234
                     </a>
                 </div>
@@ -1090,24 +1449,24 @@
                             <span>Solutions</span>
                         </div>
                     </a>
-                    <p>Premium fiberglass, concrete, and vinyl liner pool installation for Main Line Philadelphia and Northern Delaware. Crafted for the life you love.</p>
+                    <p>Premium fiberglass pool installation for Main Line Philadelphia and Northern Delaware. Operated by Dude Venture Services LLC. Crafted for the life you love.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="/#services">Fiberglass Pools</a></li>
-                        <li><a href="/#services">Concrete Pools</a></li>
-                        <li><a href="/#services">Vinyl Liner Pools</a></li>
-                        <li><a href="/#services">Pool Maintenance</a></li>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/services/">Pool Services</a></li>
+                        <li><a href="/pool-maintenance/">Maintenance</a></li>
+                        <li><a href="/financing/">Financing</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
                         <li><a href="/about/">About Us</a></li>
-                        <li><a href="/#process">Our Process</a></li>
-                        <li><a href="/faq/">FAQ</a></li>
-                        <li><a href="/financing/">Financing</a></li>
+                        <li><a href="/about/team/">Our Team</a></li>
+                        <li><a href="/about/process/">Our Process</a></li>
+                        <li><a href="/about/careers/">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

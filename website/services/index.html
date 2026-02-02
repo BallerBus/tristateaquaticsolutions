@@ -3,31 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pool Services | Installation & Maintenance | Tri-State Aquatic Solutions</title>
-    <meta name="description" content="Complete pool services from installation to ongoing maintenance. Fiberglass, concrete, and vinyl liner pool installation plus professional maintenance services in Main Line PA and Delaware.">
+    <title>Pool Services | Installation, Renovation & Maintenance | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Complete pool services from installation to ongoing maintenance. Fiberglass pool installation, renovations, outdoor living design, and professional maintenance for Main Line PA and Northern Delaware.">
+    <meta name="keywords" content="pool installation, pool renovation, pool maintenance, outdoor living, Main Line PA, Delaware, fiberglass pools">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquatic.com/services/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Pool Services | Installation & Maintenance | Tri-State Aquatic Solutions">
-    <meta property="og:description" content="From dream to reality, and beyond. Premium pool installation and professional maintenance services for Main Line PA and Northern Delaware homeowners.">
+    <meta property="og:title" content="Pool Services | Installation, Renovation & Maintenance | Tri-State Aquatic Solutions">
+    <meta property="og:description" content="From dream to reality, and beyond. Premium pool installation, renovation, and professional maintenance services for Main Line PA and Northern Delaware homeowners.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tristateaquatic.com/services/">
+    <meta property="og:image" content="https://tristateaquatic.com/images/services-hero.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pool Services | Tri-State Aquatic Solutions">
+    <meta name="twitter:description" content="Premium pool installation, renovation, and maintenance services for Main Line PA and Delaware.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- JSON-LD Schema -->
+    <!-- JSON-LD Schema - LocalBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "@id": "https://tristateaquatic.com/#business",
         "name": "Tri-State Aquatic Solutions",
-        "description": "Premium pool installation and maintenance services for Main Line Philadelphia and Northern Delaware.",
+        "description": "Premium pool installation, renovation, and maintenance services for Main Line Philadelphia and Northern Delaware.",
         "url": "https://tristateaquatic.com",
         "telephone": "+1-302-555-1234",
         "email": "info@tristateaquatic.com",
+        "image": "https://tristateaquatic.com/images/logo.png",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Hockessin",
@@ -35,8 +46,22 @@
             "postalCode": "19707",
             "addressCountry": "US"
         },
-        "areaServed": ["Pennsylvania", "Delaware"],
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.7851",
+            "longitude": "-75.6874"
+        },
+        "areaServed": [
+            {"@type": "State", "name": "Pennsylvania"},
+            {"@type": "State", "name": "Delaware"}
+        ],
         "priceRange": "$$$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+        },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Pool Services",
@@ -45,15 +70,23 @@
                     "@type": "OfferCatalog",
                     "name": "Pool Installation",
                     "itemListElement": [
-                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fiberglass Pool Installation"}},
-                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Concrete Pool Installation"}},
-                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vinyl Liner Pool Installation"}}
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fiberglass Pool Installation", "url": "https://tristateaquatic.com/services/fiberglass-pool-installation.html"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Renovation", "url": "https://tristateaquatic.com/services/pool-renovation.html"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Outdoor Living Design", "url": "https://tristateaquatic.com/services/outdoor-living.html"}}
+                    ]
+                },
+                {
+                    "@type": "OfferCatalog",
+                    "name": "Pool Features & Upgrades",
+                    "itemListElement": [
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Features", "url": "https://tristateaquatic.com/services/pool-features.html"}}
                     ]
                 },
                 {
                     "@type": "OfferCatalog",
                     "name": "Pool Maintenance",
                     "itemListElement": [
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maintenance Plans", "url": "https://tristateaquatic.com/services/maintenance-plans.html"}},
                         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Weekly Pool Maintenance"}},
                         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Opening Service"}},
                         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Closing Service"}},
@@ -290,18 +323,50 @@
 
         /* Page Hero */
         .page-hero {
-            padding: 4rem 0 5rem;
-            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            padding: 5rem 0 6rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
         }
 
-        .page-hero h1 { margin-bottom: 1rem; }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300A6B2' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .page-hero h1 {
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .page-hero h1 em {
+            font-style: italic;
+            color: var(--aqua);
+        }
 
         .page-hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             max-width: 700px;
-            margin: 0 auto;
-            color: var(--gray-text);
+            margin: 0 auto 2.5rem;
+            color: rgba(255,255,255,0.85);
+            position: relative;
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
         }
 
         /* Section Styles */
@@ -335,6 +400,33 @@
 
         /* Services Grid */
         .services-section { background: var(--white); }
+
+        .services-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .services-intro-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .services-intro-content p {
+            margin-bottom: 1rem;
+        }
+
+        .services-intro-image {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
 
         .services-category {
             margin-bottom: 4rem;
@@ -409,12 +501,44 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--aqua);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
             background: var(--white);
             transform: translateY(-8px);
             box-shadow: 0 20px 40px -15px rgba(14, 31, 52, 0.15);
+        }
+
+        .service-card.featured {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .service-card.featured p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .service-card.featured::before {
+            background: var(--gold);
         }
 
         .service-card-icon {
@@ -432,6 +556,10 @@
             background: var(--aqua-glow);
         }
 
+        .service-card.featured .service-card-icon {
+            background: rgba(255,255,255,0.1);
+        }
+
         .service-card-icon svg {
             width: 28px;
             height: 28px;
@@ -446,9 +574,25 @@
             color: var(--navy);
         }
 
+        .service-card.featured h3 {
+            color: var(--white);
+        }
+
         .service-card p {
             font-size: 0.95rem;
             margin-bottom: 1rem;
+        }
+
+        .service-card-price {
+            font-size: 0.85rem;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card.featured .service-card-price {
+            color: var(--gold);
         }
 
         .service-card-link {
@@ -458,6 +602,10 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .service-card.featured .service-card-link {
+            color: var(--gold);
         }
 
         .service-card:hover .service-card-link { gap: 0.75rem; }
@@ -470,20 +618,138 @@
             fill: none;
         }
 
-        /* Value Proposition */
-        .value-section {
+        /* Process Section */
+        .process-section {
+            background: var(--gray-light);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 60%;
+            width: 80%;
+            height: 2px;
+            background: var(--gray);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-number {
+            width: 70px;
+            height: 70px;
+            background: var(--white);
+            border: 2px solid var(--aqua);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--aqua);
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
             background: var(--navy);
             color: var(--white);
         }
 
-        .value-section h2 { color: var(--white); }
-        .value-section p { color: rgba(255,255,255,0.7); }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-quote {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--aqua);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Value Proposition */
+        .value-section {
+            background: var(--white);
+        }
 
         .value-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .value-item {
@@ -493,8 +759,7 @@
         .value-icon {
             width: 70px;
             height: 70px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: var(--aqua-glow);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -514,7 +779,6 @@
             font-family: var(--font-body);
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--white);
             margin-bottom: 0.5rem;
         }
 
@@ -560,6 +824,16 @@
             cursor: pointer;
         }
 
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--aqua);
+            transform: translateY(-3px);
+        }
+
         .btn-white {
             background: var(--white);
             color: var(--navy);
@@ -569,6 +843,17 @@
             background: var(--navy);
             color: var(--white);
             transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: var(--white);
         }
 
         .btn-outline-white {
@@ -692,16 +977,22 @@
             .nav-links { display: none; }
             .mobile-toggle { display: flex; }
             .services-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-step::after { display: none; }
+            .testimonial-grid { grid-template-columns: 1fr; }
             .value-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .category-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .services-intro { grid-template-columns: 1fr; gap: 2rem; }
+            .services-intro-image { order: -1; }
         }
 
         @media (max-width: 640px) {
+            .process-grid { grid-template-columns: 1fr; }
             .value-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
             .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
-            .cta-buttons { flex-direction: column; }
+            .cta-buttons, .hero-ctas { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
         }
 
@@ -757,14 +1048,37 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1>Our Services</h1>
-            <p class="page-hero-subtitle">From dream to reality, and beyond. We build beautiful pools and maintain them for years to come. One company, complete care.</p>
+            <h1>Complete Pool <em>Services</em></h1>
+            <p class="page-hero-subtitle">From dream to reality, and beyond. We design, build, and maintain beautiful pools for families across Main Line PA and Northern Delaware.</p>
+            <div class="hero-ctas">
+                <a href="/contact/" class="btn btn-white">
+                    Get Free Quote
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="tel:+13025551234" class="btn btn-outline-white">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call (302) 555-1234
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services-section">
         <div class="container">
+            <!-- Intro -->
+            <div class="services-intro reveal">
+                <div class="services-intro-content">
+                    <div class="section-tag">One Company, Complete Care</div>
+                    <h2>We Build What We Service</h2>
+                    <p>Our years of maintenance experience inform every pool we build. We know what lasts and what fails, and we build accordingly.</p>
+                    <p>From the initial consultation through decades of enjoyment, Tri-State Aquatic Solutions is your single point of contact for everything pool-related.</p>
+                </div>
+                <div class="services-intro-image">
+                    <span>Services Overview Photo</span>
+                </div>
+            </div>
+
             <!-- Pool Installation Category -->
             <div class="services-category reveal">
                 <div class="category-header">
@@ -780,34 +1094,87 @@
                     </a>
                 </div>
                 <div class="services-grid">
-                    <a href="/pools/fiberglass/" class="service-card">
+                    <a href="/services/fiberglass-pool-installation.html" class="service-card featured">
                         <div class="service-card-icon">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                         </div>
-                        <h3>Fiberglass Pools</h3>
-                        <p>Factory-finished pools installed in 2-4 weeks. Smooth, algae-resistant surfaces with minimal maintenance.</p>
+                        <h3>Fiberglass Pool Installation</h3>
+                        <p>Factory-finished pools installed in 2-4 weeks. Smooth, algae-resistant surfaces with minimal lifetime maintenance.</p>
+                        <span class="service-card-price">Starting at $60,000</span>
                         <span class="service-card-link">
                             Learn More
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </span>
                     </a>
-                    <a href="/pools/concrete/" class="service-card">
+                    <a href="/services/pool-renovation.html" class="service-card">
                         <div class="service-card-icon">
-                            <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                         </div>
-                        <h3>Concrete Pools</h3>
-                        <p>Custom-designed gunite pools with unlimited shape and feature options. The pinnacle of pool ownership.</p>
+                        <h3>Pool Renovation</h3>
+                        <p>Transform your aging pool with modern finishes, updated equipment, and enhanced features. Complete pool makeovers.</p>
+                        <span class="service-card-price">Starting at $15,000</span>
                         <span class="service-card-link">
                             Learn More
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </span>
                     </a>
-                    <a href="/pools/plunge/" class="service-card">
+                    <a href="/services/outdoor-living.html" class="service-card">
                         <div class="service-card-icon">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                         </div>
-                        <h3>Plunge Pools</h3>
-                        <p>Compact luxury for smaller spaces. Perfect for relaxation, cold plunge wellness, or intimate entertaining.</p>
+                        <h3>Outdoor Living</h3>
+                        <p>Complete backyard transformations including patios, decks, outdoor kitchens, and landscaping integration.</p>
+                        <span class="service-card-price">Starting at $25,000</span>
+                        <span class="service-card-link">
+                            Learn More
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pool Features Category -->
+            <div class="services-category reveal">
+                <div class="category-header">
+                    <h2>
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        Features & Upgrades
+                    </h2>
+                </div>
+                <div class="services-grid">
+                    <a href="/services/pool-features.html" class="service-card">
+                        <div class="service-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </div>
+                        <h3>Spas & Water Features</h3>
+                        <p>Integrated spas, waterfalls, fountains, and bubbler jets that transform your pool into a resort-style retreat.</p>
+                        <span class="service-card-price">Starting at $8,000</span>
+                        <span class="service-card-link">
+                            Learn More
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                    <a href="/services/pool-features.html#lighting" class="service-card">
+                        <div class="service-card-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        </div>
+                        <h3>LED Lighting</h3>
+                        <p>Color-changing LED lights that set the perfect mood for evening swims and outdoor entertainment.</p>
+                        <span class="service-card-price">Starting at $1,500</span>
+                        <span class="service-card-link">
+                            Learn More
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                    <a href="/services/pool-features.html#automation" class="service-card">
+                        <div class="service-card-icon">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h3>Smart Automation</h3>
+                        <p>Control your pool from anywhere with smart technology. Pumps, heaters, lights, and more at your fingertips.</p>
+                        <span class="service-card-price">Starting at $3,000</span>
                         <span class="service-card-link">
                             Learn More
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -825,29 +1192,31 @@
                         </div>
                         Pool Maintenance
                     </h2>
-                    <a href="/pool-maintenance/" class="category-link">
-                        View All Maintenance Services
+                    <a href="/services/maintenance-plans.html" class="category-link">
+                        View All Plans
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
                 <div class="services-grid">
-                    <a href="/services/weekly-maintenance/" class="service-card">
+                    <a href="/services/maintenance-plans.html" class="service-card">
                         <div class="service-card-icon">
                             <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                         </div>
                         <h3>Weekly Maintenance</h3>
                         <p>Professional weekly service keeps your pool sparkling clean and chemically balanced all season long.</p>
+                        <span class="service-card-price">$150-$400/month</span>
                         <span class="service-card-link">
-                            Learn More
+                            View Plans
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </span>
                     </a>
                     <a href="/services/pool-opening/" class="service-card">
                         <div class="service-card-icon">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
                         </div>
                         <h3>Pool Opening</h3>
                         <p>Professional spring opening service gets your pool ready for summer with proper startup and balancing.</p>
+                        <span class="service-card-price">$350-$500</span>
                         <span class="service-card-link">
                             Learn More
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -855,10 +1224,11 @@
                     </a>
                     <a href="/services/pool-closing/" class="service-card">
                         <div class="service-card-icon">
-                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M2 12a5 5 0 0 0 5 5 8 8 0 0 1 5 2 8 8 0 0 1 5-2 5 5 0 0 0 5-5V7h-5a8 8 0 0 0-5 2 8 8 0 0 0-5-2H2z"/></svg>
                         </div>
                         <h3>Pool Closing</h3>
                         <p>Protect your investment with professional winterization. Proper closing prevents costly freeze damage.</p>
+                        <span class="service-card-price">$400-$600</span>
                         <span class="service-card-link">
                             Learn More
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -870,6 +1240,7 @@
                         </div>
                         <h3>Equipment Repair</h3>
                         <p>Expert diagnosis and repair for pumps, filters, heaters, and automation systems. Fast, reliable service.</p>
+                        <span class="service-card-price">Call for Quote</span>
                         <span class="service-card-link">
                             Learn More
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -881,6 +1252,7 @@
                         </div>
                         <h3>Water Testing</h3>
                         <p>Professional water analysis and chemistry balancing for crystal-clear, safe swimming water.</p>
+                        <span class="service-card-price">Free with Service</span>
                         <span class="service-card-link">
                             Learn More
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -891,13 +1263,90 @@
         </div>
     </section>
 
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">How It Works</div>
+                <h2>Your Journey to a Beautiful Pool</h2>
+                <p>From first consultation to first swim, we guide you through every step of the process.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="process-number">1</div>
+                    <h4>Free Consultation</h4>
+                    <p>We visit your property, discuss your vision, and provide a detailed, transparent quote.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-number">2</div>
+                    <h4>Design & Planning</h4>
+                    <p>3D designs, material selection, and permit handling. We take care of everything.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-number">3</div>
+                    <h4>Installation</h4>
+                    <p>Professional installation with regular updates. Most projects complete in 2-8 weeks.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-number">4</div>
+                    <h4>Enjoy & Maintain</h4>
+                    <p>Training, warranty support, and optional maintenance plans. We are here for the life of your pool.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag" style="color: var(--gold);">Client Stories</div>
+                <h2 style="color: var(--white);">What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"From the first meeting to the final swim, Tri-State exceeded every expectation. Our fiberglass pool was installed in just 3 weeks and looks absolutely stunning."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-info">
+                            <h4>Jennifer D.</h4>
+                            <span>Gladwyne, PA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"We renovated our 20-year-old pool and added a spa. The transformation is incredible. It feels like we have a brand new backyard."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MK</div>
+                        <div class="testimonial-info">
+                            <h4>Michael K.</h4>
+                            <span>Hockessin, DE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"Their weekly maintenance service is worth every penny. Crystal clear water every single day, and I never have to think about it."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah L.</h4>
+                            <span>West Chester, PA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Value Proposition -->
     <section class="value-section">
         <div class="container">
             <div class="section-header reveal">
                 <div class="section-tag">The Tri-State Difference</div>
-                <h2>We Build What We Service</h2>
-                <p>Our years of maintenance experience inform every pool we build. We know what lasts and what fails, and we build accordingly.</p>
+                <h2>Why Families Trust Us</h2>
             </div>
             <div class="value-grid">
                 <div class="value-item reveal">
@@ -937,10 +1386,10 @@
         <div class="container">
             <div class="reveal">
                 <h2>Ready to Get Started?</h2>
-                <p>Whether you need a new pool or professional maintenance for your existing one, we are here to help. Contact us for a free consultation.</p>
+                <p>Contact us for a free consultation. We will visit your property, discuss your vision, and provide a transparent quote with no pressure.</p>
                 <div class="cta-buttons">
                     <a href="/contact/" class="btn btn-white">
-                        Get Free Quote
+                        Schedule Consultation
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                     <a href="tel:+13025551234" class="btn btn-outline-white">
@@ -967,21 +1416,23 @@
                     <p>Premium pool installation and maintenance for Main Line Philadelphia and Northern Delaware. Crafted for the life you love.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>Installation</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
-                        <li><a href="/pools/concrete/">Concrete Pools</a></li>
-                        <li><a href="/pools/plunge/">Plunge Pools</a></li>
-                        <li><a href="/financing/">Financing</a></li>
+                        <li><a href="/services/fiberglass-pool-installation.html">Fiberglass Installation</a></li>
+                        <li><a href="/services/pool-renovation.html">Pool Renovation</a></li>
+                        <li><a href="/services/outdoor-living.html">Outdoor Living</a></li>
+                        <li><a href="/services/pool-features.html">Pool Features</a></li>
+                        <li><a href="/services/maintenance-plans.html">Maintenance Plans</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Maintenance</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="/pool-maintenance/">All Services</a></li>
-                        <li><a href="/services/weekly-maintenance/">Weekly Service</a></li>
-                        <li><a href="/services/pool-opening/">Pool Opening</a></li>
-                        <li><a href="/services/equipment-repair/">Repairs</a></li>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/testimonials/">Testimonials</a></li>
+                        <li><a href="/financing/">Financing</a></li>
+                        <li><a href="/faq/">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

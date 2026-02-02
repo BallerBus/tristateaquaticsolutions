@@ -245,6 +245,13 @@
         @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } .author-box { flex-direction: column; text-align: center; } .author-avatar { margin: 0 auto; } .timeline-item { flex-direction: column; gap: 0.75rem; } }
         @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
     </style>
+<!-- PostHog Analytics -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=t[e]||function(){t[e].q=t[e].q||[],t[e].q.push(arguments)}}(o=t.createElement("script")).type="text/javascript",o.async=!0,o.src=s+"/static/array.js",(n=t.getElementsByTagName("script")[0]).parentNode.insertBefore(o,n);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"segment"!==t&&(e+=" "+t),u.toString=function(t){return e},u},u.toString(0),u.userId=function(t){return t?u._i.push(t):u._i[0]},u.set_user_id=function(t){return u.userId(t)},u.get_distinct_id=function(){return u.userId()},u.event=function(t,e,n){u._i.push([t,e,n])},u.alias=function(t,e){u._i.push([t,e])},u._e=[],u.ready=function(t){u._e.push(t)},u.__SV=1.2,n=s}(t,e);var s="https://app.posthog.com";"/"in(n.options.custom_api_host||"")&&(s=n.options.custom_api_host),o="https://"+s+"/static/array.js"}(window,document,"https://app.posthog.com/script.js");
+  posthog.init('phc_AEHl0m89HvS8SsSGjB83vMZBgH73rqR7PYbKneWBUig', { api_host: 'https://app.posthog.com' });
+</script>
+<!-- End PostHog Analytics -->
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->

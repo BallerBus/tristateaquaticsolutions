@@ -797,10 +797,36 @@
             // Setup automatic tracking
             autoTracking.init();
 
+            // Load GoHighLevel integration for CRM tracking
+            this.loadGHLIntegration();
+
             // Expose globally for consent banner
             window.TSASAnalytics = this;
 
             utils.log('TSAS Analytics Bundle initialized');
+        },
+
+        /**
+         * Load GoHighLevel CRM integration
+         */
+        loadGHLIntegration: function() {
+            // Check if already loaded
+            if (window.GHLIntegration) {
+                utils.log('GHL Integration already loaded');
+                return;
+            }
+
+            // Dynamically load the GHL integration script
+            const script = document.createElement('script');
+            script.src = '/integrations/gohighlevel/ghl-integration.js';
+            script.async = true;
+            script.onload = function() {
+                utils.log('GHL Integration loaded successfully');
+            };
+            script.onerror = function() {
+                utils.log('GHL Integration failed to load (non-critical)');
+            };
+            document.head.appendChild(script);
         },
 
         /**

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Setup - Tri-State Aquatic Solutions</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1, h2, h3 { color: #1a365d; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #0066cc; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: 'Monaco', 'Consolas', monospace; }
+        .important { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .section { margin: 30px 0; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<h1>Google Analytics 4 (GA4) Setup</h1>
+<p><strong>Tri-State Aquatic Solutions</strong> - Complete Implementation Package</p>
+
+<div class="important">
+    <strong>Important:</strong> Replace <code>G-XXXXXXXXXX</code> with your actual GA4 Measurement ID throughout all code snippets.
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>1. Base GA4 Tracking Code</h2>
+<p>Add this code to the <code>&lt;head&gt;</code> section of <strong>every page</strong> on your website, immediately after the opening <code>&lt;head&gt;</code> tag:</p>
+
+<pre><code>&lt;!-- Google Analytics 4 - Tri-State Aquatic Solutions --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Base configuration with enhanced measurement enabled
+  gtag('config', 'G-XXXXXXXXXX', {
+    // Enhanced Measurement Settings
+    'send_page_view': true,
+    'page_location': window.location.href,
+    'page_title': document.title,
+
+    // Cookie Settings
+    'cookie_domain': 'auto',
+    'cookie_expires': 63072000, // 2 years in seconds
+    'cookie_prefix': 'tsas',
+    'cookie_update': true,
+    'cookie_flags': 'SameSite=None;Secure',
+
+    // Session Settings
+    'session_duration': 1800, // 30 minutes
+
+    // Content Grouping
+    'content_group': getContentGroup(),
+
+    // Custom Dimensions - User Scoped (set on first interaction)
+    'user_properties': {
+      'user_type': getUserType(),
+      'acquisition_source': getAcquisitionSource()
+    }
+  });
+
+  // Helper Functions
+  function getContentGroup() {
+    const path = window.location.pathname;
+    if (path === '/' || path === '/index.html') return 'Homepage';
+    if (path.includes('/services')) return 'Services';
+    if (path.includes('/pool-cost-calculator') || path.includes('/calculator')) return 'Calculator';
+    if (path.includes('/gallery') || path.includes('/portfolio')) return 'Gallery';
+    if (path.includes('/about')) return 'About';
+    if (path.includes('/contact')) return 'Contact';
+    if (path.includes('/blog') || path.includes('/resources')) return 'Resources';
+    if (path.includes('/financing')) return 'Financing';
+    if (path.includes('/faq')) return 'FAQ';
+    return 'Other';
+  }
+
+  function getUserType() {
+    // Check if returning visitor
+    if (localStorage.getItem('tsas_returning_user')) {
+      return 'returning_visitor';
+    }
+    localStorage.setItem('tsas_returning_user', 'true');
+    return 'new_visitor';
+  }
+
+  function getAcquisitionSource() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('utm_source') || urlParams.get('ref') || 'direct';
+  }
+&lt;/script&gt;</code></pre>
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>2. Enhanced Measurement Configuration</h2>
+<p>GA4's Enhanced Measurement automatically tracks several events. Ensure these are enabled in your GA4 property:</p>
+
+<h3>Auto-tracked Events (Enhanced Measurement):</h3>
+<ul>
+    <li><strong>page_view</strong> - Page views (enabled by default)</li>
+    <li><strong>scroll</strong> - 90% scroll depth</li>
+    <li><strong>click</strong> - Outbound link clicks</li>
+    <li><strong>view_search_results</strong> - Site search</li>
+    <li><strong>video_start, video_progress, video_complete</strong> - YouTube video engagement</li>
+    <li><strong>file_download</strong> - PDF, DOC, etc. downloads</li>
+    <li><strong>form_start, form_submit</strong> - Form interactions</li>
+</ul>
+
+<h3>Enhanced Measurement Configuration Code:</h3>
+<pre><code>&lt;script&gt;
+  // Additional Enhanced Measurement Configuration
+  gtag('set', {
+    // Enable all enhanced measurement features
+    'allow_google_signals': true,
+    'allow_ad_personalization_signals': true,
+
+    // Cross-domain tracking (if applicable)
+    'linker': {
+      'domains': ['tristateaquaticsolutions.com', 'www.tristateaquaticsolutions.com']
+    }
+  });
+&lt;/script&gt;</code></pre>
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>3. Custom Dimensions Configuration</h2>
+<p>These custom dimensions capture business-specific data for Tri-State Aquatic Solutions:</p>
+
+<h3>Event-Scoped Custom Dimensions:</h3>
+<table style="width:100%; border-collapse: collapse;">
+    <tr style="background:#f4f4f4;">
+        <th style="padding:10px; text-align:left; border:1px solid #ddd;">Dimension Name</th>
+        <th style="padding:10px; text-align:left; border:1px solid #ddd;">Parameter Name</th>
+        <th style="padding:10px; text-align:left; border:1px solid #ddd;">Scope</th>
+        <th style="padding:10px; text-align:left; border:1px solid #ddd;">Description</th>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Lead Source</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>lead_source</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">How the lead found us (Google, Facebook, Referral, etc.)</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Pool Type Interest</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>pool_type_interest</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">Type of pool interested in (inground, above_ground, renovation)</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Pool Size Category</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>pool_size_category</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">Size category (small, medium, large, extra_large)</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Location/Service Area</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>service_area</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">Customer's location (northern_nj, central_nj, south_jersey, nyc_metro, pa_east)</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Budget Range</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>budget_range</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">Estimated budget from calculator</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Project Timeline</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>project_timeline</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">When they want to start (immediate, 3_months, 6_months, 1_year)</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Form Name</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>form_name</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">Which form was submitted</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">CTA Location</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>cta_location</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">Where on page the CTA was clicked</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Calculator Step</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>calculator_step</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Event</td>
+        <td style="padding:10px; border:1px solid #ddd;">Progress through cost calculator</td>
+    </tr>
+</table>
+
+<h3>User-Scoped Custom Dimensions:</h3>
+<table style="width:100%; border-collapse: collapse; margin-top:15px;">
+    <tr style="background:#f4f4f4;">
+        <th style="padding:10px; text-align:left; border:1px solid #ddd;">Dimension Name</th>
+        <th style="padding:10px; text-align:left; border:1px solid #ddd;">Parameter Name</th>
+        <th style="padding:10px; text-align:left; border:1px solid #ddd;">Description</th>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Customer Stage</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>customer_stage</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Funnel stage (visitor, lead, qualified_lead, customer)</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">First Touch Source</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>first_touch_source</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Original acquisition source</td>
+    </tr>
+    <tr>
+        <td style="padding:10px; border:1px solid #ddd;">Primary Interest</td>
+        <td style="padding:10px; border:1px solid #ddd;"><code>primary_interest</code></td>
+        <td style="padding:10px; border:1px solid #ddd;">Main service interest</td>
+    </tr>
+</table>
+
+<h3>Code to Set Custom Dimensions:</h3>
+<pre><code>&lt;script&gt;
+  // Set User Properties (persisted across sessions)
+  function setUserProperties(properties) {
+    gtag('set', 'user_properties', properties);
+  }
+
+  // Example: Set customer stage when they become a lead
+  setUserProperties({
+    'customer_stage': 'lead',
+    'primary_interest': 'inground_pool'
+  });
+
+  // Set event-scoped dimensions with events
+  function trackLeadEvent(leadData) {
+    gtag('event', 'generate_lead', {
+      'lead_source': leadData.source,
+      'pool_type_interest': leadData.poolType,
+      'service_area': leadData.location,
+      'budget_range': leadData.budget,
+      'project_timeline': leadData.timeline,
+      'form_name': leadData.formName,
+      'value': leadData.estimatedValue,
+      'currency': 'USD'
+    });
+  }
+&lt;/script&gt;</code></pre>
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>4. User Properties Configuration</h2>
+<p>User properties persist across sessions and help with audience building:</p>
+
+<pre><code>&lt;script&gt;
+  // Initialize user properties on first visit
+  function initializeUserProperties() {
+    // Only set if not already set
+    if (!localStorage.getItem('tsas_user_initialized')) {
+      gtag('set', 'user_properties', {
+        'customer_stage': 'visitor',
+        'first_touch_source': getFirstTouchSource(),
+        'first_visit_date': new Date().toISOString().split('T')[0],
+        'primary_interest': 'unknown'
+      });
+      localStorage.setItem('tsas_user_initialized', 'true');
+    }
+  }
+
+  function getFirstTouchSource() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source');
+    const utmMedium = urlParams.get('utm_medium');
+
+    if (utmSource) {
+      return `${utmSource}/${utmMedium || 'none'}`;
+    }
+
+    const referrer = document.referrer;
+    if (!referrer) return 'direct';
+
+    const referrerDomain = new URL(referrer).hostname;
+    if (referrerDomain.includes('google')) return 'google/organic';
+    if (referrerDomain.includes('bing')) return 'bing/organic';
+    if (referrerDomain.includes('facebook')) return 'facebook/social';
+    if (referrerDomain.includes('instagram')) return 'instagram/social';
+    if (referrerDomain.includes('youtube')) return 'youtube/video';
+    if (referrerDomain.includes('nextdoor')) return 'nextdoor/social';
+
+    return `referral/${referrerDomain}`;
+  }
+
+  // Update user properties when they progress through funnel
+  function updateCustomerStage(stage, interest) {
+    gtag('set', 'user_properties', {
+      'customer_stage': stage,
+      'primary_interest': interest || undefined
+    });
+
+    // Also track the stage change as an event
+    gtag('event', 'customer_stage_change', {
+      'new_stage': stage,
+      'primary_interest': interest
+    });
+  }
+
+  // Call on page load
+  document.addEventListener('DOMContentLoaded', initializeUserProperties);
+&lt;/script&gt;</code></pre>
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>5. Complete Head Section Example</h2>
+<p>Here's the complete code to add to your website's <code>&lt;head&gt;</code>:</p>
+
+<pre><code>&lt;!-- ========================================== --&gt;
+&lt;!-- GA4 TRACKING - TRI-STATE AQUATIC SOLUTIONS --&gt;
+&lt;!-- ========================================== --&gt;
+
+&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script src="/analytics/ga4-config.js"&gt;&lt;/script&gt;
+
+&lt;!-- ========================================== --&gt;
+&lt;!-- END GA4 TRACKING                          --&gt;
+&lt;!-- ========================================== --&gt;</code></pre>
+
+<p>Then include the full <code>ga4-config.js</code> file which contains all tracking functionality.</p>
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>6. Consent Mode (GDPR/CCPA Compliance)</h2>
+<p>If you need to comply with privacy regulations, implement consent mode:</p>
+
+<pre><code>&lt;script&gt;
+  // Set default consent state BEFORE loading gtag
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Default: deny until user consents
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500 // Wait for consent banner response
+  });
+
+  // When user accepts cookies, update consent
+  function acceptAllCookies() {
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted'
+    });
+  }
+
+  // When user accepts only necessary cookies
+  function acceptNecessaryOnly() {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted' // Basic analytics still allowed
+    });
+  }
+&lt;/script&gt;</code></pre>
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>7. Debug Mode</h2>
+<p>For testing, enable debug mode to see events in real-time:</p>
+
+<pre><code>&lt;script&gt;
+  // Enable debug mode (remove in production)
+  gtag('config', 'G-XXXXXXXXXX', {
+    'debug_mode': true
+  });
+&lt;/script&gt;</code></pre>
+
+<p>View debug data at: <a href="https://analytics.google.com/analytics/web/#/debugview" target="_blank">GA4 DebugView</a></p>
+</div>
+
+<!-- ============================================== -->
+<div class="section">
+<h2>Files to Create</h2>
+<ul>
+    <li><code>/analytics/ga4-config.js</code> - Main configuration and custom event tracking</li>
+    <li>Add script tags to all HTML pages in <code>&lt;head&gt;</code></li>
+</ul>
+</div>
+
+<footer style="margin-top:40px; padding-top:20px; border-top:1px solid #e2e8f0; color:#666;">
+    <p>Tri-State Aquatic Solutions - GA4 Implementation v1.0</p>
+    <p>Last Updated: 2026</p>
+</footer>
+
+</body>
+</html>

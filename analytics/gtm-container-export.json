@@ -1,0 +1,1153 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2024-02-02T12:00:00.000Z",
+  "containerVersion": {
+    "path": "accounts/XXXXXX/containers/XXXXXXX/versions/1",
+    "accountId": "XXXXXX",
+    "containerId": "XXXXXXX",
+    "containerVersionId": "1",
+    "name": "Tri-State Aquatic Solutions - Initial Setup",
+    "description": "Complete GTM container for Tri-State Aquatic Solutions website analytics",
+    "container": {
+      "path": "accounts/XXXXXX/containers/XXXXXXX",
+      "accountId": "XXXXXX",
+      "containerId": "XXXXXXX",
+      "name": "Tri-State Aquatic Solutions",
+      "publicId": "GTM-XXXXXXX",
+      "usageContext": ["WEB"],
+      "fingerprint": "1706875200000",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/XXXXXX/containers/XXXXXXX/workspaces?apiLink=container"
+    },
+    "builtInVariable": [
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "PAGE_URL", "name": "Page URL"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "PAGE_HOSTNAME", "name": "Page Hostname"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "PAGE_PATH", "name": "Page Path"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "REFERRER", "name": "Referrer"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "EVENT", "name": "Event"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "CLICK_ELEMENT", "name": "Click Element"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "CLICK_CLASSES", "name": "Click Classes"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "CLICK_ID", "name": "Click ID"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "CLICK_TARGET", "name": "Click Target"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "CLICK_URL", "name": "Click URL"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "CLICK_TEXT", "name": "Click Text"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "FORM_ELEMENT", "name": "Form Element"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "FORM_CLASSES", "name": "Form Classes"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "FORM_ID", "name": "Form ID"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "FORM_TARGET", "name": "Form Target"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "FORM_URL", "name": "Form URL"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "FORM_TEXT", "name": "Form Text"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "SCROLL_DEPTH_THRESHOLD", "name": "Scroll Depth Threshold"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "SCROLL_DEPTH_UNITS", "name": "Scroll Depth Units"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "SCROLL_DEPTH_DIRECTION", "name": "Scroll Depth Direction"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_PROVIDER", "name": "Video Provider"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_URL", "name": "Video URL"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_TITLE", "name": "Video Title"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_DURATION", "name": "Video Duration"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_PERCENT", "name": "Video Percent"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_VISIBLE", "name": "Video Visible"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_STATUS", "name": "Video Status"},
+      {"accountId": "XXXXXX", "containerId": "XXXXXXX", "type": "VIDEO_CURRENT_TIME", "name": "Video Current Time"}
+    ],
+    "variable": [
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "1",
+        "name": "GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "G-XXXXXXXXXX"}
+        ],
+        "fingerprint": "1706875200001"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "2",
+        "name": "Facebook Pixel ID",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "XXXXXXXXXXXXXXX"}
+        ],
+        "fingerprint": "1706875200002"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "3",
+        "name": "Google Ads Conversion ID",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "AW-XXXXXXXXXX"}
+        ],
+        "fingerprint": "1706875200003"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "4",
+        "name": "LinkedIn Partner ID",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "XXXXXXX"}
+        ],
+        "fingerprint": "1706875200004"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "5",
+        "name": "DLV - Event Name",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "event"}
+        ],
+        "fingerprint": "1706875200005"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "6",
+        "name": "DLV - Page Type",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "true"},
+          {"type": "TEMPLATE", "key": "defaultValue", "value": "other"},
+          {"type": "TEMPLATE", "key": "name", "value": "pageType"}
+        ],
+        "fingerprint": "1706875200006"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "7",
+        "name": "DLV - Form Name",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "formName"}
+        ],
+        "fingerprint": "1706875200007"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "8",
+        "name": "DLV - Form Type",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "true"},
+          {"type": "TEMPLATE", "key": "defaultValue", "value": "contact"},
+          {"type": "TEMPLATE", "key": "name", "value": "formType"}
+        ],
+        "fingerprint": "1706875200008"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "9",
+        "name": "DLV - Conversion Type",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "conversionType"}
+        ],
+        "fingerprint": "1706875200009"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "10",
+        "name": "DLV - Button Text",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "buttonText"}
+        ],
+        "fingerprint": "1706875200010"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "11",
+        "name": "DLV - Button Location",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "buttonLocation"}
+        ],
+        "fingerprint": "1706875200011"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "12",
+        "name": "DLV - Phone Number",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "phoneNumber"}
+        ],
+        "fingerprint": "1706875200012"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "13",
+        "name": "DLV - Scroll Percentage",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "scrollPercentage"}
+        ],
+        "fingerprint": "1706875200013"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "14",
+        "name": "DLV - Video Name",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "videoName"}
+        ],
+        "fingerprint": "1706875200014"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "15",
+        "name": "DLV - Video Action",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "videoAction"}
+        ],
+        "fingerprint": "1706875200015"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "16",
+        "name": "DLV - Pool Type",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "poolType"}
+        ],
+        "fingerprint": "1706875200016"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "17",
+        "name": "DLV - Service Type",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "serviceType"}
+        ],
+        "fingerprint": "1706875200017"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "18",
+        "name": "DLV - Tool Name",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "toolName"}
+        ],
+        "fingerprint": "1706875200018"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "19",
+        "name": "DLV - Social Platform",
+        "type": "v",
+        "parameter": [
+          {"type": "INTEGER", "key": "dataLayerVersion", "value": "2"},
+          {"type": "BOOLEAN", "key": "setDefaultValue", "value": "false"},
+          {"type": "TEMPLATE", "key": "name", "value": "socialPlatform"}
+        ],
+        "fingerprint": "1706875200019"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "20",
+        "name": "JS - User Agent",
+        "type": "jsm",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "javascript", "value": "function() {\n  return navigator.userAgent;\n}"}
+        ],
+        "fingerprint": "1706875200020"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "21",
+        "name": "JS - Screen Resolution",
+        "type": "jsm",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "javascript", "value": "function() {\n  return window.screen.width + 'x' + window.screen.height;\n}"}
+        ],
+        "fingerprint": "1706875200021"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "22",
+        "name": "JS - Viewport Size",
+        "type": "jsm",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "javascript", "value": "function() {\n  return window.innerWidth + 'x' + window.innerHeight;\n}"}
+        ],
+        "fingerprint": "1706875200022"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "23",
+        "name": "JS - Browser Language",
+        "type": "jsm",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "javascript", "value": "function() {\n  return navigator.language || navigator.userLanguage;\n}"}
+        ],
+        "fingerprint": "1706875200023"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "variableId": "24",
+        "name": "Lookup - Conversion Label by Form Type",
+        "type": "smm",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "input", "value": "{{DLV - Form Type}}"},
+          {
+            "type": "LIST",
+            "key": "map",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "key", "value": "quote"},
+                  {"type": "TEMPLATE", "key": "value", "value": "QUOTE_CONVERSION_LABEL"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "key", "value": "contact"},
+                  {"type": "TEMPLATE", "key": "value", "value": "CONTACT_CONVERSION_LABEL"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "key", "value": "newsletter"},
+                  {"type": "TEMPLATE", "key": "value", "value": "NEWSLETTER_CONVERSION_LABEL"}
+                ]
+              }
+            ]
+          },
+          {"type": "TEMPLATE", "key": "defaultValue", "value": "DEFAULT_CONVERSION_LABEL"}
+        ],
+        "fingerprint": "1706875200024"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "1",
+        "name": "All Pages",
+        "type": "PAGEVIEW",
+        "fingerprint": "1706875200100"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "2",
+        "name": "DOM Ready",
+        "type": "DOM_READY",
+        "fingerprint": "1706875200101"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "3",
+        "name": "Window Loaded",
+        "type": "WINDOW_LOADED",
+        "fingerprint": "1706875200102"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "4",
+        "name": "CE - Form Submission",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "formSubmission"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200103"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "5",
+        "name": "CE - Quote Request",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "quoteRequest"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200104"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "6",
+        "name": "CE - CTA Click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "ctaClick"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200105"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "7",
+        "name": "CE - Phone Click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "phoneClick"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200106"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "8",
+        "name": "CE - Scroll Depth",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "scrollDepth"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200107"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "9",
+        "name": "CE - Video Interaction",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "videoInteraction"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200108"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "10",
+        "name": "CE - Tool Usage",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "toolUsage"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200109"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "11",
+        "name": "Click - All Clicks",
+        "type": "CLICK",
+        "filter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": ".*"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200110"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "12",
+        "name": "Click - Phone Links",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "STARTS_WITH",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "tel:"}
+            ]
+          }
+        ],
+        "waitForTags": {"type": "BOOLEAN", "value": "false"},
+        "checkValidation": {"type": "BOOLEAN", "value": "true"},
+        "waitForTagsTimeout": {"type": "TEMPLATE", "value": "2000"},
+        "fingerprint": "1706875200111"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "13",
+        "name": "Click - Email Links",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "STARTS_WITH",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "mailto:"}
+            ]
+          }
+        ],
+        "waitForTags": {"type": "BOOLEAN", "value": "false"},
+        "checkValidation": {"type": "BOOLEAN", "value": "true"},
+        "waitForTagsTimeout": {"type": "TEMPLATE", "value": "2000"},
+        "fingerprint": "1706875200112"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "14",
+        "name": "Click - CTA Buttons",
+        "type": "CLICK",
+        "filter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Click Classes}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "(cta|btn-primary|quote-btn|contact-btn)"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200113"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "15",
+        "name": "Form - All Form Submissions",
+        "type": "FORM_SUBMISSION",
+        "filter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Page Path}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": ".*"}
+            ]
+          }
+        ],
+        "waitForTags": {"type": "BOOLEAN", "value": "true"},
+        "checkValidation": {"type": "BOOLEAN", "value": "true"},
+        "waitForTagsTimeout": {"type": "TEMPLATE", "value": "2000"},
+        "fingerprint": "1706875200114"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "16",
+        "name": "Scroll - 25%",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "25"},
+          {"type": "BOOLEAN", "key": "verticalThresholdOn", "value": "true"},
+          {"type": "BOOLEAN", "key": "horizontalThresholdOn", "value": "false"},
+          {"type": "TEMPLATE", "key": "triggerStartOption", "value": "WINDOW_LOAD"}
+        ],
+        "fingerprint": "1706875200115"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "17",
+        "name": "Scroll - 50%",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "50"},
+          {"type": "BOOLEAN", "key": "verticalThresholdOn", "value": "true"},
+          {"type": "BOOLEAN", "key": "horizontalThresholdOn", "value": "false"},
+          {"type": "TEMPLATE", "key": "triggerStartOption", "value": "WINDOW_LOAD"}
+        ],
+        "fingerprint": "1706875200116"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "18",
+        "name": "Scroll - 75%",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "75"},
+          {"type": "BOOLEAN", "key": "verticalThresholdOn", "value": "true"},
+          {"type": "BOOLEAN", "key": "horizontalThresholdOn", "value": "false"},
+          {"type": "TEMPLATE", "key": "triggerStartOption", "value": "WINDOW_LOAD"}
+        ],
+        "fingerprint": "1706875200117"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "19",
+        "name": "Scroll - 100%",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "100"},
+          {"type": "BOOLEAN", "key": "verticalThresholdOn", "value": "true"},
+          {"type": "BOOLEAN", "key": "horizontalThresholdOn", "value": "false"},
+          {"type": "TEMPLATE", "key": "triggerStartOption", "value": "WINDOW_LOAD"}
+        ],
+        "fingerprint": "1706875200118"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "20",
+        "name": "YouTube Video - Start",
+        "type": "YOU_TUBE_VIDEO",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "captureStart", "value": "true"},
+          {"type": "TEMPLATE", "key": "captureComplete", "value": "false"},
+          {"type": "TEMPLATE", "key": "capturePause", "value": "false"},
+          {"type": "TEMPLATE", "key": "captureProgress", "value": "false"},
+          {"type": "TEMPLATE", "key": "triggerStartOption", "value": "DOM_READY"}
+        ],
+        "fingerprint": "1706875200119"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "21",
+        "name": "YouTube Video - Complete",
+        "type": "YOU_TUBE_VIDEO",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "captureStart", "value": "false"},
+          {"type": "TEMPLATE", "key": "captureComplete", "value": "true"},
+          {"type": "TEMPLATE", "key": "capturePause", "value": "false"},
+          {"type": "TEMPLATE", "key": "captureProgress", "value": "false"},
+          {"type": "TEMPLATE", "key": "triggerStartOption", "value": "DOM_READY"}
+        ],
+        "fingerprint": "1706875200120"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "22",
+        "name": "YouTube Video - Progress",
+        "type": "YOU_TUBE_VIDEO",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "captureStart", "value": "false"},
+          {"type": "TEMPLATE", "key": "captureComplete", "value": "false"},
+          {"type": "TEMPLATE", "key": "capturePause", "value": "false"},
+          {"type": "TEMPLATE", "key": "captureProgress", "value": "true"},
+          {"type": "TEMPLATE", "key": "progressThresholdsPercent", "value": "25, 50, 75"},
+          {"type": "TEMPLATE", "key": "triggerStartOption", "value": "DOM_READY"}
+        ],
+        "fingerprint": "1706875200121"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "23",
+        "name": "CE - Cost Calculator Complete",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "costCalculatorComplete"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200122"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "triggerId": "24",
+        "name": "CE - Social Click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "socialClick"}
+            ]
+          }
+        ],
+        "fingerprint": "1706875200123"
+      }
+    ],
+    "tag": [
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "1",
+        "name": "GA4 - Configuration",
+        "type": "gaawc",
+        "parameter": [
+          {"type": "BOOLEAN", "key": "sendPageView", "value": "true"},
+          {"type": "TEMPLATE", "key": "measurementId", "value": "{{GA4 Measurement ID}}"}
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {"type": "MAP"},
+        "fingerprint": "1706875200200"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "2",
+        "name": "GA4 - Event - Form Submission",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "generate_lead"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "form_name"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Form Name}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "form_type"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Form Type}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "page_location"}, {"type": "TEMPLATE", "key": "value", "value": "{{Page URL}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200201"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "3",
+        "name": "GA4 - Event - Quote Request",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "request_quote"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "pool_type"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Pool Type}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "service_type"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Service Type}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "conversion_type"}, {"type": "TEMPLATE", "key": "value", "value": "quote"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["5"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200202"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "4",
+        "name": "GA4 - Event - Phone Click",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "phone_call"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "phone_number"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Phone Number}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "click_location"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Button Location}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["7"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200203"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "5",
+        "name": "GA4 - Event - Scroll Depth",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "scroll"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "percent_scrolled"}, {"type": "TEMPLATE", "key": "value", "value": "{{Scroll Depth Threshold}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "page_location"}, {"type": "TEMPLATE", "key": "value", "value": "{{Page URL}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["16", "17", "18", "19"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200204"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "6",
+        "name": "GA4 - Event - Video Start",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "video_start"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "video_title"}, {"type": "TEMPLATE", "key": "value", "value": "{{Video Title}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "video_url"}, {"type": "TEMPLATE", "key": "value", "value": "{{Video URL}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["20"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200205"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "7",
+        "name": "GA4 - Event - Video Complete",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "video_complete"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "video_title"}, {"type": "TEMPLATE", "key": "value", "value": "{{Video Title}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "video_url"}, {"type": "TEMPLATE", "key": "value", "value": "{{Video URL}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["21"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200206"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "8",
+        "name": "GA4 - Event - CTA Click",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "cta_click"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "button_text"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Button Text}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "button_location"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Button Location}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["6"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200207"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "9",
+        "name": "Facebook Pixel - Base Code",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n!function(f,b,e,v,n,t,s)\n{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq('init', '{{Facebook Pixel ID}}');\nfbq('track', 'PageView');\n</script>\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\nsrc=\"https://www.facebook.com/tr?id={{Facebook Pixel ID}}&ev=PageView&noscript=1\"\n/></noscript>"
+          },
+          {"type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false"}
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200208"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "10",
+        "name": "Facebook Pixel - Lead Event",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nfbq('track', 'Lead', {\n  content_name: '{{DLV - Form Name}}',\n  content_category: '{{DLV - Form Type}}'\n});\n</script>"
+          },
+          {"type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false"}
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200209"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "11",
+        "name": "Facebook Pixel - Quote Request",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nfbq('track', 'SubmitApplication', {\n  content_name: 'Quote Request',\n  content_category: '{{DLV - Pool Type}}',\n  service_type: '{{DLV - Service Type}}'\n});\n</script>"
+          },
+          {"type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false"}
+        ],
+        "firingTriggerId": ["5"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200210"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "12",
+        "name": "Facebook Pixel - Contact Event",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nfbq('track', 'Contact');\n</script>"
+          },
+          {"type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false"}
+        ],
+        "firingTriggerId": ["7"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200211"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "13",
+        "name": "Google Ads - Conversion Tracking",
+        "type": "awct",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "{{Google Ads Conversion ID}}"},
+          {"type": "TEMPLATE", "key": "conversionLabel", "value": "{{Lookup - Conversion Label by Form Type}}"},
+          {"type": "BOOLEAN", "key": "enableConversionLinker", "value": "true"}
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200212"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "14",
+        "name": "Google Ads - Quote Conversion",
+        "type": "awct",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "{{Google Ads Conversion ID}}"},
+          {"type": "TEMPLATE", "key": "conversionLabel", "value": "QUOTE_HIGH_VALUE_LABEL"},
+          {"type": "BOOLEAN", "key": "enableConversionLinker", "value": "true"},
+          {"type": "TEMPLATE", "key": "conversionValue", "value": "100"}
+        ],
+        "firingTriggerId": ["5"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200213"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "15",
+        "name": "Google Ads - Phone Call Conversion",
+        "type": "awct",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "{{Google Ads Conversion ID}}"},
+          {"type": "TEMPLATE", "key": "conversionLabel", "value": "PHONE_CALL_LABEL"},
+          {"type": "BOOLEAN", "key": "enableConversionLinker", "value": "true"}
+        ],
+        "firingTriggerId": ["7"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200214"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "16",
+        "name": "Google Ads - Remarketing Tag",
+        "type": "sp",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "{{Google Ads Conversion ID}}"},
+          {"type": "BOOLEAN", "key": "enableDynamicRemarketing", "value": "false"}
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200215"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "17",
+        "name": "LinkedIn Insight Tag",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script type=\"text/javascript\">\n_linkedin_partner_id = \"{{LinkedIn Partner ID}}\";\nwindow._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];\nwindow._linkedin_data_partner_ids.push(_linkedin_partner_id);\n</script>\n<script type=\"text/javascript\">\n(function(l) {\nif (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};\nwindow.lintrk.q=[]}\nvar s = document.getElementsByTagName(\"script\")[0];\nvar b = document.createElement(\"script\");\nb.type = \"text/javascript\";b.async = true;\nb.src = \"https://snap.licdn.com/li.lms-analytics/insight.min.js\";\ns.parentNode.insertBefore(b, s);})(window.lintrk);\n</script>\n<noscript>\n<img height=\"1\" width=\"1\" style=\"display:none;\" alt=\"\" src=\"https://px.ads.linkedin.com/collect/?pid={{LinkedIn Partner ID}}&fmt=gif\" />\n</noscript>"
+          },
+          {"type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false"}
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200216"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "18",
+        "name": "LinkedIn - Conversion Tracking",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nwindow.lintrk('track', { conversion_id: 'LINKEDIN_CONVERSION_ID' });\n</script>"
+          },
+          {"type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false"}
+        ],
+        "firingTriggerId": ["4", "5"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200217"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "19",
+        "name": "GA4 - Event - Tool Usage",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "tool_interaction"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "tool_name"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Tool Name}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "page_location"}, {"type": "TEMPLATE", "key": "value", "value": "{{Page URL}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["10"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200218"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "20",
+        "name": "GA4 - Event - Social Click",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "social_click"},
+          {"type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Configuration"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "social_platform"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Social Platform}}"}]},
+              {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "name", "value": "click_location"}, {"type": "TEMPLATE", "key": "value", "value": "{{DLV - Button Location}}"}]}
+            ]
+          }
+        ],
+        "firingTriggerId": ["24"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "fingerprint": "1706875200219"
+      },
+      {
+        "accountId": "XXXXXX",
+        "containerId": "XXXXXXX",
+        "tagId": "21",
+        "name": "Conversion Linker",
+        "type": "gclidw",
+        "parameter": [
+          {"type": "BOOLEAN", "key": "enableCrossDomain", "value": "false"},
+          {"type": "BOOLEAN", "key": "enableUrlPassthrough", "value": "false"}
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_PAGE",
+        "fingerprint": "1706875200220"
+      }
+    ],
+    "fingerprint": "1706875200000"
+  }
+}

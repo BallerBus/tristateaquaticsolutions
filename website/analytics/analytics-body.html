@@ -1,0 +1,86 @@
+<!--
+    Tri-State Aquatic Solutions - Analytics Body Snippet
+
+    INSTRUCTIONS:
+    1. Place the GTM noscript tag immediately after the opening <body> tag
+    2. Place the script tag after that
+    3. Replace GTM-XXXXXXX with your actual GTM Container ID
+
+    Last Updated: 2026-02-02
+-->
+
+<!-- Google Tag Manager (noscript) -->
+<!-- This provides basic tracking for users with JavaScript disabled -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            height="0" width="0"
+            style="display:none;visibility:hidden"
+            title="Google Tag Manager"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Analytics Bundle Loader -->
+<!-- Load the combined analytics bundle -->
+<script>
+(function() {
+    // Load analytics bundle
+    var script = document.createElement('script');
+    script.src = '/analytics/analytics-bundle.js';
+    script.async = true;
+    script.defer = true;
+
+    // Error handling
+    script.onerror = function() {
+        console.warn('[TSAS Analytics] Failed to load analytics bundle');
+    };
+
+    // Insert after current script or at end of body
+    var currentScript = document.currentScript;
+    if (currentScript && currentScript.parentNode) {
+        currentScript.parentNode.insertBefore(script, currentScript.nextSibling);
+    } else {
+        document.body.appendChild(script);
+    }
+})();
+</script>
+
+<!-- Cookie Consent Loader -->
+<script>
+(function() {
+    // Only load consent banner if no decision has been made
+    var consentCookie = document.cookie.match(/tsas_analytics_consent=([^;]+)/);
+    var hasDecided = consentCookie && (consentCookie[1] === 'granted' || consentCookie[1] === 'denied');
+
+    if (!hasDecided) {
+        var script = document.createElement('script');
+        script.src = '/analytics/cookie-consent.js';
+        script.async = true;
+        script.defer = true;
+
+        script.onload = function() {
+            // Initialize consent banner when loaded
+            if (window.TSASCookieConsent) {
+                window.TSASCookieConsent.init();
+            }
+        };
+
+        document.body.appendChild(script);
+    }
+})();
+</script>
+
+<!-- Data Layer Push for Page View -->
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+    'event': 'page_view_init',
+    'page_path': window.location.pathname,
+    'page_title': document.title,
+    'page_url': window.location.href,
+    'page_referrer': document.referrer || 'direct',
+    'user_agent': navigator.userAgent,
+    'screen_resolution': screen.width + 'x' + screen.height,
+    'viewport_size': window.innerWidth + 'x' + window.innerHeight,
+    'timestamp': new Date().toISOString()
+});
+</script>

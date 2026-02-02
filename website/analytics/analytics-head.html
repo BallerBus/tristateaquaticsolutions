@@ -1,0 +1,78 @@
+<!--
+    Tri-State Aquatic Solutions - Analytics Head Snippet
+
+    INSTRUCTIONS:
+    1. Place this entire snippet in the <head> section of every page
+    2. It should be placed as early as possible (after charset and viewport meta tags)
+    3. Replace GTM-XXXXXXX with your actual GTM Container ID
+    4. Replace G-XXXXXXXXXX with your actual GA4 Measurement ID
+
+    Last Updated: 2026-02-02
+-->
+
+<!-- Preconnect hints for faster analytics loading -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.clarity.ms">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<link rel="dns-prefetch" href="https://www.clarity.ms">
+
+<!-- Google Tag Manager (Head) -->
+<!-- This loads GTM asynchronously to minimize impact on page load -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Consent Mode v2 Default Settings -->
+<!-- This ensures privacy compliance by defaulting to denied state -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Set default consent state (privacy-first approach)
+gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'personalization_storage': 'denied',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+});
+
+// Region-specific defaults (GDPR regions require explicit consent)
+gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR',
+               'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL',
+               'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB', 'IS', 'LI',
+               'NO', 'CH']
+});
+
+// California (CCPA)
+gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'region': ['US-CA']
+});
+</script>
+<!-- End Consent Mode -->
+
+<!-- Page metadata for analytics -->
+<script>
+window.tsasPageData = {
+    pageType: document.body?.getAttribute('data-page-type') || 'page',
+    pageCategory: document.body?.getAttribute('data-page-category') || 'general',
+    timestamp: new Date().toISOString()
+};
+</script>

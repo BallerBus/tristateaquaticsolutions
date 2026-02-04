@@ -534,7 +534,16 @@
             transition: transform 0.6s var(--ease-out-expo);
         }
 
-        .project-card:hover .project-image {
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .project-card:hover .project-image,
+        .project-card:hover .project-image img {
             transform: scale(1.05);
         }
 
@@ -1400,10 +1409,10 @@
                      data-description="A stunning 18x40 modern fiberglass pool with infinity edge, integrated spa, and LED lighting package. This estate-scale installation features a sun shelf, automatic cover, and natural stone decking."
                      data-portfolio="../portfolio/gladwyne-luxury-estate/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Featured Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/gladwyne-modern-fiberglass-thumb.jpg"
+                             data-src="../images/gallery/optimized/gladwyne-modern-fiberglass.jpg"
+                             alt="Gladwyne Luxury Estate Pool - Modern fiberglass pool with infinity edge and spa"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1444,10 +1453,10 @@
                      data-description="An elegant 16x36 Roman-end fiberglass pool with classic stone coping and formal landscaping. Features include a tanning ledge and custom water features."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/villanova-estate-fiberglass-thumb.jpg"
+                             data-src="../images/gallery/optimized/villanova-estate-fiberglass.jpg"
+                             alt="Villanova Classic Estate Pool - Elegant fiberglass pool with Roman end design"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1484,10 +1493,10 @@
                      data-description="A sleek 14x32 rectangular fiberglass pool with integrated LED lighting and smart automation. Features clean lines and contemporary landscaping."
                      data-portfolio="../portfolio/hockessin-modern-pool/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/hockessin-family-fiberglass-thumb.jpg"
+                             data-src="../images/gallery/optimized/hockessin-family-fiberglass.jpg"
+                             alt="Hockessin Modern Retreat - Sleek fiberglass pool with smart home integration"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1524,10 +1533,10 @@
                      data-description="A compact 10x18 heated plunge pool with integrated spa jets. Perfect for year-round relaxation in a smaller backyard space."
                      data-portfolio="../portfolio/bryn-mawr-plunge-pool/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/bryn-mawr-plunge-thumb.jpg"
+                             data-src="../images/gallery/optimized/bryn-mawr-plunge.jpg"
+                             alt="Bryn Mawr Plunge Pool - Compact heated plunge pool for year-round relaxation"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1564,10 +1573,10 @@
                      data-description="A family-friendly 16x34 fiberglass pool with beach entry, tanning ledge, and volleyball net setup. Includes outdoor kitchen and fire pit area."
                      data-portfolio="../portfolio/west-chester-family-pool/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/west-chester-contemporary-thumb.jpg"
+                             data-src="../images/gallery/optimized/west-chester-contemporary.jpg"
+                             alt="West Chester Family Pool - Family-friendly fiberglass pool with beach entry"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1604,10 +1613,10 @@
                      data-description="A 22x48 custom concrete pool with waterfall grotto, swim-up bar, and integrated spa. Full resort-style outdoor living with cabana and outdoor kitchen."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/greenville-resort-style-thumb.jpg"
+                             data-src="../images/gallery/optimized/greenville-resort-style.jpg"
+                             alt="Greenville Resort Pool - Custom concrete pool with waterfall grotto and swim-up bar"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1644,10 +1653,10 @@
                      data-description="A timeless 18x36 rectangular concrete pool with bluestone coping and formal gardens. Features diving board and classic pool house."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/haverford-classic-concrete-thumb.jpg"
+                             data-src="../images/gallery/optimized/haverford-classic-concrete.jpg"
+                             alt="Haverford Classic Pool - Timeless rectangular concrete pool with bluestone coping"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1684,10 +1693,10 @@
                      data-description="A compact 8x12 cold plunge pool for wellness enthusiasts. Features precision temperature control and sleek modern design."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/wilmington-urban-plunge-thumb.jpg"
+                             data-src="../images/gallery/optimized/wilmington-urban-plunge.jpg"
+                             alt="Wilmington Cold Plunge - Compact cold plunge pool with precision temperature control"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1724,10 +1733,10 @@
                      data-description="A 15x35 geometric fiberglass pool with frameless glass fencing and minimalist hardscape. Features custom LED color-changing lights."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/wayne-contemporary-pool-thumb.jpg"
+                             data-src="../images/gallery/optimized/wayne-contemporary-pool.jpg"
+                             alt="Wayne Contemporary Pool - Geometric fiberglass pool with frameless glass fencing"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1764,10 +1773,10 @@
                      data-description="A grand 20x42 freeform concrete pool with natural rock waterfall and grotto. Includes separate hot tub and extensive outdoor living space."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/malvern-estate-pool-thumb.jpg"
+                             data-src="../images/gallery/optimized/malvern-estate-pool.jpg"
+                             alt="Malvern Estate Pool - Grand freeform concrete pool with natural rock waterfall"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1804,10 +1813,10 @@
                      data-description="A serene 14x28 lap pool with Japanese-inspired landscaping. Features infinity edge and meditation deck."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/radnor-zen-pool-thumb.jpg"
+                             data-src="../images/gallery/optimized/radnor-zen-pool.jpg"
+                             alt="Radnor Zen Pool - Serene lap pool with Japanese-inspired landscaping"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -1844,10 +1853,10 @@
                      data-description="A 16x32 freeform fiberglass pool with slide, diving rock, and beach entry. Complete with basketball hoop and rope swing."
                      data-portfolio="../portfolio/">
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <span>Project Photo</span>
-                        </div>
+                        <img src="../images/gallery/thumbs/gladwyne-luxury-concrete-thumb.jpg"
+                             data-src="../images/gallery/optimized/gladwyne-luxury-concrete.jpg"
+                             alt="Newark Family Oasis - Freeform fiberglass pool with slide and beach entry"
+                             loading="lazy">
                     </div>
                     <div class="social-share">
                         <button class="share-btn" data-share="facebook" title="Share on Facebook">
@@ -2218,20 +2227,25 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
-        // Lazy loading simulation
-        const lazyImages = document.querySelectorAll('.project-image[data-src]');
+        // Lazy loading for gallery images - swap thumbnail for full resolution
+        const lazyImages = document.querySelectorAll('.project-image img[data-src]');
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     if (img.dataset.src) {
-                        img.style.backgroundImage = `url(${img.dataset.src})`;
-                        img.classList.add('loaded');
+                        // Create a new image to preload the full resolution
+                        const fullImg = new Image();
+                        fullImg.onload = () => {
+                            img.src = img.dataset.src;
+                            img.classList.add('loaded');
+                        };
+                        fullImg.src = img.dataset.src;
                         imageObserver.unobserve(img);
                     }
                 }
             });
-        }, { rootMargin: '50px' });
+        }, { rootMargin: '100px' });
 
         lazyImages.forEach(img => imageObserver.observe(img));
 

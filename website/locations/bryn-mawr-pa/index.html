@@ -36,6 +36,8 @@
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="US-PA">
     <meta name="geo.placename" content="Bryn Mawr">
+    <meta name="geo.position" content="40.0210;-75.3135">
+    <meta name="ICBM" content="40.0210, -75.3135">
     <link rel="canonical" href="https://tristateaquaticsolutions.com/locations/bryn-mawr-pa/">
 
     <!-- Fonts -->
@@ -53,21 +55,42 @@
         "url": "https://tristateaquaticsolutions.com/locations/bryn-mawr-pa/",
         "telephone": "+1-302-870-3113",
         "email": "Bryce@TriStateAquaticSolutions.com",
-        "areaServed": {
-            "@type": "City",
-            "name": "Bryn Mawr",
-            "containedInPlace": {
-                "@type": "State",
-                "name": "Pennsylvania"
-            }
+        "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bryn Mawr",
+                "addressRegion": "PA",
+                "postalCode": "19010",
+                "addressCountry": "US"
         },
-        "priceRange": "$50,000 - $130,000",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "52"
-        }
-    }
+        "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.021,
+                "longitude": -75.3135
+        },
+        "areaServed": [
+                {
+                        "@type": "City",
+                        "name": "Bryn Mawr",
+                        "containedInPlace": {
+                                "@type": "State",
+                                "name": "Pennsylvania"
+                        }
+                },
+                {
+                        "@type": "City",
+                        "name": "Gladwyne"
+                },
+                {
+                        "@type": "City",
+                        "name": "Haverford"
+                },
+                {
+                        "@type": "City",
+                        "name": "Villanova"
+                }
+        ],
+        "priceRange": "$50,000 - $130,000"
+}
     </script>
 
     <!-- Breadcrumb Schema -->
@@ -80,6 +103,56 @@
             {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://tristateaquaticsolutions.com/locations/"},
             {"@type": "ListItem", "position": 3, "name": "Pennsylvania", "item": "https://tristateaquaticsolutions.com/locations/pennsylvania/"},
             {"@type": "ListItem", "position": 4, "name": "Bryn Mawr", "item": "https://tristateaquaticsolutions.com/locations/bryn-mawr-pa/"}
+        ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does pool installation take in Bryn Mawr?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fiberglass pools typically install in 2-4 weeks. Concrete pools take 8-12 weeks. We coordinate all Lower Merion permits to minimize delays."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you match historic property aesthetics?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We specialize in designing pools that complement period architecture, from Tudor revival to colonial. Material selection is key to seamless integration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are Lower Merion's pool requirements?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Lower Merion requires permits, safety barriers, setback compliance, and impervious coverage limits. We handle all documentation and inspections."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you work with landscape architects?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We regularly collaborate with landscape architects and designers. Coordinated planning ensures pool, hardscape, and plantings work together harmoniously."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What maintenance is included?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Every Bryn Mawr installation includes 1-2 years of complimentary maintenance service. We also offer ongoing maintenance packages."
+                }
+            }
         ]
     }
     </script>
@@ -313,6 +386,16 @@
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Nearby Locations */
+        .nearby-locations { background: var(--white); }
+        .nearby-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .nearby-card { background: var(--gray-light); border-radius: 16px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; text-decoration: none; }
+        .nearby-card:hover { background: var(--navy); transform: translateY(-3px); }
+        .nearby-card:hover h4, .nearby-card:hover p { color: var(--white); }
+        .nearby-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+        .nearby-card p { font-size: 0.9rem; color: var(--gray-text); margin: 0; }
+        @media (max-width: 640px) { .nearby-grid { grid-template-columns: 1fr; } }
     </style>
 <!-- PostHog Analytics -->
 <script>
@@ -386,10 +469,7 @@
                 </div>
                 <div class="local-visual reveal reveal-delay-1">
                     <div class="local-image">
-                        <div class="local-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Bryn Mawr Estate Pool</p>
-                        </div>
+                        <img src="/images/locations/optimized/bryn-mawr-plunge.jpg" alt="Pool installation in Bryn Mawr, PA" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                     </div>
                     <div class="local-badge">
                         <div class="local-badge-number">52+</div>
@@ -499,10 +579,7 @@
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/main-line-estate.jpg" alt="Estate pool with integrated spa" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Morris Avenue Estate Pool and Spa</h4>
@@ -511,10 +588,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-1">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/contemporary-design.jpg" alt="Contemporary fiberglass pool" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>College Area Contemporary Pool</h4>
@@ -523,10 +597,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-2">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/suburban-family.jpg" alt="Lap pool for exercise and entertaining" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>County Line Road Lap Pool</h4>
@@ -535,10 +606,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-3">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/resort-backyard.jpg" alt="Family pool with tanning ledge" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Airdale Road Family Pool</h4>
@@ -558,6 +626,7 @@
                     <h2>Bryn Mawr Permit Expertise</h2>
                     <p>Lower Merion Township is known for maintaining high standards for residential construction. As Bryn Mawr's governing body for building permits, they require thorough documentation and compliance with specific zoning regulations. Our extensive experience with Lower Merion's building department means your project proceeds efficiently.</p>
                     <p>Many Bryn Mawr properties have historic significance or specific deed restrictions that influence pool placement and design. We work proactively with township officials and, when necessary, historic preservation consultants to ensure full compliance while achieving your design vision.</p>
+                    <p style="margin-top: 1rem;"><a href="https://www.lowermerion.org/departments/building-planning/permits-applications" target="_blank" rel="noopener" style="color: var(--aqua); text-decoration: none; font-weight: 500;">View Lower Merion Township Permit Guide &rarr;</a></p>
                 </div>
                 <div class="reveal reveal-delay-1">
                     <ul class="permit-list">
@@ -662,6 +731,31 @@
         </div>
     </section>
 
+    <!-- Nearby Locations -->
+    <section class="nearby-locations">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Nearby Areas</div>
+                <h2>Nearby Locations We Serve</h2>
+                <p>We also build pools in these communities near Bryn Mawr.</p>
+            </div>
+            <div class="nearby-grid">
+                <a href="../gladwyne-pa/" class="nearby-card reveal">
+                    <h4>Gladwyne</h4>
+                    <p>Estate pools on the Main Line</p>
+                </a>
+                <a href="../haverford-pa/" class="nearby-card reveal reveal-delay-1">
+                    <h4>Haverford</h4>
+                    <p>Lower Merion pool builder</p>
+                </a>
+                <a href="../villanova-pa/" class="nearby-card reveal reveal-delay-2">
+                    <h4>Villanova</h4>
+                    <p>Main Line luxury pools</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -670,9 +764,9 @@
                 <h2>Ready to Transform Your Bryn Mawr Estate?</h2>
                 <p>Schedule your complimentary consultation. We will visit your property, discuss your vision, and show you what is possible.</p>
                 <div class="cta-buttons">
-                    <a href="tel:+16108703113" class="btn btn-cta-primary">
+                    <a href="tel:+13028703113" class="btn btn-cta-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Call (610) 870-3113
+                        Call (302) 870-3113
                     </a>
                     <a href="mailto:Bryce@TriStateAquaticSolutions.com?subject=Bryn Mawr Pool Consultation" class="btn btn-cta-secondary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -716,7 +810,7 @@
                     <ul class="footer-contact">
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <a href="tel:+16108703113">(610) 870-3113</a>
+                            <a href="tel:+13028703113">(302) 870-3113</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

@@ -655,6 +655,82 @@
             color: var(--gray-text);
         }
 
+        /* Social Proof Banner */
+        .social-proof-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.25rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(14, 31, 52, 0.08);
+            flex-wrap: wrap;
+        }
+
+        .social-proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-align: left;
+        }
+
+        .social-proof-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--aqua-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-proof-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .social-proof-icon.gold {
+            background: rgba(201, 169, 98, 0.15);
+        }
+
+        .social-proof-icon.gold svg {
+            stroke: var(--gold);
+            fill: var(--gold);
+        }
+
+        .social-proof-value {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+
+        .social-proof-label {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        @media (max-width: 640px) {
+            .social-proof-banner {
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .social-proof-item {
+                flex: 1 1 45%;
+            }
+
+            .social-proof-value {
+                font-size: 1.25rem;
+            }
+        }
+
         /* Result Card */
         .result-card {
             background: var(--white);
@@ -1071,7 +1147,7 @@
         <div class="progress-inner">
             <div class="progress-info">
                 <span class="progress-label">Your Perfect Pool</span>
-                <span class="progress-step" id="progressStep">Question 1 of 8</span>
+                <span class="progress-step" id="progressStep">Question 1 of 7</span>
             </div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill" style="width: 12.5%;"></div>
@@ -1089,7 +1165,7 @@
                 </svg>
             </div>
             <h1>Which Pool Is <em>Right</em> For You?</h1>
-            <p class="start-desc">Answer 8 quick questions and we'll recommend the perfect pool for your lifestyle, backyard, and budget.</p>
+            <p class="start-desc">Answer 7 quick questions and we'll recommend the perfect pool for your lifestyle, backyard, and budget.</p>
             <div class="start-features">
                 <div class="start-feature">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1450,53 +1526,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                     Back
                 </button>
-                <button class="btn btn-next" onclick="nextQuestion(7)" id="nextBtn7" disabled>
-                    Next
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Question 8: Concerns -->
-        <div class="question-slide" id="q8">
-            <div class="question-number">Question 8</div>
-            <h2 class="question-title">What concerns you most about getting a pool?</h2>
-            <div class="options-grid">
-                <div class="option-btn" data-value="cost" onclick="selectOption(this, 8)">
-                    <div class="option-icon">
-                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    </div>
-                    <div class="option-title">Total Cost</div>
-                    <div class="option-desc">Upfront investment and hidden fees</div>
-                </div>
-                <div class="option-btn" data-value="time" onclick="selectOption(this, 8)">
-                    <div class="option-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div class="option-title">Installation Time</div>
-                    <div class="option-desc">How long my yard will be a construction zone</div>
-                </div>
-                <div class="option-btn" data-value="maintenance" onclick="selectOption(this, 8)">
-                    <div class="option-icon">
-                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </div>
-                    <div class="option-title">Long-Term Maintenance</div>
-                    <div class="option-desc">Ongoing effort and annual costs</div>
-                </div>
-                <div class="option-btn" data-value="choice" onclick="selectOption(this, 8)">
-                    <div class="option-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                    </div>
-                    <div class="option-title">Making the Right Choice</div>
-                    <div class="option-desc">Choosing the best pool for my needs</div>
-                </div>
-            </div>
-            <div class="quiz-nav-buttons">
-                <button class="btn btn-back" onclick="goBack()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                    Back
-                </button>
-                <button class="btn btn-next" onclick="showResults()" id="nextBtn8" disabled>
+                <button class="btn btn-next" onclick="showResults()" id="nextBtn7" disabled>
                     See My Results
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
@@ -1519,6 +1549,37 @@
                 </div>
                 <h1>Your Perfect Pool: <span class="pool-type" id="resultPoolType">Fiberglass Pool</span></h1>
                 <p class="results-confidence" id="resultConfidence">95% match based on your answers</p>
+            </div>
+
+            <!-- Social Proof Banner -->
+            <div class="social-proof-banner">
+                <div class="social-proof-item">
+                    <div class="social-proof-icon gold">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <div>
+                        <div class="social-proof-value">4.9/5</div>
+                        <div class="social-proof-label">Customer Rating</div>
+                    </div>
+                </div>
+                <div class="social-proof-item">
+                    <div class="social-proof-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <div class="social-proof-value">15+ Years</div>
+                        <div class="social-proof-label">Industry Experience</div>
+                    </div>
+                </div>
+                <div class="social-proof-item">
+                    <div class="social-proof-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                        <div class="social-proof-value">30+</div>
+                        <div class="social-proof-label">Happy Families</div>
+                    </div>
+                </div>
             </div>
 
             <div class="result-card">
@@ -1585,9 +1646,40 @@
     <script>
         // Quiz State
         let currentQuestion = 0;
-        const totalQuestions = 8;
+        const totalQuestions = 7;
         const answers = {};
         const multiSelectAnswers = {};
+        let quizStartTime = null;
+
+        // GA4 Event Tracking for Quiz
+        function trackQuizEvent(eventName, data = {}) {
+            // Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, data);
+            }
+
+            // PostHog
+            if (typeof posthog !== 'undefined') {
+                posthog.capture(eventName, data);
+            }
+
+            // Console log for debugging
+            console.log('Quiz Track:', eventName, data);
+        }
+
+        // Track page abandonment
+        window.addEventListener('beforeunload', function() {
+            if (quizStartTime && currentQuestion > 0 && currentQuestion < totalQuestions) {
+                const timeSpent = Math.round((Date.now() - quizStartTime) / 1000);
+                trackQuizEvent('quiz_abandoned', {
+                    questions_completed: currentQuestion - 1,
+                    total_questions: totalQuestions,
+                    last_question: currentQuestion,
+                    time_spent_seconds: timeSpent,
+                    answers_so_far: Object.keys(answers).length
+                });
+            }
+        });
 
         // Pool Data
         const poolData = {
@@ -1622,11 +1714,18 @@
             document.getElementById('startScreen').style.display = 'none';
             document.getElementById('progressContainer').style.display = 'block';
             currentQuestion = 1;
+            quizStartTime = Date.now();
             showQuestion(1);
             updateProgress();
 
             // Save to localStorage that quiz started
             localStorage.setItem('quizStarted', 'true');
+
+            // Track quiz start
+            trackQuizEvent('quiz_started', {
+                total_questions: totalQuestions,
+                quiz_name: 'pool_type_quiz'
+            });
         }
 
         // Show Question
@@ -1697,6 +1796,14 @@
         function nextQuestion(currentNum) {
             const currentSlide = document.getElementById('q' + currentNum);
             currentSlide.classList.add('exiting');
+
+            // Track question completion
+            trackQuizEvent('quiz_step_complete', {
+                question_number: currentNum,
+                total_questions: totalQuestions,
+                answer_value: answers[currentNum],
+                progress_percentage: Math.round((currentNum / totalQuestions) * 100)
+            });
 
             setTimeout(() => {
                 currentSlide.classList.remove('active', 'exiting');
@@ -1985,7 +2092,7 @@
         // Show Results
         function showResults() {
             // Hide current question
-            document.getElementById('q8').classList.remove('active');
+            document.getElementById('q7').classList.remove('active');
             document.getElementById('progressContainer').style.display = 'none';
 
             // Show loading
@@ -2049,6 +2156,28 @@
 
                 // Update URL for sharing
                 updateShareableURL(results.winner);
+
+                // Track quiz completion
+                const timeSpent = quizStartTime ? Math.round((Date.now() - quizStartTime) / 1000) : 0;
+                trackQuizEvent('quiz_complete', {
+                    result_pool_type: results.winner,
+                    result_pool_name: pool.name,
+                    confidence_score: results.confidence,
+                    time_spent_seconds: timeSpent,
+                    primary_goal: answers[1],
+                    backyard_size: answers[2],
+                    budget_range: answers[7],
+                    timeline: answers[4]
+                });
+
+                // Track as GA4 conversion for remarketing
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'generate_lead', {
+                        currency: 'USD',
+                        value: 1,
+                        lead_type: 'quiz_completion'
+                    });
+                }
 
             }, 2000);
         }

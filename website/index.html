@@ -25,6 +25,62 @@
     <title>Tri-State Aquatic Solutions | Pool Installation & Services | Main Line PA & Delaware</title>
     <meta name="description" content="Premium pool installation and expert pool services for Main Line Philadelphia and Northern Delaware. Plunge pools, cocktail pools, fiberglass installation, plus weekly maintenance for ANY pool type.">
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tristateaquaticsolutions.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tri-State Aquatic Solutions | Plunge Pool Installation & Pool Services">
+    <meta property="og:description" content="Premium plunge pool and cocktail pool installation plus expert pool maintenance for Main Line PA and Northern Delaware. Now booking Spring 2026 installations.">
+    <meta property="og:url" content="https://tristateaquaticsolutions.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tristateaquaticsolutions.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Tri-State Aquatic Solutions">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tri-State Aquatic Solutions | Plunge Pool Installation & Pool Services">
+    <meta name="twitter:description" content="Premium plunge pool and cocktail pool installation plus expert pool maintenance for Main Line PA and Northern Delaware.">
+    <meta name="twitter:image" content="https://tristateaquaticsolutions.com/images/og-image.jpg">
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tri-State Aquatic Solutions",
+        "description": "Premium plunge pool and cocktail pool installation plus expert pool maintenance services for Main Line Philadelphia and Northern Delaware.",
+        "url": "https://tristateaquaticsolutions.com",
+        "telephone": "(302) 870-3113",
+        "email": "Bryce@TriStateAquaticSolutions.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hockessin",
+            "addressRegion": "DE",
+            "postalCode": "19707",
+            "addressCountry": "US"
+        },
+        "areaServed": [
+            {
+                "@type": "State",
+                "name": "Delaware"
+            },
+            {
+                "@type": "State",
+                "name": "Pennsylvania"
+            }
+        ],
+        "serviceType": ["Pool Installation", "Pool Maintenance", "Pool Repair"],
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "07:00",
+            "closes": "18:00"
+        }
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,10 +165,52 @@
             padding: 0 clamp(1.5rem, 5vw, 4rem);
         }
 
+        /* ==================== URGENCY BANNER ==================== */
+        .urgency-banner {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .urgency-banner .banner-text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .urgency-banner .banner-highlight {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .urgency-banner a {
+            color: var(--aqua);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid var(--aqua);
+            transition: opacity 0.3s ease;
+        }
+
+        .urgency-banner a:hover {
+            opacity: 0.8;
+        }
+
         /* ==================== NAVIGATION ==================== */
         nav {
             position: fixed;
-            top: 0;
+            top: 40px;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -495,7 +593,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 120px 1.5rem 60px;
+            padding: 160px 1.5rem 60px;
             background: linear-gradient(180deg, var(--gray-light) 0%, var(--white) 100%);
             position: relative;
             overflow: hidden;
@@ -1391,6 +1489,84 @@
             font-size: 0.85rem;
         }
 
+        /* ==================== WHY CHOOSE US SECTION ==================== */
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .why-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .why-card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .why-card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .why-card:nth-child(odd) .why-card-icon {
+            background: var(--aqua-glow);
+        }
+
+        .why-card:nth-child(odd) .why-card-icon svg {
+            stroke: var(--aqua);
+        }
+
+        .why-card:nth-child(even) .why-card-icon {
+            background: var(--gold-glow);
+        }
+
+        .why-card:nth-child(even) .why-card-icon svg {
+            stroke: var(--gold);
+        }
+
+        .why-card h3 {
+            font-size: 1.25rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .why-card p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ==================== CREDENTIALS SECTION ==================== */
         .credentials-section {
             padding: 3rem 0;
@@ -1751,8 +1927,13 @@
         }
 
         @media (max-width: 768px) {
+            .urgency-banner {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
             .question-hero {
-                padding: 100px 1.5rem 40px;
+                padding: 140px 1.5rem 40px;
             }
 
             .trust-bar {
@@ -1863,6 +2044,15 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXFWZNHH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <span class="banner-text">
+            <span class="banner-highlight">Spring 2026 Installation Spots Available</span>
+            &mdash; Now accepting deposits. Limited spots remaining.
+        </span>
+        <a href="/contact/">Book Free Consultation</a>
+    </div>
 
     <!-- Navigation -->
     <nav>
@@ -2131,12 +2321,12 @@
                     Licensed & Insured
                 </div>
                 <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    15+ Years Experience
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    30+ Satisfied Customers
                 </div>
             </div>
 
-            <h1 class="hero-question">Need a Pool <em>Built or Serviced?</em></h1>
+            <h1 class="hero-question">Plunge Pool Installation & <em>Expert Pool Services</em> in Main Line PA & Delaware</h1>
             <p class="hero-subtitle">We install boutique plunge and cocktail pools. We also maintain ANY pool - regardless of who built it.</p>
 
             <a href="tel:+13028703113" class="hero-phone">
@@ -2147,7 +2337,7 @@
 
         <div class="choice-cards">
             <!-- Build a Pool Card (Gold) -->
-            <a href="/pools/" class="choice-card build">
+            <a href="/contact/" class="choice-card build">
                 <div class="card-decoration"></div>
                 <div class="choice-icon">
                     <svg viewBox="0 0 24 24">
@@ -2166,8 +2356,8 @@
                         <span class="card-stat-label">Week Install</span>
                     </div>
                     <div class="card-stat">
-                        <span class="card-stat-value">500+</span>
-                        <span class="card-stat-label">Pools Built</span>
+                        <span class="card-stat-value">Spring</span>
+                        <span class="card-stat-label">2026 Booking</span>
                     </div>
                 </div>
 
@@ -2229,8 +2419,8 @@
                     Certified Pool Technicians
                 </div>
                 <div class="credential-item">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    Serving PA & DE Since 2009
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Serving Main Line PA & Northern Delaware
                 </div>
                 <div class="credential-item">
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -2287,8 +2477,8 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="/pools/" class="overview-cta">
-                        Design My Pool
+                    <a href="/contact/" class="overview-cta">
+                        Schedule Free Consultation
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
@@ -2339,28 +2529,28 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Why Choose Us Section -->
     <section class="testimonials-section">
         <div class="container">
             <div class="testimonials-content">
                 <div class="testimonials-header">
-                    <div class="section-tag">Trusted by Homeowners</div>
-                    <h2>Real Results From Real Customers</h2>
-                    <p>Hear from homeowners across Delaware and Pennsylvania who trust us with their pools.</p>
+                    <div class="section-tag">Why Choose Us</div>
+                    <h2>Experienced Pool Professionals You Can Trust</h2>
+                    <p>Our team brings decades of hands-on pool industry experience to every installation and service call across Delaware and Pennsylvania.</p>
                 </div>
 
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-number">500<span>+</span></div>
-                        <div class="stat-label">Pools Installed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">15<span>+</span></div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-number">30<span>+</span></div>
+                        <div class="stat-label">Satisfied Customers</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">24<span>/7</span></div>
                         <div class="stat-label">Emergency Service</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2<span>-4</span></div>
+                        <div class="stat-label">Week Pool Install</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">100<span>%</span></div>
@@ -2368,53 +2558,48 @@
                     </div>
                 </div>
 
-                <div class="testimonials-grid">
-                    <div class="testimonial-card build-testimonial">
-                        <div class="testimonial-type">Pool Installation</div>
-                        <p class="testimonial-quote">"Our plunge pool transformed our small backyard into a luxury retreat. The team was professional from design to final inspection. Couldn't be happier!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MK</div>
-                            <div class="author-info">
-                                <div class="author-name">Michael K.</div>
-                                <div class="author-location">Greenville, DE</div>
-                            </div>
+                <div class="why-choose-grid">
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
+                        <h3>Licensed & Fully Insured</h3>
+                        <p>We carry full liability insurance and all required state licenses so you have complete peace of mind.</p>
                     </div>
-
-                    <div class="testimonial-card service-testimonial">
-                        <div class="testimonial-type">Pool Maintenance</div>
-                        <p class="testimonial-quote">"They service our pool that another company built. Never had an issue with them taking over - they treat it like their own. Weekly service is flawless."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">JM</div>
-                            <div class="author-info">
-                                <div class="author-name">Jennifer M.</div>
-                                <div class="author-location">Hockessin, DE</div>
-                            </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         </div>
+                        <h3>Decades of Pool Expertise</h3>
+                        <p>Our team has extensive experience across every aspect of pool installation, maintenance, and repair.</p>
                     </div>
-
-                    <div class="testimonial-card service-testimonial">
-                        <div class="testimonial-type">Equipment Repair</div>
-                        <p class="testimonial-quote">"Called on a Saturday with a pump emergency. They were at my house within 2 hours and had it fixed before dinner. That's the kind of service you can't find anymore."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">RS</div>
-                            <div class="author-info">
-                                <div class="author-name">Robert S.</div>
-                                <div class="author-location">West Chester, PA</div>
-                            </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         </div>
+                        <h3>Locally Owned & Operated</h3>
+                        <p>Based in Hockessin, Delaware - we serve Main Line PA and Northern DE. Your neighbors trust us with their pools.</p>
                     </div>
-
-                    <div class="testimonial-card build-testimonial">
-                        <div class="testimonial-type">Pool Installation</div>
-                        <p class="testimonial-quote">"The cocktail pool is exactly what we envisioned. Perfect for entertaining, and they handled the entire permit process. Now they do our weekly maintenance too."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">LT</div>
-                            <div class="author-info">
-                                <div class="author-name">Lisa T.</div>
-                                <div class="author-location">Bryn Mawr, PA</div>
-                            </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
                         </div>
+                        <h3>We Service ANY Pool</h3>
+                        <p>No matter who built your pool, we will maintain and repair it. We work with all brands and pool types.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3>24/7 Emergency Response</h3>
+                        <p>Pool emergency? We are available around the clock for urgent repairs when you need us most.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>
+                        </div>
+                        <h3>Boutique Pool Installation</h3>
+                        <p>We specialize in plunge pools and cocktail pools - compact luxury pools perfect for any backyard.</p>
                     </div>
                 </div>
             </div>
@@ -2434,7 +2619,7 @@
                     <div class="cta-option build-cta">
                         <h3>Build a New Pool</h3>
                         <p>Free design consultation and estimate for plunge, cocktail, or fiberglass pools.</p>
-                        <a href="/pools/" class="cta-btn gold">
+                        <a href="/contact/" class="cta-btn gold">
                             Schedule Consultation
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
@@ -2475,7 +2660,7 @@
                             <span>Solutions</span>
                         </div>
                     </a>
-                    <p>Premium pool installation and expert maintenance services for Main Line Philadelphia and Northern Delaware. Building backyard dreams since 2009.</p>
+                    <p>Premium pool installation and expert maintenance services for Main Line Philadelphia and Northern Delaware. Your local pool professionals.</p>
                 </div>
 
                 <div class="footer-column install-column">

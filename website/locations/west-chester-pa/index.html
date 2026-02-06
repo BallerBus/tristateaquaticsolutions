@@ -36,6 +36,8 @@
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="US-PA">
     <meta name="geo.placename" content="West Chester">
+    <meta name="geo.position" content="39.9607;-75.6055">
+    <meta name="ICBM" content="39.9607, -75.6055">
     <link rel="canonical" href="https://tristateaquaticsolutions.com/locations/west-chester-pa/">
 
     <!-- Fonts -->
@@ -53,21 +55,42 @@
         "url": "https://tristateaquaticsolutions.com/locations/west-chester-pa/",
         "telephone": "+1-302-870-3113",
         "email": "Bryce@TriStateAquaticSolutions.com",
-        "areaServed": {
-            "@type": "City",
-            "name": "West Chester",
-            "containedInPlace": {
-                "@type": "State",
-                "name": "Pennsylvania"
-            }
+        "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "West Chester",
+                "addressRegion": "PA",
+                "postalCode": "19380",
+                "addressCountry": "US"
         },
-        "priceRange": "$50,000 - $130,000",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "68"
-        }
-    }
+        "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.9607,
+                "longitude": -75.6055
+        },
+        "areaServed": [
+                {
+                        "@type": "City",
+                        "name": "West Chester",
+                        "containedInPlace": {
+                                "@type": "State",
+                                "name": "Pennsylvania"
+                        }
+                },
+                {
+                        "@type": "City",
+                        "name": "Malvern"
+                },
+                {
+                        "@type": "City",
+                        "name": "Chadds Ford"
+                },
+                {
+                        "@type": "City",
+                        "name": "Media"
+                }
+        ],
+        "priceRange": "$50,000 - $130,000"
+}
     </script>
 
     <!-- Breadcrumb Schema -->
@@ -81,6 +104,56 @@
             {"@type": "ListItem", "position": 3, "name": "Pennsylvania", "item": "https://tristateaquaticsolutions.com/locations/pennsylvania/"},
             {"@type": "ListItem", "position": 4, "name": "Chester County", "item": "https://tristateaquaticsolutions.com/locations/chester-county-pa/"},
             {"@type": "ListItem", "position": 5, "name": "West Chester", "item": "https://tristateaquaticsolutions.com/locations/west-chester-pa/"}
+        ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does pool installation take in West Chester?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fiberglass pools typically install in 2-4 weeks. Concrete pools take 8-12 weeks. Timeline includes all permit coordination with the Borough or township."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you install a pool on a small Borough lot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We have extensive experience with compact urban lots. Custom shapes and strategic placement can create a beautiful pool even in limited space."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do different townships have different requirements?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. West Chester Borough, West Goshen, East Goshen, Westtown, and surrounding townships each have specific requirements. We handle permits for all jurisdictions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What pool type works best for West Chester homes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both concrete and fiberglass work beautifully. Concrete offers maximum customization for unique lots, while fiberglass provides faster installation and lower maintenance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What maintenance is included?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Every West Chester installation includes 1-2 years of complimentary maintenance. We also offer ongoing maintenance packages for continued care."
+                }
+            }
         ]
     }
     </script>
@@ -314,6 +387,16 @@
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Nearby Locations */
+        .nearby-locations { background: var(--white); }
+        .nearby-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .nearby-card { background: var(--gray-light); border-radius: 16px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; text-decoration: none; }
+        .nearby-card:hover { background: var(--navy); transform: translateY(-3px); }
+        .nearby-card:hover h4, .nearby-card:hover p { color: var(--white); }
+        .nearby-card h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+        .nearby-card p { font-size: 0.9rem; color: var(--gray-text); margin: 0; }
+        @media (max-width: 640px) { .nearby-grid { grid-template-columns: 1fr; } }
     </style>
 <!-- PostHog Analytics -->
 <script>
@@ -389,10 +472,7 @@
                 </div>
                 <div class="local-visual reveal reveal-delay-1">
                     <div class="local-image">
-                        <div class="local-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>West Chester Pool Installation</p>
-                        </div>
+                        <img src="/images/locations/optimized/west-chester-contemporary.jpg" alt="Pool installation in West Chester, PA" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                     </div>
                     <div class="local-badge">
                         <div class="local-badge-number">68+</div>
@@ -502,10 +582,7 @@
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/historic-property.jpg" alt="Victorian courtyard pool" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Borough Victorian Courtyard Pool</h4>
@@ -514,10 +591,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-1">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/suburban-family.jpg" alt="Family pool with sun shelf" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>West Goshen Family Pool</h4>
@@ -526,10 +600,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-2">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/resort-backyard.jpg" alt="Resort-style pool with vanishing edge" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Westtown Estate Pool</h4>
@@ -538,10 +609,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-3">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/main-line-estate.jpg" alt="Naturalistic pool with boulder waterfall" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Thornbury Creek-View Pool</h4>
@@ -561,6 +629,7 @@
                     <h2>West Chester Permit Expertise</h2>
                     <p>West Chester Borough and the surrounding townships each have specific requirements for pool installations. Our team has extensive experience navigating these varied jurisdictions, ensuring your project proceeds smoothly regardless of your property's location.</p>
                     <p>Borough properties often have unique considerations: smaller lots requiring creative design solutions, older infrastructure that demands careful planning, and historic district guidelines that must be respected. We work closely with municipal officials to ensure full compliance while achieving your design goals.</p>
+                    <p style="margin-top: 1rem;"><a href="https://www.west-chester.com/197/Building-Permits" target="_blank" rel="noopener" style="color: var(--aqua); text-decoration: none; font-weight: 500;">View West Chester Borough Permit Guide &rarr;</a></p>
                 </div>
                 <div class="reveal reveal-delay-1">
                     <ul class="permit-list">
@@ -665,6 +734,31 @@
         </div>
     </section>
 
+    <!-- Nearby Locations -->
+    <section class="nearby-locations">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Nearby Areas</div>
+                <h2>Nearby Locations We Serve</h2>
+                <p>We also build pools in these communities near West Chester.</p>
+            </div>
+            <div class="nearby-grid">
+                <a href="../malvern-pa/" class="nearby-card reveal">
+                    <h4>Malvern</h4>
+                    <p>Chester County pool builder</p>
+                </a>
+                <a href="../chadds-ford-pa/" class="nearby-card reveal reveal-delay-1">
+                    <h4>Chadds Ford</h4>
+                    <p>Brandywine Valley pools</p>
+                </a>
+                <a href="../media-pa/" class="nearby-card reveal reveal-delay-2">
+                    <h4>Media</h4>
+                    <p>Delaware County pools</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -673,9 +767,9 @@
                 <h2>Ready to Transform Your West Chester Home?</h2>
                 <p>Schedule your complimentary consultation. We will visit your property, discuss your vision, and show you what is possible.</p>
                 <div class="cta-buttons">
-                    <a href="tel:+16108703113" class="btn btn-cta-primary">
+                    <a href="tel:+13028703113" class="btn btn-cta-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Call (610) 870-3113
+                        Call (302) 870-3113
                     </a>
                     <a href="mailto:Bryce@TriStateAquaticSolutions.com?subject=West Chester Pool Consultation" class="btn btn-cta-secondary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -719,7 +813,7 @@
                     <ul class="footer-contact">
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <a href="tel:+16108703113">(610) 870-3113</a>
+                            <a href="tel:+13028703113">(302) 870-3113</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

@@ -1054,14 +1054,31 @@
                         </div>
                     </div>
 
-                    <!-- CTA -->
-                    <div class="cta-card">
-                        <h3>Ready to Invest in Your Lifestyle?</h3>
-                        <p>Let's discuss your pool project and create a plan that maximizes both value and enjoyment.</p>
-                        <a href="/contact/" class="btn btn-primary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            Schedule Free Consultation
-                        </a>
+                    <!-- Lead Capture CTA -->
+                    <div class="cta-card" id="roiLeadCard">
+                        <h3>Get Your Personalized ROI Analysis</h3>
+                        <p>Want a detailed breakdown for your specific property? Let us create a custom ROI report.</p>
+
+                        <form id="roiLeadForm" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; text-align: left;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                                <input type="text" name="name" placeholder="Your Name" required style="padding: 0.9rem 1rem; border: 1.5px solid #E8ECF1; border-radius: 12px; font-family: var(--font-body); font-size: 1rem;">
+                                <input type="email" name="email" placeholder="Email Address" required style="padding: 0.9rem 1rem; border: 1.5px solid #E8ECF1; border-radius: 12px; font-family: var(--font-body); font-size: 1rem;">
+                            </div>
+                            <input type="tel" name="phone" placeholder="Phone Number (optional)" style="padding: 0.9rem 1rem; border: 1.5px solid #E8ECF1; border-radius: 12px; font-family: var(--font-body); font-size: 1rem;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                Send My Custom ROI Report
+                            </button>
+                            <p style="font-size: 0.75rem; color: var(--gray-text); text-align: center;">Free, no obligation. We respect your privacy.</p>
+                        </form>
+
+                        <div id="roiLeadSuccess" style="display: none; text-align: center; padding: 1rem 0;">
+                            <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <h4 style="color: var(--navy); margin-bottom: 0.5rem;">Thank You!</h4>
+                            <p style="color: var(--gray-text); font-size: 0.9rem;">Your personalized ROI report will be in your inbox within 24 hours.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1110,6 +1127,27 @@
     </section>
 
     <script>
+        // GA4 tracking helper
+        function trackGA4Event(eventName, params) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, params);
+            }
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({ 'event': eventName, ...params });
+            }
+        }
+
+        // Track tool start
+        const toolStartTime = Date.now();
+        let calculationCount = 0;
+        let lastCalculation = {};
+
+        trackGA4Event('tool_start', {
+            'event_category': 'Tools',
+            'event_label': 'ROI Calculator',
+            'tool_name': 'roi_calculator'
+        });
+
         // Parse currency string to number
         function parseCurrency(str) {
             return parseInt(str.replace(/[^0-9]/g, '')) || 0;
@@ -1179,6 +1217,30 @@
             // Enjoyment stats
             document.getElementById('totalSwimDays').textContent = totalUses.toLocaleString();
             document.getElementById('familyMemories').textContent = Math.round(years * 75) + '+';
+
+            // Store last calculation for tracking
+            lastCalculation = {
+                homeValue: homeValue,
+                poolInvestment: poolInvestment,
+                years: years,
+                quality: qualityNames[quality - 1],
+                roi: Math.round(finalRoi * 100),
+                valueIncrease: valueIncrease
+            };
+
+            // Track calculation (debounced to avoid spam)
+            calculationCount++;
+            if (calculationCount === 1 || calculationCount % 5 === 0) {
+                trackGA4Event('roi_calculated', {
+                    'event_category': 'Tools',
+                    'event_label': 'ROI Calculator',
+                    'home_value_range': homeValue < 500000 ? 'under_500k' : homeValue < 750000 ? '500k_750k' : homeValue < 1000000 ? '750k_1m' : 'over_1m',
+                    'pool_investment_range': poolInvestment < 75000 ? 'under_75k' : poolInvestment < 100000 ? '75k_100k' : 'over_100k',
+                    'years_planned': years,
+                    'quality_level': qualityNames[quality - 1],
+                    'calculated_roi': Math.round(finalRoi * 100)
+                });
+            }
         }
 
         // Initialize sliders
@@ -1186,7 +1248,69 @@
         document.getElementById('qualitySlider').addEventListener('input', calculate);
 
         // Initial calculation
-        document.addEventListener('DOMContentLoaded', calculate);
+        document.addEventListener('DOMContentLoaded', function() {
+            calculate();
+
+            // Track time on tool when leaving
+            window.addEventListener('beforeunload', function() {
+                const timeSpent = Math.round((Date.now() - toolStartTime) / 1000);
+                trackGA4Event('tool_engagement', {
+                    'event_category': 'Tools',
+                    'event_label': 'ROI Calculator',
+                    'time_spent_seconds': timeSpent,
+                    'calculations_made': calculationCount,
+                    'final_roi': lastCalculation.roi || 0
+                });
+            });
+
+            // Lead capture form handling
+            const leadForm = document.getElementById('roiLeadForm');
+            if (leadForm) {
+                leadForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const formData = {
+                        name: this.querySelector('[name="name"]').value,
+                        email: this.querySelector('[name="email"]').value,
+                        phone: this.querySelector('[name="phone"]').value,
+                        source: 'roi-calculator',
+                        roiData: lastCalculation,
+                        timestamp: new Date().toISOString()
+                    };
+
+                    // Store lead
+                    const leads = JSON.parse(localStorage.getItem('tsas_leads') || '[]');
+                    leads.push(formData);
+                    localStorage.setItem('tsas_leads', JSON.stringify(leads));
+                    localStorage.setItem('tsas_user_email', formData.email);
+                    localStorage.setItem('tsas_user_name', formData.name);
+                    localStorage.setItem('tsas_form_submitted', 'true');
+
+                    // Show success message
+                    this.style.display = 'none';
+                    document.getElementById('roiLeadSuccess').style.display = 'block';
+
+                    // Track GA4 conversion
+                    trackGA4Event('generate_lead', {
+                        'event_category': 'Lead Generation',
+                        'event_label': 'ROI Calculator',
+                        'lead_source': 'roi_calculator',
+                        'calculated_roi': lastCalculation.roi || 0,
+                        'pool_investment': lastCalculation.poolInvestment || 0,
+                        'currency': 'USD',
+                        'value': 75
+                    });
+
+                    trackGA4Event('tool_conversion', {
+                        'event_category': 'Conversion',
+                        'event_label': 'ROI Calculator Lead',
+                        'tool_name': 'roi_calculator',
+                        'has_phone': formData.phone ? 'yes' : 'no',
+                        'calculations_before_convert': calculationCount
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>

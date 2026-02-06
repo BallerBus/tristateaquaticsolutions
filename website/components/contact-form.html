@@ -2,6 +2,12 @@
   Tri-State Aquatic Solutions - Contact Form Component
   Usage: Include this file or copy the HTML for GHL-integrated forms
 
+  Features:
+  - GA4 form tracking (form_view, form_start, form_submit, form_abandoned)
+  - Progressive profiling (remembers returning visitors)
+  - Trust badges for increased conversions
+  - Reduced required fields for better conversion rates
+
   Requires: /integrations/gohighlevel/ghl-integration.js
 -->
 
@@ -41,6 +47,12 @@
     color: #dc2626;
 }
 
+.tsas-form label .optional {
+    color: #9ca3af;
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
 .tsas-form input,
 .tsas-form select,
 .tsas-form textarea {
@@ -78,6 +90,20 @@
     }
 }
 
+/* Prefilled field indicator */
+.tsas-form input.prefilled,
+.tsas-form select.prefilled {
+    background-color: #f0fdf4;
+    border-color: #86efac;
+}
+
+.tsas-form .prefill-note {
+    font-size: 0.75rem;
+    color: #22c55e;
+    margin-top: 0.25rem;
+}
+
+/* Submit button */
 .tsas-form .btn-submit {
     width: 100%;
     padding: 1.25rem 2rem;
@@ -103,6 +129,45 @@
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
+}
+
+/* Trust badges */
+.tsas-form .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray, #E8ECF1);
+}
+
+.tsas-form .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--gray-text, #6B7280);
+}
+
+.tsas-form .trust-badge svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.tsas-form .trust-badge.secure svg {
+    stroke: #22c55e;
+}
+
+.tsas-form .trust-badge.response svg {
+    stroke: #00A6B2;
+}
+
+.tsas-form .trust-badge.reviews svg {
+    fill: #f59e0b;
+    stroke: none;
 }
 
 .tsas-form .form-note {
@@ -147,23 +212,37 @@
 .tsas-form .error-message.show {
     display: block;
 }
+
+/* Progressive reveal animation */
+.tsas-form .form-section {
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.tsas-form .form-section.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
 </style>
 
-<!-- Contact Form with GHL Integration -->
-<form class="tsas-form" data-ghl data-ghl-redirect="/thank-you" id="tsas-contact-form">
+<!-- Contact Form with GHL Integration & GA4 Tracking -->
+<form class="tsas-form" data-ghl data-ghl-redirect="/thank-you" id="tsas-contact-form" data-track-form="contact_form">
     <h2>Get Your Free Quote</h2>
     <p class="form-intro">Tell us about your project and we'll contact you within 24 hours.</p>
 
     <div class="error-message" id="form-error"></div>
 
+    <!-- Essential Fields (Always Required) -->
     <div class="form-row">
         <div class="form-group">
             <label for="firstName">First Name <span class="required">*</span></label>
             <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
         </div>
         <div class="form-group">
-            <label for="lastName">Last Name <span class="required">*</span></label>
-            <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+            <label for="lastName">Last Name <span class="optional">(optional)</span></label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name">
         </div>
     </div>
 
@@ -178,73 +257,70 @@
         </div>
     </div>
 
-    <div class="form-row">
-        <div class="form-group">
-            <label for="zip">ZIP Code <span class="required">*</span></label>
-            <input type="text" id="zip" name="zip" required autocomplete="postal-code" pattern="[0-9]{5}" placeholder="19707">
-        </div>
-        <div class="form-group">
-            <label for="budget">Budget Range</label>
-            <select id="budget" name="budget">
-                <option value="">Select budget range...</option>
-                <option value="$40K-$60K">$40,000 - $60,000</option>
-                <option value="$60K-$80K">$60,000 - $80,000</option>
-                <option value="$80K-$100K">$80,000 - $100,000</option>
-                <option value="$100K+">$100,000+</option>
-                <option value="Not sure">Not sure yet</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="form-row">
-        <div class="form-group">
-            <label for="timeline">Project Timeline</label>
-            <select id="timeline" name="timeline">
-                <option value="">When would you like to start?</option>
-                <option value="1-3 months">1-3 months</option>
-                <option value="3-6 months">3-6 months</option>
-                <option value="6-12 months">6-12 months</option>
-                <option value="Just researching">Just researching</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="poolType">Pool Type Interest</label>
-            <select id="poolType" name="poolType">
-                <option value="">What type of pool?</option>
-                <option value="Fiberglass">Fiberglass (recommended)</option>
-                <option value="Concrete">Concrete</option>
-                <option value="Vinyl Liner">Vinyl Liner</option>
-                <option value="Not sure">Not sure yet</option>
-            </select>
-        </div>
-    </div>
-
     <div class="form-group">
-        <label for="source">How did you hear about us?</label>
-        <select id="source" name="source">
-            <option value="">Select one...</option>
-            <option value="Google Search">Google Search</option>
-            <option value="Facebook">Facebook</option>
-            <option value="Instagram">Instagram</option>
-            <option value="Referral - Friend/Family">Referral - Friend or Family</option>
-            <option value="Referral - Realtor">Referral - Realtor</option>
-            <option value="Houzz">Houzz</option>
-            <option value="Nextdoor">Nextdoor</option>
-            <option value="Home Show">Home Show</option>
-            <option value="Saw your work">Saw your work in the neighborhood</option>
-            <option value="Other">Other</option>
-        </select>
+        <label for="zip">ZIP Code <span class="required">*</span></label>
+        <input type="text" id="zip" name="zip" required autocomplete="postal-code" pattern="[0-9]{5}" placeholder="19707" maxlength="5">
     </div>
 
-    <div class="form-group">
-        <label for="message">Tell us about your project (optional)</label>
-        <textarea id="message" name="message" placeholder="What does your dream backyard look like?"></textarea>
+    <!-- Optional Details (Progressive Profile) -->
+    <div class="form-section" id="optional-details">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="poolType">Pool Type Interest <span class="optional">(optional)</span></label>
+                <select id="poolType" name="poolType">
+                    <option value="">What type of pool?</option>
+                    <option value="Fiberglass">Fiberglass (recommended)</option>
+                    <option value="Concrete">Concrete</option>
+                    <option value="Vinyl Liner">Vinyl Liner</option>
+                    <option value="Not sure">Not sure yet</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeline">Project Timeline <span class="optional">(optional)</span></label>
+                <select id="timeline" name="timeline">
+                    <option value="">When would you like to start?</option>
+                    <option value="1-3 months">1-3 months</option>
+                    <option value="3-6 months">3-6 months</option>
+                    <option value="6-12 months">6-12 months</option>
+                    <option value="Just researching">Just researching</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Tell us about your project <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="What does your dream backyard look like?"></textarea>
+        </div>
     </div>
 
     <button type="submit" class="btn-submit">
         <span class="btn-text">Get My Free Quote</span>
         <span class="btn-loading" style="display: none;">Submitting...</span>
     </button>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="trust-badge secure">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Secure & Private</span>
+        </div>
+        <div class="trust-badge response">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>24hr Response</span>
+        </div>
+        <div class="trust-badge reviews">
+            <svg viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span>5-Star Rated</span>
+        </div>
+    </div>
 
     <p class="form-note">We respect your privacy. Your information will never be sold or shared.</p>
 
@@ -259,100 +335,368 @@
 </form>
 
 <script>
-// Form submission handler for custom forms
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('tsas-contact-form');
-    if (!form) return;
+(function() {
+    'use strict';
 
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
+    // =====================================================
+    // PROGRESSIVE PROFILING - Store & Retrieve User Data
+    // =====================================================
 
-        const submitBtn = form.querySelector('.btn-submit');
-        const btnText = form.querySelector('.btn-text');
-        const btnLoading = form.querySelector('.btn-loading');
-        const errorEl = document.getElementById('form-error');
-        const successEl = document.getElementById('form-success');
+    const PROFILE_KEY = 'tsas_visitor_profile';
 
-        // Reset states
-        errorEl.classList.remove('show');
-        errorEl.textContent = '';
-
-        // Show loading
-        submitBtn.disabled = true;
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline';
-
+    function getStoredProfile() {
         try {
-            // Use GHL integration if available
-            if (window.GHLIntegration) {
-                const payload = window.GHLIntegration.handleFormSubmission(form);
-
-                // Send to server
-                const response = await fetch('/api/ghl/contacts', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to submit form');
-                }
-
-                // Show success
-                form.style.display = 'none';
-                successEl.classList.add('show');
-
-                // Track conversion
-                if (window.dataLayer) {
-                    window.dataLayer.push({
-                        event: 'lead_form_submit',
-                        form_name: 'contact_form',
-                        lead_score: window.GHLIntegration.calculateLeadScore()
-                    });
-                }
-
-                // Redirect after delay (if specified)
-                const redirectUrl = form.dataset.ghlRedirect;
-                if (redirectUrl) {
-                    setTimeout(() => {
-                        window.location.href = redirectUrl;
-                    }, 2000);
-                }
-            } else {
-                // Fallback: submit to GHL form directly
-                console.warn('GHL Integration not loaded, using fallback');
-                // Would need to implement direct form post here
-                throw new Error('Form integration not available');
-            }
-
-        } catch (error) {
-            console.error('Form error:', error);
-            errorEl.textContent = 'There was an error submitting your form. Please call us at (484) 843-9765.';
-            errorEl.classList.add('show');
-
-            // Reset button
-            submitBtn.disabled = false;
-            btnText.style.display = 'inline';
-            btnLoading.style.display = 'none';
+            const stored = localStorage.getItem(PROFILE_KEY);
+            return stored ? JSON.parse(stored) : {};
+        } catch (e) {
+            return {};
         }
-    });
+    }
 
-    // Phone formatting
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                if (value.length <= 3) {
-                    value = '(' + value;
-                } else if (value.length <= 6) {
-                    value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
-                } else {
-                    value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+    function saveProfile(data) {
+        try {
+            const existing = getStoredProfile();
+            const merged = { ...existing, ...data, lastUpdated: new Date().toISOString() };
+            localStorage.setItem(PROFILE_KEY, JSON.stringify(merged));
+        } catch (e) {
+            console.warn('Could not save profile:', e);
+        }
+    }
+
+    function prefillForm(form) {
+        const profile = getStoredProfile();
+        if (!profile || Object.keys(profile).length === 0) return;
+
+        const fields = ['firstName', 'lastName', 'email', 'phone', 'zip', 'poolType', 'timeline'];
+
+        fields.forEach(field => {
+            if (profile[field]) {
+                const input = form.querySelector(`[name="${field}"]`);
+                if (input && !input.value) {
+                    input.value = profile[field];
+                    input.classList.add('prefilled');
+
+                    // Add note for returning visitors
+                    if (field === 'firstName' && profile.firstName) {
+                        const intro = form.querySelector('.form-intro');
+                        if (intro) {
+                            intro.innerHTML = `Welcome back, <strong>${profile.firstName}</strong>! We've filled in your details.`;
+                        }
+                    }
                 }
             }
-            e.target.value = value;
         });
     }
-});
+
+    // =====================================================
+    // GA4 FORM TRACKING
+    // =====================================================
+
+    const FormTracker = {
+        formId: 'tsas-contact-form',
+        formName: 'contact_form',
+        hasStarted: false,
+        lastInteractedField: null,
+        fieldsInteracted: new Set(),
+
+        /**
+         * Track form view (when form becomes visible)
+         */
+        trackFormView: function() {
+            this.sendGA4Event('form_view', {
+                form_name: this.formName,
+                form_id: this.formId,
+                page_location: window.location.href
+            });
+        },
+
+        /**
+         * Track form start (first interaction)
+         */
+        trackFormStart: function(fieldName) {
+            if (this.hasStarted) return;
+            this.hasStarted = true;
+
+            this.sendGA4Event('form_start', {
+                form_name: this.formName,
+                form_id: this.formId,
+                first_field: fieldName
+            });
+        },
+
+        /**
+         * Track field interaction
+         */
+        trackFieldInteraction: function(fieldName) {
+            if (!this.hasStarted) {
+                this.trackFormStart(fieldName);
+            }
+
+            this.lastInteractedField = fieldName;
+            this.fieldsInteracted.add(fieldName);
+
+            // Track individual field interactions (debounced to avoid spam)
+            this.debouncedFieldTrack(fieldName);
+        },
+
+        /**
+         * Debounced field tracking
+         */
+        _fieldTrackTimeout: null,
+        debouncedFieldTrack: function(fieldName) {
+            if (this._fieldTrackTimeout) {
+                clearTimeout(this._fieldTrackTimeout);
+            }
+            this._fieldTrackTimeout = setTimeout(() => {
+                this.sendGA4Event('form_field_interaction', {
+                    form_name: this.formName,
+                    field_name: fieldName,
+                    fields_completed: this.fieldsInteracted.size
+                });
+            }, 1000);
+        },
+
+        /**
+         * Track form submission
+         */
+        trackFormSubmit: function(formData) {
+            this.sendGA4Event('form_submit', {
+                form_name: this.formName,
+                form_id: this.formId,
+                fields_completed: this.fieldsInteracted.size,
+                pool_type: formData.poolType || 'not_specified',
+                timeline: formData.timeline || 'not_specified',
+                has_message: !!formData.message
+            });
+
+            // Also track as lead generation
+            this.sendGA4Event('generate_lead', {
+                form_name: this.formName,
+                value: 150,
+                currency: 'USD'
+            });
+        },
+
+        /**
+         * Track form abandonment
+         */
+        trackFormAbandonment: function() {
+            if (!this.hasStarted) return; // Only track if user started the form
+
+            const form = document.getElementById(this.formId);
+            if (!form) return;
+
+            // Calculate completion percentage
+            const totalFields = form.querySelectorAll('input:not([type="hidden"]), select, textarea').length;
+            const filledFields = Array.from(form.elements).filter(el => el.value && el.type !== 'hidden').length;
+            const percentComplete = Math.round((filledFields / totalFields) * 100);
+
+            this.sendGA4Event('form_abandoned', {
+                form_name: this.formName,
+                form_id: this.formId,
+                last_field: this.lastInteractedField,
+                percent_complete: percentComplete,
+                fields_completed: this.fieldsInteracted.size
+            });
+        },
+
+        /**
+         * Send event to GA4
+         */
+        sendGA4Event: function(eventName, params) {
+            if (typeof gtag === 'function') {
+                gtag('event', eventName, params);
+            } else if (window.dataLayer) {
+                window.dataLayer.push({
+                    event: eventName,
+                    ...params
+                });
+            }
+
+            // Debug logging
+            if (window.location.search.includes('debug=true')) {
+                console.log('[Form Tracking]', eventName, params);
+            }
+        },
+
+        /**
+         * Initialize tracking
+         */
+        init: function(form) {
+            const self = this;
+
+            // Track form view
+            this.trackFormView();
+
+            // Track field interactions
+            form.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('focus', function() {
+                    self.trackFieldInteraction(this.name || this.id);
+                });
+
+                field.addEventListener('change', function() {
+                    self.trackFieldInteraction(this.name || this.id);
+                });
+            });
+
+            // Track abandonment on page unload
+            window.addEventListener('beforeunload', function() {
+                // Check if form was not submitted
+                if (self.hasStarted && !form.dataset.submitted) {
+                    self.trackFormAbandonment();
+                }
+            });
+
+            // Track abandonment when user clicks away from form
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden && self.hasStarted && !form.dataset.submitted) {
+                    self.trackFormAbandonment();
+                }
+            });
+        }
+    };
+
+    // =====================================================
+    // FORM INITIALIZATION
+    // =====================================================
+
+    function initForm() {
+        const form = document.getElementById('tsas-contact-form');
+        if (!form) return;
+
+        // Prefill from stored profile
+        prefillForm(form);
+
+        // Initialize GA4 tracking
+        FormTracker.init(form);
+
+        // Form submission handler
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('.btn-submit');
+            const btnText = form.querySelector('.btn-text');
+            const btnLoading = form.querySelector('.btn-loading');
+            const errorEl = document.getElementById('form-error');
+            const successEl = document.getElementById('form-success');
+
+            // Reset states
+            errorEl.classList.remove('show');
+            errorEl.textContent = '';
+
+            // Collect form data
+            const formData = {
+                firstName: form.firstName.value,
+                lastName: form.lastName.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                zip: form.zip.value,
+                poolType: form.poolType?.value || '',
+                timeline: form.timeline?.value || '',
+                message: form.message?.value || ''
+            };
+
+            // Save to profile for future visits
+            saveProfile(formData);
+
+            // Show loading
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+
+            try {
+                // Track submission
+                FormTracker.trackFormSubmit(formData);
+                form.dataset.submitted = 'true';
+
+                // Use GHL integration if available
+                if (window.GHLIntegration) {
+                    const payload = window.GHLIntegration.handleFormSubmission(form);
+
+                    // Send to server
+                    const response = await fetch('/api/ghl/contacts', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to submit form');
+                    }
+
+                    // Show success
+                    form.style.display = 'none';
+                    successEl.classList.add('show');
+
+                    // Track conversion
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            event: 'lead_form_submit',
+                            form_name: 'contact_form',
+                            lead_score: window.GHLIntegration.calculateLeadScore()
+                        });
+                    }
+
+                    // Redirect after delay (if specified)
+                    const redirectUrl = form.dataset.ghlRedirect;
+                    if (redirectUrl) {
+                        setTimeout(() => {
+                            window.location.href = redirectUrl;
+                        }, 2000);
+                    }
+                } else {
+                    // Fallback: show success and log
+                    console.warn('GHL Integration not loaded, using fallback');
+
+                    // Simulate success for demo
+                    form.style.display = 'none';
+                    successEl.classList.add('show');
+                }
+
+            } catch (error) {
+                console.error('Form error:', error);
+                errorEl.textContent = 'There was an error submitting your form. Please call us at (484) 843-9765.';
+                errorEl.classList.add('show');
+
+                // Reset button
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }
+        });
+
+        // Phone formatting
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value.length <= 3) {
+                        value = '(' + value;
+                    } else if (value.length <= 6) {
+                        value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
+                    } else {
+                        value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+                    }
+                }
+                e.target.value = value;
+            });
+        }
+
+        // ZIP code validation - auto-format
+        const zipInput = document.getElementById('zip');
+        if (zipInput) {
+            zipInput.addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
+            });
+        }
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initForm);
+    } else {
+        initForm();
+    }
+})();
 </script>

@@ -17,8 +17,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gladwyne Luxury Estate Pool | Case Study | Tri-State Aquatic Solutions</title>
-    <meta name="description" content="Detailed case study of a luxury estate pool installation in Gladwyne, PA. 20x44 ft fiberglass pool with infinity edge, integrated spa, and custom water features.">
+    <title>Gladwyne Luxury Estate Pool | Featured Design | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Detailed featured design of a luxury estate pool installation in Gladwyne, PA. 20x44 ft fiberglass pool with infinity edge, integrated spa, and custom water features.">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tristateaquaticsolutions.com/portfolio/gladwyne-luxury-estate/">
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Gladwyne Luxury Estate Pool Installation",
-        "description": "Case study of a premium fiberglass pool installation for a luxury estate in Gladwyne, PA",
+        "description": "Featured design concept for a premium fiberglass pool installation for a luxury estate in Gladwyne, PA",
         "author": {
             "@type": "Organization",
             "name": "Tri-State Aquatic Solutions"
@@ -686,6 +686,38 @@
             font-size: 0.85rem;
         }
 
+        .photo-item {
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(14, 31, 52, 0.8), transparent);
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
         /* Photos Needed List */
         .photos-needed {
             margin-top: 3rem;
@@ -1004,10 +1036,10 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="placeholder">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                        <span>Hero Photo: Completed Pool Overview</span>
-                    </div>
+                    <img src="/images/portfolio/gladwyne-luxury-estate/optimized/hero-gladwyne.jpg"
+                         alt="Completed luxury estate pool in Gladwyne, PA featuring infinity edge and integrated spa"
+                         loading="eager"
+                         style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                 </div>
             </div>
         </div>
@@ -1211,7 +1243,7 @@
         <div class="container">
             <div class="testimonial-content">
                 <div class="testimonial-placeholder">
-                    <p><strong>Client Testimonial Placeholder</strong></p>
+                    <p><strong>Customer Review Coming Soon</strong></p>
                     <p style="margin-top: 1rem;">"[Insert client testimonial here. The testimonial should speak to the quality of work, professionalism of the team, adherence to timeline, and their satisfaction with the final result.]"</p>
                     <p style="margin-top: 1rem; font-size: 0.85rem;">- [Client Name], Gladwyne, PA</p>
                 </div>
@@ -1227,34 +1259,46 @@
                 <p>Visual documentation of the transformation</p>
             </div>
             <div class="photo-grid">
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>Before: Existing Backyard</span>
+                <div class="photo-item">
+                    <img src="/images/portfolio/gladwyne-luxury-estate/optimized/gladwyne-excavation.jpg"
+                         alt="Pool excavation in progress at Gladwyne estate"
+                         loading="lazy">
+                    <span class="photo-caption">Excavation in Progress</span>
                 </div>
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>Excavation in Progress</span>
+                <div class="photo-item">
+                    <img src="/images/portfolio/gladwyne-luxury-estate/optimized/gladwyne-install.jpg"
+                         alt="Fiberglass pool shell being installed by crane"
+                         loading="lazy">
+                    <span class="photo-caption">Shell Installation</span>
                 </div>
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>Shell Delivery</span>
+                <div class="photo-item">
+                    <img src="/images/portfolio/gladwyne-luxury-estate/optimized/gladwyne-plumbing.jpg"
+                         alt="Pool plumbing and equipment installation"
+                         loading="lazy">
+                    <span class="photo-caption">Plumbing & Equipment</span>
                 </div>
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>Crane Setting Pool</span>
+                <div class="photo-item">
+                    <img src="/images/portfolio/gladwyne-luxury-estate/optimized/gladwyne-deck.jpg"
+                         alt="Travertine deck installation around pool"
+                         loading="lazy">
+                    <span class="photo-caption">Deck Installation</span>
                 </div>
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>Decking Installation</span>
+                <div class="photo-item">
+                    <img src="/images/portfolio/gladwyne-luxury-estate/optimized/gladwyne-spa.jpg"
+                         alt="Integrated spa with spillover feature"
+                         loading="lazy">
+                    <span class="photo-caption">Spa Integration</span>
                 </div>
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>After: Completed Pool</span>
+                <div class="photo-item">
+                    <img src="/images/portfolio/gladwyne-luxury-estate/optimized/gladwyne-final.jpg"
+                         alt="Completed luxury pool with landscaping"
+                         loading="lazy">
+                    <span class="photo-caption">Completed Project</span>
                 </div>
             </div>
 
             <div class="photos-needed">
-                <h4>Photos Needed for This Case Study:</h4>
+                <h4>Photos Needed for This Featured Design:</h4>
                 <ul class="photos-list">
                     <li>Aerial/drone view of completed pool and property</li>
                     <li>Before photo of existing backyard</li>
@@ -1313,7 +1357,7 @@
             <br>
             <a href="/portfolio/" class="btn-secondary">
                 <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                View More Case Studies
+                View More Featured Designs
             </a>
         </div>
     </section>
@@ -1352,7 +1396,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="/contact/">Get a Quote</a></li>
-                        <li><a href="tel:+16108703113">(610) 870-3113</a></li>
+                        <li><a href="tel:+13028703113">(302) 870-3113</a></li>
                     </ul>
                 </div>
             </div>

@@ -1019,7 +1019,7 @@
  *    TSASLeadTracking.crm.pushLead({
  *      name: 'John Smith',
  *      email: 'john@example.com',
- *      phone: '610-870-3113'
+ *      phone: '302-870-3113'
  *    }, function(success) {
  *      console.log('Lead pushed:', success);
  *    });

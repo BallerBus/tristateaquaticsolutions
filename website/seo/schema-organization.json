@@ -26,11 +26,11 @@
     "width": 1920,
     "height": 1080
   },
-  "telephone": "+1-610-870-3113",
+  "telephone": "+1-302-870-3113",
   "email": "info@tristateaquaticsolutions.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Main Street",
+    "streetAddress": "",
     "addressLocality": "Hockessin",
     "addressRegion": "DE",
     "postalCode": "19707",
@@ -47,7 +47,7 @@
       "geoRadius": "50"
     }
   ],
-  "foundingDate": "2024",
+  "foundingDate": "2023",
   "foundingLocation": {
     "@type": "Place",
     "name": "Hockessin, Delaware"
@@ -117,7 +117,7 @@
     {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "telephone": "+1-610-870-3113",
+      "telephone": "+1-302-870-3113",
       "email": "info@tristateaquaticsolutions.com",
       "availableLanguage": "English",
       "areaServed": ["US-PA", "US-DE"]
@@ -125,7 +125,7 @@
     {
       "@type": "ContactPoint",
       "contactType": "sales",
-      "telephone": "+1-610-870-3113",
+      "telephone": "+1-302-870-3113",
       "email": "quotes@tristateaquaticsolutions.com",
       "availableLanguage": "English"
     }
@@ -134,8 +134,7 @@
     "https://www.facebook.com/tristateaquaticsolutions",
     "https://www.instagram.com/tristateaquaticsolutions",
     "https://www.linkedin.com/company/tri-state-aquatic-solutions",
-    "https://www.yelp.com/biz/tri-state-aquatic-solutions",
-    "https://www.bbb.org/us/de/hockessin/profile/swimming-pool-contractors/tri-state-aquatic-solutions"
+    "https://www.yelp.com/biz/tri-state-aquatic-solutions"
   ],
   "potentialAction": [
     {

@@ -43,10 +43,13 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-610-870-3113",
+        "telephone": "+1-302-870-3113",
         "contactType": "customer service",
         "email": "info@tristateaquaticsolutions.com",
-        "areaServed": ["US-PA", "US-DE"],
+        "areaServed": [
+          "US-PA",
+          "US-DE"
+        ],
         "availableLanguage": "English"
       }
     },
@@ -56,7 +59,7 @@
       "name": "Tri-State Aquatic Solutions",
       "description": "Premium pool installation company serving Main Line Philadelphia and Northern Delaware. Specializing in fiberglass pools, custom concrete pools, and plunge pools.",
       "url": "https://tristateaquaticsolutions.com",
-      "telephone": "+1-610-870-3113",
+      "telephone": "+1-302-870-3113",
       "email": "info@tristateaquaticsolutions.com",
       "priceRange": "$$$",
       "image": [
@@ -68,7 +71,7 @@
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Main Street",
+        "streetAddress": "",
         "addressLocality": "Hockessin",
         "addressRegion": "DE",
         "postalCode": "19707",
@@ -92,7 +95,13 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
           "opens": "08:00",
           "closes": "18:00"
         },
@@ -103,12 +112,6 @@
           "closes": "14:00"
         }
       ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "47",
-        "bestRating": "5"
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Pool Services",

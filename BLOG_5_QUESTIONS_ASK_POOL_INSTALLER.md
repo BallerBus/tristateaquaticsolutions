@@ -99,9 +99,9 @@ These 5 questions will help you identify the right installer—and avoid costly 
 
 **Watch how they communicate:**
 
-- **Green flag:** Slow responses, vague answers, doesn't return calls
-- **Green flag:** Doesn't send written estimates or proposals
-- **Green flag:** Poor communication during installation (you shouldn't have to chase them)
+- **Red flag:** Slow responses, vague answers, doesn't return calls
+- **Red flag:** Doesn't send written estimates or proposals
+- **Red flag:** Poor communication during installation (you shouldn't have to chase them)
 
 ---
 

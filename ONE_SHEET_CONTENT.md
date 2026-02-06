@@ -162,7 +162,7 @@ We partner with top manufacturers (Pentair, Hayward, Jandy, Latham, Viking) to e
 - **Viking Pools** - Premium fiberglass options
 
 ### Service Providers
-- **Pool Cleaning Dude** - Seasonal maintenance services
+- **In-house maintenance team** - Seasonal maintenance services
 - **Landscapers** - Pool area landscaping and hardscaping
 - **Electricians** - Pool electrical connections
 - **Plumbers** - Pool plumbing and equipment installation
@@ -199,15 +199,14 @@ Main Line Pennsylvania & Northern Delaware
 Headquarters: Hockessin, DE
 
 **Contact:**
-Email: brandonbot67@gmail.com
-Phone: (Provided by Boss)
+Email: Bryce@TriStateAquaticSolutions.com
+Phone: (302) 870-3113
 
 **Website:**
 https://tristateaquaticsolutions.com
 
 **Social Media:**
-Facebook: facebook.com/poolcleaningdude
-Instagram: instagram.com/poolcleaningdude
+[Social media accounts to be created under Tri-State Aquatic Solutions branding]
 
 ---
 

@@ -36,6 +36,8 @@
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="US-PA">
     <meta name="geo.placename" content="Berwyn">
+    <meta name="geo.position" content="40.0448;-75.4388">
+    <meta name="ICBM" content="40.0448, -75.4388">
     <link rel="canonical" href="https://tristateaquaticsolutions.com/locations/berwyn-pa/">
 
     <!-- Fonts -->
@@ -53,21 +55,42 @@
         "url": "https://tristateaquaticsolutions.com/locations/berwyn-pa/",
         "telephone": "+1-302-870-3113",
         "email": "Bryce@TriStateAquaticSolutions.com",
-        "areaServed": {
-            "@type": "City",
-            "name": "Berwyn",
-            "containedInPlace": {
-                "@type": "State",
-                "name": "Pennsylvania"
-            }
+        "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Berwyn",
+                "addressRegion": "PA",
+                "postalCode": "19312",
+                "addressCountry": "US"
         },
-        "priceRange": "$50,000 - $130,000",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "31"
-        }
-    }
+        "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.0448,
+                "longitude": -75.4388
+        },
+        "areaServed": [
+                {
+                        "@type": "City",
+                        "name": "Berwyn",
+                        "containedInPlace": {
+                                "@type": "State",
+                                "name": "Pennsylvania"
+                        }
+                },
+                {
+                        "@type": "City",
+                        "name": "Devon"
+                },
+                {
+                        "@type": "City",
+                        "name": "Malvern"
+                },
+                {
+                        "@type": "City",
+                        "name": "Wayne"
+                }
+        ],
+        "priceRange": "$50,000 - $130,000"
+}
     </script>
 
     <!-- Breadcrumb Schema -->
@@ -80,6 +103,56 @@
             {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://tristateaquaticsolutions.com/locations/"},
             {"@type": "ListItem", "position": 3, "name": "Pennsylvania", "item": "https://tristateaquaticsolutions.com/locations/pennsylvania/"},
             {"@type": "ListItem", "position": 4, "name": "Berwyn", "item": "https://tristateaquaticsolutions.com/locations/berwyn-pa/"}
+        ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does pool installation take in Berwyn?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fiberglass pools typically install in 2-4 weeks. Concrete pools take 8-12 weeks. We coordinate all Tredyffrin permits to ensure smooth timelines."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are Tredyffrin's pool requirements?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tredyffrin Township has specific setback, impervious coverage, and safety barrier requirements. We handle all permit documentation and inspections."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you serve Devon and Paoli too?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We serve all of Tredyffrin Township including Devon, Paoli, Strafford, and surrounding Chester County communities."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you work with sloped Berwyn lots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Many Berwyn properties have grade changes. We design pools that work with your terrain, including infinity edges that take advantage of slopes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What maintenance is included with Berwyn pool installation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Every Berwyn installation includes 1-2 years of complimentary maintenance. We also offer ongoing maintenance packages for continued care."
+                }
+            }
         ]
     }
     </script>
@@ -386,10 +459,7 @@
                 </div>
                 <div class="local-visual reveal reveal-delay-1">
                     <div class="local-image">
-                        <div class="local-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Berwyn Pool Installation</p>
-                        </div>
+                        <img src="/images/locations/optimized/suburban-family.jpg" alt="Pool installation in Berwyn" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                     </div>
                     <div class="local-badge">
                         <div class="local-badge-number">31+</div>
@@ -499,10 +569,7 @@
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/main-line-estate.jpg" alt="North Berwyn Estate Pool" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>North Berwyn Estate Pool</h4>
@@ -511,10 +578,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-1">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/suburban-family.jpg" alt="Daylesford Family Retreat" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Daylesford Family Retreat</h4>
@@ -523,10 +587,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-2">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/historic-property.jpg" alt="Central Berwyn Traditional Pool" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Central Berwyn Traditional Pool</h4>
@@ -535,10 +596,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-3">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/contemporary-design.jpg" alt="Devon Edge Contemporary Pool" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Devon Edge Contemporary Pool</h4>
@@ -558,6 +616,7 @@
                     <h2>Berwyn Permit Expertise</h2>
                     <p>Tredyffrin Township maintains specific requirements for pool construction, including setbacks, impervious coverage limits, and safety barrier specifications. Our team has extensive experience navigating these requirements and maintaining strong relationships with township officials.</p>
                     <p>Many Berwyn properties also sit within Chester County's jurisdiction for certain permits. We coordinate all required approvals so your project proceeds without delays or complications.</p>
+                    <p style="margin-top: 1.5rem;"><a href="https://www.tredyffrin.org/departments/building-codes-zoning/" target="_blank" rel="noopener" style="color: var(--aqua); text-decoration: underline;">View Easttown Township Permit Information</a></p>
                 </div>
                 <div class="reveal reveal-delay-1">
                     <ul class="permit-list">
@@ -645,6 +704,21 @@
         </div>
     </section>
 
+    <!-- Nearby Locations -->
+    <section class="services" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Nearby Locations</div>
+                <h2>We Also Serve</h2>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="../malvern-pa/" style="background: var(--white); padding: 1.25rem 2rem; border-radius: 12px; text-decoration: none; color: var(--navy); font-weight: 500; transition: all 0.3s ease; border: 1px solid var(--gray);">Devon, PA</a>
+                <a href="../malvern-pa/" style="background: var(--white); padding: 1.25rem 2rem; border-radius: 12px; text-decoration: none; color: var(--navy); font-weight: 500; transition: all 0.3s ease; border: 1px solid var(--gray);">Malvern, PA</a>
+                <a href="../wayne-pa/" style="background: var(--white); padding: 1.25rem 2rem; border-radius: 12px; text-decoration: none; color: var(--navy); font-weight: 500; transition: all 0.3s ease; border: 1px solid var(--gray);">Wayne, PA</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Map -->
     <section class="map-section">
         <div class="container">
@@ -670,9 +744,9 @@
                 <h2>Ready to Transform Your Berwyn Property?</h2>
                 <p>Schedule your complimentary consultation. We will visit your property, discuss your vision, and show you what is possible.</p>
                 <div class="cta-buttons">
-                    <a href="tel:+16108703113" class="btn btn-cta-primary">
+                    <a href="tel:+13028703113" class="btn btn-cta-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Call (610) 870-3113
+                        Call (302) 870-3113
                     </a>
                     <a href="mailto:Bryce@TriStateAquaticSolutions.com?subject=Berwyn Pool Consultation" class="btn btn-cta-secondary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -716,7 +790,7 @@
                     <ul class="footer-contact">
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <a href="tel:+16108703113">(610) 870-3113</a>
+                            <a href="tel:+13028703113">(302) 870-3113</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

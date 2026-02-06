@@ -36,6 +36,8 @@
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="US-PA">
     <meta name="geo.placename" content="Villanova">
+    <meta name="geo.position" content="40.0379;-75.3454">
+    <meta name="ICBM" content="40.0379, -75.3454">
     <link rel="canonical" href="https://tristateaquaticsolutions.com/locations/villanova-pa/">
 
     <!-- Fonts -->
@@ -53,20 +55,78 @@
         "url": "https://tristateaquaticsolutions.com/locations/villanova-pa/",
         "telephone": "+1-302-870-3113",
         "email": "Bryce@TriStateAquaticSolutions.com",
-        "areaServed": {
-            "@type": "City",
-            "name": "Villanova",
-            "containedInPlace": {
-                "@type": "State",
-                "name": "Pennsylvania"
-            }
+        "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Villanova",
+                "addressRegion": "PA",
+                "postalCode": "19085",
+                "addressCountry": "US"
         },
-        "priceRange": "$50,000 - $130,000",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "42"
-        }
+        "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.0379,
+                "longitude": -75.3454
+        },
+        "areaServed": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 40.0379,
+                        "longitude": -75.3454
+                },
+                "geoRadius": "15 mi"
+        },
+        "priceRange": "$50,000 - $130,000"
+}
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does pool installation take in Villanova?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fiberglass pools typically install in 2-4 weeks. Concrete pools take 8-12 weeks. We coordinate all Radnor Township permits to ensure a smooth timeline."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you handle permits for Radnor Township?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We manage the entire permitting process with Radnor Township, including zoning applications, safety barrier requirements, and final inspections."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What pool type is best for a Villanova estate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For larger properties and custom designs, concrete offers maximum flexibility. Fiberglass provides faster installation with excellent durability for most residential needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer pool maintenance services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Every Villanova installation includes 1-2 years of complimentary maintenance. We also offer ongoing maintenance packages."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you work with existing landscape design?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We regularly collaborate with landscape architects and designers to ensure seamless integration of pool, hardscape, and plantings."
+                }
+            }
+        ]
     }
     </script>
 
@@ -299,12 +359,14 @@
             .projects-grid { grid-template-columns: 1fr; }
             .faq-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nearby-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 640px) {
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
             .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
             .cta-buttons { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
+            .nearby-grid { grid-template-columns: 1fr !important; }
         }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease-out-expo); }
@@ -385,10 +447,7 @@
                 </div>
                 <div class="local-visual reveal reveal-delay-1">
                     <div class="local-image">
-                        <div class="local-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Villanova Estate Pool</p>
-                        </div>
+                        <img src="/images/locations/optimized/villanova-estate-fiberglass.jpg" alt="Pool installation in Villanova, PA" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                     </div>
                     <div class="local-badge">
                         <div class="local-badge-number">15</div>
@@ -494,10 +553,7 @@
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/main-line-estate.jpg" alt="Estate pool with integrated spa" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Spring Mill Road Estate Pool</h4>
@@ -506,10 +562,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-1">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/suburban-family.jpg" alt="Family fiberglass pool with tanning ledge" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Villanova University Area Family Pool</h4>
@@ -518,10 +571,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-2">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/contemporary-design.jpg" alt="Contemporary rectangular pool" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Contemporary Villanova Pool</h4>
@@ -530,10 +580,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-3">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/resort-backyard.jpg" alt="Luxury plunge pool in courtyard" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Villanova Plunge Pool</h4>
@@ -553,7 +600,7 @@
                 <p>We handle all permit coordination so you can focus on enjoying your new pool.</p>
             </div>
             <div class="permits-content reveal">
-                <p>Radnor Township maintains specific requirements for pool installations including setbacks, safety barriers, and impervious coverage limits. Our team has extensive experience navigating these requirements and maintains strong relationships with township officials.</p>
+                <p>Radnor Township maintains specific requirements for pool installations including setbacks, safety barriers, and impervious coverage limits. Our team has extensive experience navigating these requirements and maintains strong relationships with township officials. For detailed permit requirements, see our <a href="/permits/radnor-township/" style="color: var(--aqua); text-decoration: underline;">Radnor Township Pool Permit Guide</a>.</p>
                 <ul class="permit-list">
                     <li>
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -596,7 +643,7 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                 </div>
                 <p class="testimonial-text">"From our first meeting to the final walkthrough, the team was professional, communicative, and genuinely invested in making our backyard dreams come true. The pool was installed in just three weeks, and the quality exceeded our expectations. Our neighbors have already started asking for their contact information."</p>
-                <div class="testimonial-author">Jennifer M.</div>
+                <div class="testimonial-author">A Satisfied Local Homeowner</div>
                 <div class="testimonial-location">Villanova, PA</div>
             </div>
         </div>
@@ -651,6 +698,34 @@
         </div>
     </section>
 
+    <!-- Nearby Locations -->
+    <section class="nearby-locations" style="background: var(--gray-light);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Nearby</div>
+                <h2>Nearby Locations We Serve</h2>
+            </div>
+            <div class="nearby-grid reveal" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+                <a href="../wayne-pa/" style="background: var(--white); border-radius: 16px; padding: 1.5rem; text-align: center; text-decoration: none; transition: all 0.4s ease;">
+                    <h4 style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem;">Wayne</h4>
+                    <p style="font-size: 0.85rem; color: var(--aqua); margin: 0;">5 min away</p>
+                </a>
+                <a href="../gladwyne-pa/" style="background: var(--white); border-radius: 16px; padding: 1.5rem; text-align: center; text-decoration: none; transition: all 0.4s ease;">
+                    <h4 style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem;">Gladwyne</h4>
+                    <p style="font-size: 0.85rem; color: var(--aqua); margin: 0;">8 min away</p>
+                </a>
+                <a href="../bryn-mawr-pa/" style="background: var(--white); border-radius: 16px; padding: 1.5rem; text-align: center; text-decoration: none; transition: all 0.4s ease;">
+                    <h4 style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem;">Bryn Mawr</h4>
+                    <p style="font-size: 0.85rem; color: var(--aqua); margin: 0;">7 min away</p>
+                </a>
+                <a href="../radnor-pa/" style="background: var(--white); border-radius: 16px; padding: 1.5rem; text-align: center; text-decoration: none; transition: all 0.4s ease;">
+                    <h4 style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem;">Radnor</h4>
+                    <p style="font-size: 0.85rem; color: var(--aqua); margin: 0;">3 min away</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -659,9 +734,9 @@
                 <h2>Ready to Transform Your Villanova Backyard?</h2>
                 <p>Schedule your free design consultation. We will visit your home, discuss your vision, and show you what is possible for your property.</p>
                 <div class="cta-buttons">
-                    <a href="tel:+16108703113" class="btn btn-cta-primary">
+                    <a href="tel:+13028703113" class="btn btn-cta-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Call (610) 870-3113
+                        Call (302) 870-3113
                     </a>
                     <a href="mailto:Bryce@TriStateAquaticSolutions.com?subject=Villanova Pool Consultation" class="btn btn-cta-secondary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -705,7 +780,7 @@
                     <ul class="footer-contact">
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <a href="tel:+16108703113">(610) 870-3113</a>
+                            <a href="tel:+13028703113">(302) 870-3113</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

@@ -3,7 +3,7 @@
   "@type": "FAQPage",
   "name": "Pool Installation FAQ - Tri-State Aquatic Solutions",
   "description": "Comprehensive FAQ covering pool costs, installation timelines, fiberglass vs concrete, PA/DE permits, financing, and maintenance for Main Line Philadelphia and Northern Delaware.",
-  "url": "https://tristateaquatic.com/faq-comprehensive/",
+  "url": "https://tristateaquaticsolutions.com/faq-comprehensive/",
   "mainEntity": [
     {
       "@type": "Question",
@@ -415,7 +415,7 @@
       "name": "How do I get a free pool installation quote?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Getting a quote is easy: call us at (302) 542-8512, email Bryce@TriStateAquaticSolutions.com, or fill out our online contact form. We will schedule a free on-site consultation where we assess your property, discuss your vision, review design options, and provide a detailed written proposal with transparent pricing. There is no pressure or obligation. Most consultations take 45-60 minutes."
+        "text": "Getting a quote is easy: call us at (302) 870-3113, email Bryce@TriStateAquaticSolutions.com, or fill out our online contact form. We will schedule a free on-site consultation where we assess your property, discuss your vision, review design options, and provide a detailed written proposal with transparent pricing. There is no pressure or obligation. Most consultations take 45-60 minutes."
       },
       "category": "Company & Service Area"
     }
@@ -424,14 +424,14 @@
     "@type": "Organization",
     "name": "Tri-State Aquatic Solutions",
     "legalName": "Dude Venture Services LLC d/b/a Tri-State Aquatic Solutions",
-    "url": "https://tristateaquatic.com",
+    "url": "https://tristateaquaticsolutions.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://tristateaquatic.com/images/logo.png"
+      "url": "https://tristateaquaticsolutions.com/images/logo.png"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-302-542-8512",
+      "telephone": "+1-302-870-3113",
       "contactType": "customer service",
       "email": "Bryce@TriStateAquaticSolutions.com",
       "areaServed": ["Pennsylvania", "Delaware"],

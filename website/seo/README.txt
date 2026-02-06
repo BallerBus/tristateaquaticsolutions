@@ -108,14 +108,14 @@ Before deploying, validate your structured data:
 
 UPDATE FREQUENCY:
 - sitemap.xml: Update lastmod dates when pages change
-- Reviews in LocalBusiness: Update aggregateRating and add new reviews quarterly
+- Reviews in LocalBusiness: Add aggregateRating ONLY when real Google reviews exist
 - Price ranges: Update annually or when pricing changes
 - Blog sitemap entries: Add new articles as published
 
 IMPORTANT REMINDERS:
 - All URLs should use https://tristateaquaticsolutions.com (not .net or other)
-- Phone number placeholder: +16108703113 (update with real number)
-- Address placeholder: 123 Main Street (update with real address)
+- Phone number placeholder: +13028703113 (update with real number)
+- Address: Hockessin, DE 19707 (no specific street address)
 - Social media URLs are placeholders (update with real profiles)
 - Google Business Profile CID needs to be added
 

@@ -1434,6 +1434,63 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- ==================== PERMIT GUIDES ==================== -->
+
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/lower-merion-township/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/radnor-township/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/new-castle-county-de/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/west-chester-borough/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/easttown-township/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/tredyffrin-township/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/willistown-township/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/permits/newtown-township/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- ==================== PORTFOLIO / CASE STUDIES ==================== -->
 
   <url>

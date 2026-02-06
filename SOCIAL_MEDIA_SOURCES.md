@@ -1,42 +1,38 @@
-# Tri-State Social Media Sources
+# Tri-State Aquatic Solutions - Social Media Sources
 
-**Updated:** 2026-02-01
-
----
-
-## Current Social Media Presence
-
-### Facebook
-**URL:** facebook.com/poolcleaningdude
-**Status:** ❌ Error fetching (returns Meta help page)
-**Issue:** Web fetch tool cannot access Facebook profile page content
-**Note:** This appears to be a username/handle, not a public page
+**Updated:** 2026-02-06
 
 ---
 
-### Instagram
-**URL:** instagram.com/poolcleaningdude
-**Status:** ❌ Error fetching (redirects to Instagram home)
-**Issue:** Web fetch tool cannot access Instagram profile posts
-**Note:** This appears to be a username/handle, not a public page
+## Social Media Status
+
+### Current Status
+Social media accounts for **Tri-State Aquatic Solutions** have not yet been created.
+
+### Previous Handles (Old Brand - Do Not Use)
+- facebook.com/poolcleaningdude - Old "Pool Cleaning Dude" brand, not for Tri-State use
+- instagram.com/poolcleaningdude - Old "Pool Cleaning Dude" brand, not for Tri-State use
 
 ---
 
-## Recommendation
+## Action Items
 
-**For social media content viewing:** Use **browser automation** tool
-- Navigate to each platform manually
-- Take screenshots of content for portfolio use
-- Copy text for outreach
+1. **Create new social media accounts** under Tri-State Aquatic Solutions branding:
+   - Facebook Business Page: Tri-State Aquatic Solutions
+   - Instagram Business Profile: @tristateaquaticsolutions (or similar)
+   - Google Business Profile for local SEO
 
-**What these platforms likely have:**
-- Facebook business page with pool-related content
-- Instagram profile showing pool installation photos
-- Both should have consistent branding and contact info
+2. **Branding requirements:**
+   - Use Tri-State Aquatic Solutions name and logo consistently
+   - Link to website: https://tristateaquaticsolutions.com
+   - Contact email: Bryce@TriStateAquaticSolutions.com
+   - Contact phone: (302) 870-3113
 
-**Action needed:** 
-Use browser tool to navigate to each platform and capture screenshots of existing social media content. This will give us visual assets for sales materials and portfolio.
+3. **Content plan:**
+   - Post project photos as real installations are completed
+   - Share educational pool content (maintenance tips, seasonal guides)
+   - Engage with local community groups in Main Line PA and Northern DE
 
 ---
 
-*Documented for future reference*
+*Updated to reflect Tri-State Aquatic Solutions branding*

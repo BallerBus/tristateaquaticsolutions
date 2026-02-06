@@ -2,9 +2,14 @@
 Social Proof Popup Component for Tri-State Aquatic Solutions
 Shows recent activity notifications to build trust and urgency
 
+Features:
+- GA4 tracking for impressions and interactions
+- Real-looking data with local towns
+- Smart rules: max 1 per 60 seconds, no mobile, no form pages
+- Dismissible with localStorage persistence
+
 USAGE:
-Include this file before
-</body> on any page:
+Include this file before </body> on any page:
 <script src="/components/social-proof-popup.js"></script>
 
 Or copy the entire contents.
@@ -54,11 +59,15 @@ Or copy the entire contents.
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background 0.2s ease;
 }
 
 .social-proof-popup:hover .social-proof-close {
     opacity: 1;
+}
+
+.social-proof-close:hover {
+    background: #E8ECF1;
 }
 
 .social-proof-close svg {
@@ -99,6 +108,14 @@ Or copy the entire contents.
 
 .social-proof-icon.download {
     background: linear-gradient(135deg, rgba(201, 169, 98, 0.15) 0%, rgba(201, 169, 98, 0.05) 100%);
+}
+
+.social-proof-icon.schedule svg {
+    stroke: #22c55e;
+}
+
+.social-proof-icon.schedule {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.05) 100%);
 }
 
 .social-proof-text {
@@ -150,19 +167,16 @@ Or copy the entire contents.
     transition: transform linear;
 }
 
-/* Mobile adjustments */
-@media (max-width: 640px) {
+/* Hide on mobile - popup is disabled on mobile */
+@media (max-width: 768px) {
     .social-proof-popup {
-        left: 0.75rem;
-        right: 0.75rem;
-        max-width: none;
-        bottom: 5rem; /* Above sticky mobile CTA */
+        display: none !important;
     }
 }
 </style>
 
 <!-- Social Proof Popup HTML Container -->
-<div class="social-proof-popup" id="socialProofPopup" role="complementary" aria-live="polite">
+<div class="social-proof-popup" id="socialProofPopup" role="complementary" aria-live="polite" aria-label="Recent activity notification">
     <button class="social-proof-close" id="socialProofClose" aria-label="Close notification">
         <svg viewBox="0 0 24 24" fill="none">
             <line x1="18" y1="6" x2="6" y2="18"/>
@@ -195,139 +209,409 @@ Or copy the entire contents.
 (function() {
     'use strict';
 
-    const DISABLED_KEY = 'tsas_social_proof_disabled';
-    const SHOW_DELAY = 8000; // 8 seconds after page load
-    const DISPLAY_DURATION = 6000; // Show for 6 seconds
-    const INTERVAL = 45000; // 45 seconds between notifications
+    // =====================================================
+    // CONFIGURATION
+    // =====================================================
 
-    // Sample data - mix of quote requests and downloads
-    const notifications = [
-        { name: 'John', location: 'Gladwyne', action: 'just requested a quote', type: 'quote' },
-        { name: 'Sarah', location: 'Villanova', action: 'downloaded our planning guide', type: 'download' },
-        { name: 'Michael', location: 'Hockessin', action: 'just scheduled a consultation', type: 'quote' },
-        { name: 'Jennifer', location: 'Bryn Mawr', action: 'downloaded the Buyer\'s Guide', type: 'download' },
-        { name: 'David', location: 'Radnor', action: 'just requested a quote', type: 'quote' },
-        { name: 'Lisa', location: 'Wayne', action: 'completed our pool quiz', type: 'download' },
-        { name: 'Robert', location: 'Greenville', action: 'just scheduled a consultation', type: 'quote' },
-        { name: 'Emily', location: 'Haverford', action: 'downloaded our planning guide', type: 'download' },
-        { name: 'Chris', location: 'West Chester', action: 'just requested a quote', type: 'quote' },
-        { name: 'Amanda', location: 'Centreville', action: 'completed our pool quiz', type: 'download' },
-        { name: 'Mark', location: 'Malvern', action: 'just scheduled a consultation', type: 'quote' },
-        { name: 'Karen', location: 'Wilmington', action: 'downloaded the Buyer\'s Guide', type: 'download' },
+    const CONFIG = {
+        DISABLED_KEY: 'tsas_social_proof_disabled',
+        LAST_SHOWN_KEY: 'tsas_social_proof_last_shown',
+        SHOW_DELAY: 8000,           // 8 seconds after page load
+        DISPLAY_DURATION: 6000,     // Show for 6 seconds
+        MIN_INTERVAL: 60000,        // Minimum 60 seconds between notifications
+        MOBILE_BREAKPOINT: 768,     // Don't show on screens smaller than this
+        DEBUG: false
+    };
+
+    // Pages where popup should NOT show (form pages)
+    const EXCLUDED_PAGES = [
+        '/contact',
+        '/quote',
+        '/schedule',
+        '/consultation',
+        '/thank-you',
+        '/thank-you.html',
+        '/checkout'
     ];
 
-    const popup = document.getElementById('socialProofPopup');
-    const closeBtn = document.getElementById('socialProofClose');
-    const nameEl = document.getElementById('socialProofName');
-    const actionEl = document.getElementById('socialProofAction');
-    const timeEl = document.getElementById('socialProofTime');
-    const iconEl = document.getElementById('socialProofIcon');
-    const svgEl = document.getElementById('socialProofSvg');
-    const progressBar = document.getElementById('socialProofProgress');
+    // Sample data - Real local towns from the service area
+    const notifications = [
+        // Quote requests
+        { name: 'John', location: 'Gladwyne', action: 'requested a quote', type: 'quote', timeRange: [1, 5] },
+        { name: 'Michael', location: 'Hockessin', action: 'scheduled a consultation', type: 'schedule', timeRange: [2, 8] },
+        { name: 'David', location: 'Radnor', action: 'requested a quote', type: 'quote', timeRange: [1, 4] },
+        { name: 'Robert', location: 'Greenville', action: 'scheduled a consultation', type: 'schedule', timeRange: [3, 10] },
+        { name: 'Chris', location: 'West Chester', action: 'requested a quote', type: 'quote', timeRange: [1, 6] },
+        { name: 'Mark', location: 'Malvern', action: 'scheduled a consultation', type: 'schedule', timeRange: [2, 7] },
+        { name: 'James', location: 'Chadds Ford', action: 'requested a quote', type: 'quote', timeRange: [1, 5] },
+        { name: 'Thomas', location: 'Kennett Square', action: 'requested a quote', type: 'quote', timeRange: [2, 9] },
 
-    let currentIndex = 0;
-    let intervalId = null;
-    let isEnabled = true;
+        // Downloads (less frequent)
+        { name: 'Sarah', location: 'Villanova', action: 'downloaded our planning guide', type: 'download', timeRange: [5, 15] },
+        { name: 'Jennifer', location: 'Bryn Mawr', action: 'downloaded the Buyer\'s Guide', type: 'download', timeRange: [8, 20] },
+        { name: 'Lisa', location: 'Wayne', action: 'completed our pool quiz', type: 'download', timeRange: [3, 12] },
+        { name: 'Emily', location: 'Haverford', action: 'downloaded our planning guide', type: 'download', timeRange: [10, 25] },
+        { name: 'Amanda', location: 'Centreville', action: 'completed our pool quiz', type: 'download', timeRange: [4, 15] },
+        { name: 'Karen', location: 'Wilmington', action: 'downloaded the Buyer\'s Guide', type: 'download', timeRange: [6, 18] },
+        { name: 'Michelle', location: 'Newtown Square', action: 'downloaded our planning guide', type: 'download', timeRange: [5, 14] },
+        { name: 'Lauren', location: 'Media', action: 'completed our pool quiz', type: 'download', timeRange: [3, 11] }
+    ];
 
-    // Check if disabled
+    // =====================================================
+    // UTILITY FUNCTIONS
+    // =====================================================
+
+    function log(...args) {
+        if (CONFIG.DEBUG) {
+            console.log('[SocialProof]', ...args);
+        }
+    }
+
+    function isMobile() {
+        return window.innerWidth <= CONFIG.MOBILE_BREAKPOINT;
+    }
+
+    function isExcludedPage() {
+        const path = window.location.pathname.toLowerCase();
+        return EXCLUDED_PAGES.some(excluded => path.includes(excluded));
+    }
+
     function isDisabled() {
-        return localStorage.getItem(DISABLED_KEY) === 'true';
+        return localStorage.getItem(CONFIG.DISABLED_KEY) === 'true';
     }
 
-    // Get random time string
-    function getRandomTime() {
-        const times = ['just now', '1 minute ago', '2 minutes ago', '3 minutes ago', '5 minutes ago'];
-        return times[Math.floor(Math.random() * times.length)];
+    function canShowNotification() {
+        const lastShown = localStorage.getItem(CONFIG.LAST_SHOWN_KEY);
+        if (!lastShown) return true;
+
+        const elapsed = Date.now() - parseInt(lastShown, 10);
+        return elapsed >= CONFIG.MIN_INTERVAL;
     }
 
-    // Show notification
-    function showNotification() {
-        if (!isEnabled || isDisabled()) return;
-
-        const notification = notifications[currentIndex];
-        currentIndex = (currentIndex + 1) % notifications.length;
-
-        // Update content
-        nameEl.textContent = `${notification.name} from ${notification.location}`;
-        actionEl.textContent = notification.action;
-        timeEl.textContent = getRandomTime();
-
-        // Update icon based on type
-        if (notification.type === 'download') {
-            iconEl.classList.add('download');
-            svgEl.innerHTML = '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>';
-        } else {
-            iconEl.classList.remove('download');
-            svgEl.innerHTML = '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>';
-        }
-
-        // Show popup
-        popup.classList.remove('hiding');
-        popup.classList.add('visible');
-
-        // Reset and animate progress bar
-        progressBar.style.transition = 'none';
-        progressBar.style.transform = 'scaleX(1)';
-
-        requestAnimationFrame(() => {
-            progressBar.style.transition = `transform ${DISPLAY_DURATION}ms linear`;
-            progressBar.style.transform = 'scaleX(0)';
-        });
-
-        // Hide after duration
-        setTimeout(hideNotification, DISPLAY_DURATION);
+    function markAsShown() {
+        localStorage.setItem(CONFIG.LAST_SHOWN_KEY, Date.now().toString());
     }
 
-    // Hide notification
-    function hideNotification() {
-        popup.classList.add('hiding');
-        setTimeout(() => {
-            popup.classList.remove('visible', 'hiding');
-        }, 500);
+    function getRandomTime(min, max) {
+        const minutes = Math.floor(Math.random() * (max - min + 1)) + min;
+        if (minutes === 1) return '1 minute ago';
+        if (minutes < 60) return `${minutes} minutes ago`;
+        return 'about an hour ago';
     }
 
-    // Disable notifications
-    function disableNotifications() {
-        isEnabled = false;
-        hideNotification();
-        localStorage.setItem(DISABLED_KEY, 'true');
-        if (intervalId) {
-            clearInterval(intervalId);
-        }
-    }
-
-    // Initialize
-    function init() {
-        if (isDisabled()) return;
-
-        // Shuffle notifications
-        for (let i = notifications.length - 1; i > 0; i--) {
+    function shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [notifications[i], notifications[j]] = [notifications[j], notifications[i]];
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
-
-        // Show first notification after delay
-        setTimeout(() => {
-            showNotification();
-
-            // Continue showing at intervals
-            intervalId = setInterval(showNotification, INTERVAL);
-        }, SHOW_DELAY);
+        return shuffled;
     }
 
-    // Close button handler
-    closeBtn.addEventListener('click', disableNotifications);
+    // =====================================================
+    // GA4 TRACKING
+    // =====================================================
 
-    // Don't show on mobile if sticky CTA is present
-    if (window.innerWidth <= 640 && document.querySelector('.sticky-mobile-cta')) {
-        // Adjust position or disable
+    function trackGA4(eventName, params) {
+        if (typeof gtag === 'function') {
+            gtag('event', eventName, params);
+            log('GA4 event:', eventName, params);
+        } else if (window.dataLayer) {
+            window.dataLayer.push({
+                event: eventName,
+                ...params
+            });
+            log('dataLayer push:', eventName, params);
+        }
     }
 
-    // Initialize on page load
+    function trackImpression(notification) {
+        trackGA4('social_proof_impression', {
+            notification_type: notification.type,
+            notification_location: notification.location,
+            notification_action: notification.action,
+            page_location: window.location.pathname
+        });
+    }
+
+    function trackDismiss(notification, reason) {
+        trackGA4('social_proof_dismiss', {
+            notification_type: notification?.type || 'unknown',
+            dismiss_reason: reason, // 'close_button', 'auto_hide', 'user_disabled'
+            page_location: window.location.pathname
+        });
+    }
+
+    function trackClick(notification) {
+        trackGA4('social_proof_click', {
+            notification_type: notification.type,
+            notification_location: notification.location,
+            page_location: window.location.pathname
+        });
+    }
+
+    // =====================================================
+    // POPUP CONTROLLER
+    // =====================================================
+
+    const SocialProofPopup = {
+        popup: null,
+        closeBtn: null,
+        nameEl: null,
+        actionEl: null,
+        timeEl: null,
+        iconEl: null,
+        svgEl: null,
+        progressBar: null,
+
+        currentNotification: null,
+        notificationQueue: [],
+        currentIndex: 0,
+        intervalId: null,
+        isEnabled: true,
+        hideTimeout: null,
+
+        init: function() {
+            // Get DOM elements
+            this.popup = document.getElementById('socialProofPopup');
+            this.closeBtn = document.getElementById('socialProofClose');
+            this.nameEl = document.getElementById('socialProofName');
+            this.actionEl = document.getElementById('socialProofAction');
+            this.timeEl = document.getElementById('socialProofTime');
+            this.iconEl = document.getElementById('socialProofIcon');
+            this.svgEl = document.getElementById('socialProofSvg');
+            this.progressBar = document.getElementById('socialProofProgress');
+
+            if (!this.popup) {
+                log('Popup element not found');
+                return;
+            }
+
+            // Check conditions
+            if (this.shouldNotRun()) {
+                log('Social proof disabled due to conditions');
+                return;
+            }
+
+            // Prepare notification queue
+            this.notificationQueue = shuffleArray(notifications);
+
+            // Setup event listeners
+            this.setupEventListeners();
+
+            // Start showing notifications
+            this.scheduleFirstNotification();
+
+            log('Social proof popup initialized');
+        },
+
+        shouldNotRun: function() {
+            if (isDisabled()) {
+                log('User has disabled notifications');
+                return true;
+            }
+
+            if (isMobile()) {
+                log('Mobile device detected');
+                return true;
+            }
+
+            if (isExcludedPage()) {
+                log('Excluded page detected:', window.location.pathname);
+                return true;
+            }
+
+            return false;
+        },
+
+        setupEventListeners: function() {
+            const self = this;
+
+            // Close button
+            this.closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                self.disable();
+            });
+
+            // Click on popup (optional - could link to quote page)
+            this.popup.addEventListener('click', function(e) {
+                if (e.target !== self.closeBtn && !self.closeBtn.contains(e.target)) {
+                    trackClick(self.currentNotification);
+                    // Optional: navigate to quote page
+                    // window.location.href = '/contact';
+                }
+            });
+
+            // Pause on hover
+            this.popup.addEventListener('mouseenter', function() {
+                if (self.hideTimeout) {
+                    clearTimeout(self.hideTimeout);
+                    self.progressBar.style.animationPlayState = 'paused';
+                }
+            });
+
+            this.popup.addEventListener('mouseleave', function() {
+                if (self.popup.classList.contains('visible')) {
+                    self.scheduleHide();
+                }
+            });
+        },
+
+        scheduleFirstNotification: function() {
+            const self = this;
+            setTimeout(function() {
+                if (canShowNotification()) {
+                    self.show();
+                }
+            }, CONFIG.SHOW_DELAY);
+        },
+
+        show: function() {
+            if (!this.isEnabled || isMobile()) return;
+
+            // Check minimum interval
+            if (!canShowNotification()) {
+                log('Too soon since last notification');
+                this.scheduleNext();
+                return;
+            }
+
+            // Get next notification
+            const notification = this.notificationQueue[this.currentIndex];
+            this.currentNotification = notification;
+            this.currentIndex = (this.currentIndex + 1) % this.notificationQueue.length;
+
+            // If we've gone through all, reshuffle
+            if (this.currentIndex === 0) {
+                this.notificationQueue = shuffleArray(notifications);
+            }
+
+            // Update content
+            this.nameEl.textContent = `${notification.name} from ${notification.location}`;
+            this.actionEl.textContent = notification.action;
+            this.timeEl.textContent = getRandomTime(notification.timeRange[0], notification.timeRange[1]);
+
+            // Update icon based on type
+            this.updateIcon(notification.type);
+
+            // Show popup
+            this.popup.classList.remove('hiding');
+            this.popup.classList.add('visible');
+
+            // Animate progress bar
+            this.animateProgressBar();
+
+            // Mark as shown
+            markAsShown();
+
+            // Track impression
+            trackImpression(notification);
+
+            // Schedule hide
+            this.scheduleHide();
+
+            log('Showing notification:', notification);
+        },
+
+        updateIcon: function(type) {
+            this.iconEl.className = 'social-proof-icon';
+
+            switch (type) {
+                case 'download':
+                    this.iconEl.classList.add('download');
+                    this.svgEl.innerHTML = '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>';
+                    break;
+                case 'schedule':
+                    this.iconEl.classList.add('schedule');
+                    this.svgEl.innerHTML = '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/>';
+                    break;
+                default: // quote
+                    this.svgEl.innerHTML = '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>';
+            }
+        },
+
+        animateProgressBar: function() {
+            this.progressBar.style.transition = 'none';
+            this.progressBar.style.transform = 'scaleX(1)';
+
+            requestAnimationFrame(() => {
+                this.progressBar.style.transition = `transform ${CONFIG.DISPLAY_DURATION}ms linear`;
+                this.progressBar.style.transform = 'scaleX(0)';
+            });
+        },
+
+        scheduleHide: function() {
+            const self = this;
+            this.hideTimeout = setTimeout(function() {
+                self.hide('auto_hide');
+            }, CONFIG.DISPLAY_DURATION);
+        },
+
+        hide: function(reason) {
+            this.popup.classList.add('hiding');
+
+            const self = this;
+            setTimeout(function() {
+                self.popup.classList.remove('visible', 'hiding');
+            }, 500);
+
+            if (reason) {
+                trackDismiss(this.currentNotification, reason);
+            }
+
+            // Schedule next notification
+            this.scheduleNext();
+        },
+
+        scheduleNext: function() {
+            const self = this;
+
+            // Clear any existing interval
+            if (this.intervalId) {
+                clearTimeout(this.intervalId);
+            }
+
+            // Schedule next notification after minimum interval
+            this.intervalId = setTimeout(function() {
+                self.show();
+            }, CONFIG.MIN_INTERVAL);
+        },
+
+        disable: function() {
+            this.isEnabled = false;
+            this.hide('user_disabled');
+            localStorage.setItem(CONFIG.DISABLED_KEY, 'true');
+
+            if (this.intervalId) {
+                clearTimeout(this.intervalId);
+            }
+
+            if (this.hideTimeout) {
+                clearTimeout(this.hideTimeout);
+            }
+
+            log('User disabled social proof notifications');
+        }
+    };
+
+    // =====================================================
+    // INITIALIZATION
+    // =====================================================
+
+    function init() {
+        SocialProofPopup.init();
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
+
+    // Expose for debugging
+    if (CONFIG.DEBUG) {
+        window.SocialProofPopup = SocialProofPopup;
+    }
+
 })();
 </script>

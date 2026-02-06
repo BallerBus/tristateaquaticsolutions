@@ -18,11 +18,11 @@
     "https://tristateaquaticsolutions.com/images/gallery/gladwyne-modern-fiberglass.jpg",
     "https://tristateaquaticsolutions.com/images/pools/fiberglass-hero.jpg"
   ],
-  "telephone": "+1-610-870-3113",
+  "telephone": "+1-302-870-3113",
   "email": "info@tristateaquaticsolutions.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Main Street",
+    "streetAddress": "",
     "addressLocality": "Hockessin",
     "addressRegion": "DE",
     "postalCode": "19707",
@@ -79,7 +79,13 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
       "opens": "08:00",
       "closes": "18:00"
     },
@@ -93,24 +99,37 @@
   "contactPoint": [
     {
       "@type": "ContactPoint",
-      "telephone": "+1-610-870-3113",
+      "telephone": "+1-302-870-3113",
       "contactType": "customer service",
       "email": "info@tristateaquaticsolutions.com",
-      "availableLanguage": ["English"],
-      "areaServed": ["US-PA", "US-DE"],
+      "availableLanguage": [
+        "English"
+      ],
+      "areaServed": [
+        "US-PA",
+        "US-DE"
+      ],
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "opens": "08:00",
         "closes": "18:00"
       }
     },
     {
       "@type": "ContactPoint",
-      "telephone": "+1-610-870-3113",
+      "telephone": "+1-302-870-3113",
       "contactType": "sales",
       "email": "quotes@tristateaquaticsolutions.com",
-      "availableLanguage": ["English"]
+      "availableLanguage": [
+        "English"
+      ]
     }
   ],
   "founder": {
@@ -118,7 +137,7 @@
     "name": "Bryce",
     "jobTitle": "Owner"
   },
-  "foundingDate": "2024",
+  "foundingDate": "2023",
   "foundingLocation": {
     "@type": "Place",
     "address": {
@@ -205,43 +224,6 @@
       }
     ]
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "47",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Jennifer S."
-      },
-      "datePublished": "2025-08-15",
-      "reviewBody": "Tri-State Aquatic Solutions transformed our backyard into a stunning oasis. The team was professional, and they completed our fiberglass pool installation in just 3 weeks!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      }
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Michael R."
-      },
-      "datePublished": "2025-07-22",
-      "reviewBody": "We love our new concrete pool with spa. The automatic cover and ORP system make maintenance so easy. Highly recommend!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      }
-    }
-  ],
   "sameAs": [
     "https://www.facebook.com/tristateaquaticsolutions",
     "https://www.instagram.com/tristateaquaticsolutions",

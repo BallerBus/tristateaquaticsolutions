@@ -36,6 +36,8 @@
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="US-PA">
     <meta name="geo.placename" content="Haverford">
+    <meta name="geo.position" content="40.0104;-75.3025">
+    <meta name="ICBM" content="40.0104, -75.3025">
     <link rel="canonical" href="https://tristateaquaticsolutions.com/locations/haverford-pa/">
 
     <!-- Fonts -->
@@ -53,21 +55,42 @@
         "url": "https://tristateaquaticsolutions.com/locations/haverford-pa/",
         "telephone": "+1-302-870-3113",
         "email": "Bryce@TriStateAquaticSolutions.com",
-        "areaServed": {
-            "@type": "City",
-            "name": "Haverford",
-            "containedInPlace": {
-                "@type": "State",
-                "name": "Pennsylvania"
-            }
+        "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Haverford",
+                "addressRegion": "PA",
+                "postalCode": "19041",
+                "addressCountry": "US"
         },
-        "priceRange": "$50,000 - $130,000",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "52"
-        }
-    }
+        "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.0104",
+                "longitude": "-75.3025"
+        },
+        "areaServed": [
+                {
+                        "@type": "City",
+                        "name": "Haverford",
+                        "containedInPlace": {
+                                "@type": "State",
+                                "name": "Pennsylvania"
+                        }
+                },
+                {
+                        "@type": "City",
+                        "name": "Bryn Mawr"
+                },
+                {
+                        "@type": "City",
+                        "name": "Gladwyne"
+                },
+                {
+                        "@type": "City",
+                        "name": "Ardmore"
+                }
+        ],
+        "priceRange": "$50,000 - $130,000"
+}
     </script>
 
     <!-- Breadcrumb Schema -->
@@ -80,6 +103,56 @@
             {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://tristateaquaticsolutions.com/locations/"},
             {"@type": "ListItem", "position": 3, "name": "Pennsylvania", "item": "https://tristateaquaticsolutions.com/locations/pennsylvania/"},
             {"@type": "ListItem", "position": 4, "name": "Haverford", "item": "https://tristateaquaticsolutions.com/locations/haverford-pa/"}
+        ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does pool installation take in Haverford?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fiberglass pools typically install in 2-4 weeks. Concrete pools take 8-12 weeks. We coordinate all Haverford Township permits to ensure a smooth timeline."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you work around mature trees?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Many Haverford properties have significant trees that we carefully protect during construction. We develop tree protection plans and adjust equipment access to preserve your landscape."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What pool type suits older Haverford homes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both concrete and fiberglass work beautifully with traditional architecture. Concrete allows fully custom shapes, while fiberglass offers faster installation with classic profiles."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you handle all permits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We manage the complete permit process with Haverford Township from application through final inspection. You will not need to visit the building department."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What maintenance is included?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Every Haverford installation includes 1-2 years of complimentary maintenance. We also offer ongoing maintenance packages for continued care."
+                }
+            }
         ]
     }
     </script>
@@ -386,10 +459,7 @@
                 </div>
                 <div class="local-visual reveal reveal-delay-1">
                     <div class="local-image">
-                        <div class="local-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Haverford Pool Installation</p>
-                        </div>
+                        <img src="/images/locations/optimized/haverford-classic-concrete.jpg" alt="Pool installation in Haverford, PA" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                     </div>
                     <div class="local-badge">
                         <div class="local-badge-number">52+</div>
@@ -499,10 +569,7 @@
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/historic-property.jpg" alt="Classic rectangular pool with bluestone coping" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>College Lane Classic Pool</h4>
@@ -511,10 +578,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-1">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/contemporary-design.jpg" alt="Modern fiberglass lap pool" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Merion Golf Manor Lap Pool</h4>
@@ -523,10 +587,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-2">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/suburban-family.jpg" alt="Freeform family pool with sun shelf" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Coopertown Family Pool</h4>
@@ -535,10 +596,7 @@
                 </div>
                 <div class="project-card reveal reveal-delay-3">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            <p>Project Photo</p>
-                        </div>
+                        <img src="/images/locations/optimized/main-line-estate.jpg" alt="Garden pool with perennial borders" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-content">
                         <h4>Haverford Station Garden Pool</h4>
@@ -558,6 +616,7 @@
                     <h2>Haverford Permit Expertise</h2>
                     <p>Haverford Township maintains specific requirements for pool installations, and our team has the experience to navigate them efficiently. We handle the complete permit process, from initial application through final inspection, so you can focus on anticipating your new pool.</p>
                     <p>Many Haverford properties have unique considerations: mature trees that require protection, older homes with specific setback requirements, or gardens that have been cultivated for generations. We work carefully to preserve what makes your property special while adding the pool you envision.</p>
+                    <p style="margin-top: 1.5rem;"><a href="https://www.lowermerion.org/services/building-planning/permits-zoning" target="_blank" rel="noopener" style="color: var(--aqua); text-decoration: none; font-weight: 500;">View Lower Merion Township Permit Information</a></p>
                 </div>
                 <div class="reveal reveal-delay-1">
                     <ul class="permit-list">
@@ -662,6 +721,21 @@
         </div>
     </section>
 
+    <!-- Nearby Locations -->
+    <section class="nearby-locations" style="background: var(--gray-light); padding: clamp(3rem, 6vw, 4rem) 0;">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Nearby Service Areas</div>
+                <h2>Also Serving Nearby Communities</h2>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
+                <a href="../bryn-mawr-pa/" style="background: var(--white); padding: 1rem 2rem; border-radius: 100px; text-decoration: none; color: var(--navy); font-weight: 500; transition: all 0.3s ease; border: 2px solid transparent;" onmouseover="this.style.borderColor='var(--aqua)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">Bryn Mawr, PA</a>
+                <a href="../gladwyne-pa/" style="background: var(--white); padding: 1rem 2rem; border-radius: 100px; text-decoration: none; color: var(--navy); font-weight: 500; transition: all 0.3s ease; border: 2px solid transparent;" onmouseover="this.style.borderColor='var(--aqua)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">Gladwyne, PA</a>
+                <a href="../ardmore-pa/" style="background: var(--white); padding: 1rem 2rem; border-radius: 100px; text-decoration: none; color: var(--navy); font-weight: 500; transition: all 0.3s ease; border: 2px solid transparent;" onmouseover="this.style.borderColor='var(--aqua)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">Ardmore, PA</a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -670,9 +744,9 @@
                 <h2>Ready to Transform Your Haverford Home?</h2>
                 <p>Schedule your complimentary consultation. We will visit your property, discuss your vision, and show you what is possible.</p>
                 <div class="cta-buttons">
-                    <a href="tel:+16108703113" class="btn btn-cta-primary">
+                    <a href="tel:+13028703113" class="btn btn-cta-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Call (610) 870-3113
+                        Call (302) 870-3113
                     </a>
                     <a href="mailto:Bryce@TriStateAquaticSolutions.com?subject=Haverford Pool Consultation" class="btn btn-cta-secondary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -716,7 +790,7 @@
                     <ul class="footer-contact">
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <a href="tel:+16108703113">(610) 870-3113</a>
+                            <a href="tel:+13028703113">(302) 870-3113</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

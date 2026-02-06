@@ -8,6 +8,13 @@ Include this file before
 <script src="/components/exit-intent-popup.js"></script>
 
 Or copy the entire contents into your page.
+
+FEATURES:
+- GA4 tracking for impressions and conversions
+- Session-based display (only once per session)
+- Does not show if user already submitted a form
+- Does not show on thank you pages
+- Mobile-friendly bottom sheet design
 -->
 
 <style>
@@ -274,16 +281,40 @@ Or copy the entire contents into your page.
     font-size: 0.95rem;
 }
 
-/* Mobile Adjustments */
+/* Mobile Adjustments - Bottom Sheet Style */
 @media (max-width: 640px) {
     .exit-popup {
-        width: 95%;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
         max-width: none;
-        border-radius: 20px;
+        border-radius: 24px 24px 0 0;
+        transform: translateY(100%);
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .exit-popup-overlay.active .exit-popup {
+        transform: translateY(0);
     }
 
     .exit-popup-header {
         padding: 1.5rem 1.5rem 2.5rem;
+    }
+
+    .exit-popup-header::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
     }
 
     .exit-popup-header h2 {
@@ -291,7 +322,13 @@ Or copy the entire contents into your page.
     }
 
     .exit-popup-body {
-        padding: 1rem 1.5rem 1.5rem;
+        padding: 1rem 1.5rem 2rem;
+        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
+    }
+
+    .exit-popup-close {
+        top: 0.75rem;
+        right: 0.75rem;
     }
 }
 </style>
@@ -309,32 +346,30 @@ Or copy the entire contents into your page.
         <div class="exit-popup-header">
             <div class="exit-popup-icon">
                 <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="12" y1="8" x2="12" y2="12"/>
-                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    <path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/>
                 </svg>
             </div>
-            <h2 id="exitPopupTitle">Wait! Before You Go...</h2>
-            <p>Don't leave without getting expert advice</p>
+            <h2 id="exitPopupTitle">Your Dream Pool Awaits</h2>
+            <p>Join 200+ Main Line families enjoying their backyards</p>
         </div>
 
         <div class="exit-popup-body">
             <div class="exit-popup-offer">
-                <div class="exit-popup-offer-title">Get a Free Cost Estimate</div>
-                <div class="exit-popup-offer-subtitle">No commitment, no pressure - just honest numbers</div>
+                <div class="exit-popup-offer-title">Get Your Free Custom Quote in 24 Hours</div>
+                <div class="exit-popup-offer-subtitle">Includes personalized design ideas + transparent pricing</div>
             </div>
 
             <form class="exit-popup-form" id="exitPopupForm">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
-                <input type="tel" name="phone" placeholder="Phone (optional)">
-                <button type="submit" class="exit-popup-submit">Get My Free Estimate</button>
+                <input type="tel" name="phone" placeholder="Phone (for faster response)">
+                <button type="submit" class="exit-popup-submit">Get My Free Quote Now</button>
             </form>
 
-            <button class="exit-popup-no-thanks" id="exitPopupNoThanks">No thanks, I'm not interested</button>
+            <button class="exit-popup-no-thanks" id="exitPopupNoThanks">Maybe later</button>
 
             <p class="exit-popup-disclaimer">
-                We respect your privacy. Your information is never shared or sold.
+                100% free, no obligation. We respect your privacy - never shared or sold.
             </p>
 
             <div class="exit-popup-success" id="exitPopupSuccess">
@@ -354,36 +389,84 @@ Or copy the entire contents into your page.
 (function() {
     'use strict';
 
-    const POPUP_KEY = 'tsas_exit_popup_shown';
-    const POPUP_EXPIRY_DAYS = 7;
+    const SESSION_POPUP_KEY = 'tsas_exit_popup_shown_session';
+    const FORM_SUBMITTED_KEY = 'tsas_form_submitted';
+    const USER_EMAIL_KEY = 'tsas_user_email';
 
-    // Check if popup was already shown recently
-    function wasPopupShown() {
-        const shownTimestamp = localStorage.getItem(POPUP_KEY);
-        if (!shownTimestamp) return false;
+    // Check if we should show the popup
+    function shouldShowPopup() {
+        // Don't show if already shown this session
+        if (sessionStorage.getItem(SESSION_POPUP_KEY)) {
+            return false;
+        }
 
-        const daysSinceShown = (Date.now() - parseInt(shownTimestamp)) / (1000 * 60 * 60 * 24);
-        return daysSinceShown < POPUP_EXPIRY_DAYS;
+        // Don't show if user already submitted a form
+        if (localStorage.getItem(FORM_SUBMITTED_KEY) || localStorage.getItem(USER_EMAIL_KEY)) {
+            return false;
+        }
+
+        // Don't show on thank you pages
+        const currentPath = window.location.pathname.toLowerCase();
+        if (currentPath.includes('thank') || currentPath.includes('success') || currentPath.includes('confirmation')) {
+            return false;
+        }
+
+        // Don't show on form submission pages
+        if (currentPath.includes('contact') && window.location.search.includes('submitted')) {
+            return false;
+        }
+
+        return true;
     }
 
-    // Mark popup as shown
+    // Mark popup as shown for this session
     function markPopupShown() {
-        localStorage.setItem(POPUP_KEY, Date.now().toString());
+        sessionStorage.setItem(SESSION_POPUP_KEY, 'true');
+    }
+
+    // Track GA4 event
+    function trackGA4Event(eventName, params) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, params);
+        }
+        // Also push to dataLayer for GTM
+        if (typeof dataLayer !== 'undefined') {
+            dataLayer.push({
+                'event': eventName,
+                ...params
+            });
+        }
     }
 
     // Show popup
     function showPopup() {
-        if (wasPopupShown()) return;
+        if (!shouldShowPopup()) return;
 
         document.getElementById('exitPopupOverlay').classList.add('active');
         document.body.style.overflow = 'hidden';
         markPopupShown();
+
+        // Track popup impression
+        trackGA4Event('exit_intent_popup_impression', {
+            'event_category': 'Engagement',
+            'event_label': 'Exit Intent Popup Shown',
+            'page_location': window.location.href,
+            'page_title': document.title
+        });
     }
 
     // Hide popup
-    function hidePopup() {
+    function hidePopup(reason) {
         document.getElementById('exitPopupOverlay').classList.remove('active');
         document.body.style.overflow = '';
+
+        // Track popup dismissal
+        if (reason) {
+            trackGA4Event('exit_intent_popup_dismissed', {
+                'event_category': 'Engagement',
+                'event_label': reason
+            });
+        }
     }
 
     // Exit intent detection
@@ -420,19 +503,24 @@ Or copy the entire contents into your page.
     }, { passive: true });
 
     // Close handlers
-    document.getElementById('exitPopupClose').addEventListener('click', hidePopup);
-    document.getElementById('exitPopupNoThanks').addEventListener('click', hidePopup);
+    document.getElementById('exitPopupClose').addEventListener('click', function() {
+        hidePopup('close_button');
+    });
+
+    document.getElementById('exitPopupNoThanks').addEventListener('click', function() {
+        hidePopup('no_thanks');
+    });
 
     document.getElementById('exitPopupOverlay').addEventListener('click', function(e) {
         if (e.target === this) {
-            hidePopup();
+            hidePopup('overlay_click');
         }
     });
 
     // Escape key closes popup
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            hidePopup();
+            hidePopup('escape_key');
         }
     });
 
@@ -445,7 +533,8 @@ Or copy the entire contents into your page.
             email: this.querySelector('[name="email"]').value,
             phone: this.querySelector('[name="phone"]').value,
             source: 'exit-intent-popup',
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            page: window.location.pathname
         };
 
         // Store lead
@@ -453,8 +542,9 @@ Or copy the entire contents into your page.
         leads.push(formData);
         localStorage.setItem('tsas_leads', JSON.stringify(leads));
 
-        // Track conversion
-        localStorage.setItem('tsas_user_email', formData.email);
+        // Mark form as submitted to prevent showing popup again
+        localStorage.setItem(FORM_SUBMITTED_KEY, 'true');
+        localStorage.setItem(USER_EMAIL_KEY, formData.email);
         localStorage.setItem('tsas_user_name', formData.name);
 
         // Show success
@@ -464,17 +554,26 @@ Or copy the entire contents into your page.
         document.querySelector('.exit-popup-disclaimer').style.display = 'none';
         document.getElementById('exitPopupSuccess').classList.add('show');
 
-        // Fire analytics event
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'lead_capture', {
-                'event_category': 'Exit Intent',
-                'event_label': 'Free Estimate',
-                'value': 1
-            });
-        }
+        // Fire GA4 conversion event
+        trackGA4Event('generate_lead', {
+            'event_category': 'Lead Generation',
+            'event_label': 'Exit Intent Popup',
+            'lead_source': 'exit_intent_popup',
+            'currency': 'USD',
+            'value': 50 // Estimated lead value
+        });
+
+        // Additional conversion tracking
+        trackGA4Event('exit_intent_popup_conversion', {
+            'event_category': 'Conversion',
+            'event_label': 'Free Quote Request',
+            'has_phone': formData.phone ? 'yes' : 'no'
+        });
 
         // Auto close after delay
-        setTimeout(hidePopup, 3000);
+        setTimeout(function() {
+            hidePopup(null); // Don't track as dismissal
+        }, 3000);
     });
 })();
 </script>

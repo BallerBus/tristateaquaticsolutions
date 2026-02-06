@@ -12,7 +12,7 @@
       "email": "info@tristateaquaticsolutions.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Hockessin",
+        "streetAddress": "",
         "addressLocality": "Hockessin",
         "addressRegion": "DE",
         "postalCode": "19707",

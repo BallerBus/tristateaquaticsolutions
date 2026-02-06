@@ -1538,6 +1538,52 @@
         </div>
     </section>
 
+    <!-- Lead Capture Section -->
+    <section class="lead-capture-section" id="leadCaptureSection" style="background: linear-gradient(135deg, #00A6B2 0%, #008a94 100%); padding: 4rem 0;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; text-align: center; color: white;">
+                <h2 style="color: white; margin-bottom: 1rem;">Get Your Personalized Pool Recommendation</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; font-size: 1.1rem;">Based on your comparison, we can provide a custom quote tailored to your preferences. Enter your details below.</p>
+
+                <form id="comparisonLeadForm" style="background: white; padding: 2rem; border-radius: 20px; text-align: left;">
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; font-weight: 600; color: #0E1F34; margin-bottom: 0.5rem;">Your Name</label>
+                        <input type="text" name="name" required style="width: 100%; padding: 0.9rem 1rem; border: 1.5px solid #E8ECF1; border-radius: 12px; font-family: var(--font-body); font-size: 1rem;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; font-weight: 600; color: #0E1F34; margin-bottom: 0.5rem;">Email Address</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 0.9rem 1rem; border: 1.5px solid #E8ECF1; border-radius: 12px; font-family: var(--font-body); font-size: 1rem;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; font-weight: 600; color: #0E1F34; margin-bottom: 0.5rem;">Phone Number</label>
+                        <input type="tel" name="phone" style="width: 100%; padding: 0.9rem 1rem; border: 1.5px solid #E8ECF1; border-radius: 12px; font-family: var(--font-body); font-size: 1rem;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; color: #0E1F34; margin-bottom: 0.5rem;">Pool Type Interest</label>
+                        <select name="poolInterest" id="poolInterestSelect" style="width: 100%; padding: 0.9rem 1rem; border: 1.5px solid #E8ECF1; border-radius: 12px; font-family: var(--font-body); font-size: 1rem; background: white;">
+                            <option value="undecided">Still deciding</option>
+                            <option value="concrete">Concrete Pool</option>
+                            <option value="fiberglass">Fiberglass Pool</option>
+                            <option value="liner">Vinyl Liner Pool</option>
+                        </select>
+                    </div>
+                    <button type="submit" style="width: 100%; background: #0E1F34; color: white; border: none; padding: 1rem 2rem; border-radius: 100px; font-family: var(--font-body); font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                        Get My Free Custom Quote
+                    </button>
+                    <p style="font-size: 0.8rem; color: #6B7280; text-align: center; margin-top: 1rem;">We respect your privacy. No spam, ever.</p>
+                </form>
+
+                <div id="comparisonLeadSuccess" style="display: none; background: white; padding: 2rem; border-radius: 20px; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3 style="color: #0E1F34; margin-bottom: 0.5rem;">Thank You!</h3>
+                    <p style="color: #6B7280;">We'll send your personalized recommendation within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section">
         <div class="container">
@@ -1691,6 +1737,25 @@
 
         // State
         let selectedPools = ['concrete', 'fiberglass', 'liner'];
+        let toolStartTime = Date.now();
+        let poolsCompared = new Set(['concrete', 'fiberglass', 'liner']);
+
+        // GA4 tracking helper
+        function trackGA4Event(eventName, params) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, params);
+            }
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({ 'event': eventName, ...params });
+            }
+        }
+
+        // Track tool usage on page load
+        trackGA4Event('tool_start', {
+            'event_category': 'Tools',
+            'event_label': 'Pool Comparison Tool',
+            'tool_name': 'compare_pools'
+        });
 
         // Toggle pool selection
         function togglePool(poolType) {
@@ -1701,7 +1766,18 @@
                 }
             } else {
                 selectedPools.push(poolType);
+                poolsCompared.add(poolType);
             }
+
+            // Track pool type toggle
+            trackGA4Event('pool_comparison_toggle', {
+                'event_category': 'Tools',
+                'event_label': poolType,
+                'pool_type': poolType,
+                'action': selectedPools.includes(poolType) ? 'selected' : 'deselected',
+                'selected_pools': selectedPools.join(',')
+            });
+
             updateUI();
         }
 
@@ -1912,6 +1988,89 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updateUI();
+
+            // Track scroll depth for engagement
+            let maxScroll = 0;
+            let scrollMilestones = { 25: false, 50: false, 75: false, 100: false };
+
+            window.addEventListener('scroll', () => {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+
+                    // Track milestones
+                    [25, 50, 75, 100].forEach(milestone => {
+                        if (scrollPercent >= milestone && !scrollMilestones[milestone]) {
+                            scrollMilestones[milestone] = true;
+                            trackGA4Event('scroll_depth', {
+                                'event_category': 'Engagement',
+                                'event_label': 'Pool Comparison Tool',
+                                'scroll_percent': milestone
+                            });
+                        }
+                    });
+                }
+            }, { passive: true });
+
+            // Track time on tool when leaving
+            window.addEventListener('beforeunload', () => {
+                const timeSpent = Math.round((Date.now() - toolStartTime) / 1000);
+                trackGA4Event('tool_engagement', {
+                    'event_category': 'Tools',
+                    'event_label': 'Pool Comparison Tool',
+                    'time_spent_seconds': timeSpent,
+                    'pools_viewed': Array.from(poolsCompared).join(','),
+                    'max_scroll': maxScroll
+                });
+            });
+
+            // Lead capture form handling
+            const leadForm = document.getElementById('comparisonLeadForm');
+            if (leadForm) {
+                leadForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const formData = {
+                        name: this.querySelector('[name="name"]').value,
+                        email: this.querySelector('[name="email"]').value,
+                        phone: this.querySelector('[name="phone"]').value,
+                        poolInterest: this.querySelector('[name="poolInterest"]').value,
+                        source: 'compare-pools-tool',
+                        poolsCompared: Array.from(poolsCompared).join(','),
+                        timestamp: new Date().toISOString()
+                    };
+
+                    // Store lead
+                    const leads = JSON.parse(localStorage.getItem('tsas_leads') || '[]');
+                    leads.push(formData);
+                    localStorage.setItem('tsas_leads', JSON.stringify(leads));
+                    localStorage.setItem('tsas_user_email', formData.email);
+                    localStorage.setItem('tsas_user_name', formData.name);
+                    localStorage.setItem('tsas_form_submitted', 'true');
+
+                    // Show success message
+                    this.style.display = 'none';
+                    document.getElementById('comparisonLeadSuccess').style.display = 'block';
+
+                    // Track GA4 conversion
+                    trackGA4Event('generate_lead', {
+                        'event_category': 'Lead Generation',
+                        'event_label': 'Pool Comparison Tool',
+                        'lead_source': 'compare_pools_tool',
+                        'pool_interest': formData.poolInterest,
+                        'pools_compared': formData.poolsCompared,
+                        'currency': 'USD',
+                        'value': 75
+                    });
+
+                    trackGA4Event('tool_conversion', {
+                        'event_category': 'Conversion',
+                        'event_label': 'Pool Comparison Lead',
+                        'tool_name': 'compare_pools',
+                        'has_phone': formData.phone ? 'yes' : 'no'
+                    });
+                });
+            }
         });
     </script>
 </body>

@@ -2,6 +2,20 @@
   "buildCommand": null,
   "outputDirectory": "website",
   "framework": null,
+  "redirects": [
+    { "source": "/landing-option-a", "destination": "/", "statusCode": 301 },
+    { "source": "/landing-option-b", "destination": "/", "statusCode": 301 },
+    { "source": "/landing-option-c", "destination": "/", "statusCode": 301 },
+    { "source": "/landing-option-c-improved", "destination": "/", "statusCode": 301 },
+    { "source": "/landing-option-d", "destination": "/", "statusCode": 301 },
+    { "source": "/landing-v1-split-hero", "destination": "/", "statusCode": 301 },
+    { "source": "/landing-v2-services-prominent", "destination": "/", "statusCode": 301 },
+    { "source": "/landing-v3-tabbed", "destination": "/", "statusCode": 301 },
+    { "source": "/index-backup", "destination": "/", "statusCode": 301 },
+    { "source": "/faq-comprehensive", "destination": "/faq/", "statusCode": 301 },
+    { "source": "/gladwyne-pa", "destination": "/locations/gladwyne-pa/", "statusCode": 301 },
+    { "source": "/hockessin-de", "destination": "/locations/hockessin-de/", "statusCode": 301 }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

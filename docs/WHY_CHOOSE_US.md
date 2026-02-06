@@ -1,1 +1,137 @@
-["# Tri-State Aquatic Solutions - Why Choose Us\n\n**Date:** 2025-02-01  \n**Status:** Ready to use  \n**Purpose:** One-sheet for potential customers\n\n---\n\n## Why Choose Tri-State Aquatic Solutions?\n\n### We're Different. Here's How.\n\n### 1. **Local Expertise**\n\n**We Know Main Line PA & Northern DE**\n\nWe've lived and worked in this area for years. We know the soil, the climate, and the local regulations. We know which permits you need, which inspections to schedule, and how to navigate the local bureaucracy.\n\n**Big pool companies** fly in crews from out of state, use generic designs, and don't understand our local conditions.\n\n**Tri-State** designs every pool for our specific region. No cookie-cutter templates.\n\n---\n\n### 2. **Transparent Pricing**\n\n**No Hidden Costs. No Surprises.**\n\nYou'll get a detailed quote upfront. Every line item explained:\n- Excavation cost\n- Pool shell cost\n- Equipment cost\n- Plumbing cost\n- Electrical cost\n- Decking cost\n- Permit fees\n- Everything.\n\n**Big pool companies** give you a lowball quote, then hit you with change orders halfway through. \"Oh, you want a heater? That's extra.\" \"Oh, the soil is rocky? That's extra.\"\n\n**Tri-State** gives you one price. If we quote $45,000, you pay $45,000.\n\n---\n\n### 3. **Owner Involvement**\n\n**The Owner is On Every Job Site.**\n\nBrandon Calloway, the owner, personally oversees every installation. He's on-site, answering questions, making sure everything goes right.\n\n**Big pool companies** send a project manager you've never met. They're juggling 10 jobs at once.\n\n**Tri-State** gives you direct access to the owner. You call Brandon, you get Brandon.\n\n---\n\n### 4. **Premium Equipment**\n\n**We Only Use the Best.**\n\nPentair pumps. Hayward heaters. Jandy automation. These are the top brands in the industry. They last longer, run quieter, and cost less to operate.\n\n**Big pool companies** use cheaper equipment to boost their margins. You save $2,000 upfront but spend $500/year extra on electricity.\n\n**Tri-State** uses premium equipment. You pay more upfront but save thousands over 10 years.\n\n---\n\n### 5. **Custom Design**\n\n**Your Pool. Your Vision. Your Budget.**\n\nWe don't sell you a pre-packaged \"pool package.\" We design your pool from scratch based on your yard, your family, your lifestyle.\n\nWant a tanning ledge? We'll design it.\nWant a spa that spills into the pool? We'll design it.\nWant a beach entry? We'll design it.\n\n**Big pool companies** push their standard designs because it's easier for them.\n\n**Tri-State** designs your pool for you.\n\n---\n\n### 6. **Warranty That Matters**\n\n**We Stand Behind Our Work.**\n\n- **Lifetime warranty** on pool shell (structural integrity)\n- **3-year warranty** on equipment (pumps, heaters, filters)\n- **2-year warranty** on labor\n- **Lifetime support** - we don't disappear after the check clears\n\n**Big pool companies** give you a 1-year warranty and then you can't reach them.\n\n**Tri-State** is here for the life of your pool.\n\n---\n\n### 7. **Communication**\n\n**You'll Always Know What's Happening.**\n\n- Weekly photo updates via text/email\n- Clear timeline (excavation \u2192 shell \u2192 plumbing \u2192 equipment \u2192 deck)\n- Owner available by phone/text/email\n- No disappearing for weeks at a time\n\n**Big pool companies** leave you wondering what's happening. \"Where's the crew? When will it be done?\"\n\n**Tri-State** keeps you informed every step of the way.\n\n---\n\n### 8. **Post-Installation Service**\n\n**We Don't Just Build Pools. We Maintain Them.**\n\nNeed opening/closing service? We do it.\nNeed weekly maintenance? We do it.\nNeed equipment repair? We do it.\n\nWe're not a \"build it and forget it\" company. We're your pool partner for life.\n\n**Big pool companies** don't offer maintenance. They're construction companies, not service companies.\n\n**Tri-State** does it all.\n\n---\n\n## Comparison: Tri-State vs Big Pool Companies\n\n| | Tri-State Aquatic Solutions | Big Pool Companies |\n|---|---|---|\n| **Local expertise** | \u2705 Main Line PA & Northern DE experts | \u274c Out-of-state crews |\n| **Pricing** | \u2705 Transparent, no hidden costs | \u274c Lowball quote, change orders |\n| **Owner involvement** | \u2705 Owner on every job site | \u274c Project manager juggling 10 jobs |\n| **Equipment** | \u2705 Premium (Pentair, Hayward, Jandy) | \u274c Mid-tier to boost margins |\n| **Design** | \u2705 Custom for your yard | \u274c Pre-packaged templates |\n| **Warranty** | \u2705 Lifetime shell, 3-year equipment | \u274c 1-year only |\n| **Communication** | \u2705 Weekly updates, owner available | \u274c Ghost for weeks |\n| **Service** | \u2705 Build + maintain for life | \u274c Build only, no maintenance |\n| **Timeline** | \u2705 8-10 weeks, realistic | \u274c 12-16 weeks, optimistic |\n| **Price** | $$ Competitive | $$$ Premium or $ Cheap (low quality) |\n\n---\n\n## Our Process\n\n### Step 1: Consultation (Free)\n\nWe come to your home, measure your yard, discuss your vision, and give you a rough estimate. No pressure, no obligation.\n\n**Timeline:** 1-2 days after you call\n\n---\n\n### Step 2: Custom Design\n\nWe create a 3D rendering of your pool. You can see exactly what it will look like. We make changes until you're 100% happy.\n\n**Timeline:** 1-2 weeks\n\n---\n\n### Step 3: Detailed Quote\n\nWe give you a line-item quote. Every cost explained. No surprises.\n\n**Timeline:** 3-5 days after design approval\n\n---\n\n### Step 4: Permits & Scheduling\n\nWe handle all permits, inspections, and scheduling. You don't have to deal with the township.\n\n**Timeline:** 2-4 weeks\n\n---\n\n### Step 5: Excavation\n\nWe dig the hole, install the pool shell, and backfill. This is the messy part - we handle everything.\n\n**Timeline:** 1 week\n\n---\n\n### Step 6: Plumbing & Electrical\n\nWe install all plumbing (pipes, returns, drains) and electrical (pumps, heaters, lights).\n\n**Timeline:** 1-2 weeks\n\n---\n\n### Step 7: Equipment Installation\n\nWe install pumps, filters, heaters, automation systems, and all equipment.\n\n**Timeline:** 1 week\n\n---\n\n### Step 8: Decking & Landscaping\n\nWe install decking (concrete, pavers, stone) and handle landscaping around the pool.\n\n**Timeline:** 1-2 weeks\n\n---\n\n### Step 9: Fill & Start-Up\n\nWe fill the pool, balance the chemistry, and walk you through everything. You're swimming within days.\n\n**Timeline:** 3-5 days\n\n---\n\n### Step 10: Ongoing Support\n\nWe're here for opening/closing, maintenance, repairs, and any questions you have.\n\n**Timeline:** Forever\n\n---\n\n## Sample Projects\n\n### Project 1: Main Line Luxury (Bryn Mawr, PA)\n\n**Details:**\n- 16' x 32' rectangular pool\n- 8' deep end\n- Tanning ledge\n- Spa with spillway\n- Saltwater system\n- LED lighting\n- Natural stone deck\n\n**Timeline:** 9 weeks\n**Price:** $68,000\n\n**Customer Quote:** \"Tri-State made the whole process easy. Brandon was on-site every day. We knew exactly what was happening. The pool turned out better than we imagined.\"\n\n---\n\n### Project 2: Family Fun (Wilmington, DE)\n\n**Details:**\n- 14' x 28' freeform pool\n- 6' deep end\n- Beach entry\n- Diving rock\n- Water feature\n- Heat pump\n- Concrete deck\n\n**Timeline:** 8 weeks\n**Price:** $52,000\n\n**Customer Quote:** \"We got 3 quotes. Tri-State wasn't the cheapest, but they were the most honest. No hidden costs, no surprises. The pool is perfect for our kids.\"\n\n---\n\n### Project 3: Modern Minimalist (Hockessin, DE)\n\n**Details:**\n- 12' x 24' rectangular pool\n- 5' uniform depth\n- Infinity edge\n- Automated cover\n- LED lighting\n- Paver deck\n\n**Timeline:** 7 weeks\n**Price:** $45,000\n\n**Customer Quote:** \"We wanted something modern and clean. Tri-State nailed it. The design is perfect, the build was flawless, and the price was exactly what they quoted.\"\n\n---\n\n## Pricing Guide\n\n### Small Pools (12' x 20' to 14' x 28')\n- **Price range:** $40,000 - $55,000\n- **Includes:** Pool shell, basic equipment, concrete deck\n- **Timeline:** 6-8 weeks\n\n### Medium Pools (15' x 30' to 16' x 32')\n- **Price range:** $55,000 - $75,000\n- **Includes:** Pool shell, premium equipment, paver deck\n- **Timeline:** 8-10 weeks\n\n### Large Pools (18' x 36' and larger)\n- **Price range:** $75,000 - $100,000+\n- **Includes:** Custom design, luxury features, premium deck\n- **Timeline:** 10-12 weeks\n\n### Add-Ons:\n- Spa: +$8,000 - $15,000\n- Tanning ledge: +$3,000 - $5,000\n- Water feature: +$2,000 - $5,000\n- Automation system: +$3,000 - $6,000\n- Saltwater system: +$1,500 - $2,500\n- LED lighting: +$1,000 - $2,000\n- Infinity edge: +$10,000 - $20,000\n\n---\n\n## Financing Options\n\nWe work with multiple lenders to offer flexible financing:\n\n- **0% APR for 12 months** (qualifying customers)\n- **Low monthly payments** (as low as $400/month)\n- **No prepayment penalties**\n- **Quick approval** (decisions in 24 hours)\n\n---\n\n## Contact Us\n\n**Tri-State Aquatic Solutions**\n- **Phone:** 610-870-3113\n- **Email:** info@tristateaquaticsolutions.com\n- **Website:** https://tristateaquaticsolutions.vercel.app\n- **Service Area:** Main Line PA & Northern Delaware\n\n**Free Consultation:**\nWe'll come to your home, measure your yard, and give you a rough estimate. No obligation.\n\n**Call or text today:** 610-870-3113\n\n---\n\n**Last Updated:** 2025-02-01 23:45 EST  \n**Updated by:** Brandon Bot \ud83d\udd27  \n**Status:** Ready to use in sales materials"]
+# Why Choose Tri-State Aquatic Solutions
+
+**Date:** 2026-02-06
+**Status:** Updated
+**Purpose:** Sales one-sheet for prospective customers
+
+---
+
+## The Tri-State Aquatic Solutions Difference
+
+### Boutique Plunge & Garden Pool Specialists
+
+We focus on what we do best: premium fiberglass plunge pools, cocktail pools, and garden pools. These compact, beautifully engineered pools are designed for modern living -- delivering maximum enjoyment in intentionally scaled spaces. Whether you want a cold plunge for wellness, a cocktail pool for entertaining, or a garden pool that transforms your backyard, we are the region's dedicated specialists.
+
+---
+
+### 1. Local Expertise, Premium Results
+
+**We know Main Line PA and Northern Delaware.**
+
+We understand the soil conditions, the municipal codes, the architectural styles, and the expectations of homeowners in this area. Every pool we design accounts for the specific character of your neighborhood and your property.
+
+Based in Hockessin, Delaware, we serve communities across Chester County, Delaware County, Montgomery County, and New Castle County. We are your neighbors, not a national franchise.
+
+---
+
+### 2. Transparent Pricing
+
+**Your quote is your quote.**
+
+Every line item is explained upfront -- excavation, pool shell, equipment, plumbing, electrical, decking, and permits. No change orders. No surprises halfway through. We believe trust starts with honesty about what your investment includes.
+
+---
+
+### 3. Owner Involvement on Every Project
+
+**You work directly with our leadership team.**
+
+Brandon Calloway, our Founder and President, brings over a decade of corporate project management experience (JPMorgan, DuPont) and PMP certification to every engagement. Bryce, our Pool Operations Director, oversees all field operations with hands-on expertise in pool installation, maintenance, and equipment.
+
+When you call Tri-State, you get the people who run the company.
+
+---
+
+### 4. Fast, Clean Installation
+
+**2-4 weeks from groundbreaking to your first swim.**
+
+Pre-manufactured fiberglass pools arrive factory-built and are set by crane in a single day. No months of on-site construction. No endless disruption to your daily life. Our streamlined 8-step process is designed for speed and precision without sacrificing quality.
+
+---
+
+### 5. Premium Equipment & Materials
+
+**We select the best so you enjoy the best.**
+
+Pentair pumps. Hayward heaters. Jandy automation. Paired with premium fiberglass pool shells from Latham Pools and Thursday Pools, your installation is built with components chosen for longevity, efficiency, and performance.
+
+---
+
+### 6. Lower Lifetime Cost of Ownership
+
+**Fiberglass pools are an intelligent investment.**
+
+The smooth gelcoat surface resists algae and staining, requiring fewer chemicals and less maintenance than concrete alternatives. No liner replacements. No resurfacing for decades. Many owners save thousands over the life of their pool.
+
+---
+
+### 7. Clear Communication Throughout
+
+**You will always know what is happening.**
+
+- Progress updates with photos at every stage
+- A single point of contact for questions and scheduling
+- Responsive communication by phone, text, or email
+- No disappearing. No guessing.
+
+---
+
+### 8. Lifetime Partnership
+
+**Our relationship does not end at installation.**
+
+We offer ongoing maintenance, seasonal opening and closing services, equipment repair, and water chemistry support. Tri-State Aquatic Solutions is your pool partner for the long term.
+
+---
+
+## What Our Customers Experience
+
+- **30+ active service customers** trust us with their ongoing pool care
+- **Boutique, personalized approach** -- every project gets dedicated attention
+- **Real expertise** backed by PMP certification, corporate project management experience, and hands-on pool industry knowledge
+- **Manufacturer partnerships** with Latham Pools and Thursday Pools for access to the best fiberglass pool models available
+
+---
+
+## Our Process at a Glance
+
+| Step | What Happens | Timeline |
+|------|-------------|----------|
+| 1. Consultation | Free on-site visit to assess your property and discuss your vision | 1-2 hours |
+| 2. Design & Selection | Choose your pool model, color, and features with our guidance | 1-2 weeks |
+| 3. Permits | We handle all permit applications and utility coordination | 2-4 weeks |
+| 4. Excavation | Professional excavation to exact manufacturer specifications | 1-2 days |
+| 5. Pool Delivery & Set | Pre-manufactured shell delivered and set by crane | 1 day |
+| 6. Plumbing & Electrical | Filtration, pumps, heaters, and electrical connections installed | 2-3 days |
+| 7. Backfill & Decking | Pool backfilled and your chosen decking installed | 3-5 days |
+| 8. Final Inspection | Inspection, water chemistry, and owner training | 1 day |
+
+**Total active installation time: approximately 2-4 weeks.**
+
+---
+
+## Warranty Coverage
+
+- **Lifetime structural warranty** on fiberglass pool shell
+- **3-year warranty** on equipment (pumps, heaters, filters)
+- **2-year warranty** on labor
+- **Lifetime support** -- we stand behind every installation
+
+---
+
+## Contact Us
+
+**Tri-State Aquatic Solutions**
+Operated by Dude Venture Services LLC
+
+- **Phone:** (302) 870-3113
+- **Email:** Bryce@TriStateAquaticSolutions.com
+- **Website:** tristateaquaticsolutions.com
+- **Service Area:** Main Line PA & Northern Delaware
+
+**Schedule your free consultation today.**
+
+---
+
+*Last Updated: 2026-02-06*

@@ -16,6 +16,12 @@
     { "source": "/gladwyne-pa", "destination": "/locations/gladwyne-pa/", "statusCode": 301 },
     { "source": "/hockessin-de", "destination": "/locations/hockessin-de/", "statusCode": 301 }
   ],
+  "crons": [
+    {
+      "path": "/api/cron/check-inbox",
+      "schedule": "0 13 * * *"
+    }
+  ],
   "functions": {
     "api/**/*.js": {
       "memory": 256,

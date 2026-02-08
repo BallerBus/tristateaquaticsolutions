@@ -186,9 +186,11 @@
             overflow: hidden;
             display: grid;
             grid-template-columns: 1fr auto;
-            align-items: center;
+            align-items: end;
             gap: 2rem;
-            min-height: 160px;
+            min-height: 240px;
+            background-size: cover !important;
+            background-position: center !important;
         }
 
         .lifestyle-card::before {
@@ -200,20 +202,36 @@
         }
 
         .lifestyle-card:nth-child(1) {
-            background: linear-gradient(135deg, #0E1F34 0%, #162a42 60%, #1a3352 100%);
+            background: linear-gradient(135deg, rgba(14,31,52,0.82) 0%, rgba(22,42,66,0.75) 60%, rgba(26,51,82,0.7) 100%),
+                        url('/images/wellness-plunge.jpg') center/cover no-repeat;
         }
 
         .lifestyle-card:nth-child(2) {
-            background: linear-gradient(135deg, #0a2a3a 0%, #0d3040 60%, #0f3a4a 100%);
+            background: linear-gradient(135deg, rgba(10,42,58,0.8) 0%, rgba(13,48,64,0.72) 60%, rgba(15,58,74,0.65) 100%),
+                        url('/images/pools/family-lifestyle.jpg') center/cover no-repeat;
         }
 
         .lifestyle-card:nth-child(3) {
-            background: linear-gradient(135deg, #1a2036 0%, #1e2840 60%, #222e48 100%);
+            background: linear-gradient(135deg, rgba(26,32,54,0.82) 0%, rgba(30,40,64,0.75) 60%, rgba(34,46,72,0.68) 100%),
+                        url('/images/pools/pool-spa-combo.jpg') center/cover no-repeat;
         }
 
         .lifestyle-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 60px -15px rgba(14, 31, 52, 0.5);
+            background-size: 110% !important;
+        }
+
+        .lifestyle-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(14,31,52,0.9) 0%, transparent 100%);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .lifestyle-card.selected {
@@ -317,16 +335,18 @@
             position: relative;
             border-radius: 24px;
             padding: 2rem;
+            padding-top: 160px;
             cursor: pointer;
             transition: all 0.5s var(--ease-out-expo);
             border: 3px solid var(--gray);
             background: var(--white);
             text-align: center;
-            min-height: 200px;
+            min-height: 280px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
+            overflow: hidden;
         }
 
         .finish-card:hover {
@@ -341,24 +361,33 @@
         }
 
         .finish-swatch {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            margin-bottom: 1.25rem;
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            border-radius: 21px 21px 0 0;
             overflow: hidden;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .finish-card:hover .finish-swatch {
+            transform: scale(1.05);
         }
 
         .finish-card:nth-child(1) .finish-swatch {
-            background: linear-gradient(135deg, #e8e4de, #d4cfc6);
+            background: linear-gradient(to bottom, transparent 40%, rgba(255,255,255,0.9) 100%),
+                        url('/images/pools/concrete-hero.jpg') center/cover no-repeat;
         }
 
         .finish-card:nth-child(2) .finish-swatch {
-            background: linear-gradient(135deg, #8b7d6b, #a09080);
+            background: linear-gradient(to bottom, transparent 40%, rgba(255,255,255,0.9) 100%),
+                        url('/images/pools/gladwyne-estate.jpg') center/cover no-repeat;
         }
 
         .finish-card:nth-child(3) .finish-swatch {
-            background: linear-gradient(135deg, #5a8fa8, #78b4cc);
+            background: linear-gradient(to bottom, transparent 40%, rgba(255,255,255,0.9) 100%),
+                        url('/images/pools/fiberglass-hero.jpg') center/cover no-repeat;
         }
 
         .finish-card h3 {
@@ -474,6 +503,92 @@
             text-align: center;
         }
 
+        /* ==================== MODEL GALLERY (after Step 1 selection) ==================== */
+        .model-gallery {
+            margin-top: 2rem;
+            display: none;
+            animation: fadeInUp 0.5s var(--ease-out-expo);
+        }
+
+        .model-gallery.visible {
+            display: block;
+        }
+
+        .model-gallery-header {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .model-gallery-header h4 {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .model-gallery-header p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .model-strip {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.5rem 0 1.5rem;
+            scrollbar-width: none;
+        }
+
+        .model-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        .model-thumb {
+            flex: 0 0 220px;
+            scroll-snap-align: start;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--white);
+            border: 2px solid var(--gray);
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: default;
+        }
+
+        .model-thumb:hover {
+            border-color: var(--aqua);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px -8px rgba(0, 166, 178, 0.15);
+        }
+
+        .model-thumb-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .model-thumb-info {
+            padding: 0.75rem 1rem;
+        }
+
+        .model-thumb-name {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.15rem;
+        }
+
+        .model-thumb-dims {
+            font-size: 0.75rem;
+            color: var(--gray-text);
+        }
+
         /* ==================== UPGRADE CARDS (Step 3) ==================== */
         .upgrade-grid {
             display: grid;
@@ -484,12 +599,16 @@
         .upgrade-card {
             position: relative;
             border-radius: 20px;
-            padding: 1.75rem;
+            padding-top: 120px;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+            padding-bottom: 1.25rem;
             cursor: pointer;
             transition: all 0.4s var(--ease-out-expo);
             border: 2px solid var(--gray);
             background: var(--white);
             text-align: center;
+            overflow: hidden;
         }
 
         .upgrade-card:hover {
@@ -508,6 +627,41 @@
             border-color: var(--aqua);
             background: rgba(0, 166, 178, 0.04);
             pointer-events: none;
+        }
+
+        .upgrade-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 110px;
+            overflow: hidden;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .upgrade-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .upgrade-card:hover .upgrade-photo img {
+            transform: scale(1.08);
+        }
+
+        .upgrade-photo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to top, var(--white) 0%, transparent 100%);
+        }
+
+        .upgrade-card.selected .upgrade-photo::after {
+            background: linear-gradient(to top, rgba(255,252,245,1) 0%, transparent 100%);
         }
 
         .upgrade-icon {
@@ -544,6 +698,13 @@
             font-weight: 600;
             color: var(--navy);
             margin-bottom: 0.25rem;
+        }
+
+        .upgrade-desc {
+            font-size: 0.78rem;
+            color: var(--gray-text);
+            line-height: 1.4;
+            margin-bottom: 0.35rem;
         }
 
         .upgrade-price-indicator {
@@ -634,6 +795,38 @@
             margin: -2rem -clamp(1.5rem, 5vw, 4rem);
             padding: 2rem clamp(1.5rem, 5vw, 4rem) 4rem;
             border-radius: 0;
+        }
+
+        .summary-hero {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            height: 280px;
+        }
+
+        .summary-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .summary-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(14,31,52,0.95) 0%, transparent 100%);
+        }
+
+        .summary-hero-label {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
         }
 
         .summary-grid {
@@ -1218,12 +1411,37 @@
                 text-align: left;
             }
 
+            .lifestyle-card {
+                min-height: 200px;
+            }
+
+            .model-thumb {
+                flex: 0 0 180px;
+            }
+
+            .model-thumb-img {
+                height: 110px;
+            }
+
+            .summary-hero {
+                height: 200px;
+                border-radius: 16px;
+            }
+
             .finish-cards {
                 grid-template-columns: 1fr;
             }
 
             .upgrade-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .upgrade-card {
+                padding-top: 100px;
+            }
+
+            .upgrade-photo {
+                height: 90px;
             }
 
             .form-row {
@@ -1290,6 +1508,22 @@
         @media (max-width: 480px) {
             .upgrade-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .upgrade-card {
+                padding-top: 130px;
+            }
+
+            .upgrade-photo {
+                height: 120px;
+            }
+
+            .model-thumb {
+                flex: 0 0 160px;
+            }
+
+            .model-thumb-img {
+                height: 100px;
             }
 
             .swatch-grid {
@@ -1509,6 +1743,17 @@
                     </div>
                 </div>
 
+                <!-- Model Gallery - appears after pool selection -->
+                <div class="model-gallery" id="modelGallery">
+                    <div class="model-gallery-header">
+                        <h4>Available Models</h4>
+                        <p id="modelGallerySubtitle">Scroll to explore pools in this size range</p>
+                    </div>
+                    <div class="model-strip" id="modelStrip">
+                        <!-- Populated dynamically by JS -->
+                    </div>
+                </div>
+
                 <div class="step-nav">
                     <div></div>
                     <button class="continue-btn" id="continueStep1" onclick="goToStep(2)">
@@ -1616,60 +1861,66 @@
                     <!-- Pool Heater -->
                     <div class="upgrade-card" data-upgrade="heater" onclick="toggleUpgrade(this)">
                         <div class="upgrade-toggle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="upgrade-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2c-5.33 4-8 8-8 12a8 8 0 1016 0c0-4-2.67-8-8-12z"/></svg>
+                        <div class="upgrade-photo">
+                            <img src="/images/pools/evening-entertaining.jpg" alt="Pool heater for year-round comfort" loading="lazy">
                         </div>
                         <h3>Pool Heater</h3>
+                        <p class="upgrade-desc">Extend your season from April to October</p>
                         <div class="upgrade-price-indicator">$$</div>
                     </div>
 
                     <!-- Tanning Ledge -->
                     <div class="upgrade-card" data-upgrade="tanning-ledge" onclick="toggleUpgrade(this)">
                         <div class="upgrade-toggle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="upgrade-icon">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+                        <div class="upgrade-photo">
+                            <img src="/images/pools/tanning-ledge.jpg" alt="Built-in tanning ledge" loading="lazy">
                         </div>
                         <h3>Tanning Ledge</h3>
+                        <p class="upgrade-desc">Shallow lounge area for sunbathing</p>
                         <div class="upgrade-price-indicator">$$</div>
                     </div>
 
                     <!-- Built-In Bench -->
                     <div class="upgrade-card" data-upgrade="bench" onclick="toggleUpgrade(this)">
                         <div class="upgrade-toggle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="upgrade-icon">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="12" width="18" height="4" rx="1"/><path d="M5 16v4M19 16v4M3 12V8a2 2 0 012-2h14a2 2 0 012 2v4"/></svg>
+                        <div class="upgrade-photo">
+                            <img src="/images/pools/gladwyne-estate.jpg" alt="Built-in bench seating" loading="lazy">
                         </div>
                         <h3>Built-In Bench</h3>
+                        <p class="upgrade-desc">Comfortable seating inside the pool</p>
                         <div class="upgrade-price-indicator">$</div>
                     </div>
 
                     <!-- Hydrotherapy Jets -->
                     <div class="upgrade-card" data-upgrade="jets" onclick="toggleUpgrade(this)">
                         <div class="upgrade-toggle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="upgrade-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+                        <div class="upgrade-photo">
+                            <img src="/images/wellness-plunge.jpg" alt="Hydrotherapy jets for wellness" loading="lazy">
                         </div>
                         <h3>Hydrotherapy Jets</h3>
+                        <p class="upgrade-desc">Therapeutic massage jets for recovery</p>
                         <div class="upgrade-price-indicator">$$</div>
                     </div>
 
                     <!-- Automatic Cover -->
                     <div class="upgrade-card" data-upgrade="cover" onclick="toggleUpgrade(this)">
                         <div class="upgrade-toggle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="upgrade-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <div class="upgrade-photo">
+                            <img src="/images/pools/delaware-modern.jpg" alt="Automatic pool cover" loading="lazy">
                         </div>
                         <h3>Automatic Cover</h3>
+                        <p class="upgrade-desc">Safety, cleanliness & heat retention</p>
                         <div class="upgrade-price-indicator">$$$</div>
                     </div>
 
                     <!-- Smart Controls -->
                     <div class="upgrade-card" data-upgrade="smart" onclick="toggleUpgrade(this)">
                         <div class="upgrade-toggle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="upgrade-icon">
-                            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        <div class="upgrade-photo">
+                            <img src="/images/pools/family-lifestyle.jpg" alt="Smart pool controls" loading="lazy">
                         </div>
                         <h3>Smart Controls</h3>
+                        <p class="upgrade-desc">Control everything from your phone</p>
                         <div class="upgrade-price-indicator">$$</div>
                     </div>
                 </div>
@@ -1680,10 +1931,11 @@
                         <div class="upgrade-toggle" style="background:var(--aqua);border-color:var(--aqua);">
                             <svg viewBox="0 0 24 24" style="opacity:1;"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
-                        <div class="upgrade-icon" style="background:rgba(0,166,178,0.15);">
-                            <svg viewBox="0 0 24 24" style="stroke:var(--aqua);"><path d="M2 12h2a2 2 0 012 2v4a2 2 0 01-2 2H2v-8z"/><rect x="6" y="8" width="12" height="12" rx="2"/></svg>
+                        <div class="upgrade-photo">
+                            <img src="/images/pools/pool-spa-combo.jpg" alt="Built-in spa" loading="lazy">
                         </div>
                         <h3>Built-In Spa</h3>
+                        <p class="upgrade-desc">Integrated hot tub built into your pool</p>
                         <div class="upgrade-price-indicator">Included</div>
                     </div>
                 </div>
@@ -1713,6 +1965,14 @@
                     <div class="step-label">Step 4 of 5</div>
                     <h2>Your Pool, Your Way</h2>
                     <p>Here's your custom pool configuration and estimated investment.</p>
+                </div>
+
+                <!-- Pool visualization -->
+                <div class="summary-hero" id="summaryHero">
+                    <img id="summaryHeroImg" src="/images/pools/family-lifestyle.jpg" alt="Your selected pool style">
+                    <div class="summary-hero-overlay">
+                        <span class="summary-hero-label" id="summaryHeroLabel">Your Pool</span>
+                    </div>
                 </div>
 
                 <div class="summary-grid">
@@ -2034,6 +2294,64 @@
         smart: 'Smart Controls'
     };
 
+    // ==================== MODEL DATA ====================
+    var modelsByCategory = {
+        retreat: [
+            { name: 'Milan', dims: '10\' x 16\'', img: '/images/brands/latham/models/optimized/milan.jpg' },
+            { name: 'Sea Turtle', dims: '9.5\' x 19.5\'', img: '/images/brands/thursday/models/optimized/sea-turtle.jpg' },
+            { name: 'Corinthian 12', dims: '12\' x 25\'', img: '/images/brands/latham/models/optimized/corinthian-12.jpg' },
+            { name: 'Olympia 12', dims: '12\' x 26\'', img: '/images/brands/latham/models/optimized/olympia-12.jpg' }
+        ],
+        centerpiece: [
+            { name: 'Claremont', dims: '14\' x 33\'', img: '/images/brands/latham/models/optimized/claremont.jpg' },
+            { name: 'Lake Shore', dims: '16\' x 33\'', img: '/images/brands/latham/models/optimized/lake-shore.jpg' },
+            { name: 'Cathedral', dims: '14\' x 33\'', img: '/images/brands/thursday/models/optimized/cathedral.jpg' },
+            { name: 'Corinthian 14', dims: '14\' x 30\'', img: '/images/brands/latham/models/optimized/corinthian-14.jpg' },
+            { name: 'Lil Bob', dims: '13.5\' x 35.5\'', img: '/images/brands/thursday/models/optimized/lil-bob.jpg' }
+        ],
+        experience: [
+            { name: 'Monaco', dims: '16\' x 40\'', img: '/images/brands/latham/models/optimized/monaco.jpg' },
+            { name: 'Barcelona', dims: '16\' x 38\'', img: '/images/brands/latham/models/optimized/barcelona.jpg' },
+            { name: 'Sandal Beach Entry', dims: '16\' x 39\'', img: '/images/brands/thursday/models/optimized/sandal.jpg' },
+            { name: 'Kingston', dims: '16\' x 38\'', img: '/images/brands/latham/models/optimized/kingston.jpg' },
+            { name: 'Aspen', dims: '16\' x 40\'', img: '/images/brands/thursday/models/optimized/aspen.jpg' },
+            { name: 'Goliath', dims: '16\' x 41\'', img: '/images/brands/thursday/models/optimized/goliath.jpg' }
+        ]
+    };
+
+    // Hero images for summary step, mapped to pool selection
+    var summaryHeroImages = {
+        retreat: '/images/wellness-plunge.jpg',
+        centerpiece: '/images/pools/family-lifestyle.jpg',
+        experience: '/images/pools/pool-spa-combo.jpg'
+    };
+
+    function updateModelGallery(poolType) {
+        var gallery = document.getElementById('modelGallery');
+        var strip = document.getElementById('modelStrip');
+        var subtitle = document.getElementById('modelGallerySubtitle');
+        if (!gallery || !strip) return;
+
+        var models = modelsByCategory[poolType];
+        if (!models || models.length === 0) {
+            gallery.classList.remove('visible');
+            return;
+        }
+
+        subtitle.textContent = models.length + ' models available in this size range';
+
+        strip.innerHTML = models.map(function(m) {
+            return '<div class="model-thumb">' +
+                '<img class="model-thumb-img" src="' + m.img + '" alt="' + m.name + ' pool" loading="lazy">' +
+                '<div class="model-thumb-info">' +
+                '<div class="model-thumb-name">' + m.name + '</div>' +
+                '<div class="model-thumb-dims">' + m.dims + '</div>' +
+                '</div></div>';
+        }).join('');
+
+        gallery.classList.add('visible');
+    }
+
     // ==================== SELECTIONS ====================
     function selectPool(el) {
         document.querySelectorAll('.lifestyle-card').forEach(function(c) { c.classList.remove('selected'); });
@@ -2046,6 +2364,9 @@
         // Show/hide spa upgrade for experience
         var spaEl = document.getElementById('spaUpgrade');
         if (spaEl) spaEl.style.display = config.pool === 'experience' ? 'grid' : 'none';
+
+        // Show model gallery for selected pool type
+        updateModelGallery(config.pool);
     }
 
     function selectFinish(el) {
@@ -2250,6 +2571,16 @@
         document.getElementById('summaryPool').textContent = poolNames[config.pool] || '--';
         document.getElementById('summaryFinish').textContent = finishNames[config.finish] || '--';
 
+        // Update summary hero image
+        var heroImg = document.getElementById('summaryHeroImg');
+        var heroLabel = document.getElementById('summaryHeroLabel');
+        if (heroImg && summaryHeroImages[config.pool]) {
+            heroImg.src = summaryHeroImages[config.pool];
+        }
+        if (heroLabel) {
+            heroLabel.textContent = poolNames[config.pool] || 'Your Pool';
+        }
+
         // Color row
         var colorRow = document.getElementById('summaryColorRow');
         if (config.finish === 'fiberglass') {
@@ -2400,6 +2731,9 @@
             // Spa upgrade visibility
             var spaEl = document.getElementById('spaUpgrade');
             if (spaEl) spaEl.style.display = config.pool === 'experience' ? 'grid' : 'none';
+
+            // Restore model gallery
+            updateModelGallery(config.pool);
         }
 
         if (config.finish) {

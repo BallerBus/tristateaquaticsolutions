@@ -386,18 +386,12 @@
         .finish-card {
             position: relative;
             border-radius: 24px;
-            padding: 2rem;
-            padding-top: 190px;
             cursor: pointer;
             transition: all 0.5s var(--ease-out-expo);
             border: 3px solid var(--gray);
             background: var(--white);
-            text-align: center;
-            min-height: 380px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
             overflow: hidden;
         }
 
@@ -412,34 +406,130 @@
             box-shadow: 0 0 0 1px var(--gold), 0 15px 40px -10px rgba(201, 169, 98, 0.3);
         }
 
-        .finish-swatch {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 180px;
-            border-radius: 21px 21px 0 0;
+        /* Material Preview — "looking down into the pool" effect */
+        .finish-material-preview {
+            position: relative;
+            height: 210px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1.25rem 1rem;
             overflow: hidden;
-            transition: transform 0.6s var(--ease-out-expo);
         }
 
-        .finish-card:hover .finish-swatch {
-            transform: scale(1.05);
+        /* Curved bottom edge — pool lip transition */
+        .finish-material-preview::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: -5%;
+            right: -5%;
+            height: 28px;
+            background: var(--white);
+            border-radius: 50% 50% 0 0;
+            z-index: 2;
         }
 
-        .finish-card:nth-child(1) .finish-swatch {
-            background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.95) 100%),
-                        url('/images/concrete-construction.jpg') center/cover no-repeat;
+        /* Hover shimmer — light reflecting off water */
+        .finish-material-preview::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.25) 50%, transparent 75%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
         }
 
-        .finish-card:nth-child(2) .finish-swatch {
-            background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.95) 100%),
-                        url('/images/pools/gladwyne-estate.jpg') center/cover no-repeat;
+        .finish-card:hover .finish-material-preview::after {
+            opacity: 1;
         }
 
-        .finish-card:nth-child(3) .finish-swatch {
-            background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.95) 100%),
-                        url('/images/fiberglass-installation.jpg') center/cover no-repeat;
+        /* Concrete + PVC — cool, clean water over smooth liner */
+        .concrete-preview {
+            background:
+                radial-gradient(ellipse at 25% 30%, rgba(255,255,255,0.45) 0%, transparent 45%),
+                radial-gradient(ellipse at 75% 55%, rgba(255,255,255,0.3) 0%, transparent 40%),
+                radial-gradient(ellipse at 45% 80%, rgba(255,255,255,0.2) 0%, transparent 35%),
+                linear-gradient(175deg, #daedf5 0%, #b5d4e2 45%, #8dbdce 100%);
+        }
+
+        /* Plaster & Tile — warm, textured, rich water tones */
+        .plaster-preview {
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.25) 0%, transparent 40%),
+                radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.18) 0%, transparent 35%),
+                linear-gradient(175deg, #c8bba6 0%, #a89880 50%, #8a7e6c 100%);
+        }
+
+        /* Fiberglass — vibrant, glossy, crystal clear */
+        .fiberglass-preview {
+            background:
+                radial-gradient(ellipse at 40% 30%, rgba(255,255,255,0.4) 0%, transparent 40%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.2) 0%, transparent 35%),
+                linear-gradient(175deg, #7ec4d8 0%, #5aacca 40%, #3d95b8 100%);
+        }
+
+        /* Color dot strip inside preview */
+        .preview-color-strip {
+            display: flex;
+            gap: 10px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .preview-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2.5px solid rgba(255,255,255,0.85);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.3);
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .finish-card:hover .preview-dot {
+            transform: scale(1.1);
+        }
+
+        .preview-color-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.95);
+            font-weight: 500;
+            margin-top: 0.5rem;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+            letter-spacing: 0.03em;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Material type badge */
+        .preview-material-badge {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            z-index: 3;
+        }
+
+        .finish-card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
         }
 
         .finish-card h3 {
@@ -565,12 +655,7 @@
             box-shadow: 0 0 0 2px var(--gold);
         }
 
-        .swatch[data-color="light"] { background: #d4e4f0; }
-        .swatch[data-color="medium"] { background: #6fa8c7; }
-        .swatch[data-color="dark"] { background: #2c5f7c; }
-        .swatch[data-color="platinum"] { background: #c0c8d0; }
-        .swatch[data-color="horizon"] { background: #7cb5a8; }
-        .swatch[data-color="moonlight"] { background: #3a4a5c; }
+        /* Swatch colors set via inline styles dynamically */
 
         .swatch-label {
             display: block;
@@ -2207,7 +2292,7 @@
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="pool-card-photo">
-                            <img src="/images/pools/pool-spa-combo.jpg" alt="The Brandywine - grand estate pool with optional spa" loading="eager">
+                            <img src="/images/gallery/bryn-mawr-plunge.jpg" alt="The Brandywine - 9 foot wide plunge pool with spa at end" loading="eager">
                             <div class="pool-card-badge">Grand Estate</div>
                             <div class="pool-card-size-visual">
                                 <svg width="88" height="48" viewBox="0 0 88 48">
@@ -2277,20 +2362,33 @@
                 </div>
 
                 <div class="finish-cards">
-                    <!-- Precast Concrete -->
+                    <!-- Precast Concrete + PVC Liner -->
                     <div class="finish-card" data-finish="concrete" onclick="selectFinish(this)">
                         <div class="finish-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
-                        <div class="finish-swatch"></div>
-                        <h3>Precast Concrete</h3>
-                        <p>6" steel-reinforced concrete shell with smooth textured PVC interior lining.</p>
-                        <ul class="finish-details">
-                            <li>Most customizable — any shape add-ons</li>
-                            <li>15-year watertight guarantee</li>
-                            <li>Install: 6-8 weeks total</li>
-                        </ul>
-                        <div class="finish-price-note">Included in base price</div>
+                        <div class="finish-material-preview concrete-preview">
+                            <span class="preview-material-badge">Most Popular</span>
+                            <div class="preview-color-strip">
+                                <div class="preview-dot" style="background:#F2EFE8" title="White"></div>
+                                <div class="preview-dot" style="background:#D4C4A8" title="Sand"></div>
+                                <div class="preview-dot" style="background:#A3C5D9" title="Light Blue"></div>
+                                <div class="preview-dot" style="background:#5B8BA5" title="Caribbean"></div>
+                                <div class="preview-dot" style="background:#8C8E90" title="Grey"></div>
+                                <div class="preview-dot" style="background:#5A5C5E" title="Charcoal"></div>
+                            </div>
+                            <span class="preview-color-label">6 PVC liner colors</span>
+                        </div>
+                        <div class="finish-card-body">
+                            <h3>Precast Concrete + PVC Liner</h3>
+                            <p>Steel-reinforced concrete shell with smooth, watertight PVC interior — choose from 6 colors.</p>
+                            <ul class="finish-details">
+                                <li>Most customizable — any shape add-ons</li>
+                                <li>15-year watertight guarantee</li>
+                                <li>Install: 6-8 weeks total</li>
+                            </ul>
+                            <div class="finish-price-note">Included in base price</div>
+                        </div>
                     </div>
 
                     <!-- Plaster & Tile -->
@@ -2298,15 +2396,28 @@
                         <div class="finish-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
-                        <div class="finish-swatch"></div>
-                        <h3>Plaster & Tile</h3>
-                        <p>PebbleSheen plaster finish with custom waterline tile on concrete shell.</p>
-                        <ul class="finish-details">
-                            <li>Rich, textured feel underfoot</li>
-                            <li>Custom tile colors and patterns</li>
-                            <li>Install: 7-9 weeks total</li>
-                        </ul>
-                        <div class="finish-price-note">+$3,000 - $5,000</div>
+                        <div class="finish-material-preview plaster-preview">
+                            <span class="preview-material-badge">Premium Upgrade</span>
+                            <div class="preview-color-strip">
+                                <div class="preview-dot" style="background:#7CABB8" title="Aqua Blue"></div>
+                                <div class="preview-dot" style="background:#8A9199" title="French Gray"></div>
+                                <div class="preview-dot" style="background:#B8A47C" title="Desert Gold"></div>
+                                <div class="preview-dot" style="background:#4A6B7B" title="Blue Granite"></div>
+                                <div class="preview-dot" style="background:#395D72" title="Tahoe Blue"></div>
+                                <div class="preview-dot" style="background:#2C3E50" title="Midnight"></div>
+                            </div>
+                            <span class="preview-color-label">6 plaster colors + waterline tile</span>
+                        </div>
+                        <div class="finish-card-body">
+                            <h3>Plaster & Tile</h3>
+                            <p>Pebble-finish plaster with custom waterline tile on concrete shell — rich texture and depth.</p>
+                            <ul class="finish-details">
+                                <li>Rich, textured feel underfoot</li>
+                                <li>Custom tile colors and patterns</li>
+                                <li>Install: 7-9 weeks total</li>
+                            </ul>
+                            <div class="finish-price-note">+$3,000 - $5,000</div>
+                        </div>
                     </div>
 
                     <!-- Fiberglass Composite -->
@@ -2314,46 +2425,36 @@
                         <div class="finish-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
-                        <div class="finish-swatch"></div>
-                        <h3>Fiberglass Composite</h3>
-                        <p>Graphene-infused composite shell — 200x stronger than steel, 30% lighter than concrete.</p>
-                        <ul class="finish-details">
-                            <li>Factory-finished — 6 color options</li>
-                            <li>Fastest install: 2-3 weeks total</li>
-                            <li>Lowest lifetime maintenance</li>
-                        </ul>
-                        <div class="finish-price-note savings">Save $5,000 - $8,000</div>
+                        <div class="finish-material-preview fiberglass-preview">
+                            <span class="preview-material-badge">Fastest Install</span>
+                            <div class="preview-color-strip">
+                                <div class="preview-dot" style="background:#d4e4f0" title="Light"></div>
+                                <div class="preview-dot" style="background:#6fa8c7" title="Medium"></div>
+                                <div class="preview-dot" style="background:#2c5f7c" title="Dark"></div>
+                                <div class="preview-dot" style="background:#c0c8d0" title="Platinum"></div>
+                                <div class="preview-dot" style="background:#7cb5a8" title="Horizon"></div>
+                                <div class="preview-dot" style="background:#3a4a5c" title="Moonlight"></div>
+                            </div>
+                            <span class="preview-color-label">6 factory shell colors</span>
+                        </div>
+                        <div class="finish-card-body">
+                            <h3>Fiberglass Composite</h3>
+                            <p>Graphene-infused composite shell — 200x stronger than steel, factory-finished in your choice of color.</p>
+                            <ul class="finish-details">
+                                <li>Factory-finished — 6 color options</li>
+                                <li>Fastest install: 2-3 weeks total</li>
+                                <li>Lowest lifetime maintenance</li>
+                            </ul>
+                            <div class="finish-price-note savings">Save $5,000 - $8,000</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Color Swatches for Fiberglass -->
+                <!-- Color Selection — dynamically populated per finish type -->
                 <div class="color-swatches" id="colorSwatches">
-                    <h4>Choose Your Shell Color</h4>
-                    <div class="swatch-grid">
-                        <div>
-                            <div class="swatch selected" data-color="light" onclick="selectColor(this)"></div>
-                            <span class="swatch-label">Light</span>
-                        </div>
-                        <div>
-                            <div class="swatch" data-color="medium" onclick="selectColor(this)"></div>
-                            <span class="swatch-label">Medium</span>
-                        </div>
-                        <div>
-                            <div class="swatch" data-color="dark" onclick="selectColor(this)"></div>
-                            <span class="swatch-label">Dark</span>
-                        </div>
-                        <div>
-                            <div class="swatch" data-color="platinum" onclick="selectColor(this)"></div>
-                            <span class="swatch-label">Platinum</span>
-                        </div>
-                        <div>
-                            <div class="swatch" data-color="horizon" onclick="selectColor(this)"></div>
-                            <span class="swatch-label">Horizon</span>
-                        </div>
-                        <div>
-                            <div class="swatch" data-color="moonlight" onclick="selectColor(this)"></div>
-                            <span class="swatch-label">Moonlight</span>
-                        </div>
+                    <h4 id="colorSwatchesTitle">Choose Your Color</h4>
+                    <div class="swatch-grid" id="swatchGrid">
+                        <!-- Populated by selectFinish() -->
                     </div>
                 </div>
 
@@ -2452,7 +2553,7 @@
                             <svg viewBox="0 0 24 24" style="opacity:1;"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="upgrade-photo">
-                            <img src="/images/pools/pool-spa-combo.jpg" alt="Built-in spa" loading="lazy">
+                            <img src="/images/gallery/bryn-mawr-plunge.jpg" alt="Built-in spa section" loading="lazy">
                         </div>
                         <h3>Built-In Spa</h3>
                         <p class="upgrade-desc">Integrated hot tub built into your pool</p>
@@ -2543,7 +2644,7 @@
                             <span class="summary-item-value" id="summaryFinish">--</span>
                         </div>
                         <div class="summary-item" id="summaryColorRow" style="display:none;">
-                            <span class="summary-item-label">Shell Color</span>
+                            <span class="summary-item-label" id="summaryColorLabel">Color</span>
                             <span class="summary-item-value" id="summaryColor">--</span>
                         </div>
                         <div class="summary-item">
@@ -2867,7 +2968,7 @@
     };
 
     var finishNames = {
-        concrete: 'Precast Concrete',
+        concrete: 'Precast Concrete + PVC Liner',
         plaster: 'Plaster & Tile',
         fiberglass: 'Fiberglass Composite'
     };
@@ -2916,14 +3017,14 @@
     var summaryHeroImages = {
         devon: '/images/wellness-plunge.jpg',
         gladwyne: '/images/pools/family-lifestyle.jpg',
-        brandywine: '/images/pools/pool-spa-combo.jpg'
+        brandywine: '/images/gallery/bryn-mawr-plunge.jpg'
     };
 
     // ==================== POOL HERO + DIMENSION DIAGRAMS ====================
     var poolHeroData = {
         devon:      { img: '/images/wellness-plunge.jpg', dims: '7\' × 13\'', w: 70, h: 130 },
         gladwyne:   { img: '/images/pools/family-lifestyle.jpg', dims: '9\' × 16\'', w: 90, h: 160 },
-        brandywine: { img: '/images/pools/pool-spa-combo.jpg', dims: '9\' × 21\'', w: 90, h: 210 }
+        brandywine: { img: '/images/gallery/bryn-mawr-plunge.jpg', dims: '9\' × 21\'', w: 90, h: 210 }
     };
 
     function updateSelectedPoolHero(poolType) {
@@ -3027,6 +3128,43 @@
         }, 100);
     }
 
+    // Color options per finish type
+    var finishColorData = {
+        concrete: {
+            title: 'Choose Your PVC Liner Color',
+            colors: [
+                { name: 'White', key: 'white', hex: '#F2EFE8' },
+                { name: 'Sand', key: 'sand', hex: '#D4C4A8' },
+                { name: 'Light Blue', key: 'light-blue', hex: '#A3C5D9' },
+                { name: 'Caribbean', key: 'caribbean', hex: '#5B8BA5' },
+                { name: 'Grey', key: 'grey', hex: '#8C8E90' },
+                { name: 'Charcoal', key: 'charcoal', hex: '#5A5C5E' }
+            ]
+        },
+        plaster: {
+            title: 'Choose Your Plaster Color',
+            colors: [
+                { name: 'Aqua Blue', key: 'aqua-blue', hex: '#7CABB8' },
+                { name: 'French Gray', key: 'french-gray', hex: '#8A9199' },
+                { name: 'Desert Gold', key: 'desert-gold', hex: '#B8A47C' },
+                { name: 'Blue Granite', key: 'blue-granite', hex: '#4A6B7B' },
+                { name: 'Tahoe Blue', key: 'tahoe-blue', hex: '#395D72' },
+                { name: 'Midnight', key: 'midnight', hex: '#2C3E50' }
+            ]
+        },
+        fiberglass: {
+            title: 'Choose Your Shell Color',
+            colors: [
+                { name: 'Light', key: 'light', hex: '#d4e4f0' },
+                { name: 'Medium', key: 'medium', hex: '#6fa8c7' },
+                { name: 'Dark', key: 'dark', hex: '#2c5f7c' },
+                { name: 'Platinum', key: 'platinum', hex: '#c0c8d0' },
+                { name: 'Horizon', key: 'horizon', hex: '#7cb5a8' },
+                { name: 'Moonlight', key: 'moonlight', hex: '#3a4a5c' }
+            ]
+        }
+    };
+
     function selectFinish(el) {
         document.querySelectorAll('.finish-card').forEach(function(c) { c.classList.remove('selected'); });
         el.classList.add('selected');
@@ -3035,13 +3173,41 @@
         updateContinueButtons();
         trackEvent('finish_selected', { finish_type: config.finish });
 
-        // Show color swatches for fiberglass
+        // Show color picker for selected finish
         var swatches = document.getElementById('colorSwatches');
-        if (config.finish === 'fiberglass') {
+        var data = finishColorData[config.finish];
+        if (data) {
+            document.getElementById('colorSwatchesTitle').textContent = data.title;
+            var grid = document.getElementById('swatchGrid');
+            grid.innerHTML = data.colors.map(function(c, i) {
+                var sel = i === 0 ? ' selected' : '';
+                return '<div>' +
+                    '<div class="swatch' + sel + '" data-color="' + c.key + '" ' +
+                    'style="background:' + c.hex + '" onclick="selectColor(this)"></div>' +
+                    '<span class="swatch-label">' + c.name + '</span>' +
+                    '</div>';
+            }).join('');
             swatches.classList.add('visible');
-        } else {
-            swatches.classList.remove('visible');
+            // Auto-select first color
+            config.color = data.colors[0].key;
+            saveState();
         }
+    }
+
+    function populateColorSwatches(finish, selectedColor) {
+        var data = finishColorData[finish];
+        if (!data) return;
+        document.getElementById('colorSwatchesTitle').textContent = data.title;
+        var grid = document.getElementById('swatchGrid');
+        grid.innerHTML = data.colors.map(function(c) {
+            var sel = c.key === selectedColor ? ' selected' : '';
+            return '<div>' +
+                '<div class="swatch' + sel + '" data-color="' + c.key + '" ' +
+                'style="background:' + c.hex + '" onclick="selectColor(this)"></div>' +
+                '<span class="swatch-label">' + c.name + '</span>' +
+                '</div>';
+        }).join('');
+        document.getElementById('colorSwatches').classList.add('visible');
     }
 
     function selectColor(el) {
@@ -3277,11 +3443,25 @@
             heroLabel.textContent = poolNames[config.pool] || 'Your Pool';
         }
 
-        // Color row
+        // Color row — show for all finishes now
         var colorRow = document.getElementById('summaryColorRow');
-        if (config.finish === 'fiberglass') {
+        if (config.color) {
             colorRow.style.display = '';
-            document.getElementById('summaryColor').textContent = config.color.charAt(0).toUpperCase() + config.color.slice(1);
+            // Look up display name from finishColorData
+            var colorDisplay = config.color;
+            var fData = finishColorData[config.finish];
+            if (fData) {
+                for (var ci = 0; ci < fData.colors.length; ci++) {
+                    if (fData.colors[ci].key === config.color) {
+                        colorDisplay = fData.colors[ci].name;
+                        break;
+                    }
+                }
+            }
+            document.getElementById('summaryColor').textContent = colorDisplay;
+            // Update label based on finish type
+            var colorLabels = { concrete: 'Liner Color', plaster: 'Plaster Color', fiberglass: 'Shell Color' };
+            document.getElementById('summaryColorLabel').textContent = colorLabels[config.finish] || 'Color';
         } else {
             colorRow.style.display = 'none';
         }
@@ -3342,7 +3522,7 @@
                 poolName: poolNames[config.pool],
                 finish: config.finish,
                 finishName: finishNames[config.finish],
-                color: config.finish === 'fiberglass' ? config.color : null,
+                color: config.color || null,
                 upgrades: config.upgrades,
                 upgradeNames: config.upgrades.map(function(u) { return upgradeNames[u]; }),
                 priceRange: { low: price.low, high: price.high }
@@ -3437,15 +3617,8 @@
             var finishCard = document.querySelector('.finish-card[data-finish="' + config.finish + '"]');
             if (finishCard) finishCard.classList.add('selected');
 
-            if (config.finish === 'fiberglass') {
-                document.getElementById('colorSwatches').classList.add('visible');
-            }
-        }
-
-        if (config.color) {
-            document.querySelectorAll('.swatch').forEach(function(s) { s.classList.remove('selected'); });
-            var colorSwatch = document.querySelector('.swatch[data-color="' + config.color + '"]');
-            if (colorSwatch) colorSwatch.classList.add('selected');
+            // Populate color swatches for the selected finish
+            populateColorSwatches(config.finish, config.color);
         }
 
         if (config.upgrades && config.upgrades.length > 0) {

@@ -1057,9 +1057,9 @@
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
             letter-spacing: 0.02em;
         }
 
@@ -1136,15 +1136,15 @@
         }
 
         .summary-item-label {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.45);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .summary-item-value {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--white);
             text-align: right;
             font-weight: 500;
@@ -1183,8 +1183,8 @@
         }
 
         .price-note {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
         }
 
         .financing-card {
@@ -1243,9 +1243,9 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.75);
-            padding: 0.5rem 0.75rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.6rem 0.85rem;
             background: rgba(255, 255, 255, 0.04);
             border-radius: 8px;
         }
@@ -1309,8 +1309,8 @@
             justify-content: space-between;
             padding: 0.6rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
         }
 
         .not-included-item:last-of-type {
@@ -1342,15 +1342,11 @@
             font-size: 1.05rem;
         }
 
-        .summary-ctas .cta-btn.secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .summary-ctas .cta-btn.secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+        .summary-cta-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
         }
 
         /* ==================== PAYMENT TIMELINE (Step 4) ==================== */
@@ -1421,7 +1417,7 @@
         }
 
         .timeline-label {
-            font-size: 0.78rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--white);
             margin-bottom: 0.25rem;
@@ -1433,30 +1429,23 @@
         }
 
         .timeline-pct {
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
             margin-bottom: 0.35rem;
         }
 
         .timeline-trigger {
-            font-size: 0.68rem;
-            color: rgba(255, 255, 255, 0.35);
-            font-style: italic;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
             line-height: 1.4;
             padding: 0 0.25rem;
         }
 
         .timeline-note {
             text-align: center;
-            font-size: 0.78rem;
-            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.5);
             margin-top: 1.25rem;
-            font-style: italic;
-        }
-
-        .timeline-note strong {
-            color: var(--gold);
-            font-weight: 600;
         }
 
         /* ==================== DEPOSIT FORM (Step 5) ==================== */
@@ -2797,7 +2786,7 @@
                         <div class="not-included-item"><span>Decking & Hardscape</span><span>$10,000 - $30,000</span></div>
                         <div class="not-included-item"><span>Electrical Hookup</span><span>$2,000 - $4,000</span></div>
                         <div class="not-included-item"><span>Landscaping</span><span>Varies</span></div>
-                        <p class="not-included-note">We provide exact costs at your free consultation.</p>
+                        <p class="not-included-note">Exact costs included in your custom proposal.</p>
                     </div>
                 </div>
 
@@ -2809,44 +2798,44 @@
                             <div class="timeline-dot">TODAY</div>
                             <div class="timeline-stage-text">
                                 <div class="timeline-label">Design Deposit</div>
-                                <div class="timeline-pct">$2,500 &middot; ~4%</div>
-                                <div class="timeline-trigger">Site survey, 3D design &amp; proposal</div>
+                                <div class="timeline-pct">$2,500</div>
+                                <div class="timeline-trigger">You get: site survey, 3D design, full proposal</div>
                             </div>
                         </div>
                         <div class="timeline-stage">
                             <div class="timeline-dot">2</div>
                             <div class="timeline-stage-text">
-                                <div class="timeline-label">Contract Signing</div>
-                                <div class="timeline-pct">33% minus deposit credit</div>
-                                <div class="timeline-trigger">Permits filed, materials ordered</div>
+                                <div class="timeline-label">Contract Signed</div>
+                                <div class="timeline-pct">33% of project</div>
+                                <div class="timeline-trigger">We file permits &amp; order your materials</div>
                             </div>
                         </div>
                         <div class="timeline-stage">
                             <div class="timeline-dot">3</div>
                             <div class="timeline-stage-text">
-                                <div class="timeline-label">Excavation Done</div>
+                                <div class="timeline-label">Excavation Complete</div>
                                 <div class="timeline-pct">25% of project</div>
-                                <div class="timeline-trigger">Hole dug &amp; plumbing roughed in</div>
+                                <div class="timeline-trigger">Hole dug, plumbing roughed in</div>
                             </div>
                         </div>
                         <div class="timeline-stage">
                             <div class="timeline-dot">4</div>
                             <div class="timeline-stage-text">
-                                <div class="timeline-label">Pool Shell Set</div>
+                                <div class="timeline-label">Shell Installed</div>
                                 <div class="timeline-pct">25% of project</div>
-                                <div class="timeline-trigger">Structure installed &amp; backfill complete</div>
+                                <div class="timeline-trigger">Pool structure set &amp; backfilled</div>
                             </div>
                         </div>
                         <div class="timeline-stage">
                             <div class="timeline-dot">5</div>
                             <div class="timeline-stage-text">
-                                <div class="timeline-label">Final Handoff</div>
-                                <div class="timeline-pct">Remaining ~17%</div>
-                                <div class="timeline-trigger">Equipment running, water balanced</div>
+                                <div class="timeline-label">Final Walkthrough</div>
+                                <div class="timeline-pct">Remaining balance</div>
+                                <div class="timeline-trigger">Everything running, keys handed over</div>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-note"><strong>You never pay ahead of completed work.</strong> Each payment follows a verified milestone.</div>
+                    <div class="timeline-note">Each payment follows a completed, verified milestone.</div>
                 </div>
 
                 <div class="summary-ctas">
@@ -2854,10 +2843,7 @@
                         Secure Your Spot &mdash; $2,500 Deposit
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
-                    <a href="/contact/" class="cta-btn secondary">
-                        Schedule Free Consultation
-                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                    </a>
+                    <p class="summary-cta-note">Questions? Call us at <a href="tel:+13028972140" style="color:var(--gold);text-decoration:none;font-weight:600;">(302) 897-2140</a></p>
                 </div>
 
                 <div class="step-nav">

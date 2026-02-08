@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KXFWZNHH');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPSDTSG1H6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MPSDTSG1H6');
+</script>
+<!-- End Google Analytics 4 -->
+<!-- PostHog Analytics -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_AEHl0m89HvS8SsSGjB83vMZBgH73rqR7PYbKneWBUig',{api_host:'https://us.i.posthog.com', person_profiles: 'always'})
+</script>
+<!-- End PostHog Analytics -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Confirmed | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Your $1,000 design deposit has been received. Your pool journey with Tri-State Aquatic Solutions begins now.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/shared.css">
+
+    <style>
+        nav { top: 40px; }
+
+        /* ==================== CONFIRMATION HERO ==================== */
+        .confirmation-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 160px 1.5rem 60px;
+            background: linear-gradient(180deg, var(--gray-light) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .confirmation-hero::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            pointer-events: none;
+        }
+
+        .confirmation-hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Gold checkmark circle */
+        .checkmark-circle {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 60px -15px rgba(201, 169, 98, 0.5);
+            animation: scaleIn 0.6s var(--ease-out-expo) both;
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .checkmark-circle svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--navy);
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        .confirmation-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--navy);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.2s both;
+        }
+
+        .confirmation-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            max-width: 550px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.3s both;
+        }
+
+        .confirmation-subtitle strong {
+            color: var(--navy);
+        }
+
+        /* ==================== RECEIPT CARD ==================== */
+        .receipt-section {
+            padding: 0 0 clamp(4rem, 8vw, 6rem);
+            background: var(--white);
+        }
+
+        .receipt-card {
+            max-width: 600px;
+            margin: -2rem auto 0;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 60px -15px rgba(14, 31, 52, 0.1);
+        }
+
+        .receipt-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 24px 24px 0 0;
+            background: linear-gradient(90deg, var(--gold), var(--aqua));
+        }
+
+        .receipt-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .receipt-header h3 {
+            font-size: 1.25rem;
+            color: var(--navy);
+        }
+
+        .receipt-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #16a34a;
+            background: rgba(22, 163, 74, 0.1);
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+        }
+
+        .receipt-badge svg {
+            width: 14px;
+            height: 14px;
+            stroke: #16a34a;
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        .receipt-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .receipt-row .label {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .receipt-row .value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--navy);
+            text-align: right;
+        }
+
+        .receipt-total {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--navy);
+        }
+
+        .receipt-total .label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .receipt-total .value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            font-family: var(--font-display);
+        }
+
+        /* ==================== POOL CONFIG SUMMARY ==================== */
+        .config-summary {
+            padding: 0 0 clamp(4rem, 8vw, 6rem);
+            background: var(--white);
+        }
+
+        .config-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--gray-light);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+        }
+
+        .config-card h3 {
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .config-card h3 svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .config-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .config-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .config-item .config-label {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .config-item .config-value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .config-estimate {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .config-estimate .config-label {
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .config-estimate .config-value {
+            font-weight: 600;
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+        }
+
+        .config-hidden {
+            display: none;
+        }
+
+        /* ==================== WHAT HAPPENS NEXT TIMELINE ==================== */
+        .timeline-section {
+            padding: clamp(4rem, 8vw, 6rem) 0;
+            background: var(--gray-light);
+        }
+
+        .timeline-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .timeline-header h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-header p {
+            font-size: 1.05rem;
+        }
+
+        .timeline {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            bottom: 24px;
+            left: 23px;
+            width: 2px;
+            background: var(--gray);
+        }
+
+        .timeline-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--aqua);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content .timeline-timing {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact-section {
+            padding: clamp(4rem, 8vw, 6rem) 0;
+            background: var(--white);
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 24px;
+            padding: clamp(2.5rem, 5vw, 3.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--aqua-glow) 0%, transparent 70%);
+            top: -150px;
+            right: -150px;
+            pointer-events: none;
+        }
+
+        .contact-box > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-box > p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method:hover {
+            color: var(--aqua);
+        }
+
+        .contact-method svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aqua);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .contact-method.email {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .confirmation-hero {
+                padding: 140px 1.5rem 40px;
+            }
+
+            .checkmark-circle {
+                width: 80px;
+                height: 80px;
+            }
+
+            .checkmark-circle svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .receipt-card {
+                margin: -1.5rem 1rem 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .receipt-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .receipt-row .value {
+                text-align: left;
+            }
+
+            .config-card {
+                margin: 0 1rem;
+                padding: 1.5rem;
+            }
+
+            .timeline {
+                padding: 0 1rem;
+            }
+
+            .contact-box {
+                margin: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .receipt-card {
+                margin: -1.5rem 0.5rem 0;
+                padding: 1.5rem 1rem;
+            }
+
+            .config-card {
+                margin: 0 0.5rem;
+                padding: 1.25rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXFWZNHH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <span class="banner-text">
+            <span class="banner-highlight">Spring 2026 Installation Spots Available</span>
+            &mdash; Now accepting deposits. Limited spots remaining.
+        </span>
+        <a href="/contact/">Book Free Consultation</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    Tri-State Aquatic
+                    <span>Solutions</span>
+                </div>
+            </a>
+
+            <a href="tel:+13028703113" class="nav-phone">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                (302) 870-3113
+            </a>
+
+            <ul class="nav-links">
+                <!-- Pool Installation Dropdown -->
+                <li>
+                    <a href="/pools/">
+                        Pool Installation
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-column install-column">
+                            <h4>Pool Types</h4>
+                            <ul>
+                                <li>
+                                    <a href="/pools/plunge-pools/">
+                                        <div class="menu-icon">
+                                            <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>
+                                        </div>
+                                        <div class="menu-text">
+                                            Plunge Pools
+                                            <span>Compact luxury retreats</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/pools/cocktail-pools/">
+                                        <div class="menu-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M12 3a9 9 0 019 9v5H3v-5a9 9 0 019-9z"/></svg>
+                                        </div>
+                                        <div class="menu-text">
+                                            Cocktail Pools
+                                            <span>Perfect for entertaining</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/pools/fiberglass/">
+                                        <div class="menu-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M2 12h2a2 2 0 012 2v4a2 2 0 01-2 2H2v-8z"/><rect x="6" y="8" width="12" height="12" rx="2"/></svg>
+                                        </div>
+                                        <div class="menu-text">
+                                            Fiberglass Pools
+                                            <span>Quick install, low maintenance</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="/contact/" class="featured">
+                                <div class="menu-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                                </div>
+                                <div class="menu-text">
+                                    Schedule Consultation
+                                    <span>Free design & estimate</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Pool Services Dropdown -->
+                <li>
+                    <a href="/pool-maintenance/">
+                        Pool Services
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="mega-menu wide">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-column services-column">
+                                <h4>Maintenance</h4>
+                                <ul>
+                                    <li>
+                                        <a href="/services/weekly-maintenance/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                Weekly Maintenance
+                                                <span>From $150/month</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/services/pool-opening/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                Pool Opening
+                                                <span>Spring startup service</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/services/pool-closing/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                Pool Closing
+                                                <span>Winterization service</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/services/water-testing/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                Water Testing
+                                                <span>Chemistry analysis</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column services-column">
+                                <h4>Repairs</h4>
+                                <ul>
+                                    <li>
+                                        <a href="/services/equipment-repair/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                Equipment Repair
+                                                <span>All major brands</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/services/pump-repair/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                Pump Repair
+                                                <span>Diagnosis & repair</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/services/heater-repair/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><path d="M12 2c-5.33 4-8 8-8 12a8 8 0 1016 0c0-4-2.67-8-8-12z"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                Heater Repair
+                                                <span>Gas & heat pump</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/services/emergency/">
+                                            <div class="menu-icon">
+                                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                            </div>
+                                            <div class="menu-text">
+                                                24/7 Emergency
+                                                <span>Urgent repairs</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a href="/pool-maintenance/" class="featured">
+                                    <div class="menu-icon">
+                                        <svg viewBox="0 0 24 24"><path d="M21 12H3M21 6H3M21 18H3"/></svg>
+                                    </div>
+                                    <div class="menu-text">
+                                        View All Services
+                                        <span>Complete service catalog</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/locations/">Service Areas</a></li>
+                <li><a href="/design-your-pool/" class="nav-cta-gold">Design Your Pool</a></li>
+                <li><a href="/contact/" class="nav-cta">Get Free Quote</a></li>
+            </ul>
+
+            <button class="mobile-toggle" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-section">
+            <h4>Call Us</h4>
+            <ul>
+                <li><a href="tel:+13028703113">(302) 870-3113</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-section install-section">
+            <h4>Pool Installation</h4>
+            <ul>
+                <li><a href="/design-your-pool/" style="color: var(--gold); font-weight: 600;">Design Your Pool</a></li>
+                <li><a href="/pools/plunge-pools/">Plunge Pools</a></li>
+                <li><a href="/pools/cocktail-pools/">Cocktail Pools</a></li>
+                <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                <li><a href="/pools/">All Pool Types</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Pool Services</h4>
+            <ul>
+                <li><a href="/services/weekly-maintenance/">Weekly Maintenance</a></li>
+                <li><a href="/services/pool-opening/">Pool Opening</a></li>
+                <li><a href="/services/pool-closing/">Pool Closing</a></li>
+                <li><a href="/services/equipment-repair/">Equipment Repair</a></li>
+                <li><a href="/services/water-testing/">Water Testing</a></li>
+                <li><a href="/services/emergency/">Emergency Service</a></li>
+                <li><a href="/pool-maintenance/">All Services</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>More</h4>
+            <ul>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/locations/">Service Areas</a></li>
+                <li><a href="/contact/">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Confirmation Hero -->
+    <section class="confirmation-hero">
+        <div class="hero-inner">
+            <div class="checkmark-circle">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h1>Your Pool Journey Begins!</h1>
+            <p class="confirmation-subtitle" id="confirmationSubtitle">
+                Thank you! Your <strong>$1,000 design deposit</strong> has been received.
+            </p>
+        </div>
+    </section>
+
+    <!-- Receipt Details -->
+    <section class="receipt-section">
+        <div class="container">
+            <div class="receipt-card" id="receiptCard">
+                <div class="receipt-header">
+                    <h3>Payment Receipt</h3>
+                    <div class="receipt-badge">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Paid
+                    </div>
+                </div>
+                <div class="receipt-rows">
+                    <div class="receipt-row">
+                        <span class="label">Transaction ID</span>
+                        <span class="value" id="receiptTxId">&mdash;</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="label">Date</span>
+                        <span class="value" id="receiptDate">&mdash;</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="label">Email</span>
+                        <span class="value" id="receiptEmail">&mdash;</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="label">Description</span>
+                        <span class="value">Pool Design Deposit</span>
+                    </div>
+                    <div class="receipt-row receipt-total">
+                        <span class="label">Total Paid</span>
+                        <span class="value" id="receiptAmount">$1,000.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pool Configuration Summary -->
+    <section class="config-summary" id="configSection">
+        <div class="container">
+            <div class="config-card">
+                <h3>
+                    <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>
+                    Your Pool Selection
+                </h3>
+                <div class="config-items">
+                    <div class="config-item">
+                        <span class="config-label">Pool Type</span>
+                        <span class="config-value" id="configPoolType">&mdash;</span>
+                    </div>
+                    <div class="config-item">
+                        <span class="config-label">Finish</span>
+                        <span class="config-value" id="configFinish">&mdash;</span>
+                    </div>
+                    <div class="config-item" id="configUpgradesRow">
+                        <span class="config-label">Upgrades</span>
+                        <span class="config-value" id="configUpgrades">&mdash;</span>
+                    </div>
+                    <div class="config-item config-estimate">
+                        <span class="config-label">Estimated Range</span>
+                        <span class="config-value" id="configPrice">&mdash;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens Next Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline-header">
+                <div class="section-tag">What Happens Next</div>
+                <h2>Your Path to a New Pool</h2>
+                <p>Here is exactly what to expect now that your design deposit is secured.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Step 1 -->
+                <div class="timeline-step">
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-timing">Within 24 Hours</div>
+                        <h3>We'll Call You</h3>
+                        <p>A member of our team will reach out to discuss your project, answer questions, and start planning your dream pool.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-step">
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-timing">Week 1</div>
+                        <h3>Site Visit</h3>
+                        <p>We will schedule a free visit to assess your backyard, take measurements, and discuss placement, access, and utilities.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-step">
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-timing">Week 2-3</div>
+                        <h3>3D Design</h3>
+                        <p>See your pool in your actual space with a photorealistic 3D rendering. We refine the design until it is perfect.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-step">
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-timing">Week 3-4</div>
+                        <h3>Your Proposal</h3>
+                        <p>Receive a detailed scope of work, project timeline, and complete investment breakdown. Your deposit is applied to the total.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Questions? We're Here to Help.</h2>
+                <p>Our team is ready to assist you at any point in your pool journey.</p>
+
+                <div class="contact-methods">
+                    <a href="tel:+13028703113" class="contact-method">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        (302) 870-3113
+                    </a>
+                    <a href="mailto:Bryce@TriStateAquaticSolutions.com" class="contact-method email">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Bryce@TriStateAquaticSolutions.com
+                    </a>
+                </div>
+
+                <a href="/contact/" class="cta-btn aqua">
+                    Schedule a Call
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-mark"></div>
+                        <div class="logo-text">
+                            Tri-State Aquatic
+                            <span>Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium pool installation and expert maintenance services for Main Line Philadelphia and Northern Delaware. Your local pool professionals.</p>
+                </div>
+
+                <div class="footer-column install-column">
+                    <h4>Pool Installation</h4>
+                    <ul>
+                        <li><a href="/design-your-pool/">Design Your Pool</a></li>
+                        <li><a href="/pools/plunge-pools/">Plunge Pools</a></li>
+                        <li><a href="/pools/cocktail-pools/">Cocktail Pools</a></li>
+                        <li><a href="/pools/fiberglass/">Fiberglass Pools</a></li>
+                        <li><a href="/gallery/">Pool Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Pool Services</h4>
+                    <ul>
+                        <li><a href="/services/weekly-maintenance/">Weekly Maintenance</a></li>
+                        <li><a href="/services/pool-opening/">Pool Opening</a></li>
+                        <li><a href="/services/pool-closing/">Pool Closing</a></li>
+                        <li><a href="/services/equipment-repair/">Equipment Repair</a></li>
+                        <li><a href="/services/emergency/">Emergency Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li><a href="/locations/hockessin-de/">Hockessin, DE</a></li>
+                        <li><a href="/locations/greenville-de/">Greenville, DE</a></li>
+                        <li><a href="/locations/west-chester-pa/">West Chester, PA</a></li>
+                        <li><a href="/locations/bryn-mawr-pa/">Bryn Mawr, PA</a></li>
+                        <li><a href="/locations/">All Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-State Aquatic Solutions. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                    <a href="/terms-of-service/">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+        }
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('open');
+            });
+        });
+
+        // ==================== PAGE LOGIC ====================
+        (async function() {
+            const params = new URLSearchParams(window.location.search);
+            const sessionId = params.get('session_id');
+
+            // Populate pool config from sessionStorage
+            let poolConfig = null;
+            try {
+                const stored = sessionStorage.getItem('poolConfig');
+                if (stored) {
+                    poolConfig = JSON.parse(stored);
+                }
+            } catch (e) {
+                // sessionStorage unavailable or invalid JSON
+            }
+
+            if (poolConfig) {
+                populateConfig(poolConfig);
+            } else {
+                document.getElementById('configSection').style.display = 'none';
+            }
+
+            // Fetch session status from Stripe API
+            if (sessionId) {
+                try {
+                    const res = await fetch('/api/stripe/session-status?session_id=' + encodeURIComponent(sessionId));
+                    if (res.ok) {
+                        const data = await res.json();
+                        populateReceipt(data);
+                        fireConversionEvents(data, poolConfig);
+                    }
+                } catch (e) {
+                    // API failure - show generic confirmation
+                    document.getElementById('receiptDate').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                }
+            } else {
+                // No session_id - show generic thank you
+                document.getElementById('receiptDate').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            }
+        })();
+
+        function populateReceipt(data) {
+            // Transaction ID (truncated payment_intent for readability)
+            if (data.payment_intent) {
+                var txId = data.payment_intent;
+                if (typeof txId === 'string' && txId.length > 20) {
+                    txId = txId.substring(0, 8) + '...' + txId.substring(txId.length - 4);
+                }
+                document.getElementById('receiptTxId').textContent = txId;
+            }
+
+            // Date
+            document.getElementById('receiptDate').textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Email
+            if (data.customer_email) {
+                document.getElementById('receiptEmail').textContent = data.customer_email;
+
+                // Personalize subtitle with first part of email
+                var firstName = data.customer_email.split('@')[0];
+                // Capitalize first letter
+                firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                // Use metadata name if available
+                if (data.metadata && data.metadata.customer_name) {
+                    firstName = data.metadata.customer_name.split(' ')[0];
+                }
+                document.getElementById('confirmationSubtitle').innerHTML =
+                    'Thank you, <strong>' + firstName + '</strong>! Your <strong>$1,000 design deposit</strong> has been received.';
+            }
+
+            // Amount
+            if (data.amount_total) {
+                var amount = (data.amount_total / 100).toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: (data.currency || 'usd').toUpperCase()
+                });
+                document.getElementById('receiptAmount').textContent = amount;
+            }
+        }
+
+        function populateConfig(config) {
+            if (config.poolType) {
+                document.getElementById('configPoolType').textContent = config.poolType;
+            }
+            if (config.finish) {
+                document.getElementById('configFinish').textContent = config.finish;
+            }
+            if (config.upgrades && config.upgrades.length > 0) {
+                document.getElementById('configUpgrades').textContent =
+                    Array.isArray(config.upgrades) ? config.upgrades.join(', ') : config.upgrades;
+            } else {
+                document.getElementById('configUpgradesRow').style.display = 'none';
+            }
+            if (config.priceRange) {
+                document.getElementById('configPrice').textContent = config.priceRange;
+            }
+        }
+
+        function fireConversionEvents(sessionData, poolConfig) {
+            // GA4 purchase event
+            if (typeof gtag !== 'undefined' && sessionData.payment_status === 'paid') {
+                gtag('event', 'purchase', {
+                    transaction_id: sessionData.payment_intent,
+                    value: 1000,
+                    currency: 'USD',
+                    items: [{
+                        item_name: 'Design Deposit',
+                        item_category: poolConfig ? poolConfig.poolType : 'Unknown',
+                        price: 1000,
+                        quantity: 1
+                    }]
+                });
+            }
+
+            // PostHog deposit_paid event
+            if (typeof posthog !== 'undefined') {
+                posthog.capture('deposit_paid', {
+                    pool_type: poolConfig ? poolConfig.poolType : null,
+                    finish: poolConfig ? poolConfig.finish : null,
+                    upgrades: poolConfig ? poolConfig.upgrades : null,
+                    estimated_value: poolConfig ? poolConfig.priceRange : null,
+                    transaction_id: sessionData.payment_intent,
+                    amount: sessionData.amount_total ? sessionData.amount_total / 100 : 1000
+                });
+            }
+        }
+    </script>
+</body>
+</html>

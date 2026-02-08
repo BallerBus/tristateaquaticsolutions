@@ -1,5 +1,104 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+const GHL_BASE_URL = 'https://services.leadconnectorhq.com';
+
+async function createGhlLead(customer, poolConfig, metadata) {
+  const apiKey = process.env.GHL_API_KEY;
+  if (!apiKey) {
+    console.log('GHL_API_KEY not configured — skipping lead capture');
+    return;
+  }
+
+  const locationId = process.env.GHL_LOCATION_ID || 'A0e67CElQk4EoVK0XY2K';
+  const ghlHeaders = {
+    'Authorization': `Bearer ${apiKey}`,
+    'Version': '2021-07-28',
+    'Content-Type': 'application/json'
+  };
+
+  try {
+    // Search for existing contact
+    let contactId;
+    const searchParams = new URLSearchParams({ locationId, email: customer.email });
+    const searchRes = await fetch(`${GHL_BASE_URL}/contacts/?${searchParams.toString()}`, {
+      method: 'GET',
+      headers: ghlHeaders
+    });
+
+    if (searchRes.ok) {
+      const searchData = await searchRes.json();
+      if (searchData.contacts && searchData.contacts.length > 0) {
+        contactId = searchData.contacts[0].id;
+      }
+    }
+
+    const upgrades = metadata.upgrades ? JSON.parse(metadata.upgrades) : [];
+    const configNote = [
+      `Pool: ${metadata.poolType || 'N/A'}`,
+      `Finish: ${metadata.finish || 'N/A'}`,
+      metadata.fiberglassColor ? `Color: ${metadata.fiberglassColor}` : null,
+      upgrades.length > 0 ? `Upgrades: ${upgrades.join(', ')}` : null,
+      `Budget: ${metadata.priceRangeLow || '?'} - ${metadata.priceRangeHigh || '?'}`
+    ].filter(Boolean).join(' | ');
+
+    const contactPayload = {
+      firstName: customer.firstName || '',
+      lastName: customer.lastName || '',
+      email: customer.email,
+      phone: customer.phone || '',
+      address1: metadata.address || '',
+      tags: ['Checkout Started', 'Pool Installation Interest'],
+      source: 'Pool Configurator'
+    };
+
+    if (contactId) {
+      // Merge tags with existing
+      const existingRes = await fetch(`${GHL_BASE_URL}/contacts/${contactId}`, {
+        method: 'GET',
+        headers: ghlHeaders
+      });
+      if (existingRes.ok) {
+        const existingData = await existingRes.json();
+        const existingTags = existingData.contact?.tags || [];
+        contactPayload.tags = [...new Set([...existingTags, ...contactPayload.tags])];
+      }
+
+      await fetch(`${GHL_BASE_URL}/contacts/${contactId}`, {
+        method: 'PUT',
+        headers: ghlHeaders,
+        body: JSON.stringify(contactPayload)
+      });
+    } else {
+      contactPayload.locationId = locationId;
+      const createRes = await fetch(`${GHL_BASE_URL}/contacts/`, {
+        method: 'POST',
+        headers: ghlHeaders,
+        body: JSON.stringify(contactPayload)
+      });
+      if (createRes.ok) {
+        const createData = await createRes.json();
+        contactId = createData.contact?.id;
+      }
+    }
+
+    if (contactId) {
+      // Add a note with their pool configuration
+      await fetch(`${GHL_BASE_URL}/contacts/${contactId}/notes`, {
+        method: 'POST',
+        headers: ghlHeaders,
+        body: JSON.stringify({
+          body: `Started checkout from pool configurator.\n\n${configNote}\n\nAwaiting payment completion.`
+        })
+      });
+    }
+
+    console.log(`GHL lead captured: ${customer.firstName} ${customer.lastName} (${customer.email}), contact: ${contactId || 'new'}`);
+  } catch (err) {
+    // Don't block checkout if GHL fails
+    console.error('GHL lead capture error (non-blocking):', err.message);
+  }
+}
+
 module.exports = async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -59,6 +158,9 @@ module.exports = async function handler(req, res) {
       priceRangeHigh,
       source: 'pool-configurator'
     };
+
+    // Capture lead in GHL before Stripe redirect (don't block on failure)
+    createGhlLead(customer, poolConfig, metadata).catch(() => {});
 
     // Build line items - use STRIPE_PRICE_ID if set, otherwise use price_data
     let lineItems;

@@ -72,7 +72,7 @@ module.exports = async function handler(req, res) {
             name: 'Pool Design Deposit',
             description: 'Custom pool design consultation and site survey deposit'
           },
-          unit_amount: 100000 // $1,000.00 in cents
+          unit_amount: 250000 // $2,500.00 in cents
         },
         quantity: 1
       }];

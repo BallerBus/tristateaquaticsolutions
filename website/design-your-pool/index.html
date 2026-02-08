@@ -1416,6 +1416,112 @@
             transform: translateY(-2px);
         }
 
+        /* ==================== PAYMENT TIMELINE (Step 4) ==================== */
+        .payment-timeline {
+            max-width: 900px;
+            margin: 2.5rem auto 0;
+        }
+
+        .payment-timeline h3 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .timeline-stages {
+            display: flex;
+            position: relative;
+            gap: 0;
+        }
+
+        /* Connecting line behind stages */
+        .timeline-stages::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 32px;
+            right: 32px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+
+        .timeline-stage {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-dot {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .timeline-stage:first-child .timeline-dot {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 0 0 4px rgba(201, 169, 98, 0.25), 0 8px 20px rgba(201, 169, 98, 0.3);
+        }
+
+        .timeline-stage:not(:first-child) .timeline-dot {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .timeline-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .timeline-stage:first-child .timeline-label {
+            color: var(--gold);
+        }
+
+        .timeline-pct {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 0.35rem;
+        }
+
+        .timeline-trigger {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-style: italic;
+            line-height: 1.4;
+            padding: 0 0.25rem;
+        }
+
+        .timeline-note {
+            text-align: center;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 1.25rem;
+            font-style: italic;
+        }
+
+        .timeline-note strong {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
         /* ==================== DEPOSIT FORM (Step 5) ==================== */
         .deposit-form-wrapper {
             max-width: 600px;
@@ -1777,6 +1883,47 @@
 
             .summary-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .timeline-stages {
+                flex-direction: column;
+                gap: 0;
+                padding-left: 2rem;
+            }
+
+            .timeline-stages::before {
+                top: 0;
+                bottom: 0;
+                left: calc(2rem + 27px);
+                right: auto;
+                width: 2px;
+                height: auto;
+            }
+
+            .timeline-stage {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+                text-align: left;
+                padding-bottom: 1.5rem;
+            }
+
+            .timeline-stage:last-child {
+                padding-bottom: 0;
+            }
+
+            .timeline-dot {
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                margin: 0;
+                font-size: 0.65rem;
+            }
+
+            .timeline-stage-text {
+                padding-top: 0.4rem;
             }
         }
 
@@ -2731,9 +2878,57 @@
                     </div>
                 </div>
 
+                <!-- Payment Timeline -->
+                <div class="payment-timeline">
+                    <h3>How Payment Works</h3>
+                    <div class="timeline-stages">
+                        <div class="timeline-stage">
+                            <div class="timeline-dot">TODAY</div>
+                            <div class="timeline-stage-text">
+                                <div class="timeline-label">Design Deposit</div>
+                                <div class="timeline-pct">$2,500 &middot; ~4%</div>
+                                <div class="timeline-trigger">Site survey, 3D design &amp; proposal</div>
+                            </div>
+                        </div>
+                        <div class="timeline-stage">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-stage-text">
+                                <div class="timeline-label">Contract Signing</div>
+                                <div class="timeline-pct">33% minus deposit credit</div>
+                                <div class="timeline-trigger">Permits filed, materials ordered</div>
+                            </div>
+                        </div>
+                        <div class="timeline-stage">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-stage-text">
+                                <div class="timeline-label">Excavation Done</div>
+                                <div class="timeline-pct">25% of project</div>
+                                <div class="timeline-trigger">Hole dug &amp; plumbing roughed in</div>
+                            </div>
+                        </div>
+                        <div class="timeline-stage">
+                            <div class="timeline-dot">4</div>
+                            <div class="timeline-stage-text">
+                                <div class="timeline-label">Pool Shell Set</div>
+                                <div class="timeline-pct">25% of project</div>
+                                <div class="timeline-trigger">Structure installed &amp; backfill complete</div>
+                            </div>
+                        </div>
+                        <div class="timeline-stage">
+                            <div class="timeline-dot">5</div>
+                            <div class="timeline-stage-text">
+                                <div class="timeline-label">Final Handoff</div>
+                                <div class="timeline-pct">Remaining ~17%</div>
+                                <div class="timeline-trigger">Equipment running, water balanced</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-note"><strong>You never pay ahead of completed work.</strong> Each payment follows a verified milestone.</div>
+                </div>
+
                 <div class="summary-ctas">
                     <button class="cta-btn gold" onclick="goToStep(5)">
-                        Secure Your Spot &mdash; $1,000 Deposit
+                        Secure Your Spot &mdash; $2,500 Deposit
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
                     <a href="/contact/" class="cta-btn secondary">
@@ -2762,7 +2957,7 @@
                 <div class="deposit-form-wrapper">
                     <!-- Deposit Info -->
                     <div class="deposit-info">
-                        <div class="deposit-amount">$1,000</div>
+                        <div class="deposit-amount">$2,500</div>
                         <div class="deposit-label">Design Deposit</div>
                         <div class="deposit-refund"><strong>Fully refundable</strong> within 72 hours of payment</div>
                     </div>
@@ -2854,13 +3049,13 @@
 
                         <button type="submit" class="deposit-submit-btn">
                             <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                            Pay $1,000 Design Deposit
+                            Pay $2,500 Design Deposit
                         </button>
 
                         <a href="/contact/" class="consultation-link">Or schedule a free consultation first</a>
 
                         <div class="legal-text">
-                            By submitting this form, you agree to our <a href="/terms-of-service/" style="color:var(--aqua);">Terms of Service</a> and <a href="/privacy-policy/" style="color:var(--aqua);">Privacy Policy</a>. Your $1,000 design deposit is fully refundable within 72 hours of payment. This deposit reserves your installation spot and is applied toward your total project cost. Pennsylvania Home Improvement Consumer Protection Act disclosures apply. Tri-State Aquatic Solutions, LLC is a licensed and insured pool contractor.
+                            By submitting this form, you agree to our <a href="/terms-of-service/" style="color:var(--aqua);">Terms of Service</a> and <a href="/privacy-policy/" style="color:var(--aqua);">Privacy Policy</a>. Your $2,500 design deposit is fully refundable within 72 hours of payment. This deposit reserves your installation spot and is applied toward your total project cost. Pennsylvania Home Improvement Consumer Protection Act disclosures apply. Tri-State Aquatic Solutions, LLC is a licensed and insured pool contractor.
                         </div>
                     </form>
                 </div>
@@ -3561,7 +3756,7 @@
                 upgradeNames: config.upgrades.map(function(u) { return upgradeNames[u]; }),
                 priceRange: { low: price.low, high: price.high }
             },
-            amount: 100000 // $1,000 in cents
+            amount: 250000 // $2,500 in cents
         };
 
         // Save state before redirect

@@ -275,6 +275,24 @@
             max-width: 420px;
         }
 
+        .lifestyle-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .lifestyle-card-tags span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.75);
+            white-space: nowrap;
+        }
+
         .lifestyle-card-meta {
             position: relative;
             z-index: 1;
@@ -501,6 +519,66 @@
             color: var(--gray-text);
             margin-top: 0.35rem;
             text-align: center;
+        }
+
+        /* ==================== SELECTED POOL HERO (Step 1) ==================== */
+        .selected-pool-hero {
+            position: relative;
+            margin-top: 2rem;
+            border-radius: 24px;
+            overflow: hidden;
+            height: 320px;
+            display: none;
+            animation: fadeInUp 0.5s var(--ease-out-expo);
+        }
+
+        .selected-pool-hero.visible {
+            display: block;
+        }
+
+        .selected-pool-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .selected-pool-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 2.5rem;
+            background: linear-gradient(to top, rgba(14,31,52,0.95) 0%, rgba(14,31,52,0.4) 60%, transparent 100%);
+        }
+
+        .selected-pool-hero-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
+        .selected-pool-hero-dims {
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .pool-dimension-diagram {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(14, 31, 52, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 16px;
+            padding: 1rem;
+            border: 1px solid rgba(201, 169, 98, 0.3);
+        }
+
+        .pool-dimension-diagram svg {
+            display: block;
         }
 
         /* ==================== MODEL GALLERY (after Step 1 selection) ==================== */
@@ -797,6 +875,98 @@
             border-radius: 0;
         }
 
+        /* ==================== SOCIAL PROOF (Step 4 top) ==================== */
+        .social-proof-section {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .social-proof-stat {
+            margin-bottom: 2rem;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        .social-proof-quote {
+            margin: 0 0 2rem;
+            padding: 0;
+            border: none;
+        }
+
+        .social-proof-quote p {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .social-proof-quote cite {
+            font-style: normal;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .social-proof-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-proof-gallery img {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(201, 169, 98, 0.4);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .social-proof-gallery img:hover {
+            border-color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.02em;
+        }
+
+        .trust-badge svg {
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
         .summary-hero {
             position: relative;
             border-radius: 24px;
@@ -944,6 +1114,114 @@
         .financing-terms {
             font-size: 0.75rem;
             color: rgba(255, 255, 255, 0.45);
+        }
+
+        /* What's Included Grid */
+        .summary-included {
+            max-width: 900px;
+            margin: 2rem auto 0;
+        }
+
+        .summary-included h3 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 0.5rem 0.75rem;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+        }
+
+        .included-check {
+            color: var(--aqua);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* What's Not Included (collapsed) */
+        .summary-not-included {
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .summary-not-included:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .not-included-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .not-included-header h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .not-included-header svg {
+            color: rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .summary-not-included.open .not-included-header svg {
+            transform: rotate(180deg);
+        }
+
+        .not-included-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease-out-expo);
+        }
+
+        .summary-not-included.open .not-included-details {
+            max-height: 300px;
+        }
+
+        .not-included-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .not-included-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .not-included-note {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0.75rem;
+            text-align: center;
+            font-style: italic;
         }
 
         .summary-ctas {
@@ -1404,15 +1682,32 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
                 padding: 1.75rem;
-                min-height: auto;
+                min-height: 200px;
             }
 
             .lifestyle-card-meta {
                 text-align: left;
             }
 
-            .lifestyle-card {
-                min-height: 200px;
+            .lifestyle-card-tags span {
+                font-size: 0.65rem;
+            }
+
+            .selected-pool-hero {
+                height: 220px;
+                border-radius: 16px;
+            }
+
+            .selected-pool-hero-name {
+                font-size: 1.5rem;
+            }
+
+            .pool-dimension-diagram {
+                display: none;
+            }
+
+            .included-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
             .model-thumb {
@@ -1421,6 +1716,14 @@
 
             .model-thumb-img {
                 height: 110px;
+            }
+
+            .social-proof-gallery img:nth-child(n+4) {
+                display: none;
+            }
+
+            .trust-badges {
+                gap: 0.75rem 1rem;
             }
 
             .summary-hero {
@@ -1694,53 +1997,75 @@
                 </div>
 
                 <div class="lifestyle-cards">
-                    <!-- Intimate Retreat -->
-                    <div class="lifestyle-card" data-pool="retreat" onclick="selectPool(this)">
+                    <!-- The Devon -->
+                    <div class="lifestyle-card" data-pool="devon" onclick="selectPool(this)">
                         <div class="lifestyle-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="lifestyle-card-content">
-                            <div class="lifestyle-card-badge">Private Escape</div>
-                            <h3>Intimate Retreat</h3>
-                            <p>A private escape designed for wellness, relaxation, and quiet moments. Perfect for couples and small spaces.</p>
+                            <div class="lifestyle-card-badge">Intimate Luxury</div>
+                            <h3>The Devon</h3>
+                            <p>Wellness-focused elegance for discerning spaces. Cold plunge, warm soak, or quiet retreat — all in a compact footprint designed for the Main Line lifestyle.</p>
+                            <div class="lifestyle-card-tags">
+                                <span>Best for: Couples & Wellness</span>
+                                <span>Fits 2-4</span>
+                            </div>
                         </div>
                         <div class="lifestyle-card-meta">
                             <div class="lifestyle-card-price">From $45,000</div>
-                            <div class="lifestyle-card-size">7-8' x 13'</div>
+                            <div class="lifestyle-card-size">7' × 13'</div>
                         </div>
                     </div>
 
-                    <!-- Backyard Centerpiece -->
-                    <div class="lifestyle-card" data-pool="centerpiece" onclick="selectPool(this)">
+                    <!-- The Gladwyne -->
+                    <div class="lifestyle-card" data-pool="gladwyne" onclick="selectPool(this)">
                         <div class="lifestyle-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="lifestyle-card-content">
                             <div class="lifestyle-card-badge popular">Most Popular</div>
-                            <h3>Backyard Centerpiece</h3>
-                            <p>The perfect family pool for swimming, entertaining, and making memories. Room for everyone.</p>
+                            <h3>The Gladwyne</h3>
+                            <p>Our most requested size — and for good reason. Room for the kids to play, space to entertain, and the perfect canvas for your backyard vision.</p>
+                            <div class="lifestyle-card-tags">
+                                <span>Best for: Families & Entertaining</span>
+                                <span>Fits 4-6</span>
+                            </div>
                         </div>
                         <div class="lifestyle-card-meta">
                             <div class="lifestyle-card-price">From $55,000</div>
-                            <div class="lifestyle-card-size">9' x 16'</div>
+                            <div class="lifestyle-card-size">9' × 16'</div>
                         </div>
                     </div>
 
-                    <!-- The Full Experience -->
-                    <div class="lifestyle-card" data-pool="experience" onclick="selectPool(this)">
+                    <!-- The Brandywine -->
+                    <div class="lifestyle-card" data-pool="brandywine" onclick="selectPool(this)">
                         <div class="lifestyle-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="lifestyle-card-content">
-                            <div class="lifestyle-card-badge">Statement Piece</div>
-                            <h3>The Full Experience</h3>
-                            <p>A true statement piece with optional built-in spa. The ultimate backyard transformation.</p>
+                            <div class="lifestyle-card-badge">Grand Estate</div>
+                            <h3>The Brandywine</h3>
+                            <p>A statement piece worthy of the Brandywine Valley. Optional integrated spa, room for lap swimming, and the ultimate backyard transformation.</p>
+                            <div class="lifestyle-card-tags">
+                                <span>Best for: Lap Swimming & Spa</span>
+                                <span>Fits 6-8</span>
+                            </div>
                         </div>
                         <div class="lifestyle-card-meta">
                             <div class="lifestyle-card-price">From $68,000</div>
-                            <div class="lifestyle-card-size">9' x 21'</div>
+                            <div class="lifestyle-card-size">9' × 21'</div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Selected Pool Hero - appears after selection -->
+                <div class="selected-pool-hero" id="selectedPoolHero">
+                    <img id="selectedPoolHeroImg" src="" alt="Selected pool">
+                    <div class="selected-pool-hero-overlay">
+                        <div class="selected-pool-hero-name" id="selectedPoolHeroName"></div>
+                        <div class="selected-pool-hero-dims" id="selectedPoolHeroDims"></div>
+                    </div>
+                    <div class="pool-dimension-diagram" id="poolDiagramSvg"></div>
                 </div>
 
                 <!-- Model Gallery - appears after pool selection -->
@@ -1772,36 +2097,36 @@
                 </div>
 
                 <div class="finish-cards">
-                    <!-- Classic Smooth -->
-                    <div class="finish-card" data-finish="smooth" onclick="selectFinish(this)">
+                    <!-- Precast Concrete -->
+                    <div class="finish-card" data-finish="concrete" onclick="selectFinish(this)">
                         <div class="finish-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="finish-swatch"></div>
-                        <h3>Classic Smooth</h3>
-                        <p>Clean, timeless RENOLIT PVC liner</p>
+                        <h3>Precast Concrete</h3>
+                        <p>Steel-reinforced concrete with smooth PVC interior. Most customizable option.</p>
                         <div class="finish-price-note">Included in base price</div>
                     </div>
 
-                    <!-- Natural Stone -->
-                    <div class="finish-card" data-finish="stone" onclick="selectFinish(this)">
+                    <!-- Plaster & Tile -->
+                    <div class="finish-card" data-finish="plaster" onclick="selectFinish(this)">
                         <div class="finish-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="finish-swatch"></div>
-                        <h3>Natural Stone</h3>
-                        <p>Rich PebbleSheen plaster texture</p>
+                        <h3>Plaster & Tile</h3>
+                        <p>Pebble-finish plaster with custom waterline tile. Rich, natural texture.</p>
                         <div class="finish-price-note">+$3,000 - $5,000</div>
                     </div>
 
-                    <!-- Modern Fiberglass -->
+                    <!-- Fiberglass Composite -->
                     <div class="finish-card" data-finish="fiberglass" onclick="selectFinish(this)">
                         <div class="finish-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div class="finish-swatch"></div>
-                        <h3>Modern Fiberglass</h3>
-                        <p>Ultra-durable, quick install</p>
+                        <h3>Fiberglass Composite</h3>
+                        <p>Factory-finished shell. Fastest install, lowest maintenance.</p>
                         <div class="finish-price-note savings">Save $5,000 - $8,000</div>
                     </div>
                 </div>
@@ -1967,6 +2292,42 @@
                     <p>Here's your custom pool configuration and estimated investment.</p>
                 </div>
 
+                <!-- Social Proof -->
+                <div class="social-proof-section">
+                    <div class="social-proof-stat">
+                        <div class="stat-number" id="poolCounter">0</div>
+                        <div class="stat-label">Pools Installed Across the Main Line & Delaware</div>
+                    </div>
+                    <blockquote class="social-proof-quote">
+                        <p>&ldquo;We couldn&rsquo;t be happier with our pool. The team was professional, on schedule, and the result exceeded our expectations.&rdquo;</p>
+                        <cite>&mdash; Sarah & Mike T., Gladwyne, PA</cite>
+                    </blockquote>
+                    <div class="social-proof-gallery">
+                        <img src="/images/pools/gladwyne-estate.jpg" alt="Pool in Gladwyne" loading="lazy">
+                        <img src="/images/pools/delaware-modern.jpg" alt="Pool in Delaware" loading="lazy">
+                        <img src="/images/pools/evening-entertaining.jpg" alt="Evening pool entertaining" loading="lazy">
+                        <img src="/images/pools/family-lifestyle.jpg" alt="Family pool" loading="lazy">
+                    </div>
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                            Licensed & Insured
+                        </div>
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                            15-Year Warranty
+                        </div>
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" fill="none" stroke="currentColor" stroke-width="1.5"/><polyline points="9 22 9 12 15 12 15 22" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                            Local Family-Owned
+                        </div>
+                        <div class="trust-badge">
+                            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="none" stroke="currentColor" stroke-width="1.5"/><polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                            PA HIC Registered
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Pool visualization -->
                 <div class="summary-hero" id="summaryHero">
                     <img id="summaryHeroImg" src="/images/pools/family-lifestyle.jpg" alt="Your selected pool style">
@@ -2007,6 +2368,36 @@
                             <div class="financing-amount" id="summaryMonthly">$485/mo</div>
                             <div class="financing-terms">180-month term at 7.99% APR example</div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- What's Included -->
+                <div class="summary-included">
+                    <h3>What's Included</h3>
+                    <div class="included-grid">
+                        <div class="included-item"><span class="included-check">&#10003;</span> LED Lighting</div>
+                        <div class="included-item"><span class="included-check">&#10003;</span> Variable Speed Pump</div>
+                        <div class="included-item"><span class="included-check">&#10003;</span> Cartridge Filter</div>
+                        <div class="included-item"><span class="included-check">&#10003;</span> 4 Return Jets</div>
+                        <div class="included-item"><span class="included-check">&#10003;</span> Surface Skimmer</div>
+                        <div class="included-item"><span class="included-check">&#10003;</span> Steel Handrail</div>
+                        <div class="included-item"><span class="included-check">&#10003;</span> Professional Install</div>
+                        <div class="included-item"><span class="included-check">&#10003;</span> 15-Year Warranty</div>
+                    </div>
+                </div>
+
+                <!-- What's Not Included (collapsed) -->
+                <div class="summary-not-included" onclick="this.classList.toggle('open')">
+                    <div class="not-included-header">
+                        <h4>Typical Additional Costs</h4>
+                        <svg viewBox="0 0 24 24" width="18" height="18"><polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                    </div>
+                    <div class="not-included-details">
+                        <div class="not-included-item"><span>Permits & Engineering</span><span>$2,000 - $5,000</span></div>
+                        <div class="not-included-item"><span>Decking & Hardscape</span><span>$10,000 - $30,000</span></div>
+                        <div class="not-included-item"><span>Electrical Hookup</span><span>$2,000 - $4,000</span></div>
+                        <div class="not-included-item"><span>Landscaping</span><span>Varies</span></div>
+                        <p class="not-included-note">We provide exact costs at your free consultation.</p>
                     </div>
                 </div>
 
@@ -2242,7 +2633,8 @@
         var params = new URLSearchParams(window.location.search);
         var start = params.get('start');
         if (start) {
-            var poolMap = { retreat: 'retreat', centerpiece: 'centerpiece', experience: 'experience' };
+            var poolMap = { devon: 'devon', gladwyne: 'gladwyne', brandywine: 'brandywine',
+                           retreat: 'devon', centerpiece: 'gladwyne', experience: 'brandywine' };
             if (poolMap[start]) {
                 config.pool = poolMap[start];
                 config.currentStep = 1;
@@ -2252,14 +2644,14 @@
 
     // ==================== PRICE DATA ====================
     var priceData = {
-        retreat:     { low: 45000, high: 55000 },
-        centerpiece: { low: 55000, high: 68000 },
-        experience:  { low: 68000, high: 85000 }
+        devon:      { low: 45000, high: 55000 },
+        gladwyne:   { low: 55000, high: 68000 },
+        brandywine: { low: 68000, high: 85000 }
     };
 
     var finishAdj = {
-        smooth:     { low: 0,     high: 0 },
-        stone:      { low: 3000,  high: 5000 },
+        concrete:   { low: 0,     high: 0 },
+        plaster:    { low: 3000,  high: 5000 },
         fiberglass: { low: -8000, high: -5000 }
     };
 
@@ -2274,15 +2666,15 @@
 
     // ==================== POOL NAMES ====================
     var poolNames = {
-        retreat: 'Intimate Retreat',
-        centerpiece: 'Backyard Centerpiece',
-        experience: 'The Full Experience'
+        devon: 'The Devon',
+        gladwyne: 'The Gladwyne',
+        brandywine: 'The Brandywine'
     };
 
     var finishNames = {
-        smooth: 'Classic Smooth',
-        stone: 'Natural Stone',
-        fiberglass: 'Modern Fiberglass'
+        concrete: 'Precast Concrete',
+        plaster: 'Plaster & Tile',
+        fiberglass: 'Fiberglass Composite'
     };
 
     var upgradeNames = {
@@ -2296,35 +2688,80 @@
 
     // ==================== MODEL DATA ====================
     var modelsByCategory = {
-        retreat: [
-            { name: 'Milan', dims: '10\' x 16\'', img: '/images/brands/latham/models/optimized/milan.jpg' },
-            { name: 'Sea Turtle', dims: '9.5\' x 19.5\'', img: '/images/brands/thursday/models/optimized/sea-turtle.jpg' },
-            { name: 'Corinthian 12', dims: '12\' x 25\'', img: '/images/brands/latham/models/optimized/corinthian-12.jpg' },
-            { name: 'Olympia 12', dims: '12\' x 26\'', img: '/images/brands/latham/models/optimized/olympia-12.jpg' }
+        devon: [
+            { name: 'Devon Compact', dims: '10\' × 16\'', img: '/images/brands/latham/models/optimized/milan.jpg' },
+            { name: 'Devon Classic', dims: '9.5\' × 19.5\'', img: '/images/brands/thursday/models/optimized/sea-turtle.jpg' },
+            { name: 'Devon Sport', dims: '12\' × 25\'', img: '/images/brands/latham/models/optimized/corinthian-12.jpg' },
+            { name: 'Devon Plus', dims: '12\' × 26\'', img: '/images/brands/latham/models/optimized/olympia-12.jpg' }
         ],
-        centerpiece: [
-            { name: 'Claremont', dims: '14\' x 33\'', img: '/images/brands/latham/models/optimized/claremont.jpg' },
-            { name: 'Lake Shore', dims: '16\' x 33\'', img: '/images/brands/latham/models/optimized/lake-shore.jpg' },
-            { name: 'Cathedral', dims: '14\' x 33\'', img: '/images/brands/thursday/models/optimized/cathedral.jpg' },
-            { name: 'Corinthian 14', dims: '14\' x 30\'', img: '/images/brands/latham/models/optimized/corinthian-14.jpg' },
-            { name: 'Lil Bob', dims: '13.5\' x 35.5\'', img: '/images/brands/thursday/models/optimized/lil-bob.jpg' }
+        gladwyne: [
+            { name: 'Gladwyne Classic', dims: '14\' × 33\'', img: '/images/brands/latham/models/optimized/claremont.jpg' },
+            { name: 'Gladwyne Grand', dims: '16\' × 33\'', img: '/images/brands/latham/models/optimized/lake-shore.jpg' },
+            { name: 'Gladwyne Arched', dims: '14\' × 33\'', img: '/images/brands/thursday/models/optimized/cathedral.jpg' },
+            { name: 'Gladwyne Sport', dims: '14\' × 30\'', img: '/images/brands/latham/models/optimized/corinthian-14.jpg' },
+            { name: 'Gladwyne Ledge', dims: '13.5\' × 35.5\'', img: '/images/brands/thursday/models/optimized/lil-bob.jpg' }
         ],
-        experience: [
-            { name: 'Monaco', dims: '16\' x 40\'', img: '/images/brands/latham/models/optimized/monaco.jpg' },
-            { name: 'Barcelona', dims: '16\' x 38\'', img: '/images/brands/latham/models/optimized/barcelona.jpg' },
-            { name: 'Sandal Beach Entry', dims: '16\' x 39\'', img: '/images/brands/thursday/models/optimized/sandal.jpg' },
-            { name: 'Kingston', dims: '16\' x 38\'', img: '/images/brands/latham/models/optimized/kingston.jpg' },
-            { name: 'Aspen', dims: '16\' x 40\'', img: '/images/brands/thursday/models/optimized/aspen.jpg' },
-            { name: 'Goliath', dims: '16\' x 41\'', img: '/images/brands/thursday/models/optimized/goliath.jpg' }
+        brandywine: [
+            { name: 'Brandywine Classic', dims: '16\' × 40\'', img: '/images/brands/latham/models/optimized/monaco.jpg' },
+            { name: 'Brandywine Lounge', dims: '16\' × 38\'', img: '/images/brands/latham/models/optimized/barcelona.jpg' },
+            { name: 'Brandywine Beach', dims: '16\' × 39\'', img: '/images/brands/thursday/models/optimized/sandal.jpg' },
+            { name: 'Brandywine Premier', dims: '16\' × 38\'', img: '/images/brands/latham/models/optimized/kingston.jpg' },
+            { name: 'Brandywine Ledge', dims: '16\' × 40\'', img: '/images/brands/thursday/models/optimized/aspen.jpg' },
+            { name: 'Brandywine XL', dims: '16\' × 41\'', img: '/images/brands/thursday/models/optimized/goliath.jpg' }
         ]
     };
 
     // Hero images for summary step, mapped to pool selection
     var summaryHeroImages = {
-        retreat: '/images/wellness-plunge.jpg',
-        centerpiece: '/images/pools/family-lifestyle.jpg',
-        experience: '/images/pools/pool-spa-combo.jpg'
+        devon: '/images/wellness-plunge.jpg',
+        gladwyne: '/images/pools/family-lifestyle.jpg',
+        brandywine: '/images/pools/pool-spa-combo.jpg'
     };
+
+    // ==================== POOL HERO + DIMENSION DIAGRAMS ====================
+    var poolHeroData = {
+        devon:      { img: '/images/wellness-plunge.jpg', dims: '7\' × 13\'', w: 70, h: 130 },
+        gladwyne:   { img: '/images/pools/family-lifestyle.jpg', dims: '9\' × 16\'', w: 90, h: 160 },
+        brandywine: { img: '/images/pools/pool-spa-combo.jpg', dims: '9\' × 21\'', w: 90, h: 210 }
+    };
+
+    function updateSelectedPoolHero(poolType) {
+        var hero = document.getElementById('selectedPoolHero');
+        if (!hero) return;
+
+        var data = poolHeroData[poolType];
+        if (!data) { hero.classList.remove('visible'); return; }
+
+        document.getElementById('selectedPoolHeroImg').src = data.img;
+        document.getElementById('selectedPoolHeroName').textContent = poolNames[poolType];
+        document.getElementById('selectedPoolHeroDims').textContent = data.dims + '  •  52" depth  •  ' + (poolType === 'devon' ? '2-4' : poolType === 'gladwyne' ? '4-6' : '6-8') + ' people';
+
+        // Build SVG dimension diagram
+        var scale = 0.6;
+        var w = Math.round(data.w * scale);
+        var h = Math.round(data.h * scale);
+        var pad = 32;
+        var svgW = w + pad * 2;
+        var svgH = h + pad * 2;
+
+        var svg = '<svg width="' + svgW + '" height="' + svgH + '" viewBox="0 0 ' + svgW + ' ' + svgH + '">';
+        // Pool shape
+        svg += '<rect x="' + pad + '" y="' + pad + '" width="' + w + '" height="' + h + '" rx="8" fill="rgba(0,166,178,0.2)" stroke="#C9A962" stroke-width="1.5"/>';
+        // Width dimension line (top)
+        svg += '<line x1="' + pad + '" y1="' + (pad - 12) + '" x2="' + (pad + w) + '" y2="' + (pad - 12) + '" stroke="#C9A962" stroke-width="1"/>';
+        svg += '<line x1="' + pad + '" y1="' + (pad - 16) + '" x2="' + pad + '" y2="' + (pad - 8) + '" stroke="#C9A962" stroke-width="1"/>';
+        svg += '<line x1="' + (pad + w) + '" y1="' + (pad - 16) + '" x2="' + (pad + w) + '" y2="' + (pad - 8) + '" stroke="#C9A962" stroke-width="1"/>';
+        svg += '<text x="' + (pad + w/2) + '" y="' + (pad - 18) + '" text-anchor="middle" fill="#C9A962" font-size="11" font-family="Outfit">' + (poolType === 'devon' ? "7'" : "9'") + '</text>';
+        // Height dimension line (right)
+        svg += '<line x1="' + (pad + w + 12) + '" y1="' + pad + '" x2="' + (pad + w + 12) + '" y2="' + (pad + h) + '" stroke="#C9A962" stroke-width="1"/>';
+        svg += '<line x1="' + (pad + w + 8) + '" y1="' + pad + '" x2="' + (pad + w + 16) + '" y2="' + pad + '" stroke="#C9A962" stroke-width="1"/>';
+        svg += '<line x1="' + (pad + w + 8) + '" y1="' + (pad + h) + '" x2="' + (pad + w + 16) + '" y2="' + (pad + h) + '" stroke="#C9A962" stroke-width="1"/>';
+        svg += '<text x="' + (pad + w + 20) + '" y="' + (pad + h/2 + 4) + '" fill="#C9A962" font-size="11" font-family="Outfit">' + (poolType === 'devon' ? "13'" : poolType === 'gladwyne' ? "16'" : "21'") + '</text>';
+        svg += '</svg>';
+
+        document.getElementById('poolDiagramSvg').innerHTML = svg;
+        hero.classList.add('visible');
+    }
 
     function updateModelGallery(poolType) {
         var gallery = document.getElementById('modelGallery');
@@ -2363,9 +2800,10 @@
 
         // Show/hide spa upgrade for experience
         var spaEl = document.getElementById('spaUpgrade');
-        if (spaEl) spaEl.style.display = config.pool === 'experience' ? 'grid' : 'none';
+        if (spaEl) spaEl.style.display = config.pool === 'brandywine' ? 'grid' : 'none';
 
-        // Show model gallery for selected pool type
+        // Show pool hero + model gallery for selected pool type
+        updateSelectedPoolHero(config.pool);
         updateModelGallery(config.pool);
     }
 
@@ -2565,11 +3003,31 @@
     }
 
     // ==================== SUMMARY ====================
+    function animateCounter(el, target, duration) {
+        var start = 0;
+        var startTime = null;
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target) + '+';
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
     function updateSummary() {
         var price = calculatePrice();
 
         document.getElementById('summaryPool').textContent = poolNames[config.pool] || '--';
         document.getElementById('summaryFinish').textContent = finishNames[config.finish] || '--';
+
+        // Animate pool counter
+        var counter = document.getElementById('poolCounter');
+        if (counter) animateCounter(counter, 47, 1500);
+
+        // Track social proof view
+        trackEvent('social_proof_viewed');
 
         // Update summary hero image
         var heroImg = document.getElementById('summaryHeroImg');
@@ -2730,9 +3188,10 @@
 
             // Spa upgrade visibility
             var spaEl = document.getElementById('spaUpgrade');
-            if (spaEl) spaEl.style.display = config.pool === 'experience' ? 'grid' : 'none';
+            if (spaEl) spaEl.style.display = config.pool === 'brandywine' ? 'grid' : 'none';
 
-            // Restore model gallery
+            // Restore pool hero + model gallery
+            updateSelectedPoolHero(config.pool);
             updateModelGallery(config.pool);
         }
 

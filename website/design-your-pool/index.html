@@ -1039,74 +1039,11 @@
             border-radius: 0;
         }
 
-        /* ==================== SOCIAL PROOF (Step 4 top) ==================== */
+        /* ==================== TRUST BADGES (Step 4 top) ==================== */
         .social-proof-section {
             max-width: 700px;
             margin: 0 auto 3rem;
             text-align: center;
-        }
-
-        .social-proof-stat {
-            margin-bottom: 2rem;
-        }
-
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 700;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 0.35rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 400;
-        }
-
-        .social-proof-quote {
-            margin: 0 0 2rem;
-            padding: 0;
-            border: none;
-        }
-
-        .social-proof-quote p {
-            font-family: var(--font-display);
-            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-
-        .social-proof-quote cite {
-            font-style: normal;
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            color: var(--gold);
-            font-weight: 500;
-        }
-
-        .social-proof-gallery {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-proof-gallery img {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(201, 169, 98, 0.4);
-            transition: all 0.4s var(--ease-out-expo);
-        }
-
-        .social-proof-gallery img:hover {
-            border-color: var(--gold);
-            transform: scale(1.1);
         }
 
         .trust-badges {
@@ -2769,22 +2706,8 @@
                     <p>Here's your custom pool configuration and estimated investment.</p>
                 </div>
 
-                <!-- Social Proof -->
+                <!-- Trust Section -->
                 <div class="social-proof-section">
-                    <div class="social-proof-stat">
-                        <div class="stat-number" id="poolCounter">0</div>
-                        <div class="stat-label">Pools Installed Across the Main Line & Delaware</div>
-                    </div>
-                    <blockquote class="social-proof-quote">
-                        <p>&ldquo;We couldn&rsquo;t be happier with our pool. The team was professional, on schedule, and the result exceeded our expectations.&rdquo;</p>
-                        <cite>&mdash; Sarah & Mike T., Gladwyne, PA</cite>
-                    </blockquote>
-                    <div class="social-proof-gallery">
-                        <img src="/images/pools/gladwyne-estate.jpg" alt="Pool in Gladwyne" loading="lazy">
-                        <img src="/images/pools/delaware-modern.jpg" alt="Pool in Delaware" loading="lazy">
-                        <img src="/images/pools/evening-entertaining.jpg" alt="Evening pool entertaining" loading="lazy">
-                        <img src="/images/pools/family-lifestyle.jpg" alt="Family pool" loading="lazy">
-                    </div>
                     <div class="trust-badges">
                         <div class="trust-badge">
                             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -3636,31 +3559,14 @@
     }
 
     // ==================== SUMMARY ====================
-    function animateCounter(el, target, duration) {
-        var start = 0;
-        var startTime = null;
-        function step(timestamp) {
-            if (!startTime) startTime = timestamp;
-            var progress = Math.min((timestamp - startTime) / duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3);
-            el.textContent = Math.floor(eased * target) + '+';
-            if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-    }
-
     function updateSummary() {
         var price = calculatePrice();
 
         document.getElementById('summaryPool').textContent = poolNames[config.pool] || '--';
         document.getElementById('summaryFinish').textContent = finishNames[config.finish] || '--';
 
-        // Animate pool counter
-        var counter = document.getElementById('poolCounter');
-        if (counter) animateCounter(counter, 47, 1500);
-
-        // Track social proof view
-        trackEvent('social_proof_viewed');
+        // Track summary view
+        trackEvent('summary_viewed');
 
         // Update summary hero image
         var heroImg = document.getElementById('summaryHeroImg');

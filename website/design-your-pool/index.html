@@ -202,17 +202,17 @@
         }
 
         .lifestyle-card:nth-child(1) {
-            background: linear-gradient(135deg, rgba(14,31,52,0.82) 0%, rgba(22,42,66,0.75) 60%, rgba(26,51,82,0.7) 100%),
+            background: linear-gradient(135deg, rgba(14,31,52,0.55) 0%, rgba(22,42,66,0.45) 50%, rgba(14,31,52,0.65) 100%),
                         url('/images/wellness-plunge.jpg') center/cover no-repeat;
         }
 
         .lifestyle-card:nth-child(2) {
-            background: linear-gradient(135deg, rgba(10,42,58,0.8) 0%, rgba(13,48,64,0.72) 60%, rgba(15,58,74,0.65) 100%),
+            background: linear-gradient(135deg, rgba(10,42,58,0.5) 0%, rgba(13,48,64,0.4) 50%, rgba(10,42,58,0.6) 100%),
                         url('/images/pools/family-lifestyle.jpg') center/cover no-repeat;
         }
 
         .lifestyle-card:nth-child(3) {
-            background: linear-gradient(135deg, rgba(26,32,54,0.82) 0%, rgba(30,40,64,0.75) 60%, rgba(34,46,72,0.68) 100%),
+            background: linear-gradient(135deg, rgba(26,32,54,0.5) 0%, rgba(30,40,64,0.4) 50%, rgba(26,32,54,0.6) 100%),
                         url('/images/pools/pool-spa-combo.jpg') center/cover no-repeat;
         }
 
@@ -228,8 +228,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 60%;
-            background: linear-gradient(to top, rgba(14,31,52,0.9) 0%, transparent 100%);
+            height: 55%;
+            background: linear-gradient(to top, rgba(14,31,52,0.85) 0%, rgba(14,31,52,0.3) 60%, transparent 100%);
             z-index: 0;
             pointer-events: none;
         }
@@ -291,6 +291,23 @@
             background: rgba(255, 255, 255, 0.12);
             color: rgba(255, 255, 255, 0.75);
             white-space: nowrap;
+        }
+
+        .lifestyle-card-size-diagram {
+            position: absolute;
+            top: 1rem;
+            left: 1.25rem;
+            z-index: 1;
+            background: rgba(14, 31, 52, 0.7);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 12px;
+            padding: 0.6rem 0.75rem;
+            border: 1px solid rgba(201, 169, 98, 0.25);
+        }
+
+        .lifestyle-card-size-diagram svg {
+            display: block;
         }
 
         .lifestyle-card-meta {
@@ -359,7 +376,7 @@
             border: 3px solid var(--gray);
             background: var(--white);
             text-align: center;
-            min-height: 280px;
+            min-height: 380px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -449,10 +466,35 @@
             transform: scale(1);
         }
 
+        .finish-details {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0 0;
+            text-align: left;
+        }
+
+        .finish-details li {
+            font-size: 0.78rem;
+            color: var(--gray-text);
+            line-height: 1.5;
+            padding: 0.15rem 0;
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .finish-details li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.7rem;
+        }
+
         .finish-price-note {
             font-size: 0.75rem;
             color: var(--gray-text);
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
             font-weight: 500;
         }
 
@@ -613,58 +655,75 @@
         }
 
         .model-strip {
-            display: flex;
+            padding: 0.5rem 0 0;
+        }
+
+        .pool-specs-panel {
+            background: var(--gray-light);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--gray);
+        }
+
+        .specs-quick-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding: 0.5rem 0 1.5rem;
-            scrollbar-width: none;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray);
         }
 
-        .model-strip::-webkit-scrollbar {
-            display: none;
+        .specs-stat {
+            text-align: center;
         }
 
-        .model-thumb {
-            flex: 0 0 220px;
-            scroll-snap-align: start;
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--white);
-            border: 2px solid var(--gray);
-            transition: all 0.4s var(--ease-out-expo);
-            cursor: default;
-        }
-
-        .model-thumb:hover {
-            border-color: var(--aqua);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px -8px rgba(0, 166, 178, 0.15);
-        }
-
-        .model-thumb-img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
+        .specs-stat-value {
             display: block;
-        }
-
-        .model-thumb-info {
-            padding: 0.75rem 1rem;
-        }
-
-        .model-thumb-name {
-            font-family: var(--font-body);
-            font-size: 0.85rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--navy);
-            margin-bottom: 0.15rem;
+            margin-bottom: 0.2rem;
         }
 
-        .model-thumb-dims {
-            font-size: 0.75rem;
+        .specs-stat-label {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 500;
             color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .specs-features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .specs-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            color: var(--navy);
+        }
+
+        .specs-feature svg {
+            flex-shrink: 0;
+        }
+
+        .specs-note {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(201, 169, 98, 0.08);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            color: var(--navy);
+            font-style: italic;
         }
 
         /* ==================== UPGRADE CARDS (Step 3) ==================== */
@@ -1710,12 +1769,28 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .model-thumb {
-                flex: 0 0 180px;
+            .specs-quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
             }
 
-            .model-thumb-img {
-                height: 110px;
+            .specs-features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .pool-specs-panel {
+                padding: 1.5rem;
+            }
+
+            .lifestyle-card-size-diagram {
+                top: 0.75rem;
+                left: 0.75rem;
+                padding: 0.4rem 0.5rem;
+            }
+
+            .lifestyle-card-size-diagram svg {
+                transform: scale(0.85);
+                transform-origin: top left;
             }
 
             .social-proof-gallery img:nth-child(n+4) {
@@ -1821,12 +1896,13 @@
                 height: 120px;
             }
 
-            .model-thumb {
-                flex: 0 0 160px;
+            .specs-quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+                font-size: 0.9rem;
             }
 
-            .model-thumb-img {
-                height: 100px;
+            .lifestyle-card-size-diagram {
+                display: none;
             }
 
             .swatch-grid {
@@ -2002,13 +2078,21 @@
                         <div class="lifestyle-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
+                        <div class="lifestyle-card-size-diagram">
+                            <svg width="72" height="52" viewBox="0 0 72 52">
+                                <rect x="1" y="1" width="35" height="50" rx="4" fill="rgba(0,166,178,0.25)" stroke="#C9A962" stroke-width="1.2"/>
+                                <text x="18.5" y="30" text-anchor="middle" fill="#C9A962" font-size="8" font-family="Outfit" font-weight="600">7'×13'</text>
+                                <rect x="42" y="16" width="28" height="20" rx="3" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" stroke-dasharray="2,2"/>
+                            </svg>
+                        </div>
                         <div class="lifestyle-card-content">
                             <div class="lifestyle-card-badge">Intimate Luxury</div>
                             <h3>The Devon</h3>
-                            <p>Wellness-focused elegance for discerning spaces. Cold plunge, warm soak, or quiet retreat — all in a compact footprint designed for the Main Line lifestyle.</p>
+                            <p>Wellness-focused elegance for discerning spaces. Cold plunge, warm soak, or quiet retreat — all in a compact footprint.</p>
                             <div class="lifestyle-card-tags">
                                 <span>Best for: Couples & Wellness</span>
                                 <span>Fits 2-4</span>
+                                <span>52" depth</span>
                             </div>
                         </div>
                         <div class="lifestyle-card-meta">
@@ -2022,13 +2106,22 @@
                         <div class="lifestyle-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
+                        <div class="lifestyle-card-size-diagram">
+                            <svg width="82" height="60" viewBox="0 0 82 60">
+                                <rect x="1" y="1" width="45" height="58" rx="4" fill="rgba(0,166,178,0.25)" stroke="#C9A962" stroke-width="1.2"/>
+                                <text x="23.5" y="34" text-anchor="middle" fill="#C9A962" font-size="8" font-family="Outfit" font-weight="600">9'×16'</text>
+                                <rect x="52" y="16" width="28" height="20" rx="3" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" stroke-dasharray="2,2"/>
+                                <text x="66" y="29" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="5.5" font-family="Outfit">hot tub</text>
+                            </svg>
+                        </div>
                         <div class="lifestyle-card-content">
                             <div class="lifestyle-card-badge popular">Most Popular</div>
                             <h3>The Gladwyne</h3>
-                            <p>Our most requested size — and for good reason. Room for the kids to play, space to entertain, and the perfect canvas for your backyard vision.</p>
+                            <p>Our most requested size — room for the kids to play, space to entertain, and the perfect canvas for your backyard vision.</p>
                             <div class="lifestyle-card-tags">
                                 <span>Best for: Families & Entertaining</span>
                                 <span>Fits 4-6</span>
+                                <span>3'5" - 5' depth</span>
                             </div>
                         </div>
                         <div class="lifestyle-card-meta">
@@ -2042,13 +2135,24 @@
                         <div class="lifestyle-card-check">
                             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
+                        <div class="lifestyle-card-size-diagram">
+                            <svg width="108" height="60" viewBox="0 0 108 60">
+                                <rect x="1" y="1" width="70" height="58" rx="4" fill="rgba(0,166,178,0.25)" stroke="#C9A962" stroke-width="1.2"/>
+                                <text x="35" y="34" text-anchor="middle" fill="#C9A962" font-size="8" font-family="Outfit" font-weight="600">9'×21'</text>
+                                <line x1="72" y1="1" x2="72" y2="59" stroke="#C9A962" stroke-width="0.8" stroke-dasharray="3,2"/>
+                                <rect x="72" y="1" width="35" height="58" rx="4" fill="rgba(201,169,98,0.15)" stroke="#C9A962" stroke-width="1.2"/>
+                                <text x="89.5" y="30" text-anchor="middle" fill="#C9A962" font-size="6" font-family="Outfit" font-weight="500">+ SPA</text>
+                                <text x="89.5" y="38" text-anchor="middle" fill="rgba(201,169,98,0.6)" font-size="5" font-family="Outfit">optional</text>
+                            </svg>
+                        </div>
                         <div class="lifestyle-card-content">
                             <div class="lifestyle-card-badge">Grand Estate</div>
                             <h3>The Brandywine</h3>
-                            <p>A statement piece worthy of the Brandywine Valley. Optional integrated spa, room for lap swimming, and the ultimate backyard transformation.</p>
+                            <p>The largest plunge pool available. Optional integrated spa, room for lap swimming, and the ultimate backyard transformation.</p>
                             <div class="lifestyle-card-tags">
                                 <span>Best for: Lap Swimming & Spa</span>
-                                <span>Fits 6-8</span>
+                                <span>Fits 6-10</span>
+                                <span>3'5" - 5'4" depth</span>
                             </div>
                         </div>
                         <div class="lifestyle-card-meta">
@@ -2068,11 +2172,11 @@
                     <div class="pool-dimension-diagram" id="poolDiagramSvg"></div>
                 </div>
 
-                <!-- Model Gallery - appears after pool selection -->
+                <!-- Pool Specs - appears after pool selection -->
                 <div class="model-gallery" id="modelGallery">
                     <div class="model-gallery-header">
-                        <h4>Available Models</h4>
-                        <p id="modelGallerySubtitle">Scroll to explore pools in this size range</p>
+                        <h4>What's Included</h4>
+                        <p id="modelGallerySubtitle">Standard features included with every pool</p>
                     </div>
                     <div class="model-strip" id="modelStrip">
                         <!-- Populated dynamically by JS -->
@@ -2092,8 +2196,8 @@
             <div class="step" data-step="2" id="step2">
                 <div class="step-header">
                     <div class="step-label">Step 2 of 5</div>
-                    <h2>How do you want it to look?</h2>
-                    <p>Choose the interior finish that brings your vision to life.</p>
+                    <h2>Choose your construction method</h2>
+                    <p>Each option affects look, install time, and maintenance. The right choice depends on your timeline and style.</p>
                 </div>
 
                 <div class="finish-cards">
@@ -2104,7 +2208,12 @@
                         </div>
                         <div class="finish-swatch"></div>
                         <h3>Precast Concrete</h3>
-                        <p>Steel-reinforced concrete with smooth PVC interior. Most customizable option.</p>
+                        <p>6" steel-reinforced concrete shell with smooth textured PVC interior lining.</p>
+                        <ul class="finish-details">
+                            <li>Most customizable — any shape add-ons</li>
+                            <li>15-year watertight guarantee</li>
+                            <li>Install: 6-8 weeks total</li>
+                        </ul>
                         <div class="finish-price-note">Included in base price</div>
                     </div>
 
@@ -2115,7 +2224,12 @@
                         </div>
                         <div class="finish-swatch"></div>
                         <h3>Plaster & Tile</h3>
-                        <p>Pebble-finish plaster with custom waterline tile. Rich, natural texture.</p>
+                        <p>PebbleSheen plaster finish with custom waterline tile on concrete shell.</p>
+                        <ul class="finish-details">
+                            <li>Rich, textured feel underfoot</li>
+                            <li>Custom tile colors and patterns</li>
+                            <li>Install: 7-9 weeks total</li>
+                        </ul>
                         <div class="finish-price-note">+$3,000 - $5,000</div>
                     </div>
 
@@ -2126,7 +2240,12 @@
                         </div>
                         <div class="finish-swatch"></div>
                         <h3>Fiberglass Composite</h3>
-                        <p>Factory-finished shell. Fastest install, lowest maintenance.</p>
+                        <p>Graphene-infused composite shell — 200x stronger than steel, 30% lighter than concrete.</p>
+                        <ul class="finish-details">
+                            <li>Factory-finished — 6 color options</li>
+                            <li>Fastest install: 2-3 weeks total</li>
+                            <li>Lowest lifetime maintenance</li>
+                        </ul>
                         <div class="finish-price-note savings">Save $5,000 - $8,000</div>
                     </div>
                 </div>
@@ -2686,29 +2805,35 @@
         smart: 'Smart Controls'
     };
 
-    // ==================== MODEL DATA ====================
-    var modelsByCategory = {
-        devon: [
-            { name: 'Devon Compact', dims: '10\' × 16\'', img: '/images/brands/latham/models/optimized/milan.jpg' },
-            { name: 'Devon Classic', dims: '9.5\' × 19.5\'', img: '/images/brands/thursday/models/optimized/sea-turtle.jpg' },
-            { name: 'Devon Sport', dims: '12\' × 25\'', img: '/images/brands/latham/models/optimized/corinthian-12.jpg' },
-            { name: 'Devon Plus', dims: '12\' × 26\'', img: '/images/brands/latham/models/optimized/olympia-12.jpg' }
-        ],
-        gladwyne: [
-            { name: 'Gladwyne Classic', dims: '14\' × 33\'', img: '/images/brands/latham/models/optimized/claremont.jpg' },
-            { name: 'Gladwyne Grand', dims: '16\' × 33\'', img: '/images/brands/latham/models/optimized/lake-shore.jpg' },
-            { name: 'Gladwyne Arched', dims: '14\' × 33\'', img: '/images/brands/thursday/models/optimized/cathedral.jpg' },
-            { name: 'Gladwyne Sport', dims: '14\' × 30\'', img: '/images/brands/latham/models/optimized/corinthian-14.jpg' },
-            { name: 'Gladwyne Ledge', dims: '13.5\' × 35.5\'', img: '/images/brands/thursday/models/optimized/lil-bob.jpg' }
-        ],
-        brandywine: [
-            { name: 'Brandywine Classic', dims: '16\' × 40\'', img: '/images/brands/latham/models/optimized/monaco.jpg' },
-            { name: 'Brandywine Lounge', dims: '16\' × 38\'', img: '/images/brands/latham/models/optimized/barcelona.jpg' },
-            { name: 'Brandywine Beach', dims: '16\' × 39\'', img: '/images/brands/thursday/models/optimized/sandal.jpg' },
-            { name: 'Brandywine Premier', dims: '16\' × 38\'', img: '/images/brands/latham/models/optimized/kingston.jpg' },
-            { name: 'Brandywine Ledge', dims: '16\' × 40\'', img: '/images/brands/thursday/models/optimized/aspen.jpg' },
-            { name: 'Brandywine XL', dims: '16\' × 41\'', img: '/images/brands/thursday/models/optimized/goliath.jpg' }
-        ]
+    // ==================== POOL SPECS DATA ====================
+    var poolSpecsData = {
+        devon: {
+            dims: '7\' × 13\'',
+            depth: '52" (4\'4")',
+            volume: '~2,800 gallons',
+            shell: '6" steel-reinforced concrete',
+            install: '1-2 weeks on-site',
+            features: ['4 return jets', 'Surface skimmer', 'LED lighting', 'Cartridge filter system', 'Variable speed pump', 'Stainless steel handrail', 'Basic maintenance equipment'],
+            note: 'Smallest footprint — doubles as a hot tub with heater upgrade'
+        },
+        gladwyne: {
+            dims: '9\' × 16\'',
+            depth: '3\'5" - 5\'4"',
+            volume: '~5,200 gallons',
+            shell: '6" steel-reinforced concrete',
+            install: '2-3 weeks on-site',
+            features: ['4 return jets', 'Surface skimmer', 'LED lighting', 'Cartridge filter system', 'Variable speed pump', 'Stainless steel handrail', 'Maintenance equipment included'],
+            note: 'Most popular size — room for play and entertaining without excess maintenance'
+        },
+        brandywine: {
+            dims: '9\' × 21\'',
+            depth: '3\'5" - 5\'4"',
+            volume: '~8,500 gallons',
+            shell: '6" steel-reinforced concrete',
+            install: '3-4 weeks on-site',
+            features: ['4 return jets', 'Surface skimmer', 'LED lighting', 'Cartridge filter system', 'Variable speed pump', 'Stainless steel handrail', 'Maintenance equipment included'],
+            note: 'Largest precast plunge pool available — optional integrated spa section heats in under 30 minutes'
+        }
     };
 
     // Hero images for summary step, mapped to pool selection
@@ -2734,7 +2859,9 @@
 
         document.getElementById('selectedPoolHeroImg').src = data.img;
         document.getElementById('selectedPoolHeroName').textContent = poolNames[poolType];
-        document.getElementById('selectedPoolHeroDims').textContent = data.dims + '  •  52" depth  •  ' + (poolType === 'devon' ? '2-4' : poolType === 'gladwyne' ? '4-6' : '6-8') + ' people';
+        var depthText = poolType === 'devon' ? '52" depth' : '3\'5" - 5\'4" depth';
+        var capacityText = poolType === 'devon' ? '2-4' : poolType === 'gladwyne' ? '4-6' : '6-10';
+        document.getElementById('selectedPoolHeroDims').textContent = data.dims + '  •  ' + depthText + '  •  ' + capacityText + ' people';
 
         // Build SVG dimension diagram
         var scale = 0.6;
@@ -2769,23 +2896,32 @@
         var subtitle = document.getElementById('modelGallerySubtitle');
         if (!gallery || !strip) return;
 
-        var models = modelsByCategory[poolType];
-        if (!models || models.length === 0) {
+        var specs = poolSpecsData[poolType];
+        if (!specs) {
             gallery.classList.remove('visible');
             return;
         }
 
-        subtitle.textContent = models.length + ' models available in this size range';
+        subtitle.textContent = 'Standard features included with every ' + poolNames[poolType];
 
-        strip.innerHTML = models.map(function(m) {
-            return '<div class="model-thumb">' +
-                '<img class="model-thumb-img" src="' + m.img + '" alt="' + m.name + ' pool" loading="lazy">' +
-                '<div class="model-thumb-info">' +
-                '<div class="model-thumb-name">' + m.name + '</div>' +
-                '<div class="model-thumb-dims">' + m.dims + '</div>' +
-                '</div></div>';
-        }).join('');
+        var html = '<div class="pool-specs-panel">';
+        html += '<div class="specs-quick-stats">';
+        html += '<div class="specs-stat"><span class="specs-stat-value">' + specs.dims + '</span><span class="specs-stat-label">Dimensions</span></div>';
+        html += '<div class="specs-stat"><span class="specs-stat-value">' + specs.depth + '</span><span class="specs-stat-label">Depth</span></div>';
+        html += '<div class="specs-stat"><span class="specs-stat-value">' + specs.volume + '</span><span class="specs-stat-label">Water Volume</span></div>';
+        html += '<div class="specs-stat"><span class="specs-stat-value">' + specs.install + '</span><span class="specs-stat-label">Installation</span></div>';
+        html += '</div>';
+        html += '<div class="specs-features-list">';
+        specs.features.forEach(function(f) {
+            html += '<div class="specs-feature"><svg viewBox="0 0 24 24" width="16" height="16"><polyline points="20 6 9 17 4 12" fill="none" stroke="#C9A962" stroke-width="2.5"/></svg>' + f + '</div>';
+        });
+        html += '</div>';
+        if (specs.note) {
+            html += '<div class="specs-note">' + specs.note + '</div>';
+        }
+        html += '</div>';
 
+        strip.innerHTML = html;
         gallery.classList.add('visible');
     }
 
@@ -2802,9 +2938,17 @@
         var spaEl = document.getElementById('spaUpgrade');
         if (spaEl) spaEl.style.display = config.pool === 'brandywine' ? 'grid' : 'none';
 
-        // Show pool hero + model gallery for selected pool type
+        // Show pool hero + specs for selected pool type
         updateSelectedPoolHero(config.pool);
         updateModelGallery(config.pool);
+
+        // Scroll so the hero/specs are visible
+        setTimeout(function() {
+            var hero = document.getElementById('selectedPoolHero');
+            if (hero && hero.classList.contains('visible')) {
+                hero.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 100);
     }
 
     function selectFinish(el) {

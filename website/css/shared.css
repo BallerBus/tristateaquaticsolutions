@@ -814,3 +814,64 @@ footer {
         justify-content: center;
     }
 }
+
+/* ==================== MOBILE STICKY CTA BAR ==================== */
+.mobile-sticky-cta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-sticky-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1100;
+        height: 56px;
+        background: var(--navy);
+        box-shadow: 0 -2px 12px rgba(14, 31, 52, 0.25);
+        padding: 6px 8px;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .mobile-sticky-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex: 1;
+        height: 44px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        transition: opacity 0.2s ease;
+    }
+
+    .mobile-sticky-btn:active {
+        opacity: 0.85;
+    }
+
+    .mobile-sticky-btn svg {
+        flex-shrink: 0;
+    }
+
+    .mobile-sticky-btn.call-btn {
+        background: var(--aqua);
+        color: var(--white);
+    }
+
+    .mobile-sticky-btn.design-btn {
+        background: var(--gold);
+        color: var(--navy);
+    }
+
+    /* Prevent footer from being hidden behind the sticky bar */
+    body {
+        padding-bottom: 56px;
+    }
+}

@@ -1437,6 +1437,10 @@
                     </div>
 
                     <div class="hero-ctas">
+                        <a href="/design-your-pool/" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--navy); font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 15px rgba(201,169,98,0.3);">
+                            Design Your Pool &mdash; Starting at $25,000
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
                         <a href="/contact/" class="btn btn-primary">
                             Schedule Consultation
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1447,7 +1451,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/images/wellness-plunge.jpg" alt="Luxury custom concrete pool with integrated spa"> 
+                    <img src="/images/wellness-plunge.jpg" alt="Luxury custom concrete pool with integrated spa">
                 </div>
             </div>
         </div>
@@ -1847,6 +1851,18 @@
         </div>
     </section>
 
+    <!-- Design Your Pool CTA -->
+    <section style="padding: 5rem 0; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-display); color: var(--white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Ready to Start?</h2>
+            <p style="font-family: var(--font-body); color: rgba(255,255,255,0.7); font-size: 1.15rem; max-width: 600px; margin: 0 auto 2rem;">Design your pool online and reserve your spot with a $2,500 design deposit. Choose your pool type, size, and features in just a few minutes.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/design-your-pool/" style="display: inline-block; background: var(--gold); color: var(--navy); font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; padding: 1.1rem 2.5rem; border-radius: 8px; text-decoration: none; transition: background 0.3s; box-shadow: 0 4px 20px rgba(201,169,98,0.35);">Design Your Pool &rarr;</a>
+                <a href="tel:+13028703113" style="display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: var(--white); font-family: var(--font-body); font-size: 1.1rem; font-weight: 500; padding: 1.1rem 2.5rem; border-radius: 8px; text-decoration: none; transition: border-color 0.3s;">Call (302) 870-3113</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1958,5 +1974,18 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
     </script>
+
+<!-- Mobile Sticky CTA Bar -->
+<div class="mobile-sticky-cta">
+    <a href="tel:+13028703113" class="mobile-sticky-btn call-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Now
+    </a>
+    <a href="/design-your-pool/" class="mobile-sticky-btn design-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        Design Your Pool
+    </a>
+</div>
+
 </body>
 </html>

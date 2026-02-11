@@ -1854,6 +1854,42 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section style="padding: 5rem 0; background: #F5F7FA;">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem;">
+                <div class="section-tag">What Our Clients Say</div>
+                <h2>Fiberglass Pool Owners Speak Up</h2>
+                <p>Hear from homeowners who chose fiberglass for their backyard.</p>
+            </div>
+            <div class="fg-testimonials-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div style="background: #fff; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(14,31,52,0.06); border-left: 3px solid #C9A962;">
+                    <div style="color: #FBBC05; font-size: 1.2rem; margin-bottom: 0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1rem; color: #0E1F34; margin-bottom: 1.25rem; line-height: 1.6;">"We compared fiberglass to concrete and the speed sealed it. Our pool was in the ground in 2.5 weeks."</p>
+                    <div>
+                        <span style="font-family: 'Outfit', sans-serif; font-weight: 600; color: #0E1F34;">Matt H.</span>
+                        <span style="font-family: 'Outfit', sans-serif; color: #6B7280; margin-left: 0.25rem;">Berwyn, PA</span>
+                    </div>
+                </div>
+                <div style="background: #fff; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(14,31,52,0.06); border-left: 3px solid #C9A962;">
+                    <div style="color: #FBBC05; font-size: 1.2rem; margin-bottom: 0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1rem; color: #0E1F34; margin-bottom: 1.25rem; line-height: 1.6;">"The lifetime structural warranty gave us confidence. Three summers in, the pool looks brand new."</p>
+                    <div>
+                        <span style="font-family: 'Outfit', sans-serif; font-weight: 600; color: #0E1F34;">David K.</span>
+                        <span style="font-family: 'Outfit', sans-serif; color: #6B7280; margin-left: 0.25rem;">Newtown Square, PA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 768px) {
+                .fg-testimonials-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+    </section>
+
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
@@ -2166,5 +2202,12 @@
     </a>
 </div>
 
+<!-- SMS Text Button (Mobile) -->
+<a href="sms:+13028703113?body=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20pool%20services." class="sms-float-btn" aria-label="Text us" onclick="if(typeof gtag==='function')gtag('event','sms_click',{event_category:'contact',event_label:'floating_sms_button'});">
+    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="sms-label">Text Us</span>
+</a>
+
+<script src="/js/exit-intent.js" defer></script>
 </body>
 </html>

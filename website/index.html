@@ -1345,6 +1345,197 @@
                 justify-content: center;
             }
         }
+
+        /* ==================== PERSONA PATHS SECTION ==================== */
+        .persona-paths {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            background: var(--gray-light);
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .persona-card {
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 20px;
+            padding: 2rem 1.75rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 50px -15px rgba(201, 169, 98, 0.25);
+        }
+
+        .persona-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-dark, #008B96) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .persona-card:hover .persona-icon {
+            transform: scale(1.1);
+        }
+
+        .persona-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .persona-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .persona-card p {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .persona-link {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--aqua);
+            transition: color 0.3s ease;
+            margin-top: auto;
+        }
+
+        .persona-card:hover .persona-link {
+            color: var(--gold);
+        }
+
+        @media (max-width: 1024px) {
+            .persona-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .persona-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== SOCIAL PROOF SECTION ==================== */
+        .social-proof {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            background: var(--white);
+        }
+
+        .social-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .proof-card {
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-left: 4px solid var(--gold);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .proof-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px -10px rgba(14, 31, 52, 0.12);
+        }
+
+        .proof-stars {
+            color: var(--gold);
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .proof-quote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .proof-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .proof-name {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .proof-location {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        @media (max-width: 1024px) {
+            .social-proof-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Stagger animation for proof cards */
+        @keyframes fadeInUpCard {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .proof-card:nth-child(1) {
+            animation: fadeInUpCard 0.6s var(--ease-out-expo) 0.1s both;
+        }
+
+        .proof-card:nth-child(2) {
+            animation: fadeInUpCard 0.6s var(--ease-out-expo) 0.25s both;
+        }
+
+        .proof-card:nth-child(3) {
+            animation: fadeInUpCard 0.6s var(--ease-out-expo) 0.4s both;
+        }
     </style>
 </head>
 <body>
@@ -1723,6 +1914,90 @@
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 Not sure what you need? Let's talk.
             </a>
+        </div>
+    </section>
+
+    <!-- Persona Paths Section -->
+    <section class="persona-paths">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Find Your Path</div>
+                <h2>What Brings You Here?</h2>
+            </div>
+            <div class="persona-grid">
+                <!-- Card 1: First Pool Family -->
+                <a href="/pools/" class="persona-card">
+                    <div class="persona-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>First Pool for the Family</h3>
+                    <p>You've been thinking about it for years. Let's make it happen this spring.</p>
+                    <span class="persona-link">Explore pool options &rarr;</span>
+                </a>
+                <!-- Card 2: Pool Downsizer -->
+                <a href="/pools/downsizing/" class="persona-card">
+                    <div class="persona-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+                    </div>
+                    <h3>Replace an Old Pool</h3>
+                    <p>Tired of maintaining an oversized pool you barely use? There's a better way.</p>
+                    <span class="persona-link">See the modern alternative &rarr;</span>
+                </a>
+                <!-- Card 3: Wellness/Cold Plunge -->
+                <a href="/pools/plunge/" class="persona-card">
+                    <div class="persona-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    </div>
+                    <h3>Backyard Wellness Retreat</h3>
+                    <p>Year-round plunge pool for cold therapy, hydrotherapy, and daily wellness.</p>
+                    <span class="persona-link">Discover plunge pools &rarr;</span>
+                </a>
+                <!-- Card 4: Premium Full Build -->
+                <a href="/pools/concrete/" class="persona-card">
+                    <div class="persona-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>The Full Outdoor Experience</h3>
+                    <p>Pool, spa, outdoor kitchen &mdash; the complete backyard transformation.</p>
+                    <span class="persona-link">View premium builds &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">What Homeowners Say</div>
+                <h2>Trusted Across the Main Line</h2>
+            </div>
+            <div class="social-proof-grid">
+                <div class="proof-card">
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="proof-quote">"From the first consultation to swimming in our new pool, everything was professional and on schedule. Our kids haven't left the backyard since June."</p>
+                    <div class="proof-author">
+                        <span class="proof-name">Sarah H.</span>
+                        <span class="proof-location">Berwyn, PA</span>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="proof-quote">"We replaced our 30-year-old pool with a plunge pool. Best decision we've made. Half the maintenance, twice the enjoyment."</p>
+                    <div class="proof-author">
+                        <span class="proof-name">Jim &amp; Linda C.</span>
+                        <span class="proof-location">Gladwyne, PA</span>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="proof-quote">"I wanted a cold plunge pool I could use year-round. They designed exactly what I envisioned &mdash; modern, beautiful, and functional in every season."</p>
+                    <div class="proof-author">
+                        <span class="proof-name">Priya N.</span>
+                        <span class="proof-location">Wayne, PA</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2114,5 +2389,12 @@
     </a>
 </div>
 
+<!-- SMS Text Button (Mobile) -->
+<a href="sms:+13028703113?body=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20pool%20services." class="sms-float-btn" aria-label="Text us" onclick="if(typeof gtag==='function')gtag('event','sms_click',{event_category:'contact',event_label:'floating_sms_button'});">
+    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="sms-label">Text Us</span>
+</a>
+
+<script src="/js/exit-intent.js" defer></script>
 </body>
 </html>

@@ -1730,6 +1730,56 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section style="padding: 5rem 0; background: #F5F7FA;">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem;">
+                <div class="section-tag">What Our Clients Say</div>
+                <h2>Real Results From Real Homeowners</h2>
+                <p>Hear from families across the Main Line and Delaware who chose Tri-State Aquatic Solutions.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Fiberglass Testimonial -->
+                <div style="background: #fff; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(14,31,52,0.06); border-left: 3px solid #C9A962;">
+                    <div style="color: #FBBC05; font-size: 1.2rem; margin-bottom: 0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1rem; color: #0E1F34; margin-bottom: 1.25rem; line-height: 1.6;">"The installation was done in 3 weeks. I couldn't believe how fast and clean the process was."</p>
+                    <div>
+                        <span style="font-family: 'Outfit', sans-serif; font-weight: 600; color: #0E1F34;">Michael R.</span>
+                        <span style="font-family: 'Outfit', sans-serif; color: #6B7280; margin-left: 0.25rem;">Devon, PA</span>
+                    </div>
+                    <div style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: #C9A962; margin-top: 0.5rem;">Fiberglass Pool</div>
+                </div>
+                <!-- Plunge Testimonial -->
+                <div style="background: #fff; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(14,31,52,0.06); border-left: 3px solid #C9A962;">
+                    <div style="color: #FBBC05; font-size: 1.2rem; margin-bottom: 0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1rem; color: #0E1F34; margin-bottom: 1.25rem; line-height: 1.6;">"Perfect for our smaller yard. We use it more than our neighbors use their full-size pool."</p>
+                    <div>
+                        <span style="font-family: 'Outfit', sans-serif; font-weight: 600; color: #0E1F34;">The Patels</span>
+                        <span style="font-family: 'Outfit', sans-serif; color: #6B7280; margin-left: 0.25rem;">Wayne, PA</span>
+                    </div>
+                    <div style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: #C9A962; margin-top: 0.5rem;">Plunge Pool</div>
+                </div>
+                <!-- Concrete Testimonial -->
+                <div style="background: #fff; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(14,31,52,0.06); border-left: 3px solid #C9A962;">
+                    <div style="color: #FBBC05; font-size: 1.2rem; margin-bottom: 0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1rem; color: #0E1F34; margin-bottom: 1.25rem; line-height: 1.6;">"They understood our vision for a complete outdoor living space. The pool, spa, and patio are stunning."</p>
+                    <div>
+                        <span style="font-family: 'Outfit', sans-serif; font-weight: 600; color: #0E1F34;">Connor &amp; Megan W.</span>
+                        <span style="font-family: 'Outfit', sans-serif; color: #6B7280; margin-left: 0.25rem;">Villanova, PA</span>
+                    </div>
+                    <div style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: #C9A962; margin-top: 0.5rem;">Concrete Pool</div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 768px) {
+                section > .container > div[style*="grid-template-columns: repeat(3"] {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -2000,5 +2050,12 @@
     </a>
 </div>
 
+<!-- SMS Text Button (Mobile) -->
+<a href="sms:+13028703113?body=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20pool%20services." class="sms-float-btn" aria-label="Text us" onclick="if(typeof gtag==='function')gtag('event','sms_click',{event_category:'contact',event_label:'floating_sms_button'});">
+    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="sms-label">Text Us</span>
+</a>
+
+<script src="/js/exit-intent.js" defer></script>
 </body>
 </html>

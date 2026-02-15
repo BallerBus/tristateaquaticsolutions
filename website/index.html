@@ -96,7 +96,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 160px 1.5rem 60px;
+            padding: 200px 1.5rem 60px;
             background: linear-gradient(180deg, var(--gray-light) 0%, var(--white) 100%);
             position: relative;
             overflow: hidden;
@@ -1260,7 +1260,7 @@
         @media (max-width: 768px) {
 
             .question-hero {
-                padding: 140px 1.5rem 40px;
+                padding: 180px 1.5rem 40px;
             }
 
             .trust-bar {
@@ -1544,12 +1544,13 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Urgency Banner -->
-    <div class="urgency-banner">
+    <div class="urgency-banner" id="urgencyBanner">
         <span class="banner-text">
             <span class="banner-highlight">Spring 2026 Installation Spots Available</span>
             &mdash; Now accepting deposits. Limited spots remaining.
         </span>
         <a href="/contact/">Book Free Consultation</a>
+        <button onclick="document.getElementById('urgencyBanner').style.display='none';document.querySelector('nav').style.top='0';document.querySelector('.question-hero').style.paddingTop='160px'" style="background:none;border:none;color:rgba(255,255,255,0.6);cursor:pointer;padding:0 0 0 0.5rem;font-size:1.2rem;line-height:1;" aria-label="Dismiss banner">&times;</button>
     </div>
 
     <!-- Navigation -->

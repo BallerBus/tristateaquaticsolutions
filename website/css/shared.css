@@ -128,9 +128,10 @@ p {
 }
 
 /* ==================== NAVIGATION ==================== */
-/* Variant A: nav with urgency banner (top: 40px) - used on pages with .urgency-banner */
-/* Variant B: nav without banner (top: 0) - used on pages without .urgency-banner */
-/* Pages should override nav { top: ... } if needed */
+/* Nav automatically shifts down when preceded by .urgency-banner */
+.urgency-banner + nav {
+    top: 48px;
+}
 
 nav {
     position: fixed;

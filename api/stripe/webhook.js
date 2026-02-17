@@ -1,6 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const GHL_BASE_URL = 'https://services.leadconnectorhq.com';
+const ALLOWED_ORIGIN = 'https://tristateaquaticsolutions.com';
 
 // Disable Vercel's default body parsing so we can verify the Stripe signature
 module.exports.config = {
@@ -21,9 +22,9 @@ function getRawBody(req) {
 module.exports = async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,POST');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Stripe-Signature');
+  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Stripe-Signature');
 
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -52,15 +53,47 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Webhook signature verification failed' });
   }
 
-  if (event.type === 'checkout.session.completed') {
-    const session = event.data.object;
+  console.log(`[stripe-webhook] Processing event: ${event.type} (${event.id})`);
 
-    try {
-      await handleCheckoutCompleted(session);
-    } catch (err) {
-      console.error('Error processing checkout.session.completed:', err);
-      // Return 200 so Stripe doesn't retry — log the error for investigation
+  try {
+    switch (event.type) {
+      case 'checkout.session.completed': {
+        const session = event.data.object;
+        console.log(`[stripe-webhook] Payment completed: ${session.id}, ${session.customer_email || session.customer}, $${(session.amount_total || 0) / 100}`);
+        await handleCheckoutCompleted(session);
+        break;
+      }
+
+      case 'payment_intent.succeeded': {
+        const paymentIntent = event.data.object;
+        console.log(`[stripe-webhook] Payment intent succeeded: ${paymentIntent.id}, $${(paymentIntent.amount || 0) / 100}`);
+        break;
+      }
+
+      case 'payment_intent.payment_failed': {
+        const paymentIntent = event.data.object;
+        console.error(`[stripe-webhook] Payment failed: ${paymentIntent.id} — ${paymentIntent.last_payment_error?.message || 'unknown error'}`);
+        break;
+      }
+
+      case 'charge.refunded': {
+        const charge = event.data.object;
+        console.log(`[stripe-webhook] Refund processed: ${charge.id}, $${(charge.amount_refunded || 0) / 100}`);
+        break;
+      }
+
+      case 'customer.created': {
+        const customer = event.data.object;
+        console.log(`[stripe-webhook] New customer: ${customer.id} (${customer.email})`);
+        break;
+      }
+
+      default:
+        console.log(`[stripe-webhook] Unhandled event type: ${event.type}`);
     }
+  } catch (error) {
+    console.error(`[stripe-webhook] Error processing ${event.type}:`, error);
+    // Return 200 so Stripe doesn't retry — log the error for investigation
   }
 
   return res.status(200).json({ received: true });
@@ -72,7 +105,7 @@ async function handleCheckoutCompleted(session) {
   const locationId = process.env.GHL_LOCATION_ID || 'A0e67CElQk4EoVK0XY2K';
 
   if (!apiKey) {
-    console.error('GHL_API_KEY not configured — skipping CRM sync');
+    console.log('GHL_API_KEY not configured — skipping CRM sync');
     return;
   }
 
@@ -103,13 +136,13 @@ async function handleCheckoutCompleted(session) {
 
   // 2. Create or update contact
   const contactPayload = {
-    firstName: metadata.firstName || '',
-    lastName: metadata.lastName || '',
+    firstName: metadata.customer_name?.split(' ')[0] || metadata.firstName || '',
+    lastName: metadata.customer_name?.split(' ').slice(1).join(' ') || metadata.lastName || '',
     email: email || '',
     phone: metadata.phone || '',
     address1: metadata.address || '',
     tags: ['Deposit Paid', 'Design Deposit', 'Hot Lead', 'Pool Installation Interest'],
-    source: 'Pool Configurator'
+    source: metadata.source || 'Payment Page'
   };
 
   if (contactId) {
@@ -150,12 +183,19 @@ async function handleCheckoutCompleted(session) {
   }
 
   // 3. Create opportunity in pipeline
-  let monetaryValue = 0;
+  const amount = session.amount_total ? session.amount_total / 100 : 0;
+  let monetaryValue = amount;
+
+  // If configurator metadata has price range, use midpoint as deal value
   if (metadata.priceRangeLow && metadata.priceRangeHigh) {
     const low = parseInt(metadata.priceRangeLow.replace(/[^0-9]/g, ''), 10) || 0;
     const high = parseInt(metadata.priceRangeHigh.replace(/[^0-9]/g, ''), 10) || 0;
-    monetaryValue = Math.round((low + high) / 2);
+    if (low > 0 && high > 0) {
+      monetaryValue = Math.round((low + high) / 2);
+    }
   }
+
+  const customerName = `${contactPayload.firstName} ${contactPayload.lastName}`.trim();
 
   await fetch(`${GHL_BASE_URL}/opportunities/`, {
     method: 'POST',
@@ -165,33 +205,40 @@ async function handleCheckoutCompleted(session) {
       contactId,
       pipelineId: 'LGgQEViEFr1pAKKzvMtJ',
       pipelineStageId: 'a8b53e0c-ccd5-45df-af4e-304811750b53',
-      name: `Design Deposit - ${metadata.firstName || ''} ${metadata.lastName || ''}`.trim(),
+      name: `Design Deposit - ${customerName || email}`,
       status: 'open',
       monetaryValue,
-      source: 'Pool Configurator'
+      source: metadata.source || 'Payment Page'
     })
   });
 
   // 4. Create follow-up task
-  const upgrades = metadata.upgrades ? JSON.parse(metadata.upgrades) : [];
-  const configSummary = [
-    `Pool Type: ${metadata.poolType || 'N/A'}`,
-    `Finish: ${metadata.finish || 'N/A'}`,
-    metadata.fiberglassColor ? `Fiberglass Color: ${metadata.fiberglassColor}` : null,
-    upgrades.length > 0 ? `Upgrades: ${upgrades.join(', ')}` : null,
-    `Budget: ${metadata.priceRangeLow || '?'} - ${metadata.priceRangeHigh || '?'}`
-  ].filter(Boolean).join('\n');
+  let description = `Deposit of $${amount} paid via ${metadata.source || 'payment page'}.\n\nAction: Schedule site visit within 48 hours.`;
+
+  // Add configurator details if present
+  if (metadata.poolType) {
+    const upgrades = metadata.upgrades ? JSON.parse(metadata.upgrades) : [];
+    const configSummary = [
+      `Pool Type: ${metadata.poolType}`,
+      metadata.finish ? `Finish: ${metadata.finish}` : null,
+      metadata.fiberglassColor ? `Fiberglass Color: ${metadata.fiberglassColor}` : null,
+      upgrades.length > 0 ? `Upgrades: ${upgrades.join(', ')}` : null,
+      metadata.priceRangeLow ? `Budget: ${metadata.priceRangeLow} - ${metadata.priceRangeHigh || '?'}` : null
+    ].filter(Boolean).join('\n');
+
+    description = `Design deposit of $${amount} paid via pool configurator.\n\nPool Configuration:\n${configSummary}\n\nAction: Schedule site visit within 48 hours.`;
+  }
 
   await fetch(`${GHL_BASE_URL}/contacts/${contactId}/tasks`, {
     method: 'POST',
     headers: ghlHeaders,
     body: JSON.stringify({
-      title: 'Design Deposit Received - Schedule Site Visit',
+      title: 'Deposit Received - Schedule Site Visit',
       dueDate: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-      description: `Design deposit paid via pool configurator.\n\nPool Configuration:\n${configSummary}\n\nAction: Schedule site visit within 48 hours.`,
+      description,
       status: 'pending'
     })
   });
 
-  console.log(`Checkout processed for ${metadata.firstName} ${metadata.lastName} (${email}), contact: ${contactId}`);
+  console.log(`[stripe-webhook] Checkout processed for ${customerName} (${email}), contact: ${contactId}, amount: $${amount}`);
 }

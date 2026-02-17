@@ -102,9 +102,9 @@ async function createGhlLead(customer, poolConfig, metadata) {
 module.exports = async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  res.setHeader('Access-Control-Allow-Origin', 'https://tristateaquaticsolutions.com');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -194,8 +194,7 @@ module.exports = async function handler(req, res) {
   } catch (error) {
     console.error('Stripe Checkout Error:', error);
     return res.status(500).json({
-      error: 'Failed to create checkout session',
-      message: error.message
+      error: 'Failed to create checkout session'
     });
   }
 };

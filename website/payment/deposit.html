@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Your Pool Installation Deposit | Tri-State Aquatic Solutions</title>
+    <meta name="description" content="Secure your Spring 2026 pool installation with a deposit. Tri-State Aquatic Solutions serving Main Line PA and Northern Delaware.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css">
+    
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --aqua: #00A6B2;
+            --aqua-dark: #008B96;
+            --aqua-glow: rgba(0, 166, 178, 0.15);
+            --gold: #C9A962;
+            --gold-light: #D4BA7A;
+            --white: #FFFFFF;
+            --gray-light: #F7F8FA;
+            --gray: #E8EAED;
+            --gray-text: #6B7280;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background: var(--gray-light); color: var(--navy); min-height: 100vh; }
+        .checkout-container { max-width: 600px; margin: 0 auto; padding: 2rem; }
+        .checkout-header { text-align: center; margin-bottom: 2rem; }
+        .logo { display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; text-decoration: none; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--aqua), var(--aqua-dark)); border-radius: 10px; }
+        .logo-text { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; color: var(--navy); }
+        .checkout-card { background: var(--white); border-radius: 24px; padding: 2.5rem; box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15); }
+        .checkout-title { font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .checkout-subtitle { color: var(--gray-text); font-size: 1rem; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; font-weight: 500; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .form-input { width: 100%; padding: 1rem 1.25rem; border: 2px solid var(--gray); border-radius: 12px; font-family: var(--font-body); font-size: 1rem; transition: border-color 0.3s ease; }
+        .form-input:focus { outline: none; border-color: var(--aqua); }
+        .deposit-amounts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+        .amount-option { position: relative; }
+        .amount-option input { position: absolute; opacity: 0; }
+        .amount-option label { display: block; padding: 1rem; border: 2px solid var(--gray); border-radius: 12px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+        .amount-option label:hover { border-color: var(--aqua); }
+        .amount-option input:checked + label { border-color: var(--aqua); background: var(--aqua-glow); }
+        .amount-value { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; }
+        .amount-desc { font-size: 0.8rem; color: var(--gray-text); margin-top: 0.25rem; }
+        .custom-amount { margin-top: 1rem; }
+        .submit-btn { width: 100%; padding: 1.25rem; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -10px rgba(201, 169, 98, 0.5); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .submit-btn .spinner { width: 20px; height: 20px; border: 2px solid var(--navy); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .secure-note { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; font-size: 0.85rem; color: var(--gray-text); }
+        .secure-note svg { width: 18px; height: 18px; stroke: var(--aqua); }
+        .trust-badges { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray); }
+        .trust-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--gray-text); }
+        .error-message { background: #FEE2E2; color: #991B1B; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; display: none; }
+        .error-message.visible { display: block; }
+        @media (max-width: 640px) { .deposit-amounts { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <a href="/" class="logo">
+                <div class="logo-mark"></div>
+                <span class="logo-text">Tri-State Aquatic Solutions</span>
+            </a>
+        </div>
+        
+        <div class="checkout-card">
+            <h1 class="checkout-title">Secure Your Pool Installation</h1>
+            <p class="checkout-subtitle">Spring 2026 spots are filling fast. Your deposit guarantees your place in our schedule.</p>
+            <div class="error-message" id="errorMessage"></div>
+            
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label class="form-label">Select Deposit Amount</label>
+                    <div class="deposit-amounts">
+                        <div class="amount-option">
+                            <input type="radio" name="amount" id="amount2000" value="200000" checked>
+                            <label for="amount2000">
+                                <div class="amount-value">$2,000</div>
+                                <div class="amount-desc">Standard Deposit</div>
+                            </label>
+                        </div>
+                        <div class="amount-option">
+                            <input type="radio" name="amount" id="amount3500" value="350000">
+                            <label for="amount3500">
+                                <div class="amount-value">$3,500</div>
+                                <div class="amount-desc">Priority Install</div>
+                            </label>
+                        </div>
+                        <div class="amount-option">
+                            <input type="radio" name="amount" id="amount5000" value="500000">
+                            <label for="amount5000">
+                                <div class="amount-value">$5,000</div>
+                                <div class="amount-desc">Premium Package</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="custom-amount">
+                        <input type="number" class="form-input" name="customAmount" id="customAmount" placeholder="Or enter custom amount (minimum $1,000)" min="1000" step="100">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="fullName">Full Name</label>
+                    <input type="text" class="form-input" id="fullName" name="fullName" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" class="form-input" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input type="tel" class="form-input" id="phone" name="phone" required placeholder="(302) 870-3113">
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Proceed to Secure Payment
+                </button>
+            </form>
+            
+            <div class="secure-note">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+                </svg>
+                Secured by Stripe. Your deposit is protected.
+            </div>
+        </div>
+        
+        <div class="trust-badges">
+            <div class="trust-badge">SSL Encrypted</div>
+            <div class="trust-badge">PCI Compliant</div>
+            <div class="trust-badge">Verified Business</div>
+        </div>
+    </div>
+    
+    <script>
+        const form = document.getElementById('checkoutForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        function showError(msg) {
+            errorMessage.textContent = msg;
+            errorMessage.classList.add('visible');
+        }
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            hideError();
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
+            
+            const formData = new FormData(form);
+            const amountRadio = form.querySelector('input[name="amount"]:checked');
+            const customAmount = formData.get('customAmount');
+            const amount = customAmount ? parseInt(customAmount) * 100 : parseInt(amountRadio?.value || 200000);
+            
+            try {
+                const response = await fetch('/api/stripe/create-checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'deposit',
+                        amount: amount,
+                        customerEmail: formData.get('email'),
+                        customerName: formData.get('fullName'),
+                        metadata: {
+                            phone: formData.get('phone'),
+                            source: 'deposit_page'
+                        }
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    throw new Error(data.error || 'Failed to create checkout session');
+                }
+            } catch (err) {
+                showError(err.message || 'Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Proceed to Secure Payment';
+            }
+        });
+        
+        function hideError() {
+            errorMessage.classList.remove('visible');
+        }
+    </script>
+<script src="/js/analytics.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Cancelled | Tri-State Aquatic Solutions</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css">
+    
+    <style>
+        :root {
+            --navy: #0E1F34;
+            --aqua: #00A6B2;
+            --gold: #C9A962;
+            --gold-light: #D4BA7A;
+            --white: #FFFFFF;
+            --gray-light: #F7F8FA;
+            --gray: #E8EAED;
+            --gray-text: #6B7280;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background: var(--gray-light); color: var(--navy); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+        .cancel-container { max-width: 500px; width: 100%; text-align: center; }
+        .cancel-card { background: var(--white); border-radius: 24px; padding: 3rem; box-shadow: 0 20px 60px -20px rgba(14, 31, 52, 0.15); }
+        .cancel-icon { width: 80px; height: 80px; background: var(--gray); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; }
+        .cancel-icon svg { width: 40px; height: 40px; stroke: var(--gray-text); stroke-width: 2; }
+        .cancel-title { font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+        .cancel-message { color: var(--gray-text); margin-bottom: 2rem; line-height: 1.6; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); font-weight: 600; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; margin-bottom: 1rem; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -10px rgba(201, 169, 98, 0.5); }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: transparent; color: var(--navy); font-weight: 600; text-decoration: none; border: 2px solid var(--gray); border-radius: 12px; transition: all 0.3s ease; }
+        .btn-secondary:hover { border-color: var(--aqua); }
+        .contact-section { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray); }
+        .contact-section p { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .phone { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--aqua); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="cancel-container">
+        <div class="cancel-card">
+            <div class="cancel-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </div>
+            
+            <h1 class="cancel-title">Payment Cancelled</h1>
+            
+            <p class="cancel-message">
+                No worries — your payment was not processed. Spring 2026 spots are filling up fast, 
+                so we recommend securing your spot soon.
+            </p>
+            
+            <div>
+                <a href="/payment/deposit.html" class="btn-primary">Try Again</a>
+            </div>
+            <div style="margin-top: 1rem;">
+                <a href="/contact/" class="btn-secondary">Contact Us Instead</a>
+            </div>
+            
+            <div class="contact-section">
+                <p>Questions? We're happy to help:</p>
+                <a href="tel:+13028703113" class="phone">(302) 870-3113</a>
+            </div>
+        </div>
+    </div>
+<script src="/js/analytics.js" defer></script>
+</body>
+</html>

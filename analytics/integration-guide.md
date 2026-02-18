@@ -51,7 +51,7 @@ Edit `analytics-bundle.js` and replace placeholder IDs:
 ```javascript
 const CONFIG = {
     ga4: {
-        measurementId: 'G-XXXXXXXXXX', // Your GA4 ID
+        measurementId: 'G-JQEE2JQN7W', // Your GA4 ID
         enabled: true
     },
     gtm: {
@@ -518,7 +518,7 @@ Configure in GA4 Admin:
 IP anonymization is enabled by default:
 
 ```javascript
-gtag('config', 'G-XXXXXXXXXX', {
+gtag('config', 'G-JQEE2JQN7W', {
     'anonymize_ip': true
 });
 ```

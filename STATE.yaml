@@ -1,0 +1,87 @@
+project: tristate-aquatic-solutions
+updated: 2026-02-16T09:01:00Z
+priority: 2
+status: active
+owner: cash
+
+tasks:
+  - id: stripe-integration
+    status: completed
+    owner: cash
+    priority: critical
+    notes: |
+      STEIN configuration complete:
+      - API routes: /api/stripe/create-checkout.js, /api/stripe/create-portal.js
+      - Webhook handler: /api/webhooks/stripe.js
+      - Config: /api/_config/stripe.js (lazy init pattern from ContentCreationDude)
+      - Deposit page: /payment/deposit.html (collects $2K-$5K deposits)
+      - Success page: /payment/success.html (with next steps)
+      - Cancel page: /payment/cancel.html
+      - Stripe package added to package.json
+      - Environment variables documented in .env.local
+      
+      NEXT STEPS FOR BRANDON:
+      1. Create Stripe account (or use existing)
+      2. Get API keys from https://dashboard.stripe.com/apikeys
+      3. Set environment variables in Vercel dashboard
+      4. Create webhook endpoint pointing to /api/webhooks/stripe
+      5. Deploy to production
+
+  - id: meta-business-manager
+    status: not_started
+    owner: marlo
+    priority: high
+    notes: "Facebook Page, Instagram, Ad Account, Pixel setup needed before ads can launch."
+    blocked_by: "meta-business-manager"
+
+  - id: launch-meta-ads
+    status: blocked
+    owner: marlo
+    blocked_by: meta-business-manager
+    notes: "4 ad landing pages already deployed. Campaign blueprint exists. Just needs Meta BM setup."
+
+  - id: social-content
+    status: draft_ready
+    owner: marlo
+    notes: "3 pool season posts drafted at marketing/social-posts-feb14.md. Pending brand voice approval."
+    blocked_by: "brandon-approval on brand voice guide"
+
+  - id: pa-hic-registration
+    status: completed
+    owner: elon
+    priority: critical
+    notes: "Application form fully filled, printed, and ready to mail as of Feb 14. Certificate of Insurance also printed. Brandon needs to write SSN, sign, include $50 check, and mail to Harrisburg."
+
+  - id: randy-meeting
+    status: waiting
+    owner: cash
+    notes: "Spa Hearth & Home partnership (~100 customers, $260K/season). Need to schedule meeting."
+    blocked_by: "brandon-scheduling"
+
+  - id: gbp-setup
+    status: deferred
+    owner: marlo
+    priority: medium
+    notes: "PUSHED TO NEXT WEEK per Brandon. Complete GBP listing draft at marketing/gbp-listing-draft.md. Includes description, categories, service area, hours, attributes, photo shot list, post schedule, and review strategy. Ready for Brandon to create the actual GBP listing when prioritized."
+
+  - id: seo-blog-content
+    status: in_progress
+    owner: marlo
+    priority: high
+    notes: "Post #1 completed (marketing/blog-post-when-to-open-pool-pa.md). Post #2 completed 2026-02-17: 'Pool Opening Service in Delaware County PA — What to Expect & What It Costs' — ~1,300 words, commercial intent, at marketing/blog-post-pool-opening-service-delco.md. Posts #3-5 outlined and ready for drafting."
+
+  - id: spring-opening-flyer
+    status: drafted
+    owner: marlo
+    priority: high
+    notes: "Door hanger / direct mail copy at marketing/spring-opening-flyer-copy.md. Early bird 10% off for bookings before March 15. Includes print specs, distribution strategy, and EDDM budget estimates."
+
+next_actions:
+  - "brandon: Fix landing page layout, email popup, blue banner issues (see TODO.md)"
+  - "brandon: Mail PA HIC application with $50 check (see docs/pa-hic-registration-guide.md)"
+  - "brandon: Set up Stripe account and add API keys to Vercel environment variables"
+  - "brandon: Take photos from GBP shot list (truck, team, equipment minimum)"
+  - "marlo: Write first blog post from outlines (Post #1: When to Open Pool in PA) — publish by Feb 24"
+  - "marlo: Get spring flyer designed and printed (500-1000 units)"
+  - "marlo: Get Meta Business Manager access from Brandon"
+  - "marlo: Finalize social posts after brand voice approval"

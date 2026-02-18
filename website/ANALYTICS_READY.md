@@ -45,7 +45,7 @@ Replace placeholders in these files:
 | File | Placeholder | Replace With |
 |------|-------------|--------------|
 | `analytics-config.js` | `GTM-XXXXXXX` | Your GTM Container ID |
-| `analytics-config.js` | `G-XXXXXXXXXX` | Your GA4 Measurement ID |
+| `analytics-config.js` | `G-JQEE2JQN7W` | Your GA4 Measurement ID |
 | `analytics-config.js` | `XXXXXXX` | Your Hotjar Site ID |
 | `integrations/gtm-head.html` | `GTM-XXXXXXX` | Your GTM Container ID |
 | `integrations/hotjar.html` | `XXXXXXX` | Your Hotjar Site ID |

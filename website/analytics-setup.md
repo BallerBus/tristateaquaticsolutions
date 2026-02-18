@@ -53,7 +53,7 @@
 
 1. Go to https://analytics.google.com
 2. Create new property: "Tri-State Aquatic Solutions"
-3. Get the Measurement ID (format: `G-XXXXXXXXXX`)
+3. Get the Measurement ID (format: `G-JQEE2JQN7W`)
 4. Link GA4 to GTM:
    - In GA4: Admin → Property Settings → Associate with GTM
    - Enter your GTM Container ID
@@ -113,7 +113,7 @@ Replace `GTM-XXXXXXX` with your actual container ID.
 
 **Tag 1: GA4 Configuration**
 - Type: Google Analytics: GA4 Configuration
-- Measurement ID: `G-XXXXXXXXXX`
+- Measurement ID: `G-JQEE2JQN7W`
 - Trigger: All Pages
 
 **Tag 2: Click-to-Call Tracking**
@@ -138,7 +138,7 @@ Replace `GTM-XXXXXXX` with your actual container ID.
 Create `.env.local` in website root:
 
 ```bash
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-JQEE2JQN7W
 NEXT_PUBLIC_HOTJAR_ID=XXXXXXXX
 NEXT_PUBLIC_HOTJAR_VERSION=11
 NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
@@ -198,7 +198,7 @@ NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
 | Service | What to Find | Format | Status |
 |---------|--------------|--------|--------|
 | Google Tag Manager | Container ID | `GTM-XXXXXXX` | ⏳ |
-| Google Analytics 4 | Measurement ID | `G-XXXXXXXXXX` | ⏳ |
+| Google Analytics 4 | Measurement ID | `G-JQEE2JQN7W` | ⏳ |
 | Hotjar | Site ID | `1234567` | ⏳ |
 
 ---

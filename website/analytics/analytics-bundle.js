@@ -19,7 +19,7 @@
     const CONFIG = {
         // Google Analytics 4
         ga4: {
-            measurementId: 'G-XXXXXXXXXX', // Replace with actual GA4 ID
+            measurementId: 'G-JQEE2JQN7W', // Replace with actual GA4 ID
             enabled: true
         },
 

@@ -287,12 +287,12 @@ Our `performance-monitoring.js` sends Web Vitals to GA4. Ensure GA4 is configure
 
 ```html
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQEE2JQN7W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-JQEE2JQN7W');
 </script>
 
 <!-- Performance Monitoring -->

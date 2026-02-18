@@ -63,7 +63,7 @@
 
 ### Record Your Measurement ID
 
-Your Measurement ID will look like: `G-XXXXXXXXXX`
+Your Measurement ID will look like: `G-JQEE2JQN7W`
 
 **Save this ID** - you'll need it for all tracking code.
 
@@ -473,7 +473,7 @@ For each dimension:
 Add this temporarily to test:
 
 ```javascript
-gtag('config', 'G-XXXXXXXXXX', {
+gtag('config', 'G-JQEE2JQN7W', {
   'debug_mode': true
 });
 ```
@@ -538,7 +538,7 @@ gtag('config', 'G-XXXXXXXXXX', {
 For server-side events (if needed):
 
 ```bash
-POST https://www.google-analytics.com/mp/collect?measurement_id=G-XXXXXXXXXX&api_secret=YOUR_API_SECRET
+POST https://www.google-analytics.com/mp/collect?measurement_id=G-JQEE2JQN7W&api_secret=YOUR_API_SECRET
 
 {
   "client_id": "CLIENT_ID",

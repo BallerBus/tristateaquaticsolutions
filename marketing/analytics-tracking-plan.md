@@ -70,7 +70,7 @@ Account: Dude Venture Services LLC
 Stream Name: tristateaquaticsolutions.com
 Stream URL: https://tristateaquaticsolutions.com
 Stream ID: [Auto-generated]
-Measurement ID: G-XXXXXXXXXX
+Measurement ID: G-JQEE2JQN7W
 ```
 
 #### Enhanced Measurement Settings
@@ -129,7 +129,7 @@ Add these domains to prevent self-referrals:
 
 **Custom Parameters to Add:**
 ```javascript
-gtag('config', 'G-XXXXXXXXXX', {
+gtag('config', 'G-JQEE2JQN7W', {
   'page_location': window.location.href,
   'page_title': document.title,
   'page_type': 'service|location|blog|tool|landing',
@@ -748,7 +748,7 @@ GTM Account: Dude Venture Services LLC
 | CJS - User ID | Custom JavaScript | Returns user ID if set |
 | Lookup - Page Type | Lookup Table | Maps URLs to page types |
 | RegEx - Extract File Name | RegEx Table | Extracts filename from URL |
-| Const - GA4 Measurement ID | Constant | G-XXXXXXXXXX |
+| Const - GA4 Measurement ID | Constant | G-JQEE2JQN7W |
 
 **Custom JavaScript - Page Type:**
 ```javascript

@@ -30,9 +30,9 @@ const ANALYTICS_CONFIG = {
   
   // Google Analytics 4
   ga4: {
-    measurementId: 'G-XXXXXXXXXX', // TODO: Replace with your GA4 measurement ID
-    enabled: false, // Set to true after creating GA4 property
-    debugMode: true, // Set to false in production
+    measurementId: 'G-JQEE2JQN7W',
+    enabled: true,
+    debugMode: false,
     
     // Events to track as conversions
     conversions: [

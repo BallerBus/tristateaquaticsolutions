@@ -13,7 +13,7 @@
  * - CTA click tracking
  * - Time on page tracking
  *
- * IMPORTANT: Replace G-XXXXXXXXXX with your actual GA4 Measurement ID
+ * IMPORTANT: Replace G-JQEE2JQN7W with your actual GA4 Measurement ID
  *
  * @version 1.0.0
  * @author Tri-State Aquatic Solutions
@@ -27,7 +27,7 @@
   // =====================================================
 
   const GA4_CONFIG = {
-    measurementId: 'G-XXXXXXXXXX', // Replace with actual Measurement ID
+    measurementId: 'G-JQEE2JQN7W', // Replace with actual Measurement ID
     debug: false, // Set to true for development
 
     // Scroll tracking thresholds

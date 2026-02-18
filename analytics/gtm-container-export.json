@@ -56,7 +56,7 @@
         "name": "GA4 Measurement ID",
         "type": "c",
         "parameter": [
-          {"type": "TEMPLATE", "key": "value", "value": "G-XXXXXXXXXX"}
+          {"type": "TEMPLATE", "key": "value", "value": "G-JQEE2JQN7W"}
         ],
         "fingerprint": "1706875200001"
       },

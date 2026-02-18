@@ -53,7 +53,7 @@ After importing, update these placeholder values with your actual IDs:
 
 | Variable Name | Placeholder | Where to Get |
 |--------------|-------------|--------------|
-| GA4 Measurement ID | G-XXXXXXXXXX | Google Analytics 4 |
+| GA4 Measurement ID | G-JQEE2JQN7W | Google Analytics 4 |
 | Facebook Pixel ID | XXXXXXXXXXXXXXX | Meta Business Suite |
 | Google Ads Conversion ID | AW-XXXXXXXXXX | Google Ads |
 | LinkedIn Partner ID | XXXXXXX | LinkedIn Campaign Manager |

@@ -20,7 +20,7 @@
         debug: false,
 
         // GA4 Measurement ID
-        ga4MeasurementId: 'G-XXXXXXXXXX', // Replace with actual ID
+        ga4MeasurementId: 'G-JQEE2JQN7W', // Replace with actual ID
 
         // Google Ads Conversion IDs
         googleAds: {

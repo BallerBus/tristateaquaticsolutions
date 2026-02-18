@@ -1,7 +1,8 @@
 {
   "name": "tristateaquaticsolutions",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Tri-State Aquatic Solutions - Pool Installation & Services",
   "dependencies": {
-    "stripe": "^14.0.0"
+    "stripe": "^20.3.1"
   }
 }

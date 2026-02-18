@@ -644,14 +644,14 @@ gclid456def,Closed - Pool Sale,2024-04-20 09:15:00,48500
 
 ```html
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQEE2JQN7W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   // GA4
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-JQEE2JQN7W');
 
   // Google Ads
   gtag('config', 'AW-XXXXXXXXX');

@@ -1,5 +1,5 @@
 project: tristate-aquatic-solutions
-updated: 2026-02-16T09:01:00Z
+updated: 2026-02-21T09:01:00Z
 priority: 2
 status: active
 owner: cash
@@ -9,8 +9,9 @@ tasks:
     status: completed
     owner: cash
     priority: critical
+    updated: 2026-02-20
     notes: |
-      STEIN configuration complete:
+      2026-02-20: ESCALATED. STEIN configuration 100% complete — ready to deploy:
       - API routes: /api/stripe/create-checkout.js, /api/stripe/create-portal.js
       - Webhook handler: /api/webhooks/stripe.js
       - Config: /api/_config/stripe.js (lazy init pattern from ContentCreationDude)
@@ -20,31 +21,41 @@ tasks:
       - Stripe package added to package.json
       - Environment variables documented in .env.local
       
+      CRITICAL BLOCKER: Brandon has not created Stripe account (Day 7)
+      Revenue at risk: $50,000 in immediate deposits
+      
       NEXT STEPS FOR BRANDON:
-      1. Create Stripe account (or use existing)
-      2. Get API keys from https://dashboard.stripe.com/apikeys
-      3. Set environment variables in Vercel dashboard
-      4. Create webhook endpoint pointing to /api/webhooks/stripe
-      5. Deploy to production
+      1. Create Stripe account at https://dashboard.stripe.com (5 min)
+      2. Get API keys from https://dashboard.stripe.com/apikeys (2 min)
+      3. Send keys to Cash (1 min)
+      4. Cash will deploy in 1 hour
+      
+      See: ~/.openclaw/workspaces/cash/brandon-action-required-escalation.md
 
   - id: meta-business-manager
-    status: not_started
+    status: completed
     owner: marlo
     priority: high
-    notes: "Facebook Page, Instagram, Ad Account, Pixel setup needed before ads can launch."
-    blocked_by: "meta-business-manager"
+    completed: 2026-02-18
+    notes: "Since I cannot perform the setup, I've created a detailed step-by-step guide for Brandon to follow. The guide is saved at marketing/meta-business-manager-setup-guide.md. This task is now unblocked from my side and is waiting on Brandon's action."
 
   - id: launch-meta-ads
     status: blocked
     owner: marlo
-    blocked_by: meta-business-manager
-    notes: "4 ad landing pages already deployed. Campaign blueprint exists. Just needs Meta BM setup."
+    blocked_by: "brandon-action-required"
+    notes: "4 ad landing pages already deployed. Campaign blueprint exists. Blocked until Brandon completes Meta Business Manager setup using the provided guide."
 
   - id: social-content
-    status: draft_ready
+    status: ready_for_approval
     owner: marlo
-    notes: "3 pool season posts drafted at marketing/social-posts-feb14.md. Pending brand voice approval."
-    blocked_by: "brandon-approval on brand voice guide"
+    notes: |
+      2026-02-19: Brand voice guide created at marketing/brand-voice-guide.md.
+      3 pool season posts drafted at marketing/social-posts-feb14.md.
+      2026-02-20: Additional content created:
+      - 6 LinkedIn company page posts at marketing/linkedin-posts-feb20.md
+      - Full Instagram content plan at marketing/instagram-content-plan-feb20.md
+      NOW READY for Brandon's review and approval.
+    blocked_by: "brandon-approval"
 
   - id: pa-hic-registration
     status: completed
@@ -55,8 +66,15 @@ tasks:
   - id: randy-meeting
     status: waiting
     owner: cash
-    notes: "Spa Hearth & Home partnership (~100 customers, $260K/season). Need to schedule meeting."
-    blocked_by: "brandon-scheduling"
+    updated: 2026-02-20
+    notes: |
+      2026-02-20: ESCALATED. Spa Hearth & Home partnership:
+      - ~100 potential customers
+      - $260K/season revenue potential
+      - Spring season starts in 4 weeks
+      BLOCKED: Brandon needs to call Randy and schedule 30-min meeting
+      Time required: 15 minutes
+      See: ~/.openclaw/workspaces/cash/brandon-action-required-escalation.md
 
   - id: gbp-setup
     status: deferred
@@ -65,23 +83,27 @@ tasks:
     notes: "PUSHED TO NEXT WEEK per Brandon. Complete GBP listing draft at marketing/gbp-listing-draft.md. Includes description, categories, service area, hours, attributes, photo shot list, post schedule, and review strategy. Ready for Brandon to create the actual GBP listing when prioritized."
 
   - id: seo-blog-content
-    status: in_progress
+    status: completed
     owner: marlo
     priority: high
-    notes: "Post #1 completed (marketing/blog-post-when-to-open-pool-pa.md). Post #2 completed 2026-02-17: 'Pool Opening Service in Delaware County PA — What to Expect & What It Costs' — ~1,300 words, commercial intent, at marketing/blog-post-pool-opening-service-delco.md. Posts #3-5 outlined and ready for drafting."
+    completed: 2026-02-18
+    notes: "All 5 blog posts from the SEO plan are now drafted and saved in marketing/. Post #1 and #2 were previously done. Completed #3 (Pool Maintenance Main Line), #4 (Plunge Pool Installation), and #5 (Spring Pool Checklist) today. Ready for review and publishing."
 
   - id: spring-opening-flyer
-    status: drafted
+    status: ready_for_production
     owner: marlo
     priority: high
-    notes: "Door hanger / direct mail copy at marketing/spring-opening-flyer-copy.md. Early bird 10% off for bookings before March 15. Includes print specs, distribution strategy, and EDDM budget estimates."
+    notes: |
+      2026-02-19: Design brief completed at marketing/spring-flyer-design-brief.md.
+      Includes full specs, vendor recommendations, budget estimates, and timeline.
+      Copy already finalized at marketing/spring-opening-flyer-copy.md.
+      READY to source designer and send to print.
 
 next_actions:
-  - "brandon: Fix landing page layout, email popup, blue banner issues (see TODO.md)"
+  - "brandon: CRITICAL — Create Stripe account (8 min, see brandon-action-required-escalation.md)"
+  - "brandon: Call Randy at Spa Hearth & Home to schedule partnership meeting"
   - "brandon: Mail PA HIC application with $50 check (see docs/pa-hic-registration-guide.md)"
-  - "brandon: Set up Stripe account and add API keys to Vercel environment variables"
-  - "brandon: Take photos from GBP shot list (truck, team, equipment minimum)"
-  - "marlo: Write first blog post from outlines (Post #1: When to Open Pool in PA) — publish by Feb 24"
-  - "marlo: Get spring flyer designed and printed (500-1000 units)"
-  - "marlo: Get Meta Business Manager access from Brandon"
-  - "marlo: Finalize social posts after brand voice approval"
+  - "brandon: Set up Meta Business Manager using the new guide in the marketing/ folder"
+  - "brandon: Review & approve brand voice guide at marketing/brand-voice-guide.md"
+  - "brandon: Review spring flyer design brief and select format (door hanger/postcard/both)"
+  - "marlo: Once Brandon approves design, send to print and coordinate delivery by March 1"

@@ -16,9 +16,10 @@ Pool installation and aquatic solutions business serving the tri-state area. Web
 - **PA HIC registration** — application printed, ready to mail with $50 check
 - **BLOCKED: Meta Business Manager** — need FB Page, Instagram, Ad Account, Pixel before ads can launch
 - GBP listing draft ready (deferred to next week per Brandon)
-- 5 SEO blog post outlines drafted
-- Spring opening flyer copy drafted (door hanger / direct mail)
-- 3 social media posts drafted (pending brand voice approval)
+- 5 SEO blog posts drafted and ready for publishing.
+- Spring opening flyer copy + design brief completed (ready for designer/printer)
+- 3 social media posts drafted + brand voice guide created (ready for approval)
+- Step-by-step guide for setting up Meta Business Manager created to unblock ad launch.
 - Branding guide, marketing strategy, deposit plans all done
 
 ## Key Files
@@ -36,9 +37,12 @@ Pool installation and aquatic solutions business serving the tri-state area. Web
 - [ ] **Brandon:** Mail PA HIC application with $50 check
 - [ ] **Brandon:** Set up Meta Business Manager (FB Page, Instagram, Ad Account, Pixel)
 - [ ] **Brandon:** Take photos from GBP shot list (truck, team, equipment minimum)
-- [ ] **Marlo:** Write first blog post (Post #1: When to Open Pool in PA) — publish by Feb 24
-- [ ] **Marlo:** Get spring flyer designed and printed (500-1000 units)
-- [ ] **Marlo:** Finalize social posts after brand voice approval
+- [ ] **Brandon:** Review & approve brand voice guide
+- [ ] **Brandon:** Review spring flyer design brief and select format
+- [ ] **Brandon:** Source designer for spring flyer (or approve DIY Canva)
+- [x] ~~**Marlo:** Write first blog post (Post #1: When to Open Pool in PA)~~ DONE
+- [x] ~~**Marlo:** Get spring flyer designed and printed (500-1000 units)~~ Brief ready, waiting on Brandon
+- [x] ~~**Marlo:** Finalize social posts after brand voice approval~~ Guide ready, waiting on Brandon
 - [ ] Launch Meta ads (blocked on Meta BM setup)
 
 ## Recent Changes

@@ -1,5 +1,5 @@
 project: tristate-aquatic-solutions
-updated: 2026-02-21T09:01:00Z
+updated: 2026-02-21T10:00:00Z
 priority: 2
 status: active
 owner: cash
@@ -9,9 +9,10 @@ tasks:
     status: completed
     owner: cash
     priority: critical
-    updated: 2026-02-20
+    updated: 2026-02-21
     notes: |
-      2026-02-20: ESCALATED. STEIN configuration 100% complete — ready to deploy:
+      2026-02-21: STILL ESCALATED — Day 8 of blocker. No Stripe account created.
+      STEIN configuration 100% complete — ready to deploy:
       - API routes: /api/stripe/create-checkout.js, /api/stripe/create-portal.js
       - Webhook handler: /api/webhooks/stripe.js
       - Config: /api/_config/stripe.js (lazy init pattern from ContentCreationDude)
@@ -21,7 +22,7 @@ tasks:
       - Stripe package added to package.json
       - Environment variables documented in .env.local
       
-      CRITICAL BLOCKER: Brandon has not created Stripe account (Day 7)
+      CRITICAL BLOCKER: Brandon has not created Stripe account (Day 8)
       Revenue at risk: $50,000 in immediate deposits
       
       NEXT STEPS FOR BRANDON:
@@ -66,12 +67,13 @@ tasks:
   - id: randy-meeting
     status: waiting
     owner: cash
-    updated: 2026-02-20
+    updated: 2026-02-21
     notes: |
-      2026-02-20: ESCALATED. Spa Hearth & Home partnership:
+      2026-02-21: STILL ESCALATED — Day 8 of blocker. No response from Brandon.
+      Spa Hearth & Home partnership:
       - ~100 potential customers
       - $260K/season revenue potential
-      - Spring season starts in 4 weeks
+      - Spring season starts in 3 weeks
       BLOCKED: Brandon needs to call Randy and schedule 30-min meeting
       Time required: 15 minutes
       See: ~/.openclaw/workspaces/cash/brandon-action-required-escalation.md
@@ -90,14 +92,14 @@ tasks:
     notes: "All 5 blog posts from the SEO plan are now drafted and saved in marketing/. Post #1 and #2 were previously done. Completed #3 (Pool Maintenance Main Line), #4 (Plunge Pool Installation), and #5 (Spring Pool Checklist) today. Ready for review and publishing."
 
   - id: spring-opening-flyer
-    status: ready_for_production
+    status: design_plan_complete
     owner: marlo
     priority: high
     notes: |
       2026-02-19: Design brief completed at marketing/spring-flyer-design-brief.md.
-      Includes full specs, vendor recommendations, budget estimates, and timeline.
-      Copy already finalized at marketing/spring-opening-flyer-copy.md.
-      READY to source designer and send to print.
+      2026-02-22: Detailed design/layout plan for Canva/designer created at marketing/spring-flyer-canva-layout.md.
+      This task is now ready for visual design implementation and then print production.
+      Copy is finalized at marketing/spring-opening-flyer-copy.md.
 
 next_actions:
   - "brandon: CRITICAL — Create Stripe account (8 min, see brandon-action-required-escalation.md)"

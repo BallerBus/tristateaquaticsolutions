@@ -8,7 +8,7 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://tristateaquaticsolutions.com/</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -1220,6 +1220,90 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-construction-timeline-week-by-week.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/plunge-pool-cost-pennsylvania-delaware.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-depth-options-guide.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/questions-to-ask-pool-builder.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/plunge-pool-vs-hot-tub-which-is-better.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/garden-pools-elegant-small-pool-solution.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/best-pool-colors-finishes-pennsylvania.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/fiberglass-pool-manufacturers-comparison.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-warranty-explained.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-installation-cost-breakdown.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-equipment-guide-pumps-filters-heaters.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/pool-design-for-entertaining.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/what-is-a-plunge-pool-complete-guide.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/blog/lap-pools-main-line-design-cost.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- ==================== COMPARE PAGES ==================== -->
 
@@ -1552,13 +1636,13 @@
 
   <url>
     <loc>https://tristateaquaticsolutions.com/landing/fiberglass-vs-concrete.html</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/landing/pool-cost-guide.html</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1570,9 +1654,33 @@
   </url>
   <url>
     <loc>https://tristateaquaticsolutions.com/landing/free-consultation.html</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/luxury-pools/</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/wellness-pool/</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/family-pool/</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tristateaquaticsolutions.com/landing/pool-replacement/</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- ==================== LEGAL PAGES ==================== -->

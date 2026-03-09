@@ -869,8 +869,8 @@
                         <div class="summary-card pro">
                             <span class="card-badge pro">Professional Service</span>
                             <div class="card-title">Annual Cost (We Handle It)</div>
-                            <div class="card-value" id="proCost">$3,600</div>
-                            <div class="card-subtext" id="proMonthly">~$300/month (seasonal)</div>
+                            <div class="card-value" id="proCost">$5,350</div>
+                            <div class="card-subtext" id="proMonthly">~$150/week (seasonal)</div>
                         </div>
 
                         <div class="summary-card savings">
@@ -1044,14 +1044,14 @@
                 automation: -100 // saves money
             },
             season: {
-                opening: 300,
-                closing: 350
+                opening: 400,
+                closing: 400
             },
             weekly: {
-                small: 175,
-                medium: 200,
-                large: 225,
-                xlarge: 250
+                small: 150,
+                medium: 150,
+                large: 175,
+                xlarge: 200
             }
         };
 
@@ -1111,7 +1111,7 @@
 
             // Calculate Pro costs
             const seasonCost = baseCosts.season.opening + baseCosts.season.closing;
-            const weeklyCost = baseCosts.weekly[state.size] * 12; // 12 weeks active service
+            const weeklyCost = baseCosts.weekly[state.size] * 28; // 28 weeks seasonal service (May-Oct)
             const proElectric = Math.round(electricCost * 0.65); // Pros optimize system
 
             const proTotal = seasonCost + weeklyCost + proElectric;
@@ -1124,7 +1124,7 @@
             document.getElementById('diyMonthly').textContent = '~' + formatCurrency(Math.round(diyTotal / 12)) + '/month average';
 
             document.getElementById('proCost').textContent = formatCurrency(proTotal);
-            document.getElementById('proMonthly').textContent = '~' + formatCurrency(Math.round(proTotal / 6)) + '/month (seasonal)';
+            document.getElementById('proMonthly').textContent = '~' + formatCurrency(baseCosts.weekly[state.size]) + '/week (seasonal)';
 
             document.getElementById('timeSaved').textContent = diyHours + ' hours/year';
 

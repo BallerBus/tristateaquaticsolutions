@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Pool Build Estimator | Tri-State Aquatic Solutions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    padding-bottom: 80px;
+  }
+  .header {
+    background: #1a3a5c;
+    color: white;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-size: 18px; font-weight: 700; }
+  .header .sub { font-size: 12px; opacity: 0.7; margin-top: 2px; }
+  .save-indicator {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    font-size: 12px;
+    color: #4CAF50;
+    z-index: 200;
+    background: rgba(255,255,255,0.9);
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .save-indicator.saving { color: #ff9800; }
+  .container { max-width: 600px; margin: 0 auto; padding: 12px 16px; }
+
+  .step {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .step-header {
+    background: #1a3a5c;
+    color: white;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .step-header .num {
+    background: white;
+    color: #1a3a5c;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .step-header .arrow {
+    margin-left: auto;
+    transition: transform 0.2s;
+    font-size: 12px;
+  }
+  .step-header.collapsed .arrow { transform: rotate(-90deg); }
+  .step-body { padding: 14px 16px; }
+  .step-body.hidden { display: none; }
+
+  .field {
+    margin-bottom: 14px;
+  }
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 4px;
+  }
+  .field .hint {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fafbfc;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: #1a3a5c;
+    background: white;
+  }
+  .inline-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .radio-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .radio-option {
+    flex: 1;
+    min-width: 80px;
+  }
+  .radio-option input { display: none; }
+  .radio-option label {
+    display: block;
+    text-align: center;
+    padding: 10px 8px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .radio-option input:checked + label {
+    background: #1a3a5c;
+    color: white;
+    border-color: #1a3a5c;
+  }
+  .check-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .check-option:last-child { border-bottom: none; }
+  .check-option input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .check-option .label-text {
+    font-size: 14px;
+  }
+  .check-option .label-hint {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .cost-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .cost-line:last-child { border-bottom: none; }
+  .cost-line .item { font-size: 14px; flex: 1; }
+  .cost-line .ref { font-size: 11px; color: #999; }
+  .cost-line input {
+    width: 110px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .subtotal {
+    background: #f0f4f8;
+    padding: 12px 16px;
+    margin: 10px -16px -14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .subtotal .amount { color: #1a3a5c; }
+
+  .quick-ref {
+    background: #fffde7;
+    border: 1px solid #e6d54a;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 13px;
+  }
+  .quick-ref strong { color: #8a7600; }
+
+  .warning-box {
+    background: #fff3e0;
+    border: 1px solid #e6a23c;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 13px;
+  }
+
+  .red-flag { color: #c0392b; font-weight: 700; }
+
+  .grand-total {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .grand-total .line {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  .grand-total .line.separator {
+    border-top: 1px solid #ddd;
+    margin-top: 6px;
+    padding-top: 10px;
+  }
+  .grand-total .line.final {
+    border-top: 2px solid #1a3a5c;
+    margin-top: 8px;
+    padding-top: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a3a5c;
+  }
+  .sanity {
+    background: #e8f5e9;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+
+  .btn-submit {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-submit:active { opacity: 0.8; }
+
+  .btn-clear {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  .submitted-banner {
+    background: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: 600;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pool Build Estimator</h1>
+  <div class="sub">Tri-State Aquatic Solutions &mdash; Philadelphia</div>
+</div>
+<div id="saveIndicator" class="save-indicator">Saved</div>
+<div id="submittedBanner" class="submitted-banner">Estimate submitted successfully!</div>
+
+<div class="container">
+
+<!-- CUSTOMER INFO -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">i</span> Customer Info
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="field">
+      <label>Customer Name</label>
+      <input type="text" id="customerName" data-save="customerName" placeholder="Full name">
+    </div>
+    <div class="field">
+      <label>Address</label>
+      <input type="text" id="customerAddress" data-save="customerAddress" placeholder="Street address, Philadelphia PA">
+    </div>
+    <div class="inline-fields">
+      <div class="field">
+        <label>Date</label>
+        <input type="text" id="visitDate" data-save="visitDate" placeholder="MM/DD/YYYY">
+      </div>
+      <div class="field">
+        <label>Estimator</label>
+        <input type="text" id="estimator" data-save="estimator" placeholder="Your name">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 1: SITE MEASUREMENTS -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">1</span> Site Measurements
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="inline-fields">
+      <div class="field">
+        <label>Panel to equipment (ft)</label>
+        <input type="number" id="panelDistance" data-save="panelDistance" inputmode="numeric" placeholder="0">
+      </div>
+      <div class="field">
+        <label>Closest property line (ft)</label>
+        <div class="hint">Min 2 ft required</div>
+        <input type="number" id="propertyLine" data-save="propertyLine" inputmode="numeric" placeholder="0">
+      </div>
+    </div>
+    <div class="inline-fields">
+      <div class="field">
+        <label>Backyard width (ft)</label>
+        <input type="number" id="yardWidth" data-save="yardWidth" inputmode="numeric" placeholder="0">
+      </div>
+      <div class="field">
+        <label>Backyard depth (ft)</label>
+        <input type="number" id="yardDepth" data-save="yardDepth" inputmode="numeric" placeholder="0">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Electrical Panel</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="panel" id="panel100" value="100" data-save="panel">
+          <label for="panel100">100A<br><span style="font-size:11px;color:#c0392b;">Upgrade ~$2K</span></label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="panel" id="panel200" value="200" data-save="panel">
+          <label for="panel200">200A<br><span style="font-size:11px;color:green;">Good</span></label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="panel" id="panelUnknown" value="unknown" data-save="panel">
+          <label for="panelUnknown">Unknown<br><span style="font-size:11px;">&nbsp;</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Existing Fence</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="fence" id="fenceNone" value="none" data-save="fence">
+          <label for="fenceNone">None</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="fence" id="fenceNonCompliant" value="non-compliant" data-save="fence">
+          <label for="fenceNonCompliant">Has fence, not 48"</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="fence" id="fenceCompliant" value="compliant" data-save="fence">
+          <label for="fenceCompliant">48"+ compliant</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Crane Access?</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="crane" id="craneYes" value="yes" data-save="crane">
+          <label for="craneYes">Yes</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="crane" id="craneNo" value="no" data-save="crane">
+          <label for="craneNo" style="border-color:#c0392b;color:#c0392b;">No &mdash; Deal Breaker</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>HOA?</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="hoa" id="hoaYes" value="yes" data-save="hoa">
+          <label for="hoaYes">Yes</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="hoa" id="hoaNo" value="no" data-save="hoa">
+          <label for="hoaNo">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Notes / Observations</label>
+      <input type="text" id="siteNotes" data-save="siteNotes" placeholder="Oil tank, trees, slopes, power lines...">
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2: POOL SIZE -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">2</span> Pool Size
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="field">
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="poolSize" id="size1224" value="12x24" data-save="poolSize">
+          <label for="size1224">12x24<br><span style="font-size:11px;">$8-12K shell</span></label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="poolSize" id="size1430" value="14x30" data-save="poolSize">
+          <label for="size1430">14x30<br><span style="font-size:11px;">$10-15K shell</span></label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="poolSize" id="size1632" value="16x32" data-save="poolSize">
+          <label for="size1632">16x32<br><span style="font-size:11px;">$12-20K shell</span></label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="poolSize" id="size1640" value="16x40" data-save="poolSize">
+          <label for="size1640">16x40<br><span style="font-size:11px;">$15-25K shell</span></label>
+        </div>
+      </div>
+    </div>
+    <div class="cost-line">
+      <span class="item">Shell + delivery</span>
+      <input type="number" id="costShell" data-save="costShell" inputmode="decimal" placeholder="$0">
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3: EXCAVATION -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">3</span> Excavation
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="cost-line">
+      <div><span class="item">Excavation (dig + haul)</span><br><span class="ref">$4,500&ndash;$7,900 typical</span></div>
+      <input type="number" id="costExcavation" data-save="costExcavation" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Crane rental (half-day)</span><br><span class="ref">$800&ndash;$1,800</span></div>
+      <input type="number" id="costCrane" data-save="costCrane" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="subtotal">
+      <span>Excavation Total</span>
+      <span class="amount" id="totalExcavation">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4: BACKFILL -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">4</span> Backfill Stone
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="hint" style="margin-bottom:8px;">Quick math: tons needed x $40/ton</div>
+    <div class="cost-line">
+      <div><span class="item">Stone (delivered)</span><br><span class="ref">$36&ndash;$47/ton in Philly</span></div>
+      <input type="number" id="costBackfill" data-save="costBackfill" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="subtotal">
+      <span>Backfill Total</span>
+      <span class="amount" id="totalBackfill">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 5: ELECTRICAL -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">5</span> Electrical
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="quick-ref" style="margin-bottom:10px;">
+      <strong>Quick estimate by panel distance:</strong><br>
+      Under 40 ft &rarr; $2,600&ndash;$3,200<br>
+      40&ndash;60 ft &rarr; $4,000&ndash;$5,000<br>
+      60&ndash;100 ft &rarr; $5,000&ndash;$6,000+
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Electrician (complete pkg)</span><br><span class="ref">$2,600&ndash;$6,000</span></div>
+      <input type="number" id="costElectrical" data-save="costElectrical" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Panel upgrade (if needed)</span><br><span class="ref">$0 or ~$2,000</span></div>
+      <input type="number" id="costPanelUpgrade" data-save="costPanelUpgrade" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="subtotal">
+      <span>Electrical Total</span>
+      <span class="amount" id="totalElectrical">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 6: PLUMBING -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">6</span> Plumbing
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="cost-line">
+      <div><span class="item">Plumber (complete pkg)</span><br><span class="ref">$2,000&ndash;$5,500</span></div>
+      <input type="number" id="costPlumbing" data-save="costPlumbing" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="subtotal">
+      <span>Plumbing Total</span>
+      <span class="amount" id="totalPlumbing">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 7: EQUIPMENT -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">7</span> Equipment
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="quick-ref" style="margin-bottom:10px;">
+      <strong>Packages:</strong> Basic (pump+filter) ~$2-3K &nbsp;|&nbsp; Standard (+heater) ~$7.5-9K &nbsp;|&nbsp; Full ~$12-16K
+    </div>
+    <div class="cost-line">
+      <div><span class="item">VS Pump</span><br><span class="ref">$1,200&ndash;$1,900</span></div>
+      <input type="number" id="costPump" data-save="costPump" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Cartridge filter</span><br><span class="ref">$750&ndash;$1,200</span></div>
+      <input type="number" id="costFilter" data-save="costFilter" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Electric heat pump</span><br><span class="ref">95K=$5,300 | 140K=$6,500</span></div>
+      <input type="number" id="costHeater" data-save="costHeater" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Salt chlorine generator</span><br><span class="ref">$1,800&ndash;$2,100</span></div>
+      <input type="number" id="costSalt" data-save="costSalt" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Automation</span><br><span class="ref">Basic=$1,100 | Full=$3,300</span></div>
+      <input type="number" id="costAutomation" data-save="costAutomation" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">LED light(s)</span><br><span class="ref">$800 each</span></div>
+      <input type="number" id="costLights" data-save="costLights" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="subtotal">
+      <span>Equipment Total</span>
+      <span class="amount" id="totalEquipment">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 8: FENCING -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">8</span> Fencing
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="hint" style="margin-bottom:8px;">Skip if existing fence is code-compliant. Quick est: 120 LF + 1 gate = ~$5,400</div>
+    <div class="cost-line">
+      <div><span class="item">48" aluminum fence</span><br><span class="ref">$42/LF installed</span></div>
+      <input type="number" id="costFence" data-save="costFence" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Gate(s)</span><br><span class="ref">$350 each</span></div>
+      <input type="number" id="costGates" data-save="costGates" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="subtotal">
+      <span>Fencing Total</span>
+      <span class="amount" id="totalFencing">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 9: DECKING -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">9</span> Deck / Patio
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="hint" style="margin-bottom:8px;">Concrete $11/sf | Stamped $15/sf | Pavers $18/sf</div>
+    <div class="cost-line">
+      <div><span class="item">Deck / patio</span><br><span class="ref">___ sq ft x $___ /sf</span></div>
+      <input type="number" id="costDeck" data-save="costDeck" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="cost-line">
+      <div><span class="item">Coping</span><br><span class="ref">$10/LF around pool edge</span></div>
+      <input type="number" id="costCoping" data-save="costCoping" inputmode="decimal" placeholder="$0">
+    </div>
+    <div class="subtotal">
+      <span>Decking Total</span>
+      <span class="amount" id="totalDecking">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 10: PERMITS -->
+<div class="step">
+  <div class="step-header" onclick="toggleStep(this)">
+    <span class="num">10</span> Permits &amp; Fees
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="step-body">
+    <div class="cost-line"><span class="item">Building permit</span><span>$208</span></div>
+    <div class="cost-line"><span class="item">Electrical permit</span><span>$175</span></div>
+    <div class="cost-line"><span class="item">Plumbing permit</span><span>$280</span></div>
+    <div class="cost-line"><span class="item">Excavation permit</span><span>$136</span></div>
+    <div class="cost-line"><span class="item">Street closure (crane)</span><span>$250</span></div>
+    <div class="cost-line"><span class="item">Water fill (~15K gal)</span><span>$255</span></div>
+    <div class="subtotal">
+      <span>Permits &amp; Fees Total</span>
+      <span class="amount">~$1,200</span>
+    </div>
+  </div>
+</div>
+
+<!-- GRAND TOTAL -->
+<div class="grand-total">
+  <h2 style="background:none;color:#1a3a5c;padding:0;margin:0 0 10px 0;font-size:17px;">Final Total</h2>
+  <div class="line"><span>Shell + delivery</span><span id="gtShell">$0</span></div>
+  <div class="line"><span>Excavation + crane</span><span id="gtExcavation">$0</span></div>
+  <div class="line"><span>Backfill stone</span><span id="gtBackfill">$0</span></div>
+  <div class="line"><span>Electrical</span><span id="gtElectrical">$0</span></div>
+  <div class="line"><span>Plumbing</span><span id="gtPlumbing">$0</span></div>
+  <div class="line"><span>Equipment</span><span id="gtEquipment">$0</span></div>
+  <div class="line"><span>Fencing</span><span id="gtFencing">$0</span></div>
+  <div class="line"><span>Decking + coping</span><span id="gtDecking">$0</span></div>
+  <div class="line"><span>Permits + fees</span><span>$1,200</span></div>
+  <div class="line separator"><span><strong>Hard Cost Subtotal</strong></span><span id="gtSubtotal"><strong>$0</strong></span></div>
+  <div class="line"><span>Overhead (20%)</span><span id="gtOverhead">$0</span></div>
+  <div class="line"><span>Profit (15%)</span><span id="gtProfit">$0</span></div>
+  <div class="line final"><span>Price to Customer</span><span id="gtTotal">$0</span></div>
+</div>
+
+<div class="sanity">
+  <strong>Sanity check:</strong><br>
+  12x24: $45K&ndash;$85K &nbsp;|&nbsp; 14x30: $55K&ndash;$110K &nbsp;|&nbsp; 16x32: $65K&ndash;$135K &nbsp;|&nbsp; 16x40: $75K&ndash;$160K
+</div>
+
+<!-- RED FLAGS -->
+<div class="warning-box">
+  <strong class="red-flag">Red Flags Spotted:</strong>
+  <div class="check-option">
+    <input type="checkbox" id="rfNoAccess" data-save="rfNoAccess">
+    <div><span class="label-text">No crane access</span></div>
+  </div>
+  <div class="check-option">
+    <input type="checkbox" id="rfOilTank" data-save="rfOilTank">
+    <div><span class="label-text">Underground oil tank</span></div>
+  </div>
+  <div class="check-option">
+    <input type="checkbox" id="rfPowerLines" data-save="rfPowerLines">
+    <div><span class="label-text">Overhead power lines</span></div>
+  </div>
+  <div class="check-option">
+    <input type="checkbox" id="rfTrees" data-save="rfTrees">
+    <div><span class="label-text">Big trees / root systems</span></div>
+  </div>
+  <div class="check-option">
+    <input type="checkbox" id="rfFlood" data-save="rfFlood">
+    <div><span class="label-text">Flood zone</span></div>
+  </div>
+  <div class="check-option">
+    <input type="checkbox" id="rfSetback" data-save="rfSetback">
+    <div><span class="label-text">Less than 2 ft to property line</span></div>
+  </div>
+</div>
+
+<div class="field" style="margin-top:12px;">
+  <label>Additional Notes</label>
+  <input type="text" id="additionalNotes" data-save="additionalNotes" placeholder="Anything else...">
+</div>
+
+<button class="btn-submit" onclick="submitEstimate()">Submit Estimate</button>
+<button class="btn-clear" onclick="clearForm()">Clear All Data</button>
+
+</div>
+
+<script>
+// ============================================
+// AUTO-SAVE TO LOCALSTORAGE ON EVERY KEYSTROKE
+// ============================================
+const STORAGE_KEY = 'tristate_pool_estimator';
+const indicator = document.getElementById('saveIndicator');
+let saveTimeout;
+
+function saveToStorage() {
+  indicator.textContent = 'Saving...';
+  indicator.className = 'save-indicator saving';
+
+  const data = {};
+
+  // Text and number inputs
+  document.querySelectorAll('input[data-save][type="text"], input[data-save][type="number"]').forEach(el => {
+    data[el.dataset.save] = el.value;
+  });
+
+  // Radio buttons
+  document.querySelectorAll('input[type="radio"]:checked').forEach(el => {
+    data['radio_' + el.name] = el.value;
+  });
+
+  // Checkboxes
+  document.querySelectorAll('input[type="checkbox"][data-save]').forEach(el => {
+    data[el.dataset.save] = el.checked;
+  });
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(() => {
+    indicator.textContent = 'Saved';
+    indicator.className = 'save-indicator';
+  }, 800);
+}
+
+function loadFromStorage() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+  try {
+    const data = JSON.parse(raw);
+
+    // Text and number inputs
+    document.querySelectorAll('input[data-save][type="text"], input[data-save][type="number"]').forEach(el => {
+      if (data[el.dataset.save] !== undefined) el.value = data[el.dataset.save];
+    });
+
+    // Radio buttons
+    document.querySelectorAll('input[type="radio"]').forEach(el => {
+      if (data['radio_' + el.name] === el.value) el.checked = true;
+    });
+
+    // Checkboxes
+    document.querySelectorAll('input[type="checkbox"][data-save]').forEach(el => {
+      if (data[el.dataset.save] !== undefined) el.checked = data[el.dataset.save];
+    });
+  } catch(e) {}
+}
+
+// ============================================
+// LIVE CALCULATIONS
+// ============================================
+function num(id) {
+  return parseFloat(document.getElementById(id).value) || 0;
+}
+
+function fmt(n) {
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+}
+
+function recalc() {
+  const shell = num('costShell');
+  const excavation = num('costExcavation') + num('costCrane');
+  const backfill = num('costBackfill');
+  const electrical = num('costElectrical') + num('costPanelUpgrade');
+  const plumbing = num('costPlumbing');
+  const equipment = num('costPump') + num('costFilter') + num('costHeater') + num('costSalt') + num('costAutomation') + num('costLights');
+  const fencing = num('costFence') + num('costGates');
+  const decking = num('costDeck') + num('costCoping');
+  const permits = 1200;
+
+  // Section subtotals
+  document.getElementById('totalExcavation').textContent = fmt(excavation);
+  document.getElementById('totalBackfill').textContent = fmt(backfill);
+  document.getElementById('totalElectrical').textContent = fmt(electrical);
+  document.getElementById('totalPlumbing').textContent = fmt(plumbing);
+  document.getElementById('totalEquipment').textContent = fmt(equipment);
+  document.getElementById('totalFencing').textContent = fmt(fencing);
+  document.getElementById('totalDecking').textContent = fmt(decking);
+
+  // Grand total
+  const subtotal = shell + excavation + backfill + electrical + plumbing + equipment + fencing + decking + permits;
+  const overhead = subtotal * 0.20;
+  const profit = subtotal * 0.15;
+  const total = subtotal + overhead + profit;
+
+  document.getElementById('gtShell').textContent = fmt(shell);
+  document.getElementById('gtExcavation').textContent = fmt(excavation);
+  document.getElementById('gtBackfill').textContent = fmt(backfill);
+  document.getElementById('gtElectrical').textContent = fmt(electrical);
+  document.getElementById('gtPlumbing').textContent = fmt(plumbing);
+  document.getElementById('gtEquipment').textContent = fmt(equipment);
+  document.getElementById('gtFencing').textContent = fmt(fencing);
+  document.getElementById('gtDecking').textContent = fmt(decking);
+  document.getElementById('gtSubtotal').innerHTML = '<strong>' + fmt(subtotal) + '</strong>';
+  document.getElementById('gtOverhead').textContent = fmt(overhead);
+  document.getElementById('gtProfit').textContent = fmt(profit);
+  document.getElementById('gtTotal').textContent = fmt(total);
+
+  saveToStorage();
+}
+
+// ============================================
+// COLLAPSIBLE STEPS
+// ============================================
+function toggleStep(header) {
+  header.classList.toggle('collapsed');
+  const body = header.nextElementSibling;
+  body.classList.toggle('hidden');
+}
+
+// ============================================
+// SUBMIT (saves snapshot to localStorage history)
+// ============================================
+function submitEstimate() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) { alert('No data to submit.'); return; }
+
+  const data = JSON.parse(raw);
+  data.submittedAt = new Date().toISOString();
+  data.grandTotal = document.getElementById('gtTotal').textContent;
+
+  // Save to submission history
+  const historyKey = 'tristate_pool_estimates_history';
+  let history = [];
+  try { history = JSON.parse(localStorage.getItem(historyKey)) || []; } catch(e) {}
+  history.push(data);
+  localStorage.setItem(historyKey, JSON.stringify(history));
+
+  const banner = document.getElementById('submittedBanner');
+  banner.style.display = 'block';
+  setTimeout(() => { banner.style.display = 'none'; }, 3000);
+
+  alert('Estimate saved!\n\nCustomer: ' + (data.customerName || 'Unknown') + '\nTotal: ' + data.grandTotal + '\n\nData stored on this device. Copy the URL to share.');
+}
+
+function clearForm() {
+  if (!confirm('Clear all data? This cannot be undone.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  document.querySelectorAll('input[type="text"], input[type="number"]').forEach(el => el.value = '');
+  document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+  document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+  recalc();
+}
+
+// ============================================
+// INIT
+// ============================================
+loadFromStorage();
+recalc();
+
+// Auto-save on any input change
+document.addEventListener('input', recalc);
+document.addEventListener('change', recalc);
+</script>
+
+</body>
+</html>

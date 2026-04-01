@@ -1,0 +1,70 @@
+{
+  "expo": {
+    "name": "Pool Ops",
+    "slug": "pool-ops",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "pool-ops",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1e3a5f"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "io.poolops.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Pool Ops needs camera access to take before/after photos of pool service visits.",
+        "NSLocationWhenInUseUsageDescription": "Pool Ops uses your location to tag photos and calculate ETAs.",
+        "NSPhotoLibraryUsageDescription": "Pool Ops needs photo library access to save service photos.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "io.poolops.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#1e3a5f",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Pool Ops needs camera access to take before/after photos of pool service visits."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Pool Ops uses your location to tag photos and calculate ETAs."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Pool Ops needs photo library access to save service photos."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "2e2912c4-2d76-470f-94b9-ab0d147b6092"
+      },
+      "router": {}
+    },
+    "owner": "brandonogram"
+  }
+}

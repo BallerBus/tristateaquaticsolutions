@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Internal Cost Review — Plunge Lite 8x14</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #1a3a5c;
+            --navy-light: #2a5a8c;
+            --orange: #e67e22;
+            --orange-bg: #fef3e2;
+            --orange-border: #f0c27a;
+            --yellow-input: #fffde7;
+            --yellow-border: #f9e04b;
+            --blue-question: #2980b9;
+            --red-flag: #e74c3c;
+            --green: #27ae60;
+            --green-light: #e8f8f0;
+            --gray-bg: #f5f6f8;
+            --gray-border: #dde1e6;
+            --gray-text: #5a6270;
+            --white: #ffffff;
+            --text: #1e2530;
+            --saved-green: #27ae60;
+        }
+
+        html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--gray-bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding-bottom: 80px;
+        }
+
+        /* Top bar */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--navy);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar h1 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .save-indicator {
+            font-size: 13px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.15);
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .save-indicator.saved {
+            background: var(--saved-green);
+            color: white;
+        }
+        .save-indicator.saving {
+            background: var(--orange);
+            color: white;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: var(--orange-bg);
+            border: 2px solid var(--orange-border);
+            border-left: 5px solid var(--orange);
+            margin: 12px;
+            padding: 14px;
+            border-radius: 8px;
+        }
+        .warning-box .warning-label {
+            font-weight: 800;
+            color: var(--orange);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .warning-box p {
+            font-size: 14px;
+            color: #5a3e1a;
+            line-height: 1.5;
+        }
+
+        /* Subtitle */
+        .subtitle {
+            text-align: center;
+            padding: 14px 16px 4px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* Sections */
+        .section {
+            margin: 12px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .section-header {
+            background: var(--navy);
+            color: white;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .section-header h2 {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .section-header .toggle {
+            font-size: 20px;
+            font-weight: 300;
+            transition: transform 0.25s;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section-header .toggle.collapsed { transform: rotate(-90deg); }
+        .section-body { padding: 0; }
+        .section-body.collapsed { display: none; }
+
+        /* Line items */
+        .line-item {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--gray-border);
+        }
+        .line-item:last-child { border-bottom: none; }
+        .line-item-desc {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .line-item-detail {
+            font-size: 13px;
+            color: var(--gray-text);
+            margin-bottom: 8px;
+        }
+        .line-item-question {
+            font-size: 13px;
+            color: var(--blue-question);
+            margin-bottom: 10px;
+            padding: 6px 8px;
+            background: #eef6fc;
+            border-radius: 6px;
+            line-height: 1.45;
+        }
+        .line-item-flag {
+            font-size: 13px;
+            color: var(--orange);
+            margin-bottom: 10px;
+            padding: 6px 8px;
+            background: var(--orange-bg);
+            border-radius: 6px;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+        .line-item-note {
+            font-size: 13px;
+            color: var(--gray-text);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        /* Input rows */
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-text);
+            margin-bottom: 3px;
+        }
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px 12px;
+            border: 1.5px solid var(--gray-border);
+            border-radius: 8px;
+            background: white;
+            color: var(--text);
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .input-group input:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: var(--navy-light);
+            box-shadow: 0 0 0 3px rgba(26,58,92,0.12);
+        }
+        .input-group .your-number {
+            background: var(--yellow-input);
+            border-color: var(--yellow-border);
+            font-weight: 600;
+        }
+        .input-group .your-number:focus {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(230,126,34,0.15);
+        }
+        .input-group .our-estimate {
+            background: #f0f2f5;
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+        .notes-field {
+            margin-top: 6px;
+        }
+        .notes-field textarea {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px 12px;
+            border: 1.5px solid var(--gray-border);
+            border-radius: 8px;
+            min-height: 48px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        .notes-field label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-text);
+            margin-bottom: 3px;
+        }
+
+        /* Summary table */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .summary-table th,
+        .summary-table td {
+            padding: 10px 14px;
+            font-size: 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-border);
+        }
+        .summary-table th {
+            font-weight: 600;
+            color: var(--gray-text);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: #f8f9fb;
+        }
+        .summary-table td:nth-child(2),
+        .summary-table td:nth-child(3),
+        .summary-table th:nth-child(2),
+        .summary-table th:nth-child(3) {
+            text-align: right;
+            white-space: nowrap;
+        }
+        .summary-table tr.section-subtotal {
+            background: #f0f4f8;
+            font-weight: 700;
+        }
+        .summary-table tr.total-row {
+            background: var(--navy);
+            color: white;
+            font-weight: 700;
+        }
+        .summary-table tr.total-row td { border-bottom: none; font-size: 15px; }
+        .summary-table tr.overhead-row,
+        .summary-table tr.profit-row {
+            background: #f8f9fb;
+        }
+        .summary-table tr.customer-price-row {
+            background: var(--green-light);
+            font-weight: 800;
+            font-size: 16px;
+        }
+        .summary-table tr.customer-price-row td { font-size: 16px; }
+        .summary-your-num {
+            background: var(--yellow-input);
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Missing items checklist */
+        .checklist-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-border);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .checklist-item:last-child { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            accent-color: var(--navy);
+        }
+        .checklist-content {
+            flex: 1;
+        }
+        .checklist-label {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .checklist-cost {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .checklist-cost label {
+            font-size: 12px;
+            color: var(--gray-text);
+            font-weight: 600;
+        }
+        .checklist-cost input {
+            width: 120px;
+            font-size: 16px;
+            padding: 8px 10px;
+            border: 1.5px solid var(--yellow-border);
+            border-radius: 8px;
+            background: var(--yellow-input);
+            font-weight: 600;
+        }
+
+        /* Sign-off section */
+        .signoff-field {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-border);
+        }
+        .signoff-field:last-child { border-bottom: none; }
+        .signoff-field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-text);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .signoff-field input[type="text"],
+        .signoff-field textarea {
+            width: 100%;
+            font-size: 16px;
+            padding: 12px;
+            border: 1.5px solid var(--gray-border);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .signoff-field textarea { min-height: 100px; resize: vertical; }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1.5px solid var(--gray-border);
+            border-radius: 8px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: all 0.15s;
+        }
+        .radio-option:has(input:checked) {
+            border-color: var(--navy);
+            background: #eef3f8;
+        }
+        .radio-option input[type="radio"] {
+            width: 22px;
+            height: 22px;
+            accent-color: var(--navy);
+            flex-shrink: 0;
+        }
+        .radio-option span {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .radio-option.status-ready { border-left: 4px solid var(--green); }
+        .radio-option.status-adjust { border-left: 4px solid var(--orange); }
+        .radio-option.status-missing { border-left: 4px solid var(--red-flag); }
+
+        /* Submit area */
+        .submit-area {
+            padding: 16px;
+            margin: 12px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 17px;
+            font-weight: 700;
+            color: white;
+            background: var(--navy);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.2s;
+            letter-spacing: 0.3px;
+        }
+        .submit-btn:active { background: var(--navy-light); }
+
+        .snapshot-info {
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray-text);
+            margin-top: 10px;
+        }
+
+        /* History */
+        .history-list {
+            padding: 8px 16px 16px;
+        }
+        .history-entry {
+            padding: 10px 12px;
+            background: #f8f9fb;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .history-entry .restore-btn {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* Reset button */
+        .reset-area {
+            text-align: center;
+            padding: 20px 16px 40px;
+        }
+        .reset-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: var(--red-flag);
+            background: white;
+            border: 1.5px solid var(--red-flag);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Utility */
+        .dollar-prefix {
+            position: relative;
+        }
+        .dollar-prefix::before {
+            content: '$';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-text);
+            font-size: 16px;
+            pointer-events: none;
+        }
+        .dollar-prefix input {
+            padding-left: 24px !important;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/chat-widget.css">
+</head>
+<body>
+
+<!-- Sticky top bar -->
+<div class="top-bar">
+    <h1>Internal Cost Review</h1>
+    <div class="save-indicator" id="saveIndicator">Not saved</div>
+</div>
+
+<!-- Subtitle -->
+<div class="subtitle">Package 1: Plunge Lite 8'x14' Fiberglass<br>Philadelphia, PA</div>
+
+<!-- Warning -->
+<div class="warning-box">
+    <div class="warning-label">DO NOT SHARE WITH CUSTOMER</div>
+    <p>This document lists every cost assumption for a complete, swim-ready Plunge Lite 8'x14' fiberglass pool installation in Philadelphia. Every line item needs your review. Mark anything that's wrong, missing, or priced incorrectly. We are NOT showing this to the customer &mdash; this is our internal cost build.</p>
+</div>
+
+<!-- ===== SECTION 1: Pool Shell & Delivery ===== -->
+<div class="section" data-section="1">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>1. Pool Shell &amp; Delivery</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <!-- Item 1.1 -->
+        <div class="line-item">
+            <div class="line-item-desc">Plunge Lite 8'x14' Fiberglass Shell</div>
+            <div class="line-item-detail">SKU: LITE-8-14-G2</div>
+            <div class="line-item-question">Q: Is this the right SKU?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$11,275" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s1_shell" placeholder="$11,275">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s1_shell_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <!-- Item 1.2 -->
+        <div class="line-item">
+            <div class="line-item-desc">Delivery from PPC</div>
+            <div class="line-item-detail">South Easton, MA to Philadelphia, ~300 miles, ~4,100 lbs</div>
+            <div class="line-item-question">Q: Does PPC include delivery in installer price or separate? What do they actually charge?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$2,000" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s1_delivery" placeholder="$2,000">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s1_delivery_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <!-- Item 1.3 -->
+        <div class="line-item">
+            <div class="line-item-desc">Crane Rental</div>
+            <div class="line-item-detail">Half-day, 25-ton mobile crane for 4,100 lb shell</div>
+            <div class="line-item-question">Q: Is 25-ton overkill? Could a smaller/cheaper crane work?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$1,200" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s1_crane" placeholder="$1,200">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s1_crane_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 2: Excavation & Site Work ===== -->
+<div class="section" data-section="2">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>2. Excavation &amp; Site Work</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="line-item">
+            <div class="line-item-desc">Excavation</div>
+            <div class="line-item-detail">Pool 8'x14' + 2' overdig each side = 12'x18', ~5' deep, ~20 CY</div>
+            <div class="line-item-question">Q: Is 2' overdig correct for fiberglass? What depth do we actually need?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$2,000" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s2_excavation" placeholder="$2,000">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s2_excavation_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Spoil Dirt Hauling &amp; Disposal</div>
+            <div class="line-item-detail">~20 CY, ~2 dump truck loads</div>
+            <div class="line-item-question">Q: Can any spoil be used for grading or does it all leave? Where to dump in Philly?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$1,000" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s2_hauling" placeholder="$1,000">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s2_hauling_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Backfill Stone</div>
+            <div class="line-item-detail">~12 tons clean crushed stone</div>
+            <div class="line-item-question">Q: Is 12 tons right? What stone spec does PPC require -- #57? #67? #68?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$480" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s2_backfill" placeholder="$480">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s2_backfill_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Gravel Base Under Pool</div>
+            <div class="line-item-flag">FLAGGED: Do we need a separate gravel base under the shell? Check PPC installation guide.</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$0" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s2_gravel_base" placeholder="$0">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s2_gravel_base_notes" placeholder="Do we need this? What does PPC spec say?"></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Dewatering (if needed)</div>
+            <div class="line-item-flag">FLAGGED: Site-dependent. If high water table, add $300-500.</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$0" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s2_dewatering" placeholder="$0">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s2_dewatering_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 3: Equipment ===== -->
+<div class="section" data-section="3">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>3. Equipment</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="line-item">
+            <div class="line-item-desc">Hayward Equipment Package Pool Only</div>
+            <div class="line-item-detail">SKU: PPC010</div>
+            <div class="line-item-question">Q: What exactly is in this kit? VS pump model? Filter model/size? Does it include controls?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$8,380" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s3_hayward" placeholder="$8,380">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s3_hayward_notes" placeholder="List what's included..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Electric Heat Pump</div>
+            <div class="line-item-question">Q: Is 95K BTU right for 2,500 gal? Could we go smaller (50K BTU)? Actual wholesale price?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$3,800" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s3_heat_pump" placeholder="$3,800">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s3_heat_pump_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Salt Chlorine Generator</div>
+            <div class="line-item-question">Q: What model/size for 2,500 gal? Smallest available unit? Actual wholesale?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$1,300" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s3_salt_gen" placeholder="$1,300">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s3_salt_gen_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Equipment Pad</div>
+            <div class="line-item-question">Q: Part of deck pour or separate? What size?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$300" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s3_equip_pad" placeholder="$300">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s3_equip_pad_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Winter Safety Cover</div>
+            <div class="line-item-question">Q: What type/brand for 8'x14'? Mesh or solid? Actual cost?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$400" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s3_cover" placeholder="$400">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s3_cover_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 4: Plumbing ===== -->
+<div class="section" data-section="4">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>4. Plumbing</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="line-item">
+            <div class="line-item-desc">Licensed Master Plumber Labor</div>
+            <div class="line-item-detail">Philly license required, rough-in + final</div>
+            <div class="line-item-question">Q: What does your plumber actually charge? Flat rate or hourly?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$1,800" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s4_plumber_labor" placeholder="$1,800">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s4_plumber_labor_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Plumbing Materials</div>
+            <div class="line-item-detail">PVC pipe, fittings, valves, unions beyond what PPC includes</div>
+            <div class="line-item-question">Q: Is $500 enough? What's needed beyond PPC parts?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$500" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s4_plumb_materials" placeholder="$500">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s4_plumb_materials_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Backflow Preventer (ASSE 1013)</div>
+            <div class="line-item-question">Q: Is this needed for garden-hose fill pools?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$200" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s4_backflow" placeholder="$200">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s4_backflow_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 5: Electrical ===== -->
+<div class="section" data-section="5">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>5. Electrical</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="line-item">
+            <div class="line-item-desc">Licensed Electrician Labor</div>
+            <div class="line-item-detail">Philly Electrical Contractor License required</div>
+            <div class="line-item-question">Q: What does your electrician charge? Flat rate or hourly? Includes trenching?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$2,200" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s5_elec_labor" placeholder="$2,200">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s5_elec_labor_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Electrical Materials</div>
+            <div class="line-item-detail">Sub-panel, wire, conduit, GFCI breakers, disconnect, bonding</div>
+            <div class="line-item-question">Q: Assuming ~40 ft panel-to-equipment. Does this cover it?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$800" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s5_elec_materials" placeholder="$800">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s5_elec_materials_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Panel Upgrade (if needed)</div>
+            <div class="line-item-flag">FLAGGED: If 100A panel, add ~$2,000. How often in Philly?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$0" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s5_panel_upgrade" placeholder="$0">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s5_panel_upgrade_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 6: Concrete Deck ===== -->
+<div class="section" data-section="6">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>6. Concrete Deck</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="line-item">
+            <div class="line-item-desc">Broom-Finish Concrete Deck</div>
+            <div class="line-item-detail">~170 sq ft, 3.5 ft surround</div>
+            <div class="line-item-note">Includes excavation, gravel base, forms, rebar, concrete (~2.1 CY), pour labor, broom finish, cleanup.</div>
+            <div class="line-item-question">Q: Is $20/sf realistic for a small pour in Philly?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$3,400" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s6_deck" placeholder="$3,400">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s6_deck_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Concrete Pump (if truck can't access backyard)</div>
+            <div class="line-item-flag">FLAGGED: Site-dependent, $300-500 if needed.</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$0" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s6_pump" placeholder="$0">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s6_pump_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Coping / Edge Treatment</div>
+            <div class="line-item-question">Q: Does fiberglass have integrated lip or needs separate coping?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$0" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s6_coping" placeholder="$0">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s6_coping_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 7: Permits, Fees & Misc ===== -->
+<div class="section" data-section="7">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>7. Permits, Fees &amp; Misc</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="line-item">
+            <div class="line-item-desc">Philadelphia Building Permit</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$208" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_building_permit" placeholder="$208">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_building_permit_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Electrical Permit</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$175" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_elec_permit" placeholder="$175">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_elec_permit_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Plumbing Permit</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$175" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_plumb_permit" placeholder="$175">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_plumb_permit_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Excavation Site Permit</div>
+            <div class="line-item-question">Q: Does this dig exceed 5 ft deep? Pool is 4' + base.</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$136" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_excavation_permit" placeholder="$136">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_excavation_permit_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Street Closure Permit (crane day)</div>
+            <div class="line-item-question">Q: Only if crane is on street vs driveway?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$250" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_street_permit" placeholder="$250">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_street_permit_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">PA One Call (811)</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$0" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_one_call" placeholder="$0">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_one_call_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Private Utility Locate (GPR)</div>
+            <div class="line-item-question">Q: Always do this or only certain areas?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$400" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_gpr" placeholder="$400">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_gpr_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Fill Water + Startup Chemicals</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$200" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_water_chem" placeholder="$200">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_water_chem_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+
+        <div class="line-item">
+            <div class="line-item-desc">Misc / Contingency</div>
+            <div class="line-item-question">Q: Is $500 enough? What unexpected costs do you typically hit?</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$500" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s7_contingency" placeholder="$500">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s7_contingency_notes" placeholder="Any corrections or comments..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 8: Fencing ===== -->
+<div class="section" data-section="8">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>8. Fencing</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="line-item">
+            <div class="line-item-desc">48" Code-Compliant Fence</div>
+            <div class="line-item-note">Customer has existing fence. MUST VERIFY: 48" height, self-closing gate, self-latching at 54", swings outward, no gaps >4". If non-compliant, add $3,700.</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Our Estimate</label>
+                    <input type="text" class="our-estimate" value="$0" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Your Number</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="s8_fence" placeholder="$0">
+                </div>
+            </div>
+            <div class="notes-field">
+                <label>Notes / Comments</label>
+                <textarea data-key="s8_fence_notes" placeholder="Is existing fence compliant?"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 9: Cost Summary ===== -->
+<div class="section" data-section="9">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>9. Cost Summary</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body" style="overflow-x: auto;">
+        <table class="summary-table" id="summaryTable">
+            <thead>
+                <tr>
+                    <th>Line Item</th>
+                    <th>Our Est.</th>
+                    <th>Your #</th>
+                </tr>
+            </thead>
+            <tbody id="summaryBody">
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 10: Possibly Missing Items ===== -->
+<div class="section" data-section="10">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>10. Possibly Missing Items</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_gravel_sand" id="miss1">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss1">Gravel/sand base under shell</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_gravel_sand_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_coping" id="miss2">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss2">Coping / edge treatment</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_coping_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_backflow" id="miss3">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss3">Backflow preventer</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_backflow_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_concrete_pump" id="miss4">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss4">Concrete pump</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_concrete_pump_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_dewatering" id="miss5">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss5">Dewatering pump</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_dewatering_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_plumbing_extra" id="miss6">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss6">Additional plumbing fittings</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_plumbing_extra_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_led_transformer" id="miss7">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss7">LED light transformer</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_led_transformer_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_soil_test" id="miss8">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss8">Soil testing / geotechnical</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_soil_test_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_landscaping" id="miss9">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss9">Yard restoration / landscaping</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_landscaping_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_dumpster" id="miss10">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss10">Dumpster rental</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_dumpster_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_skidsteer" id="miss11">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss11">Skid steer / Bobcat rental</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_skidsteer_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_temp_fence" id="miss12">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss12">Temporary fencing during construction</label>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_temp_fence_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" data-key="miss_other" id="miss13">
+            <div class="checklist-content">
+                <label class="checklist-label" for="miss13">Other</label>
+                <div class="notes-field" style="margin-bottom: 8px;">
+                    <textarea data-key="miss_other_desc" placeholder="Describe missing item..."></textarea>
+                </div>
+                <div class="checklist-cost">
+                    <label>Cost $</label>
+                    <input type="text" inputmode="decimal" class="your-number" data-key="miss_other_cost" placeholder="0">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 11: Expert Sign-Off ===== -->
+<div class="section" data-section="11">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>11. Expert Sign-Off</h2>
+        <div class="toggle">&#9660;</div>
+    </div>
+    <div class="section-body">
+
+        <div class="signoff-field">
+            <label>Reviewer Name</label>
+            <input type="text" data-key="signoff_name" placeholder="Your name">
+        </div>
+
+        <div class="signoff-field">
+            <label>Date</label>
+            <input type="text" data-key="signoff_date" placeholder="MM/DD/YYYY">
+        </div>
+
+        <div class="signoff-field">
+            <label>Status</label>
+            <div class="radio-group">
+                <label class="radio-option status-ready">
+                    <input type="radio" name="signoff_status" value="ready" data-key="signoff_status">
+                    <span>Ready to present</span>
+                </label>
+                <label class="radio-option status-adjust">
+                    <input type="radio" name="signoff_status" value="adjustments" data-key="signoff_status">
+                    <span>Adjustments needed</span>
+                </label>
+                <label class="radio-option status-missing">
+                    <input type="radio" name="signoff_status" value="missing" data-key="signoff_status">
+                    <span>Major items missing &mdash; do NOT present</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="signoff-field">
+            <label>Adjusted Customer Price (if different)</label>
+            <input type="text" inputmode="decimal" class="your-number" data-key="signoff_adjusted_price" placeholder="Leave blank if same">
+        </div>
+
+        <div class="signoff-field">
+            <label>Notes</label>
+            <textarea data-key="signoff_notes" placeholder="Overall comments, concerns, items to discuss..."></textarea>
+        </div>
+    </div>
+</div>
+
+<!-- Submit button -->
+<div class="submit-area">
+    <button class="submit-btn" onclick="saveSnapshot()">Save Snapshot to History</button>
+    <div class="snapshot-info" id="snapshotInfo"></div>
+</div>
+
+<!-- Snapshot history -->
+<div class="section" data-section="history" style="margin-top: 0;">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2>Saved Snapshots</h2>
+        <div class="toggle collapsed">&#9660;</div>
+    </div>
+    <div class="section-body collapsed">
+        <div class="history-list" id="historyList">
+            <div style="padding: 16px; color: #888; text-align: center; font-size: 14px;">No snapshots yet</div>
+        </div>
+    </div>
+</div>
+
+<!-- Reset -->
+<div class="reset-area">
+    <button class="reset-btn" onclick="resetForm()">Clear All Data</button>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    const STORAGE_KEY = 'tristate_cost_review_pkg1';
+    const HISTORY_KEY = 'tristate_cost_review_pkg1_history';
+    const COLLAPSE_KEY = 'tristate_cost_review_pkg1_collapse';
+
+    // All cost line items: [data-key, our estimate value]
+    const COST_ITEMS = [
+        // Section 1
+        { key: 's1_shell', est: 11275, label: 'Pool shell (LITE-8-14-G2)', section: 'Pool Shell & Delivery' },
+        { key: 's1_delivery', est: 2000, label: 'Delivery from PPC', section: 'Pool Shell & Delivery' },
+        { key: 's1_crane', est: 1200, label: 'Crane rental', section: 'Pool Shell & Delivery' },
+        // Section 2
+        { key: 's2_excavation', est: 2000, label: 'Excavation', section: 'Excavation & Site Work' },
+        { key: 's2_hauling', est: 1000, label: 'Spoil dirt hauling', section: 'Excavation & Site Work' },
+        { key: 's2_backfill', est: 480, label: 'Backfill stone', section: 'Excavation & Site Work' },
+        { key: 's2_gravel_base', est: 0, label: 'Gravel base under pool', section: 'Excavation & Site Work' },
+        { key: 's2_dewatering', est: 0, label: 'Dewatering', section: 'Excavation & Site Work' },
+        // Section 3
+        { key: 's3_hayward', est: 8380, label: 'Hayward equipment pkg', section: 'Equipment' },
+        { key: 's3_heat_pump', est: 3800, label: 'Electric heat pump', section: 'Equipment' },
+        { key: 's3_salt_gen', est: 1300, label: 'Salt chlorine generator', section: 'Equipment' },
+        { key: 's3_equip_pad', est: 300, label: 'Equipment pad', section: 'Equipment' },
+        { key: 's3_cover', est: 400, label: 'Winter safety cover', section: 'Equipment' },
+        // Section 4
+        { key: 's4_plumber_labor', est: 1800, label: 'Plumber labor', section: 'Plumbing' },
+        { key: 's4_plumb_materials', est: 500, label: 'Plumbing materials', section: 'Plumbing' },
+        { key: 's4_backflow', est: 200, label: 'Backflow preventer', section: 'Plumbing' },
+        // Section 5
+        { key: 's5_elec_labor', est: 2200, label: 'Electrician labor', section: 'Electrical' },
+        { key: 's5_elec_materials', est: 800, label: 'Electrical materials', section: 'Electrical' },
+        { key: 's5_panel_upgrade', est: 0, label: 'Panel upgrade', section: 'Electrical' },
+        // Section 6
+        { key: 's6_deck', est: 3400, label: 'Concrete deck', section: 'Concrete Deck' },
+        { key: 's6_pump', est: 0, label: 'Concrete pump', section: 'Concrete Deck' },
+        { key: 's6_coping', est: 0, label: 'Coping / edge treatment', section: 'Concrete Deck' },
+        // Section 7
+        { key: 's7_building_permit', est: 208, label: 'Building permit', section: 'Permits, Fees & Misc' },
+        { key: 's7_elec_permit', est: 175, label: 'Electrical permit', section: 'Permits, Fees & Misc' },
+        { key: 's7_plumb_permit', est: 175, label: 'Plumbing permit', section: 'Permits, Fees & Misc' },
+        { key: 's7_excavation_permit', est: 136, label: 'Excavation site permit', section: 'Permits, Fees & Misc' },
+        { key: 's7_street_permit', est: 250, label: 'Street closure permit', section: 'Permits, Fees & Misc' },
+        { key: 's7_one_call', est: 0, label: 'PA One Call (811)', section: 'Permits, Fees & Misc' },
+        { key: 's7_gpr', est: 400, label: 'Private utility locate', section: 'Permits, Fees & Misc' },
+        { key: 's7_water_chem', est: 200, label: 'Fill water + chemicals', section: 'Permits, Fees & Misc' },
+        { key: 's7_contingency', est: 500, label: 'Misc/contingency', section: 'Permits, Fees & Misc' },
+        // Section 8
+        { key: 's8_fence', est: 0, label: '48" code-compliant fence', section: 'Fencing' },
+    ];
+
+    let saveTimer = null;
+
+    // Parse a dollar string to number
+    function parseDollar(str) {
+        if (!str) return NaN;
+        return parseFloat(str.replace(/[^0-9.\-]/g, ''));
+    }
+
+    // Format number to dollar string
+    function formatDollar(num) {
+        if (isNaN(num)) return '$0';
+        return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+
+    // Get the effective value for a cost item (user's number if set, otherwise our estimate)
+    function getEffectiveValue(key, est) {
+        var el = document.querySelector('[data-key="' + key + '"]');
+        if (el && el.value && el.value.trim() !== '') {
+            var v = parseDollar(el.value);
+            return isNaN(v) ? est : v;
+        }
+        return est;
+    }
+
+    // Get user-entered value only (for summary display)
+    function getUserValue(key) {
+        var el = document.querySelector('[data-key="' + key + '"]');
+        if (el && el.value && el.value.trim() !== '') {
+            var v = parseDollar(el.value);
+            return isNaN(v) ? null : v;
+        }
+        return null;
+    }
+
+    // Build summary table
+    function buildSummary() {
+        var body = document.getElementById('summaryBody');
+        var html = '';
+        var currentSection = '';
+        var sectionEstTotal = 0;
+        var sectionYourTotal = 0;
+        var grandEstTotal = 0;
+        var grandYourTotal = 0;
+        var hasAnyUserInput = false;
+
+        for (var i = 0; i < COST_ITEMS.length; i++) {
+            var item = COST_ITEMS[i];
+
+            // Section header
+            if (item.section !== currentSection) {
+                if (currentSection !== '') {
+                    html += '<tr class="section-subtotal"><td>' + currentSection + ' Subtotal</td><td>' + formatDollar(sectionEstTotal) + '</td><td class="summary-your-num">' + (sectionYourTotal > 0 ? formatDollar(sectionYourTotal) : '—') + '</td></tr>';
+                }
+                currentSection = item.section;
+                sectionEstTotal = 0;
+                sectionYourTotal = 0;
+            }
+
+            var userVal = getUserValue(item.key);
+            var effectiveVal = getEffectiveValue(item.key, item.est);
+            sectionEstTotal += item.est;
+            sectionYourTotal += effectiveVal;
+            grandEstTotal += item.est;
+            grandYourTotal += effectiveVal;
+            if (userVal !== null) hasAnyUserInput = true;
+
+            html += '<tr>';
+            html += '<td>' + item.label + '</td>';
+            html += '<td>' + formatDollar(item.est) + '</td>';
+            html += '<td class="summary-your-num">' + (userVal !== null ? formatDollar(userVal) : '—') + '</td>';
+            html += '</tr>';
+        }
+
+        // Last section subtotal
+        if (currentSection !== '') {
+            html += '<tr class="section-subtotal"><td>' + currentSection + ' Subtotal</td><td>' + formatDollar(sectionEstTotal) + '</td><td class="summary-your-num">' + (sectionYourTotal > 0 ? formatDollar(sectionYourTotal) : '—') + '</td></tr>';
+        }
+
+        // Add missing items costs
+        var missingCostKeys = ['miss_gravel_sand_cost', 'miss_coping_cost', 'miss_backflow_cost', 'miss_concrete_pump_cost', 'miss_dewatering_cost', 'miss_plumbing_extra_cost', 'miss_led_transformer_cost', 'miss_soil_test_cost', 'miss_landscaping_cost', 'miss_dumpster_cost', 'miss_skidsteer_cost', 'miss_temp_fence_cost', 'miss_other_cost'];
+        var missingTotal = 0;
+        for (var m = 0; m < missingCostKeys.length; m++) {
+            var el = document.querySelector('[data-key="' + missingCostKeys[m] + '"]');
+            if (el && el.value && el.value.trim() !== '') {
+                var v = parseDollar(el.value);
+                if (!isNaN(v)) missingTotal += v;
+            }
+        }
+        if (missingTotal > 0) {
+            html += '<tr class="section-subtotal"><td>Missing Items Total</td><td>$0</td><td class="summary-your-num">' + formatDollar(missingTotal) + '</td></tr>';
+            grandYourTotal += missingTotal;
+        }
+
+        // Totals
+        var yourTotalDisplay = hasAnyUserInput || missingTotal > 0 ? formatDollar(grandYourTotal) : '—';
+        html += '<tr class="total-row"><td>Hard Cost Total</td><td>' + formatDollar(grandEstTotal) + '</td><td>' + yourTotalDisplay + '</td></tr>';
+
+        var estOverhead = Math.round(grandEstTotal * 0.20);
+        var yourOverhead = Math.round(grandYourTotal * 0.20);
+        html += '<tr class="overhead-row"><td>Overhead (20%)</td><td>' + formatDollar(estOverhead) + '</td><td class="summary-your-num">' + (hasAnyUserInput || missingTotal > 0 ? formatDollar(yourOverhead) : '—') + '</td></tr>';
+
+        var estWithOverhead = grandEstTotal + estOverhead;
+        var yourWithOverhead = grandYourTotal + yourOverhead;
+        var estProfit = Math.round(estWithOverhead * 0.15);
+        var yourProfit = Math.round(yourWithOverhead * 0.15);
+        html += '<tr class="profit-row"><td>Profit (15%)</td><td>' + formatDollar(estProfit) + '</td><td class="summary-your-num">' + (hasAnyUserInput || missingTotal > 0 ? formatDollar(yourProfit) : '—') + '</td></tr>';
+
+        var estCustomerPrice = estWithOverhead + estProfit;
+        var yourCustomerPrice = yourWithOverhead + yourProfit;
+        html += '<tr class="customer-price-row"><td>Customer Price</td><td>' + formatDollar(estCustomerPrice) + '</td><td class="summary-your-num">' + (hasAnyUserInput || missingTotal > 0 ? formatDollar(yourCustomerPrice) : '—') + '</td></tr>';
+
+        body.innerHTML = html;
+    }
+
+    // Save all form data to localStorage
+    function saveData() {
+        var data = {};
+        // Text/number inputs
+        var inputs = document.querySelectorAll('input[data-key], textarea[data-key]');
+        for (var i = 0; i < inputs.length; i++) {
+            var el = inputs[i];
+            var key = el.getAttribute('data-key');
+            if (el.type === 'checkbox') {
+                data[key] = el.checked;
+            } else if (el.type === 'radio') {
+                if (el.checked) data['signoff_status'] = el.value;
+            } else {
+                data[key] = el.value;
+            }
+        }
+        data._lastSaved = new Date().toISOString();
+
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            showSaveIndicator();
+        } catch(e) {
+            console.error('Save failed', e);
+        }
+    }
+
+    // Load saved data
+    function loadData() {
+        try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return;
+            var data = JSON.parse(raw);
+
+            var inputs = document.querySelectorAll('input[data-key], textarea[data-key]');
+            for (var i = 0; i < inputs.length; i++) {
+                var el = inputs[i];
+                var key = el.getAttribute('data-key');
+                if (el.type === 'checkbox') {
+                    if (data[key] !== undefined) el.checked = data[key];
+                } else if (el.type === 'radio') {
+                    if (data['signoff_status'] && el.value === data['signoff_status']) el.checked = true;
+                } else {
+                    if (data[key] !== undefined) el.value = data[key];
+                }
+            }
+
+            if (data._lastSaved) {
+                showSaveIndicator();
+            }
+        } catch(e) {
+            console.error('Load failed', e);
+        }
+    }
+
+    // Load collapsed section state
+    function loadCollapseState() {
+        try {
+            var raw = localStorage.getItem(COLLAPSE_KEY);
+            if (!raw) return;
+            var state = JSON.parse(raw);
+            var sections = document.querySelectorAll('.section[data-section]');
+            for (var i = 0; i < sections.length; i++) {
+                var sNum = sections[i].getAttribute('data-section');
+                if (state[sNum]) {
+                    var body = sections[i].querySelector('.section-body');
+                    var toggle = sections[i].querySelector('.toggle');
+                    if (body) body.classList.add('collapsed');
+                    if (toggle) toggle.classList.add('collapsed');
+                }
+            }
+        } catch(e) {}
+    }
+
+    function saveCollapseState() {
+        try {
+            var state = {};
+            var sections = document.querySelectorAll('.section[data-section]');
+            for (var i = 0; i < sections.length; i++) {
+                var sNum = sections[i].getAttribute('data-section');
+                var body = sections[i].querySelector('.section-body');
+                if (body && body.classList.contains('collapsed')) {
+                    state[sNum] = true;
+                }
+            }
+            localStorage.setItem(COLLAPSE_KEY, JSON.stringify(state));
+        } catch(e) {}
+    }
+
+    // Save indicator
+    function showSaveIndicator() {
+        var indicator = document.getElementById('saveIndicator');
+        indicator.textContent = 'Saving...';
+        indicator.className = 'save-indicator saving';
+        setTimeout(function() {
+            var now = new Date();
+            var timeStr = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+            indicator.textContent = 'Saved ' + timeStr;
+            indicator.className = 'save-indicator saved';
+        }, 400);
+    }
+
+    // Auto-save on any input change
+    function setupAutoSave() {
+        document.addEventListener('input', function(e) {
+            if (e.target.matches('input[data-key], textarea[data-key]')) {
+                clearTimeout(saveTimer);
+                saveTimer = setTimeout(function() {
+                    saveData();
+                    buildSummary();
+                }, 300);
+            }
+        });
+        document.addEventListener('change', function(e) {
+            if (e.target.matches('input[data-key]')) {
+                saveData();
+                buildSummary();
+            }
+        });
+    }
+
+    // Toggle section
+    window.toggleSection = function(header) {
+        var body = header.nextElementSibling;
+        var toggle = header.querySelector('.toggle');
+        body.classList.toggle('collapsed');
+        toggle.classList.toggle('collapsed');
+        saveCollapseState();
+    };
+
+    // Save snapshot
+    window.saveSnapshot = function() {
+        saveData(); // Save current state first
+
+        try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            var data = raw ? JSON.parse(raw) : {};
+            var history = [];
+            var histRaw = localStorage.getItem(HISTORY_KEY);
+            if (histRaw) history = JSON.parse(histRaw);
+
+            var snapshot = {
+                timestamp: new Date().toISOString(),
+                data: data,
+                reviewer: data.signoff_name || 'Unknown',
+                status: data.signoff_status || 'in-progress'
+            };
+            history.unshift(snapshot);
+            // Keep max 20 snapshots
+            if (history.length > 20) history = history.slice(0, 20);
+            localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+
+            var info = document.getElementById('snapshotInfo');
+            info.textContent = 'Snapshot saved at ' + new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+            info.style.color = '#27ae60';
+
+            renderHistory();
+        } catch(e) {
+            var info = document.getElementById('snapshotInfo');
+            info.textContent = 'Error saving snapshot';
+            info.style.color = '#e74c3c';
+        }
+    };
+
+    // Render history
+    function renderHistory() {
+        var list = document.getElementById('historyList');
+        try {
+            var histRaw = localStorage.getItem(HISTORY_KEY);
+            if (!histRaw) { list.innerHTML = '<div style="padding:16px;color:#888;text-align:center;font-size:14px;">No snapshots yet</div>'; return; }
+            var history = JSON.parse(histRaw);
+            if (!history.length) { list.innerHTML = '<div style="padding:16px;color:#888;text-align:center;font-size:14px;">No snapshots yet</div>'; return; }
+
+            var html = '';
+            for (var i = 0; i < history.length; i++) {
+                var s = history[i];
+                var d = new Date(s.timestamp);
+                var dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+                var statusLabel = s.status === 'ready' ? 'Ready' : s.status === 'adjustments' ? 'Adjustments' : s.status === 'missing' ? 'DO NOT present' : 'In progress';
+                html += '<div class="history-entry"><div><strong>' + dateStr + '</strong><br>' + (s.reviewer || '') + ' &middot; ' + statusLabel + '</div><button class="restore-btn" onclick="restoreSnapshot(' + i + ')">Restore</button></div>';
+            }
+            list.innerHTML = html;
+        } catch(e) {
+            list.innerHTML = '<div style="padding:16px;color:#888;text-align:center;font-size:14px;">Error loading history</div>';
+        }
+    }
+
+    // Restore snapshot
+    window.restoreSnapshot = function(index) {
+        try {
+            var histRaw = localStorage.getItem(HISTORY_KEY);
+            if (!histRaw) return;
+            var history = JSON.parse(histRaw);
+            if (!history[index]) return;
+
+            if (!confirm('Restore this snapshot? Current data will be overwritten.')) return;
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(history[index].data));
+            loadData();
+            buildSummary();
+            showSaveIndicator();
+        } catch(e) {
+            alert('Error restoring snapshot');
+        }
+    };
+
+    // Reset form
+    window.resetForm = function() {
+        if (!confirm('Clear ALL entered data? This cannot be undone.')) return;
+        if (!confirm('Are you sure? All your numbers and notes will be deleted.')) return;
+
+        localStorage.removeItem(STORAGE_KEY);
+        var inputs = document.querySelectorAll('input[data-key], textarea[data-key]');
+        for (var i = 0; i < inputs.length; i++) {
+            var el = inputs[i];
+            if (el.type === 'checkbox') el.checked = false;
+            else if (el.type === 'radio') el.checked = false;
+            else el.value = '';
+        }
+        buildSummary();
+        var indicator = document.getElementById('saveIndicator');
+        indicator.textContent = 'Cleared';
+        indicator.className = 'save-indicator';
+    };
+
+    // Init
+    loadData();
+    loadCollapseState();
+    buildSummary();
+    setupAutoSave();
+    renderHistory();
+
+})();
+</script>
+
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>

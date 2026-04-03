@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tri-State Aquatic Solutions — 2026 Route Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  #map { height: 100vh; width: 100%; }
+  .legend {
+    position: absolute; bottom: 20px; left: 10px; background: white;
+    padding: 14px 18px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    font-size: 13px; z-index: 1000; max-width: 260px;
+  }
+  .legend h4 { margin: 0 0 10px 0; font-size: 15px; }
+  .legend-item { display: flex; align-items: center; margin: 5px 0; cursor: pointer; }
+  .legend-item:hover { opacity: 0.7; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 50%; margin-right: 10px; flex-shrink: 0; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+  .legend-text { line-height: 1.3; }
+  .legend-day { font-weight: 600; }
+  .legend-op { font-size: 11px; color: #888; }
+  .header {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    background: white; padding: 10px 24px; border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25); z-index: 1000; text-align: center;
+  }
+  .header h3 { margin: 0; font-size: 16px; }
+  .header p { margin: 4px 0 0 0; font-size: 12px; color: #666; }
+</style>
+    <link rel="stylesheet" href="/css/chat-widget.css">
+</head>
+<body>
+<div id="map"></div>
+<div class="header">
+  <h3>Tri-State Aquatic — 29 Customers</h3>
+  <p>Color = route day &bull; Click pins for details &bull; Mon–Fri</p>
+</div>
+<div class="legend">
+  <h4>Route Days (Mon–Fri)</h4>
+  <div class="legend-item" onclick="toggleDay('Monday')">
+    <span class="legend-dot" style="background:#4285F4"></span>
+    <span class="legend-text"><span class="legend-day">Monday — Wilmington Core</span><br><span class="legend-op">Helper (Claymont)</span></span>
+  </div><div class="legend-item" onclick="toggleDay('Tuesday')">
+    <span class="legend-dot" style="background:#EA4335"></span>
+    <span class="legend-text"><span class="legend-day">Tuesday — Newark/Hockessin</span><br><span class="legend-op">Helper (Claymont)</span></span>
+  </div><div class="legend-item" onclick="toggleDay('Wednesday')">
+    <span class="legend-dot" style="background:#FBBC04"></span>
+    <span class="legend-text"><span class="legend-day">Wednesday — West Chester + South DE</span><br><span class="legend-op">Helper (Claymont)</span></span>
+  </div><div class="legend-item" onclick="toggleDay('Thursday')">
+    <span class="legend-dot" style="background:#34A853"></span>
+    <span class="legend-text"><span class="legend-day">Thursday — MD + Far DE</span><br><span class="legend-op">Helper (Claymont)</span></span>
+  </div><div class="legend-item" onclick="toggleDay('Friday')">
+    <span class="legend-dot" style="background:#A142F4"></span>
+    <span class="legend-text"><span class="legend-day">Friday — Philly + PA West</span><br><span class="legend-op">Bryce (Philly)</span></span>
+  </div>
+  <div style="margin-top:10px;padding-top:8px;border-top:1px solid #eee">
+    <div class="legend-item">
+      <span class="legend-dot" style="background:#333;border-radius:0;transform:rotate(45deg)"></span>
+      <span class="legend-text"><span class="legend-day">Base Locations</span></span>
+    </div>
+  </div>
+</div>
+<script>
+const customers = [{"name": "Paul Hart", "address": "279 Winthrop Road, Berwyn, PA, 19312", "city": "Berwyn", "state": "PA", "day": "Friday", "est_2026": "9427.0", "payment": "Good"}, {"name": "Megan Ellinghaus", "address": "27 West Branch Circle, North East, Maryland, 21901", "city": "North East", "state": "Maryland", "day": "Thursday", "est_2026": "4700", "payment": "Poor"}, {"name": "William Master", "address": "1316 Idlewood Road, Wilmington, Delaware, 19805", "city": "Wilmington", "state": "Delaware", "day": "Monday", "est_2026": "4700", "payment": "Good"}, {"name": "Calvin Hooker", "address": "2329 Ferncroft Circle, Boothwyn, Pennsylvania, 19061", "city": "Boothwyn", "state": "Pennsylvania", "day": "Monday", "est_2026": "4700", "payment": "Fair"}, {"name": "Karron Jones", "address": "44 Crestpoint Drive, New Castle, Delaware, 19720", "city": "New Castle", "state": "Delaware", "day": "Wednesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Lashena Bruce-Williams", "address": "7520 Henry Avenue, Philadelphia, Pennsylvania, 19128", "city": "Philadelphia", "state": "Pennsylvania", "day": "Friday", "est_2026": "4700", "payment": "Good"}, {"name": "Bridget Dugan Jackson", "address": "1002 Plumly Road, West Chester, Pennsylvania, 19382", "city": "West Chester", "state": "Pennsylvania", "day": "Wednesday", "est_2026": "9152.0", "payment": "Fair"}, {"name": "Lisa Rable", "address": "9904 Medway Road, Philadelphia, Pennsylvania, 19115", "city": "Philadelphia", "state": "Pennsylvania", "day": "Friday", "est_2026": "4700", "payment": "Poor"}, {"name": "Fred Feeko", "address": "8 Locust Drive, Malvern, Pennsylvania, 19355", "city": "Malvern", "state": "Pennsylvania", "day": "Friday", "est_2026": "4700", "payment": "Good"}, {"name": "Juan Gonzalez", "address": "1015 Oak Lane, Philadelphia, Pennsylvania, 19126", "city": "Philadelphia", "state": "Pennsylvania", "day": "Friday", "est_2026": "4700", "payment": "Good"}, {"name": "Walter Burch", "address": "118 Fantasia Drive, Newark, Delaware, 19713", "city": "Newark", "state": "Delaware", "day": "Tuesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Paschal Uche", "address": "10 Ailsa Ct, Rising Sun, Maryland, 21911", "city": "Rising Sun", "state": "Maryland", "day": "Wednesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Anthony Djice", "address": "148 Edge Avenue, New Castle, Delaware, 19720", "city": "New Castle", "state": "Delaware", "day": "Monday", "est_2026": "4700", "payment": "Poor"}, {"name": "Brittany Collins", "address": "157 Coopers Dr, Newark, Delaware, 19702", "city": "Newark", "state": "Delaware", "day": "Tuesday", "est_2026": "4700", "payment": "Fair"}, {"name": "Dominque Duran", "address": "819 Kings Lane, Andalusia, Pennsylvania, 19020", "city": "Andalusia", "state": "Pennsylvania", "day": "Friday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Joi Farmer", "address": "723 Manfield Road, Newark, Delaware, 19713", "city": "Newark", "state": "Delaware", "day": "Tuesday", "est_2026": "4700", "payment": "Fair"}, {"name": "PepeyYola Perez", "address": "236 Tinsley Court, Newark, Delaware, 19702", "city": "Newark", "state": "Delaware", "day": "Tuesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Leah  Faulkner", "address": "938 Lee Road, Hockessin, DE, 19707", "city": "Hockessin", "state": "DE", "day": "Tuesday", "est_2026": "8470.0", "payment": "Fair"}, {"name": "Paula M Caglianone", "address": "2605 Saint James Church Road, Wilmington, Delaware, 19808", "city": "Wilmington", "state": "Delaware", "day": "Tuesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Kathy Gerard", "address": "5 Kemble Court, Wilmington, DE, 19808", "city": "Wilmington", "state": "DE", "day": "Tuesday", "est_2026": "4700", "payment": "Fair"}, {"name": "Harry Johnson", "address": "1160 Renwick Drive, West Chester, Pennsylvania, 19382", "city": "West Chester", "state": "Pennsylvania", "day": "Wednesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Tiona Brown", "address": "157 East Walnut Lane, Philadelphia, Pennsylvania, 19144", "city": "Philadelphia", "state": "Pennsylvania", "day": "Friday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Gina Crowley", "address": "110 West Highland Avenue, Wilmington, Delaware, 19804", "city": "Wilmington", "state": "Delaware", "day": "Monday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Brian Burslem", "address": "3 Harrison Court, Wilmington, DE, 19810", "city": "Wilmington", "state": "DE", "day": "Monday", "est_2026": "5870.0", "payment": "Fair"}, {"name": "Mike Noll", "address": "79 Yellowfield Boulevard, Elkton, Maryland, 21921", "city": "Elkton", "state": "Maryland", "day": "Thursday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Andrew Cleveland", "address": "11 Wellington Road, Wilmington, Delaware, 19803", "city": "Wilmington", "state": "Delaware", "day": "Monday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Shana Hunt", "address": "2237 Highland Avenue, Morton, Pennsylvania, 19070", "city": "Morton", "state": "Pennsylvania", "day": "Wednesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Mike DeBoda", "address": "421 Suffolk Drive, Bear, Delaware, 19701", "city": "Bear", "state": "Delaware", "day": "Wednesday", "est_2026": "4700", "payment": "Excellent"}, {"name": "Marie Christinzio", "address": "2405 Silverside Road, Wilmington, DE, 19810", "city": "Wilmington", "state": "DE", "day": "Monday", "est_2026": "4700", "payment": "Good"}];
+const bases = [{"name": "Claymont Base (Helper)", "lat": 39.7984, "lng": -75.4593}, {"name": "Philadelphia (Bryce)", "lat": 39.9526, "lng": -75.1652}];
+const dayColors = {"Monday": "#4285F4", "Tuesday": "#EA4335", "Wednesday": "#FBBC04", "Thursday": "#34A853", "Friday": "#A142F4"};
+const dayLabels = {"Monday": "Monday \u2014 Wilmington Core", "Tuesday": "Tuesday \u2014 Newark/Hockessin", "Wednesday": "Wednesday \u2014 West Chester + South DE", "Thursday": "Thursday \u2014 MD + Far DE", "Friday": "Friday \u2014 Philly + PA West"};
+
+let markers = {};
+let dayVisible = {};
+Object.keys(dayColors).forEach(d => { dayVisible[d] = true; markers[d] = []; });
+
+function toggleDay(day) {
+  dayVisible[day] = !dayVisible[day];
+  markers[day].forEach(m => m.setVisible(dayVisible[day]));
+}
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 9,
+    center: {lat: 39.82, lng: -75.45},
+    mapTypeControl: false,
+    styles: [
+      {featureType: "poi", stylers: [{visibility: "off"}]},
+      {featureType: "transit", stylers: [{visibility: "off"}]}
+    ]
+  });
+
+  const geocoder = new google.maps.Geocoder();
+  const bounds = new google.maps.LatLngBounds();
+  
+  bases.forEach(b => {
+    const pos = {lat: b.lat, lng: b.lng};
+    const marker = new google.maps.Marker({
+      position: pos, map: map, title: b.name,
+      icon: {
+        path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+        scale: 8, fillColor: '#333', fillOpacity: 1, strokeColor: '#fff', strokeWeight: 2,
+      }
+    });
+    const iw = new google.maps.InfoWindow({
+      content: '<div style="font-size:13px;padding:2px"><strong>' + b.name + '</strong></div>'
+    });
+    marker.addListener('click', () => iw.open(map, marker));
+    bounds.extend(pos);
+  });
+
+  let delay = 0;
+  customers.forEach((c, i) => {
+    setTimeout(() => {
+      geocoder.geocode({address: c.address}, (results, status) => {
+        if (status === 'OK' && results[0]) {
+          const pos = results[0].geometry.location;
+          const color = dayColors[c.day] || '#999';
+          const dayLabel = dayLabels[c.day] || 'Unassigned';
+          const marker = new google.maps.Marker({
+            position: pos, map: map, title: c.name,
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 10, fillColor: color, fillOpacity: 0.9, strokeColor: '#fff', strokeWeight: 2,
+            }
+          });
+          const iw = new google.maps.InfoWindow({
+            content: '<div style="font-size:13px;padding:4px;min-width:180px">' +
+              '<strong>' + c.name + '</strong><br>' +
+              c.city + ', ' + c.state + '<br>' +
+              '<span style="color:' + color + ';font-weight:600">' + dayLabel + '</span><br>' +
+              'Est 2026: $' + c.est_2026 + ' &bull; Payment: ' + c.payment +
+              '</div>'
+          });
+          marker.addListener('click', () => iw.open(map, marker));
+          if (markers[c.day]) markers[c.day].push(marker);
+          bounds.extend(pos);
+          if (i === customers.length - 1) {
+            setTimeout(() => map.fitBounds(bounds, 60), 1000);
+          }
+        }
+      });
+    }, delay);
+    delay += 250;
+  });
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLnwj0Cg3PNnJoewz33uecpQpuFgiRD2w&callback=initMap"></script>
+<script src="/js/chat-widget.js" defer></script>
+</body>
+</html>

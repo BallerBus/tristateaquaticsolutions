@@ -65,7 +65,10 @@ Follow this order. One question at a time.
 - If they say "not sure", "I don't know", or "can't say" to ANY question, accept the answer and move to the next question. NEVER rephrase the same question to try again.
 - For new pool construction or installation inquiries: collect their name, address, and phone, then say "Brandon handles all new pool projects personally. I'll have him reach out to you today."
 - Give ONE price. Never break it down into base + add-ons. Just give the total.
-- NEVER give a price range like "$1,000-$1,100" or "$400-$1,000". Always give ONE specific number. If pool size is unknown, use the under-30K price as the starting point and say "starts at $X for a standard pool — could be a bit more depending on size."
+- NEVER give a price range like "$1,000-$1,100" or "$400-$1,000". Give ONE specific number. If pool size is unknown, use the under-30K gallon price and say "That's $X for your pool, and Bryce will confirm if your pool is on the larger side." Do NOT say "starts at", "around", "budget around", or give multiple numbers.
+- UPSELL MATH: Do the subtraction before stating a price difference. Basic→Standard is ALWAYS $150 more. Standard→Swim-Ready is ALWAYS $250 more. These gaps are the same at EVERY pool size. "$50 more" is ALWAYS wrong — never say it.
+- If the customer already mentioned their equipment (heater, salt, spa, automation) in ANY earlier message, DO NOT ask the equipment question again. You already know. Skip to the next unanswered question in the flow.
+- ALWAYS ask the probing question (step 9) even for obvious cases like green or neglected pools. Frame it: "Given [their situation], are you looking for someone to just get it running, or do you want it cleaned up and swim-ready?" Let them choose the tier.
 - If a customer is rude, hostile, or impatient, stay calm and professional. Don't match their energy. Short, direct responses. If they won't answer qualification questions, say "I hear you. Without knowing more about your pool, I can't give an accurate price. Bryce can call you and sort it out — what's the best number?"
 - NEVER use internal terminology like "edge case", "gallon tier", "qualification flow" — these are internal terms the customer should never see.
 
@@ -255,8 +258,29 @@ async function submitLeadToGHL(info, conversationText) {
     const contactId = upsertData.contact?.id;
     console.log('GHL contact upserted:', contactId);
 
-    // Store conversation as a note on the contact
+    // Store conversation in GHL Conversations tab AND as a note
     if (contactId && conversationText) {
+      // 1. Send to GHL Conversations (shows in the Conversations tab as Live Chat)
+      try {
+        await fetch('https://services.leadconnectorhq.com/conversations/messages', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${GHL_PIT}`,
+            'Content-Type': 'application/json',
+            Version: '2021-07-28',
+          },
+          body: JSON.stringify({
+            type: 'Live_Chat',
+            contactId: contactId,
+            message: `[Website Chatbot]\n\n${conversationText}`,
+          }),
+        });
+        console.log('GHL conversation saved for:', contactId);
+      } catch (e) {
+        console.error('GHL conversation error:', e.message);
+      }
+
+      // 2. Also save as a note (searchable backup)
       await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/notes`, {
         method: 'POST',
         headers: {
@@ -266,7 +290,6 @@ async function submitLeadToGHL(info, conversationText) {
         },
         body: JSON.stringify({
           body: `Website Chatbot Conversation:\n\n${conversationText}`,
-          locationId: GHL_LOCATION_ID,
         }),
       }).catch((e) => {
         console.error('GHL note error:', e.message);

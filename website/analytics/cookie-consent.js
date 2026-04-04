@@ -938,9 +938,13 @@
                 }
             }
 
-            // Update Clarity
-            if (window.clarity) {
-                window.clarity('consent', analyticsGranted);
+            // Update PostHog
+            if (window.posthog) {
+                if (analyticsGranted) {
+                    window.posthog.opt_in_capturing();
+                } else {
+                    window.posthog.opt_out_capturing();
+                }
             }
 
             console.log('[TSAS Cookie Consent] Preferences applied:', preferences);

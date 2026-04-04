@@ -2,239 +2,141 @@
  * Heatmap & Session Recording Setup
  * Tri-State Aquatic Solutions
  *
- * This file contains implementation code for Microsoft Clarity and Hotjar
+ * This file contains implementation code for PostHog
  * Configure privacy-compliant tracking with session recording filters
+ *
+ * PostHog is the ONLY heatmap/session recording platform used.
  */
 
 // ============================================================================
-// MICROSOFT CLARITY IMPLEMENTATION
+// POSTHOG IMPLEMENTATION
 // ============================================================================
 
 /**
- * Microsoft Clarity Setup
+ * PostHog Setup
  *
- * 1. Create account at https://clarity.microsoft.com
- * 2. Add your site and get your Project ID
- * 3. Replace 'YOUR_CLARITY_PROJECT_ID' below
+ * 1. Create account at https://posthog.com
+ * 2. Add your site and get your API Key
+ * 3. Replace 'YOUR_POSTHOG_API_KEY' below
  */
-const CLARITY_PROJECT_ID = 'YOUR_CLARITY_PROJECT_ID'; // e.g., 'abc123xyz'
+const POSTHOG_API_KEY = 'YOUR_POSTHOG_API_KEY'; // e.g., 'phc_abc123xyz'
+const POSTHOG_HOST = 'https://app.posthog.com';
 
-function initMicrosoftClarity() {
-  // Clarity tracking script
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", CLARITY_PROJECT_ID);
+function initPostHog() {
+  // PostHog tracking script
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init(POSTHOG_API_KEY, {
+    api_host: POSTHOG_HOST,
+    autocapture: true,
+    capture_pageview: true,
+    capture_pageleave: true,
+    enable_heatmaps: true,
+    enable_recording_console_log: false,
+    mask_all_text: false,
+    mask_all_element_attributes: false
+  });
 }
 
 /**
- * Clarity Custom Tags for User Segments
+ * PostHog Custom Properties for User Segments
  * Call these functions to tag sessions for analysis
  */
-const ClarityTags = {
+const PostHogTags = {
   // Page type identification
   setPageType: function(pageType) {
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'page_type', pageType);
+    if (typeof posthog !== 'undefined') {
+      posthog.people.set({ page_type: pageType });
+      posthog.capture('page_type_set', { page_type: pageType });
     }
   },
 
   // User intent signals
   setUserIntent: function(intent) {
     // intent: 'browsing', 'researching', 'ready_to_buy', 'returning'
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'user_intent', intent);
+    if (typeof posthog !== 'undefined') {
+      posthog.people.set({ user_intent: intent });
     }
   },
 
   // Service interest tracking
   setServiceInterest: function(service) {
     // service: 'fiberglass', 'vinyl', 'concrete', 'hot_tub', 'renovation'
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'service_interest', service);
+    if (typeof posthog !== 'undefined') {
+      posthog.people.set({ service_interest: service });
     }
   },
 
   // Lead quality indicators
   setLeadScore: function(score) {
     // score: 'hot', 'warm', 'cold'
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'lead_score', score);
+    if (typeof posthog !== 'undefined') {
+      posthog.people.set({ lead_score: score });
     }
   },
 
   // Geographic segment
   setServiceArea: function(area) {
     // area: 'delaware', 'chester_county', 'new_castle', 'montgomery_county'
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'service_area', area);
+    if (typeof posthog !== 'undefined') {
+      posthog.people.set({ service_area: area });
     }
   },
 
   // Calculator usage
   trackCalculatorUse: function(calculatorType) {
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'calculator_used', calculatorType);
+    if (typeof posthog !== 'undefined') {
+      posthog.capture('calculator_used', { calculator_type: calculatorType });
     }
   },
 
   // Form engagement level
   setFormEngagement: function(level) {
     // level: 'viewed', 'started', 'completed', 'abandoned'
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'form_engagement', level);
+    if (typeof posthog !== 'undefined') {
+      posthog.capture('form_engagement', { form_engagement: level });
     }
   },
 
   // Device/traffic source
   setTrafficSource: function(source) {
-    if (typeof clarity !== 'undefined') {
-      clarity('set', 'traffic_source', source);
+    if (typeof posthog !== 'undefined') {
+      posthog.people.set({ traffic_source: source });
     }
   },
 
   // Custom event tracking
   trackEvent: function(eventName, eventValue) {
-    if (typeof clarity !== 'undefined') {
-      clarity('set', eventName, eventValue);
+    if (typeof posthog !== 'undefined') {
+      posthog.capture(eventName, { value: eventValue });
     }
   }
 };
 
 /**
- * Clarity Privacy Configuration
+ * PostHog Privacy Configuration
  * Mask sensitive data from session recordings
  */
-function configureClarityPrivacy() {
-  if (typeof clarity !== 'undefined') {
-    // Upgrade session to force recording for important interactions
-    clarity('upgrade', 'key_interaction');
+function configurePostHogPrivacy() {
+  if (typeof posthog !== 'undefined') {
+    // PostHog uses CSS class 'ph-no-capture' to mask elements
+    // and data attribute 'data-ph-capture-attribute-*' to capture specific attributes
   }
 }
 
 // CSS class for masking (add to sensitive elements in HTML)
-// Use: class="clarity-mask" on elements containing sensitive data
-const CLARITY_MASK_STYLES = `
-  /* Add to your CSS - Clarity will automatically mask these elements */
-  .clarity-mask {
-    /* Clarity masks content with this class */
+// Use: class="ph-no-capture" on elements containing sensitive data
+const POSTHOG_MASK_STYLES = `
+  /* Add to your CSS - PostHog will automatically mask these elements */
+  .ph-no-capture {
+    /* PostHog masks content with this class in session recordings */
   }
-
-  /* Alternative: Use data attribute */
-  /* data-clarity-mask="true" */
 
   /* Mask all form inputs by default */
   input[type="email"],
   input[type="tel"],
   input[type="password"],
   textarea {
-    /* Add data-clarity-mask="true" to these elements */
-  }
-`;
-
-
-// ============================================================================
-// HOTJAR IMPLEMENTATION (ALTERNATIVE)
-// ============================================================================
-
-/**
- * Hotjar Setup
- *
- * 1. Create account at https://hotjar.com
- * 2. Add your site and get your Site ID
- * 3. Replace 'YOUR_HOTJAR_SITE_ID' below
- */
-const HOTJAR_SITE_ID = 'YOUR_HOTJAR_SITE_ID'; // e.g., 1234567
-const HOTJAR_VERSION = 6;
-
-function initHotjar() {
-  (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:HOTJAR_SITE_ID,hjsv:HOTJAR_VERSION};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-}
-
-/**
- * Hotjar Custom Tags for User Segments
- */
-const HotjarTags = {
-  // Identify user (for returning visitors, CRM integration)
-  identifyUser: function(userId, attributes) {
-    if (typeof hj !== 'undefined') {
-      hj('identify', userId, attributes);
-    }
-  },
-
-  // Tag recording with custom attributes
-  tagRecording: function(tags) {
-    if (typeof hj !== 'undefined') {
-      hj('tagRecording', tags);
-    }
-  },
-
-  // Trigger events
-  triggerEvent: function(eventName) {
-    if (typeof hj !== 'undefined') {
-      hj('event', eventName);
-    }
-  },
-
-  // State change (for SPAs)
-  stateChange: function(url) {
-    if (typeof hj !== 'undefined') {
-      hj('stateChange', url);
-    }
-  },
-
-  // Trigger feedback poll
-  triggerPoll: function(pollId) {
-    if (typeof hj !== 'undefined') {
-      hj('trigger', pollId);
-    }
-  }
-};
-
-/**
- * Hotjar Privacy Configuration
- */
-function configureHotjarPrivacy() {
-  // Add these CSS classes to mask sensitive content
-  // .hj-suppress - Completely hides element content
-  // .hj-exclude - Excludes element from recording
-
-  // Suppress sensitive form fields by adding data attribute
-  // data-hj-suppress="true"
-
-  // Whitelist specific inputs (if using suppress-all mode)
-  // data-hj-allow="true"
-}
-
-const HOTJAR_MASK_STYLES = `
-  /* Hotjar masking classes */
-
-  /* Suppress - replaces content with asterisks */
-  .hj-suppress {
-    /* Content will be masked in recordings */
-  }
-
-  /* Exclude - completely removes from recording */
-  .hj-exclude {
-    /* Element won't appear in recordings */
-  }
-
-  /* Form field masking */
-  input[type="email"],
-  input[type="tel"],
-  input[type="ssn"],
-  input[name="phone"],
-  input[name="address"],
-  textarea[name="message"] {
-    /* Add data-hj-suppress to mask these */
+    /* Add class="ph-no-capture" to these elements */
   }
 `;
 
@@ -267,10 +169,8 @@ const PrivacyConfig = {
   autoMaskSensitiveElements: function() {
     this.sensitiveSelectors.forEach(selector => {
       document.querySelectorAll(selector).forEach(el => {
-        // Clarity masking
-        el.setAttribute('data-clarity-mask', 'true');
-        // Hotjar masking
-        el.classList.add('hj-suppress');
+        // PostHog masking
+        el.classList.add('ph-no-capture');
       });
     });
   },
@@ -279,9 +179,7 @@ const PrivacyConfig = {
   initWithConsent: function(hasConsent) {
     if (hasConsent) {
       // Initialize tracking only with consent
-      initMicrosoftClarity();
-      // OR
-      // initHotjar();
+      initPostHog();
 
       // Auto-mask sensitive elements
       this.autoMaskSensitiveElements();
@@ -327,11 +225,8 @@ const RecordingFilters = {
   trackBehavior: function(behavior, value = true) {
     this.behaviors[behavior] = value;
 
-    // Tag session in Clarity
-    ClarityTags.trackEvent(behavior, value.toString());
-
-    // Tag session in Hotjar
-    HotjarTags.tagRecording([behavior]);
+    // Tag session in PostHog
+    PostHogTags.trackEvent(behavior, value.toString());
   },
 
   // Calculate session value score
@@ -364,8 +259,7 @@ const RecordingFilters = {
       label = 'browser';
     }
 
-    ClarityTags.setLeadScore(label);
-    HotjarTags.tagRecording([label]);
+    PostHogTags.setLeadScore(label);
 
     return label;
   }
@@ -403,8 +297,7 @@ const UserSegmentation = {
       source = 'referral';
     }
 
-    ClarityTags.setTrafficSource(source);
-    HotjarTags.tagRecording(['source_' + source]);
+    PostHogTags.setTrafficSource(source);
 
     return source;
   },
@@ -436,8 +329,7 @@ const UserSegmentation = {
       pageType = 'social_proof';
     }
 
-    ClarityTags.setPageType(pageType);
-    HotjarTags.tagRecording(['page_' + pageType]);
+    PostHogTags.setPageType(pageType);
 
     return pageType;
   },
@@ -460,8 +352,7 @@ const UserSegmentation = {
       service = 'renovation';
     }
 
-    ClarityTags.setServiceInterest(service);
-    HotjarTags.tagRecording(['interest_' + service]);
+    PostHogTags.setServiceInterest(service);
 
     return service;
   },
@@ -481,8 +372,7 @@ const UserSegmentation = {
       area = 'new_castle';
     }
 
-    ClarityTags.setServiceArea(area);
-    HotjarTags.tagRecording(['area_' + area]);
+    PostHogTags.setServiceArea(area);
 
     return area;
   },
@@ -520,8 +410,7 @@ const UXEventTracking = {
       depths.forEach(depth => {
         if (scrollPercent >= depth && !tracked.has(depth)) {
           tracked.add(depth);
-          ClarityTags.trackEvent('scroll_depth', depth.toString());
-          HotjarTags.triggerEvent('scroll_' + depth);
+          PostHogTags.trackEvent('scroll_depth', depth.toString());
 
           if (depth === 90) {
             RecordingFilters.trackBehavior('scrolledToBottom');
@@ -541,13 +430,13 @@ const UXEventTracking = {
 
       // Tag milestones
       if (timeOnSite === 30) {
-        ClarityTags.trackEvent('time_on_site', '30s');
+        PostHogTags.trackEvent('time_on_site', '30s');
       } else if (timeOnSite === 60) {
-        ClarityTags.trackEvent('time_on_site', '1m');
+        PostHogTags.trackEvent('time_on_site', '1m');
       } else if (timeOnSite === 180) {
-        ClarityTags.trackEvent('time_on_site', '3m');
+        PostHogTags.trackEvent('time_on_site', '3m');
       } else if (timeOnSite === 300) {
-        ClarityTags.trackEvent('time_on_site', '5m');
+        PostHogTags.trackEvent('time_on_site', '5m');
       }
     }, 10000); // Check every 10 seconds
   },
@@ -559,13 +448,12 @@ const UXEventTracking = {
     if (contactForm) {
       contactForm.addEventListener('focus', () => {
         RecordingFilters.trackBehavior('contactFormStart');
-        ClarityTags.setFormEngagement('started');
+        PostHogTags.setFormEngagement('started');
       }, { once: true, capture: true });
 
       contactForm.addEventListener('submit', () => {
         RecordingFilters.trackBehavior('contactFormComplete');
-        ClarityTags.setFormEngagement('completed');
-        HotjarTags.triggerEvent('form_submitted');
+        PostHogTags.setFormEngagement('completed');
       });
     }
 
@@ -573,12 +461,11 @@ const UXEventTracking = {
     const quoteForm = document.querySelector('#quote-form, [data-form="quote"]');
     if (quoteForm) {
       quoteForm.addEventListener('focus', () => {
-        ClarityTags.trackEvent('quote_form', 'started');
+        PostHogTags.trackEvent('quote_form', 'started');
       }, { once: true, capture: true });
 
       quoteForm.addEventListener('submit', () => {
-        ClarityTags.trackEvent('quote_form', 'completed');
-        HotjarTags.triggerEvent('quote_requested');
+        PostHogTags.trackEvent('quote_form', 'completed');
       });
     }
   },
@@ -588,8 +475,7 @@ const UXEventTracking = {
     document.querySelectorAll('[data-cta], .cta-button, .btn-primary').forEach(cta => {
       cta.addEventListener('click', () => {
         const ctaName = cta.dataset.cta || cta.innerText.trim().substring(0, 30);
-        ClarityTags.trackEvent('cta_click', ctaName);
-        HotjarTags.triggerEvent('cta_' + ctaName.replace(/\s+/g, '_').toLowerCase());
+        PostHogTags.trackEvent('cta_click', ctaName);
       });
     });
   },
@@ -602,8 +488,7 @@ const UXEventTracking = {
         const calcType = calc.dataset.calculator || 'pool_cost';
         if (!RecordingFilters.behaviors.calculatorUsed) {
           RecordingFilters.trackBehavior('calculatorUsed');
-          ClarityTags.trackCalculatorUse(calcType);
-          HotjarTags.triggerEvent('calculator_used');
+          PostHogTags.trackCalculatorUse(calcType);
         }
       }, { once: true });
     });
@@ -622,8 +507,7 @@ const UXEventTracking = {
       if (target === lastClickTarget && now - lastClickTime < 500) {
         clickCount++;
         if (clickCount >= 3) {
-          ClarityTags.trackEvent('rage_click', target.tagName + '.' + target.className);
-          HotjarTags.triggerEvent('rage_click');
+          PostHogTags.trackEvent('rage_click', target.tagName + '.' + target.className);
           clickCount = 0;
         }
       } else {
@@ -657,7 +541,6 @@ const UXEventTracking = {
  */
 function initHeatmapTracking(options = {}) {
   const {
-    provider = 'clarity', // 'clarity' or 'hotjar'
     hasConsent = true,
     autoSegment = true,
     autoTrackEvents = true
@@ -669,14 +552,9 @@ function initHeatmapTracking(options = {}) {
     return;
   }
 
-  // Initialize selected provider
-  if (provider === 'clarity') {
-    initMicrosoftClarity();
-    console.log('Microsoft Clarity initialized');
-  } else if (provider === 'hotjar') {
-    initHotjar();
-    console.log('Hotjar initialized');
-  }
+  // Initialize PostHog
+  initPostHog();
+  console.log('PostHog initialized');
 
   // Auto-mask sensitive elements
   PrivacyConfig.autoMaskSensitiveElements();
@@ -701,10 +579,8 @@ function initHeatmapTracking(options = {}) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     initHeatmapTracking,
-    initMicrosoftClarity,
-    initHotjar,
-    ClarityTags,
-    HotjarTags,
+    initPostHog,
+    PostHogTags,
     PrivacyConfig,
     RecordingFilters,
     UserSegmentation,
@@ -714,7 +590,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
 // Auto-initialize on DOM ready (comment out if using manual initialization)
 // document.addEventListener('DOMContentLoaded', () => {
-//   initHeatmapTracking({ provider: 'clarity' });
+//   initHeatmapTracking();
 // });
 
 
@@ -731,15 +607,15 @@ if (typeof module !== 'undefined' && module.exports) {
  * <script>
  *   // Initialize with cookie consent check
  *   if (hasUserConsent()) {
- *     initHeatmapTracking({ provider: 'clarity' });
+ *     initHeatmapTracking();
  *   }
  * </script>
  *
  * 2. Mask sensitive form fields:
  *
- * <input type="email" name="email" data-clarity-mask="true" class="hj-suppress">
- * <input type="tel" name="phone" data-clarity-mask="true" class="hj-suppress">
- * <textarea name="message" data-clarity-mask="true" class="hj-suppress"></textarea>
+ * <input type="email" name="email" class="ph-no-capture">
+ * <input type="tel" name="phone" class="ph-no-capture">
+ * <textarea name="message" class="ph-no-capture"></textarea>
  *
  * 3. Track CTA buttons:
  *

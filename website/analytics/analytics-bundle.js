@@ -1,6 +1,6 @@
 /**
  * Tri-State Aquatic Solutions - Analytics Bundle
- * Combined analytics initialization for GA4 + GTM + Clarity + Performance Monitoring
+ * Combined analytics initialization for GA4 + GTM + PostHog + Performance Monitoring
  *
  * Version: 1.0.0
  * Last Updated: 2026-02-02
@@ -29,9 +29,10 @@
             enabled: true
         },
 
-        // Microsoft Clarity
-        clarity: {
-            projectId: 'XXXXXXXXXX', // Replace with actual Clarity Project ID
+        // PostHog
+        posthog: {
+            apiKey: 'XXXXXXXXXX', // Replace with actual PostHog API Key
+            host: 'https://app.posthog.com',
             enabled: true
         },
 
@@ -257,47 +258,57 @@
     };
 
     // =============================================================================
-    // MICROSOFT CLARITY
+    // POSTHOG
     // =============================================================================
 
-    const clarity = {
+    const posthogModule = {
         initialized: false,
 
         init: function() {
-            if (!CONFIG.clarity.enabled || this.initialized) return;
+            if (!CONFIG.posthog.enabled || this.initialized) return;
 
-            utils.log('Initializing Clarity...');
+            utils.log('Initializing PostHog...');
 
-            // Clarity initialization
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", CONFIG.clarity.projectId);
+            // PostHog initialization
+            !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+            posthog.init(CONFIG.posthog.apiKey, {
+                api_host: CONFIG.posthog.host,
+                autocapture: true,
+                capture_pageview: true,
+                capture_pageleave: true,
+                enable_heatmaps: true,
+                enable_recording_console_log: false,
+                mask_all_text: false,
+                mask_all_element_attributes: false
+            });
 
             this.initialized = true;
-            utils.log('Clarity initialized');
+            utils.log('PostHog initialized');
         },
 
         identify: function(userId, customData = {}) {
-            if (!window.clarity) return;
+            if (!window.posthog) return;
 
-            window.clarity('identify', userId, customData);
-            utils.log('Clarity user identified:', userId);
+            window.posthog.identify(userId, customData);
+            utils.log('PostHog user identified:', userId);
         },
 
         tag: function(key, value) {
-            if (!window.clarity) return;
+            if (!window.posthog) return;
 
-            window.clarity('set', key, value);
-            utils.log('Clarity tag set:', key, value);
+            window.posthog.people.set({ [key]: value });
+            utils.log('PostHog property set:', key, value);
         },
 
         consent: function(granted) {
-            if (!window.clarity) return;
+            if (!window.posthog) return;
 
-            window.clarity('consent', granted);
-            utils.log('Clarity consent:', granted);
+            if (granted) {
+                window.posthog.opt_in_capturing();
+            } else {
+                window.posthog.opt_out_capturing();
+            }
+            utils.log('PostHog consent:', granted);
         }
     };
 
@@ -474,7 +485,7 @@
         updateAllPlatforms: function(granted) {
             ga4.updateConsent(granted);
             gtm.updateConsent(granted);
-            clarity.consent(granted);
+            posthogModule.consent(granted);
 
             if (granted) {
                 performance.sendMetrics();
@@ -487,7 +498,7 @@
         clearAnalyticsCookies: function() {
             const cookiesToClear = [
                 '_ga', '_gid', '_gat', '_gcl_au',
-                '_clck', '_clsk', 'CLID', 'ANONCHK', 'MR', 'MUID', 'SM'
+                'ph_', 'posthog'
             ];
 
             cookiesToClear.forEach(function(name) {
@@ -768,7 +779,7 @@
         // Platform modules
         ga4: ga4,
         gtm: gtm,
-        clarity: clarity,
+        posthog: posthogModule,
         performance: performance,
 
         // Consent management
@@ -787,9 +798,9 @@
             ga4.init();
             gtm.init();
 
-            // Only initialize Clarity if consent given (session recording requires explicit consent)
+            // Only initialize PostHog if consent given (session recording requires explicit consent)
             if (utils.hasConsent()) {
-                clarity.init();
+                posthogModule.init();
             }
 
             performance.init();

@@ -10,14 +10,14 @@
  *    - Link to GTM container
  *    - Replace GA4_MEASUREMENT_ID below
  * 
- * 3. Create Hotjar account → https://hotjar.com
+ * 3. Create PostHog account → https://posthog.com
  *    - Add site: tristateaquaticsolutions.com
- *    - Replace HOTJAR_SITE_ID below
- * 
+ *    - Replace POSTHOG_API_KEY below
+ *
  * 4. Add tracking tags to pages using:
  *    - website/integrations/gtm-head.html (in <head>)
  *    - website/integrations/gtm-noscript.html (in <body>)
- *    - website/integrations/hotjar.html (in <head>)
+ *    - website/integrations/posthog.html (in <head>)
  */
 
 const ANALYTICS_CONFIG = {
@@ -45,24 +45,24 @@ const ANALYTICS_CONFIG = {
     ]
   },
   
-  // Hotjar Heatmaps & Recordings
-  hotjar: {
-    siteId: 'XXXXXXX', // TODO: Replace with your Hotjar Site ID
-    version: 6,
-    enabled: false, // Set to true after creating Hotjar account
-    
+  // PostHog Heatmaps & Recordings
+  posthog: {
+    apiKey: 'XXXXXXX', // TODO: Replace with your PostHog API Key
+    host: 'https://app.posthog.com',
+    enabled: false, // Set to true after creating PostHog account
+
     // Features to enable
     heatmaps: {
       click: true,
       scroll: true,
       move: false // Disable to reduce data
     },
-    
+
     recordings: {
       enabled: true,
       samplingRate: 0.2 // 20% of visitors
     },
-    
+
     forms: {
       enabled: true,
       captureInputs: false // Privacy: don't capture sensitive input

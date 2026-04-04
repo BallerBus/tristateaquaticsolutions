@@ -11,7 +11,7 @@
 | `website/analytics-config.js` | Centralized analytics configuration |
 | `website/integrations/gtm-head.html` | GTM head tag snippet |
 | `website/integrations/gtm-noscript.html` | GTM noscript fallback |
-| `website/integrations/hotjar.html` | Hotjar tracking code |
+| `website/integrations/posthog.html` | PostHog tracking code |
 | `website/analytics-setup.md` | Complete setup guide |
 
 ---
@@ -30,11 +30,11 @@
 3. Click "Associate with GTM" and enter your GTM Container ID
 4. Copy the Measurement ID (starts with `G-`)
 
-### Step 3: Create Hotjar Account (5 min)
-1. Go to https://hotjar.com
+### Step 3: Create PostHog Account (5 min)
+1. Go to https://posthog.com
 2. Sign up (free tier works)
 3. Add site: `tristateaquaticsolutions.com`
-4. Copy your Site ID (numeric)
+4. Copy your API Key
 
 ---
 
@@ -46,9 +46,9 @@ Replace placeholders in these files:
 |------|-------------|--------------|
 | `analytics-config.js` | `GTM-XXXXXXX` | Your GTM Container ID |
 | `analytics-config.js` | `G-JQEE2JQN7W` | Your GA4 Measurement ID |
-| `analytics-config.js` | `XXXXXXX` | Your Hotjar Site ID |
+| `analytics-config.js` | `XXXXXXX` | Your PostHog API Key |
 | `integrations/gtm-head.html` | `GTM-XXXXXXX` | Your GTM Container ID |
-| `integrations/hotjar.html` | `XXXXXXX` | Your Hotjar Site ID |
+| `integrations/posthog.html` | `XXXXXXX` | Your PostHog API Key |
 
 ---
 
@@ -65,7 +65,7 @@ Replace placeholders in these files:
 1. **Lead Funnel** - Home → Pool → Gallery → Contact → Quote
 2. **Phone Funnel** - Any page → Phone Click
 
-### Heatmaps (Hotjar)
+### Heatmaps (PostHog)
 - ✅ Click heatmaps
 - ✅ Scroll depth
 - ✅ Session recordings
@@ -79,7 +79,7 @@ Replace placeholders in these files:
 2. Configure GTM triggers for conversion events
 3. Set up GA4 conversion events
 4. Verify tracking in Real-Time reports
-5. Check Hotjar after 1 week of data
+5. Check PostHog after 1 week of data
 
 ---
 
@@ -87,7 +87,7 @@ Replace placeholders in these files:
 
 - GTM Help: https://support.google.com/tagmanager
 - GA4 Help: https://support.google.com/analytics
-- Hotjar Help: https://help.hotjar.com
+- PostHog Help: https://posthog.com/docs
 
 ---
 

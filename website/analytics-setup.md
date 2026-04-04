@@ -18,7 +18,7 @@
 - Funnel analysis
 - Real-time monitoring
 
-### 3. Hotjar
+### 3. PostHog
 - Heatmaps (clicks, scrolls, attention)
 - Session recordings
 - User feedback surveys
@@ -44,7 +44,7 @@
 **Tags to configure in GTM:**
 - GA4 Configuration Tag (fires on all pages)
 - GA4 Event Tags (conversions below)
-- Hotjar Tag (fires on all pages)
+- PostHog Tag (fires on all pages)
 
 ---
 
@@ -68,20 +68,20 @@
 
 ---
 
-### 3. Create Hotjar Account
+### 3. Create PostHog Account
 **Status:** NEEDS DOING | **Difficulty:** Easy (5 min)
 
-1. Go to https://hotjar.com
+1. Go to https://posthog.com
 2. Create free account
 3. Add site: `tristateaquaticsolutions.com`
-4. Get Site ID (numeric, like `1234567`)
-5. Copy Heatmap tracking code snippet
+4. Get API Key from project settings
+5. Copy tracking code snippet
 
-**Hotjar Settings:**
+**PostHog Settings:**
 - Enable Heatmaps (Click, Move, Scroll)
 - Enable Session Recordings (capture user journeys)
 - Set recording sampling to 20% of visitors
-- Enable Form Analysis for contact forms
+- Enable Autocapture for form analysis
 
 ---
 
@@ -126,9 +126,9 @@ Replace `GTM-XXXXXXX` with your actual container ID.
 - Event Name: `generate_lead`
 - Trigger: Form Submission → All Forms
 
-**Tag 4: Hotjar**
+**Tag 4: PostHog**
 - Type: Custom HTML
-- Paste Hotjar tracking code
+- Paste PostHog tracking code
 - Trigger: All Pages
 
 ---
@@ -139,8 +139,8 @@ Create `.env.local` in website root:
 
 ```bash
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-JQEE2JQN7W
-NEXT_PUBLIC_HOTJAR_ID=XXXXXXXX
-NEXT_PUBLIC_HOTJAR_VERSION=11
+NEXT_PUBLIC_POSTHOG_KEY=XXXXXXXX
+NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
 ```
 
@@ -174,7 +174,7 @@ NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
 - Conversions → All Conversions (lead events)
 - Real-time (check active visitors)
 
-### Hotjar Reports
+### PostHog Reports
 - Heatmaps (hot spots on pages)
 - Recordings (user journey playback)
 - Form Analysis (drop-off points)
@@ -188,7 +188,7 @@ NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
 | `website/analytics-config.js` | Configuration file (replace IDs) |
 | `website/integrations/gtm-head.html` | GTM head tag snippet |
 | `website/integrations/gtm-noscript.html` | GTM noscript tag snippet |
-| `website/integrations/hotjar.html` | Hotjar tracking code |
+| `website/integrations/posthog.html` | PostHog tracking code |
 | `website/analytics-setup.md` | This file |
 
 ---
@@ -199,7 +199,7 @@ NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
 |---------|--------------|--------|--------|
 | Google Tag Manager | Container ID | `GTM-XXXXXXX` | ⏳ |
 | Google Analytics 4 | Measurement ID | `G-JQEE2JQN7W` | ⏳ |
-| Hotjar | Site ID | `1234567` | ⏳ |
+| PostHog | API Key | `phc_XXXXXXX` | ⏳ |
 
 ---
 
@@ -208,7 +208,7 @@ NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
 1. ✅ Verify GTM preview mode works
 2. ✅ Check GA4 Real-Time shows your visit
 3. ✅ Test phone click tracking (click the phone number)
-4. ✅ View Hotjar heatmap data after 1 week
+4. ✅ View PostHog heatmap data after 1 week
 5. ✅ Set up weekly email reports in GA4
 
 ---
@@ -217,4 +217,4 @@ NEXT_PUBLIC_SITE_URL=https://tristateaquaticsolutions.com
 
 - GA4 Help: https://support.google.com/analytics
 - GTM Help: https://support.google.com/tagmanager
-- Hotjar Help: https://help.hotjar.com
+- PostHog Help: https://posthog.com/docs
